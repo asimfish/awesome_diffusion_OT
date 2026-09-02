@@ -1,0 +1,383 @@
+{
+  "issue_count": 63,
+  "issues": [
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.65pt but the original at this position is 10.05pt (ratio 0.76 vs page median 0.91) at x=219.8, y=102.9: _{o}(μ, ν) 表示最优耦合集合。当最优耦合形式为"
+    },
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.65pt but the original at this position is 10.05pt (ratio 0.76 vs page median 0.91) at x=259.2, y=117.4: T^{ν}_{μ} 为最优传输映射。我们将度量空间"
+    },
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.44pt but the original at this position is 9.93pt (ratio 0.75 vs page median 0.91) at x=120.8, y=622.9: 定义为对所有。在下文中，我们使用文献[17，定义2.8] 中引入的"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=206.1, y=525.3: _{μ}_{0}是它们之间的最优传输映射。在该设定下，"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=180.5, y=129.6: and"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=432.9, y=694.1: with"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=248.2, y=706.3: is"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=274.4, y=692.6: and"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=239.7, y=717.2: and"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 6.16pt but the original at this position is 10.06pt (ratio 0.61 vs page median 0.92) at x=362.0, y=258.7: φ 沿是光滑的，这意味着. 那么，对于所有"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 7.66pt but the original at this position is 9.96pt (ratio 0.77 vs page median 0.92) at x=232.0, y=414.3: F的最小值点，我们得到线性收敛速率：对于所有"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 6.87pt but the original at this position is 10.06pt (ratio 0.68 vs page median 0.88) at x=185.1, y=85.7: R^{d} [12] 中的镜像下降，并已被引入为镜像沃瑟斯坦梯度下降[113]。此外，对于"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 6.87pt but the original at this position is 10.06pt (ratio 0.68 vs page median 0.88) at x=201.2, y=95.7: V=^{1} _{2}∥· ∥^{2} _{2}, ，如前所述，我们恢复通常的沃瑟斯坦梯度下降，"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 6.87pt but the original at this position is 9.86pt (ratio 0.70 vs page median 0.88) at x=185.1, y=108.6: 也可以对非前推相容的布雷格曼势实现。对于特定的"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 6.87pt but the original at this position is 9.86pt (ratio 0.70 vs page median 0.88) at x=108.5, y=108.6: φ ，它特别恢复了SVGD 及其变体[83, 84, 114, 131]或卡尔曼-沃瑟斯坦梯度下"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (27 words, 0 CJK chars) at x=108.0, y=501.0: µk and˜Fµk for all k ≥0. Additionally, we also suppose t"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (8 words, 0 CJK chars) at x=188.0, y=538.8: k is non-increasing. Analogously to the Euclidean case, "
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (43 words, 0 CJK chars) at x=107.7, y=541.8: µ quantifies the mag-nitude of the gradient, and provide"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=496.7, y=506.0: and"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=172.9, y=531.8: and"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=231.2, y=705.5: and"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (5 words, 0 CJK chars) at x=342.5, y=341.0: µ is Gâteaux differentiable and define F∗"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=326.8, y=148.2: and"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=242.7, y=347.5: and"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=288.6, y=361.5: for"
+    },
+    {
+      "page": 24,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 24: block set at 7.87pt but the original at this position is 9.96pt (ratio 0.79 vs page median 0.92) at x=191.1, y=469.5: F的一阶变分推导了切空间上Wasserstein Hessian 的一般闭式形式。本文沿任意曲线"
+    },
+    {
+      "page": 24,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 24: block set at 7.87pt but the original at this position is 9.96pt (ratio 0.79 vs page median 0.92) at x=190.7, y=484.5: S, v∈L^{2}(μ) 推广了他们的公式。首先给出一个引理，用于计算Wasserstein "
+    },
+    {
+      "page": 24,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 24: paragraph still in English (6 words, 0 CJK chars) at x=108.0, y=262.0: t=0 if (ρt, vt)t∈[0,1] is a Wasserstein geodesicstarting"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (9 words, 0 CJK chars) at x=107.4, y=426.5: V dµ with V twice differentiable with bounded Hessian.Th"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (2 words, 0 CJK chars) at x=170.0, y=664.2: F is αµ0, µ1 ∈P2(Rd),"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=318.5, y=431.4: with"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=221.2, y=445.5: and"
+    },
+    {
+      "page": 26,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 26: paragraph still in English (2 words, 0 CJK chars) at x=143.9, y=174.1: , i.e. F is convexalong t 7→µt."
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=318.8, y=90.1: with"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=458.6, y=90.1: is"
+    },
+    {
+      "page": 28,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 28: block set at 7.35pt but the original at this position is 9.94pt (ratio 0.74 vs page median 0.92) at x=252.0, y=190.4: ∇φμ(Id) =∇W2φ(μ)可逆，根据布雷尼尔定理，存在凸函数"
+    },
+    {
+      "page": 28,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 28: paragraph still in English (2 words, 0 CJK chars) at x=256.6, y=467.1: W(x −y) dµ(x)dµ(y), ∇W2W(µ) is invertible."
+    },
+    {
+      "page": 28,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=494.7, y=461.2: and"
+    },
+    {
+      "page": 31,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 31: block set at 8.23pt but the original at this position is 9.99pt (ratio 0.82 vs page median 0.92) at x=108.3, y=342.3: 我们现在关注所有测度均为高斯的情形，以便能够计算闭式解，"
+    },
+    {
+      "page": 32,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 32: block set at 7.06pt but the original at this position is 10.06pt (ratio 0.70 vs page median 0.92) at x=260.4, y=294.2: 的伴随算子。同时包含卡尔曼-瓦瑟斯坦梯度下降[56]，其中"
+    },
+    {
+      "page": 32,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 32: paragraph still in English (7 words, 0 CJK chars) at x=108.0, y=89.8: k ,(74)the update on covariances is equivalent to"
+    },
+    {
+      "page": 33,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=111.4, y=602.6: is"
+    },
+    {
+      "page": 37,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=306.3, y=607.8: and"
+    },
+    {
+      "page": 37,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=498.5, y=624.0: is"
+    },
+    {
+      "page": 37,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=188.9, y=635.8: and"
+    },
+    {
+      "page": 38,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 38: paragraph still in English (9 words, 0 CJK chars) at x=108.0, y=241.7: V ◦T dµ with V strongly convex andU β-smooth relative to"
+    },
+    {
+      "page": 38,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=403.6, y=246.7: with"
+    },
+    {
+      "page": 39,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 39: block set at 7.26pt but the original at this position is 10.06pt (ratio 0.72 vs page median 0.92) at x=205.1, y=528.2: ∇^{W}2φ(μ^{k}^{+1})◦T^{k}^{+1} 求逆。一种实用的变通方法是求解隐式"
+    },
+    {
+      "page": 39,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 39: paragraph still in English (6 words, 0 CJK chars) at x=107.7, y=279.3: To sum up, the update is("
+    },
+    {
+      "page": 40,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 40: block set at 6.57pt but the original at this position is 10.02pt (ratio 0.66 vs page median 0.92) at x=332.7, y=639.4: _{2}(z^{T}Σ^{-}^{1}z) ，并观察到与未预处理的相同核函数相比，收"
+    },
+    {
+      "page": 43,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 43: block set at 6.06pt but the original at this position is 10.06pt (ratio 0.60 vs page median 0.92) at x=227.4, y=150.1: S^{d}^{-}^{1} 上的均匀分布，且对所有成立。对于"
+    },
+    {
+      "page": 43,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 43: paragraph still in English (2 words, 0 CJK chars) at x=107.6, y=217.9: where, for t ∈R, ψ′"
+    },
+    {
+      "page": 51,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 51: paragraph still in English (9 words, 0 CJK chars) at x=143.5, y=253.0: where G is the Green function defined as G(s, t) = s(1 −"
+    },
+    {
+      "page": 52,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 52: displayed equation at y=144 shifted horizontally by 64pt vs original"
+    },
+    {
+      "page": 52,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 52: displayed equation at y=330 shifted horizontally by 18pt vs original"
+    },
+    {
+      "page": 52,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 52: paragraph still in English (17 words, 0 CJK chars) at x=108.0, y=192.9: . Since ˜Hµk is convex on L2(µk), ψ isconvex, and we can"
+    },
+    {
+      "page": 52,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 52: paragraph still in English (7 words, 0 CJK chars) at x=216.9, y=494.6: ϕµk = argminT,T#µk=ν dϕµk (T, Id), and suppose that ˜Gµk"
+    },
+    {
+      "page": 53,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 53: paragraph still in English (14 words, 0 CJK chars) at x=108.0, y=457.2: On one hand, H is 1-smooth relative to H, thus we only n"
+    },
+    {
+      "page": 53,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 53: paragraph still in English (10 words, 0 CJK chars) at x=108.0, y=457.3: V dµ is smoothrelative to H. Using Proposition 13, we ne"
+    },
+    {
+      "page": 53,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 53: paragraph still in English (5 words, 0 CJK chars) at x=372.4, y=515.5: x+cst, thus ∇Tk+1 is a constant."
+    },
+    {
+      "page": 55,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 55: block set at 7.46pt but the original at this position is 9.96pt (ratio 0.75 vs page median 0.92) at x=217.0, y=98.6: ∂ψ(T^{∗}) +∂dφ_{μ}(·,T0)(T^{∗})⊂∂J(T^{∗}) （参见[99"
+    },
+    {
+      "page": 55,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=311.3, y=177.6: and"
+    },
+    {
+      "page": 56,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=284.4, y=650.3: for"
+    }
+  ]
+}

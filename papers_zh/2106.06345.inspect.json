@@ -1,0 +1,65 @@
+{
+  "issue_count": 10,
+  "issues": [
+    {
+      "page": 1,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 1: paragraph still in English (36 words, 0 CJK chars) at x=63.0, y=626.7: Population Dynamics ...Many ﬁelds in sciencecarry out ex"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 8.39pt but the original at this position is 9.88pt (ratio 0.85 vs page median 0.92) at x=62.6, y=121.7: （最优传输）（Schiebinger 等，2019；Yang 等，2020；Yang 和Uhle"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 7.77pt but the original at this position is 9.86pt (ratio 0.79 vs page median 0.92) at x=339.4, y=623.1: {P∈R^{n}^{×}^{m} 的集合。注意，上述定义在时退化为通常的（平方）2-Wasser"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 7.77pt but the original at this position is 9.86pt (ratio 0.79 vs page median 0.92) at x=339.4, y=646.0: ε >0可以得到一个更快且可微的代理来近似"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 7.77pt but the original at this position is 9.86pt (ratio 0.79 vs page median 0.92) at x=315.4, y=668.8: W_{ε}(μ, μ)̸= 0 。因此，在本文的其余部分，我们使用Sinkhorn 散度（Ram"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.47pt but the original at this position is 9.86pt (ratio 0.76 vs page median 0.92) at x=63.8, y=183.8: ψ为凸的假设及布雷尼尔定理（§ 1），简化（8）中的瓦瑟斯坦项："
+    },
+    {
+      "page": 9,
+      "code": "reference_content_changed",
+      "severity": "error",
+      "message": "Page 9: protected references gained 58 translated CJK characters"
+    },
+    {
+      "page": 10,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 10: block set at 5.20pt but the original at this position is 10.00pt (ratio 0.52 vs page median 0.92) at x=63.8, y=361.4: M. 费舍尔（M. Fisher）、J. 诺塞达尔（J. Nocedal）、Y. 特雷莫莱（Y."
+    },
+    {
+      "page": 18,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 18: text in the box at x=63-440, y=144-223 runs 6.2pt past its right edge: 'Day 12 to 15'"
+    },
+    {
+      "page": 18,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 18: text in the box at x=384-440, y=144-223 runs 6.2pt past its right edge: 'Day 12 to 15'"
+    }
+  ]
+}

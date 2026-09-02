@@ -1,0 +1,41 @@
+{
+  "issue_count": 6,
+  "issues": [
+    {
+      "page": 1,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 1: block set at 6.77pt but the original at this position is 9.96pt (ratio 0.68 vs page median 0.92) at x=213.6, y=143.3: 约翰内斯・赫特里希罗伯特・格鲁尔克"
+    },
+    {
+      "page": 1,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 1: block set at 6.57pt but the original at this position is 8.99pt (ratio 0.73 vs page median 0.92) at x=56.1, y=636.9: 同等贡献1 巴黎第九大学（Université Paris Dauphine - PSL ）2 "
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.86pt but the original at this position is 10.06pt (ratio 0.78 vs page median 0.92) at x=157.2, y=389.5: v_{t}∈-∂F(γ(t)) ，则关于的沃瑟斯坦梯度流，对几乎处处的"
+    },
+    {
+      "page": 4,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 4: displayed equation at y=615 shifted horizontally by 20pt vs original"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (5 words, 0 CJK chars) at x=55.1, y=440.8: where ωθ is the solution of ˙ωθ(x, t) = ∥vθ(zθ(x, t), t)"
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 6.16pt but the original at this position is 10.06pt (ratio 0.61 vs page median 0.92) at x=268.3, y=566.6: l→∞时，该序列弱收敛于某个。那么，它也弱收敛于"
+    }
+  ]
+}

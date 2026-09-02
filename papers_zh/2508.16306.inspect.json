@@ -1,0 +1,53 @@
+{
+  "issue_count": 8,
+  "issues": [
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (20 words, 0 CJK chars) at x=71.3, y=242.2: Corollary 3.2. Under assumptions 2.1, 2.2 running the up"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (7 words, 0 CJK chars) at x=71.5, y=275.4: sequence hk = tk −tk−1 = c min{tk, 1} where c = Θ"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (4 words, 0 CJK chars) at x=71.3, y=297.3: with an iteration complexity K = Θ"
+    },
+    {
+      "page": 7,
+      "code": "table_structure_mismatch",
+      "severity": "error",
+      "message": "Page 7: table at y=250 has 4 rules vs 3 in the original"
+    },
+    {
+      "page": 18,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 18: displayed equation at y=296 shifted horizontally by 51pt vs original"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (12 words, 0 CJK chars) at x=72.0, y=593.7: appearing in Eq. 18, we analyze therelationship of these"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (2 words, 0 CJK chars) at x=71.6, y=75.6: where (c) uses"
+    },
+    {
+      "page": 29,
+      "code": "table_structure_mismatch",
+      "severity": "error",
+      "message": "Page 29: table rule at y=204.8 is partially erased in the translation (ink coverage 1.00 -> 0.44)"
+    }
+  ]
+}

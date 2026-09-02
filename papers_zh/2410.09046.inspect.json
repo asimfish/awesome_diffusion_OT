@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=85.8, y=181.2: 命题8. 方案（4）可通过求解以下连续时间动力学获得"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (11 words, 0 CJK chars) at x=85.0, y=87.1: t }t∈[0,T −δ] that approximates the true backwards proce"
+    }
+  ]
+}

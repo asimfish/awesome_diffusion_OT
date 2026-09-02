@@ -1,0 +1,41 @@
+{
+  "issue_count": 6,
+  "issues": [
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=90.8, y=90.4: 定理2。在命题1 的假设下，对于足够小的，存在使得"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=126.8, y=132.1: 和为依赖于和的常数。特别地，若及均有限，则当"
+    },
+    {
+      "page": 11,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 11: block set at 9.17pt but the original at this position is 9.96pt (ratio 0.92 vs page median 1.10) at x=90.8, y=254.2: ε≤1，它比熵映射更差。我们猜想Sinkhorn 映射受有限样本效应的影响更显著，因为项"
+    },
+    {
+      "page": 11,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 11: block set at 9.17pt but the original at this position is 9.96pt (ratio 0.92 vs page median 1.10) at x=148.7, y=268.0: ∇ˆα_{ε}(x ) 向映射估计中注入了额外的统计噪声。"
+    },
+    {
+      "page": 11,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 11: block set at 9.17pt but the original at this position is 9.96pt (ratio 0.92 vs page median 1.10) at x=90.8, y=471.1: 图5：当正则化参数较小时，我们观察到Sinkhorn 映射存在强烈的有限样本效应。虽然维数灾难效"
+    },
+    {
+      "page": 19,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 19: displayed equation at y=332 shifted horizontally by 21pt vs original"
+    }
+  ]
+}

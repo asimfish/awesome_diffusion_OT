@@ -1,0 +1,125 @@
+{
+  "issue_count": 20,
+  "issues": [
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (21 words, 0 CJK chars) at x=55.1, y=462.3: where F (·, t) : Rd →Rd is a vector-valued function call"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (9 words, 0 CJK chars) at x=314.9, y=473.5: 2. In particular, for any β > 0, let t0 = n−22β+d andT ="
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (7 words, 0 CJK chars) at x=55.4, y=520.8: Finally, in case 3 where ρn log−c n < pt(x) < ρn logc n,"
+    },
+    {
+      "page": 13,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 13: displayed equation at y=545 shifted horizontally by 36pt vs original"
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (6 words, 0 CJK chars) at x=64.9, y=453.8: i=1 K(xi) such that for any 1 ≤i ≤d and α ≤ℓ,"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (2 words, 0 CJK chars) at x=397.4, y=192.1: ,for any 1 ≤j ≤d."
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (3 words, 0 CJK chars) at x=55.4, y=354.5: For any fixed i,"
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 7.86pt but the original at this position is 10.06pt (ratio 0.78 vs page median 0.92) at x=111.5, y=668.5: C.2,p^{∗} 中定义的核函数阶数。特别地，若取"
+    },
+    {
+      "page": 17,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 17: displayed equation at y=68 shifted horizontally by 27pt vs original"
+    },
+    {
+      "page": 19,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 19: displayed equation at y=148 shifted horizontally by 29pt vs original"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (3 words, 0 CJK chars) at x=55.1, y=621.9: Therefore, for any x ∈G1,"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (4 words, 0 CJK chars) at x=55.4, y=455.3: Using Lemma F.18, for any ε > 0,"
+    },
+    {
+      "page": 31,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 31: block set at 6.77pt but the original at this position is 9.96pt (ratio 0.68 vs page median 0.92) at x=167.7, y=670.0: 此处最后一个等式中，我们利用了"
+    },
+    {
+      "page": 32,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 32: paragraph still in English (8 words, 0 CJK chars) at x=55.4, y=494.3: In general case where X, Y ∈Rd, for any v ∈Sd−1,"
+    },
+    {
+      "page": 35,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 35: block set at 7.07pt but the original at this position is 9.96pt (ratio 0.71 vs page median 0.92) at x=226.8, y=100.9: p^{∗} 。接下来我们使用下面的伯恩斯坦不等式。"
+    },
+    {
+      "page": 35,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 35: paragraph still in English (7 words, 0 CJK chars) at x=55.4, y=672.6: Lemma F.8. For any D > 0 and t > n−T1, if x ∈Rd satisfie"
+    },
+    {
+      "page": 41,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 41: block set at 7.13pt but the original at this position is 10.04pt (ratio 0.71 vs page median 0.92) at x=56.2, y=493.8: 根据贝伦斯（Berens，2013）中的命题4.9 与命题4.12，我们得到联合分布的雷尼熵上界"
+    },
+    {
+      "page": 41,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 41: displayed equation at y=482 shifted horizontally by 19pt vs original"
+    },
+    {
+      "page": 43,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 43: block set at 6.55pt but the original at this position is 8.97pt (ratio 0.73 vs page median 0.92) at x=56.2, y=52.6: 基于分数的扩散模型的极小极大最优性接下来，我们计算高斯分布"
+    },
+    {
+      "page": 45,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 45: paragraph still in English (2 words, 0 CJK chars) at x=55.1, y=65.4: Therefore, denote Dε :=p∗"
+    }
+  ]
+}

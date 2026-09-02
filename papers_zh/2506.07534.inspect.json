@@ -1,0 +1,155 @@
+{
+  "issue_count": 25,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (8 words, 0 CJK chars) at x=55.4, y=169.9: expµ(v) = (expId ◦v)#µ for µ ∈P2(M), v ∈TµP2(M).For inst"
+    },
+    {
+      "page": 4,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 4: displayed equation at y=545 shifted horizontally by 47pt vs original"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 7.56pt but the original at this position is 9.96pt (ratio 0.76 vs page median 0.92) at x=356.1, y=480.8: μ∼P出发到任意目标的最优传输映射，我们将其记为"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 7.79pt but the original at this position is 9.86pt (ratio 0.79 vs page median 0.92) at x=55.8, y=252.3: c 。我们强调，我们是首个以这种方式表示带标签数据集的。我们首先在合成数据和图像数据集上验证，最"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 7.79pt but the original at this position is 9.86pt (ratio 0.79 vs page median 0.92) at x=55.8, y=309.0: C假定已知。与（Hertrich 等人，2024b）类似，我们引入动量以加速基于图像数据集的方案"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 7.79pt but the original at this position is 9.96pt (ratio 0.78 vs page median 0.92) at x=55.8, y=353.0: 验，请参见附录D。相关工作（Alvarez-Melis 与Fusi，2021；Hua 等人，20"
+    },
+    {
+      "page": 16,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 16: displayed equation at y=260 shifted horizontally by 16pt vs original"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (4 words, 0 CJK chars) at x=55.4, y=119.2: i.e., which satisfies for any φ ∈C∞"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (34 words, 0 CJK chars) at x=55.4, y=194.7: Let B ⊆M open, then the map µ ∈P2(M) 7→µ(B) is Borel, in"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (36 words, 0 CJK chars) at x=55.0, y=304.7: We then define L2(P, TM) to be the quotient of the space"
+    },
+    {
+      "page": 26,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 26: block set at 8.17pt but the original at this position is 9.86pt (ratio 0.83 vs page median 0.92) at x=55.9, y=67.6: 命题3.1 的证明与前述证明非常相似。若Γ"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (7 words, 0 CJK chars) at x=55.4, y=285.1: I dPtdt. Then, for any interval J ⊆I such thatspt(φ) ⊆J "
+    },
+    {
+      "page": 30,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 30: paragraph still in English (3 words, 0 CJK chars) at x=55.1, y=220.9: where we used ∥B(γ)∥2"
+    },
+    {
+      "page": 32,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 32: block set at 5.46pt but the original at this position is 10.06pt (ratio 0.54 vs page median 0.92) at x=349.8, y=69.3: 该常数可能随行变化，但仅依赖于"
+    },
+    {
+      "page": 32,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 32: paragraph still in English (5 words, 0 CJK chars) at x=55.4, y=613.0: that is, ⟨ξ, Ψ⟩L2(P) = o(∥Ψ∥L2(P)). Considering Ψ = εξ, "
+    },
+    {
+      "page": 32,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 32: paragraph still in English (2 words, 0 CJK chars) at x=354.1, y=613.0: L2(P) = o(ε) that is ∥ξ∥2"
+    },
+    {
+      "page": 42,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 42: block set at 7.27pt but the original at this position is 10.06pt (ratio 0.72 vs page median 0.92) at x=55.8, y=86.1: 我们注意到且对于每个。设，对于每个，我们定义，并且对于每一个"
+    },
+    {
+      "page": 47,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 47: text in the box at x=58-309, y=49-282 runs 3.1pt past its right edge: '图11：从MNIST 到Fashion MNIST 的流轨迹图像。可见源数据集中'"
+    },
+    {
+      "page": 47,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 47: text in the box at x=284-535, y=49-282 runs 3.1pt past its right edge: '图11：从MNIST 到Fashion MNIST 的流轨迹图像。可见源数据集中'"
+    },
+    {
+      "page": 48,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 48: block set at 7.67pt but the original at this position is 9.96pt (ratio 0.77 vs page median 0.92) at x=55.9, y=423.8: K(μ, ν) =-SW_{2}(μ, ν)的最大均值差异（MMD），将FMNIST 数据集流向"
+    },
+    {
+      "page": 48,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 48: block set at 7.67pt but the original at this position is 9.96pt (ratio 0.77 vs page median 0.92) at x=55.9, y=435.3: m= 0.9。为了使流动数据集的标签与MNIST 的标签匹配，我们在流动数据集P 和目标数据集Q"
+    },
+    {
+      "page": 52,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 52: paragraph still in English (5 words, 0 CJK chars) at x=211.0, y=157.5: i=1 δ(xi,yi) with yi = PC"
+    },
+    {
+      "page": 53,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 53: block set at 8.06pt but the original at this position is 10.06pt (ratio 0.80 vs page median 0.92) at x=243.9, y=387.4: 第一步是常规前向步骤，移动粒子位置。第二步学习一个耦合"
+    },
+    {
+      "page": 56,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 56: paragraph still in English (9 words, 0 CJK chars) at x=55.1, y=249.2: where we used (Villani, 2003, Theorem 5.34) for ∂tp(Id+t"
+    },
+    {
+      "page": 57,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 57: block set at 6.79pt but the original at this position is 9.96pt (ratio 0.68 vs page median 0.92) at x=246.5, y=353.8: 处的梯度由附录B.4 中的猜想得到，对于所有"
+    }
+  ]
+}

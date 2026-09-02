@@ -1,0 +1,65 @@
+{
+  "issue_count": 10,
+  "issues": [
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=183.3, y=184.1: R^{d} 上的布朗运动（Brownian Motion）（Song 等人，2021b）。随后，"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=108.8, y=195.4: p_{data} 满足温和正则性条件下，逆向过程满足如下随机微分方程（SDE）"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (12 words, 0 CJK chars) at x=108.0, y=622.1: steps to approximate qδ to within ε2 inKL divergence, as"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 7.77pt but the original at this position is 9.96pt (ratio 0.78 vs page median 0.92) at x=108.8, y=374.4: E_{Q} ∥∇^{2} logq_{T}_{-}_{t}(Y_{t})∥^{2} F 。我们利"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=424.5, y=421.7: and"
+    },
+    {
+      "page": 14,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 14: displayed equation at y=170 shifted horizontally by 81pt vs original"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (2 words, 0 CJK chars) at x=108.0, y=515.1: where Zs ="
+    },
+    {
+      "page": 15,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 15: block set at 7.57pt but the original at this position is 9.96pt (ratio 0.76 vs page median 0.92) at x=314.7, y=512.7: 引理7 证明中唯一的变化出现在接近结尾处，当我们断言"
+    },
+    {
+      "page": 15,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 15: block set at 7.57pt but the original at this position is 9.96pt (ratio 0.76 vs page median 0.92) at x=279.2, y=523.9: t∈[1, T]成立时。在假设3下，这不再成立。将此变化贯穿证明的其余部分，我们发现(16) 应"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (3 words, 0 CJK chars) at x=108.0, y=722.1: is a P-Brownian motion."
+    }
+  ]
+}

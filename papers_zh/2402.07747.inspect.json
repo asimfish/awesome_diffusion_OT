@@ -1,0 +1,83 @@
+{
+  "issue_count": 13,
+  "issues": [
+    {
+      "page": 13,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 13: block set at 8.54pt but the original at this position is 10.91pt (ratio 0.78 vs page median 0.92) at x=72.8, y=250.3: 推论1。假设命题1 和定理4 中的假设成立。为了得到"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=318.0, y=230.9: and"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=145.0, y=243.6: and"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=274.0, y=243.6: For"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=371.7, y=243.6: and"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=152.9, y=259.7: and"
+    },
+    {
+      "page": 15,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 15: block set at 8.64pt but the original at this position is 10.91pt (ratio 0.79 vs page median 0.92) at x=369.3, y=485.6: n的独立同分布样本的经验测度，且"
+    },
+    {
+      "page": 15,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 15: displayed equation at y=698 shifted horizontally by 50pt vs original"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (6 words, 0 CJK chars) at x=72.0, y=93.3: Lemma 6. Assume ρ0 is L-log-smooth. For t ∈(0, 1"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (4 words, 0 CJK chars) at x=320.9, y=95.1: 2L], ρt = ρ0 ∗N(0, tId) is 2L-log-smooth."
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=315.0, y=582.9: is"
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=383.0, y=596.4: and"
+    },
+    {
+      "page": 28,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 28: displayed equation at y=360 shifted horizontally by 21pt vs original"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "issue_count": 34,
+  "issues": [
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 8.44pt but the original at this position is 10.82pt (ratio 0.78 vs page median 0.92) at x=90.7, y=457.7: 马尔可夫链蒙特卡洛方法需要抽取可能大量的样本，而对于许多"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 8.44pt but the original at this position is 10.80pt (ratio 0.78 vs page median 0.92) at x=90.7, y=470.1: ˆπ 的协方差矩阵可以直接从解中获得变分不等式问题（2）。"
+    },
+    {
+      "page": 2,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 2: text in the box at x=304-418, y=471-623 runs 107.4pt past its right edge: '图1：左图：随机初始化的20 个高斯分布混合'"
+    },
+    {
+      "page": 2,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 2: text in the box at x=411-525, y=471-623 runs 103.2pt past its left edge: '图1：左图：随机初始化的20 个高斯分布混合'"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (11 words, 0 CJK chars) at x=90.0, y=401.5: Lemma 2 For any α ∈R, if ∇2V ⪰αI, then KL(· ∥π) is α-con"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=344.7, y=408.6: is"
+    },
+    {
+      "page": 26,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 26: paragraph still in English (10 words, 0 CJK chars) at x=90.0, y=440.2: Lemma 7 (Altschuler et al. (2023, Proposition 3)) For an"
+    },
+    {
+      "page": 30,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 30: block set at 10.04pt but the original at this position is 10.91pt (ratio 0.92 vs page median 1.09) at x=90.4, y=517.8: τ= 1/2时不成立；在这种情况下，该函数实际上在区间[0"
+    },
+    {
+      "page": 33,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 33: block set at 7.94pt but the original at this position is 10.91pt (ratio 0.73 vs page median 0.92) at x=90.4, y=345.4: 其中我们设接下来，我们遵循常微分方程组"
+    },
+    {
+      "page": 37,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 37: paragraph still in English (7 words, 0 CJK chars) at x=116.9, y=230.8: As R−1 ˙R + ˙RTR−T = R−1 ˙R + (R−1 ˙R)T, the solution is"
+    },
+    {
+      "page": 44,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 44: text in the box at x=201-411, y=230-374 runs 74.7pt past its left edge: '图12：使用20 个高斯粒子对逻辑目标的近似。我们使用步长为'"
+    },
+    {
+      "page": 45,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 45: paragraph still in English (16 words, 0 CJK chars) at x=100.5, y=658.2: Mathematics [Results in Mathematics and Related Areas. 3"
+    },
+    {
+      "page": 46,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 46: paragraph still in English (14 words, 0 CJK chars) at x=90.0, y=658.3: Dominique Bakry, Ivan Gentil, and Michel Ledoux. Analysi"
+    },
+    {
+      "page": 47,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 47: paragraph still in English (14 words, 0 CJK chars) at x=90.0, y=658.2: David Barber and Christopher Bishop. Ensemble learning f"
+    },
+    {
+      "page": 48,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 48: paragraph still in English (14 words, 0 CJK chars) at x=90.0, y=93.6: Jean-David Benamou and Yann Brenier. A numerical method "
+    },
+    {
+      "page": 48,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 48: paragraph still in English (14 words, 0 CJK chars) at x=90.0, y=156.7: Rajendra Bhatia, Tanvi Jain, and Yongdo Lim. On the Bure"
+    },
+    {
+      "page": 48,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 48: paragraph still in English (12 words, 0 CJK chars) at x=90.0, y=228.9: David M. Blei, Alp Kucukelbir, and Jon D. McAuliffe. Var"
+    },
+    {
+      "page": 48,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 48: paragraph still in English (12 words, 0 CJK chars) at x=90.0, y=264.9: Giovanni A. Bonaschi, Jos´e A. Carrillo, Marco Di France"
+    },
+    {
+      "page": 49,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 49: paragraph still in English (13 words, 0 CJK chars) at x=90.0, y=143.1: Sinho Chewi, Murat A. Erdogdu, Mufan B. Li, Ruoqi Shen, "
+    },
+    {
+      "page": 49,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 49: paragraph still in English (13 words, 0 CJK chars) at x=90.0, y=228.6: Katy Craig and Andrea L. Bertozzi. A blob method for the"
+    },
+    {
+      "page": 49,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 49: paragraph still in English (13 words, 0 CJK chars) at x=90.0, y=264.8: Katy Craig, Karthik Elamvazhuthi, Matt Haberland, and Ol"
+    },
+    {
+      "page": 49,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 49: paragraph still in English (12 words, 0 CJK chars) at x=90.0, y=314.5: Arnak S. Dalalyan. Theoretical guarantees for approximat"
+    },
+    {
+      "page": 50,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 50: paragraph still in English (12 words, 0 CJK chars) at x=90.0, y=93.5: Simon Eberle, Barbara Niethammer, and Andr´e Schlichting"
+    },
+    {
+      "page": 50,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 50: paragraph still in English (16 words, 0 CJK chars) at x=90.0, y=129.0: Th´eo Galy-Fajou, Valerio Perrone, and Manfred Opper. Fl"
+    },
+    {
+      "page": 50,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 50: paragraph still in English (12 words, 0 CJK chars) at x=90.0, y=164.6: Antti Honkela and Harri Valpola. Unsupervised variationa"
+    },
+    {
+      "page": 50,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 50: paragraph still in English (14 words, 0 CJK chars) at x=90.0, y=271.4: Richard Jordan, David Kinderlehrer, and Felix Otto. The "
+    },
+    {
+      "page": 51,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 51: paragraph still in English (13 words, 0 CJK chars) at x=90.0, y=93.5: Wu Lin, Mohammad E. Khan, and Mark Schmidt. Stein’s lemm"
+    },
+    {
+      "page": 51,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 51: paragraph still in English (13 words, 0 CJK chars) at x=90.0, y=129.5: Wu Lin, Mohammad E. Khan, and Mark Schmidt. Fast and sim"
+    },
+    {
+      "page": 51,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 51: paragraph still in English (15 words, 0 CJK chars) at x=90.0, y=179.2: Dong C. Liu and Jorge Nocedal. On the limited memory BFG"
+    },
+    {
+      "page": 51,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 51: paragraph still in English (14 words, 0 CJK chars) at x=90.0, y=215.0: Qiang Liu. Stein variational gradient descent as gradien"
+    },
+    {
+      "page": 52,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 52: paragraph still in English (17 words, 0 CJK chars) at x=100.9, y=155.6: in Nonlinear Differential Equations and their Applicatio"
+    },
+    {
+      "page": 52,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 52: paragraph still in English (13 words, 0 CJK chars) at x=90.0, y=190.9: Simo S¨arkk¨a. On unscented Kalman ﬁltering for state es"
+    },
+    {
+      "page": 52,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 52: paragraph still in English (12 words, 0 CJK chars) at x=90.0, y=226.1: Matthias Seeger. Bayesian model selection for support ve"
+    },
+    {
+      "page": 52,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 52: paragraph still in English (12 words, 0 CJK chars) at x=100.9, y=239.6: other kernel classiﬁers. In Advances in Neural Informati"
+    }
+  ]
+}

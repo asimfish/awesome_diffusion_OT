@@ -1,0 +1,119 @@
+{
+  "issue_count": 19,
+  "issues": [
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (9 words, 0 CJK chars) at x=225.4, y=213.7: The ﬁrst estimator that we consider is ˆSλ,n = Sλ(ˆµn, ˆ"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.76pt but the original at this position is 10.06pt (ratio 0.77 vs page median 0.92) at x=150.1, y=174.8: μ, ν∈P(R^{d}) 绝对连续且具有紧支撑。假设布雷尼尔势"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (28 words, 0 CJK chars) at x=108.0, y=459.0: n−2/dif d > 4,n−1/2 log(n)if d = 4,n−1/2if d < 4,where t"
+    },
+    {
+      "page": 5,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 5: text in the box at x=190-412, y=72-169 runs 1.8pt past its left edge: 'plug-in µ = ν'"
+    },
+    {
+      "page": 5,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 5: text in the box at x=190-416, y=72-169 runs 1.8pt past its left edge: 'plug-in µ = ν'"
+    },
+    {
+      "page": 5,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 5: text in the box at x=190-418, y=72-169 runs 1.8pt past its left edge: 'plug-in µ = ν'"
+    },
+    {
+      "page": 9,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 9: text in the box at x=149-332, y=74-154 runs 3.8pt past its left edge: 'plug-in'"
+    },
+    {
+      "page": 9,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 9: text in the box at x=149-334, y=74-154 runs 3.8pt past its left edge: 'plug-in'"
+    },
+    {
+      "page": 9,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 9: text in the box at x=149-337, y=74-154 runs 3.8pt past its left edge: 'plug-in'"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (5 words, 0 CJK chars) at x=172.0, y=388.1: If µ = N(0, A), ν = N(0, B) then I0(µ, ν) = tr S−1 with "
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 5.54pt but the original at this position is 10.04pt (ratio 0.55 vs page median 0.92) at x=257.2, y=505.7: 对于以及任何最大化点。证明的关键是以下"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (8 words, 0 CJK chars) at x=204.0, y=292.3: Rd exp((uk(·) + vk(y) −c(·, y))/λ)dν(y),vk+1 = vkif k is"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (8 words, 0 CJK chars) at x=203.1, y=318.9: Rd exp((uk(x) + vk(·) −c(x, ·))/λ)dµ(x),uk+1 = ukif k is"
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=311.1, y=105.6: and"
+    },
+    {
+      "page": 20,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 20: block set at 8.35pt but the original at this position is 10.06pt (ratio 0.83 vs page median 0.92) at x=108.8, y=130.6: 证明。与[59] 类似，我们希望应用有界差分不等式，但为了无痛地覆盖正则化情形，我们研究原问题（"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (8 words, 0 CJK chars) at x=108.0, y=521.3: Finally if d = 4, we can choose n such that ε ≍n−1/2(log"
+    },
+    {
+      "page": 22,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 22: block set at 7.97pt but the original at this position is 9.86pt (ratio 0.81 vs page median 0.92) at x=287.1, y=237.6: M -利普希茨连续的对数密度。则对几乎每个"
+    },
+    {
+      "page": 23,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 23: block set at 7.56pt but the original at this position is 10.06pt (ratio 0.75 vs page median 0.92) at x=285.1, y=209.7: dh^{2}/2 界定的量。对于第一行的各项，我们看到必须界定形如"
+    },
+    {
+      "page": 23,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 23: block set at 7.56pt but the original at this position is 10.06pt (ratio 0.75 vs page median 0.92) at x=198.8, y=224.8: x_{i})dγ(x, y)| ≤ √ d| R 的积分。因此，让我们具体考虑以下积分："
+    }
+  ]
+}

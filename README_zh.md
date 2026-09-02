@@ -1,6 +1,6 @@
 # Awesome Diffusion × Optimal Transport
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-100-red.svg)](#reports)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-113-red.svg)](#reports)
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -11,7 +11,7 @@
 - **原文 PDF**（`papers/`）与 [SuperTranslate](https://github.com/asimfish/super_translate) **保版式中文译文**（`papers_zh/`，附对象级 QA `*.inspect.json`）；
 - 机器可读元数据（`data/`），本 README 由 `src/generator.py` 生成。
 
-总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 100。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
+总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 113。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
 
 综合分析见 [`report/`](report/)（问题→理论→经典→前沿→我们能做什么，中英 PDF）与 [`slides/`](slides/)（HTML PPT + Beamer PDF）；2026 Q3 增量趋势见 [`trends/`](trends/)。
 
@@ -440,13 +440,13 @@ I. [贡献与引用](#contributing)
 
     用隐式函数定理统一各种 Sinkhorn 层梯度（学习 cost 与 marginal 皆可），比 unrolling 更省内存更稳
 
-11. **Debiaser Beware: Pitfalls of Centering Regularized Transport Maps.** ICML, 2022. [P] [paper](https://arxiv.org/abs/2202.08919) [report](reports/2202.08919.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2202.08919.pdf)
+11. **Debiaser Beware: Pitfalls of Centering Regularized Transport Maps.** ICML, 2022. [P] [paper](https://arxiv.org/abs/2202.08919) [report](reports/2202.08919.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2202.08919.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2202.08919.zh.pdf)
 
     *Aram-Alexandre Pooladian, Marco Cuturi, Jonathan Niles-Weed*
 
     证明对 map 估计 debiasing 并非总有益：ε 大或样本少时反而更差，动摇"一律 debias"的信条
 
-12. **Faster Wasserstein Distance Estimation with the Sinkhorn Divergence.** NeurIPS, 2020. [P] [paper](https://arxiv.org/abs/2006.08172) [report](reports/2006.08172.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2006.08172.pdf)
+12. **Faster Wasserstein Distance Estimation with the Sinkhorn Divergence.** NeurIPS, 2020. [P] [paper](https://arxiv.org/abs/2006.08172) [report](reports/2006.08172.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2006.08172.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2006.08172.zh.pdf)
 
     *Lenaic Chizat, Pierre Roussillon, Flavien Léger, François-Xavier Vialard, Gabriel Peyré*
 
@@ -499,25 +499,25 @@ I. [贡献与引用](#contributing)
 
     神经化 JKO 开山：Brenier 定理 + ICNN 参数化每个 JKO 步的凸势，SGD 免网格/免粒子求解
 
-5. **Flowing Datasets with Wasserstein over Wasserstein Gradient Flows.** ICML, 2025. [P] [paper](https://arxiv.org/abs/2506.07534) [report](reports/2506.07534.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2506.07534.pdf)
+5. **Flowing Datasets with Wasserstein over Wasserstein Gradient Flows.** ICML, 2025. [P] [paper](https://arxiv.org/abs/2506.07534) [report](reports/2506.07534.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2506.07534.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2506.07534.zh.pdf)
 
     *Clément Bonet, Christophe Vauthier, Anna Korba*
 
     把梯度流升到"测度的测度"（WoW）空间，对整个带标签数据集做流动（数据集级迁移/蒸馏）
 
-6. **Importance Corrected Neural JKO Sampling.** ICML, 2025. [P] [paper](https://arxiv.org/abs/2407.20444) [report](reports/2407.20444.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2407.20444.pdf)
+6. **Importance Corrected Neural JKO Sampling.** ICML, 2025. [P] [paper](https://arxiv.org/abs/2407.20444) [report](reports/2407.20444.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2407.20444.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2407.20444.zh.pdf)
 
     *Johannes Hertrich, Robert Gruhlke*
 
     CNF 实现的 JKO 局部步 + 重要性拒绝重采样非局部步，克服 WGF 采样的多峰质量错配，可产 iid 样本并评估密度
 
-7. **Learning diffusion at lightspeed.** NeurIPS (Oral), 2024. [P] [paper](https://arxiv.org/abs/2406.12616) [report](reports/2406.12616.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2406.12616.pdf)
+7. **Learning diffusion at lightspeed.** NeurIPS (Oral), 2024. [P] [paper](https://arxiv.org/abs/2406.12616) [report](reports/2406.12616.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2406.12616.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2406.12616.zh.pdf)
 
     *Antonio Terpin, Nicolas Lanzetti, Martin Gadea, Florian Dörfler*
 
     JKOnet*：用 JKO 步的一阶最优性条件替代双层优化，二次损失学 potential/interaction/internal 三种能量，线性参数化有闭式解
 
-8. **Mirror and Preconditioned Gradient Descent in Wasserstein Space.** NeurIPS (Spotlight), 2024. [P] [paper](https://arxiv.org/abs/2406.08938) [report](reports/2406.08938.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2406.08938.pdf)
+8. **Mirror and Preconditioned Gradient Descent in Wasserstein Space.** NeurIPS (Spotlight), 2024. [P] [paper](https://arxiv.org/abs/2406.08938) [report](reports/2406.08938.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2406.08938.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2406.08938.zh.pdf)
 
     *Clément Bonet, Théo Uscidda, Adam David, Pierre-Cyril Aubin-Frankowski, Anna Korba*
 
@@ -529,13 +529,13 @@ I. [贡献与引用](#contributing)
 
     JKO-ICNN 框架：ICNN 逼近凸函数空间做 JKO，含收敛保证的泛函设计与分子受控生成
 
-10. **Proximal Optimal Transport Modeling of Population Dynamics.** AISTATS, 2022. [P] [paper](https://arxiv.org/abs/2106.06345) [report](reports/2106.06345.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2106.06345.pdf)
+10. **Proximal Optimal Transport Modeling of Population Dynamics.** AISTATS, 2022. [P] [paper](https://arxiv.org/abs/2106.06345) [report](reports/2106.06345.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2106.06345.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2106.06345.zh.pdf)
 
     *Charlotte Bunne, Laetitia Meng-Papaxanthos, Andreas Krause, Marco Cuturi*
 
     JKOnet：反问题视角——从时序快照端到端学习驱动种群演化的能量泛函（单细胞应用）
 
-11. **Variational inference via Wasserstein gradient flows.** NeurIPS, 2022. [P] [paper](https://arxiv.org/abs/2205.15902) [report](reports/2205.15902.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2205.15902.pdf)
+11. **Variational inference via Wasserstein gradient flows.** NeurIPS, 2022. [P] [paper](https://arxiv.org/abs/2205.15902) [report](reports/2205.15902.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2205.15902.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2205.15902.zh.pdf)
 
     *Marc Lambert, Sinho Chewi, Francis Bach, Silvère Bonnabel, Philippe Rigollet*
 
@@ -596,13 +596,13 @@ I. [贡献与引用](#contributing)
 
     DDPM 无需知道 k 即自动以近 k-线性迭代复杂度收敛，且 KL 度量下最优
 
-7. **A Sharp KL-Convergence Analysis for Diffusion Models under Minimal Assumptions.** arXiv, 2025. [R] [paper](https://arxiv.org/abs/2508.16306) [report](reports/2508.16306.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2508.16306.pdf)
+7. **A Sharp KL-Convergence Analysis for Diffusion Models under Minimal Assumptions.** arXiv, 2025. [R] [paper](https://arxiv.org/abs/2508.16306) [report](reports/2508.16306.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2508.16306.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2508.16306.zh.pdf)
 
     *Nishant Jain, Tong Zhang*
 
     「ODE 步+小加噪步」复合分析把 KL 迭代复杂度提到 Õ(d/ε)，无光滑假设下当前最优
 
-8. **Linear Convergence of Diffusion Models Under the Manifold Hypothesis.** COLT, 2025. [P] [paper](https://arxiv.org/abs/2410.09046) [report](reports/2410.09046.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.09046.pdf)
+8. **Linear Convergence of Diffusion Models Under the Manifold Hypothesis.** COLT, 2025. [P] [paper](https://arxiv.org/abs/2410.09046) [report](reports/2410.09046.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.09046.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2410.09046.zh.pdf)
 
     *Peter Potaptchik, Iskander Azangulov, George Deligiannidis*
 
@@ -626,19 +626,19 @@ I. [贡献与引用](#contributing)
 
     首批 FM 的 W2 误差界：L² 速度场误差 + 流的正则性假设（连续时间、不含离散化）
 
-12. **Minimax Optimality of Score-based Diffusion Models: Beyond the Density Lower Bound Assumptions.** ICML spotlight, 2024. [P] [paper](https://arxiv.org/abs/2402.15602) [report](reports/2402.15602.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2402.15602.pdf)
+12. **Minimax Optimality of Score-based Diffusion Models: Beyond the Density Lower Bound Assumptions.** ICML spotlight, 2024. [P] [paper](https://arxiv.org/abs/2402.15602) [report](reports/2402.15602.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2402.15602.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2402.15602.zh.pdf)
 
     *Kaihong Zhang, Caitlyn H. Yin, Feng Liang, Jingbo Liu*
 
     截断核 score 估计器达最优 MSE，去掉密度下界假设后 β≤2 Sobolev 类仍 minimax
 
-13. **Nearly $d$-Linear Convergence Bounds for Diffusion Models via Stochastic Localization.** ICLR spotlight, 2024. [P] [paper](https://arxiv.org/abs/2308.03686) [report](reports/2308.03686.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2308.03686.pdf)
+13. **Nearly $d$-Linear Convergence Bounds for Diffusion Models via Stochastic Localization.** ICLR spotlight, 2024. [P] [paper](https://arxiv.org/abs/2308.03686) [report](reports/2308.03686.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2308.03686.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2308.03686.zh.pdf)
 
     *Joe Benton, Valentin De Bortoli, Arnaud Doucet, George Deligiannidis*
 
     用随机局部化技巧把 KL 迭代复杂度降至 Õ(d/ε²)，仅需数据二阶矩有限
 
-14. **Optimal score estimation via empirical Bayes smoothing.** COLT, 2024. [P] [paper](https://arxiv.org/abs/2402.07747) [report](reports/2402.07747.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2402.07747.pdf)
+14. **Optimal score estimation via empirical Bayes smoothing.** COLT, 2024. [P] [paper](https://arxiv.org/abs/2402.07747) [report](reports/2402.07747.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2402.07747.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2402.07747.zh.pdf)
 
     *Andre Wibisono, Yihong Wu, Kaylee Yingxi Yang*
 
@@ -3118,7 +3118,7 @@ I. [贡献与引用](#contributing)
 ## H. 深读报告、译文与综合报告
 
 - `reports/`：438 份逐篇深读（文件名 = arXiv id）；`data/meta/`：每篇的 TL;DR / 关键数字 / 关系卡。
-- `papers/`：363 份原文；`papers_zh/`：100 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
+- `papers/`：363 份原文；`papers_zh/`：113 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
 - `report/`：综合分析报告（`AWESOME_DIFFUSION_OT_REPORT_zh.md` / `_en.md` 及 PDF）。
 - `slides/`：[HTML PPT](slides/awesome_diffusion_OT_deck.html)（浏览器打开，方向键翻页）、[可编辑 PPTX](slides/awesome_diffusion_OT_deck.pptx) 与 [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf)；报告 PDF：[中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf)。
 - 复现整条流水线：`scripts/build_corpus.py → resolve_arxiv.py → fetch_papers.py → extract_text.py → translate_batch.sh → src/generator.py`。
