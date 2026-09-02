@@ -1,0 +1,59 @@
+{
+  "issue_count": 9,
+  "issues": [
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.62pt but the original at this position is 10.02pt (ratio 0.76 vs page median 0.92) at x=308.2, y=548.5: _{ ̃}_{p}_{(}_{z}_{)}可以通过例如哈钦森迹估计器来估计，以保持可扩展性（So"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (2 words, 0 CJK chars) at x=312.3, y=360.8: gMC-IS"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 7.69pt but the original at this position is 9.99pt (ratio 0.77 vs page median 0.92) at x=55.9, y=613.2: (5),ˆx_{0} 进行估计，也可以类似地估计（附录A.10），而Σ"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (3 words, 0 CJK chars) at x=55.1, y=214.9: where pt(xt) ="
+    },
+    {
+      "page": 17,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 17: displayed equation at y=245 shifted horizontally by 16pt vs original"
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (10 words, 0 CJK chars) at x=241.9, y=208.9: Absorb e−J(x1) for it is independent of x1, and exchange"
+    },
+    {
+      "page": 21,
+      "code": "table_structure_mismatch",
+      "severity": "error",
+      "message": "Page 21: table at y=58 has 4 rules vs 3 in the original"
+    },
+    {
+      "page": 26,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 26: displayed equation at y=81 shifted horizontally by 26pt vs original"
+    },
+    {
+      "page": 33,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 33: preserved region at x=345, y=102 (87x28pt) renders with ink coverage 0.50 vs original"
+    }
+  ]
+}

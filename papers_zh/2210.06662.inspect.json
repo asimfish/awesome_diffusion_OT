@@ -1,0 +1,59 @@
+{
+  "issue_count": 9,
+  "issues": [
+    {
+      "page": 1,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 1: block set at 8.17pt but the original at this position is 9.97pt (ratio 0.82 vs page median 0.92) at x=56.2, y=568.6: 1. 引言理解粒子或个体系统的时间演化是机器学习和自然科学中普遍存在的基本问题。在许多场景中，观"
+    },
+    {
+      "page": 4,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 4: displayed equation at y=326 shifted horizontally by 31pt vs original"
+    },
+    {
+      "page": 5,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 5: displayed equation at y=109 shifted horizontally by 26pt vs original"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 7.76pt but the original at this position is 10.06pt (ratio 0.77 vs page median 0.92) at x=307.9, y=256.4: α_{t}, β_{t} 分别是先验和数据的某种连续变换。为了满足端点边缘分布"
+    },
+    {
+      "page": 17,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 17: displayed equation at y=315 shifted horizontally by 35pt vs original"
+    },
+    {
+      "page": 19,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 19: block set at 5.37pt but the original at this position is 9.87pt (ratio 0.54 vs page median 0.92) at x=56.2, y=243.3: 将该条件代入式（46）的拉格朗日函数，得到定理2.2 中的动作匹配目标，inf"
+    },
+    {
+      "page": 20,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 20: block set at 5.86pt but the original at this position is 10.06pt (ratio 0.58 vs page median 0.92) at x=368.9, y=374.1: v_{t}=∇s_{t} 下自对偶。利用这一变换，布雷格曼散度就是欧几里得范数平方的一半，"
+    },
+    {
+      "page": 23,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 23: paragraph still in English (5 words, 0 CJK chars) at x=55.4, y=454.4: on TqP2(X) is defined as"
+    },
+    {
+      "page": 23,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 23: paragraph still in English (2 words, 0 CJK chars) at x=334.2, y=477.7: where˙pt"
+    }
+  ]
+}

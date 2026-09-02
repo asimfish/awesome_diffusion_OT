@@ -1,0 +1,233 @@
+{
+  "issue_count": 38,
+  "issues": [
+    {
+      "page": 9,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 9: block set at 7.58pt but the original at this position is 10.96pt (ratio 0.69 vs page median 0.92) at x=222.8, y=68.5: ，本身就是一对康托罗维奇（Kantorovich）势，因为将"
+    },
+    {
+      "page": 10,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 10: block set at 9.08pt but the original at this position is 10.96pt (ratio 0.83 vs page median 0.92) at x=103.7, y=66.1: 定理3（卡法雷利正则性理论）。假设Ω满足条件（S1）。进一步假设存在"
+    },
+    {
+      "page": 10,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 10: block set at 9.08pt but the original at this position is 10.96pt (ratio 0.83 vs page median 0.92) at x=157.3, y=90.4: 在相差一个加法常数的意义下唯一，且满足以下性质。"
+    },
+    {
+      "page": 11,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 11: block set at 8.88pt but the original at this position is 10.96pt (ratio 0.81 vs page median 0.92) at x=103.7, y=64.5: 命题4. 设且。则存在一个（-几乎处处唯一"
+    },
+    {
+      "page": 11,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 11: block set at 8.88pt but the original at this position is 10.96pt (ratio 0.81 vs page median 0.92) at x=103.7, y=78.1: 确定的）最优传输映射，从到，它求解蒙日问题（14），其中是一个凸函数，满足以下性质。-周期性的。"
+    },
+    {
+      "page": 11,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 11: displayed equation at y=108 shifted horizontally by 25pt vs original"
+    },
+    {
+      "page": 11,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 11: displayed equation at y=138 shifted horizontally by 53pt vs original"
+    },
+    {
+      "page": 11,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 11: paragraph still in English (2 words, 0 CJK chars) at x=108.4, y=107.8: (i) ∥·∥2 /2 −φ0 is Zd"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (45 words, 0 CJK chars) at x=102.9, y=312.8: Recall that integration over Rd with respect to a measur"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (12 words, 0 CJK chars) at x=102.9, y=381.3: where the proportionality constants are to be chosen suc"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (8 words, 0 CJK chars) at x=102.9, y=496.0: A sufficient condition for equation (34) to hold is for "
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (16 words, 0 CJK chars) at x=102.9, y=549.6: c (R) of order β, constructed for instance using the pro"
+    },
+    {
+      "page": 23,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 23: block set at 7.18pt but the original at this position is 10.96pt (ratio 0.66 vs page median 0.92) at x=249.8, y=337.6: ε∈(0,ε_{0}) ，存在一个仅依赖于Ω的常数使得对"
+    },
+    {
+      "page": 23,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 23: block set at 7.18pt but the original at this position is 10.96pt (ratio 0.66 vs page median 0.92) at x=280.8, y=348.4: 于任意密度，唯一的零均值布雷尼尔"
+    },
+    {
+      "page": 30,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 30: block set at 7.38pt but the original at this position is 10.96pt (ratio 0.67 vs page median 0.92) at x=212.9, y=285.9: C^{α} （Ω）球。我们偶尔会用到以下简单观察。"
+    },
+    {
+      "page": 36,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=489.0, y=616.8: and"
+    },
+    {
+      "page": 38,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 38: paragraph still in English (11 words, 0 CJK chars) at x=102.9, y=413.4: LEMMA 31.Let N ≥2. Assume there exist γ,s > 0 such that "
+    },
+    {
+      "page": 38,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 38: paragraph still in English (30 words, 0 CJK chars) at x=102.9, y=426.4: ∞,∞(Ω) such that withprobability at least 1 −c1/n2, eqn "
+    },
+    {
+      "page": 38,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 38: paragraph still in English (7 words, 0 CJK chars) at x=115.1, y=564.8: LEMMA 32.Let Ψ = Ψbc with N ≥2. Assume that q ∈Bs"
+    },
+    {
+      "page": 38,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=250.1, y=574.3: with"
+    },
+    {
+      "page": 43,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 43: paragraph still in English (4 words, 0 CJK chars) at x=102.9, y=562.4: Thus, for any hn ≤u ≤1,"
+    },
+    {
+      "page": 48,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 48: block set at 8.71pt but the original at this position is 10.96pt (ratio 0.79 vs page median 0.92) at x=201.5, y=322.4: _{d}，且哈尔基是标准正交的，对于任意"
+    },
+    {
+      "page": 48,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 48: paragraph still in English (2 words, 0 CJK chars) at x=134.9, y=393.0: IS ∈Span"
+    },
+    {
+      "page": 51,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 51: displayed equation at y=416 shifted horizontally by 19pt vs original"
+    },
+    {
+      "page": 58,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 58: paragraph still in English (4 words, 0 CJK chars) at x=102.9, y=135.3: for any u > 0to obtain"
+    },
+    {
+      "page": 61,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=499.5, y=554.7: for"
+    },
+    {
+      "page": 61,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=163.4, y=567.6: and"
+    },
+    {
+      "page": 65,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 65: block set at 7.08pt but the original at this position is 10.96pt (ratio 0.65 vs page median 0.92) at x=103.7, y=181.5: 上述显示中的第一项比较了针对不同源分布的最优传输映射。因此，我们进行如下归约，在事件"
+    },
+    {
+      "page": 66,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 66: paragraph still in English (9 words, 0 CJK chars) at x=115.1, y=460.1: LEMMA 49.Let s > 0. Assume P ∈Pac(Td) admits a density p"
+    },
+    {
+      "page": 70,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 70: paragraph still in English (11 words, 0 CJK chars) at x=102.9, y=178.7: where we used equation (94) and the fact that ∥ϕ0∥˙Hα+1("
+    },
+    {
+      "page": 78,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=161.1, y=556.9: or"
+    },
+    {
+      "page": 81,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 81: paragraph still in English (11 words, 0 CJK chars) at x=102.9, y=553.8: N(Ω;M). Then, for any givent < 0, there exists a constan"
+    },
+    {
+      "page": 83,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 83: displayed equation at y=511 shifted horizontally by 49pt vs original"
+    },
+    {
+      "page": 86,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 86: block set at 8.48pt but the original at this position is 10.96pt (ratio 0.77 vs page median 0.92) at x=209.2, y=373.9: bQ^{m} 的最优传输问题中的一致有界康托罗维奇势对。则当"
+    },
+    {
+      "page": 86,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 86: block set at 8.48pt but the original at this position is 10.96pt (ratio 0.77 vs page median 0.92) at x=103.7, y=428.7: 于Ω 的紧致性（Villani, 2003, 注记1.13），拟合势的一致有界性假设总是可以满足"
+    },
+    {
+      "page": 90,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 90: paragraph still in English (3 words, 0 CJK chars) at x=102.9, y=690.1: (µn,h : h ∈H)is asymptotically normal."
+    },
+    {
+      "page": 91,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 91: block set at 10.08pt but the original at this position is 10.96pt (ratio 0.92 vs page median 1.12) at x=103.7, y=97.0: 用康托罗维奇对偶性以及引理69 中康托罗维奇势的稳定性结果，可得"
+    },
+    {
+      "page": 93,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 93: block set at 7.58pt but the original at this position is 10.96pt (ratio 0.69 vs page median 0.92) at x=237.6, y=313.2: 在最后一步中，我们再次使用了引理26(ii) 以及"
+    }
+  ]
+}

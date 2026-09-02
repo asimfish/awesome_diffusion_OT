@@ -1,0 +1,113 @@
+{
+  "issue_count": 18,
+  "issues": [
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 7.77pt but the original at this position is 9.96pt (ratio 0.78 vs page median 0.92) at x=322.9, y=240.8: t 上连续且关于x 连续可微的函数。设"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 7.37pt but the original at this position is 9.96pt (ratio 0.74 vs page median 0.92) at x=90.1, y=405.2: x∈R^{d} 成立，阿列克谢耶夫–格勒布纳公式表明"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 7.07pt but the original at this position is 9.96pt (ratio 0.71 vs page median 0.92) at x=286.4, y=427.9: λ根据假设4 为-正则且），我们有。由此可得"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=422.4, y=288.7: and"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=478.2, y=300.0: is"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=271.4, y=715.1: and"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=478.8, y=714.4: to"
+    },
+    {
+      "page": 8,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 8: block set at 7.57pt but the original at this position is 9.96pt (ratio 0.76 vs page median 0.92) at x=163.6, y=303.6: 定理1 中的结合应能给出关于2-Wasserstein 误差的多项式界，该界关于"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=530.0, y=679.2: and"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=470.4, y=691.9: and"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (4 words, 0 CJK chars) at x=72.0, y=317.7: +ϕ(x′ −ξ) is strictlycoandD2ϕ′ = τ −2Id + D2ϕ(x′ −ξ) ≥τ "
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (9 words, 0 CJK chars) at x=72.0, y=686.0: Proof. Fix τ > 0, so that W ′ = W + ξ = U + η + ξ where "
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=88.9, y=657.9: and"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=421.2, y=657.9: and"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=145.3, y=669.7: is"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (8 words, 0 CJK chars) at x=212.4, y=430.4: 2 | W ′ ≤2dc2τ 2 with probability at least 1 −6de−c2/2, "
+    },
+    {
+      "page": 17,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 17: displayed equation at y=367 shifted horizontally by 15pt vs original"
+    },
+    {
+      "page": 17,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 17: displayed equation at y=366 shifted horizontally by 16pt vs original"
+    }
+  ]
+}

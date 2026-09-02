@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 18,
+      "code": "table_cells_reflowed",
+      "severity": "error",
+      "message": "Page 18: table at y=111-138 has 2 source rows with up to 3 cells, but the translation sets them as 1 multi-cell rows (up to 2 cells): cells re-flowed as prose"
+    },
+    {
+      "page": 20,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 20: displayed equation at y=367 shifted horizontally by 24pt vs original"
+    }
+  ]
+}

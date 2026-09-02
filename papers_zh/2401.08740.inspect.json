@@ -1,0 +1,29 @@
+{
+  "issue_count": 4,
+  "issues": [
+    {
+      "page": 8,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 8: preserved region at x=323, y=534 (157x10pt) renders with ink coverage 0.00 vs original"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (9 words, 0 CJK chars) at x=134.4, y=421.1: where v(x, t) = E[( ˙αtx∗+ ˙σtε)|xt = x] = ˙αtE[x∗|xt = "
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=147.3, y=426.1: where"
+    },
+    {
+      "page": 23,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 23: block set at 7.37pt but the original at this position is 9.86pt (ratio 0.75 vs page median 0.92) at x=309.7, y=550.5: L^{t} 也处处有定义，则这样的扩散系数在[0"
+    }
+  ]
+}

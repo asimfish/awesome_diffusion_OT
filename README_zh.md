@@ -1,6 +1,6 @@
 # Awesome Diffusion × Optimal Transport
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-113-red.svg)](#reports)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-126-red.svg)](#reports)
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -11,7 +11,7 @@
 - **原文 PDF**（`papers/`）与 [SuperTranslate](https://github.com/asimfish/super_translate) **保版式中文译文**（`papers_zh/`，附对象级 QA `*.inspect.json`）；
 - 机器可读元数据（`data/`），本 README 由 `src/generator.py` 生成。
 
-总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 113。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
+总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 126。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
 
 综合分析见 [`report/`](report/)（问题→理论→经典→前沿→我们能做什么，中英 PDF）与 [`slides/`](slides/)（HTML PPT + Beamer PDF）；2026 Q3 增量趋势见 [`trends/`](trends/)。
 
@@ -620,7 +620,7 @@ I. [贡献与引用](#contributing)
 
     Poincaré 不等式+度量熵的统一估计框架，覆盖无限宽浅层网络 map 的首个统计率
 
-11. **Error Bounds for Flow Matching Methods.** TMLR, 2024. [P] [paper](https://arxiv.org/abs/2305.16860) [report](reports/2305.16860.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2305.16860.pdf)
+11. **Error Bounds for Flow Matching Methods.** TMLR, 2024. [P] [paper](https://arxiv.org/abs/2305.16860) [report](reports/2305.16860.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2305.16860.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2305.16860.zh.pdf)
 
     *Joe Benton, George Deligiannidis, Arnaud Doucet*
 
@@ -644,7 +644,7 @@ I. [贡献与引用](#contributing)
 
     确立 score 估计本身的 minimax 率 Θ̃(n^{-2/(d+4)})，正式坐实 score 学习的维数灾难
 
-15. **Plugin Estimation of Smooth Optimal Transport Maps.** Ann. Statist. 52(3), 2024. [P] [paper](https://arxiv.org/abs/2107.12364) [report](reports/2107.12364.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2107.12364.pdf)
+15. **Plugin Estimation of Smooth Optimal Transport Maps.** Ann. Statist. 52(3), 2024. [P] [paper](https://arxiv.org/abs/2107.12364) [report](reports/2107.12364.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2107.12364.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2107.12364.zh.pdf)
 
     *Tudor Manole, Sivaraman Balakrishnan, Jonathan Niles-Weed, Larry Wasserman*
 
@@ -688,19 +688,19 @@ I. [贡献与引用](#contributing)
 
     奠基：conditional probability path + CFM 目标，simulation-free 训练 CNF，提出 Cond-OT 路径优于 diffusion 路径
 
-6. **On the Guidance of Flow Matching.** ICML spotlight, 2025. [P] [paper](https://arxiv.org/abs/2502.02150) [report](reports/2502.02150.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2502.02150.pdf)
+6. **On the Guidance of Flow Matching.** ICML spotlight, 2025. [P] [paper](https://arxiv.org/abs/2502.02150) [report](reports/2502.02150.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2502.02150.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2502.02150.zh.pdf)
 
     *Ruiqi Feng, Chenglei Yu, Wenhao Deng, Peiyan Hu, Tailin Wu*
 
     首个通用 FM 引导框架：导出 training-free 渐近精确引导、训练式引导损失，经典梯度引导为特例
 
-7. **Bespoke Solvers for Generative Flow Models.** ICLR spotlight, 2024. [P] [paper](https://arxiv.org/abs/2310.19075) [report](reports/2310.19075.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2310.19075.pdf)
+7. **Bespoke Solvers for Generative Flow Models.** ICLR spotlight, 2024. [P] [paper](https://arxiv.org/abs/2310.19075) [report](reports/2310.19075.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2310.19075.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2310.19075.zh.pdf)
 
     *Neta Shaul, Juan Perez, Ricky T. Q. Chen, Ali Thabet, Albert Pumarola, Yaron Lipman*
 
     为给定预训练流模型定制 ODE 求解器（约 80 个参数、1% 训练开销），低 NFE 采样大幅提质；后续 Non-Stationary 版本发表于 ICML 2024
 
-8. **SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers.** ECCV, 2024. [P] [paper](https://arxiv.org/abs/2401.08740) [report](reports/2401.08740.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2401.08740.pdf)
+8. **SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers.** ECCV, 2024. [P] [paper](https://arxiv.org/abs/2401.08740) [report](reports/2401.08740.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2401.08740.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2401.08740.zh.pdf)
 
     *Nanye Ma, Mark Goldstein, Michael S. Albergo, Nicholas M. Boffi, Eric Vanden-Eijnden, Saining Xie*
 
@@ -712,25 +712,25 @@ I. [贡献与引用](#contributing)
 
     把 base 分布条件化于目标数据（非 minibatch-OT 的耦合方式），一样的平方损失训练，用于超分/补全等条件生成
 
-10. **Action Matching: Learning Stochastic Dynamics from Samples.** ICML, 2023. [P] [paper](https://arxiv.org/abs/2210.06662) [report](reports/2210.06662.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2210.06662.pdf)
+10. **Action Matching: Learning Stochastic Dynamics from Samples.** ICML, 2023. [P] [paper](https://arxiv.org/abs/2210.06662) [report](reports/2210.06662.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2210.06662.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2210.06662.zh.pdf)
 
     *Kirill Neklyudov, Rob Brekelmans, Daniel Severo, Alireza Makhzani*
 
     只用时间边缘快照学动力学：从 Benamou-Brenier 最小作用量出发，无需耦合样本或 OT 求解器，含 entropic/unbalanced 扩展
 
-11. **Building Normalizing Flows with Stochastic Interpolants.** ICLR, 2023. [P] [paper](https://arxiv.org/abs/2209.15571) [report](reports/2209.15571.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2209.15571.pdf)
+11. **Building Normalizing Flows with Stochastic Interpolants.** ICLR, 2023. [P] [paper](https://arxiv.org/abs/2209.15571) [report](reports/2209.15571.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2209.15571.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2209.15571.zh.pdf)
 
     *Michael S. Albergo, Eric Vanden-Eijnden*
 
     与 FM 同期独立提出插值式 simulation-free 训练（InterFlow），并给出最小化路径长度→OT map 的视角
 
-12. **On Kinetic Optimal Probability Paths for Generative Models.** ICML, 2023. [P] [paper](https://arxiv.org/abs/2306.06626) [report](reports/2306.06626.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2306.06626.pdf)
+12. **On Kinetic Optimal Probability Paths for Generative Models.** ICML, 2023. [P] [paper](https://arxiv.org/abs/2306.06626) [report](reports/2306.06626.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2306.06626.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2306.06626.zh.pdf)
 
     *Neta Shaul, Ricky T. Q. Chen, Maximilian Nickel, Matt Le, Yaron Lipman*
 
     噪声调度理论：在 Gaussian 路径族中求动能最优路径，证明 n/√d→0 时 Cond-OT 路径动能最优
 
-13. **Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2303.00848) [report](reports/2303.00848.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2303.00848.pdf)
+13. **Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2303.00848) [report](reports/2303.00848.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2303.00848.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2303.00848.zh.pdf)
 
     *Diederik P. Kingma, Ruiqi Gao*
 
@@ -797,7 +797,7 @@ I. [贡献与引用](#contributing)
 
     扩散侧的 batch 内就近噪声分配（量化线性分配，1024 batch 仅 22.8ms），训练加速最高 3×
 
-10. **Metric Flow Matching for Smooth Interpolations on the Data Manifold.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2405.14780) [report](reports/2405.14780.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2405.14780.pdf)
+10. **Metric Flow Matching for Smooth Interpolations on the Data Manifold.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2405.14780) [report](reports/2405.14780.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2405.14780.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2405.14780.zh.pdf)
 
     *Kacper Kapuśniak, Peter Potaptchik, Teodora Reu, Leo Zhang, Alexander Tong, Michael Bronstein et al.*
 
@@ -815,7 +815,7 @@ I. [贡献与引用](#contributing)
 
     把「耦合的选择」形式化为随机插值框架中的建模自由度，给出依赖数据/条件的耦合构造与理论
 
-13. **Equivariant flow matching.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2306.15030) [report](reports/2306.15030.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2306.15030.pdf)
+13. **Equivariant flow matching.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2306.15030) [report](reports/2306.15030.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2306.15030.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2306.15030.zh.pdf)
 
     *Leon Klein, Andreas Krämer, Frank Noé*
 
@@ -827,7 +827,7 @@ I. [贡献与引用](#contributing)
 
     BoMb-OT 在「batch 之间」再解一层 OT 以修正朴素平均的失真，m-OT 是其熵正则极限
 
-15. **Learning with minibatch Wasserstein : asymptotic and gradient properties.** AISTATS, 2020. [P] [paper](https://arxiv.org/abs/1910.04091) [report](reports/1910.04091.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/1910.04091.pdf)
+15. **Learning with minibatch Wasserstein : asymptotic and gradient properties.** AISTATS, 2020. [P] [paper](https://arxiv.org/abs/1910.04091) [report](reports/1910.04091.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/1910.04091.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/1910.04091.zh.pdf)
 
     *Kilian Fatras, Younes Zine, Rémi Flamary, Rémi Gribonval, Nicolas Courty*
 
@@ -922,7 +922,7 @@ I. [贡献与引用](#contributing)
 
     Annealing Reflow 解决大师小徒初始化失配 + Flow-Guided Distillation，15.7M 参数一步 FID 5.02（CIFAR-10）
 
-15. **Rectified Flow: A Marginal Preserving Approach to Optimal Transport.** arXiv, 2022. [R] [paper](https://arxiv.org/abs/2209.14577) [report](reports/2209.14577.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2209.14577.pdf)
+15. **Rectified Flow: A Marginal Preserving Approach to Optimal Transport.** arXiv, 2022. [R] [paper](https://arxiv.org/abs/2209.14577) [report](reports/2209.14577.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2209.14577.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2209.14577.zh.pdf)
 
     *Qiang Liu*
 
@@ -2644,7 +2644,7 @@ I. [贡献与引用](#contributing)
 
     用 premetric（测地/谱距离）闭式构造流形条件向量场，简单几何上完全 simulation-free，奠定黎曼 FM 范式
 
-4. ⭐ **Metric Flow Matching for Smooth Interpolations on the Data Manifold.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2405.14780) [report](reports/2405.14780.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2405.14780.pdf)
+4. ⭐ **Metric Flow Matching for Smooth Interpolations on the Data Manifold.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2405.14780) [report](reports/2405.14780.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2405.14780.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2405.14780.zh.pdf)
 
     *Kacper Kapuśniak, Peter Potaptchik, Teodora Reu, Leo Zhang, Alexander Tong, Michael Bronstein et al.*
 
@@ -3118,7 +3118,7 @@ I. [贡献与引用](#contributing)
 ## H. 深读报告、译文与综合报告
 
 - `reports/`：438 份逐篇深读（文件名 = arXiv id）；`data/meta/`：每篇的 TL;DR / 关键数字 / 关系卡。
-- `papers/`：363 份原文；`papers_zh/`：113 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
+- `papers/`：363 份原文；`papers_zh/`：126 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
 - `report/`：综合分析报告（`AWESOME_DIFFUSION_OT_REPORT_zh.md` / `_en.md` 及 PDF）。
 - `slides/`：[HTML PPT](slides/awesome_diffusion_OT_deck.html)（浏览器打开，方向键翻页）、[可编辑 PPTX](slides/awesome_diffusion_OT_deck.pptx) 与 [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf)；报告 PDF：[中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf)。
 - 复现整条流水线：`scripts/build_corpus.py → resolve_arxiv.py → fetch_papers.py → extract_text.py → translate_batch.sh → src/generator.py`。

@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 3,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 3: text in the box at x=91-137, y=81-112 runs 2.3pt past its bottom edge: '5'"
+    },
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (2 words, 0 CJK chars) at x=230.0, y=447.1: zt = αλx + σλϵ where ϵ ∼N(0, I)(1)"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 7.17pt but the original at this position is 9.96pt (ratio 0.72 vs page median 0.92) at x=108.5, y=504.3: 由此，可将方程4 的加权损失改写为："
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (29 words, 0 CJK chars) at x=107.7, y=74.3: Therefore, combining the derivations above, the CFM loss"
+    },
+    {
+      "page": 20,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 20: block set at 7.47pt but the original at this position is 9.86pt (ratio 0.76 vs page median 0.92) at x=108.4, y=454.6: 一种常见的选择是方差保持（Variance Preserving，VP）随机微分方程，它将去噪扩"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (4 words, 0 CJK chars) at x=184.1, y=142.0: λ (z −αλˆxθ(z; λ))(With a data prediction model)(109)"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (4 words, 0 CJK chars) at x=270.2, y=665.4: 2(v-prediction with VP SDE)(124)"
+    }
+  ]
+}

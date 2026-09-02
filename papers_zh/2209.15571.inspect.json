@@ -1,0 +1,59 @@
+{
+  "issue_count": 9,
+  "issues": [
+    {
+      "page": 1,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 1: paragraph still in English (9 words, 0 CJK chars) at x=121.3, y=718.7: if x ∼ρ0 then Xt(x) ∼ρt for some density ρt such that ρt"
+    },
+    {
+      "page": 2,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 2: text in the box at x=102-368, y=63-176 runs 34.9pt past its right edge: '们的方法所生成映射'"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (3 words, 0 CJK chars) at x=118.8, y=632.7: condition for ˆv = v is"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (4 words, 0 CJK chars) at x=108.0, y=236.7: with jt(x) given by (B.7)."
+    },
+    {
+      "page": 18,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 18: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=111.4, y=141.2: R _{R}_{d}|ˆvt(x)|^{2}ρt(x)dx 的速度这一事实一致。然而我们强调，即"
+    },
+    {
+      "page": 24,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 24: paragraph still in English (16 words, 0 CJK chars) at x=108.0, y=530.8: Since we assume that ˙at ≤0 and ˙bt ≥0 (see (B.3), the d"
+    },
+    {
+      "page": 25,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 25: displayed equation at y=675 shifted horizontally by 48pt vs original"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (7 words, 0 CJK chars) at x=108.0, y=464.4: where we used the shorthand notations Ik"
+    },
+    {
+      "page": 26,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 26: paragraph still in English (2 words, 0 CJK chars) at x=108.0, y=155.3: where parameters {α, β}M"
+    }
+  ]
+}

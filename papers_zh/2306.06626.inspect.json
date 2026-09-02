@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (15 words, 0 CJK chars) at x=307.4, y=348.6: Our first result considers such data distribution q and "
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.50pt but the original at this position is 10.00pt (ratio 0.85 vs page median 0.92) at x=61.7, y=238.5: 推论4.3. 由条件Cond-OT（方程14）定义的高斯概率路径在"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (2 words, 0 CJK chars) at x=55.4, y=69.2: Hence, λ(s) is"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (2 words, 0 CJK chars) at x=55.1, y=69.2: where a, b, c satisfy"
+    },
+    {
+      "page": 22,
+      "code": "table_cells_reflowed",
+      "severity": "error",
+      "message": "Page 22: table at y=333-402 has 4 source rows with up to 6 cells, but the translation sets them as 2 multi-cell rows (up to 6 cells): cells re-flowed as prose"
+    }
+  ]
+}

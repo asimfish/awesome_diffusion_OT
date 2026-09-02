@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (3 words, 0 CJK chars) at x=74.5, y=604.3: • For any λ ∈V, EP[|F(X, Y, λ)|] < ∞"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (9 words, 0 CJK chars) at x=74.5, y=620.4: • For P-almost all (X, Y ) ∈Rd × Rd, the map V →R, λ →F("
+    }
+  ]
+}
