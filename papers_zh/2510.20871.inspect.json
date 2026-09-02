@@ -1,0 +1,65 @@
+{
+  "issue_count": 10,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (9 words, 0 CJK chars) at x=108.0, y=584.6: H2. There exists (at least) a coupling π ∈Π(µ, ν) such t"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (8 words, 0 CJK chars) at x=108.0, y=643.2: t)t∈[0,T ) is solution ofthe SDE (see Proposition 1 in S"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (10 words, 0 CJK chars) at x=108.0, y=464.8: (ii) There exists α ∈[0, +∞) such that for any x0, xt, x"
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 22: paragraph still in English (3 words, 0 CJK chars) at x=108.0, y=262.2: Rd × B(R2d) →[0, 1] such that"
+    },
+    {
+      "page": 23,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 23: block set at 8.56pt but the original at this position is 10.06pt (ratio 0.85 vs page median 0.92) at x=107.6, y=685.7: 其中，在最后一步中，我们使用了支配收敛定理。条件(20) 使得"
+    },
+    {
+      "page": 24,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 24: block set at 7.46pt but the original at this position is 10.06pt (ratio 0.74 vs page median 0.92) at x=108.8, y=123.1: bP 表示与之关联的桥，即满足以下条件的马尔可夫核：从几何视角来看，迭代马尔可夫拟合（IMF）算"
+    },
+    {
+      "page": 29,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 29: paragraph still in English (9 words, 0 CJK chars) at x=107.6, y=605.8: where we used that, for any A ∈B(CT ), they hold Π[0,T ]"
+    },
+    {
+      "page": 29,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 29: paragraph still in English (11 words, 0 CJK chars) at x=108.0, y=617.4: dˆπ0,T (x0, xT )bˆΠ[0,T ]((x0, xT ), A) together with th"
+    },
+    {
+      "page": 30,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 30: paragraph still in English (7 words, 0 CJK chars) at x=108.0, y=169.3: H5. (i)’ There exist αµ, αν ∈(0, +∞), βµ, βν ∈(0, +∞] su"
+    },
+    {
+      "page": 30,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 30: paragraph still in English (6 words, 0 CJK chars) at x=108.0, y=210.4: H7. (i)’ There exist αµ, αν ∈(0, +∞), βµ, βν ∈(0, +∞], L"
+    }
+  ]
+}

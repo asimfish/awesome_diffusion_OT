@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (4 words, 0 CJK chars) at x=107.8, y=535.3: M := {P ∈P | P is a (Markov) diffusion process},"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (4 words, 0 CJK chars) at x=306.1, y=375.7: 0,1 and H′, K′. That is, HK′"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (15 words, 0 CJK chars) at x=71.2, y=605.0: 0,1), parametrized by diffusion process distributions, a"
+    },
+    {
+      "page": 6,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 6: preserved region at x=77, y=605 (94x25pt) renders with ink coverage 0.84 vs original"
+    },
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (7 words, 0 CJK chars) at x=71.6, y=654.2: The dynamic solutions are then recovered by F (λ)"
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 8.26pt but the original at this position is 10.06pt (ratio 0.82 vs page median 0.90) at x=72.8, y=656.8: 构造两个前向-后向序列。对于序列"
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 7.74pt but the original at this position is 10.03pt (ratio 0.77 vs page median 0.92) at x=72.4, y=81.4: 由于每一对具有如下形式，我们也恢复了动态去噪扩散概率流（DIPF）"
+    }
+  ]
+}

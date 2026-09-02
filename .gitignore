@@ -18,3 +18,5 @@ slides/beamer/*.snm
 slides/beamer/*.out
 slides/beamer/*.toc
 slides/beamer/*.vrb
+papers_zh/.*.tmp
+papers_zh/*.tmp

@@ -41,6 +41,15 @@ TOPIC_EN = {
     "t30": "Edge Deployment, Benchmarks and Venue Trends",
 }
 REL = "https://github.com/asimfish/awesome_diffusion_OT/releases/download"
+
+
+def _assets(tag):
+    p = ROOT / f"data/release_assets_{tag}.json"
+    return set(json.loads(p.read_text())) if p.exists() else set()
+
+
+ASSETS_EN = _assets("pdf-en-v1") or {p.name for p in (ROOT / "papers").glob("*.pdf")}
+ASSETS_ZH = _assets("pdf-zh-v1")
 EV = {"P": "proceedings", "A": "accepted", "R": "preprint", "B": "book/survey"}
 EV_ZH = {"P": "论文集", "A": "已接收", "R": "预印本", "B": "教材/综述"}
 
@@ -69,9 +78,9 @@ def item_links(r, rid):
     if (ROOT / f"reports/{rid}.md").exists():
         links.append(f"[report](reports/{rid}.md)")
     stem = a.replace("/", "_") if a else None
-    if stem and (ROOT / f"papers/{stem}.pdf").exists():
+    if stem and f"{stem}.pdf" in ASSETS_EN:
         links.append(f"[PDF]({REL}/pdf-en-v1/{stem}.pdf)")
-    if stem and (ROOT / f"papers_zh/{stem}.zh.pdf").exists():
+    if stem and f"{stem}.zh.pdf" in ASSETS_ZH:
         links.append(f"[zh-PDF]({REL}/pdf-zh-v1/{stem}.zh.pdf)")
     return " ".join(links)
 
@@ -100,7 +109,7 @@ def render(lang):
     uniq = [r for r in rows if not r["dup_of"]]
     n_reports = len(list((ROOT / "reports").glob("*.md")))
     n_pdf = len(list((ROOT / "papers").glob("*.pdf")))
-    n_zh = len(list((ROOT / "papers_zh").glob("*.zh.pdf")))
+    n_zh = len(ASSETS_ZH) if ASSETS_ZH else len(list((ROOT / "papers_zh").glob("*.zh.pdf")))
     n_star = sum(1 for r in uniq if r["star"])
     L = []
     if zh:

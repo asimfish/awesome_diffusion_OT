@@ -15,6 +15,7 @@ upload_dir() {  # tag dir glob
     gh release upload "$tag" "$f" -R "$REPO" --clobber >/dev/null 2>&1 && n=$((n+1)) && echo "[$(date +%H:%M:%S)] uploaded $tag/$b" || echo "[$(date +%H:%M:%S)] FAILED $b"
   done
   echo "[$(date +%H:%M:%S)] $tag: uploaded $n new assets"
+  gh release view "$tag" -R "$REPO" --json assets --jq '[.assets[].name]' > "data/release_assets_${tag}.json" 2>/dev/null || true
 }
 if [ "$WHAT" = zh ] || [ "$WHAT" = all ]; then
   ensure_release pdf-zh-v1 "Chinese translations (layout-preserving, SuperTranslate + object-level QA)" "Translated PDFs: <arxiv_id>.zh.pdf. QA reports are tracked in git under papers_zh/*.inspect.json. For personal study only; copyright remains with the original authors/publishers."

@@ -1,6 +1,6 @@
 # Awesome Diffusion × Optimal Transport
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-91-red.svg)](#reports)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-89-red.svg)](#reports)
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -11,7 +11,7 @@
 - **原文 PDF**（`papers/`）与 [SuperTranslate](https://github.com/asimfish/super_translate) **保版式中文译文**（`papers_zh/`，附对象级 QA `*.inspect.json`）；
 - 机器可读元数据（`data/`），本 README 由 `src/generator.py` 生成。
 
-总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 91。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
+总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 89。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
 
 综合分析见 [`report/`](report/)（问题→理论→经典→前沿→我们能做什么，中英 PDF）与 [`slides/`](slides/)（HTML PPT + Beamer PDF）；2026 Q3 增量趋势见 [`trends/`](trends/)。
 
@@ -190,7 +190,7 @@ I. [贡献与引用](#contributing)
 
     反例证伪上述猜想：流映射一般不是凸函数梯度，障碍是一个 Hessian 非交换项；同时指出数值上"近乎最优"、量化次优度是开放问题
 
-6. **Learning Monge maps with constrained drifting models.** arXiv 2603.25182, 2026. [R] [paper](https://arxiv.org/abs/2603.25182) [report](reports/2603.25182.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2603.25182.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2603.25182.zh.pdf)
+6. **Learning Monge maps with constrained drifting models.** arXiv 2603.25182, 2026. [R] [paper](https://arxiv.org/abs/2603.25182) [report](reports/2603.25182.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2603.25182.pdf)
 
     *Théo Dumont, Théo Lacombe, François-Xavier Vialard*
 
@@ -208,7 +208,7 @@ I. [贡献与引用](#contributing)
 
     把 SOC 求解转化为最小二乘回归（借鉴条件 score matching 哲学），path-wise reparameterization trick 降方差
 
-9. **The Brownian transport map.** Probab. Theory Relat. Fields, 2024. [P] [paper](https://arxiv.org/abs/2111.11521) [report](reports/2111.11521.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2111.11521.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2111.11521.zh.pdf)
+9. **The Brownian transport map.** Probab. Theory Relat. Fields, 2024. [P] [paper](https://arxiv.org/abs/2111.11521) [report](reports/2111.11521.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2111.11521.pdf)
 
     *Dan Mikulincer, Yair Shenfeld*
 
@@ -263,7 +263,7 @@ I. [贡献与引用](#contributing)
 
     定义路径测度流「SB Flow」，离散化得 α-IMF（α=1 退化为 IMF）；α<1 时在线更新单一网络，免多轮重训，∀α∈(0,1] 收敛到 SB
 
-3. ⭐ **Diffusion Schrödinger Bridge Matching.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2303.16852) [report](reports/2303.16852.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2303.16852.pdf)
+3. ⭐ **Diffusion Schrödinger Bridge Matching.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2303.16852) [report](reports/2303.16852.md)
 
     *Yuyang Shi, Valentin De Bortoli, Andrew Campbell, Arnaud Doucet*
 
@@ -313,7 +313,7 @@ I. [贡献与引用](#contributing)
 
     半监督 SB：<8% 预配对样本作为 state feedback 嵌入广义 EOT→动态匹配，显著加速训练并提升泛化
 
-13. **Momentum Multi-Marginal Schrödinger Bridge Matching.** NeurIPS, 2025. [P] [paper](https://arxiv.org/abs/2506.10168) [report](reports/2506.10168.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2506.10168.pdf)
+13. **Momentum Multi-Marginal Schrödinger Bridge Matching.** NeurIPS, 2025. [P] [paper](https://arxiv.org/abs/2506.10168) [report](reports/2506.10168.md)
 
     *Panagiotis Theodoropoulos, Augustinos D. Saravanos, Evangelos A. Theodorou, Guan-Horng Liu*
 
@@ -345,7 +345,7 @@ I. [贡献与引用](#contributing)
 
     把任务特定 state cost 纳入匹配框架 = 条件随机最优控制求解广义 SB，训练全程保持可行 transport
 
-19. **Light Schrödinger Bridge.** ICLR, 2024. [P] [paper](https://arxiv.org/abs/2310.01174) [report](reports/2310.01174.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2310.01174.pdf)
+19. **Light Schrödinger Bridge.** ICLR, 2024. [P] [paper](https://arxiv.org/abs/2310.01174) [report](reports/2310.01174.md)
 
     *Alexander Korotin, Nikita Gushchin, Evgeny Burnaev*
 
@@ -803,7 +803,7 @@ I. [贡献与引用](#contributing)
 
     非欧成本：插值改为数据依赖黎曼度量下的近似测地线（OT-MFM），路径贴合数据流形，单细胞轨迹 SOTA
 
-11. **Simulation-free Schrödinger bridges via score and flow matching.** AISTATS, 2024. [P] [paper](https://arxiv.org/abs/2307.03672) [report](reports/2307.03672.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2307.03672.pdf)
+11. **Simulation-free Schrödinger bridges via score and flow matching.** AISTATS, 2024. [P] [paper](https://arxiv.org/abs/2307.03672) [report](reports/2307.03672.md)
 
     *Alexander Tong, Nikolay Malkin, Kilian Fatras, Lazar Atanackovic, Yanlei Zhang, Guillaume Huguet et al.*
 
@@ -1342,7 +1342,7 @@ I. [贡献与引用](#contributing)
 
     一般化 bridge score matching 统一设计空间（VE/VP 桥），退化情形回收标准扩散与 OT-Flow-Matching；配对翻译（edges2handbags、DIODE）显著超基线
 
-4. ⭐ **Unpaired Image-to-Image Translation via Neural Schrödinger Bridge.** ICLR, 2024. [P] [paper](https://arxiv.org/abs/2305.15086) [report](reports/2305.15086.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2305.15086.pdf)
+4. ⭐ **Unpaired Image-to-Image Translation via Neural Schrödinger Bridge.** ICLR, 2024. [P] [paper](https://arxiv.org/abs/2305.15086) [report](reports/2305.15086.md)
 
     *Beomsu Kim, Gihyun Kwon, Kwanyoung Kim, Jong Chul Ye*
 
@@ -1354,7 +1354,7 @@ I. [贡献与引用](#contributing)
 
     两个独立预训练扩散的 PF-ODE latent 拼接实现零配对/免联合训练翻译，理论上等价于"源→latent→目标"两段 Schrödinger 桥（熵正则 OT）串联，精确循环一致
 
-6. ⭐ **I$^2$SB: Image-to-Image Schrödinger Bridge.** ICML, 2023. [P] [paper](https://arxiv.org/abs/2302.05872) [report](reports/2302.05872.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2302.05872.pdf)
+6. ⭐ **I$^2$SB: Image-to-Image Schrödinger Bridge.** ICML, 2023. [P] [paper](https://arxiv.org/abs/2302.05872) [report](reports/2302.05872.md)
 
     *Guan-Horng Liu, Arash Vahdat, De-An Huang, Evangelos A. Theodorou, Weili Nie, Anima Anandkumar*
 
@@ -1370,7 +1370,7 @@ I. [贡献与引用](#contributing)
 
     用随机最优控制统一扩散桥：Doob h-transform 是终端惩罚 γ→∞ 的特例，可调 γ 改善细节保真；统一 DDBM/GOUB 等
 
-9. **Adversarial Schrödinger Bridge Matching.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2405.14449) [report](reports/2405.14449.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2405.14449.pdf)
+9. **Adversarial Schrödinger Bridge Matching.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2405.14449) [report](reports/2405.14449.md)
 
     *Nikita Gushchin, Daniil Selikhanovych, Sergei Kholkin, Evgeny Burnaev, Alexander Korotin*
 
@@ -1398,7 +1398,7 @@ I. [贡献与引用](#contributing)
 
     首个把 I2I 建模为（VQGAN latent 上）Brownian bridge 双向扩散过程而非条件生成的工作
 
-14. **Diffusion Schrödinger Bridge Matching.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2303.16852) [report](reports/2303.16852.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2303.16852.pdf)
+14. **Diffusion Schrödinger Bridge Matching.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2303.16852) [report](reports/2303.16852.md)
 
     *Yuyang Shi, Valentin De Bortoli, Andrew Campbell, Arnaud Doucet*
 
@@ -2212,7 +2212,7 @@ I. [贡献与引用](#contributing)
 
     轻量开源标杆：OT-CFM 训练的 ODE 解码器 + 联合学发音与对齐（无外部对齐器），2-10 步合成、最小内存占用
 
-3. ⭐ **Schrödinger Bridge for Generative Speech Enhancement.** Interspeech, 2024. [P] [paper](https://arxiv.org/abs/2407.16074) [report](reports/2407.16074.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2407.16074.pdf)
+3. ⭐ **Schrödinger Bridge for Generative Speech Enhancement.** Interspeech, 2024. [P] [paper](https://arxiv.org/abs/2407.16074) [report](reports/2407.16074.md)
 
     *Ante Jukić, Roman Korostik, Jagadeesh Balam, Boris Ginsburg*
 
@@ -2236,7 +2236,7 @@ I. [贡献与引用](#contributing)
 
     44.1kHz 高保真音乐修复：单一 SB 模型统一带宽扩展+inpainting，幅度/相位分解表示免声码器端到端，MultiDiffusion 拼接修复小时级长音频
 
-7. **Bridge-SR: Schrödinger Bridge for Efficient SR.** ICASSP, 2025. [P] [paper](https://arxiv.org/abs/2501.07897) [report](reports/2501.07897.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2501.07897.pdf)
+7. **Bridge-SR: Schrödinger Bridge for Efficient SR.** ICASSP, 2025. [P] [paper](https://arxiv.org/abs/2501.07897) [report](reports/2501.07897.md)
 
     *Chang Li, Zehua Chen, Fan Bao, Jun Zhu*
 
@@ -2343,7 +2343,7 @@ I. [贡献与引用](#contributing)
 
     把「初始群体」用 GNN 嵌入后 amortize 速度场——Wasserstein 流形上的向量场积分，泛化到未见病人的治疗响应
 
-9. **Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge.** NeurIPS, 2025. [P] [paper](https://arxiv.org/abs/2505.11197) [report](reports/2505.11197.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2505.11197.pdf)
+9. **Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge.** NeurIPS, 2025. [P] [paper](https://arxiv.org/abs/2505.11197) [report](reports/2505.11197.md)
 
     *Zhenyi Zhang, Zihan Wang, Yuhao Sun, Tiejun Li, Peijie Zhou*
 
@@ -2559,7 +2559,7 @@ I. [贡献与引用](#contributing)
 
     精确（非熵正则）barycenter 的无约束凹对偶 + \(\dot H^1\) Sobolev 几何梯度上升；证明可去掉昂贵的 c-concave 投影仍有全局 \(O(T^{-1/2})\) 收敛率，每步 \(O(mn\log n)\)
 
-3. ⭐ **Momentum Multi-Marginal Schrödinger Bridge Matching.** NeurIPS, 2025. [P] [paper](https://arxiv.org/abs/2506.10168) [report](reports/2506.10168.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2506.10168.pdf)
+3. ⭐ **Momentum Multi-Marginal Schrödinger Bridge Matching.** NeurIPS, 2025. [P] [paper](https://arxiv.org/abs/2506.10168) [report](reports/2506.10168.md)
 
     *Panagiotis Theodoropoulos, Augustinos D. Saravanos, Evangelos A. Theodorou, Guan-Horng Liu*
 
@@ -2607,7 +2607,7 @@ I. [贡献与引用](#contributing)
 
     弱 OT 对偶+EBM 学连续熵正则 barycenter，免 min-max，带质量界；直接在预训练生成模型的图像流形上学 barycenter
 
-12. **Tree-Based Diffusion Schrödinger Bridge with Applications to Wasserstein Barycenters.** NeurIPS Spotlight, 2023. [P] [paper](https://arxiv.org/abs/2305.16557) [report](reports/2305.16557.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2305.16557.pdf)
+12. **Tree-Based Diffusion Schrödinger Bridge with Applications to Wasserstein Barycenters.** NeurIPS Spotlight, 2023. [P] [paper](https://arxiv.org/abs/2305.16557) [report](reports/2305.16557.md)
 
     *Maxence Noble, Valentin De Bortoli, Arnaud Doucet, Alain Durmus*
 
@@ -3118,7 +3118,7 @@ I. [贡献与引用](#contributing)
 ## H. 深读报告、译文与综合报告
 
 - `reports/`：438 份逐篇深读（文件名 = arXiv id）；`data/meta/`：每篇的 TL;DR / 关键数字 / 关系卡。
-- `papers/`：363 份原文；`papers_zh/`：91 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
+- `papers/`：363 份原文；`papers_zh/`：89 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
 - `report/`：综合分析报告（`AWESOME_DIFFUSION_OT_REPORT_zh.md` / `_en.md` 及 PDF）。
 - `slides/`：[HTML PPT](slides/awesome_diffusion_OT_deck.html)（浏览器打开，方向键翻页）与 [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf)；报告 PDF：[中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf)。
 - 复现整条流水线：`scripts/build_corpus.py → resolve_arxiv.py → fetch_papers.py → extract_text.py → translate_batch.sh → src/generator.py`。

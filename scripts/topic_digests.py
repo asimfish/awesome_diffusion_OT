@@ -13,6 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 API = "https://api.deepseek.com/chat/completions"
 KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 REL = "https://github.com/asimfish/awesome_diffusion_OT/releases/download"
+_ap = ROOT / "data/release_assets_pdf-zh-v1.json"
+ASSETS_ZH = set(json.loads(_ap.read_text())) if _ap.exists() else set()
 SECTIONS = {"A": ("理论基础", ["t01", "t02", "t03", "t04", "t05", "t06"]), "B": ("流匹配与轨迹拉直", ["t07", "t08", "t09", "t10", "t11", "t12"]),
             "C": ("跨域生成与翻译", ["t13", "t14", "t15", "t16", "t17", "t18"]), "D": ("模态扩展", ["t19", "t20", "t21", "t22", "t23", "t24"]),
             "E": ("OT 变体前沿", ["t25", "t26", "t27", "t28"]), "F": ("系统、评测与趋势", ["t29", "t30"])}
@@ -65,7 +67,7 @@ def render_topic(t, man, dig):
         rep = f"[report](../reports/{rid}.md)" if (ROOT / f"reports/{rid}.md").exists() else "—"
         stem = p["arxiv_id"].replace("/", "_") if p["arxiv_id"] else None
         pdf = f"[PDF]({REL}/pdf-en-v1/{stem}.pdf)" if stem and (ROOT / f"papers/{stem}.pdf").exists() else "—"
-        zh = f"[zh]({REL}/pdf-zh-v1/{stem}.zh.pdf)" if stem and (ROOT / f"papers_zh/{stem}.zh.pdf").exists() else "—"
+        zh = f"[zh]({REL}/pdf-zh-v1/{stem}.zh.pdf)" if stem and f"{stem}.zh.pdf" in ASSETS_ZH else "—"
         link = f"[{p['title'].rstrip('.')}](https://arxiv.org/abs/{p['arxiv_id']})" if p["arxiv_id"] else p["title"]
         L.append(f"| {i} | {'⭐ ' if p['star'] else ''}{link} | {p['venue']} {p['year'] or ''} | [{p['evidence']}] | {rep} | {pdf} | {zh} |")
     return "\n".join(L) + "\n"
