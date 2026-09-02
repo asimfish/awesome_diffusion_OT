@@ -1,6 +1,6 @@
 # Awesome Diffusion × Optimal Transport
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-89-red.svg)](#reports)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-100-red.svg)](#reports)
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -11,7 +11,7 @@
 - **原文 PDF**（`papers/`）与 [SuperTranslate](https://github.com/asimfish/super_translate) **保版式中文译文**（`papers_zh/`，附对象级 QA `*.inspect.json`）；
 - 机器可读元数据（`data/`），本 README 由 `src/generator.py` 生成。
 
-总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 89。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
+总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 100。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
 
 综合分析见 [`report/`](report/)（问题→理论→经典→前沿→我们能做什么，中英 PDF）与 [`slides/`](slides/)（HTML PPT + Beamer PDF）；2026 Q3 增量趋势见 [`trends/`](trends/)。
 
@@ -190,7 +190,7 @@ I. [贡献与引用](#contributing)
 
     反例证伪上述猜想：流映射一般不是凸函数梯度，障碍是一个 Hessian 非交换项；同时指出数值上"近乎最优"、量化次优度是开放问题
 
-6. **Learning Monge maps with constrained drifting models.** arXiv 2603.25182, 2026. [R] [paper](https://arxiv.org/abs/2603.25182) [report](reports/2603.25182.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2603.25182.pdf)
+6. **Learning Monge maps with constrained drifting models.** arXiv 2603.25182, 2026. [R] [paper](https://arxiv.org/abs/2603.25182) [report](reports/2603.25182.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2603.25182.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2603.25182.zh.pdf)
 
     *Théo Dumont, Théo Lacombe, François-Xavier Vialard*
 
@@ -208,7 +208,7 @@ I. [贡献与引用](#contributing)
 
     把 SOC 求解转化为最小二乘回归（借鉴条件 score matching 哲学），path-wise reparameterization trick 降方差
 
-9. **The Brownian transport map.** Probab. Theory Relat. Fields, 2024. [P] [paper](https://arxiv.org/abs/2111.11521) [report](reports/2111.11521.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2111.11521.pdf)
+9. **The Brownian transport map.** Probab. Theory Relat. Fields, 2024. [P] [paper](https://arxiv.org/abs/2111.11521) [report](reports/2111.11521.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2111.11521.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2111.11521.zh.pdf)
 
     *Dan Mikulincer, Yair Shenfeld*
 
@@ -281,13 +281,13 @@ I. [贡献与引用](#contributing)
 
     证明实践中"双向交替 IMF"启发式 = IMF+IPF 的组合（IPMF），多设定下收敛，并给出相似度-质量 trade-off 旋钮
 
-7. **Reflected Schrödinger Bridge Matching.** arXiv 2607.03626, 2026. [R] [paper](https://arxiv.org/abs/2607.03626) [report](reports/2607.03626.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2607.03626.pdf)
+7. **Reflected Schrödinger Bridge Matching.** arXiv 2607.03626, 2026. [R] [paper](https://arxiv.org/abs/2607.03626) [report](reports/2607.03626.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2607.03626.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2607.03626.zh.pdf)
 
     *Marcus Häggbom, Viktor Nilsson, Pierre Nyquist, Joakim andén*
 
     把 IMF/α-DSBM 推广到反射 SDE（有界域约束生成），保持收敛论证
 
-8. **From Schrodinger Bridge to Optimal Transport over Sub-Riemannian Manifolds.** arXiv 2605.11429, 2026. [R] [paper](https://arxiv.org/abs/2605.11429) [report](reports/2605.11429.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2605.11429.pdf)
+8. **From Schrodinger Bridge to Optimal Transport over Sub-Riemannian Manifolds.** arXiv 2605.11429, 2026. [R] [paper](https://arxiv.org/abs/2605.11429) [report](reports/2605.11429.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2605.11429.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2605.11429.zh.pdf)
 
     *Daniel Owusu Adu, Karthik Elamvazhuthi, Bahman Gharesifard*
 
@@ -303,7 +303,7 @@ I. [贡献与引用](#contributing)
 
     证明离散(有限)状态空间上 D-IMF 收敛到 SB，把 SB matching 推广到 VQ token/文本/分子等离散数据
 
-11. **Exponential Convergence Guarantees for Iterative Markovian Fitting.** NeurIPS, 2025. [P] [paper](https://arxiv.org/abs/2510.20871) [report](reports/2510.20871.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2510.20871.pdf)
+11. **Exponential Convergence Guarantees for Iterative Markovian Fitting.** NeurIPS, 2025. [P] [paper](https://arxiv.org/abs/2510.20871) [report](reports/2510.20871.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2510.20871.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2510.20871.zh.pdf)
 
     *Marta Gentiloni Silveri, Giovanni Conforti, Alain Durmus*
 
@@ -319,13 +319,13 @@ I. [贡献与引用](#contributing)
 
     相空间提升 + 多点条件随机桥：多边缘条件最优控制的 matching 解法，训练中保持全部中间边缘，捕捉长程时间依赖
 
-14. **Multi-marginal temporal Schrödinger Bridge Matching from unpaired data.** arXiv 2510.01894, 2025. [R] [paper](https://arxiv.org/abs/2510.01894) [report](reports/2510.01894.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2510.01894.pdf)
+14. **Multi-marginal temporal Schrödinger Bridge Matching from unpaired data.** arXiv 2510.01894, 2025. [R] [paper](https://arxiv.org/abs/2510.01894) [report](reports/2510.01894.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2510.01894.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2510.01894.zh.pdf)
 
     *Thomas Gravier, Thomas Boyer, Auguste Genovesio*
 
     非配对多时刻快照的多边缘 SB matching，factorized 拟合支撑高维视频/生物动力学
 
-15. **Statistical Analysis of the Sinkhorn Iterations for Two-Sample Schrödinger Bridge Estimation.** arXiv 2510.22560, 2025. [R] [paper](https://arxiv.org/abs/2510.22560) [report](reports/2510.22560.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2510.22560.pdf)
+15. **Statistical Analysis of the Sinkhorn Iterations for Two-Sample Schrödinger Bridge Estimation.** arXiv 2510.22560, 2025. [R] [paper](https://arxiv.org/abs/2510.22560) [report](reports/2510.22560.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2510.22560.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2510.22560.zh.pdf)
 
     *Ibuki Maeda, Rentian Yao, Atsushi Nitanda*
 
@@ -335,7 +335,7 @@ I. [贡献与引用](#contributing)
 
     离散时间 IMF（D-IMF）理论 + DD-GAN 实现：只学几个离散转移核，推断从数百步降到几步
 
-17. **BM$^2$: Coupled Schrödinger Bridge Matching.** arXiv 2409.09376, 2024. [R] [paper](https://arxiv.org/abs/2409.09376) [report](reports/2409.09376.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2409.09376.pdf)
+17. **BM$^2$: Coupled Schrödinger Bridge Matching.** arXiv 2409.09376, 2024. [R] [paper](https://arxiv.org/abs/2409.09376) [report](reports/2409.09376.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2409.09376.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2409.09376.zh.pdf)
 
     *Stefano Peluchetti*
 
@@ -452,19 +452,19 @@ I. [贡献与引用](#contributing)
 
     证明 debiased Sinkhorn divergence 估计平方 W₂ 距离在更大 ε 下仍达到近最优误差，计算-统计两头受益
 
-13. **Sinkhorn AutoEncoders.** UAI, 2019. [P] [paper](https://arxiv.org/abs/1810.01118) [report](reports/1810.01118.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/1810.01118.pdf)
+13. **Sinkhorn AutoEncoders.** UAI, 2019. [P] [paper](https://arxiv.org/abs/1810.01118) [report](reports/1810.01118.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/1810.01118.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/1810.01118.zh.pdf)
 
     *Giorgio Patrini, Rianne van den Berg, Patrick Forré, Marcello Carioni, Samarth Bhargav, Max Welling et al.*
 
     在 WAE 框架内用 Sinkhorn 距离对齐 latent aggregated posterior 与先验，确定性编解码器即可生成
 
-14. **Statistical bounds for entropic optimal transport: sample complexity and the central limit theorem.** NeurIPS, 2019. [P] [paper](https://arxiv.org/abs/1905.11882) [report](reports/1905.11882.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/1905.11882.pdf)
+14. **Statistical bounds for entropic optimal transport: sample complexity and the central limit theorem.** NeurIPS, 2019. [P] [paper](https://arxiv.org/abs/1905.11882) [report](reports/1905.11882.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/1905.11882.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/1905.11882.zh.pdf)
 
     *Gonzalo Mena, Jonathan Weed*
 
     EOT 经验估计的 O(1/√n) 样本复杂度与 CLT，是"熵正则修复维数灾难"的理论支柱
 
-15. **Improving GANs Using Optimal Transport.** ICLR, 2018. [P] [paper](https://arxiv.org/abs/1803.05573) [report](reports/1803.05573.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/1803.05573.pdf)
+15. **Improving GANs Using Optimal Transport.** ICLR, 2018. [P] [paper](https://arxiv.org/abs/1803.05573) [report](reports/1803.05573.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/1803.05573.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/1803.05573.zh.pdf)
 
     *Tim Salimans, Han Zhang, Alec Radford, Dimitris Metaxas*
 
@@ -3118,7 +3118,7 @@ I. [贡献与引用](#contributing)
 ## H. 深读报告、译文与综合报告
 
 - `reports/`：438 份逐篇深读（文件名 = arXiv id）；`data/meta/`：每篇的 TL;DR / 关键数字 / 关系卡。
-- `papers/`：363 份原文；`papers_zh/`：89 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
+- `papers/`：363 份原文；`papers_zh/`：100 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
 - `report/`：综合分析报告（`AWESOME_DIFFUSION_OT_REPORT_zh.md` / `_en.md` 及 PDF）。
 - `slides/`：[HTML PPT](slides/awesome_diffusion_OT_deck.html)（浏览器打开，方向键翻页）、[可编辑 PPTX](slides/awesome_diffusion_OT_deck.pptx) 与 [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf)；报告 PDF：[中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf)。
 - 复现整条流水线：`scripts/build_corpus.py → resolve_arxiv.py → fetch_papers.py → extract_text.py → translate_batch.sh → src/generator.py`。

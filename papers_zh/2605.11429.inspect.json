@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (36 words, 0 CJK chars) at x=64.8, y=636.7: and t ≥s ≥0. In our driftless case in (2.12), controllab"
+    },
+    {
+      "page": 8,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 8: displayed equation at y=255 shifted horizontally by 22pt vs original"
+    },
+    {
+      "page": 11,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 11: block set at 8.47pt but the original at this position is 9.96pt (ratio 0.85 vs page median 0.92) at x=99.9, y=95.6: λ^{⋆}∈Λ，达到(3.8) 中的等号。为验证原始可行性，注意到由构造可知"
+    },
+    {
+      "page": 13,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 13: block set at 7.97pt but the original at this position is 9.96pt (ratio 0.80 vs page median 0.92) at x=80.0, y=607.6: 一旦此点成立，Γ-convergence[19] 定义中的恢复部分将为我们提供上极限。为证明(4"
+    },
+    {
+      "page": 13,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 13: block set at 8.46pt but the original at this position is 9.96pt (ratio 0.85 vs page median 0.92) at x=397.8, y=651.7: R^{ε,x} 满足具有良好速率泛函的大偏差原理"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (6 words, 0 CJK chars) at x=64.8, y=452.6: where ψ ∈Cc(Q; Rd). Then (˜µϵ, ˜mϵ) satisfies (3.7a)-(3."
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (24 words, 0 CJK chars) at x=64.8, y=570.6: In this section, we develop numerical methods for solvin"
+    }
+  ]
+}

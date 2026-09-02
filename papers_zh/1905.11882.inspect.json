@@ -1,0 +1,29 @@
+{
+  "issue_count": 4,
+  "issues": [
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (10 words, 0 CJK chars) at x=141.1, y=589.8: holds, where λ = limm,n→∞nm+n. Moreover, limm,n→∞mnm+n V"
+    },
+    {
+      "page": 15,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 15: block set at 7.24pt but the original at this position is 10.91pt (ratio 0.66 vs page median 0.92) at x=114.6, y=615.8: )，因此由对数函数的严格凹性得到"
+    },
+    {
+      "page": 19,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 19: block set at 9.04pt but the original at this position is 10.91pt (ratio 0.83 vs page median 0.92) at x=175.8, y=263.8: 引理2. 假设-次高斯测度。则存在一个（随机）使得几乎必然一致地-次高斯。"
+    },
+    {
+      "page": 20,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 20: displayed equation at y=382 shifted horizontally by 18pt vs original"
+    }
+  ]
+}

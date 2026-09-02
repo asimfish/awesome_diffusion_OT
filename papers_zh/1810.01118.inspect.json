@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 7.69pt but the original at this position is 11.96pt (ratio 0.64 vs page median 0.92) at x=72.8, y=316.8: G 样本基最优传输损失在高维下的行为"
+    }
+  ]
+}

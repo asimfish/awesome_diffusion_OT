@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (18 words, 0 CJK chars) at x=307.0, y=666.6: We start by exposing known theoretical results about mul"
+    },
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (16 words, 0 CJK chars) at x=307.4, y=696.8: 1We originally believed Proposition 3.4 to be novel, how"
+    },
+    {
+      "page": 15,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 15: displayed equation at y=200 shifted horizontally by 46pt vs original"
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 8.25pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=175.0, y=423.3: 1k 个生成样本上计算的，其中这些生成样本本身来自先前的测试边缘分布（"
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 8.25pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=55.8, y=435.6: 3 个具有不同随机种子的模型。我们报告的标准差是两组中最佳相同超参数"
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 8.25pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=166.2, y=448.0: σ= 0.3个模型的合并方差，每组对应一个留出时间。其他论文似乎报告的是总体方差，我们认为鉴于"
+    },
+    {
+      "page": 18,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 18: displayed equation at y=394 shifted horizontally by 15pt vs original"
+    }
+  ]
+}

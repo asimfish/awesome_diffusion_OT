@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=108.4, y=379.2: 其中积分次序的交换由Fubini 定理保证其有效性。当"
+    }
+  ]
+}
