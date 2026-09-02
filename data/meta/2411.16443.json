@@ -1,0 +1,103 @@
+{
+ "report_id": "2411.16443",
+ "arxiv_id": "2411.16443",
+ "title": "SplatFlow: Multi-View Rectified Flow Model for 3D Gaussian Splatting Synthesis",
+ "tldr_zh": "多视角 rectified flow 联合生成图像/深度/位姿 latent，前馈 GSDecoder 输出 3DGS，training-free 反演/补绘统一生成与编辑",
+ "tldr_en": "Multi-view rectified flow jointly generates image/depth/pose latents, decoded to 3DGS by feed-forward GSDecoder; training-free inversion/inpainting unifies generation and editing",
+ "tags": [
+  "3DGS",
+  "rectified flow",
+  "multi-view generation",
+  "text-to-3D",
+  "training-free editing",
+  "camera pose estimation"
+ ],
+ "code_url": "https://gohyojun15.github.io/SplatFlow/",
+ "key_numbers": [
+  {
+   "number": "34.85",
+   "metric": "FID-10K on MVImgNet",
+   "source": "Table 1"
+  },
+  {
+   "number": "79.91",
+   "metric": "FID-2.4K on DL3DV",
+   "source": "Table 1"
+  },
+  {
+   "number": "31.43",
+   "metric": "CLIPScore on MVImgNet",
+   "source": "Table 1"
+  },
+  {
+   "number": "28.47",
+   "metric": "CLIPScore for 3DGS editing",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.169",
+   "metric": "CLIP D-sim for 3DGS editing",
+   "source": "Table 2"
+  },
+  {
+   "number": "28.8",
+   "metric": "Rotation accuracy @5 (w/o depth)",
+   "source": "Table 3"
+  },
+  {
+   "number": "64.9",
+   "metric": "Camera center accuracy @0.05 (w/o depth)",
+   "source": "Table 3"
+  },
+  {
+   "number": "18.82",
+   "metric": "PSNR for novel view interpolation (N=6)",
+   "source": "Table 4"
+  },
+  {
+   "number": "8",
+   "metric": "number of views K",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "1.25K",
+   "metric": "MVImgNet evaluation scenes",
+   "source": "Sec. 5.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "Director3D",
+   "type": "最直接对比方法，分步生成位姿与图像"
+  },
+  {
+   "report_id": "pixelSplat",
+   "type": "GSDecoder 的前馈 3DGS 重建基础"
+  },
+  {
+   "report_id": "MVSplat",
+   "type": "GSDecoder 的前馈 3DGS 重建基础"
+  },
+  {
+   "report_id": "StableDiffusion3",
+   "type": "RF 骨干与 latent 空间共享"
+  },
+  {
+   "report_id": "RayDiffusion",
+   "type": "Plücker ray 位姿表示来源"
+  },
+  {
+   "report_id": "GaussianCube",
+   "type": "课题内对照：OT 规整 3DGS 表示 vs 前馈解码"
+  },
+  {
+   "report_id": "NSOT",
+   "type": "课题内对照：点云 OT flow matching，SplatFlow 未用 OT 耦合"
+  },
+  {
+   "report_id": "WFM",
+   "type": "课题内对照：Wasserstein 空间 flow matching，SplatFlow 在欧氏 latent 空间"
+  }
+ ],
+ "read_full_text": true
+}

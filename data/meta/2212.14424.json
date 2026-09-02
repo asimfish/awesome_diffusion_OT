@@ -1,0 +1,55 @@
+{
+ "report_id": "2212.14424",
+ "arxiv_id": "2212.14424",
+ "title": "Normalizing flow neural networks by JKO scheme",
+ "tldr_zh": "JKO-iFlow：CNF 每个残差块解一个 JKO 步，逐块训练免 score matching 与端到端反传，tabular NLL 与 OT-Flow 持平但批数少约 10 倍",
+ "tldr_en": "JKO-iFlow trains an invertible neural-ODE flow block by block, each block solving one JKO step via a change-of-variables KL objective; no score matching or end-to-end backprop.",
+ "tags": [
+  "jko-scheme",
+  "normalizing-flow",
+  "neural-ode",
+  "block-wise-training",
+  "wasserstein-gradient-flow",
+  "generative-model",
+  "likelihood"
+ ],
+ "code_url": "https://github.com/hamrel-cxu/JKO-iFlow",
+ "key_numbers": [
+  "Tabular NLL after reparameterization: POWER -0.40 (6.08K batches) vs OT-Flow -0.30 (22K) / FFJORD -0.46; GAS -9.43 vs -9.20 / -8.59; MINIBOONE 10.55 vs 10.55 / 10.43; BSDS300 -157.75 vs -154.20 / -157.40 (Table A.2)",
+  "Fixed-budget NLL (baselines 10x batches): POWER -0.12 vs OT-Flow 0.32, FFJORD 0.63, ScoreSDE 3.41; BSDS300 -153.82 vs -104.62 / -37.80 / -7.55 (Table 2)",
+  "Latent-space image FID: MNIST 7.95, CIFAR-10 29.10 (24 h on one A100), ImageNet-32 20.10 (30 h) (Fig. 5, Appendix C.2.3)",
+  "Inversion error 1e-6 to 4e-5 across datasets (Table 1); termination threshold eps=0.01 on relative W2 movement (Sec. 4.1)",
+  "ScoreSDE on MINIBOONE: best small-network NLL 17.45, worst 45.32 across schedules; large network + 100K batches reaches 10.47 (Tables A.3-A.4)"
+ ],
+ "relations": [
+  {
+   "report_id": "2106.00736",
+   "type": "extends"
+  },
+  {
+   "report_id": "2112.02424",
+   "type": "competes"
+  },
+  {
+   "report_id": "2402.05443",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2407.20444",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2209.15571",
+   "type": "competes"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "competes"
+  },
+  {
+   "report_id": "Optimizing_Functionals_on_the_Space_of_Probabiliti",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,82 @@
+{
+ "report_id": "2306.15030",
+ "arxiv_id": "2306.15030",
+ "title": "Equivariant flow matching",
+ "tldr_zh": "把 batch OT 成本换成旋转+置换对齐后的不变成本，等变 CNF 在小 batch 下逼近 OT 路径",
+ "tldr_en": "Replaces Euclidean cost in batch OT with rotation+permutation aligned invariant cost for equivariant CNFs",
+ "tags": [
+  "flow matching",
+  "optimal transport",
+  "equivariant CNF",
+  "Boltzmann generator",
+  "minibatch OT",
+  "molecular sampling"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "2.15 vs 2.84 vs 5.08",
+   "context": "LJ13 path length: equivariant OT FM vs OT FM vs likelihood",
+   "source": "Table 1"
+  },
+  {
+   "number": "3.52 vs 7.53",
+   "context": "LJ55 path length: equivariant OT FM vs OT FM",
+   "source": "Table 1"
+  },
+  {
+   "number": "4.42% vs 3.74%",
+   "context": "LJ55 ESS: equivariant OT FM vs OT FM",
+   "source": "Table 1"
+  },
+  {
+   "number": "3x speed-up",
+   "context": "LJ55 sampling with fixed-step rk4, ~20 steps, equivariant OT FM vs OT FM",
+   "source": "Figure 2e, Sec.6.2"
+  },
+  {
+   "number": "10x",
+   "context": "LJ55 mean batch transport cost: OT FM vs equivariant OT FM",
+   "source": "Figure 2b"
+  },
+  {
+   "number": "4.10±0.08 vs 4.10±0.26",
+   "context": "alanine dipeptide free energy difference / kBT: Boltzmann generator vs umbrella sampling",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.69% vs 1.41%",
+   "context": "alanine dipeptide ESS: equivariant OT FM vs OT FM",
+   "source": "Table 1"
+  },
+  {
+   "number": "88.71% vs 92.37%",
+   "context": "DW4 ESS: equivariant OT FM vs OT FM",
+   "source": "Table 1"
+  },
+  {
+   "number": "O(N^3)",
+   "context": "Hungarian algorithm computational complexity in equivariant cost approximation",
+   "source": "Sec.8"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2302.00482",
+   "type": "继承"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "继承"
+  },
+  {
+   "report_id": "2006.02425",
+   "type": "继承"
+  },
+  {
+   "report_id": "2105.07246",
+   "type": "继承"
+  }
+ ],
+ "read_full_text": true
+}

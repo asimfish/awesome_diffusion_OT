@@ -1,0 +1,76 @@
+{
+ "report_id": "2308.03686",
+ "arxiv_id": "2308.03686",
+ "title": "Nearly $d$-Linear Convergence Bounds for Diffusion Models via Stochastic Localization",
+ "tldr_zh": "用随机局部化恒等式把扩散模型 KL 迭代复杂度从 d² 降到 d 线性，仅需有限二阶矩",
+ "tldr_en": "Stochastic localization reduces diffusion KL iteration complexity to nearly d-linear with only finite second moments",
+ "tags": [
+  "diffusion models",
+  "convergence bounds",
+  "stochastic localization",
+  "KL divergence",
+  "iteration complexity",
+  "Girsanov"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "\\tilde O(d\\log^2(1/\\delta)/\\varepsilon^2)",
+   "context": "本文迭代复杂度，KL 散度逼近 q_δ 到 ε² 内",
+   "source": "Corollary 1"
+  },
+  {
+   "number": "\\tilde O(d^2\\log^2(1/\\delta)/\\varepsilon^2)",
+   "context": "此前最优无光滑假设复杂度",
+   "source": "Chen et al. 2023a, Thm 2; Table 1"
+  },
+  {
+   "number": "\\tilde O(dL^2/\\varepsilon^2)",
+   "context": "此前最优 Lipschitz score 复杂度",
+   "source": "Chen et al. 2023a, Thm 1; Table 1"
+  },
+  {
+   "number": "\\varepsilon_{\\text{score}}^2 + \\kappa^2 dN + \\kappa dT + de^{-2T}",
+   "context": "主定理 KL 界",
+   "source": "Theorem 1"
+  },
+  {
+   "number": "T = \\frac{1}{2}\\log(d/\\varepsilon_{\\text{score}}^2)",
+   "context": "正向过程终止时间选择",
+   "source": "Corollary 1"
+  },
+  {
+   "number": "N = \\Theta(d(T + \\log(1/\\delta))^2/\\varepsilon_{\\text{score}}^2)",
+   "context": "步数选择",
+   "source": "Corollary 1"
+  },
+  {
+   "number": "\\text{KL}(q_T\\|\\pi_d) \\lesssim de^{-2T}",
+   "context": "OU 过程收敛到标准高斯的 KL 界，T ≥ 1",
+   "source": "Proposition 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2206.06227",
+   "type": "继承"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "继承"
+  },
+  {
+   "report_id": "2305.10690",
+   "type": "方法来源"
+  },
+  {
+   "report_id": "2308.12240",
+   "type": "并发工作"
+  },
+  {
+   "report_id": "2305.16860",
+   "type": "同组作者"
+  }
+ ],
+ "read_full_text": true
+}

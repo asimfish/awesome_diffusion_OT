@@ -1,0 +1,31 @@
+{
+ "report_id": "Statistical_Categorical_Flow_Matching_SFM_Cheng_et",
+ "arxiv_id": null,
+ "title": "Statistical/Categorical Flow Matching (SFM), Cheng et al.",
+ "tldr_zh": "统计流形上 Fisher 度量流匹配，测地最短路配自然梯度，训练可加 OT。",
+ "tldr_en": "Flow matching on statistical manifolds with Fisher metric, geodesic shortest paths, natural gradient, optional OT in training.",
+ "tags": [
+  "flow-matching",
+  "statistical-manifold",
+  "Fisher-Rao",
+  "optimal-transport",
+  "Riemannian"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "RFM_Chen_Lipman_ICLR2024",
+   "type": "继承"
+  },
+  {
+   "report_id": "Fisher_Flow",
+   "type": "并列"
+  },
+  {
+   "report_id": "OT_MFM",
+   "type": "互补"
+  }
+ ],
+ "read_full_text": false
+}

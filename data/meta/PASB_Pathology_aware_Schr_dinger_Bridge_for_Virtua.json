@@ -1,0 +1,35 @@
+{
+ "report_id": "PASB_Pathology_aware_Schr_dinger_Bridge_for_Virtua",
+ "arxiv_id": null,
+ "title": "PASB: Pathology-aware Schrödinger Bridge for Virtual Immunohistochemical Staining",
+ "tldr_zh": "StainSB 升级：病理语义监督加相似度动态路径修正，下游诊断接近真实 IHC",
+ "tldr_en": "StainSB upgrade with pathology-aware supervision and similarity-based path correction",
+ "tags": [
+  "Schrödinger Bridge",
+  "virtual IHC staining",
+  "pathology",
+  "medical image translation",
+  "OT"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "StainSB",
+   "type": "继承"
+  },
+  {
+   "report_id": "OT-StainNet",
+   "type": "同支线"
+  },
+  {
+   "report_id": "USIGAN",
+   "type": "同支线"
+  },
+  {
+   "report_id": "TDSB",
+   "type": "同支线"
+  }
+ ],
+ "read_full_text": false
+}

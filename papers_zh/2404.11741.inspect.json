@@ -1,0 +1,29 @@
+{
+  "issue_count": 4,
+  "issues": [
+    {
+      "page": 1,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 1: block set at 5.80pt but the original at this position is 7.57pt (ratio 0.77 vs page median 0.92) at x=28.9, y=21.8: 第XX 届国际放射治疗计算机应用会议2024 年7 月8 日至11 日，法国里昂"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 5.80pt but the original at this position is 7.57pt (ratio 0.77 vs page median 0.92) at x=28.9, y=21.8: 第XX 届国际放射治疗计算机应用会议2024 年7 月8 日至11 日，法国里昂"
+    },
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 5.80pt but the original at this position is 7.57pt (ratio 0.77 vs page median 0.92) at x=28.9, y=21.8: 第XX 届国际放射治疗计算机应用会议2024 年7 月8 日至11 日，法国里昂"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 5.80pt but the original at this position is 7.57pt (ratio 0.77 vs page median 0.92) at x=28.9, y=21.8: 第XX 届国际放射治疗计算机应用会议2024 年7 月8 日至11 日，法国里昂"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+ "report_id": "2410.08709",
+ "arxiv_id": "2410.08709",
+ "title": "Distillation of Discrete Diffusion through Dimensional Correlations",
+ "tldr_zh": "用混合模型显式学维度相关性，把多步独立分解的教师蒸馏成 few-step 学生，并给出学生-教师分布距离上界",
+ "tldr_en": "Mixture models capture dimensional correlations to distill multi-step product teachers into few-step students, with TV distance upper bounds",
+ "tags": [
+  "discrete diffusion",
+  "knowledge distillation",
+  "dimensional correlations",
+  "mixture model",
+  "few-step sampling",
+  "consistency loss"
+ ],
+ "code_url": "https://github.com/sony/di4c",
+ "key_numbers": [
+  {
+   "number": "O(1/N)",
+   "context": "product model N-step analytical sampling 逼近数据分布的 TV 误差上界",
+   "source": "Theorem 1, Eq.(4)"
+  },
+  {
+   "number": "Ω(1/N)",
+   "context": "|S|=D=2 例子中 product model N-step TV 误差下界",
+   "source": "Theorem 1"
+  },
+  {
+   "number": "20.64 / 8.29",
+   "context": "CIFAR-10 10-step student FID/IS vs teacher 32.61/7.59",
+   "source": "Table 1"
+  },
+  {
+   "number": "2x",
+   "context": "ImageNet 4-step Di4C 匹配 8-step teacher 的 FID-IS 性能",
+   "source": "Sec.5.2, Figure 3"
+  },
+  {
+   "number": ">2x",
+   "context": "OpenWebText 两轮 Di4C 匹配 teacher 64/128 步性能的加速比",
+   "source": "Sec.5.3, Figure 4a"
+  },
+  {
+   "number": "≤5%",
+   "context": "mixture model 相对 product teacher 的延迟开销（CIFAR-10 与 OpenWebText）",
+   "source": "Sec.5.4, Table 3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2410.08142",
+   "type": "teacher checkpoint 来源（SDTT）"
+  },
+  {
+   "report_id": "2406.07524",
+   "type": "SDTT 的 teacher（MDLM）"
+  },
+  {
+   "report_id": "2205.14987",
+   "type": "CIFAR-10 teacher 与连续时间离散扩散框架来源"
+  },
+  {
+   "report_id": "2310.14400",
+   "type": "ImageNet teacher 复现来源"
+  },
+  {
+   "report_id": "2202.04200",
+   "type": "MaskGIT 框架来源"
+  }
+ ],
+ "read_full_text": true
+}

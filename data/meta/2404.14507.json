@@ -1,0 +1,56 @@
+{
+ "report_id": "2404.14507",
+ "arxiv_id": "2404.14507",
+ "title": "Align Your Steps: Optimizing Sampling Schedules in Diffusion Models",
+ "tldr_zh": "Girsanov 导出 KL 上界 KLUB，按模型×求解器×数据优化调度；CIFAR-10 10 NFE 5.07→2.98",
+ "tldr_en": "Minimizes a Girsanov-derived KL upper bound (KLUB) between true and linearized generative SDEs to optimize schedules; CIFAR-10 10-NFE FID 5.07 to 2.98.",
+ "tags": [
+  "schedule-optimization",
+  "girsanov",
+  "sde-solver",
+  "few-step-sampling",
+  "theory",
+  "training-free"
+ ],
+ "code_url": "https://research.nvidia.com/labs/toronto-ai/AlignYourSteps/",
+ "key_numbers": [
+  "DPM-Solver++(2M) CIFAR-10 FID 5.07 -> 2.98 at 10 NFE (Table 5)",
+  "SDE-DPM-Solver++(2M) CIFAR-10 FID 15.32 -> 8.16 at 10 NFE (Table 5)",
+  "SDE-DPM-Solver++(2M) FFHQ-64 FID 23.04 -> 14.79 at 10 NFE (Table 6)",
+  "ImageNet-256 SDE-DPM-Solver++(2M) FID 8.48 -> 6.11 at 10 NFE (Table 1)",
+  "ImageNet-64 DDIM FID 145.01 -> 50.38 at 5 NFE (Table 7)",
+  "SVD user study EDM 42% vs AYS 58% (Table 2)",
+  "Schedule optimization converges in <300 iterations (Sec. 3.3)"
+ ],
+ "relations": [
+  {
+   "report_id": "2206.00364",
+   "type": "extends"
+  },
+  {
+   "report_id": "2206.00927",
+   "type": "extends"
+  },
+  {
+   "report_id": "2211.01095",
+   "type": "uses"
+  },
+  {
+   "report_id": "2402.17376",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.15506",
+   "type": "competes"
+  },
+  {
+   "report_id": "2503.21774",
+   "type": "competes"
+  },
+  {
+   "report_id": "2506.10177",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

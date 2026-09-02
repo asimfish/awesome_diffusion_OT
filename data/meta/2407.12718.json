@@ -1,0 +1,63 @@
+{
+ "report_id": "2407.12718",
+ "arxiv_id": "2407.12718",
+ "title": "SlimFlow: Training Smaller One-Step Diffusion Models with Rectified Flow",
+ "tldr_zh": "Annealing Reflow 在独立耦合与教师耦合间退火解决小学生初始化失配，两步 Euler 在线正则蒸馏；15.7M 参数一步 CIFAR-10 FID 5.02",
+ "tldr_en": "Annealing Reflow interpolates from independent to teacher couplings to warm-start small students; flow-guided two-step regularizer improves distillation; 15.7M-param one-step CIFAR-10 FID 5.02.",
+ "tags": [
+  "rectified-flow",
+  "reflow",
+  "distillation",
+  "model-compression",
+  "one-step-generation",
+  "small-models"
+ ],
+ "code_url": "https://github.com/yuanzhi-zhu/SlimFlow",
+ "key_numbers": [
+  "CIFAR-10 one-step FID 5.02 with 15.7M params vs TRACT 6.47 @19.4M, CD (reproduced) 7.21 @15.7M (Table 1)",
+  "CIFAR-10 one-step FID 4.53 with 27.9M params vs 2-RF+distill 4.85 @61.8M (Table 1)",
+  "FFHQ-64 one-step 7.21 @27.9M, 7.70 @15.7M vs BOOT 9.00 @66.9M (Table 2)",
+  "ImageNet-64 one-step 12.34 @80.7M vs CT 13.00, PD 15.39, CD 6.20, DMD 2.62 @295.9M (Table 2)",
+  "Ablation: annealing + H-flip 4.51 vs neither 5.84 (Table 3); 2-step regularizer 6.43->5.81 with LPIPS (Table 5)",
+  "Annealing Reflow 800k iters + Flow-Guided Distillation 400k iters on 4x RTX 3090 (Sec. 4.2)"
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "extends"
+  },
+  {
+   "report_id": "2309.06380",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.07510",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.20320",
+   "type": "uses"
+  },
+  {
+   "report_id": "2410.14949",
+   "type": "competes"
+  },
+  {
+   "report_id": "2303.01469",
+   "type": "competes"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "uses"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "competes"
+  },
+  {
+   "report_id": "2306.15030",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

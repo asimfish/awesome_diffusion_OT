@@ -1,0 +1,27 @@
+{
+ "report_id": "Wasserstein_Aware_Transfer_Class_Level_Alignment_f",
+ "arxiv_id": null,
+ "title": "Wasserstein-Aware Transfer: Class-Level Alignment for Robust Diffusion Model Adaptation",
+ "tldr_zh": "用扩散轨迹 W 距离递减规律做类级 OT 匹配指导微调，线性组合分支保知识",
+ "tldr_en": "Class-level OT matching guided by decreasing W distance along diffusion trajectories, with linear branch combination to retain knowledge",
+ "tags": [
+  "OT",
+  "diffusion",
+  "domain adaptation",
+  "class-level alignment",
+  "fine-tuning"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "OT_ALD_DDIB_latent_correction",
+   "type": "contemporary"
+  },
+  {
+   "report_id": "SW_Guidance_NeurIPS_2025",
+   "type": "complementary"
+  }
+ ],
+ "read_full_text": false
+}

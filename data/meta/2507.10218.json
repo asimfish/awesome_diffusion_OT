@@ -1,0 +1,64 @@
+{
+ "report_id": "2507.10218",
+ "arxiv_id": "2507.10218",
+ "title": "Straighten Viscous Rectified Flow via Noise Optimization",
+ "tldr_zh": "编码器把真实图像映成 (μ,σ²) 重参数化噪声、与真实图像直接配对训练，加历史速度项；CIFAR-10 一步 FID 4.50，但采样也需输入数据集图像",
+ "tldr_en": "VRFNO pairs real images with encoder-reparameterized noise (VAE-style, KL-regularized) plus a historical-velocity input; one-step CIFAR-10 FID 4.50, yet sampling also consumes dataset images.",
+ "tags": [
+  "rectified-flow",
+  "reflow",
+  "noise-optimization",
+  "coupling",
+  "one-step-generation",
+  "historical-velocity"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "CIFAR-10 one-step FID 4.50 / KID 2.73e-3 / IS 9.59 in Table 1 (text says 4.53 / 10.59); vs CAF 4.81, TraFlow 4.50, Shortcut 4.93",
+  "CIFAR-10 10-step FID 3.36 vs 2-RF 3.83, CAF 3.77 (Table 1)",
+  "Ablation 1 NFE: baseline 379 -> HVT only 332 -> noise optimization only 4.72 -> both 4.53 (Table 3)",
+  "NFSS straightness on CIFAR-10: 2-RF 0.058, CAF 0.035, VRFNO 0.026 (Table 4)",
+  "AFHQ-Cat one-step FID 28.69/27.56/27.04 at 64/128/256 vs 2-RF 172-182 (Table 2)",
+  "Thm 1: crossing probability of random linear interpolants is O(exp(-c n^2))",
+  "Inference 512 images, 1 NFE: RF 0.172s, CAF 0.181s, VRFNO 0.305s (Table 5)"
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.20320",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.07510",
+   "type": "competes"
+  },
+  {
+   "report_id": "2411.00322",
+   "type": "competes"
+  },
+  {
+   "report_id": "Rectified_Diffusion_Straightness_Is_Not_Your_Need",
+   "type": "extends"
+  },
+  {
+   "report_id": "2309.06380",
+   "type": "competes"
+  },
+  {
+   "report_id": "2410.12557",
+   "type": "competes"
+  },
+  {
+   "report_id": "2411.09502",
+   "type": "competes"
+  },
+  {
+   "report_id": "2406.04312",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

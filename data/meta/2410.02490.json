@@ -1,0 +1,57 @@
+{
+ "report_id": "2410.02490",
+ "arxiv_id": "2410.02490",
+ "title": "Stochastic variance-reduced Gaussian variational inference on the Bures-Wasserstein manifold",
+ "tldr_zh": "BW 流形高斯 VI 加 Stein score 控制变量，方差降、KL 精度提升多个数量级",
+ "tldr_en": "Control variate using Stein score reduces variance of BW Gaussian VI gradients, improving KL by orders of magnitude",
+ "tags": [
+  "Bures-Wasserstein",
+  "variational inference",
+  "variance reduction",
+  "control variates",
+  "Riemannian optimization"
+ ],
+ "code_url": "https://github.com/MCS-hub/vr25",
+ "key_numbers": [
+  {
+   "number": "5 orders of magnitude",
+   "context": "d=200 Gaussian target: SVRGVI final KL ~1e-2 vs SGVI/BWGD ~1e3",
+   "source": "Sec. 5, Fig. 3(c)"
+  },
+  {
+   "number": "10x variance reduction",
+   "context": "optimal c around 1 reduces estimator variance by roughly factor of 10",
+   "source": "Sec. 3, Fig. 2"
+  },
+  {
+   "number": "O(d^2) overhead",
+   "context": "control variate adds O(d^2) cost, dominated by O(d^3) Cholesky",
+   "source": "Sec. 3"
+  },
+  {
+   "number": "c in (0,2)",
+   "context": "variance reduction guaranteed at optimum for any c in (0,2)",
+   "source": "Lemma 1"
+  },
+  {
+   "number": "n=1000, d=200",
+   "context": "Bayesian logistic regression experiment settings",
+   "source": "Sec. 5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2206.00890",
+   "type": "继承"
+  },
+  {
+   "report_id": "2306.03649",
+   "type": "直接改进"
+  },
+  {
+   "report_id": "1703.09194",
+   "type": "基线/思想类比"
+  }
+ ],
+ "read_full_text": true
+}

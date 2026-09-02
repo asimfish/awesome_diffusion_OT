@@ -1,0 +1,57 @@
+{
+ "report_id": "2506.05526",
+ "arxiv_id": "2506.05526",
+ "title": "On Fitting Flow Models with Large Sinkhorn Couplings",
+ "tldr_zh": "作者报告把 Sinkhorn 耦合分片扩到 n≈2×10⁶ 后 OT-FM 才明显获益；n≈256 的微弱收益是小 batch 伪象。",
+ "tldr_en": "Sharded multi-GPU Sinkhorn couplings with n up to 2M and low epsilon make OT flow matching pay off; n~256 gains were a small-batch artifact.",
+ "tags": [
+  "flow-matching",
+  "minibatch-ot",
+  "sinkhorn",
+  "large-batch",
+  "entropic-ot",
+  "curse-of-dimensionality",
+  "apple"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "ImageNet-32 FID @4 NFE: I-FM 66.4, n=2048 38.2, n=524288 31.5 (eps=0.1) (Table 1)",
+  "ImageNet-32 FID Dopri5: I-FM 5.55, n=2048 5.89 (worse), n=524288 4.85 (Table 1)",
+  "ImageNet-64 FID Dopri5: I-FM 9.32, n=4096 9.39, n=131072 8.99 (Table 1)",
+  "Conditional variance lower bound Var(X1|X0) >= c n^(-2/r) for any batch-supported coupling (Proposition 2)",
+  "PCA k=500 vs full 12288: Sinkhorn 1.45s vs 14.1s per batch, FID 9.17 vs 9.51 (Table 3)",
+  "Warm start n=524288 eps=0.003: 4916s vs 9208s per batch (Table 2)",
+  "Recommended renormalized entropy E(P) ~ 0.1 (Conclusion)"
+ ],
+ "relations": [
+  {
+   "report_id": "2302.00482",
+   "type": "extends"
+  },
+  {
+   "report_id": "2304.14772",
+   "type": "extends"
+  },
+  {
+   "report_id": "1910.04091",
+   "type": "uses"
+  },
+  {
+   "report_id": "2603.15279",
+   "type": "competes"
+  },
+  {
+   "report_id": "2509.25519",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2605.12174",
+   "type": "competes"
+  },
+  {
+   "report_id": "2503.10636",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

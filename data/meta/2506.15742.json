@@ -1,0 +1,83 @@
+{
+ "report_id": "2506.15742",
+ "arxiv_id": "2506.15742",
+ "title": "FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space",
+ "tldr_zh": "12B rectified flow transformer 用序列拼接统一图像生成与编辑，LADD 蒸馏实现 3–5 秒 1024² 生成",
+ "tldr_en": "12B rectified flow transformer unifies image generation and editing via sequence concatenation, with LADD distillation for 3-5s 1024² generation",
+ "tags": [
+  "rectified flow",
+  "flow matching",
+  "image editing",
+  "in-context learning",
+  "LADD",
+  "latent diffusion",
+  "DiT",
+  "logit-normal schedule"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "1026 image-prompt pairs",
+   "source": "Sec. 4.1, KontextBench"
+  },
+  {
+   "number": "108 base images",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "416 local editing / 262 global editing / 92 text editing / 63 style reference / 193 character reference examples",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "3-5 seconds for 1024×1024 synthesis",
+   "source": "Sec. 1"
+  },
+  {
+   "number": "12B diffusion transformer",
+   "source": "Sec. 3, [dev] guidance distillation"
+  },
+  {
+   "number": "38 single stream blocks",
+   "source": "Sec. 2"
+  },
+  {
+   "number": "16 latent channels in VAE",
+   "source": "Sec. 2"
+  },
+  {
+   "number": "Flux-VAE PDist 0.332 ± 0.003, SSIM 0.896 ± 0.004, PSNR 31.1 ± 0.08",
+   "source": "Table 1"
+  },
+  {
+   "number": "SD3-VAE PDist 0.452 ± 0.004, SSIM 0.858 ± 0.005, PSNR 29.6 ± 0.07",
+   "source": "Table 1"
+  },
+  {
+   "number": "α=3.0 shift corresponds to μ=log 3.0=1.0986, σ=1.0",
+   "source": "Appendix A.2"
+  },
+  {
+   "number": "1000 test prompts in Internal-T2I-Bench",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "4096 ImageNet images for VAE evaluation",
+   "source": "Table 1 caption"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2403.03206",
+   "type": "继承"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "继承"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "继承"
+  }
+ ],
+ "read_full_text": true
+}

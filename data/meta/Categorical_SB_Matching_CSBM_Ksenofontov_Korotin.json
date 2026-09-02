@@ -1,0 +1,35 @@
+{
+ "report_id": "Categorical_SB_Matching_CSBM_Ksenofontov_Korotin",
+ "arxiv_id": null,
+ "title": "Categorical SB Matching (CSBM), Ksenofontov & Korotin",
+ "tldr_zh": "离散有限状态空间上 D-IMF 收敛到 SB，推广 SB matching 到离散数据",
+ "tldr_en": "Proves D-IMF converges to SB on discrete finite state spaces, extending SB matching to discrete data",
+ "tags": [
+  "Schrödinger Bridge",
+  "discrete state space",
+  "D-IMF",
+  "SB matching",
+  "categorical data"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "ASBM_NeurIPS2024",
+   "type": "extends"
+  },
+  {
+   "report_id": "DSBM_NeurIPS2023",
+   "type": "related"
+  },
+  {
+   "report_id": "IDBM_JMLR2023",
+   "type": "related"
+  },
+  {
+   "report_id": "alpha_DSBM_NeurIPS2024",
+   "type": "related"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,58 @@
+{
+ "report_id": "2603.15279",
+ "arxiv_id": "2603.15279",
+ "title": "Faster Inference of Flow-Based Generative Models via Improved Data-Noise Coupling",
+ "tldr_zh": "LOOM-CFM 跨 minibatch 保存并迭代更新噪声–数据配对，12 NFE 下 FID 比 minibatch OT 低 41–54%。",
+ "tldr_en": "LOOM-CFM persists and locally refines noise-data assignments across minibatches, cutting 12-NFE FID by 41-54% vs minibatch OT with negligible overhead.",
+ "tags": [
+  "flow-matching",
+  "minibatch-ot",
+  "coupling",
+  "global-assignment",
+  "few-step-sampling",
+  "reflow"
+ ],
+ "code_url": "https://github.com/araachie/loom-cfm",
+ "key_numbers": [
+  "CIFAR10 FID 4.60 @12 NFE midpoint (LOOM-CFM, 4 caches) vs 7.77 OT-CFM (Table 1)",
+  "CIFAR10 FID 4.41 @134 NFE dopri5 vs OT-CFM 3.57 (LOOM worse at high NFE) (Table 1)",
+  "CIFAR10 + reflow: FID 7.63 @1 NFE, 4.49 @2 NFE vs 3-Rectified Flow 8.15 @1 (Table 1)",
+  "ImageNet-32 FID 3.89 @12 NFE vs MFM-BatchOT 7.18; 2.75 @137 dopri5 (Table 2)",
+  "ImageNet-64 FID 8.49 @12 NFE vs MFM-BatchOT 18.27; 6.63 @133 dopri5 (Table 2)",
+  "FFHQ-256 latent FID 5.50 @8 NFE, 4.77 @77 dopri5 vs LFM-ADM 8.07 @84 (Table 3)",
+  "Ablation w/o saving reassignments: FID 6.56 @12 NFE vs 4.60 full LOOM (Table 5)",
+  "Training time CIFAR10 17.3h vs 13.9h without storing assignments (App. D)",
+  "Noise cache for 1M images < 4 MB via seeds (Sec. 3.3)"
+ ],
+ "relations": [
+  {
+   "report_id": "2302.00482",
+   "type": "extends"
+  },
+  {
+   "report_id": "2304.14772",
+   "type": "extends"
+  },
+  {
+   "report_id": "2102.05912",
+   "type": "extends"
+  },
+  {
+   "report_id": "2509.25519",
+   "type": "competes"
+  },
+  {
+   "report_id": "2506.05526",
+   "type": "competes"
+  },
+  {
+   "report_id": "2503.10636",
+   "type": "competes"
+  },
+  {
+   "report_id": "2605.12174",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

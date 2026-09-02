@@ -1,0 +1,57 @@
+{
+ "report_id": "2407.10181",
+ "arxiv_id": "2407.10181",
+ "title": "Multiscale Sliced Wasserstein Distances as Perceptual Color Difference Measures",
+ "tldr_zh": "多尺度 SWD 在 CIELAB 空间做 training-free 感知色差度量，对错位图像对稳健，可当颜色迁移损失",
+ "tldr_en": "Multiscale sliced Wasserstein distance in CIELAB as a training-free perceptual color difference measure robust to misalignment",
+ "tags": [
+  "sliced Wasserstein distance",
+  "color difference",
+  "perceptual metric",
+  "optimal transport",
+  "training-free",
+  "color transfer"
+ ],
+ "code_url": "https://github.com/real-hjq/MS-SWD",
+ "key_numbers": [
+  {
+   "number": "0.841 PLCC / 0.805 SRCC on non-perfectly aligned SPCD pairs",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.794 PLCC / 0.772 SRCC on all SPCD pairs, best overall",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.836 PLCC under horizontal flipping, vs CD-Flow 0.393",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.05M trainable parameters for learned version, 0.08% of CD-Flow's 60.49M",
+   "source": "Table 4"
+  },
+  {
+   "number": "9.5 ms average inference time at P=128 on NVIDIA A100",
+   "source": "Table 3"
+  },
+  {
+   "number": "100,000 random triplets tested, no triangle inequality violations",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "SPCD: 30,000 pairs, 10,005 non-perfectly aligned",
+   "source": "Sec. 4.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2407.10181",
+   "type": "extends"
+  },
+  {
+   "report_id": "2407.10181",
+   "type": "competes_with"
+  }
+ ],
+ "read_full_text": true
+}

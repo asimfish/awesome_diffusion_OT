@@ -1,0 +1,60 @@
+{
+ "report_id": "2106.06345",
+ "arxiv_id": "2106.06345",
+ "title": "Proximal Optimal Transport Modeling of Population Dynamics",
+ "tldr_zh": "JKOnet：把 ICNN 求解的 JKO 步当可微模块，双层优化从时序快照反学 potential 能量，单细胞上优于 forward 法",
+ "tldr_en": "JKOnet treats ICNN-solved JKO steps as differentiable layers and learns the driving potential energy from population snapshots via bilevel optimization with Sinkhorn losses.",
+ "tags": [
+  "jko-scheme",
+  "inverse-problem",
+  "energy-learning",
+  "icnn",
+  "single-cell",
+  "population-dynamics",
+  "sinkhorn-divergence",
+  "bilevel-optimization"
+ ],
+ "code_url": "https://github.com/bunnech/jkonet",
+ "key_numbers": [
+  "Embryoid body scRNA-seq one-step W_eps (day 6-9/12-15/18-21/24-27): JKOnet 0.133/0.133/0.172/0.169 vs Forward 0.187/0.162/0.185/0.203 (Table 1)",
+  "All-steps-ahead W_eps: JKOnet 0.148/0.144/0.154/0.138 vs Forward 0.225/0.160/0.171/0.183 (Table 1)",
+  "Lineage histogram l1 / Hellinger, one-step: JKOnet 88.80 / 0.016 vs Forward 132.27 / 0.026; all-steps: JKOnet 215.60 / 0.034 vs Forward 185.47 / 0.033 (Table 2)",
+  "Line extrapolation Sinkhorn divergence validation/test: Forward 1.94 / 26.10 vs JKOnet 2.90 / 20.30 (Table 3)",
+  "Setup: 15,150 cells, 5 snapshots, 20 PCs of 4000 HVG; ICNN 3x64, energy MLP 2x64; inner loop 50-100 Adam steps, eps=1, tau=1 (Sec. 4.2, Appendix C)"
+ ],
+ "relations": [
+  {
+   "report_id": "2406.12616",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2106.00736",
+   "type": "competes"
+  },
+  {
+   "report_id": "Optimizing_Functionals_on_the_Space_of_Probabiliti",
+   "type": "competes"
+  },
+  {
+   "report_id": "1810.08278",
+   "type": "uses"
+  },
+  {
+   "report_id": "2205.06688",
+   "type": "competes"
+  },
+  {
+   "report_id": "Optimal_Transport_Analysis_of_Single_Cell_Gene_Exp",
+   "type": "extends"
+  },
+  {
+   "report_id": "Learning_Single_Cell_Perturbation_Responses_using",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2408.14608",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

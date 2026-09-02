@@ -1,0 +1,33 @@
+{
+ "report_id": "2405.14449",
+ "arxiv_id": "",
+ "title": "ASBM: Adversarial Schrödinger Bridge Matching",
+ "tldr_zh": "离散时间IMF只学少数转移并用DD-GAN实现，几步达连续IMF百步质量",
+ "tldr_en": "Discrete-time IMF learns a few transition kernels with DD-GANs, matching hundred-step continuous IMF quality in a few steps on unpaired translation.",
+ "tags": [
+  "schrodinger-bridge",
+  "imf",
+  "unpaired-i2i",
+  "adversarial",
+  "few-step"
+ ],
+ "code_url": "https://github.com/Daniil-Selikhanovych/ASBM",
+ "key_numbers": [
+  "No abstract or full text available; no numbers (benchmark per manifest: CelebA 128)"
+ ],
+ "relations": [
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching",
+   "type": "extends"
+  },
+  {
+   "report_id": "UNSB_Unpaired_Neural_Schr_dinger_Bridge",
+   "type": "competes"
+  },
+  {
+   "report_id": "2410.22637",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,36 @@
+{
+ "report_id": "Modeling_Complex_System_Dynamics_with_Flow_Matchin",
+ "arxiv_id": null,
+ "title": "Modeling Complex System Dynamics with Flow Matching Across Time and Conditions",
+ "tldr_zh": "多边缘FM：样条路径跨时间平滑插值，classifier-free guidance跨条件共享动力学",
+ "tldr_en": "Multi-marginal FM with spline paths across time and classifier-free guidance across conditions",
+ "tags": [
+  "flow matching",
+  "multi-marginal",
+  "scRNA-seq",
+  "perturbation prediction",
+  "classifier-free guidance",
+  "trajectory inference"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "MFM_population_embedding",
+   "type": "parallel"
+  },
+  {
+   "report_id": "CellFlow_phenotype_engine",
+   "type": "parallel"
+  },
+  {
+   "report_id": "CellOT_ICNN_Monge",
+   "type": "predecessor"
+  },
+  {
+   "report_id": "UOT_Monge_Eyring",
+   "type": "predecessor"
+  }
+ ],
+ "read_full_text": false
+}

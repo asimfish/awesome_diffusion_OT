@@ -1,0 +1,90 @@
+{
+ "report_id": "2410.05954",
+ "arxiv_id": "2410.05954",
+ "title": "Pyramidal Flow Matching for Efficient Video Generative Modeling",
+ "tldr_zh": "空间金字塔分段流+时间金字塔压缩历史，单一 DiT 端到端训出 768p·24fps·10s 视频",
+ "tldr_en": "Spatial pyramid piecewise flow + temporal pyramid history compression in a single end-to-end DiT",
+ "tags": [
+  "flow matching",
+  "video generation",
+  "pyramid representation",
+  "autoregressive",
+  "DiT",
+  "efficient training"
+ ],
+ "code_url": "https://pyramid-flow.github.io",
+ "key_numbers": [
+  {
+   "number": "20.7k A100 GPU hours",
+   "context": "训练 10s、241 帧视频生成模型的总成本",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "≤15,360 vs 119,040 tokens",
+   "context": "本文 vs 全序列扩散在 10s、241 帧视频上的 token 数",
+   "source": "Sec. 1"
+  },
+  {
+   "number": "81.72 VBench Total Score",
+   "context": "公开数据训练模型中最高，超过 CogVideoX-5B 的 81.61",
+   "source": "Table 1"
+  },
+  {
+   "number": "84.74 VBench Quality Score",
+   "context": "超过 Gen-3 Alpha 的 84.11",
+   "source": "Table 1"
+  },
+  {
+   "number": "56 秒",
+   "context": "推理生成 5s、384p 视频的时间",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "接近 3 倍",
+   "context": "空间金字塔在 50k 图像训练步时相对标准 flow matching 的 FID 收敛速度",
+   "source": "Fig. 7"
+  },
+  {
+   "number": "2B 参数",
+   "context": "基于 SD3 Medium MM-DiT 的模型规模",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "K=3",
+   "context": "金字塔阶段数",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "8×8×8",
+   "context": "3D VAE 的时空压缩比",
+   "source": "Sec. 4.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "继承"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "继承"
+  },
+  {
+   "report_id": "2407.05452",
+   "type": "继承"
+  },
+  {
+   "report_id": "2410.17808",
+   "type": "继承"
+  },
+  {
+   "report_id": "2106.15282",
+   "type": "被取代"
+  },
+  {
+   "report_id": "2303.09556",
+   "type": "被取代"
+  }
+ ],
+ "read_full_text": true
+}

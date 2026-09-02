@@ -1,0 +1,31 @@
+{
+ "report_id": "Finding_the_Center_of_a_Wasserstein_Ball",
+ "arxiv_id": null,
+ "title": "Finding the Center of a Wasserstein Ball",
+ "tldr_zh": "Wasserstein ball 中心是 min-max 鲁棒聚合，与 barycenter 的 min-sum 视角互补",
+ "tldr_en": "Wasserstein ball center as min-max robust aggregation, complementing barycenter's min-sum view",
+ "tags": [
+  "Wasserstein ball",
+  "robust aggregation",
+  "min-max",
+  "barycenter",
+  "optimal transport"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Procrustes-WB",
+   "type": "parallel"
+  },
+  {
+   "report_id": "SGA",
+   "type": "related"
+  },
+  {
+   "report_id": "FRBary",
+   "type": "related"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,40 @@
+{
+ "report_id": "2311.03886",
+ "arxiv_id": "2311.03886",
+ "title": "Formulating Discrete Probability Flow Through Optimal Transport",
+ "tldr_zh": "共线数据下连续PF有限区间是Monge映射；ReLU单向流生成元定义离散probability flow，CIFAR-10 CSD 57.7→9.4",
+ "tldr_en": "Continuous PF is a Monge map on finite intervals for collinear data; a one-directional ReLU generator defines discrete probability flow, cutting CIFAR-10 CSD from 57.7 to 9.4.",
+ "tags": [
+  "discrete-diffusion",
+  "probability-flow",
+  "monge-map",
+  "kantorovich-plan",
+  "sampling-certainty",
+  "diffusion-ot"
+ ],
+ "code_url": "https://github.com/PangzeCheung/Discrete-Probability-Flow",
+ "key_numbers": [
+  "CIFAR-10 (tauLDR-0 pretrained, 1000 init x 10 samples): CSD 57.6898 -> 9.4420; class-std 2.6628 -> 1.1819; class-entropy 1.7703 -> 0.5291 (Table 8)",
+  "Synthetic (32 dims, 2 states): CSD SDDM 14.05-14.74 vs DPF 1.72-2.18 (Table 2); MMD SDDM 2.18e-6 vs DPF 1.89e-5 on 2spirals (Table 1)",
+  "Prop. 2/4: PF map is Monge OT on any finite interval when all data points are collinear"
+ ],
+ "relations": [
+  {
+   "report_id": "2202.07477",
+   "type": "extends"
+  },
+  {
+   "report_id": "The_flow_map_of_the_Fokker_Planck_equation_does_no",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.14250",
+   "type": "competes"
+  },
+  {
+   "report_id": "Score_Based_Generative_Modeling_through_SDEs",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,120 @@
+{
+ "title": "Awesome Diffusion × Optimal Transport — 综合汇报",
+ "footer": "awesome_diffusion_OT · 2026-09-01 · asimfish",
+ "slides": [
+  {
+   "title": "扩散模型 × 最优传输<br>问题 · 理论 · 经典 · 前沿 · 我们能做什么",
+   "body": "<div class='big' style='margin-top:26px'>446 篇 · 30 课题 · 逐篇深读 · 保版式中文译文<br>2026 Q3 增量趋势 · Top-10 切入点状态 · 一个已立项的样例（MPNA）</div><div class='sub' style='margin-top:34px'>Yufeng Li（asimfish）· 2026-09-01 · github.com/asimfish/awesome_diffusion_OT · <kbd>→</kbd> 翻页</div>",
+   "kind": "title"
+  },
+  {
+   "title": "五个问题，五句话",
+   "body": "<table>\n<tr><th style='width:22%'>问题</th><th>一句话答案</th></tr>\n<tr><td>问题是什么</td><td>生成 = 把噪声/源分布搬到数据分布；路径几何、耦合选择、跨域语义、最优性、计算与统计代价 = 五个可形式化问题 P1–P5</td></tr>\n<tr><td>别人的理论</td><td>骨架收口：扩散 = KL 的 Wasserstein 梯度流；SB = 熵正则 OT 的动态形式；FM 与扩散统计等价。「扩散 encoder ≈ OT」「拉直 = OT」均被反例证伪——OT 是设计语言，不是自动性质</td></tr>\n<tr><td>经典工作</td><td>数学五件套（Brenier / McCann / JKO / Benamou–Brenier / Otto）+ 计算三件套（Sinkhorn / Score-SDE / DSB）+ 范式三线（FM / RF / SI）</td></tr>\n<tr><td>最新工作</td><td>理论收口（IMF 指数率、FM minimax、O(d/T)、c-RF）· 一步生成新范式（MeanFlow / W-Flow / Beckmann）· 基础设施拐点（FlashSinkhorn）· 桥模型进医学与复原</td></tr>\n<tr><td>我们能做什么</td><td>理论补全型与接口缝合型空位：保边缘噪声指派（#1，已立项）· OT-aware 调度（#2）· 保耦合蒸馏（#3）· 剂量学导向的医学 SB（#7）</td></tr>\n</table>",
+   "sub": "综合报告 §0"
+  },
+  {
+   "title": "语料：446 篇是怎么来的",
+   "body": "<div class='cols'><div class='col'><ul>\n<li>30 个并行文献调研 agent（8/14）→ ARIS 三层审计 → 8/25 触发点复审 → 9/1 Q3 增量扫描</li>\n<li>477 条引用去重 → <span class='hl'>446 篇</span>，⭐ 核心 139；345 篇有 arXiv id（201 篇由标题检索补全）</li>\n<li>证据级：[P] 345 · [A] 24 · [R] 62 · [B] 15——主会/期刊/workshop/预印本永远分开标</li>\n<li>venue：NeurIPS 96 · ICLR 80 · ICML 71 · CVPR 29；2024–25 两年贡献 63%</li>\n<li>每篇：8 节深读报告（数字带 Table/Eq/页码）+ 原文 PDF + SuperTranslate 保版式译文（对象级 QA）</li>\n</ul></div><div class='col fig'>{{f}}</div></div>",
+   "sub": "综合报告 §1",
+   "figs": {
+    "f": "report/figures/corpus_by_year.png"
+   }
+  },
+  {
+   "title": "30 个课题 × 年份：领域在 2023 年后才成形",
+   "body": "<div class='fig'>{{f}}</div>",
+   "sub": "A 理论 T01–06 · B 流匹配 T07–12 · C 跨域翻译 T13–18 · D 模态 T19–24 · E OT 变体 T25–28 · F 系统 T29–30",
+   "figs": {
+    "f": "report/figures/topic_year_heatmap.png"
+   }
+  },
+  {
+   "title": "元问题：生成建模 = 测度传输",
+   "body": "<div class='big'>任何生成流的动能 ≥ W₂²，缺口就是「弯曲程度」：</div>\n<div class='big' style='text-align:center;margin:18px 0;color:#ffd166'>W₂²(μ₀, μ₁) = min ∫₀¹ E‖v<sub>t</sub>‖² dt &nbsp; s.t. &nbsp; ∂<sub>t</sub>ρ<sub>t</sub> + ∇·(ρ<sub>t</sub>v<sub>t</sub>) = 0</div>\n<ul>\n<li><b>P1 路径几何</b>（为什么慢）：曲率 → 离散化误差 → 最小 NFE；八月新解释：曲率来自去噪器雅可比（2609.00198）</li>\n<li><b>P2 耦合选择</b>（谁配谁）：minibatch OT 受维度诅咒；n≈10⁶ 才见真收益；条件生成中无条件 OT 有害；<span class='hl'>改耦合 vs 保边缘</span></li>\n<li><b>P3 跨域传输</b>（保什么改什么）：SB 最正统；深读发现配对桥全部回避耦合学习</li>\n<li><b>P4 最优性</b>（扩散 ≟ OT）：高斯成立、一般证伪、量化开放</li>\n<li><b>P5 计算与统计</b>（多贵多准）：FlashSinkhorn 161×；OT 耦合训练的统计率完全空白</li>\n</ul>",
+   "sub": "综合报告 §2"
+  },
+  {
+   "title": "两条辩论线都以反例收尾",
+   "body": "<div class='cols'><div class='col'><h3 style='color:#5aa9ff'>扩散 ≟ OT（T02）</h3><ul>\n<li>正方：高斯情形 DDPM encoder = Monge map（Khrulkov，ICLR 2023）</li>\n<li>反方定论：PF-ODE 逐时刻是梯度场，复合后不是凸势梯度——Hessian 非交换项（Lavenant–Santambrogio）</li>\n<li>补丁：特定条件下有限区间成立；W₂ ≤ C·√(score loss)</li>\n<li class='bad'>缺口未被量化（原作者明示 open problem）</li></ul></div>\n<div class='col'><h3 style='color:#5aa9ff'>拉直 ≠ OT（T09）</h3><ul>\n<li>RF：保边缘、单调不增一切凸代价、直线度 O(1/K)；直 ⇔ 路径不相交，是 c-最优的必要非充分条件（仅 1D 重合）</li>\n<li>反例：迭代 rectification 有非最优不动点（Hertrich，NeurIPS 2025）</li>\n<li class='ok'>八月修复 ×2：c-RF 梯度类投影恒收敛到 OT（2608.02487）；reflow×minibatch-OT 极限 = N-循环单调耦合（2608.07042）</li>\n<li>结论：「直线度」与「最优性」是两个自由度，加一个投影约束就能接上</li></ul></div></div>",
+   "sub": "综合报告 §3.2–3.3"
+  },
+  {
+   "title": "四大理论张力（+ 一条工程张力）",
+   "body": "<ul class='big' style='font-size:22px'>\n<li><b>耗散 vs 测地</b>：扩散走 KL 梯度流（JKO），OT 走测地线（Benamou–Brenier）——同一 P₂ 流形上两种变分结构不重合</li>\n<li><b>逐时刻最优 vs 全局最优</b>：每一瞬是梯度场，复合起来不是（Lavenant 反例的本质）</li>\n<li><b>直 vs 最优</b>：直线化降代价但不动点未必最优；c-RF / N-循环单调条件修复</li>\n<li><b>加速 vs 统计精度</b>：迭代复杂度与统计率各自 sharp，联合前沿无人刻画</li>\n<li class='hl'><b>改耦合 vs 保边缘</b>（深读新增）：实例级噪声/端点选择提高兼容性但改变有效初始分布；文献几乎不报告漂移 → MPNA 的立项动机</li>\n</ul>",
+   "sub": "综合报告 §3.8"
+  },
+  {
+   "title": "Schrödinger 桥：五代求解器与 Q3 的精细化",
+   "body": "<table>\n<tr><th>代</th><th>代表</th><th>关键洞见</th></tr>\n<tr><td>1 深度 IPF</td><td>DSB（NeurIPS 2021）· SB-FBSDE</td><td>SGM 恰为第一次 IPF 迭代；痛点：交替训练误差累积</td></tr>\n<tr><td>2 IMF / bridge matching</td><td>DSBM（NeurIPS 2023）· IDBM</td><td>SB 是唯一既 Markov 又属参考桥 reciprocal 类的过程</td></tr>\n<tr><td>3 轻量化</td><td>LightSB / LightSB-M / GSBM</td><td>任意耦合单次 matching 即证恢复 SB</td></tr>\n<tr><td>4 在线/离散/少步/半监督</td><td>α-DSBM · CSBM · FSBM</td><td>单网络在线；离散 D-IMF；&lt;8% 配对样本</td></tr>\n<tr><td>5 理论收口</td><td>IMF 指数率（NeurIPS 2025）· Sinkhorn bridge 统计 · IPMF · Tang 专著</td><td>首个非渐近 KL 指数率；matching 系估计量统一</td></tr>\n<tr><td class='hl'>Q3 新</td><td>PRISM · SDDBMs · 混合分布桥 · 高温 SB</td><td>题目从「怎么解」变成「解什么」：参考过程设计、端点松弛、GMM 桥连续性界、去噪扩散 = 高温 SB</td></tr>\n</table>",
+   "sub": "综合报告 §3.4"
+  },
+  {
+   "title": "经典年表：接口奠基（2021–2023）",
+   "body": "<table style='font-size:15px'>\n<tr><th>年份</th><th>工作</th><th>奠基点</th></tr>\n<tr><td>2021</td><td>Score-SDE · DDIM · <b>DSB</b> · W2 benchmark</td><td>定义 encoder map；采样确定化；SB 进生成；「下游好 ≠ map 准」</td></tr>\n<tr><td>2022</td><td>EDM · DPM-Solver</td><td>few-NFE 公共基准；指数积分器 NFE 数百 → 10–20</td></tr>\n<tr><td>2023 ICLR</td><td><b>Flow Matching</b> · <b>Rectified Flow</b> · Stochastic Interpolants</td><td>simulation-free CNF；「直线换算力」；任意两分布插值统一 flows/diffusions/SB</td></tr>\n<tr><td>2023 ICLR</td><td>Khrulkov 猜想 + Lavenant 反例 · <b>DDIB</b> / NOT</td><td>「扩散≟OT」定型；翻译 = 两段 EOT 串联</td></tr>\n<tr><td>2023 ICML</td><td><b>I2SB</b> · Multisample FM / OT-CFM</td><td>桥模型工业可用性首证；batch 级 OT 耦合进 FM 训练</td></tr>\n<tr><td>2023 NeurIPS</td><td><b>DSBM / IMF</b> · UOTM</td><td>SB 求解不再累积误差；UOT 半对偶生成</td></tr>\n<tr><td>2024</td><td>SD3 · SiT · DDBM · Immiscible · AYS/GITS · LightSB-M</td><td>RF 公式成工业标准；噪声指派一行代码加速 3×；调度原理化</td></tr>\n</table>",
+   "sub": "综合报告 §4"
+  },
+  {
+   "title": "前沿六线（2025–2026）",
+   "body": "<ul style='font-size:19px'>\n<li><b>理论收口</b>：IMF 指数率 · 「reflow≠OT」反例 · c-RF · reflow×minibatch-OT 极限点 · FM minimax · O(d/T) · SGM = Wasserstein proximal</li>\n<li><b>一步生成新范式</b>：MeanFlow（1-NFE FID 3.43）· W-Flow（1.29）· Beckmann 自治流 · Flow Map Matching · LBM</li>\n<li><b>耦合工程</b>：大规模 Sinkhorn（n≈10⁶）→ 半离散耦合 → LOOM-CFM → C²OT → <span class='hl'>QC-FM O(n) 分位数耦合</span>（Q3）</li>\n<li><b>推理期对齐</b>（七环节）：Immiscible → NoiseQuery / verifier 搜索 → Golden Noise / NoiseRefine → OT 桥接 prior → 中段对齐（空白）→ 跨帧噪声 → inversion；<span class='bad'>普遍不报告边缘漂移</span></li>\n<li><b>桥与翻译</b>：UniDB++ · DBIM / CDBM · FSBM · Q3 新增 11 篇（DoseBridge 以剂量为目标、EditBridge 4K、DDB 离散桥 ECCV 2026）</li>\n<li><b>系统与评测</b>：FlashSinkhorn = attention 同构（161×，仍 [A]，多 GPU 空位）· FID 对少步失真 · SynthRAD：像素好看 ≠ 剂量正确</li>\n</ul>",
+   "sub": "综合报告 §5"
+  },
+  {
+   "title": "Q3 增量扫描：62 篇新工作，三条主线",
+   "body": "<div class='cols'><div class='col'><ul style='font-size:18px'>\n<li>方法：6 组 arXiv 查询 → 122 候选 → DeepSeek 分级 + 人工复核 → 62 篇（核心 24）</li>\n<li><b>拉直理论加投影</b>：c-RF · reflow×minibatch-OT 极限点 → #4 从「空位」降为「实用化空位」</li>\n<li><b>耦合工程降本</b>：QC-FM（O(n)）· Gromov-Monge FM → 「不解完整 OT 拿多少收益」成为主流问法</li>\n<li><b>SB 端点/参考过程精细化</b>：PRISM · SDDBMs · 混合分布桥 · 高温 SB</li>\n<li>应用铺开：医学桥 4 篇（DoseBridge 直接以剂量为目标）· 复原/编辑桥 3 篇 · 语音 5 篇</li>\n<li>WGF 成为微调工具：奖励引导一步模型 · CVaR 极端事件</li>\n</ul></div><div class='col'><table style='font-size:14px'>\n<tr><th>触发点</th><th>状态（9/1 核实）</th></tr>\n<tr><td>ECCV 2026</td><td>9/8–12 Malmö；LNCS 17001–17083 已上线；3 篇 OT×扩散接收稿已见 arXiv</td></tr>\n<tr><td>NeurIPS 2026</td><td>放榜 9/24；主会 12/6–12 悉尼</td></tr>\n<tr><td>ICML 2026 → PMLR</td><td>卷未出；FlashSinkhorn 仍 [A]，repo 停 v0.3.3</td></tr>\n<tr><td>MICCAI / SIGGRAPH Asia / ISMIR 2026</td><td>各 1 篇接收稿</td></tr>\n</table></div></div>",
+   "sub": "trends/TRENDS_2026Q3.md"
+  },
+  {
+   "title": "逐篇深读改变了什么（示例：T14 桥翻译 14 篇）",
+   "body": "<ul style='font-size:19px'>\n<li><b>随机桥 vs 确定性直线</b>：I2SB Table 6/9、DDBM Sec. 5、DBIM Table 4/5、LBM 消融一致——最优噪声强度由任务条件熵与步数预算决定，低 NFE 取确定性、高 NFE 取随机</li>\n<li><b>配对桥全部回避了耦合学习</b>：I2SB 在 Dirac 边界下退化为逐对最小能量桥；DDBM Theorem 2 只保边际 q(x<sub>t</sub>|x<sub>T</sub>)；CDBM Prop. 3.2 只保 PF-ODE 解映射——<span class='hl'>没有一篇陈述蒸馏/加速后终端耦合是否保持</span>（Top-10 #3 的空白被坐实）</li>\n<li><b>横向比较前先统一协议</b>：DDBM/DBIM/CDBM 的 E→H/DIODE 指标在训练集上算；DDBM 的 N=40 实为 NFE 118；三篇互相声称包含对方</li>\n<li>T12 推理期噪声选择：质量/对齐指标齐全，<span class='bad'>边缘漂移与多样性损失无人报告</span></li>\n<li>T09：RF 的 O(1/K) 是对 min<sub>k</sub> 的界且假设每步精确求解；「一步 SOTA」比较范围只含 U-Net 一步模型</li>\n</ul>",
+   "sub": "综合报告 §6 · reports/2309.16948.md 等"
+  },
+  {
+   "title": "十二条洞察（上）",
+   "body": "<ul style='font-size:19px'>\n<li><b>I1</b> OT 是设计语言不是自动性质——度量「距 OT 的偏差」而非宣称「实现了 OT」</li>\n<li><b>I2</b> 「OT 用量」是精确可研究的变量：大 batch 才见收益 · 点云上完全 OT 有害 · 条件生成中无条件 OT 有害</li>\n<li><b>I3</b> 免重训的价值集中在耦合与调度两个自由度；推理期噪声选择文献普遍不报告漂移</li>\n<li><b>I4</b> 直线化与最优性正式解耦，八月两个定理把它们重新接上（投影算子的选择问题）</li>\n<li><b>I5</b> 理论骨架收口，论文级空位在接缝处：OT 耦合下的 FM 统计率、学习误差下的 IMF 收敛、迭代×样本联合下界</li>\n<li><b>I6</b> 蒸馏的「保耦合」是零保证地带——深读把判断变成事实</li>\n</ul>",
+   "sub": "综合报告 §7"
+  },
+  {
+   "title": "十二条洞察（下）",
+   "body": "<ul style='font-size:19px'>\n<li><b>I7</b> 桥模型的最优随机性由任务决定，不是常数——未被形式化的可发现象</li>\n<li><b>I8</b> 基础设施拐点已到（Sinkhorn = attention），多 GPU / 非欧 cost 空位仍开放</li>\n<li><b>I9</b> 评测系统性错位，OT 可当解药，外围已开始填充（Sinkhorn 散度蒸馏目标、FGW 结构评测）</li>\n<li><b>I10</b> 高校比较优势区域明确：理论补全型与接口缝合型不需预训练算力；时间窗 12–18 个月</li>\n<li><b>I11</b> 医学垂直入场条件已官方验证（SynthRAD：25 队零 SB），窗口正在收窄（DoseBridge）</li>\n<li><b>I12</b> 深读改变了两个 8/25 判断：#1 卖点「方差降低」降级为「与 iid 同分布」；#4 从空位降为实用化空位——结论跟着证据走</li>\n</ul>",
+   "sub": "综合报告 §7"
+  },
+  {
+   "title": "Top-10 切入点状态（2026-09-01）",
+   "body": "<table style='font-size:14.5px'>\n<tr><th>#</th><th>切入点</th><th>类型 · 算力</th><th>状态</th></tr>\n<tr><td>1</td><td>免训练 batch 级保边缘噪声指派（MPNA）</td><td>方法+理论 · 低</td><td class='ok'>已立项 + 沙盒完成；最近邻 QC-FM（训练侧）</td></tr>\n<tr><td>2</td><td>OT-aware 采样调度（动能泛函替代 KLUB）</td><td>理论 · 低</td><td>空位仍在；曲率来源新刻画（雅可比）</td></tr>\n<tr><td>3</td><td>保耦合的桥蒸馏 + 漂移度量</td><td>方法 · 中</td><td>空位仍在；深读证实文献零保证</td></tr>\n<tr><td>4</td><td>reflow 正定理</td><td>理论 · 低</td><td class='bad'>进一步被占（c-RF + 极限点）；剩 GMM/流形 + 大规模投影</td></tr>\n<tr><td>5</td><td>OT-CFM 端到端统计率</td><td>理论 · 低</td><td>空位仍在；函数 FM 离散化一致性可借</td></tr>\n<tr><td>6</td><td>PF-ODE 次优度量化</td><td>理论 · 低</td><td>空位仍在，工具已齐</td></tr>\n<tr><td>7</td><td>剂量学导向的医学 SB 刷 SynthRAD</td><td>应用 · 中</td><td class='hl'>窗口收窄（DoseBridge）；MICCAI 2027 前动手</td></tr>\n<tr><td>8</td><td>FGW 语义对应进采样</td><td>方法 · 中</td><td>空位仍在</td></tr>\n<tr><td>9</td><td>视频时空分解 reflow / 帧间 Sinkhorn</td><td>方法 · 中高</td><td>空位仍在</td></tr>\n<tr><td>10</td><td>OT 系评测指标替代 FID</td><td>评测 · 低</td><td>外围开始填充</td></tr>\n</table>",
+   "sub": "综合报告 §8.1"
+  },
+  {
+   "title": "样例：MPNA——免训练 batch 级保边缘噪声指派",
+   "body": "<div class='cols'><div class='col'><ul style='font-size:18px'>\n<li><b>问题</b>：top-1-of-k 噪声选择提高兼容性，但噪声人口分布 q<sub>k</sub> ≠ N(0,I)：分布偏移、同质化、verifier hacking</li>\n<li><b>形式化</b>：max<sub>π</sub> E<sub>π</sub>[s(c,z)] s.t. π ∈ Π(μ,ν)——Kantorovich 问题；batch 置换 = 经验 Kantorovich（Hungarian O(B³)）</li>\n<li><b>Lemma 1</b>：任意数据依赖置换不改变噪声多重集 → 人口统计量与 iid 同分布</li>\n<li><b>Prop. 2</b>：s = f(c)+g(z)+h(c,z)，置换对「通用好噪声」g 完全盲、只收获 h；top-1-of-k 的漂移正来自 g</li>\n<li><b>Prop. 3</b>：B→∞ 收敛到半离散 OT，条件噪声分布 = Laguerre 胞腔；共享库检索把胞腔退化为单点</li>\n<li><b>方法</b>：无条件单步 x̂₀(z) + CLIP 相似度矩阵 + Hungarian；+1 NFE / 输出，与 k 无关</li>\n</ul></div><div class='col fig'>{{f}}</div></div>",
+   "sub": "~/Code/mpna/PROPOSAL.md",
+   "figs": {
+    "f": "report/figures/mpna_sandbox.png"
+   }
+  },
+  {
+   "title": "MPNA 沙盒：数字与闭式理论逐点吻合",
+   "body": "<table style='font-size:16px'>\n<tr><th>方法（λ=0）</th><th>评分/输出</th><th>有效增益</th><th>人口漂移 BW-W₂² − null</th><th>范数漂移</th><th>同提示多样性/iid</th></tr>\n<tr><td>IID</td><td>1</td><td>−0.001</td><td>0</td><td>−0.04</td><td>1.000</td></tr>\n<tr><td>Top-1-of-4</td><td>4</td><td>1.021</td><td>−0.003</td><td>+0.41</td><td>0.996</td></tr>\n<tr><td>Top-1-of-16</td><td>16</td><td>1.768</td><td>+0.033</td><td>+2.42</td><td>0.996</td></tr>\n<tr class='ok'><td><b>Hungarian B=128</b></td><td><b>1</b></td><td><b>1.972</b></td><td><b>0（逐位 = IID）</b></td><td><b>−0.04（= IID）</b></td><td>0.967</td></tr>\n<tr class='ok'><td><b>Hungarian B=512</b></td><td><b>1</b></td><td><b>2.472</b></td><td><b>0</b></td><td><b>+0.02（= IID）</b></td><td>0.949</td></tr>\n<tr class='bad'><td>共享库检索（κ=∞）</td><td>1</td><td>2.586</td><td>+1.375</td><td>+5.54</td><td><b>0.000</b></td></tr>\n</table>\n<ul style='font-size:17px;margin-top:14px'>\n<li>Top-1-of-4 在 λ=0/0.5/1/2/4 的增益 1.021/0.913/0.720/0.459/0.246 vs 理论 m₄/√(1+λ²) = 1.029/0.921/0.728/0.460/0.250</li>\n<li>Hungarian B=128 以 1 次评分/输出取得等效 top-1-of-25 的增益；对 λ 完全不变</li>\n<li>非线性 φ(z) 场景排序一致 → 结论不依赖线性闭式；5 seeds × 4096 输出</li>\n</ul>",
+   "sub": "~/Code/mpna/sandbox/results"
+  },
+  {
+   "title": "MPNA 实验计划（claim-driven）",
+   "body": "<ul style='font-size:19px'>\n<li><b>C1（主导）</b>：GenEval / T2I-CompBench 上 Hungarian(B=128, +1 NFE) 提升对齐指标，且人口边缘与 iid 统计不可区分；同等增益的 top-1-of-k 产生可测漂移</li>\n<li><b>C2（支撑）</b>：增益来自 verifier 的提示特异分量，通用分量（美学分）是漂移源——λ 消融，预测 Hungarian 对 λ 不变</li>\n<li>核心块：B1 SDXL-Turbo pilot → B2 top-1-of-k / NoiseQuery 基线 → B3 漂移套件（范数直方图 · BW-W₂² · DINOv2 多样性 · FID/KID/P-R · 同提示 LPIPS）→ B4 λ 消融 → B5 缩放与松弛（B、κ、Sinkhorn ε）</li>\n<li>预注册判据：GenEval ≥ iid + 1.5 pt 且 ≥ top-1-of-4 增益的 60%；漂移套件两样本检验 p &gt; 0.1</li>\n<li>失败转向：h 分量太弱 → 条件单步评分 / 中段重排；多样性下降可感知 → κ&gt;1 或熵项；只在少步模型成立 → 限定为端侧初值工程</li>\n<li>时间表：W3–4 pilot · W5–8 B2–B4 · W9–12 B5 + ICLR 2027 骨架</li>\n</ul>",
+   "sub": "~/Code/mpna/PROPOSAL.md §6–§7"
+  },
+  {
+   "title": "写作红线（从 446 篇的反例总结）",
+   "body": "<ul class='big' style='font-size:21px'>\n<li>不说「实现了最优传输」——说「以 OT 为设计目标并度量偏差」</li>\n<li>少步比较固定 NFE 口径并报告多样性（DDBM 的 N=40 实为 NFE 118）</li>\n<li>会议归属与「已接收」必须官方可核验；预印本结论一律 [R] 限定</li>\n<li>任何实例级耦合修改必须报告边缘漂移/多样性——用数据证明，不引 Lemma</li>\n<li>条件生成中的 OT 声明过 C²OT 检查；语义对应线须证明增益来自耦合结构而非 attention 重命名</li>\n<li>桥模型横向比较前统一评测协议（训练集/测试集、NFE 口径）</li>\n</ul>",
+   "sub": "综合报告 §9.1"
+  },
+  {
+   "title": "交付物与复现",
+   "body": "<div class='cols'><div class='col'><ul style='font-size:18px'>\n<li><b>README.md / README_zh.md</b>：446 篇按 6 板块 30 课题（awesome-ml4co 规范），每条附 report / PDF / zh-PDF</li>\n<li><b>reports/</b>：逐篇 8 节深读（文件名 = arXiv id）；<b>topics/</b>：30 份课题综合（跨论文观察 + 开放问题 + 阅读顺序）</li>\n<li><b>papers/ · papers_zh/</b>：原文与保版式译文（GitHub Release 资产）+ 对象级 QA</li>\n<li><b>report/</b>：本综合报告（zh/en Markdown + PDF）；<b>slides/</b>：本 HTML 幻灯片 + Beamer PDF</li>\n<li><b>trends/</b>：Q3 增量扫描（62 篇 + 机器可读清单）</li>\n</ul></div><div class='col'><pre style='font-size:13px;background:#1b2735;padding:12px;border-radius:6px;line-height:1.45'>python3 scripts/build_corpus.py\npython3 scripts/resolve_arxiv.py\npython3 scripts/fetch_papers.py\npython3 scripts/extract_text.py\npython3 scripts/build_manifests.py\npython3 scripts/gen_reports_llm.py      # DeepSeek\nbash   scripts/translate_batch.sh --loop # SuperTranslate\npython3 scripts/scan_arxiv_recent.py 20260801 20260901\npython3 scripts/classify_candidates.py\npython3 scripts/topic_digests.py\npython3 src/generator.py\nbash   scripts/build_pdf.sh\npython3 scripts/build_slides.py</pre></div></div>",
+   "sub": "github.com/asimfish/awesome_diffusion_OT"
+  },
+  {
+   "title": "下一步（W3–W4）",
+   "body": "<ul class='big' style='font-size:22px'>\n<li>MPNA B1 pilot：SDXL-Turbo + GenEval 553×4，iid vs Hungarian(B=128)，3 seeds，配漂移套件（单卡 4090/5090）</li>\n<li>复现三件套：Immiscible（一行代码）· OT-CFM（torchcfm）· AYS/DPM-Solver++ 对比</li>\n<li>9/24 NeurIPS 2026 放榜后重跑趋势扫描，核对接收名单，[A]→[P]</li>\n<li>#3 漂移度量原型：借 T14 的 DDBM / DBIM / CDBM 做「蒸馏前后终端耦合」对照</li>\n<li>知识库维护：译文批处理持续补齐（tmux 循环）；ICML 2026 PMLR 卷上线后升级证据级</li>\n</ul>",
+   "sub": "综合报告 §8.4"
+  }
+ ]
+}

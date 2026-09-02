@@ -1,0 +1,70 @@
+{
+ "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+ "arxiv_id": "2303.16852",
+ "title": "Diffusion Schrödinger Bridge Matching",
+ "tldr_zh": "提出 IMF 交替 Markov/reciprocal 投影，DSBM 用 bridge-matching 回归实现，解决 DSB 误差累积与遗忘",
+ "tldr_en": "IMF alternates Markov and reciprocal projections; DSBM implements it via bridge-matching regression, fixing DSB error accumulation",
+ "tags": [
+  "Schrödinger Bridge",
+  "Iterative Markovian Fitting",
+  "bridge matching",
+  "entropic optimal transport",
+  "diffusion models"
+ ],
+ "code_url": "https://github.com/yuyang-shi/dsbm-pytorch",
+ "key_numbers": [
+  {
+   "number": "0.140/0.140/0.315/0.812",
+   "description": "DSBM-IPF 2-Wasserstein on moons/scurve/8gaussians/moons-8gaussians",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.190/0.272/0.411/0.987",
+   "description": "DSB 2-Wasserstein on same 2D datasets",
+   "source": "Table 2"
+  },
+  {
+   "number": "8.75±0.87",
+   "description": "DSBM-IPF average KL(P_t|P^SB_t) ×10^-3 at d=50",
+   "source": "Table 3"
+  },
+  {
+   "number": "32.8±1.28",
+   "description": "DSB average KL(P_t|P^SB_t) ×10^-3 at d=50",
+   "source": "Table 3"
+  },
+  {
+   "number": "30%",
+   "description": "DSBM runtime reduction vs DSB on MNIST/EMNIST",
+   "source": "Sec. 6"
+  },
+  {
+   "number": "σ² ∈ {0.01, 0.1, 1, 10}",
+   "description": "CelebA 64×64 ablation range for noise variance",
+   "source": "Figure 6"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_DSB_De_Bortoli",
+   "type": "继承"
+  },
+  {
+   "report_id": "IDBM_Peluchetti_2023",
+   "type": "同期独立"
+  },
+  {
+   "report_id": "Rectified_Flow_Liu_2023",
+   "type": "被关联（σ→0 极限）"
+  },
+  {
+   "report_id": "SB_CFM_Tong_2023",
+   "type": "竞争基线"
+  },
+  {
+   "report_id": "Alpha_DSBM_NeurIPS_2024",
+   "type": "被后续发展"
+  }
+ ],
+ "read_full_text": true
+}

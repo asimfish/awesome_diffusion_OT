@@ -1,0 +1,56 @@
+{
+ "report_id": "2512.22796",
+ "arxiv_id": "2512.22796",
+ "title": "Parallel Diffusion Solver via Residual Dirichlet Policy Optimization",
+ "tldr_zh": "每步并行评估 K 个学得中点梯度做单纯形加权，蒸馏+Dirichlet 残差策略 RL；5 NFE CIFAR-10 FID 4.33",
+ "tldr_en": "K parallel gradients at learned intermediate times, simplex-weighted; distillation then Dirichlet residual policy RL; CIFAR-10 FID 4.33 at 5 NFE without added latency.",
+ "tags": [
+  "ode-solver",
+  "parallel-sampling",
+  "solver-distillation",
+  "reinforcement-learning",
+  "text-to-image",
+  "preprint"
+ ],
+ "code_url": "https://github.com/BeierZhu/EPD",
+ "key_numbers": [
+  "CIFAR-10 EPD-Solver FID 4.33 at 5 Para. NFE vs AMED-Plugin 6.61 (Table I)",
+  "LSUN Bedroom EPD-Solver FID 13.21 at 3 Para. NFE vs AMED-Solver 58.21 (Table I)",
+  "SD v1.5 20 NFE HPSv2.1 0.2482 vs iPNDM 50 NFE 0.2474 (Table II)",
+  "SD3-Medium 512 20 NFE HPSv2.1 0.2742 vs DDIM 28 steps 0.2734 (Table III)",
+  "K=1->2 latency CIFAR 5 NFE 47.2 -> 45.3 ms; LSUN 9 NFE 131.1 -> 138.9 ms (Table V)",
+  "Residual PCs: 2 components explain >97% variance (Fig. 3)",
+  "Abstract 5-NFE numbers (4.47/7.97/8.17/8.26) match EPD-Plugin, not EPD-Solver column"
+ ],
+ "relations": [
+  {
+   "report_id": "2312.00094",
+   "type": "extends"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "uses"
+  },
+  {
+   "report_id": "2206.00927",
+   "type": "uses"
+  },
+  {
+   "report_id": "2204.13902",
+   "type": "uses"
+  },
+  {
+   "report_id": "2405.15506",
+   "type": "competes"
+  },
+  {
+   "report_id": "2403.01329",
+   "type": "competes"
+  },
+  {
+   "report_id": "2506.10177",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

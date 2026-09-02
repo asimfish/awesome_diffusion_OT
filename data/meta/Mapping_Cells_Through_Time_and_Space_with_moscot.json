@@ -1,0 +1,46 @@
+{
+ "report_id": "Mapping_Cells_Through_Time_and_Space_with_moscot",
+ "arxiv_id": null,
+ "title": "Mapping Cells Through Time and Space with moscot",
+ "tldr_zh": "moscot 用低秩熵 OT/GW/FGW 统一四类单细胞 OT 应用，扩到 170 万细胞×20 时间点 atlas 规模，实验验证 NEUROD2",
+ "tldr_en": "moscot unifies four single-cell OT applications via low-rank entropic OT/GW/FGW, scaling to 1.7M cells × 20 timepoints atlas, validating NEUROD2",
+ "tags": [
+  "single-cell",
+  "optimal-transport",
+  "Gromov-Wasserstein",
+  "Fused-GW",
+  "atlas-scale",
+  "trajectory-inference",
+  "spatial-transcriptomics"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "170 万细胞 × 20 时间点",
+   "source": "调研 agent 一句话贡献，非摘要原文"
+  },
+  {
+   "number": "NEUROD2 实验验证",
+   "source": "调研 agent 一句话贡献，非摘要原文"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "Waddington-OT",
+   "type": "继承"
+  },
+  {
+   "report_id": "GENOT",
+   "type": "被取代/互补"
+  },
+  {
+   "report_id": "DeepRUOT",
+   "type": "互补"
+  },
+  {
+   "report_id": "DeST-OT",
+   "type": "互补"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,83 @@
+{
+ "report_id": "2404.11925",
+ "arxiv_id": "2404.11925",
+ "title": "EdgeFusion: On-Device Text-to-Image Generation",
+ "tldr_zh": "BK-SDM-Tiny+改进LCM蒸馏+合成数据，W8A16量化+MLT，Exynos 2400 NPU上2步<1s",
+ "tldr_en": "Compact SD with improved LCM distillation and synthetic data runs 2-step T2I under 1s on Exynos NPU",
+ "tags": [
+  "text-to-image",
+  "on-device deployment",
+  "LCM distillation",
+  "quantization",
+  "NPU",
+  "synthetic data",
+  "BK-SDM"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "738.5 ms",
+   "source": "Tab. 7",
+   "context": "EdgeFusion with MLT total latency on Exynos 2400 (steps not specified in table)"
+  },
+  {
+   "number": "×10.3 speedup vs SD-v1.4",
+   "source": "Sec. 4.3, Tab. 5",
+   "context": "EdgeFusion 4-step 150ms vs SD-v1.4 25-step 930ms on A100"
+  },
+  {
+   "number": "73% latency gain from MLT",
+   "source": "Sec. 4.3, Tab. 6",
+   "context": "cross attention block relative time ratio 100% → 27%"
+  },
+  {
+   "number": "IS +5.28 (+17.4%), CLIP +0.021",
+   "source": "Sec. 4.1, Tab. 2",
+   "context": "BK-SDM-Adv-Tiny vs BK-SDM-Tiny on COCO, 25 steps"
+  },
+  {
+   "number": "FID 26.15 vs 17.43",
+   "source": "Tab. 2",
+   "context": "BK-SDM-Adv-Tiny FID worse than BK-SDM-Tiny despite human preference 60.2%"
+  },
+  {
+   "number": "IS +3.27, FID −5.69, CLIP +0.018",
+   "source": "Sec. 4.2, Tab. 3",
+   "context": "EdgeFusion advanced distillation vs w/o improved data, 4 steps"
+  },
+  {
+   "number": "62.3k synthetic pairs, 29.9k curated",
+   "source": "Sec. 2.2, Supplementary Tab. 8",
+   "context": "synt and synt-cur dataset sizes"
+  },
+  {
+   "number": "0.5B parameters",
+   "source": "Tab. 1",
+   "context": "EdgeFusion parameter count"
+  },
+  {
+   "number": "W8A16: INT8 weights, INT16 activations for U-Net",
+   "source": "Sec. 2.3",
+   "context": "mixed-precision PTQ; encoder/decoder FP16"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2305.15798",
+   "type": "继承（底模 BK-SDM-Tiny）"
+  },
+  {
+   "report_id": "2310.04378",
+   "type": "继承（LCM 蒸馏方法）"
+  },
+  {
+   "report_id": "2311.16567",
+   "type": "同期竞争（MobileDiffusion 端侧 T2I）"
+  },
+  {
+   "report_id": "2311.17042",
+   "type": "同期竞争（SD-Turbo 少步蒸馏）"
+  }
+ ],
+ "read_full_text": true
+}

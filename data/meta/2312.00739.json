@@ -1,0 +1,50 @@
+{
+ "report_id": "2312.00739",
+ "arxiv_id": "2312.00739",
+ "title": "Adversarial Score Distillation: When score distillation meets GAN",
+ "tldr_zh": "把 SDS/VSD 重写为 WGAN 生成器损失：SDS 用固定次优判别器、VSD 判别器优化不完整；补全判别器损失后 2D/3D 蒸馏更稳。",
+ "tldr_en": "ASD rederives SDS/VSD as WGAN generator losses with a diffusion-parameterized log-ratio discriminator, shows SDS uses a fixed suboptimal discriminator and VSD an incomplete update, and completes the discriminator loss.",
+ "tags": [
+  "score-distillation",
+  "wgan",
+  "adversarial",
+  "text-to-3d",
+  "ipm",
+  "cfg"
+ ],
+ "code_url": "https://github.com/2y7c3/ASD",
+ "key_numbers": [
+  "Text-to-3D CLIP B/32: ASD 0.3314 vs SDS 0.3282 vs VSD 0.3203 (Table 1)",
+  "CLIP B/16: ASD 0.3376 vs SDS 0.3290 vs VSD 0.3258; CLIP L/14: SDS 0.2889 > ASD 0.2854 (Table 1)",
+  "User study ASD vs VSD: details 64.7% vs 35.3%, overall quality 65.5% vs 34.5% (Table 1)",
+  "Default lambda = 7.5, gamma = -1 (2D) / -0.5 (3D), eta = 1/2 (Sec. 4, 6)",
+  "NeRF distillation > 5 h on one A800; shared noise speeds up 30-50% (Sec. 7)"
+ ],
+ "relations": [
+  {
+   "report_id": "2311.18828",
+   "type": "competes"
+  },
+  {
+   "report_id": "2311.17042",
+   "type": "competes"
+  },
+  {
+   "report_id": "DMD2_Improved_Distribution_Matching_Distillation",
+   "type": "competes"
+  },
+  {
+   "report_id": "Score_identity_Distillation",
+   "type": "competes"
+  },
+  {
+   "report_id": "2512.06802",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2605.11755",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,39 @@
+{
+ "report_id": "2505.21528",
+ "arxiv_id": "2505.21528",
+ "title": "A Unified and Fast-Sampling Diffusion Bridge Framework via Stochastic Optimal Control",
+ "tldr_zh": "SOC统一扩散桥，h-transform为γ→∞特例；可调γ改善细节，闭式解加速",
+ "tldr_en": "Unifies diffusion bridges via stochastic optimal control; Doob's h-transform is the infinite-terminal-penalty limit; tunable penalty plus closed-form reverse SDE.",
+ "tags": [
+  "diffusion-bridge",
+  "stochastic-optimal-control",
+  "doob-h-transform",
+  "unification",
+  "fast-sampling",
+  "image-restoration"
+ ],
+ "code_url": "https://github.com/2769433owo/UniDB-plusplus",
+ "key_numbers": [
+  "No numbers in abstract; full text not read",
+  "Manifest note (unverified): UniDB++ 5-20x training-free speed-up, 5-10 steps"
+ ],
+ "relations": [
+  {
+   "report_id": "UniDB_UniDB",
+   "type": "extends"
+  },
+  {
+   "report_id": "2309.16948",
+   "type": "extends"
+  },
+  {
+   "report_id": "GOUB_Generalized_Ornstein_Uhlenbeck_Bridge",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.15885",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,44 @@
+{
+ "report_id": "2404.04650",
+ "arxiv_id": "2404.04650",
+ "title": "InitNO: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization",
+ "tldr_zh": "首步注意力分划分有效/无效噪声区，带 KL 高斯约束的仿射优化把初值推进有效区；SD1.4 用户研究 63.33%，耗时 2.3×",
+ "tldr_en": "Scores initial noise by first-step cross/self-attention, optimizes an affine reparameterization with KL-to-Gaussian penalty into the valid region; SD1.4, 2.3x slower.",
+ "tags": [
+  "noise-optimization",
+  "initial-noise",
+  "attention-guidance",
+  "compositional-generation",
+  "text-to-image",
+  "inference-time",
+  "training-free"
+ ],
+ "code_url": "https://github.com/xiefan-guo/initno",
+ "key_numbers": [
+  "User study (12 raters x 20 questions): InitNO 63.33% vs Attend-and-Excite 14.17% vs SD 4.17% (Table 1)",
+  "Inference time on V100: SD 8.34 s -> InitNO 18.93 s per 512px image (Sec. 5.3)",
+  "Thresholds tau_c = 0.2 (cross-attn response), tau_s = 0.3 (self-attn conflict); KL weight lambda_3 = 500 (Sec. 4.1-4.2)",
+  "Up to 50 Adam steps x 5 resampling rounds per prompt (Alg. 1)",
+  "CLIP image-text / text-text similarity above all baselines on Animal-Animal, Animal-Object, Object-Object (Fig. 7, bar chart only)",
+  "Without KL loss the optimized noise visibly leaves N(0,1) in t-SNE and images distort (Fig. 9)"
+ ],
+ "relations": [
+  {
+   "report_id": "2406.04312",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2411.09502",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2412.03895",
+   "type": "competes"
+  },
+  {
+   "report_id": "2412.05101",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

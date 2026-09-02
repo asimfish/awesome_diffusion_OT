@@ -1,0 +1,94 @@
+{
+ "digest_zh": "本课题解决推理阶段「噪声从哪来」的问题：标准扩散采样假设初始噪声独立同分布地取自高斯先验，但大量工作表明通过改变噪声与条件（提示/图像）的耦合、或噪声与噪声的耦合，可以在不重训模型的前提下提升偏好分、FID 或运动一致性。方法谱系沿两条轴演进：一是「改耦合 vs 保边缘」的张力，从 InitNO/ReNO 的逐例梯度优化（承认漂移、单样本 KL 约束），到 NPNet/NoiseRefine 的离线学习一次映射（改边缘但未度量），到 NoiseQuery/Ma et al. 的离散检索/搜索（改边缘最彻底），再到 AOT/Immiscible 的训练侧置换指派（严格保边缘）与 HIWYN/Go-with-the-Flow 的跨帧噪声传输（保空间边缘、改时间耦合）；二是「在线优化 vs 离线预计算」的效率轴，从每图 20–50 s 的 ReNO 到 0.002 s 的 NoiseQuery 检索。当前共识是：噪声初值携带可跨模型复用的语义/结构先验（The Emergence of Reproducibility），且置换指派是唯一在人口层面构造性保持高斯边缘的实例级方法。分歧集中在：边缘漂移是否可忽略（Improved Immiscible 声称可忽略但 KL 估计器本身有偏；NPNet 未度量；ReNO 把「推离零均值」当多样性来源）、以及增益是否来自 verifier 同源循环（NPNet、NoiseRefine、NoiseQuery 均用 CLIP 系指标筛选与评测）。",
+ "observations": [
+  {
+   "claim": "「改耦合 vs 保边缘」的张力在训练侧与推理侧各自内部复现，形成同一二分法的两个镜像。",
+   "evidence": [
+    "2505.18521",
+    "2403.05069",
+    "2412.05101"
+   ],
+   "detail": "Improved Immiscible 在训练侧明确区分线性指派（严格保高斯）与 KNN top-1-of-k（不保高斯），并选择后者；AOT 在 Sec. 4.2 用两句话说明置换保持分布、从采样噪声中选会破坏高斯性；NoiseQuery 的共享库 top-1 检索则是推理侧「改边缘最彻底」的实例，同一提示永远得到同一噪声。"
+  },
+  {
+   "claim": "学习式连续映射（NPNet/NoiseRefine）与离散检索/搜索（NoiseQuery/Ma et al.）在 verifier 的 g–h 分解上呈两极分化。",
+   "evidence": [
+    "2411.09502",
+    "2412.03895",
+    "2404.04650"
+   ],
+   "detail": "NPNet 的位移几乎与提示无关（α=10⁻⁴，去掉文本嵌入只损失 ImageReward 65.01→62.14，随机提示反而训出更好模型），说明主要学到通用分量 g；NoiseRefine 的位移随提示改变布局（Fig. 9、Fig. 26），h 分量强；InitNO 的首步注意力分依赖主体 token 与噪声布局，预期 ‖g‖/‖h‖ 很小。三者构成 g–h 谱系的两端与中间。"
+  },
+  {
+   "claim": "边缘漂移的度量在本课题内系统性缺失，唯一例外是 HIWYN 的保边缘构造与 Improved Immiscible 的 KL 估计（但后者估计器本身有偏）。",
+   "evidence": [
+    "2504.03072",
+    "2505.18521",
+    "2406.04312"
+   ],
+   "detail": "HIWYN 按构造保证单帧边缘精确为 i.i.d. 高斯（Fig. 3 协方差为单位阵），但 Table 1 显示相关噪声的 FID 从 74.75 升到 92.63，说明保边缘不等于保分布质量；Improved Immiscible 报告真高斯样本的 KL 估计为 48.25（理论应接近 0），48.25→48.60 的差别无法解释为可忽略；ReNO 的 χ_d 正则只固定范数不约束方向，全文无噪声范数/方向统计。"
+  },
+  {
+   "claim": "噪声↔样本映射的跨模型一致性使离线预计算的耦合成为可复用资产，但也使漂移跨模型累积。",
+   "evidence": [
+    "The_Emergence_of_Reproducibility_and_Consistency_i",
+    "2412.05101",
+    "2411.09502"
+   ],
+   "detail": "NoiseQuery 用 SD 2.1 建的噪声库可零样本迁移到 SD 1.x/PixArt-α/SD-Turbo（Table S1）；NPNet 在 SDXL 上采集的噪声对可迁移到 DreamShaper/LCM/PCM，Hunyuan-DiT 仅需 600 对微调；但 NoiseQuery 的跨模型迁移收益很小（PickScore +0.05–0.12），说明一致性在高维 latent T2I 上可能弱于原始研究设置。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "如何量化并控制实例级噪声选择/优化造成的人口边缘漂移？",
+   "why_open": "Improved Immiscible 的 KL 估计器本身有偏（真高斯样本 KL=48.25），无法回答漂移是否可忽略；NPNet 只以 50 样本 t-SNE 间接触及分布问题；ReNO 把「推离零均值」当多样性来源但无范数/方向统计；NoiseQuery 未报告库利用率与热门噪声复用次数。",
+   "evidence": [
+    "2505.18521",
+    "2411.09502",
+    "2406.04312",
+    "2412.05101"
+   ]
+  },
+  {
+   "problem": "verifier 同源循环是否系统性高估了所有推理期初值方法的增益？",
+   "why_open": "NPNet 用 HPSv2 筛选、用 CLIP 系偏好模型评测；NoiseRefine 用 AES>6.0 筛选、用 AES/PickScore/HPSv2 评测；NoiseQuery 用 CLIP/BLIP 特征查询、用 CLIPScore 评测；ReNO 的四个 reward 中 CLIPScore 与 T2I-CompBench Non-Spatial 同源。唯一不同源的 MS-COCO 30K FID 在 NoiseRefine 中仍显示增益（11.39 vs 13.38），但单一指标不足以排除循环风险。",
+   "evidence": [
+    "2411.09502",
+    "2412.03895",
+    "2412.05101",
+    "2406.04312"
+   ]
+  },
+  {
+   "problem": "置换指派（严格保边缘）的收益是否依赖模型/任务/调度，能否从训练侧先验预测？",
+   "why_open": "Improved Immiscible Table 3 中线性指派在 CM 上最好（8.54 vs 9.16）、在 FM 上不佳（5.02 vs 4.92）；AOT 在 EDM 默认 ρ=7 时几乎无收益（1.95 vs 1.97），收益来自允许更大 ρ；推理侧尚无对应的置换指派实验。",
+   "evidence": [
+    "2505.18521",
+    "2403.05069"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "2403.05069",
+   "why": "训练侧保边缘表述最清楚，先建立置换指派的基线概念"
+  },
+  {
+   "report_id": "2505.18521",
+   "why": "统一训练侧二分法，给出 KNN 漂移与 KL 估计器偏差"
+  },
+  {
+   "report_id": "2404.04650",
+   "why": "推理侧梯度优化线起点，最早显式承认并约束漂移"
+  },
+  {
+   "report_id": "2406.04312",
+   "why": "梯度优化线代表作，提供 verifier hacking 与多样性协议反例"
+  },
+  {
+   "report_id": "2411.09502",
+   "why": "学习式映射代表，g–h 分解的经验样本与边缘漂移未度量"
+  }
+ ],
+ "n_reports": 12
+}

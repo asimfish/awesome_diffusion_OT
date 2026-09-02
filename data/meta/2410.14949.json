@@ -1,0 +1,56 @@
+{
+ "report_id": "2410.14949",
+ "arxiv_id": "2410.14949",
+ "title": "On the Convergence and Straightness of Rectified Flow",
+ "tldr_zh": "W2² 离散误差 ≤ C·γ_{2,T}/T²；1-RF 直的充分条件（Jacobian 半正定）与 Monge 最优条件（Jacobian 可交换）",
+ "tldr_en": "Piecewise straightness gamma_{2,T} bounds Euler W2 error as O(gamma/T^2); sufficient Jacobian conditions make 1-RF straight or even the Monge map.",
+ "tags": [
+  "rectified-flow",
+  "theory",
+  "wasserstein-convergence",
+  "straightness",
+  "gaussian-mixture",
+  "monge-map",
+  "preprint"
+ ],
+ "code_url": "https://github.com/bansal-vansh/rectified-flow-straightness",
+ "key_numbers": [
+  "W2^2(rho_hat, rho_1) <= 27 e^{4L} / max{L^2,1} * (gamma_{2,T}/T^2 + eps_vl^2) (Thm 2)",
+  "GMM with max mean separation D: gamma_{2,T} = O(D^2 d^2 + D^4 d), independent of K (Lemma 2)",
+  "1-RF straight if max_{i!=j} ||mu_i - mu_j||^2 <= 4 sigma^2 for isotropic GMM target (Thm 7)",
+  "Gaussian->Gaussian: 1-RF gives Z1 = Sigma^{1/2} Z0 + mu, the Monge map (Thm 3)",
+  "Oscillating path S(Z)=O(N^-2)->0 while gamma_1 = 2e4 pi^4 (Sec. 3)",
+  "CelebA subsets: W2^2 error stabilizes near T~8, increases with modal complexity (App. A.3, Fig. 7)"
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "extends"
+  },
+  {
+   "report_id": "2505.19712",
+   "type": "competes"
+  },
+  {
+   "report_id": "2209.14577",
+   "type": "uses"
+  },
+  {
+   "report_id": "2405.20320",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.07510",
+   "type": "extends"
+  },
+  {
+   "report_id": "2305.16860",
+   "type": "extends"
+  },
+  {
+   "report_id": "2212.06359",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": true
+}

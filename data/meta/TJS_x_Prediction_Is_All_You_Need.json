@@ -1,0 +1,32 @@
+{
+ "report_id": "TJS_x_Prediction_Is_All_You_Need",
+ "arxiv_id": null,
+ "title": "TJS: x-Prediction Is All You Need（端点可解码性）",
+ "tldr_zh": "形式化端点可解码性：中间态+速度即 E[x0|xt] 最优估计，可提前退出解码（未读全文）",
+ "tldr_en": "Formalizes endpoint decodability: intermediate state plus path velocity gives optimal E[x0|xt], enabling early-exit decoding without straightening (abstract only).",
+ "tags": [
+  "early-exit",
+  "x-prediction",
+  "posterior-mean",
+  "few-step-sampling",
+  "preprint",
+  "abstract-only"
+ ],
+ "code_url": "",
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "2206.00364",
+   "type": "uses"
+  },
+  {
+   "report_id": "2010.02502",
+   "type": "uses"
+  },
+  {
+   "report_id": "2603.00763",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

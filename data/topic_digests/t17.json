@@ -1,0 +1,92 @@
+{
+ "digest_zh": "本课题解决的核心问题是：如何用最优传输（OT）度量或映射来改进风格迁移与域自适应中的分布对齐，尤其是当生成机制从优化式迁移转向扩散/流模型时，OT 应放在损失层、采样引导层还是模型迁移层。方法谱系呈现清晰的演进：损失层从 STROTSS 的 relaxed EMD 起步，经 Heitz 等的 sliced Wasserstein 损失，发展到 MS-SWD 的 CIELAB 多尺度感知度量；扩散机制层从 DDIB 的隐式 Schrödinger bridge 出发，OT-ALD 用显式 OT map 修正 latent 接口错配，SW-Guidance 把可微 SW 距离梯度注入采样循环，ModFlows 用 rectified flow 学公共中间分布；模型迁移层则出现半对偶 UOT 构造 GDA 中间域、类级 OT 匹配指导微调、以及 VLM 语义先验引导的 source-free 对齐。当前共识是 OT 作为分布匹配工具在风格/域迁移中有效，且 training-free 的 SW 类度量在感知任务上可匹敌训练过的深度度量。主要分歧在于：OT 应放在像素空间、特征空间还是 latent 空间；应作为损失、引导势函数还是显式传输映射；以及熵正则化对传输稀疏性和可解释性的代价是否可接受。",
+ "observations": [
+  {
+   "claim": "OT 从损失层向扩散采样引导层的迁移是课题内最清晰的演进路径，SW 类度量是贯穿这条路径的核心工具。",
+   "evidence": [
+    "1904.12785",
+    "2006.07229",
+    "2407.10181",
+    "2503.19034"
+   ],
+   "detail": "STROTSS 的 relaxed EMD 只是 EMD 的下界近似（均值 0.60），Heitz 等用 SWD 在 VGG 特征空间获得闭式可微解，MS-SWD 进一步升级为 CIELAB 多尺度度量（非对齐 SPCD 上 PLCC 0.841），SW-Guidance 最终把 SW-1 梯度注入扩散去噪循环（2-Wasserstein 0.0297，为所有基线最低）。"
+  },
+  {
+   "claim": "DDIB 的 latent 桥接框架存在有限步数下的接口错配问题，显式 OT 修正与采样期约束注入是两条互补的改进路线。",
+   "evidence": [
+    "2511.11162",
+    "2312.07311",
+    "2602.01179"
+   ],
+   "detail": "OT-ALD 在 DDIB 两域 latent 接口处插入显式 OT map，平均提速 20.29%、FID 降 2.6；Scalable Motion Style Transfer 用关键帧流形约束梯度在采样期注入内容约束，FPD 从 0.2904 降至 0.1208；E-SUOT 的半对偶 UOT 则从分布传输角度绕开目标 PDF 估计，在 Portraits 上达 86.4%。"
+  },
+  {
+   "claim": "OT 在模型迁移层的应用从类级匹配扩展到分布级路径构造，但熵正则化对传输稀疏性的代价被反复提及。",
+   "evidence": [
+    "Wasserstein_Aware_Transfer_Class_Level_Alignment_f",
+    "2602.01179",
+    "2503.22984"
+   ],
+   "detail": "WAT 用类级 OT 匹配指导扩散模型微调，E-SUOT 用半对偶 UOT 构造 GDA 中间域序列（MNIST 60° 上 51.0%，最优），OTA 用原型传输加 geodesic mixup 做 source-free 适配（HTER 平均相对改善 19.17%）。E-SUOT 作者明确承认熵正则可能模糊传输计划的稀疏性，影响可解释性。"
+  },
+  {
+   "claim": "公共中间分布加双射流的范式在像素空间和 latent 空间均有验证，但风格相似性与内容保真度之间存在一致的权衡。",
+   "evidence": [
+    "2503.19062",
+    "2511.11162",
+    "2409.17917"
+   ],
+   "detail": "ModFlows 用 rectified flow 学 RGB 到均匀立方体的双射，风格距离 0.123 高于 DAST d 的 0.112，但 Lipschitz 常数从 91.34 降至 37.26；OT-ALD 在 Cat→Dog 上 SSIM 0.470 低于 CUT 的 0.601；WaSt-3D 的 CLIP 相似度 84.40% 显著高于基线，但显存 16GB 高于所有基线。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "OT 引导或对齐在 latent 空间的理论误差界仍然宽松，有限步数下的收缩估计需要更紧的界。",
+   "why_open": "OT-ALD 的 Theorem 1 上下界之间隔着含 score 网络 Lipschitz 常数的项，若该常数大则界非常松；E-SUOT 的 Proposition 3.5 收敛界依赖步长不小于 W2 距离一半的条件，条件不满足时的行为未分析。",
+   "evidence": [
+    "2511.11162",
+    "2602.01179"
+   ]
+  },
+  {
+   "problem": "熵正则化对传输计划稀疏性的影响在风格迁移场景中缺乏量化研究。",
+   "why_open": "E-SUOT 作者承认熵正则模糊传输稀疏性，但未量化；稀疏传输在颜色/风格迁移中对应更锐利的指派，而现有工作（ModFlows、WaSt-3D）均使用熵正则或 Sinkhorn 形式，未与低熵极限做系统对比。",
+   "evidence": [
+    "2602.01179",
+    "2409.17917",
+    "2503.19062"
+   ]
+  },
+  {
+   "problem": "OT 类度量作为扩散采样引导势函数时，评估指标与优化目标存在同源性，真实感知质量优势未被独立验证。",
+   "why_open": "SW-Guidance 的主指标是 RGB 空间的 2-Wasserstein 距离，而引导损失是 RGB 空间的 SW-1，两者度量同一对象；其 CLIP-IQA 0.285 低于 InstantStyle 的 0.332，说明色彩匹配优势可能部分来自指标循环性。",
+   "evidence": [
+    "2503.19034",
+    "2407.10181"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "1904.12785",
+   "why": "损失层奠基，确立分布匹配范式"
+  },
+  {
+   "report_id": "2006.07229",
+   "why": "SW 损失引入闭式可微解"
+  },
+  {
+   "report_id": "2407.10181",
+   "why": "感知度量升级，连接损失与引导"
+  },
+  {
+   "report_id": "2503.19034",
+   "why": "OT 进入扩散采样循环的代表作"
+  },
+  {
+   "report_id": "2511.11162",
+   "why": "DDIB latent 对齐的理论化修正"
+  }
+ ],
+ "n_reports": 15
+}

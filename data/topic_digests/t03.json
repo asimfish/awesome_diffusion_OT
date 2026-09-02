@@ -1,0 +1,92 @@
+{
+ "digest_zh": "T03 课题解决的核心问题是如何高效、可扩展地求解 Schrödinger Bridge（SB），并将其用于生成建模与轨迹推断。方法谱系从第一代深度 IPF（DSB、SB-FBSDE）出发，其痛点（误差累积、轨迹缓存、遗忘先验）催生了第二代 IMF/bridge matching（IDBM、DSBM），通过交替 Markov/reciprocal 投影保持两端边缘。第三代（LightSB-M、[SF]²M、VSDM）以免仿真或轻量参数化为目标，其中 LightSB-M 证明任意耦合一次最优投影即得 SB。第四代（α-DSBM、ASBM、BM²）将 IMF 连续化或离散化，实现在线单网络更新与少步生成。第五代（2510.20871、2510.22560、IPMF）补上非渐近收敛率与统计理论，并将 [SF]²M/LightSB(-M)/DSBM-IMF/BM² 统一为同一估计量的不同优化路径。当前共识是：在 Wiener 参考与精确优化下，多种方法的目标估计量相同；分歧在于迭代 vs 单循环、参数化表达力 vs 免仿真、以及理论保证是否覆盖神经回归近似误差。",
+ "observations": [
+  {
+   "claim": "IMF 系方法（IDBM/DSBM/α-DSBM/BM²）共享同一理论核心，但收敛保证长期停留在渐近层面，直到第五代才补上非渐近速率。",
+   "evidence": [
+    "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+    "2510.20871",
+    "2409.09376"
+   ],
+   "detail": "DSBM 的 Theorem 8 只给 KL 意义下收敛，无速率；BM² 的 Theorem 2 明确不是收敛定理；2510.20871 首次给出 IMF 非渐近指数收敛率，覆盖对数凹与弱对数凹边缘，但要求 Markov 投影精确执行。"
+  },
+  {
+   "claim": "免仿真路线（LightSB-M、[SF]²M）与迭代路线（DSBM、BM²）在极限估计量上被证明等价，但实践性能差距可达一个量级。",
+   "evidence": [
+    "Light_and_Optimal_SB_Matching_LightSB_M_Gushchin_e",
+    "2510.22560",
+    "2409.09376"
+   ],
+   "detail": "2510.22560 的 Proposition 1–2 证明 [SF]²M/LightSB(-M)/DSBM-IMF/BM² 的极限估计量相同；但 LightSB-M 论文 Table 1 中 cBW2-UVP 在 ε=0.1, D=128 为 1.66，BM² 为 8.28，DSBM 为 35，差距来自优化与参数化而非估计量定义。"
+  },
+  {
+   "claim": "参考过程从 Wiener 向有界域、退化扩散、相空间等方向一般化，但每次一般化都引入新的理论空白或计算瓶颈。",
+   "evidence": [
+    "2607.03626",
+    "2605.11429",
+    "Momentum_Multi_Marginal_SB_Matching_3MSBM_Theodoro"
+   ],
+   "detail": "Reflected SBM 把 α-DSBM 推到单位立方体上的反射 Brownian，训练开销几乎为零但收敛定理未正式化；sub-Riemannian SB 给出 bracket-generating 条件下的适定性，但转移核只在 Heisenberg 群上有闭式；3MSBM 的相空间提升仍依赖仿真式交替优化。"
+  },
+  {
+   "claim": "多边缘 SB 的 matching 系实现（MMtSBM）在 100 维单细胞基准上优于相空间 DMSB/3MSBM，但其正确性依赖未证猜想。",
+   "evidence": [
+    "2510.01894",
+    "Deep_Momentum_Multi_Marginal_SB_DMSB_Chen_et_al",
+    "Momentum_Multi_Marginal_SB_Matching_3MSBM_Theodoro"
+   ],
+   "detail": "MMtSBM 在 EB d=100 上 MMD 0.019 vs DMSB 0.032，在留出时刻 t3 上 MMD 0.06 vs 3MSBM 0.14；但算法正确性建立在 Conjecture 3.1（多边缘 Markov + factorized reciprocal + 边缘 ⇒ MMSB）之上，且 Theorem 3.2 与 Proposition 3.9 对极限是否为真 MMSB 表述不一致。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "学习误差下的 IMF 收敛理论：神经回归近似 Markov 投影时，误差如何传播？",
+   "why_open": "2510.20871 假设 Markov 投影精确执行，2510.22560 提供统计项 O(1/m+1/n) 与 Sinkhorn 项 r^{4k}，但缺'神经回归误差通过 Markov 投影传播'这一环；BM² 的 Theorem 2 留下的空白（部分极小化反向 KL 下降是否蕴含 KL(F||S) 下降）正是该问题的特例。",
+   "evidence": [
+    "2510.20871",
+    "2510.22560",
+    "2409.09376"
+   ]
+  },
+  {
+   "problem": "多边缘 IMF 的收敛理论：Conjecture 3.1 的证明或反驳，以及 Markov 投影收缩估计的多边缘推广。",
+   "why_open": "MMtSBM 的算法正确性依赖未证猜想，且 Theorem 3.2 与 Proposition 3.9 表述不一致；多边缘 IMF 的收敛理论在 T03 第五代'理论收口'中仍是空白。",
+   "evidence": [
+    "2510.01894",
+    "2510.20871"
+   ]
+  },
+  {
+   "problem": "免仿真多边缘求解器（Light-3MSB）：将 LightSB-M 的高斯混合闭式漂移推广到多边缘设定。",
+   "why_open": "LightSB-M 已证明两边缘 Wiener 参考下可免仿真，但 3MSBM 与 MMtSBM 仍依赖仿真式交替优化；MMtSBM 的 Brownian 段桥恰好是 LightSB-M 已支持的参考过程，直接替换神经回归为高斯混合闭式是可行路径但尚未实现。",
+   "evidence": [
+    "Light_and_Optimal_SB_Matching_LightSB_M_Gushchin_e",
+    "2510.01894",
+    "Momentum_Multi_Marginal_SB_Matching_3MSBM_Theodoro"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "L_onard_A_Survey_of_the_Schr_dinger_Problem",
+   "why": "静态-动态等价的理论地基"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_DSB_De_Bortoli_et_al",
+   "why": "第一代深度 IPF 的起点与缺陷"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "why": "第二代 IMF 框架的核心定义"
+  },
+  {
+   "report_id": "Light_and_Optimal_SB_Matching_LightSB_M_Gushchin_e",
+   "why": "免仿真与最优投影的转折点"
+  },
+  {
+   "report_id": "2510.22560",
+   "why": "统一各方法估计量的统计收口"
+  }
+ ],
+ "n_reports": 24
+}

@@ -1,0 +1,58 @@
+{
+ "report_id": "2511.18679",
+ "arxiv_id": "2511.18679",
+ "title": "Neural Geometry Image-Based Representations with Optimal Transport (OT)",
+ "tldr_zh": "Ricci flow 共形参数化后用 OT 校正面积畸变，得到保面积 geometry image，低分辨率 mipmap 经单趟 CNN 超分重建网格，CR=64 时 CD/HD 优于 NCS 等基线",
+ "tldr_en": "OT-corrected area-preserving geometry images enable single-pass CNN super-resolution mesh reconstruction with continuous GPU LoD",
+ "tags": [
+  "geometry image",
+  "optimal transport",
+  "mesh compression",
+  "level of detail",
+  "surface parameterization",
+  "Ricci flow",
+  "neural super-resolution"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "CD=1.5476, HD=18.1094 (Ours w/ OT) vs CD=11.9534, HD=19.8963 (Uniform)",
+   "source": "Table 1"
+  },
+  {
+   "number": "CD=0.059, HD=1.482 (Ours) vs CD=0.083, HD=1.538 (NCS) at CR=64",
+   "source": "Table 2"
+  },
+  {
+   "number": "CD=2.4637, HD=4.5148 (Ours) vs CD=2.7152, HD=4.8234 (Neural Subdivision) at CR=64",
+   "source": "Table 3"
+  },
+  {
+   "number": "CR=64 (128x128) is the sweet spot: CD=0.009, HD=1.085",
+   "source": "Table 4, Sec. 4.6"
+  },
+  {
+   "number": "CR=1024 (32x32): CD=0.264, HD=1.572; CR=4 (512x512): CD=0.002, HD=0.628",
+   "source": "Table 4"
+  },
+  {
+   "number": "Level 7 (8x8) CR=16384: CD=137.0457, HD=39.4697; Level 0 (1024x1024) CR=1: CD=1.3432, HD=2.7919",
+   "source": "Figure 1"
+  },
+  {
+   "number": "Learning rate 5e-5, Adam, eta1=eta2=0.5, 16-bit RGB PNG, 1024x1024 geometry image",
+   "source": "Sec. 3.2.1, Sec. 3.2.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2511.18679",
+   "type": "extends"
+  },
+  {
+   "report_id": "2511.18679",
+   "type": "related_to"
+  }
+ ],
+ "read_full_text": true
+}

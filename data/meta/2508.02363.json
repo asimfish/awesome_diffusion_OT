@@ -1,0 +1,74 @@
+{
+ "report_id": "2508.02363",
+ "arxiv_id": "2508.02363",
+ "title": "Optimal Transport for Rectified Flow Image Editing: Unifying Inversion-Based and Direct Methods",
+ "tldr_zh": "用闭式 OT 位移方向校正 RF 编辑轨迹，统一 inversion 与 FlowEdit，training-free 提升重建与一致性",
+ "tldr_en": "Closed-form OT displacement corrects RF editing trajectories for both inversion and FlowEdit, training-free",
+ "tags": [
+  "optimal transport",
+  "rectified flow",
+  "image editing",
+  "training-free",
+  "FlowEdit",
+  "RF-Inversion",
+  "velocity field correction"
+ ],
+ "code_url": "https://github.com/marianlupascu/OT-RF",
+ "key_numbers": [
+  {
+   "number": "LPIPS 0.135 → 0.001",
+   "source": "Table 1, RF-Inversion vs RF-Inversion+OTC, SFHQ null prompt"
+  },
+  {
+   "number": "PSNR 32.58 → 40.71 dB",
+   "source": "Table 1, RF-Inversion vs RF-Inversion+OTC"
+  },
+  {
+   "number": "SSIM 0.833 → 0.992",
+   "source": "Table 1, RF-Inversion vs RF-Inversion+OTC"
+  },
+  {
+   "number": "FlowEdit FLUX LPIPS 0.096 → 0.001",
+   "source": "Table 1"
+  },
+  {
+   "number": "FlowEdit FLUX PSNR 24.26 → 40.65 dB",
+   "source": "Table 1"
+  },
+  {
+   "number": "L2 降低 7.8% (LSUN-Bedroom), 12.9% (LSUN-Church)",
+   "source": "Table 2, RF-Inversion+OTC vs RF-Inversion"
+  },
+  {
+   "number": "Face Rec. 0.441 → 0.395 (10.4% 改善)",
+   "source": "Table 3, RF-Inversion+OTC vs RF-Inversion"
+  },
+  {
+   "number": "FlowEdit SD3 DINO 0.961 → 0.975",
+   "source": "Table 3"
+  },
+  {
+   "number": "运行时开销 < 0.1s",
+   "source": "Sec. 5"
+  },
+  {
+   "number": "τ = 10.0, δ = 0.01, β0 最优 0.2, η 最优 0.6",
+   "source": "Sec. 3.3, Sec. 3.4, Fig. 10, Fig. 8"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2412.08629",
+   "type": "继承/增强"
+  },
+  {
+   "report_id": "2505.19712",
+   "type": "理论动机引用"
+  },
+  {
+   "report_id": "2410.10792",
+   "type": "竞争基线"
+  }
+ ],
+ "read_full_text": true
+}

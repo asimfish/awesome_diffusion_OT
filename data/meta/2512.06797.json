@@ -1,0 +1,58 @@
+{
+ "report_id": "2512.06797",
+ "arxiv_id": "2512.06797",
+ "title": "Optimal and Diffusion Transports in Machine Learning",
+ "tldr_zh": "用连续性方程与速度场非唯一性统一 flow matching、OT、W 梯度流与 transformer PDE 的非形式化综述",
+ "tldr_en": "Informal survey unifying flow matching, OT, Wasserstein gradient flows and transformer PDEs via the continuity equation and non-unique velocity fields.",
+ "tags": [
+  "survey",
+  "ot-foundations",
+  "flow-matching",
+  "benamou-brenier",
+  "wasserstein-gradient-flow",
+  "transformers",
+  "gaussian-closed-form",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "No experiments; Prop. 2 vs Prop. 4: flow-matching map equals OT map for Gaussians only when Sigma_0 and Sigma_1 commute (Sec. 4.2)",
+  "Prop. 3: for alpha_0=N(0,I), v_t(x)=x/t+((1-t)/t) grad log alpha_t(x) is a gradient field (Sec. 3.3)",
+  "Eq. (11)-(12): W_2^2 = min kinetic energy, minimizer alpha_t=((1-t)Id+tT)#alpha_0 (Sec. 4.2)"
+ ],
+ "relations": [
+  {
+   "report_id": "2505.06589",
+   "type": "uses"
+  },
+  {
+   "report_id": "A_computational_fluid_mechanics_solution_to_the_Mo",
+   "type": "uses"
+  },
+  {
+   "report_id": "Polar_factorization_and_monotone_rearrangement_of",
+   "type": "uses"
+  },
+  {
+   "report_id": "The_Variational_Formulation_of_the_Fokker_Planck_E",
+   "type": "uses"
+  },
+  {
+   "report_id": "The_flow_map_of_the_Fokker_Planck_equation_does_no",
+   "type": "uses"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "uses"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "uses"
+  },
+  {
+   "report_id": "2405.14250",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=482.3, y=174.7: for"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (14 words, 0 CJK chars) at x=72.0, y=293.1: Theorem 3.7. Let Zk the k-th rectiﬁed ﬂow of (X0, X1), t"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (4 words, 0 CJK chars) at x=261.9, y=311.0: 1 ) is rectiﬁable for k = 0, . . . , K."
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=529.6, y=303.0: and"
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 9.24pt but the original at this position is 10.91pt (ratio 0.85 vs page median 0.92) at x=72.8, y=291.5: 引理3.9。上的耦合是直的当且仅当它是确定性的且单调的。"
+    }
+  ]
+}

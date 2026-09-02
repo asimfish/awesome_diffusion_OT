@@ -1,0 +1,50 @@
+{
+ "report_id": "2503.21774",
+ "arxiv_id": "2503.21774",
+ "title": "Optimal Stepsize for Diffusion Sampling",
+ "tldr_zh": "步长调度=学生 M 步逼近教师端点的 DP 搜索（最优子结构）；Flux 10 步保留 GenEval 99.4%",
+ "tldr_en": "Casts stepsize scheduling as DP over teacher-trajectory subsets via optimal substructure; Flux 10 steps keep 99.4% of GenEval.",
+ "tags": [
+  "schedule-optimization",
+  "dynamic-programming",
+  "training-free",
+  "distillation-free",
+  "preprint",
+  "text-to-image"
+ ],
+ "code_url": "https://github.com/bebebe666/OptimalSteps",
+ "key_numbers": [
+  "ImageNet-64 PSNR to 200-step teacher: 20 steps 25.76 -> 28.21 (EDM schedule), avg +2.65 (Table 2)",
+  "GenEval Flux.1-dev: 100-step 0.649, OSS-ave 10-step 0.645, DM 10-step 0.643 (Table 7)",
+  "LSUN-Bed-256 5-step PSNR: DM 18.90 > OSS-ave 16.51 (Table 6)",
+  "MAR-Base ImageNet-256 500 -> 5 steps FID 4.67; 50 steps 2.66 -> 2.59 (Sec. 4.1.4)",
+  "x0-MSE cost PSNR 22.45 vs xt-MSE 18.54 (Table 4)"
+ ],
+ "relations": [
+  {
+   "report_id": "2506.10177",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.15506",
+   "type": "competes"
+  },
+  {
+   "report_id": "2404.14507",
+   "type": "competes"
+  },
+  {
+   "report_id": "2402.17376",
+   "type": "competes"
+  },
+  {
+   "report_id": "2603.00763",
+   "type": "competes"
+  },
+  {
+   "report_id": "2206.00927",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

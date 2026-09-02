@@ -1,0 +1,72 @@
+{
+ "report_id": "2503.14975",
+ "arxiv_id": "2503.14975",
+ "title": "Taming Flow Matching with Unbalanced Optimal Transport into Fast Pansharpening",
+ "tldr_zh": "UOT 对偶 + 任务正则把 FM 变成一步 pansharpening，性能追平 25 步扩散模型",
+ "tldr_en": "UOT dual + task regularization turns FM into one-step pansharpening, matching 25-step diffusion",
+ "tags": [
+  "unbalanced optimal transport",
+  "flow matching",
+  "pansharpening",
+  "one-step generation",
+  "remote sensing"
+ ],
+ "code_url": "https://github.com/294coder/PAN-OTFM",
+ "key_numbers": [
+  {
+   "number": "1 NFE",
+   "source": "Tab. 1, OTFM row"
+  },
+  {
+   "number": "25 NFE",
+   "source": "Tab. 1, DDIF row"
+  },
+  {
+   "number": "1000 NFE",
+   "source": "Tab. 1, PanDiff row"
+  },
+  {
+   "number": "0.029s latency at 256×256",
+   "source": "Tab. 5"
+  },
+  {
+   "number": "2.602s latency for DDIF at 256×256",
+   "source": "Tab. 5"
+  },
+  {
+   "number": "HQNR 0.954 on WV3 full-resolution",
+   "source": "Tab. 1, OTFM row"
+  },
+  {
+   "number": "HQNR 0.940 without pan-regularization",
+   "source": "Tab. 4(e)"
+  },
+  {
+   "number": "100 ODE steps needed for w/o UOT FM to match OTFM",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "batch size 52, 100k training steps, 2×RTX 4090, 1 day",
+   "source": "Sec. 4.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2303.16289",
+   "type": "继承半对偶 UOT 参数化"
+  },
+  {
+   "report_id": "2402.05893",
+   "type": "竞争：UOT-FM 走重加权路线，OTFM 走对偶路线"
+  },
+  {
+   "report_id": "2403.06553",
+   "type": "相关：UOT 散度敏感性，OTFM 未做此分析"
+  },
+  {
+   "report_id": "2310.01174",
+   "type": "引用：LightSB 作为 OT 相关工作"
+  }
+ ],
+ "read_full_text": true
+}

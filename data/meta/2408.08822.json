@@ -1,0 +1,54 @@
+{
+ "report_id": "2408.08822",
+ "arxiv_id": "2408.08822",
+ "title": "PFDiff: Training-Free Acceleration of Diffusion Models Combining Past and Future Scores",
+ "tldr_zh": "零训练跳步：复用过去 score 得跳板，跳板处 score 做前瞻更新；guided ImageNet-64 DDIM 4 NFE 138.81→16.46",
+ "tldr_en": "Training-free timestep skipping: past score predicts a springboard, future score there drives a Nesterov-style leap; guided ImageNet-64 DDIM 4-NFE FID 138.81 to 16.46.",
+ "tags": [
+  "training-free",
+  "timestep-skipping",
+  "nesterov",
+  "guidance",
+  "ode-solver",
+  "plugin"
+ ],
+ "code_url": "https://github.com/onefly123/PFDiff",
+ "key_numbers": [
+  "ImageNet-64 ADM-G s=1.0 DDIM FID 138.81 -> 16.46 at 4 NFE (Table 6)",
+  "SD v1.4 CFG 7.5 DDIM+PFDiff FID 13.06 at 10 NFE vs DPM-Solver-v3 15.32 (Table 7)",
+  "CIFAR-10 DDIM FID 65.70 -> 22.38 at 4 NFE; 4.10 at 15 NFE vs DDIM 1000-NFE 4.04 (Table 3, Sec. 4.1)",
+  "Analytic-DDIM+PFDiff collapses to 289.84 at 4 NFE (Table 3)",
+  "SD FID non-monotonic: 13.06 at 10 NFE vs 13.97 at 20 NFE (Table 7)"
+ ],
+ "relations": [
+  {
+   "report_id": "2010.02502",
+   "type": "extends"
+  },
+  {
+   "report_id": "2206.00927",
+   "type": "extends"
+  },
+  {
+   "report_id": "2211.01095",
+   "type": "competes"
+  },
+  {
+   "report_id": "2302.04867",
+   "type": "competes"
+  },
+  {
+   "report_id": "2310.13268",
+   "type": "competes"
+  },
+  {
+   "report_id": "2312.00094",
+   "type": "uses"
+  },
+  {
+   "report_id": "2506.10177",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

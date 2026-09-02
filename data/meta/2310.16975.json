@@ -1,0 +1,82 @@
+{
+ "report_id": "2310.16975",
+ "arxiv_id": "2310.16975",
+ "title": "Efficient Neural Network Approaches for Conditional Optimal Transport with Applications in Bayesian Inference",
+ "tldr_zh": "静态 PCP-Map 与动态 COT-Flow 两种神经条件 OT 求解器，最大似然训练，用于 likelihood-free 贝叶斯推断",
+ "tldr_en": "Two neural conditional OT solvers (static PCP-Map, dynamic COT-Flow) trained by maximum likelihood for likelihood-free Bayesian inference",
+ "tags": [
+  "conditional optimal transport",
+  "Brenier map",
+  "PICNN",
+  "neural ODE",
+  "likelihood-free inference",
+  "Bayesian inference",
+  "normalizing flow"
+ ],
+ "code_url": "https://github.com/EmoryMLIP/PCP-Map.git",
+ "key_numbers": [
+  {
+   "number": "48 GB",
+   "context": "GPU memory (Quadro RTX 8000)",
+   "source": "Sec. 6"
+  },
+  {
+   "number": "8:1:1",
+   "context": "UCI train/validation/test split",
+   "source": "Sec. 6.1"
+  },
+  {
+   "number": "0.98",
+   "context": "Pearson correlation threshold for feature removal",
+   "source": "Sec. 6.1"
+  },
+  {
+   "number": "2",
+   "context": "COT-Flow network depth (fixed)",
+   "source": "Sec. 4, Table 2"
+  },
+  {
+   "number": "{8, 16}",
+   "context": "COT-Flow time integration steps nt",
+   "source": "Table 2"
+  },
+  {
+   "number": "{2,3,4,5,6}",
+   "context": "PCP-Map number of layers K",
+   "source": "Table 2"
+  },
+  {
+   "number": "[-1.5, 1.5]",
+   "context": "box constraint on COT-Flow network parameters",
+   "source": "Sec. 4"
+  },
+  {
+   "number": "min(10, n+m+1)",
+   "context": "rank r of quadratic term in COT-Flow potential",
+   "source": "Sec. 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2206.14262",
+   "type": "竞争（同期条件 OT 求解器，训练目标不同：对抗式 W2 vs 最大似然）"
+  },
+  {
+   "report_id": "2006.00104",
+   "type": "继承（COT-Flow 是 OT-Flow 的条件化扩展）"
+  },
+  {
+   "report_id": "2010.05700",
+   "type": "竞争（CP-Flow，本文在 Sec. 6.4 比较并报告更快）"
+  },
+  {
+   "report_id": "2402.05832",
+   "type": "后续（COT-FM 用条件流匹配解决同类问题，理论更完整）"
+  },
+  {
+   "report_id": "2312.07428",
+   "type": "后续（条件 Wasserstein 距离理论，补足本文缺失的度量端分析）"
+  }
+ ],
+ "read_full_text": true
+}

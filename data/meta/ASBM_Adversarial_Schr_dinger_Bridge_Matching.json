@@ -1,0 +1,47 @@
+{
+ "report_id": "ASBM_Adversarial_Schr_dinger_Bridge_Matching",
+ "arxiv_id": null,
+ "title": "ASBM: Adversarial Schrödinger Bridge Matching",
+ "tldr_zh": "离散时间 IMF 用 DD-GAN 实现，几步推理达到连续 IMF 百步的非配对翻译质量",
+ "tldr_en": "Discrete-time IMF with DD-GAN matches continuous IMF's 100-step quality in a few steps",
+ "tags": [
+  "Schrödinger bridge",
+  "image-to-image translation",
+  "unpaired translation",
+  "adversarial training",
+  "iterative Markovian fitting"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "100 步",
+   "context": "连续 IMF 达到可用非配对翻译质量所需推理步数",
+   "source": "调研 agent 报告，摘要未直接给出"
+  },
+  {
+   "number": "几步",
+   "context": "ASBM 达到同等质量所需推理步数",
+   "source": "调研 agent 报告，摘要未直接给出"
+  },
+  {
+   "number": "CelebA 128",
+   "context": "报告所用数据集与分辨率",
+   "source": "调研 agent 报告，摘要未直接给出"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "UNSB_Unpaired_Schr_dinger_Bridge",
+   "type": "同赛道：非配对 SB 的对抗学习"
+  },
+  {
+   "report_id": "DSBM_Schr_dinger_Bridge_Matching",
+   "type": "继承：IMF 框架的离散时间化"
+  },
+  {
+   "report_id": "CDBM_Consistency_Distillation_Bridge",
+   "type": "平行：桥模型加速，但走蒸馏路线"
+  }
+ ],
+ "read_full_text": false
+}

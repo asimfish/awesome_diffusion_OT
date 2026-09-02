@@ -1,0 +1,56 @@
+{
+ "report_id": "2310.16834",
+ "arxiv_id": "2310.16834",
+ "title": "Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution",
+ "tldr_zh": "提出 score entropy 学习离散概率比值，扩散 LM 首次在困惑度上超过 GPT-2，可 32× 减少采样步数",
+ "tldr_en": "Score entropy learns probability ratios for discrete diffusion, first diffusion LM to beat GPT-2 perplexity with 32x fewer sampling steps",
+ "tags": [
+  "discrete diffusion",
+  "score entropy",
+  "language modeling",
+  "concrete score",
+  "CTMC",
+  "T22"
+ ],
+ "code_url": "https://github.com/louaaron/Score-Entropy-Discrete-Diffusion",
+ "key_numbers": [
+  "SEDD Absorb 在 1BW 上 perplexity ≤32.79，比 D3PM Absorb 的 ≤77.50 低约 58%（Table 3）",
+  "SEDD Absorb 在 text8 上 BPC ≤1.39，非自回归方法中最好（Table 2）",
+  "Medium 规模 SEDD Absorb 在 WikiText2 上 ≤31.04，低于 GPT-2 的 31.80（Table 1）",
+  "SEDD 用 32 步匹配 GPT-2 生成质量，用 2048 步时 generative perplexity 比 GPT-2 好 6-8×（Fig. 1, Sec. 5.3.1）",
+  "SEDD Standard 无退火 MAUVE 0.957，超过 GPT-2 + nucleus-0.95 的 0.955（Table 5）",
+  "SEDD 约 100 步匹配自回归推理时间，移除 KV-cache 后 batch size 可增加 4-6 倍（Sec. 6）",
+  "模型参数量比典型 transformer 多约 5-10%（时间条件化）（Sec. 5.1）"
+ ],
+ "relations": [
+  {
+   "report_id": "2205.14987",
+   "type": "继承"
+  },
+  {
+   "report_id": "2211.00802",
+   "type": "继承"
+  },
+  {
+   "report_id": "2107.03006",
+   "type": "继承"
+  },
+  {
+   "report_id": "2211.03595",
+   "type": "继承"
+  },
+  {
+   "report_id": "2210.16886",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2210.17432",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2205.14217",
+   "type": "竞争"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,90 @@
+{
+ "report_id": "2305.14777",
+ "arxiv_id": "2305.14777",
+ "title": "Generative Modeling through the Semi-dual Formulation of Unbalanced Optimal Transport",
+ "tldr_zh": "用 UOT 半对偶做生成模型，松弛边际约束换 outlier 稳健与训练稳定，CIFAR-10 FID 2.97",
+ "tldr_en": "UOT semi-dual generative model with relaxed marginal constraints for outlier robustness and stable training; CIFAR-10 FID 2.97",
+ "tags": [
+  "unbalanced optimal transport",
+  "semi-dual formulation",
+  "generative modeling",
+  "outlier robustness",
+  "neural OT map"
+ ],
+ "code_url": "https://github.com/Jae-Moo/UOTM",
+ "key_numbers": [
+  {
+   "number": "2.97 ± 0.07",
+   "context": "CIFAR-10 FID, UOTM (Large)",
+   "source": "Table 2, Sec. 5.2"
+  },
+  {
+   "number": "6.36",
+   "context": "CelebA-HQ-256 FID, UOTM",
+   "source": "Table 3, Sec. 5.2"
+  },
+  {
+   "number": "7.68",
+   "context": "CIFAR-10 FID, OTM (Large)†",
+   "source": "Table 2, Sec. 5.2"
+  },
+  {
+   "number": "21.57",
+   "context": "CIFAR-10 FID, Robust-OT",
+   "source": "Table 2, Sec. 5.2"
+  },
+  {
+   "number": "13.82 vs 4.56",
+   "context": "CIFAR-10+1%MNIST FID: OTM vs UOTM",
+   "source": "Fig. 3, Sec. 5.1"
+  },
+  {
+   "number": "0.2%",
+   "context": "UOTM 生成 MNIST-like 样本的概率",
+   "source": "Fig. 3, Sec. 5.1"
+  },
+  {
+   "number": "约 5 倍",
+   "context": "UOTM 达到 OTM 同等性能所需 epochs 的加速比",
+   "source": "Sec. 5.3"
+  },
+  {
+   "number": "约 25 小时",
+   "context": "UOTM 在 CIFAR-10 上的训练时间（4×Tesla V100）",
+   "source": "Sec. 5.3"
+  },
+  {
+   "number": "152",
+   "context": "OTM 无正则时的 CIFAR-10 FID",
+   "source": "Sec. 5.4"
+  },
+  {
+   "number": "D_{Ψ1}(μ̃|μ)+D_{Ψ2}(ν̃|ν) ≤ τW₂²(μ,ν)",
+   "context": "UOT 边际散度上界",
+   "source": "Theorem 3.3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2202.06467",
+   "type": "被本文作为主要对比基线（OTM*）"
+  },
+  {
+   "report_id": "2010.05840",
+   "type": "被本文对比的 UOT dual 三网络方案（Robust-OT）"
+  },
+  {
+   "report_id": "2112.11056",
+   "type": "Theorem 3.4 的理论来源"
+  },
+  {
+   "report_id": "2403.00343",
+   "type": "后续工作：解决本文 τ 敏感问题（UOTM-SD）"
+  },
+  {
+   "report_id": "2311.01130",
+   "type": "后续工作：unbalanced map 化归 balanced（UOT-FM）"
+  }
+ ],
+ "read_full_text": true
+}

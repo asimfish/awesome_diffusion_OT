@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 6.95pt but the original at this position is 9.95pt (ratio 0.70 vs page median 0.92) at x=330.4, y=238.8: Mx.上的某个点。然而，这不会改变结论，因为"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (15 words, 0 CJK chars) at x=108.0, y=571.6: vθ(xt, t)), where LPIPS(·, ·) is the learned perceptual "
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 8.56pt but the original at this position is 10.06pt (ratio 0.85 vs page median 0.92) at x=181.1, y=329.4: pt(xt|x)∝p^{′} _{t}_{′}(^{s}^{′}^{(}^{t}^{′}^{)}"
+    }
+  ]
+}

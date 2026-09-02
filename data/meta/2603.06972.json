@@ -1,0 +1,77 @@
+{
+ "report_id": "2603.06972",
+ "arxiv_id": "2603.06972",
+ "title": "Conditional Unbalanced Optimal Transport Maps: An Outlier-Robust Framework for Conditional Generative Modeling",
+ "tldr_zh": "条件 UOT 半对偶 + 三角 c-transform，单步条件生成，抗 outlier 且 CIFAR-10 FID 3.71",
+ "tldr_en": "Conditional UOT semi-dual with triangular c-transform; one-step conditional generation, outlier-robust, FID 3.71 on CIFAR-10",
+ "tags": [
+  "conditional optimal transport",
+  "unbalanced optimal transport",
+  "neural OT",
+  "conditional generative modeling",
+  "outlier robustness",
+  "semi-dual",
+  "c-transform"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "3.71",
+   "metric": "FID on class-conditional CIFAR-10, CUOTM+SD, 1 NFE",
+   "source": "Table II"
+  },
+  {
+   "number": "4.10",
+   "metric": "FID of OT Bayesian Flow, 100 NFE",
+   "source": "Table II"
+  },
+  {
+   "number": "33.04",
+   "metric": "FID of COTM baseline, 1 NFE",
+   "source": "Table II"
+  },
+  {
+   "number": "0.047 vs 0.205",
+   "metric": "W2(×10^-3) to clean distribution under 1% outliers at r∈[4,5], CUOTM vs COTM",
+   "source": "Table III"
+  },
+  {
+   "number": "0.0007",
+   "metric": "optimal τ on CIFAR-10",
+   "source": "Sec. V-C1, Fig. 4"
+  },
+  {
+   "number": "4.46",
+   "metric": "W2(×10^-2) on Circles, CUOTM, best among all methods",
+   "source": "Table I"
+  },
+  {
+   "number": "596",
+   "metric": "NFE required by COT-FM and FM on 2D synthetic",
+   "source": "Table I"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "UOTM-NeurIPS2023",
+   "type": "继承（无条件 UOT 半对偶 + c-transform 参数化模板）"
+  },
+  {
+   "report_id": "UOTM-SD-ICLR2024",
+   "type": "继承（α-scheduling 直接引用）"
+  },
+  {
+   "report_id": "COTM-static",
+   "type": "竞争（COTM 为本文特例基线）"
+  },
+  {
+   "report_id": "COT-FM",
+   "type": "竞争（动态条件 OT，NFE 596 vs 本文 1）"
+  },
+  {
+   "report_id": "UOT-FM-ICLR2024",
+   "type": "平行路线（unbalanced 化归 balanced + flow matching，本文走半对偶 max-min）"
+  }
+ ],
+ "read_full_text": true
+}

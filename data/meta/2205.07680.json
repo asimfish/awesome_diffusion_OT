@@ -1,0 +1,40 @@
+{
+ "report_id": "2205.07680",
+ "arxiv_id": "2205.07680",
+ "title": "BBDM: Image-to-image Translation with Brownian Bridge Diffusion Models",
+ "tldr_zh": "latent Brownian桥做I2I、无条件输入；FID略优LDM",
+ "tldr_en": "Models I2I as a latent Brownian bridge without conditioning inputs; CelebAMask-HQ FID 21.35 vs LDM 22.82.",
+ "tags": [
+  "brownian-bridge",
+  "latent-diffusion",
+  "paired-i2i",
+  "vqgan"
+ ],
+ "code_url": "https://github.com/xuekt98/BBDM",
+ "key_numbers": [
+  "CelebAMask-HQ FID 21.350 / LPIPS 0.370 vs LDM 22.816 / 0.371 (Table 1)",
+  "edges2handbags FID 17.257 vs LDM 24.251 (Table 2)",
+  "Latent factor f16: BBDM FID 22.061 vs LDM 56.404 (Table 3)",
+  "200 sampling steps FID 21.350; 20 steps 33.409 (Table 4)",
+  "Variance scale s=4: Diversity 39.573 but FID 24.490 (Table 5)"
+ ],
+ "relations": [
+  {
+   "report_id": "2309.16948",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "I2SB_Image_to_Image_Schr_dinger_Bridge",
+   "type": "competes"
+  },
+  {
+   "report_id": "2503.07535",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2405.15885",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,70 @@
+{
+ "report_id": "2506.09534",
+ "arxiv_id": "2506.09534",
+ "title": "Gaussian Herding across Pens: An Optimal Transport Perspective on Global Gaussian Reduction for 3DGS",
+ "tldr_zh": "把 3DGS 压缩视为 Gaussian 混合约简，用 CTD 做块级几何压缩，10% 图元保持渲染质量",
+ "tldr_en": "Casts 3DGS compaction as Gaussian mixture reduction via composite transport divergence, retaining 10% primitives with negligible quality loss",
+ "tags": [
+  "3DGS",
+  "optimal transport",
+  "Gaussian mixture reduction",
+  "compaction",
+  "KD-tree"
+ ],
+ "code_url": "https://github.com/DrunkenPoet/GHAP",
+ "key_numbers": [
+  {
+   "number": "10% retention ratio",
+   "context": "3DGS+GHAP 在 T&T 上 PSNR 23.312 vs vanilla 23.785，SSIM 0.818 vs 0.853",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.473 dB",
+   "context": "3DGS+GHAP 在 T&T 上 PSNR 比 vanilla 3DGS 低 0.473 dB",
+   "source": "Table 1"
+  },
+  {
+   "number": "4.442 dB",
+   "context": "GHAP 压缩（无微调）比随机子采样（无微调）在 T&T 上 PSNR 高 4.442 dB",
+   "source": "Table 3"
+  },
+  {
+   "number": "O(ρs²log n)",
+   "context": "块级 GMR 的每迭代计算复杂度",
+   "source": "Remark 1"
+  },
+  {
+   "number": "约 6 次迭代收敛",
+   "context": "GMR 算法在实验中约 6 次迭代收敛",
+   "source": "Sec. 3.2.1 脚注 2"
+  },
+  {
+   "number": "30.042 dB",
+   "context": "MiniSplatting+GHAP 在 Deep Blending 上 PSNR 超过 vanilla 3DGS 的 29.816",
+   "source": "Table 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2405.12369",
+   "type": "backbone"
+  },
+  {
+   "report_id": "2406.10219",
+   "type": "baseline"
+  },
+  {
+   "report_id": "2406.18214",
+   "type": "baseline"
+  },
+  {
+   "report_id": "2407.09510",
+   "type": "survey"
+  },
+  {
+   "report_id": "2501.05757",
+   "type": "baseline"
+  }
+ ],
+ "read_full_text": true
+}

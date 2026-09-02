@@ -1,0 +1,83 @@
+{
+  "issue_count": 13,
+  "issues": [
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (5 words, 0 CJK chars) at x=132.5, y=557.9: (A3) There is κ ≥1/2, b0 > 0, ˜κ > 0, and ˜b0 > 0 such t"
+    },
+    {
+      "page": 9,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 9: block set at 8.47pt but the original at this position is 9.96pt (ratio 0.85 vs page median 0.92) at x=262.8, y=435.5: t= 0出发的相应流下的前推。则对于任意"
+    },
+    {
+      "page": 11,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 11: paragraph still in English (8 words, 0 CJK chars) at x=166.6, y=178.1: x 7→ϕ(x, t) is Lt-Lipschitz for each t ∈[T0, 1] where Lt"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 6.77pt but the original at this position is 9.86pt (ratio 0.69 vs page median 0.92) at x=336.4, y=199.2: 2s+d ，这由引理11 和(A3)推导得出。我们取常数"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (14 words, 0 CJK chars) at x=133.4, y=575.3: This section shows a lemma that provides a Lipschitz con"
+    },
+    {
+      "page": 22,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 22: displayed equation at y=211 shifted horizontally by 30pt vs original"
+    },
+    {
+      "page": 26,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 26: paragraph still in English (5 words, 0 CJK chars) at x=133.8, y=307.7: Lemma 17. There exists C1 = C1(d, C0) > 0 such that"
+    },
+    {
+      "page": 26,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 26: paragraph still in English (5 words, 0 CJK chars) at x=139.4, y=460.6: (ii) There is C3 = C3(d, C0) > 0 such that"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (8 words, 0 CJK chars) at x=133.8, y=358.2: Noting that y ∈Ax is equivalent to |xi −mtyi|/σt ≤C"
+    },
+    {
+      "page": 28,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 28: paragraph still in English (4 words, 0 CJK chars) at x=158.2, y=227.5: hold for any ε > 0 and t ∈[T0, 1]."
+    },
+    {
+      "page": 35,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 35: paragraph still in English (5 words, 0 CJK chars) at x=133.4, y=632.2: where Ax is given by"
+    },
+    {
+      "page": 37,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 37: paragraph still in English (16 words, 0 CJK chars) at x=133.8, y=259.0: d, 1]. Also, in a similar way, we can restrict the integ"
+    },
+    {
+      "page": 43,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 43: paragraph still in English (5 words, 0 CJK chars) at x=133.8, y=165.7: ∥W∥∞= 48d, S = O(d log ε−1 + d log C)), B = Cd such that"
+    }
+  ]
+}

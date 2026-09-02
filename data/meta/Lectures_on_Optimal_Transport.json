@@ -1,0 +1,31 @@
+{
+ "report_id": "Lectures_on_Optimal_Transport",
+ "arxiv_id": null,
+ "title": "Lectures on Optimal Transport",
+ "tldr_zh": "SNS 二十年课程沉淀的 OT 教材，给出两种自包含的 Kantorovich 对偶证明",
+ "tldr_en": "Lecture notes from SNS giving two self-contained proofs of Kantorovich duality",
+ "tags": [
+  "optimal transport",
+  "Kantorovich duality",
+  "textbook",
+  "Wasserstein distance",
+  "mathematical foundations"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Peyre_Cuturi_2019",
+   "type": "complementary"
+  },
+  {
+   "report_id": "Santambrogio_2015",
+   "type": "predecessor"
+  },
+  {
+   "report_id": "Villani_2003",
+   "type": "predecessor"
+  }
+ ],
+ "read_full_text": false
+}

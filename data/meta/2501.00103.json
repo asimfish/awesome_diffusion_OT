@@ -1,0 +1,140 @@
+{
+ "report_id": "2501.00103",
+ "arxiv_id": "2501.00103",
+ "title": "LTX-Video: Realtime Video Latent Diffusion",
+ "tldr_zh": "1:192 高压缩 Video-VAE 与去噪 transformer 协同设计，H100 上 2 秒生成 5 秒 768×512 视频",
+ "tldr_en": "1:192 compression Video-VAE with denoising decoder, 2s for 5s 768×512 video on H100",
+ "tags": [
+  "video generation",
+  "latent diffusion",
+  "rectified flow",
+  "Video-VAE",
+  "real-time",
+  "text-to-video",
+  "image-to-video"
+ ],
+ "code_url": "https://github.com/Lightricks/LTX-Video",
+ "key_numbers": [
+  {
+   "number": "1:192",
+   "description": "VAE 总压缩比",
+   "source": "Abstract; Table 1"
+  },
+  {
+   "number": "32×32×8",
+   "description": "VAE 时空下采样（每 token 像素数）",
+   "source": "Abstract; Sec. 2.1"
+  },
+  {
+   "number": "128",
+   "description": "VAE 输出通道数",
+   "source": "Sec. 2.1; Table 1"
+  },
+  {
+   "number": "1:8192",
+   "description": "pixels-to-tokens 比（典型配置的 4 倍）",
+   "source": "Sec. 2.1; Table 1"
+  },
+  {
+   "number": "1.9B",
+   "description": "LTX-Video 参数量",
+   "source": "Table 1"
+  },
+  {
+   "number": "28",
+   "description": "Transformer block 数",
+   "source": "Table 1"
+  },
+  {
+   "number": "2048",
+   "description": "Transformer hidden dimension",
+   "source": "Table 1"
+  },
+  {
+   "number": "2 秒",
+   "description": "生成 5 秒 24fps 768×512 视频（121 帧）的耗时，20 步，H100",
+   "source": "Abstract; Sec. 1"
+  },
+  {
+   "number": "85%",
+   "description": "Text-to-video 人类评估胜率",
+   "source": "Table 2"
+  },
+  {
+   "number": "91%",
+   "description": "Image-to-video 人类评估胜率",
+   "source": "Table 2"
+  },
+  {
+   "number": "20",
+   "description": "人类评估参与者数",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "1000",
+   "description": "人类评估 prompt 数（T2V 和 I2V 各 1000）",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "40",
+   "description": "人类评估中所有模型的扩散步数",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "[0, 0.2]",
+   "description": "去噪解码器的训练噪声水平范围",
+   "source": "Sec. 2.1.1"
+  },
+  {
+   "number": "0%–20%",
+   "description": "多分辨率训练的随机 token dropping 率",
+   "source": "Sec. 2.5.3"
+  },
+  {
+   "number": "0.5 和 99.9",
+   "description": "timestep 采样 pdf 截断的百分位",
+   "source": "Sec. 2.5.2"
+  },
+  {
+   "number": "8",
+   "description": "Video DWT loss 中 3D DWT 变换数量",
+   "source": "Sec. 2.1.5"
+  },
+  {
+   "number": "10 秒",
+   "description": "模型支持的最大视频时长",
+   "source": "Sec. 5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "pyramid-flow",
+   "type": "同代竞争（Table 1 对比）"
+  },
+  {
+   "report_id": "cogvideox",
+   "type": "同代竞争（Table 1 对比）"
+  },
+  {
+   "report_id": "hunyuanvideo",
+   "type": "同代竞争（Table 1 对比）"
+  },
+  {
+   "report_id": "sd3",
+   "type": "继承（rectified flow 训练与 velocity 预测）"
+  },
+  {
+   "report_id": "pixart-alpha",
+   "type": "继承（transformer 架构基础）"
+  },
+  {
+   "report_id": "dc-vae",
+   "type": "并行工作（高空间压缩 VAE）"
+  },
+  {
+   "report_id": "simplediffusion",
+   "type": "继承（高分辨率噪声调度）"
+  }
+ ],
+ "read_full_text": true
+}

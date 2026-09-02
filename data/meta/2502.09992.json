@@ -1,0 +1,90 @@
+{
+ "report_id": "2502.09992",
+ "arxiv_id": "2502.09992",
+ "title": "Large Language Diffusion Models",
+ "tldr_zh": "8B 从零预训练+SFT 的 masked 扩散 LM，多基准比肩 LLaMA3-8B，并破解 reversal curse",
+ "tldr_en": "8B masked diffusion LM trained from scratch matches LLaMA3-8B on benchmarks and breaks the reversal curse",
+ "tags": [
+  "masked diffusion",
+  "language model",
+  "LLaDA",
+  "discrete diffusion",
+  "reversal curse",
+  "scaling",
+  "SFT"
+ ],
+ "code_url": "https://ml-gsai.github.io/LLaDA-demo/",
+ "key_numbers": [
+  {
+   "number": "8B parameters",
+   "source": "Sec. 1, Sec. 2.2"
+  },
+  {
+   "number": "2.3T pre-training tokens",
+   "source": "Sec. 1, Sec. 2.2, Tab. 1"
+  },
+  {
+   "number": "0.13M H800 GPU hours",
+   "source": "Sec. 1, Sec. 2.2"
+  },
+  {
+   "number": "4.5M SFT pairs",
+   "source": "Sec. 1, Sec. 2.3"
+  },
+  {
+   "number": "MMLU 65.9 (5-shot) vs LLaMA3 8B 65.4",
+   "source": "Tab. 1"
+  },
+  {
+   "number": "GSM8K 70.3 (4-shot) vs LLaMA3 8B 48.7",
+   "source": "Tab. 1"
+  },
+  {
+   "number": "Reversal poem: LLaDA 45.6 vs GPT-4o 34.3 vs Qwen2.5 38.0",
+   "source": "Tab. 4"
+  },
+  {
+   "number": "Forward poem: LLaDA 51.8 vs GPT-4o 82.7",
+   "source": "Tab. 4"
+  },
+  {
+   "number": "Block diffusion GSM8K 78.6 / Math 42.2 vs pure diffusion 69.4 / 31.9",
+   "source": "Sec. 3.2"
+  },
+  {
+   "number": "1% of pre-training data with random length [1,4096]",
+   "source": "Sec. 2.2"
+  },
+  {
+   "number": "Learning rate peak 4e-4, batch size 1280, weight decay 0.1",
+   "source": "Sec. 2.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2410.18514",
+   "type": "前作/继承"
+  },
+  {
+   "report_id": "2406.03736",
+   "type": "理论基础来源"
+  },
+  {
+   "report_id": "2406.04329",
+   "type": "理论基础来源"
+  },
+  {
+   "report_id": "2406.07524",
+   "type": "理论基础来源"
+  },
+  {
+   "report_id": "2310.16834",
+   "type": "方法谱系上游"
+  },
+  {
+   "report_id": "2503.09573",
+   "type": "采样策略对比"
+  }
+ ],
+ "read_full_text": true
+}

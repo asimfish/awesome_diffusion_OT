@@ -1,0 +1,47 @@
+{
+ "report_id": "Composing_Unbalanced_Flows_for_Flexible_Docking_an",
+ "arxiv_id": null,
+ "title": "Composing Unbalanced Flows for Flexible Docking and Relaxation / FlexDock (ICLR 2025)",
+ "tldr_zh": "提出 Unbalanced Flow Matching 松弛边缘约束，链式 apo→holo 对接 + 全原子松弛，PoseBusters 合格率 30%→73%",
+ "tldr_en": "Unbalanced Flow Matching relaxes marginal constraints for easier couplings; chained apo-to-holo manifold docking plus all-atom relaxation lifts PoseBusters validity from 30% to 73%",
+ "tags": [
+  "unbalanced-flow-matching",
+  "molecular-docking",
+  "apo-to-holo",
+  "posebusters",
+  "flow-matching",
+  "T21"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "30%",
+   "description": "基线 PoseBusters 合格率",
+   "source": "调研 agent 一句话贡献，原文摘要未见"
+  },
+  {
+   "number": "73%",
+   "description": "FlexDock PoseBusters 合格率",
+   "source": "调研 agent 一句话贡献，原文摘要未见"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "FlowDock_Bioinformatics_2025",
+   "type": "competes"
+  },
+  {
+   "report_id": "FoldFlow-2_NeurIPS_2024",
+   "type": "shares-base"
+  },
+  {
+   "report_id": "ET-Flow_NeurIPS_2024",
+   "type": "shares-base"
+  },
+  {
+   "report_id": "FlowLLM_NeurIPS_2024",
+   "type": "related-cross-domain"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,77 @@
+{
+ "report_id": "2603.11618",
+ "arxiv_id": "2603.11618",
+ "title": "Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild",
+ "tldr_zh": "用 3D 几何结构做 FGW 伪标签，anchor 线性化降计算，SPair-71k 达 67.9% PCK@0.1",
+ "tldr_en": "FGW pseudo-labels with 3D geometric structure and anchor linearization; 67.9% PCK@0.1 on SPair-71k",
+ "tags": [
+  "semantic correspondence",
+  "Fused Gromov-Wasserstein",
+  "optimal transport",
+  "3D foundation model",
+  "pseudo-labeling",
+  "unbalanced OT"
+ ],
+ "code_url": "未公开（作者声明可用但未给 URL）",
+ "key_numbers": [
+  {
+   "number": "67.9%",
+   "description": "SPair-71k PCK@0.1 per-keypoint，超过 DINOv2+SD 基线 4.4%p",
+   "source": "Table 1, Sec. 6"
+  },
+  {
+   "number": "68.0% / 65.8% / 52.9%",
+   "description": "AP-10k 零样本 intra-species / cross-species / cross-family PCK@0.1",
+   "source": "Table 2"
+  },
+  {
+   "number": "K=64",
+   "description": "anchor 对数量，用于 GW 线性化",
+   "source": "Sec. 3.3"
+  },
+  {
+   "number": "α=0.3",
+   "description": "FGW 中语义代价与几何代价的融合权重",
+   "source": "Sec. 3"
+  },
+  {
+   "number": "β=0.5",
+   "description": "soft target 中 hard 与 current plan 的混合权重",
+   "source": "Eq. (9)"
+  },
+  {
+   "number": "56.1% vs 53.8%",
+   "description": "Fused UOT vs NN 的 PCKlabel@0.1（Geometry-aware 子集），+2.3%p",
+   "source": "Fig. 5"
+  },
+  {
+   "number": "67.6% vs 66.5%",
+   "description": "3D 几何距离 vs 无 GW 项的 PCKlabel@0.1，+1.1%p",
+   "source": "Table 3"
+  },
+  {
+   "number": "65.7%",
+   "description": "用 2D 距离做 intra-structure 的 PCKlabel@0.1，低于无 GW 基线 66.5%",
+   "source": "Table 3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "GWOT-SC",
+   "type": "继承并替换结构空间（2D 特征空间 → 3D 几何空间）"
+  },
+  {
+   "report_id": "SCOT",
+   "type": "继承（语义对应即 OT 的判别式框架）"
+  },
+  {
+   "report_id": "UNITE",
+   "type": "共享 UOT 工具（处理部分匹配/遮挡）"
+  },
+  {
+   "report_id": "KPG-RL",
+   "type": "先验注入的另一种形态（keypoint mask vs 3D 结构代价）"
+  }
+ ],
+ "read_full_text": true
+}

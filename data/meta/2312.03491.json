@@ -1,0 +1,48 @@
+{
+ "report_id": "2312.03491",
+ "arxiv_id": "2312.03491",
+ "title": "Schrodinger Bridges Beat Diffusion Models on Text-to-Speech Synthesis",
+ "tldr_zh": "用文本潜变量替换高斯先验，配对数据上完全可解 SB，2-4 步合成超 Grad-TTS 与快速 TTS 基线",
+ "tldr_en": "Replaces Gaussian prior with text latent in a fully tractable paired-data Schrodinger bridge; 2-4 step TTS beats Grad-TTS and fast baselines",
+ "tags": [
+  "Schrodinger bridge",
+  "TTS",
+  "diffusion models",
+  "exponential integrator",
+  "LJ-Speech"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  "Bridge-TTS (VP) 50-step MOS 4.09 ± 0.07 vs Grad-TTS 50-step 3.99 ± 0.07 (Table 2)",
+  "Bridge-TTS (gmax) 4-step MOS 4.10 ± 0.06 vs ResGrad 4-step 4.02 ± 0.06 (Table 3)",
+  "Bridge-TTS (gmax) 2-step MOS 4.04 ± 0.06 vs CoMoSpeech 2-step 3.87 ± 0.07 (Table 3)",
+  "Bridge-TTS (gmax) 2-step RTF 0.009, 4-step RTF 0.013 (Table 3)",
+  "Ablation: mutable prior CMOS -0.13 (NFE=4) / -0.17 (NFE=1000); constant g(t) -0.12 / -0.14; ODE -0.10 / +0.00 (Table 4)",
+  "Training: 1.7M iterations, batch size 16, single RTX 3090, 2.5 days (Sec. 4.1)",
+  "Encoder 7.2M parameters, U-Net decoder 7.6M parameters (Sec. 4.1)",
+  "LJ-Speech: 13,100 samples, ~24 hours, 12,577 training samples (Sec. 4.1)"
+ ],
+ "relations": [
+  {
+   "report_id": "grad-tts",
+   "type": "被对比的 diffusion counterpart"
+  },
+  {
+   "report_id": "i2sb",
+   "type": "同属配对数据可解 SB 家族，本文指出其设计空间分析不足"
+  },
+  {
+   "report_id": "matcha-tts",
+   "type": "同期 FM 路线，本文在少步 TTS 上与之竞争"
+  },
+  {
+   "report_id": "bridge-sr",
+   "type": "后续工作，沿用本文配对 SB 模板到波形超分"
+  },
+  {
+   "report_id": "sb-se",
+   "type": "后续工作，沿用本文配对 SB 模板到语音增强"
+  }
+ ],
+ "read_full_text": true
+}

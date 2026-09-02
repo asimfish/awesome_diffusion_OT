@@ -1,0 +1,31 @@
+{
+ "report_id": "Improving_Dynamic_NeRFs_with_Optimal_Transport",
+ "arxiv_id": null,
+ "title": "Improving Dynamic NeRFs with Optimal Transport",
+ "tldr_zh": "用 OT 约束动态 NeRF 的时变形变一致性，摘要无实验数字。",
+ "tldr_en": "Uses OT to constrain temporal deformation consistency in dynamic NeRFs; no numbers in abstract.",
+ "tags": [
+  "dynamic NeRF",
+  "optimal transport",
+  "implicit field",
+  "deformation consistency",
+  "T20"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "GaussianCube_NeurIPS2024",
+   "type": "adjacent"
+  },
+  {
+   "report_id": "WFM_ICML2025",
+   "type": "different-branch"
+  },
+  {
+   "report_id": "NSOT_ICLR2025",
+   "type": "potential-complement"
+  }
+ ],
+ "read_full_text": false
+}

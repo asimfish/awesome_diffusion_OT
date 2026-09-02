@@ -1,0 +1,31 @@
+{
+ "report_id": "Sinkhorn_Flow_as_Mirror_Flow_A_Continuous_Time_Fra",
+ "arxiv_id": "",
+ "title": "Sinkhorn Flow as Mirror Flow: A Continuous-Time Framework for Generalizing the Sinkhorn Algorithm",
+ "tldr_zh": "Sinkhorn 的连续时间极限是测度空间 mirror flow，导出对噪声/偏差鲁棒的新变体并统一 Wasserstein mirror flow 等动力学（未读全文）",
+ "tldr_en": "Casts the continuous-time limit of Sinkhorn as a mirror flow on measures, yielding noise-robust variants and unifying Wasserstein mirror flows (full text not read).",
+ "tags": [
+  "sinkhorn",
+  "mirror-flow",
+  "continuous-time",
+  "theory",
+  "brief-card"
+ ],
+ "code_url": "",
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "1306.0895",
+   "type": "extends"
+  },
+  {
+   "report_id": "2406.05061",
+   "type": "competes"
+  },
+  {
+   "report_id": "2205.06688",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

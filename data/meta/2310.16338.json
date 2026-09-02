@@ -1,0 +1,90 @@
+{
+ "report_id": "2310.16338",
+ "arxiv_id": "2310.16338",
+ "title": "Generative Pre-training for Speech with Flow Matching",
+ "tldr_zh": "FM+masked 条件在 6 万小时无标注语音上预训练 SpeechFlow，微调后匹配或超过增强/分离/TTS 专家模型",
+ "tldr_en": "FM with masked conditions pretrained on 60k hrs unlabeled speech; fine-tuning matches or beats expert models on enhancement, separation, TTS",
+ "tags": [
+  "flow matching",
+  "speech generation",
+  "generative pre-training",
+  "masked audio modeling",
+  "speech enhancement",
+  "speech separation",
+  "zero-shot TTS"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "60k hours",
+   "context": "untranscribed English audiobook speech for pre-training",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "330M",
+   "context": "model parameters, 24-layer Transformer encoder",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "600k steps / 32 V100 GPUs / batch 75s per GPU",
+   "context": "pre-training compute",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "PESQ 3.13 vs SGMSE+ 2.93",
+   "context": "VB-DMD enhancement",
+   "source": "Table 1"
+  },
+  {
+   "number": "PESQ 2.70 vs best prior 2.48",
+   "context": "WSJ0-CHiME3 enhancement, out-of-domain",
+   "source": "Table 1"
+  },
+  {
+   "number": "ESTOIi 0.35 vs Conv-TasNet 0.22",
+   "context": "2 Mix separation, LibriMix",
+   "source": "Table 2"
+  },
+  {
+   "number": "SI-SDRi 15.85 with learnable inverse-Mel",
+   "context": "2 Mix separation, exceeds Conv-TasNet 15.24",
+   "source": "Table 2"
+  },
+  {
+   "number": "SIM-o 0.700 / SIM-r 0.715 vs Voicebox 0.662 / 0.681",
+   "context": "zero-shot TTS speaker similarity, 960h labeled data vs Voicebox 60k h",
+   "source": "Table 3"
+  },
+  {
+   "number": "WER 2.1 vs Voicebox 1.9",
+   "context": "zero-shot TTS, SpeechFlow LoRA 32 GPU",
+   "source": "Table 3"
+  },
+  {
+   "number": "MOS 3.43 vs Voicebox 3.54",
+   "context": "zero-shot TTS subjective evaluation",
+   "source": "Table 3"
+  },
+  {
+   "number": "SI-SDRi 12.41 → 9.73",
+   "context": "multi-task fine-tuning separation degradation",
+   "source": "Table 4"
+  },
+  {
+   "number": "2.8% (9.5M params)",
+   "context": "LoRA new learnable parameters ratio",
+   "source": "Sec. 4.4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2306.15687",
+   "type": "继承/同架构监督版"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "方法基础（FM 框架）"
+  }
+ ],
+ "read_full_text": true
+}

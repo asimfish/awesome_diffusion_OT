@@ -1,0 +1,55 @@
+{
+ "report_id": "2505.06589",
+ "arxiv_id": "2505.06589",
+ "title": "Optimal Transport for Machine Learners",
+ "tldr_zh": "面向 ML 的 OT 全景教材，16 章从点云匹配到 flow matching/transformer，本课题首推入门书",
+ "tldr_en": "480-page ML-oriented OT textbook: Monge/Kantorovich, Brenier, Sinkhorn, gradient flows, flow matching and transformers, with POT-based code.",
+ "tags": [
+  "textbook",
+  "ot-foundations",
+  "brenier",
+  "benamou-brenier",
+  "sinkhorn",
+  "wasserstein-gradient-flow",
+  "flow-matching",
+  "reading-guide"
+ ],
+ "code_url": "https://github.com/gpeyre/ot4ml",
+ "key_numbers": [
+  "16 chapters, 480 pages (v3, Aug 2026; TOC pp. iii-v)",
+  "Thm 2.23 Brenier: unique optimal map = gradient of convex potential under absolute continuity of source (Sec. 2.4)",
+  "Prop. 2.30: displacement interpolation is a constant-speed geodesic, W_p(alpha_s,alpha_t)=(t-s)W_p(alpha,beta) (Sec. 2.4)",
+  "Prop. 2.31 Caffarelli: C^alpha densities on uniformly convex domains give C^{2,alpha}_loc potential (Sec. 2.4)"
+ ],
+ "relations": [
+  {
+   "report_id": "1803.00567",
+   "type": "extends"
+  },
+  {
+   "report_id": "2512.06797",
+   "type": "uses"
+  },
+  {
+   "report_id": "2407.18163",
+   "type": "uses"
+  },
+  {
+   "report_id": "2003.00855",
+   "type": "uses"
+  },
+  {
+   "report_id": "Topics_in_Optimal_Transportation",
+   "type": "uses"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "uses"
+  },
+  {
+   "report_id": "2302.04953",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

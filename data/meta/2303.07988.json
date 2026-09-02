@@ -1,0 +1,73 @@
+{
+ "report_id": "2303.07988",
+ "arxiv_id": "2303.07988",
+ "title": "Light Unbalanced Optimal Transport",
+ "tldr_zh": "Gaussian mixture 参数化对偶变量，把连续 UEOT 变成非 minimax 目标，CPU 几分钟求解并给泛化界",
+ "tldr_en": "Gaussian-mixture dual parametrization turns continuous UEOT into a non-minimax objective with generalization bounds",
+ "tags": [
+  "unbalanced optimal transport",
+  "entropic optimal transport",
+  "Gaussian mixture",
+  "non-minimax",
+  "generalization bounds",
+  "image translation"
+ ],
+ "code_url": "https://github.com/milenagazdieva/LightUnbalancedOptimalTransport",
+ "key_numbers": [
+  {
+   "number": "02:38",
+   "source": "Table 3",
+   "context": "U-LightOT wall-clock time for Young→Adult translation, fastest among compared solvers"
+  },
+  {
+   "number": "18:11",
+   "source": "Table 3",
+   "context": "UOT-SD wall-clock time, slowest among compared solvers"
+  },
+  {
+   "number": "16:30",
+   "source": "Table 3",
+   "context": "UOT-GAN wall-clock time"
+  },
+  {
+   "number": "03:21",
+   "source": "Table 3",
+   "context": "UOT-FM wall-clock time"
+  },
+  {
+   "number": "512",
+   "source": "Sec. 5.2",
+   "context": "latent dimension of ALAE autoencoder used for image translation"
+  },
+  {
+   "number": "0.05",
+   "source": "Sec. 5.1 Remark",
+   "context": "entropy regularization parameter ε used in all experiments"
+  },
+  {
+   "number": "99%",
+   "source": "Sec. 5.2 Metrics",
+   "context": "accuracy of MLP classifiers used for keep/target evaluation"
+  },
+  {
+   "number": "O(1/√N)+O(1/√M)",
+   "source": "Proposition 4.2",
+   "context": "estimation error bound for Gaussian mixture parametrization"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2402.03207",
+   "type": "directly extends"
+  },
+  {
+   "report_id": "2302.xxxxx",
+   "type": "competes with"
+  },
+  {
+   "report_id": "2306.10161",
+   "type": "uses parametrization from"
+  }
+ ],
+ "read_full_text": true
+}

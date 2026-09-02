@@ -1,0 +1,31 @@
+{
+ "report_id": "MIOFlow",
+ "arxiv_id": null,
+ "title": "MIOFlow",
+ "tldr_zh": "测地自编码器潜空间中训练 neural ODE，用流形 ground distance 的 OT 罚项插值快照，处理分叉与汇合。",
+ "tldr_en": "Trains neural ODE in geodesic autoencoder latent space with OT penalty using manifold ground distance for snapshot interpolation, handling bifurcations and merges.",
+ "tags": [
+  "trajectory inference",
+  "neural ODE",
+  "optimal transport",
+  "geodesic autoencoder",
+  "single-cell"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "TrajectoryNet",
+   "type": "继承/竞争"
+  },
+  {
+   "report_id": "SF2M",
+   "type": "被取代"
+  },
+  {
+   "report_id": "MetricFM",
+   "type": "被取代"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,91 @@
+{
+ "digest_zh": "T28 课题解决的核心问题是：如何在黎曼流形上做 simulation-free 的生成建模，以及如何把最优传输（OT）耦合引入流形流匹配。方法谱系呈现三代演进：第一代（RSGM、RDSB）把扩散搬上流形，依赖热核与时间反演，计算成本高；第二代（RFM、TDM、SFM、WFM）用 premetric、平凡化动量或 Fisher-Rao 度量实现 simulation-free 训练，但耦合层普遍采用独立采样；第三代（RNOT、RCM、DiffeoCFM、MFM）分别从连续 OT 参数化、少步蒸馏、pullback 平坦化、数据依赖度量四个方向补强。当前共识是：流形上的条件向量场闭式构造已基本解决，瓶颈转移到耦合最优性与推理步数。分歧在于：离散 OT 配对（RCPM）在低维流形上仍优于连续神经势（RNOT），而 pullback 平坦化与内蕴几何操作（RCM）在一般流形上的可扩展性各有局限。",
+ "observations": [
+  {
+   "claim": "流形 OT 的离散化与连续参数化之间存在明确的复杂度分界，离散方法在低维占优、连续方法在高维才反超。",
+   "evidence": [
+    "2602.03566",
+    "2411.00698"
+   ],
+   "detail": "RNOT 的 Theorem 3.1 给出离散输出映射的 RMSE 下界 m^{-1/p}，Theorem 5.1 给出连续参数化的多项式上界；但 S² 上 RCPM 的 KL 为 0.0037，优于 RNOT-FPS 的 0.03（Table 1），说明低维场景离散方法仍实用。WFM 在 ShapeNet 上 Car 类 EMD 指标垫底（58.10），也提示 OT 近似的质量在特定几何/数据分布下不稳定。"
+  },
+  {
+   "claim": "simulation-free 是第二代方法的核心目标，但非阿贝尔李群与一般流形上仍存在妥协。",
+   "evidence": [
+    "2302.03660",
+    "2405.16381",
+    "2202.02763"
+   ],
+   "detail": "RFM 用 premetric 在简单几何上完全 simulation-free，但谱距离方案需模拟 ODE（Sec. 3.3）；TDM 在非阿贝尔李群上 DSM 不可用，必须退回 ISM 前向模拟（Algorithm 1）；RSGM 的热核依赖在一般高维流形上不可解析，Varadhan 渐近仅在 t 小且 y∉Cut(x) 时有效。"
+  },
+  {
+   "claim": "流形生成模型的评估指标与实验规模普遍薄弱，定量比较缺乏统一基准。",
+   "evidence": [
+    "2207.03024",
+    "2405.14780",
+    "2505.18193"
+   ],
+   "detail": "RDSB 实验全部为视觉定性评估，无任何定量指标；MFM 的 Proposition 1 为非正式陈述，未给出近似测地线与真实测地线的误差界；DiffeoCFM 在 ADNI 上 α-precision 仅 0.62±0.11，远低于 REAL DATA 的 0.91±0.03，但论文未解释源分布选择对生成质量的影响。"
+  },
+  {
+   "claim": "OT 耦合层在流形流匹配中仍以独立采样为主，显式引入测地 OT 配对的工作集中在统计流形分支。",
+   "evidence": [
+    "2302.03660",
+    "Statistical_Categorical_Flow_Matching_SFM_Cheng_et",
+    "2405.14780"
+   ],
+   "detail": "RFM 的条件路径是逐样本测地线，边际耦合由独立采样决定，无 OT 配对；SFM 在 Fisher-Rao 度量下显式引入测地成本 OT 配对；MFM 继承 OT-CFM 的耦合选择 π*，但将插值路径改为数据依赖黎曼度量下的近似测地线。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "一般流形上 simulation-free 的 Schrödinger Bridge matching 仍无闭式方案。",
+   "why_open": "RDSB 依赖 IPF 反复模拟，每轮需训练两个网络；热核在一般高维流形上不可解析，Varadhan 渐近仅在短时有效。",
+   "evidence": [
+    "2207.03024",
+    "2202.02763"
+   ]
+  },
+  {
+   "problem": "流形 OT 耦合的 minibatch 偏差与曲率的关系缺乏定量理论。",
+   "why_open": "RNOT 的复杂度上界依赖正则性假设，MFM 未给出近似测地线误差界，SFM 的 OT 配对实现细节未披露；曲率如何影响 minibatch 测地 OT 的收敛率仍是空白。",
+   "evidence": [
+    "2602.03566",
+    "2405.14780",
+    "Statistical_Categorical_Flow_Matching_SFM_Cheng_et"
+   ]
+  },
+  {
+   "problem": "非紧流形（如 SE(3)）上的连续 OT map 参数化与流匹配理论未建立。",
+   "why_open": "RNOT 理论限于紧流形，RFMP 未说明如何处理 SE(3) 的混合动作空间；TDM 限定在连通紧李群上。",
+   "evidence": [
+    "2602.03566",
+    "Riemannian_Flow_Matching_Policy_RFMP_Braun_et_al",
+    "2405.16381"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "2202.02763",
+   "why": "第一代流形扩散奠基，确立热核与 GRW 框架"
+  },
+  {
+   "report_id": "2302.03660",
+   "why": "RFM 奠基，premetric 构造是后续通用模板"
+  },
+  {
+   "report_id": "2602.03566",
+   "why": "流形 neural OT 奠基，给出离散/连续复杂度分界"
+  },
+  {
+   "report_id": "2405.16381",
+   "why": "李群特化，平凡化动量绕开热核"
+  },
+  {
+   "report_id": "2510.00983",
+   "why": "少步推理，RCM 蒸馏与 RFM 教师组合"
+  }
+ ],
+ "n_reports": 14
+}

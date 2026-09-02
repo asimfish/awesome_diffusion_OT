@@ -1,0 +1,41 @@
+{
+  "issue_count": 6,
+  "issues": [
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (18 words, 0 CJK chars) at x=81.4, y=209.9: Wolf, and Yoshua Bengio. Simulation-free schrödinger bri"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (14 words, 0 CJK chars) at x=72.0, y=334.4: Daniel Watson, William Chan, Jonathan Ho, and Mohammad N"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (16 words, 0 CJK chars) at x=72.0, y=468.4: Mao Ye, Lemeng Wu, and Qiang Liu. First hitting diffusio"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (13 words, 0 CJK chars) at x=72.0, y=542.6: Qinsheng Zhang and Yongxin Chen. Path integral sampler: "
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (4 words, 0 CJK chars) at x=71.7, y=704.7: 0).Taking dot product with x0 −x′"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (2 words, 0 CJK chars) at x=71.6, y=603.6: where λ ∈R+ and H(π) ="
+    }
+  ]
+}

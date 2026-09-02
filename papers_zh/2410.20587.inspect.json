@@ -1,0 +1,137 @@
+{
+  "issue_count": 22,
+  "issues": [
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (30 words, 0 CJK chars) at x=91.8, y=308.7: t : S × [0, 1] →Ωsubset of some vector space V with inne"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (14 words, 0 CJK chars) at x=91.8, y=335.5: tfor diffusion, or Ft = Qt for jumps (see table 1). We t"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (33 words, 0 CJK chars) at x=91.8, y=406.9: ▶Generator Matching(16)Unfortunately, the above training"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (13 words, 0 CJK chars) at x=91.8, y=441.6: t with data point z (see app. A.6). For clarity, we reit"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (15 words, 0 CJK chars) at x=91.8, y=247.0: Let (Ω, F, P) be a probability space. A Markov process ("
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (4 words, 0 CJK chars) at x=115.2, y=425.2: C0(S × [0, 1]).2. Strong continuity: For any f ∈C0(S × ["
+    },
+    {
+      "page": 18,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 18: displayed equation at y=404 shifted horizontally by 59pt vs original"
+    },
+    {
+      "page": 23,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 23: paragraph still in English (9 words, 0 CJK chars) at x=213.3, y=321.9: \u001aXtwith probability 1 −hλt(Xt) + o(h)∼Jt(dy; Xt)with pro"
+    },
+    {
+      "page": 25,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 25: displayed equation at y=185 shifted horizontally by 26pt vs original"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (3 words, 0 CJK chars) at x=234.9, y=116.7: Qt(y;x)with probability h P"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (3 words, 0 CJK chars) at x=234.9, y=163.5: Qt(y;x)with probability h P"
+    },
+    {
+      "page": 26,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 26: block set at 9.26pt but the original at this position is 10.06pt (ratio 0.92 vs page median 1.01) at x=116.0, y=93.7: Q_{t}∈R^{S}^{×}^{S} 为连续时间马尔可夫链的速率矩阵。则对任意"
+    },
+    {
+      "page": 26,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 26: block set at 9.07pt but the original at this position is 9.86pt (ratio 0.92 vs page median 1.01) at x=253.2, y=142.4: 〈·,·〉_{V} 为标准欧几里得点积。由此，即可恢复式(101) 的形式。"
+    },
+    {
+      "page": 26,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 26: block set at 11.00pt but the original at this position is 11.96pt (ratio 0.92 vs page median 1.01) at x=92.6, y=191.7: S=R^{d} 采样具有定理1 所述通用表示的生成元。我们简要推导算法2 实际上是一种采样方法，"
+    },
+    {
+      "page": 30,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 30: paragraph still in English (6 words, 0 CJK chars) at x=91.8, y=595.6: Proof of (1) ⇒(2).This is trivial. Define A(a) = ϕ(a), B"
+    },
+    {
+      "page": 33,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 33: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=173.5, y=210.3: X^{1} _{t}, X^{2} _{t} 是两个边缘马尔可夫过程，具有相应的边缘生成元"
+    },
+    {
+      "page": 33,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 33: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=162.6, y=222.2: T1, T2 ，它们对于马尔可夫过程是独立的（例如表1 中的欧拉采样或ODE 求解器），即仿真马"
+    },
+    {
+      "page": 34,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 34: paragraph still in English (7 words, 0 CJK chars) at x=91.4, y=641.5: where Lt is defined as in eq. (201)."
+    },
+    {
+      "page": 45,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 45: paragraph still in English (5 words, 0 CJK chars) at x=345.6, y=485.0: min)with prob κt∼p0with prob (1 −κt)(277)"
+    },
+    {
+      "page": 46,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 46: paragraph still in English (7 words, 0 CJK chars) at x=91.5, y=97.1: Therefore, for any at, bt ∈R we get"
+    },
+    {
+      "page": 59,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 59: preserved region at x=92, y=332 (83x16pt) renders with ink coverage 0.79 vs original"
+    },
+    {
+      "page": 67,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 67: displayed equation at y=225 shifted horizontally by 38pt vs original"
+    }
+  ]
+}

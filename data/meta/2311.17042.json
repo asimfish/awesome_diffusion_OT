@@ -1,0 +1,57 @@
+{
+ "report_id": "2311.17042",
+ "arxiv_id": "2311.17042",
+ "title": "Adversarial Diffusion Distillation",
+ "tldr_zh": "hinge-GAN 判别器 + SDS 型 score 蒸馏把 SD/SDXL 压到 1–4 步；人评中 ADD-XL 一步胜 LCM-XL 四步、四步胜 SDXL 五十步。",
+ "tldr_en": "ADD combines a DINOv2-feature hinge GAN with an SDS-equivalent teacher denoising loss to distill SD/SDXL into 1-4 steps; ADD-XL beats LCM-XL (4 steps) in one step and SDXL (50 steps) in four steps by human preference.",
+ "tags": [
+  "distillation",
+  "adversarial",
+  "score-distillation",
+  "text-to-image",
+  "few-step",
+  "ipm"
+ ],
+ "code_url": "https://github.com/Stability-AI/generative-models",
+ "key_numbers": [
+  "COCO FID-5k (SD1.5 base): ADD-M 1 step 19.7 / CLIP 0.326 vs DPM Solver 25 steps 20.1 / 0.318 (Table 2)",
+  "Ablation: L_adv only 20.8, L_distill only 315.6, both (exp) 20.6 (Table 1d)",
+  "Random student init collapses: FID 293.6 vs 20.6 pretrained (Table 1c)",
+  "DINOv2 ViT-S discriminator features best: 20.6 vs CLIP ViT-L 23.3 (Table 1a)",
+  "Teacher steps 1/2/4: FID 20.6/20.8/20.3 (Table 1f)",
+  "User study: ADD-XL 1 step > LCM-XL 4 steps; ADD-XL 4 steps > SDXL 50 steps in majority (Figs. 5-7)",
+  "lambda = 2.5, R1 gamma = 1e-5, N = 4 student timesteps, tau_4 = 1000 (Sec. 3, 4)",
+  "Appendix A: distillation loss with c(t)=alpha_t w(t)/(2 sigma_t) equals SDS gradient"
+ ],
+ "relations": [
+  {
+   "report_id": "2311.18828",
+   "type": "competes"
+  },
+  {
+   "report_id": "2312.00739",
+   "type": "competes"
+  },
+  {
+   "report_id": "DMD2_Improved_Distribution_Matching_Distillation",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2310.02279",
+   "type": "competes"
+  },
+  {
+   "report_id": "2309.06380",
+   "type": "competes"
+  },
+  {
+   "report_id": "2501.08316",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2405.18750",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

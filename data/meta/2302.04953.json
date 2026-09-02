@@ -1,0 +1,65 @@
+{
+ "report_id": "2302.04953",
+ "arxiv_id": "2302.04953",
+ "title": "The Monge Gap: A Regularizer to Learn All Transport Maps",
+ "tldr_zh": "用 Monge gap 正则替代 ICNN 约束，任意 cost 下以单目标回归学 OT map，benchmark 上优于基线。",
+ "tldr_en": "Monge gap regularizer replaces ICNN constraints, enabling single-objective OT map learning for any cost.",
+ "tags": [
+  "neural OT",
+  "Monge gap",
+  "regularization",
+  "ICNN alternative",
+  "optimal transport map"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "d ∈ {2,4,8,...,256}",
+   "context": "Korotin et al. (2021) benchmark 的维度范围",
+   "source": "Sec. 6.3"
+  },
+  {
+   "number": "λ_MG=1, λ_cons=0.01 (d≤64); λ_MG=10, λ_cons=0.1 (d≥128)",
+   "context": "实验采用的超参数设定",
+   "source": "Sec. 6.3"
+  },
+  {
+   "number": "5 次拟合平均",
+   "context": "benchmark 实验的重复次数",
+   "source": "Fig. 6 说明"
+  },
+  {
+   "number": "34 (4i) 与 9 (scRNA) 个 treatments",
+   "context": "单细胞实验的 treatment 数量",
+   "source": "Sec. 6.4"
+  },
+  {
+   "number": "ε=0.1",
+   "context": "所有实验的 Sinkhorn 熵正则系数",
+   "source": "Sec. 6.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2106.01954",
+   "type": "uses_benchmark"
+  },
+  {
+   "report_id": "2007.04462",
+   "type": "baseline"
+  },
+  {
+   "report_id": "1908.10920",
+   "type": "baseline"
+  },
+  {
+   "report_id": "2202.10479",
+   "type": "baseline"
+  },
+  {
+   "report_id": "2109.12004",
+   "type": "baseline"
+  }
+ ],
+ "read_full_text": true
+}

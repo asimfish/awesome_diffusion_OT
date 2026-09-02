@@ -1,0 +1,31 @@
+{
+ "report_id": "L_onard_A_Survey_of_the_Schr_dinger_Problem",
+ "arxiv_id": null,
+ "title": "Léonard, A Survey of the Schrödinger Problem",
+ "tldr_zh": "系统梳理 Schrödinger 问题：静态/动态等价、熵正则 OT 关系与大偏差极限",
+ "tldr_en": "A survey unifying static/dynamic Schrödinger problem, entropic OT, and large deviations",
+ "tags": [
+  "Schrödinger Bridge",
+  "entropic optimal transport",
+  "large deviations",
+  "survey",
+  "theory"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Chen_Georgiou_Pavon_2021_Stochastic_Control_Liaisons",
+   "type": "extends"
+  },
+  {
+   "report_id": "DSB_NeurIPS_2021",
+   "type": "builds_on"
+  },
+  {
+   "report_id": "SB_FBSDE_ICLR_2022",
+   "type": "builds_on"
+  }
+ ],
+ "read_full_text": false
+}

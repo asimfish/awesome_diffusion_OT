@@ -1,0 +1,31 @@
+{
+ "report_id": "Flow_Map_Matching",
+ "arxiv_id": null,
+ "title": "Flow Map Matching",
+ "tldr_zh": "两时间 flow map 统一 CM/CTM/渐进蒸馏，证明蒸馏损失上界控制教师-学生 W2 距离",
+ "tldr_en": "Unifies CM/CTM/progressive distillation via two-time flow maps; distillation losses upper-bound teacher-student W2",
+ "tags": [
+  "flow map",
+  "consistency models",
+  "Wasserstein distance",
+  "distillation",
+  "PF-ODE"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Consistency_Models_ICML2023",
+   "type": "unified_by"
+  },
+  {
+   "report_id": "Consistency_Trajectory_Models_ICLR2024",
+   "type": "unified_by"
+  },
+  {
+   "report_id": "Progressive_Distillation_ICLR2022",
+   "type": "unified_by"
+  }
+ ],
+ "read_full_text": false
+}

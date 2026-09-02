@@ -1,0 +1,46 @@
+{
+ "report_id": "2106.01954",
+ "arxiv_id": "2106.01954",
+ "title": "Do Neural Optimal Transport Solvers Work? A Continuous Wasserstein-2 Benchmark",
+ "tldr_zh": "ICNN 梯度构造有解析真值的连续 W2 基准（至 CelebA64），评测 7 类求解器：多数 map 不准，map 准不等于生成好",
+ "tldr_en": "ICNN-gradient benchmark pairs with analytic W2 maps up to CelebA64; most neural OT solvers recover maps poorly, and OT accuracy does not predict generative quality.",
+ "tags": [
+  "neural-ot",
+  "benchmark",
+  "wasserstein-2",
+  "icnn",
+  "evaluation",
+  "unpaired-translation"
+ ],
+ "code_url": "https://github.com/iamalexkorotin/Wasserstein2Benchmark",
+ "key_numbers": [
+  "High-dim benchmark D=256 L2-UVP: MMv1 2.6%, MMv2 2.7%, W2 2.7%, MM 4.1% (diverged late), MM-B 22.5%, LS 54.7%, QC 88.2%, linear baseline 67.4% (Table 2)",
+  "CelebA64 Early/Mid/Late L2-UVP: MM:R 1.4/0.4/0.22%, W2 1.7/0.5/0.25%, MM 2.2/0.9/0.53%, MM-B ~46%, QC ~95-100% (Table 3)",
+  "CelebA64 cos for QC and MM-B near 0 or negative, i.e. gradient orthogonal to true W2 gradient (Table 3)",
+  "Generative modeling: QC gives good samples with wrong map; W2 (ICNN) worst samples; MM / MM:R blurry, T o G comparable to QC (Sec. 4.5, Fig. 5; FID values only in figure)",
+  "Compute: 4x GTX 1080ti, ~100 GPU-hours each (Sec. 4)"
+ ],
+ "relations": [
+  {
+   "report_id": "2110.02999",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2201.12220",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2106.03812",
+   "type": "competes"
+  },
+  {
+   "report_id": "2302.04953",
+   "type": "competes"
+  },
+  {
+   "report_id": "2403.03777",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

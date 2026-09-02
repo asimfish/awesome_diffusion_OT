@@ -1,0 +1,90 @@
+{
+ "report_id": "1910.05653",
+ "arxiv_id": "1910.05653",
+ "title": "Model Fusion via Optimal Transport",
+ "tldr_zh": "逐层用最优传输对齐神经元再平均权重，实现无需训练数据的一次性神经网络融合",
+ "tldr_en": "Layer-wise OT alignment of neurons before weight averaging enables one-shot, data-free neural network fusion",
+ "tags": [
+  "model fusion",
+  "optimal transport",
+  "Wasserstein barycenter",
+  "neural network",
+  "one-shot knowledge transfer"
+ ],
+ "code_url": "https://github.com/sidak/otfusion",
+ "key_numbers": [
+  {
+   "number": "93.11%",
+   "context": "MNIST 异质数据两模型融合后 OT avg. 全局测试准确率，个体模型为 89.78%/87.35%",
+   "source": "Sec. 5.1, Fig. 2(a)"
+  },
+  {
+   "number": "93.6%",
+   "context": "MNIST 四模型 OT averaging 测试准确率，集成 95.0%，vanilla 80.6%",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "85.98 / 77.00",
+   "context": "CIFAR10 上 VGG11 / ResNet18 两模型 OT avg. 无微调准确率，vanilla 为 17.02 / 18.49",
+   "source": "Table 1"
+  },
+  {
+   "number": "93.78",
+   "context": "CIFAR10+ResNet18 OT avg.+微调准确率，接近集成 93.89，个体微调最佳 93.51",
+   "source": "Table 1, Sec. 5.3.1"
+  },
+  {
+   "number": "90.91 / 91.06",
+   "context": "CIFAR10+VGG11 4/6 模型 OT avg.+微调准确率，集成 91.77/91.85，vanilla 10.00/10.00",
+   "source": "Table 2"
+  },
+  {
+   "number": "64.29±0.26 / 64.55±0.30 / 65.05±0.53",
+   "context": "CIFAR100+VGG11 4/6/8 模型 OT avg.+微调准确率，集成 66.32/66.99/67.28",
+   "source": "Table 3"
+  },
+  {
+   "number": "89.4%",
+   "context": "VGG11 conv_8 剪枝 90% 后准确率从 90.3% 降至 81.5%，OT fusion 恢复至 89.4%",
+   "source": "Sec. 5.2(a)"
+  },
+  {
+   "number": "98.30",
+   "context": "MNIST 蒸馏实验中 OT avg. 学生蒸馏准确率，随机初始化 98.18，预训练学生 98.22",
+   "source": "Table 5"
+  },
+  {
+   "number": "≈15 秒",
+   "context": "融合 6 个 VGG11 模型耗时，1 块 Nvidia V100 GPU",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "25",
+   "context": "激活对齐所需最少样本数即可超过 vanilla averaging",
+   "source": "Sec. 4.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1910.05653",
+   "type": "extends"
+  },
+  {
+   "report_id": "2210.06671",
+   "type": "extended_by"
+  },
+  {
+   "report_id": "ICLR2024_otfusion_transformer",
+   "type": "extended_by"
+  },
+  {
+   "report_id": "AAAI2025_fusion_backdoor",
+   "type": "extended_by"
+  },
+  {
+   "report_id": "ICML2026_partial_fusion",
+   "type": "extended_by"
+  }
+ ],
+ "read_full_text": true
+}

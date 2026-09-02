@@ -1,0 +1,82 @@
+{
+ "report_id": "2503.09573",
+ "arxiv_id": "2503.09573",
+ "title": "Block Diffusion: Interpolating Between Autoregressive and Diffusion Language Models",
+ "tldr_zh": "块间自回归+块内 masked 扩散，支持 KV cache 与任意长度生成，扩散 LM 似然新 SOTA",
+ "tldr_en": "Block-wise AR over masked diffusion blocks; enables KV cache and arbitrary-length generation; new diffusion LM likelihood SOTA",
+ "tags": [
+  "discrete diffusion",
+  "language modeling",
+  "semi-autoregressive",
+  "masked diffusion",
+  "KV cache",
+  "noise schedule",
+  "variance reduction"
+ ],
+ "code_url": "https://github.com/kuleshov-group/bd3lms",
+ "key_numbers": [
+  {
+   "number": "28.23",
+   "metric": "LM1B test PPL (BD3-LM L'=4, 65B tokens)",
+   "source": "Table 3"
+  },
+  {
+   "number": "20.73",
+   "metric": "OWT test PPL (BD3-LM L'=4, 524B tokens)",
+   "source": "Table 4"
+  },
+  {
+   "number": "13%",
+   "metric": "PPL improvement over MDLM on LM1B",
+   "source": "Sec. 6.1"
+  },
+  {
+   "number": "9982",
+   "metric": "max generated tokens (BD3-LM L'=16, OWT)",
+   "source": "Table 6"
+  },
+  {
+   "number": "25.7",
+   "metric": "Gen. PPL at L=1024 (BD3-LM L'=4, GPT2-Large eval)",
+   "source": "Table 7"
+  },
+  {
+   "number": "20-25%",
+   "metric": "training speedup of vectorized algorithm vs two forward passes",
+   "source": "Sec. 6.3"
+  },
+  {
+   "number": "1.52 → 0.11",
+   "metric": "NELBO variance reduction under full masking (L'=1)",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "22.88",
+   "metric": "PPL of BD3-LM L'=1 with tuned schedule, matching AR",
+   "source": "Table 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2406.07524",
+   "type": "继承（masked 扩散目标与简化 ELBO）"
+  },
+  {
+   "report_id": "2107.03006",
+   "type": "继承（D3PM 离散前向链框架）"
+  },
+  {
+   "report_id": "2310.16834",
+   "type": "竞争（SEDD，被超越的扩散 LM 基线）"
+  },
+  {
+   "report_id": "2210.17432",
+   "type": "竞争（SSD-LM，Gaussian 半自回归扩散）"
+  },
+  {
+   "report_id": "2406.13162",
+   "type": "相关（PARD，图上的离散块扩散）"
+  }
+ ],
+ "read_full_text": true
+}

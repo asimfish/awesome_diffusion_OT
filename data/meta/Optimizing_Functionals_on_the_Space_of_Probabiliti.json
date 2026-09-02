@@ -1,0 +1,31 @@
+{
+ "report_id": "Optimizing_Functionals_on_the_Space_of_Probabiliti",
+ "arxiv_id": null,
+ "title": "Optimizing Functionals on the Space of Probabilities with ICNNs",
+ "tldr_zh": "用 ICNN 参数化凸势求解 JKO 步，含收敛保证，摘要未给实验数字。",
+ "tldr_en": "ICNN-parameterized convex potentials solve JKO steps with convergence guarantees; no experimental numbers in abstract.",
+ "tags": [
+  "JKO",
+  "ICNN",
+  "Wasserstein gradient flow",
+  "optimal transport",
+  "generative modeling"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Mokrov_2021_ICNN_JKO",
+   "type": "同期竞争"
+  },
+  {
+   "report_id": "JKOnet_Bunne_2021",
+   "type": "互补：反问题学能量"
+  },
+  {
+   "report_id": "S_JKO_2023",
+   "type": "被部分取代：半对偶降复杂度"
+  }
+ ],
+ "read_full_text": false
+}

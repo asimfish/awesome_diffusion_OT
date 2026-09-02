@@ -1,0 +1,82 @@
+{
+ "report_id": "2204.13902",
+ "arxiv_id": "2204.13902",
+ "title": "Fast Sampling of Diffusion Models with Exponential Integrator",
+ "tldr_zh": "DEIS 用指数积分器+多项式外推解扩散 ODE，10 NFE 在 CIFAR10 达 4.17 FID",
+ "tldr_en": "DEIS applies exponential integrator with polynomial extrapolation to diffusion ODEs, reaching 4.17 FID at 10 NFE on CIFAR10",
+ "tags": [
+  "diffusion models",
+  "fast sampling",
+  "exponential integrator",
+  "ODE solver",
+  "training-free",
+  "DDIM"
+ ],
+ "code_url": "https://github.com/qsh-zh/deis",
+ "key_numbers": [
+  {
+   "number": "4.17 FID",
+   "context": "CIFAR10, VPSDE, tAB3, 10 NFE",
+   "source": "Table 2"
+  },
+  {
+   "number": "2.86 FID",
+   "context": "CIFAR10, VPSDE, tAB3, 20 NFE",
+   "source": "Table 2"
+  },
+  {
+   "number": "3.37 FID",
+   "context": "CIFAR10, VPSDE, tAB3, 15 NFE",
+   "source": "Table 2"
+  },
+  {
+   "number": "15.37 FID",
+   "context": "CIFAR10, VPSDE, tAB3, 5 NFE",
+   "source": "Table 2"
+  },
+  {
+   "number": "26.91 FID",
+   "context": "CIFAR10, VPSDE, DDIM, 5 NFE",
+   "source": "Table 2"
+  },
+  {
+   "number": "3.16 bits/dim",
+   "context": "NLL evaluation, 3rd-order Kutta ρRK-DEIS, 36 NFE",
+   "source": "App. B"
+  },
+  {
+   "number": "3.15 bits/dim",
+   "context": "NLL evaluation, RK45 baseline",
+   "source": "App. B"
+  },
+  {
+   "number": "~3 minutes",
+   "context": "50k CIFAR10 images on one A6000 GPU",
+   "source": "Abstract"
+  },
+  {
+   "number": "1000 steps",
+   "context": "DDPM sampling cost",
+   "source": "Sec. 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2206.00927",
+   "type": "同期独立工作（DPM-Solver，同路线）"
+  },
+  {
+   "report_id": "2010.02502",
+   "type": "被本文证明为特例（DDIM = VPSDE 下零阶 DEIS）"
+  },
+  {
+   "report_id": "2202.09778",
+   "type": "被本文改进（PNDM → iPNDM）"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "被本文识别为特例（EDM Heun = ρ2Heun）"
+  }
+ ],
+ "read_full_text": true
+}

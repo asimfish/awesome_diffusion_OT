@@ -1,0 +1,71 @@
+{
+ "report_id": "2406.04329",
+ "arxiv_id": "2406.04329",
+ "title": "Simplified and Generalized Masked Diffusion for Discrete Data",
+ "tldr_zh": "masked diffusion 的 ELBO 化简为加权交叉熵积分，GenMD4 引入状态依赖 schedule，像素级建模超同规模 AR",
+ "tldr_en": "Simplifies masked diffusion ELBO to weighted cross-entropy integral; GenMD4 adds state-dependent schedules; pixel modeling beats similar-size AR",
+ "tags": [
+  "masked diffusion",
+  "discrete diffusion",
+  "ELBO simplification",
+  "state-dependent schedule",
+  "language modeling",
+  "pixel-level image modeling"
+ ],
+ "code_url": "https://github.com/google-deepmind/md4",
+ "key_numbers": [
+  {
+   "number": "2.75 BPD",
+   "source": "Table 3",
+   "context": "MD4 on CIFAR-10, 28M params, beats Sparse Transformer 2.80 (59M)"
+  },
+  {
+   "number": "3.40 BPD",
+   "source": "Table 3",
+   "context": "MD4 on ImageNet 64x64, 198M params, matches Perceiver AR 3.40 (770M)"
+  },
+  {
+   "number": "1.34 BPC",
+   "source": "Table 2",
+   "context": "GenMD4 on text8, vs Transformer AR 1.23"
+  },
+  {
+   "number": "FID 70 to 17",
+   "source": "Fig. 2 left",
+   "context": "ImageNet 64x64, T=256, linear+uniform grid vs cosine schedule"
+  },
+  {
+   "number": "4/5 tasks",
+   "source": "Table 1",
+   "context": "MD4 Medium beats GPT-2 Medium on zero-shot perplexity except LAMBADA"
+  },
+  {
+   "number": "4x data efficiency gap",
+   "source": "Fig. 5",
+   "context": "MD4-small needs 200k steps vs AR-small 50k steps for 30% Hellaswag accuracy"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2310.16834",
+   "type": "竞争/被本文批评 score 参数化不一致"
+  },
+  {
+   "report_id": "2107.03006",
+   "type": "继承 absorbing 前向过程"
+  },
+  {
+   "report_id": "2205.14987",
+   "type": "继承 CTMC 框架，本文简化其 ELBO"
+  },
+  {
+   "report_id": "2406.03736",
+   "type": "并行工作，独立推导相同 ELBO"
+  },
+  {
+   "report_id": "2406.07524",
+   "type": "并行工作，独立推导相同 ELBO"
+  }
+ ],
+ "read_full_text": true
+}

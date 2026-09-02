@@ -1,0 +1,40 @@
+{
+ "report_id": "OTComp_Dual_Optimal_Transport_for_Multi_Concept_Co",
+ "arxiv_id": null,
+ "title": "OTComp: Dual Optimal Transport for Multi-Concept Composition",
+ "tldr_zh": "双 OT training-free 引导：质量守恒 OT 对齐结构，几何引导 OT 传输纹理残差，多概念组合无属性串扰",
+ "tldr_en": "Training-free dual OT guidance: mass-conserving OT for structure alignment plus geometry-guided OT for texture residual transport in multi-concept composition",
+ "tags": [
+  "optimal transport",
+  "diffusion models",
+  "training-free guidance",
+  "multi-concept composition",
+  "attention",
+  "semantic correspondence"
+ ],
+ "code_url": "https://github.com/fuhao7i/OTComp",
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "SCOT_CVPR2020",
+   "type": "继承"
+  },
+  {
+   "report_id": "OTCS_NeurIPS2023",
+   "type": "并列"
+  },
+  {
+   "report_id": "STORM_CVPR2025",
+   "type": "并列"
+  },
+  {
+   "report_id": "ASAG_AAAI2026",
+   "type": "并列"
+  },
+  {
+   "report_id": "Shape_of_You_CVPR2026",
+   "type": "相关"
+  }
+ ],
+ "read_full_text": false
+}

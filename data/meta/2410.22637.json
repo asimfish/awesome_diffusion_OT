@@ -1,0 +1,45 @@
+{
+ "report_id": "2410.22637",
+ "arxiv_id": "2410.22637",
+ "title": "Consistency Diffusion Bridge Models",
+ "tldr_zh": "学DDBM PF-ODE一致性函数，2 NFE达其百步质量，加速4–50×",
+ "tldr_en": "Learns the consistency function of DDBM's PF-ODE via distillation or fine-tuning; 2 NFE matches DDBM at ~100 NFE, 4-50x faster.",
+ "tags": [
+  "diffusion-bridge",
+  "consistency-model",
+  "distillation",
+  "fast-sampling",
+  "exponential-integrator"
+ ],
+ "code_url": "https://github.com/thu-ml/DiffusionBridge",
+ "key_numbers": [
+  "Edges→Handbags CBT FID 0.80 @ NFE 2 vs DDBM ODE-1 0.89 @ NFE 100 (Table 2)",
+  "DIODE CBT FID 2.93 @ NFE 2 vs DDBM ODE-1 2.57 @ NFE 100 (Table 2)",
+  "ImageNet inpainting CBT FID 4.77 / CA 70.3 @ NFE 4 vs DDBM ODE-1 4.81 @ NFE 10 (Table 3)",
+  "First-order EI solver: DDBM ODE-1 FID 0.89 @ NFE 100 vs hybrid sampler 1.83 @ NFE 118 (Table 2)",
+  "CBD 50k steps ≈2.5 days, CBT ≈1.5 days on 8×A800 (App. B.1)"
+ ],
+ "relations": [
+  {
+   "report_id": "2309.16948",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.15885",
+   "type": "competes"
+  },
+  {
+   "report_id": "I2SB_Image_to_Image_Schr_dinger_Bridge",
+   "type": "uses"
+  },
+  {
+   "report_id": "2503.07535",
+   "type": "competes"
+  },
+  {
+   "report_id": "2205.07680",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

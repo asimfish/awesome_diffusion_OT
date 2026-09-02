@@ -1,0 +1,48 @@
+{
+ "report_id": "2409.09376",
+ "arxiv_id": "2409.09376",
+ "title": "BM$^2$: Coupled Schrödinger Bridge Matching",
+ "tldr_zh": "前后向漂移互为 bridge-matching 目标、单网络单循环 SGD 求 SB；完全极小化时等价 I-BM/DIPF，部分极小化只证不动点",
+ "tldr_en": "Forward and backward drifts regress on each other's bridge mixtures in one SGD loop; full minimization recovers I-BM/DIPF, partial minimization only has SB as fixed point.",
+ "tags": [
+  "schrodinger-bridge",
+  "bridge-matching",
+  "non-iterative",
+  "entropic-ot",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "KL(S||P) at eps=0.1, d=2/16/64/128: BM2 0.01/0.20/1.03/3.06 vs I-BM 0.03/0.20/1.24/5.70 vs DIPF 0.59/2.39/7.93/34.77 (Table 1)",
+  "cBW2-UVP at eps=0.1: BM2 0.73/4.64/6.84/8.28 vs I-BM 1.07/4.25/7.19/16.63 (Table 2); LightSB-M reports 0.02/0.1/0.56/1.32 on same benchmark",
+  "eps=10, d=128: BM2 264.4, I-BM 578.7, DIPF 226.1 vs independent coupling 4.45 and discretized true SB 10.48 (Table 2)",
+  "Single 3-layer x768 MLP (~1M params), 50k steps, batch 1000, EM 200 steps (Sec. 5)"
+ ],
+ "relations": [
+  {
+   "report_id": "Diffusion_Bridge_Mixture_Transports_IDBM_Peluchett",
+   "type": "extends"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "type": "competes"
+  },
+  {
+   "report_id": "Schr_dinger_Bridge_Flow_IMF_DSBM_De_Bortoli_et_al",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_DSB_De_Bortoli_et_al",
+   "type": "competes"
+  },
+  {
+   "report_id": "Light_and_Optimal_SB_Matching_LightSB_M_Gushchin_e",
+   "type": "competes"
+  },
+  {
+   "report_id": "2510.22560",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

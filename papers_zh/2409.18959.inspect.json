@@ -1,0 +1,167 @@
+{
+  "issue_count": 27,
+  "issues": [
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (16 words, 0 CJK chars) at x=72.0, y=118.3: Forward process.We consider a Markov process in Rd start"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=84.8, y=167.4: where"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=232.7, y=180.1: and"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=77.7, y=368.4: • 锐利的收敛保证。考虑完美得分估计（即"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=77.7, y=368.4: εscore= 0）并忽略任何对数因子的情形。定理1 揭示，去噪扩散概率模型（DDPM）采样器在"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=204.0, y=380.5: O(d/T)的阶数收敛。这显著改进了现有最先进的收敛速率"
+    },
+    {
+      "page": 6,
+      "code": "list_font_inconsistent",
+      "severity": "error",
+      "message": "Page 6: sibling list items ('•' markers) render at 8.27-9.17pt (x1.11 spread) at x=77.7, y=368.4: • 锐利的收敛保证。考虑完美得分估计（即"
+    },
+    {
+      "page": 9,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 9: displayed equation at y=298 shifted horizontally by 26pt vs original"
+    },
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (3 words, 0 CJK chars) at x=72.0, y=495.9: Y t : t = T, . . . , 1} along with intermediatevariables"
+    },
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (9 words, 0 CJK chars) at x=87.0, y=651.2: Y t = yt is deﬁnedas follows: if yt ∈Et,1, thenp"
+    },
+    {
+      "page": 10,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 10: block set at 5.17pt but the original at this position is 9.96pt (ratio 0.52 vs page median 0.92) at x=72.8, y=117.2: 构造（4.4b）的一个重要结果是，对于任意"
+    },
+    {
+      "page": 10,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 10: paragraph still in English (11 words, 0 CJK chars) at x=72.0, y=657.7: Lemma 2. There exists some universal constant C4 > 0 suc"
+    },
+    {
+      "page": 11,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 11: paragraph still in English (11 words, 0 CJK chars) at x=131.9, y=597.4: Y−T = Y −T , and for any x =, the conditional distributi"
+    },
+    {
+      "page": 13,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 13: displayed equation at y=208 shifted horizontally by 24pt vs original"
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (11 words, 0 CJK chars) at x=72.0, y=579.1: Lemma 5. There exists some universal constant C3 > 0 suc"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (6 words, 0 CJK chars) at x=72.0, y=626.8: For any pairs (x, x0) ∈Rd × Rd satisfying"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (4 words, 0 CJK chars) at x=72.0, y=222.4: where the matrix function Σ"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (6 words, 0 CJK chars) at x=196.6, y=222.2: αt(·) is deﬁned in Lemma 17 as"
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (8 words, 0 CJK chars) at x=72.0, y=74.5: For any xt−1 such that ∆t−1(xt−1) > 0, we have"
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (4 words, 0 CJK chars) at x=72.0, y=363.2: where ξt(xt) ≤0 satisﬁesZ"
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 22: paragraph still in English (7 words, 0 CJK chars) at x=72.0, y=681.7: For any xt ∈Et,1, deﬁne a set"
+    },
+    {
+      "page": 23,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 23: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=131.6, y=385.0: A(x^{t}) 的定义得出；步骤(b) 利用引理14；而步骤(c) 在"
+    },
+    {
+      "page": 28,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 28: paragraph still in English (4 words, 0 CJK chars) at x=72.0, y=491.8: where ξt(xt) ≤0 satisﬁesZ"
+    },
+    {
+      "page": 32,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 32: block set at 5.27pt but the original at this position is 9.96pt (ratio 0.53 vs page median 0.92) at x=72.8, y=418.2: 首先，我们记录来自Li 和Yan（2024）的以下两个结果。对于任意"
+    },
+    {
+      "page": 32,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 32: paragraph still in English (8 words, 0 CJK chars) at x=72.0, y=509.1: In addition, for any x, x′ ∈Xt(xt), we have"
+    },
+    {
+      "page": 38,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 38: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=72.8, y=596.4: 证明。该引理可以通过修改Li 等人（2024b，引理2）证明的第一部分来证明，我们描述这些修改如"
+    },
+    {
+      "page": 38,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 38: displayed equation at y=603 shifted horizontally by 26pt vs original"
+    }
+  ]
+}

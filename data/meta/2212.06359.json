@@ -1,0 +1,44 @@
+{
+ "report_id": "2212.06359",
+ "arxiv_id": "2212.06359",
+ "title": "Score-based Generative Modeling Secretly Minimizes the Wasserstein Distance",
+ "tldr_zh": "W2(数据,生成)≤C√J_SM+I(T)W2(p_T,q_T)：score matching损失平方根上界控制W2，证明用连续性方程求W2时间导数",
+ "tldr_en": "W2(data, generated) <= C sqrt(J_SM) + I(T) W2(p_T,q_T): the score-matching loss upper-bounds the Wasserstein distance via time-derivatives of W2 along continuity equations.",
+ "tags": [
+  "wasserstein-bound",
+  "score-matching",
+  "theory",
+  "continuity-equation",
+  "convergence",
+  "diffusion-ot"
+ ],
+ "code_url": "https://github.com/UW-Madison-Lee-Lab/score-wasserstein",
+ "key_numbers": [
+  "Corollary 1: W2(p0,q0) <= sqrt(2 (int g^2 I^2 dt) J_SM) + I(T) W2(pT,qT), I(t)=exp(int (L_f + L_s g^2)) (Eq. 16)",
+  "Theorem 2: J_SM <= J_DSM when Var[E[grad log p_0t | x0]] = 0 (DDPM satisfies) (Eq. 21-22)",
+  "2D experiments (T=10 DDPM, sigmoid beta 1e-5..1e-2): log-log theoretical line upper-bounds empirical W2 on all 3 datasets (Figure 2); L_s(t) -> -1 and offset decays ~exponentially for T >= 100 (Figure 4)"
+ ],
+ "relations": [
+  {
+   "report_id": "Score_Based_Generative_Modeling_through_SDEs",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.14250",
+   "type": "competes"
+  },
+  {
+   "report_id": "2211.01364",
+   "type": "competes"
+  },
+  {
+   "report_id": "2202.07477",
+   "type": "competes"
+  },
+  {
+   "report_id": "2111.11521",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

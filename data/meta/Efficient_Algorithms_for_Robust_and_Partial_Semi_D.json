@@ -1,0 +1,31 @@
+{
+ "report_id": "Efficient_Algorithms_for_Robust_and_Partial_Semi_D",
+ "arxiv_id": null,
+ "title": "Efficient Algorithms for Robust and Partial Semi-Discrete OT",
+ "tldr_zh": "α-partial 与 λ-TV-robust 半离散 OT 的 restricted Laguerre 刻画与互归约",
+ "tldr_en": "Restricted Laguerre characterization and mutual reduction for partial and TV-robust semi-discrete OT",
+ "tags": [
+  "semi-discrete OT",
+  "partial OT",
+  "robust OT",
+  "Laguerre cells",
+  "optimal transport"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "UOTM_SD_ICLR2024",
+   "type": "下游可应用"
+  },
+  {
+   "report_id": "UOT_FM_ICLR2024",
+   "type": "下游可应用"
+  },
+  {
+   "report_id": "AAAI2024_partial_robust_semidiscrete",
+   "type": "同类算法"
+  }
+ ],
+ "read_full_text": false
+}

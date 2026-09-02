@@ -1,0 +1,47 @@
+{
+ "report_id": "P_Flow_A_Fast_and_Data_Efficient_Zero_Shot_TTS_thr",
+ "arxiv_id": null,
+ "title": "P-Flow: A Fast and Data-Efficient Zero-Shot TTS through Speech Prompting",
+ "tldr_zh": "speech prompt 编码器 + FM 解码器，用远少于 VALL-E 的数据达到同级说话人相似度、采样快约 20 倍",
+ "tldr_en": "Speech prompt encoder + FM decoder matches VALL-E speaker similarity with ~100x less data and ~20x faster sampling",
+ "tags": [
+  "flow matching",
+  "zero-shot TTS",
+  "speech prompting",
+  "data efficiency",
+  "NeurIPS 2023"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "约 1/100",
+   "context": "训练数据量比 VALL-E 少两个数量级",
+   "source": "摘要"
+  },
+  {
+   "number": "约 20 倍",
+   "context": "采样速度比 VALL-E 快",
+   "source": "摘要"
+  },
+  {
+   "number": "同级",
+   "context": "说话人相似度与 VALL-E 同级",
+   "source": "摘要"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "Voicebox_Meta_2023",
+   "type": "同期竞争"
+  },
+  {
+   "report_id": "Matcha_TTS_KTH_2023",
+   "type": "同期互补"
+  },
+  {
+   "report_id": "Bridge_TTS_arXiv_2303.06060",
+   "type": "后续相关"
+  }
+ ],
+ "read_full_text": false
+}

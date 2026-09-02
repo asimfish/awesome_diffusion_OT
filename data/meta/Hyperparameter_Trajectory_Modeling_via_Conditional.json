@@ -1,0 +1,31 @@
+{
+ "report_id": "Hyperparameter_Trajectory_Modeling_via_Conditional",
+ "arxiv_id": null,
+ "title": "Hyperparameter Trajectory Modeling via Conditional Lagrangian Optimal Transport",
+ "tldr_zh": "用条件 Lagrangian OT 建模超参数训练轨迹，摘要未给细节。",
+ "tldr_en": "Applies conditional Lagrangian OT to hyperparameter trajectory modeling; abstract lacks details.",
+ "tags": [
+  "conditional OT",
+  "Lagrangian optimal transport",
+  "trajectory modeling",
+  "hyperparameter",
+  "ICLR 2026 Oral"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "COT-FM_NeurIPS_2024",
+   "type": "related_method"
+  },
+  {
+   "report_id": "C2OT_ICCV_2025",
+   "type": "related_method"
+  },
+  {
+   "report_id": "CondOT_NeurIPS_2022",
+   "type": "precursor"
+  }
+ ],
+ "read_full_text": false
+}

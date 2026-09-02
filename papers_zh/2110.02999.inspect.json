@@ -1,0 +1,53 @@
+{
+  "issue_count": 8,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (32 words, 0 CJK chars) at x=108.0, y=365.8: For certain ground costs c(·, ·), the primal solution T "
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (13 words, 0 CJK chars) at x=108.0, y=372.7: Lemma 4.1. Let T ∗be the OT map from µ to ν. Then, for e"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=285.6, y=379.1: to"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 7.97pt but the original at this position is 9.96pt (ratio 0.80 vs page median 0.92) at x=201.3, y=187.4: ν 之间存在唯一的最优传输计划，且该计划是确定性的，即"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 7.97pt but the original at this position is 9.96pt (ratio 0.80 vs page median 0.92) at x=108.8, y=199.8: c(x, y) =^{1} 的最优传输映射。此外，对于问题（14）的每一个最优势函数"
+    },
+    {
+      "page": 9,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 9: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=162.0, y=390.8: 图8：在CelebA 测试集C 部分上使用最优传输映射进行图像着色，"
+    },
+    {
+      "page": 9,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 9: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=165.4, y=513.1: 图9：在CelebA 测试集C 部分上使用最优传输映射进行图像修复，"
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 6.97pt but the original at this position is 9.96pt (ratio 0.70 vs page median 0.92) at x=241.6, y=592.6: CelebA128x128（Liu 等人，2015）。在该数据集上，我们按照CelebA 的方式"
+    }
+  ]
+}

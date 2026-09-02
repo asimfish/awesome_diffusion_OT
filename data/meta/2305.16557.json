@@ -1,0 +1,53 @@
+{
+ "report_id": "2305.16557",
+ "arxiv_id": "2305.16557",
+ "title": "Tree-Based Diffusion Schrödinger Bridge with Applications to Wasserstein Barycenters",
+ "tldr_zh": "把 DSB 推广到树结构多边际 SB，用扩散模型算 Wasserstein barycenter，高维优于正则化基线",
+ "tldr_en": "Extends DSB to tree-structured multi-marginal SB for Wasserstein barycenters, outperforming regularized baselines in high dimensions",
+ "tags": [
+  "multi-marginal OT",
+  "Schrödinger bridge",
+  "Wasserstein barycenter",
+  "diffusion models",
+  "Sinkhorn",
+  "Bayesian fusion"
+ ],
+ "code_url": "https://github.com/maxencenoble/tree-diffusion-schrodinger-bridge",
+ "key_numbers": [
+  "TreeDSB 在 d=256 高斯 barycenter 的 BW2-UVP 为 2.62±0.07，fsWB 为 17.41±0.05，crWB 为 18.27±0.54（Table 1）",
+  "TreeDSB 在 d=2 高斯 barycenter 的 BW2-UVP 为 0.63±0.26，差于 fsWB 的 0.06±0.01 和 crWB 的 0.02±0.01（Table 1）",
+  "Bayesian fusion 无 heterogeneity：TreeDSB 8.69±0.12，fsWB 12.95±0.35，crWB 20.66±0.71（Table 2）",
+  "Bayesian fusion 有 heterogeneity：TreeDSB 8.90±0.68，fsWB 14.43±0.51，crWB 23.06±0.12（Table 2）",
+  "MNIST 实验：d=784，10 个 mIPF cycle，ε=0.5，无定量对比数字（Sec. 7）",
+  "合成二维实验：50 个 mIPF cycle，ε=0.1，无定量对比数字（Sec. 7）",
+  "算法需要 2|E| 个神经网络，星形树 K 个叶子即 2K 个（Sec. 3）",
+  "时间离散 50 步，边 horizon T=Kε/2（Sec. 7）"
+ ],
+ "relations": [
+  {
+   "report_id": "2106.01357",
+   "type": "继承"
+  },
+  {
+   "report_id": "2106.01928",
+   "type": "继承"
+  },
+  {
+   "report_id": "2303.01751",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2303.11844",
+   "type": "理论关联"
+  },
+  {
+   "report_id": "2010.02587",
+   "type": "基线"
+  },
+  {
+   "report_id": "2201.13294",
+   "type": "后续改进方向"
+  }
+ ],
+ "read_full_text": true
+}

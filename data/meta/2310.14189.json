@@ -1,0 +1,56 @@
+{
+ "report_id": "2310.14189",
+ "arxiv_id": "2310.14189",
+ "title": "Improved Techniques for Training Consistency Models",
+ "tldr_zh": "去掉 teacher EMA、换 Pseudo-Huber 与对数正态噪声调度，免蒸馏 CT 一步 FID 2.51（CIFAR-10），首次反超 CD。",
+ "tldr_en": "Zero teacher EMA, Pseudo-Huber loss, lognormal noise schedule and exponential N curriculum let distillation-free CT reach one-step FID 2.51 on CIFAR-10, beating CD.",
+ "tags": [
+  "consistency-models",
+  "consistency-training",
+  "one-step",
+  "robust-loss",
+  "schedule"
+ ],
+ "code_url": "https://github.com/openai/consistency_models",
+ "key_numbers": [
+  "CIFAR-10 iCT-deep FID 2.51 (1 NFE) / 2.24 (2 NFE) (Table 2)",
+  "CIFAR-10 iCT FID 2.83 / 2.46 (Table 2)",
+  "ImageNet-64 iCT-deep FID 3.25 / 2.77, Rec 0.63 / 0.62 (Table 3)",
+  "ImageNet-64 iCT FID 4.02 / 3.20 (Table 3)",
+  "vs CD (LPIPS) 3.55 / 2.93 on CIFAR-10 and 6.20 / 4.70 on ImageNet-64 (Tables 2-3)",
+  "Pseudo-Huber c = 0.00054 sqrt(d), c = 0.03 optimal on CIFAR-10 (Fig. 2c)",
+  "N curriculum s0=10, s1=1280, exponential doubling (Eq. 9); FID vs N power law (Fig. 3a)",
+  "Lognormal schedule P_mean=-1.1, P_std=2.0 (Eq. 10)"
+ ],
+ "relations": [
+  {
+   "report_id": "2303.01469",
+   "type": "extends"
+  },
+  {
+   "report_id": "2406.09570",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Simplifying_Stabilizing_and_Scaling_Continuous_tim",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2402.07802",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Theory_of_Consistency_Diffusion_Models",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2310.02279",
+   "type": "competes"
+  },
+  {
+   "report_id": "2401.09603",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

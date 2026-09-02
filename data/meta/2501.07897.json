@@ -1,0 +1,87 @@
+{
+ "report_id": "2501.07897",
+ "arxiv_id": "2501.07897",
+ "title": "Bridge-SR: Schrödinger Bridge for Efficient SR",
+ "tldr_zh": "波形域语音超分：低分辨率波形作先验的可解 SB，1.7M 参数 4 步胜过 8 步条件扩散",
+ "tldr_en": "Waveform-domain speech SR via tractable SB with LR waveform as prior; 4-step beats 8-step conditional diffusion at 1.7M params",
+ "tags": [
+  "Schrödinger bridge",
+  "speech super-resolution",
+  "waveform domain",
+  "noise schedule",
+  "few-step sampling",
+  "VCTK"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "1.7M",
+   "description": "Bridge-SR 网络参数量",
+   "source": "Table I, Params 行"
+  },
+  {
+   "number": "0.911 vs 0.927",
+   "description": "4 步 Bridge-SR 与 8 步 NU-Wave2 的 LSD 对比（16kHz 输入）",
+   "source": "Abstract; Table II"
+  },
+  {
+   "number": "0.716",
+   "description": "24kHz 输入下 Bridge-SR 的 LSD，为所有基线中最低",
+   "source": "Table I"
+  },
+  {
+   "number": "0.202",
+   "description": "24kHz 输入下 Bridge-SR 的 LSD-LF",
+   "source": "Table I"
+  },
+  {
+   "number": "29.17 vs 30.21",
+   "description": "24kHz 输入下 Bridge-SR 与 NU-Wave2 的 SI-SNR，Bridge-SR 未超过基线",
+   "source": "Table I"
+  },
+  {
+   "number": "1M + 70,000",
+   "description": "训练步数：1M 步仅 bridge loss，再 70,000 步微调加辅助损失",
+   "source": "Sec. III-A"
+  },
+  {
+   "number": "s = 12",
+   "description": "数据缩放因子",
+   "source": "Sec. III-A"
+  },
+  {
+   "number": "0.940",
+   "description": "去掉缩放因子与辅助损失后的 LSD（16kHz 输入），接近 NU-Wave2 的 0.927",
+   "source": "Table II, w/o SF & Laux 行"
+  },
+  {
+   "number": "1.029",
+   "description": "1 步采样 LSD（16kHz 输入），质量明显退化",
+   "source": "Table II, Ours gmax (1) 行"
+  },
+  {
+   "number": "t_p/T ≈ 1/√2",
+   "description": "Bridge-gmax 非对称调度的噪声方差峰值位置",
+   "source": "Sec. II-B"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2312.03491",
+   "type": "继承（可解 SB 框架、噪声调度、采样器直接来源）"
+  },
+  {
+   "report_id": "2407.16074",
+   "type": "同系列（配对 SB 语音修复，Bridge-SVP 调度来源）"
+  },
+  {
+   "report_id": "2206.08545",
+   "type": "基线（NU-Wave2，网络骨干与训练设置来源）"
+  },
+  {
+   "report_id": "2302.05872",
+   "type": "方法同源（I2SB 图像到图像 SB）"
+  }
+ ],
+ "read_full_text": true
+}

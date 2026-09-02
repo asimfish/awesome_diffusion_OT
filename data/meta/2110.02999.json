@@ -1,0 +1,52 @@
+{
+ "report_id": "2110.02999",
+ "arxiv_id": "2110.02999",
+ "title": "Generative Modeling with Optimal Transport Maps",
+ "tldr_zh": "普通 CNN 在 ambient 图像空间解 W2 min-max 学 OT map 当生成器（OTM），支持不等维嵌入 cost，duality-gap 界 FID",
+ "tldr_en": "OTM learns the W2 optimal transport map directly in ambient image space with plain CNNs via min-max, handles unequal dimensions, and bounds FID by duality gaps.",
+ "tags": [
+  "neural-ot",
+  "otm",
+  "wasserstein-2",
+  "generative-model",
+  "unpaired-restoration",
+  "duality-gap",
+  "min-max"
+ ],
+ "code_url": "https://github.com/LituRout/OptimalTransportModeling",
+ "key_numbers": [
+  "CIFAR-10: IS 7.42, FID 21.78 vs AE-OT-GAN 17.1, 3P-WGAN 28.8, WGAN-GP 39.40 (Table 1)",
+  "CelebA64 FID 6.5 vs AE-OT-GAN 7.8, WGAN-QC 12.9, NCP-VAE 5.2 (Table 2); MNIST FID 2.4 (Table 6)",
+  "Unpaired restoration CelebA64 FID denoising/colorization/inpainting: OTM 5.92/5.65/8.13 vs WGAN-GP 25.49/7.75/16.51 (Table 3)",
+  "W2 benchmark Early image pair L2-UVP 1.32% vs MM:R 1.4% (Table 4)",
+  "Gradient optimality lambda ablation on CelebA FID: 16.91/16.22/16.70/10.01/6.50 for lambda 0.001..10 (Table 5)",
+  "FID/L^2 <= 2 W2^2 <= ||G_hat - G*||^2 <= (2/beta)(sqrt(eps1)+sqrt(eps2))^2 (Theorem 4.3, Eq. 16)"
+ ],
+ "relations": [
+  {
+   "report_id": "2106.01954",
+   "type": "extends"
+  },
+  {
+   "report_id": "2106.03812",
+   "type": "competes"
+  },
+  {
+   "report_id": "2201.12220",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2205.15269",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2301.12874",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2305.14777",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

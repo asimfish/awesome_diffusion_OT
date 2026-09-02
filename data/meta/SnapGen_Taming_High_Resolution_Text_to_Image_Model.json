@@ -1,0 +1,61 @@
+{
+ "report_id": "SnapGen_Taming_High_Resolution_Text_to_Image_Model",
+ "arxiv_id": null,
+ "title": "SnapGen: Taming High-Resolution Text-to-Image Models for Mobile Devices with Efficient...",
+ "tldr_zh": "从头训练379M端侧文生图模型，iPhone 16 Pro-Max上1024²约1.4s，GenEval 0.66超SDXL。",
+ "tldr_en": "From-scratch 379M mobile T2I model, ~1.4s at 1024² on iPhone 16 Pro-Max, GenEval 0.66 beats SDXL.",
+ "tags": [
+  "端侧部署",
+  "文生图",
+  "架构搜索",
+  "步蒸馏",
+  "移动NPU"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "379M",
+   "description": "UNet 参数量",
+   "source": "摘要"
+  },
+  {
+   "number": "1024²",
+   "description": "生成分辨率",
+   "source": "摘要"
+  },
+  {
+   "number": "约1.4s",
+   "description": "iPhone 16 Pro-Max 延迟",
+   "source": "摘要"
+  },
+  {
+   "number": "0.66",
+   "description": "GenEval 分数",
+   "source": "摘要"
+  },
+  {
+   "number": "7×",
+   "description": "SDXL 参数量相对 SnapGen 的倍数",
+   "source": "摘要"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "SnapFusion_NeurIPS23",
+   "type": "继承（架构压缩+步蒸馏范式，但改为从头训练）"
+  },
+  {
+   "report_id": "SANA_CVPR25",
+   "type": "并列（2025端侧从头设计代表）"
+  },
+  {
+   "report_id": "MobileDiffusion",
+   "type": "竞争（端侧架构设计空间研究）"
+  },
+  {
+   "report_id": "SDXS",
+   "type": "竞争（一步小模型+轨迹拉直）"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,68 @@
+{
+ "report_id": "2211.01095",
+ "arxiv_id": "2211.01095",
+ "title": "DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models",
+ "tldr_zh": "换 data-prediction 参数化+多步+thresholding，解决大 guidance 下高阶求解器失稳，15–20 步完成 guided sampling",
+ "tldr_en": "Data-prediction parameterization plus multistep and thresholding stabilizes high-order solvers under large guidance, converging in 15-20 steps",
+ "tags": [
+  "diffusion models",
+  "guided sampling",
+  "ODE solver",
+  "exponential integrator",
+  "training-free",
+  "data prediction",
+  "thresholding"
+ ],
+ "code_url": "https://github.com/LuChengTHU/dpm-solver",
+ "key_numbers": [
+  {
+   "number": "15 NFE",
+   "context": "ImageNet 256×256, guidance scale 8.0 下 DPM-Solver++ 几乎收敛",
+   "source": "Fig. 4(a), Sec. 7.1"
+  },
+  {
+   "number": "100-250 steps",
+   "context": "DDIM 高质量 guided sampling 所需步数",
+   "source": "Abstract"
+  },
+  {
+   "number": "15-20 steps",
+   "context": "DPM-Solver++ 达到 stable-diffusion 默认 PNDM 50 步的 latent 收敛误差",
+   "source": "Sec. 7.2"
+  },
+  {
+   "number": "15.0-16.0 FID",
+   "context": "stable-diffusion 上所有求解器 10 步内 FID 范围",
+   "source": "Sec. 7.2"
+  },
+  {
+   "number": "s=8.0",
+   "context": "pixel-space 实验的大 guidance scale 设置",
+   "source": "Sec. 7.1"
+  },
+  {
+   "number": "s=7.5",
+   "context": "stable-diffusion 默认 guidance scale",
+   "source": "Sec. 7.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2206.00927",
+   "type": "继承"
+  },
+  {
+   "report_id": "2204.13902",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2202.09778",
+   "type": "基线"
+  },
+  {
+   "report_id": "2010.02502",
+   "type": "一阶基线/推广对象"
+  }
+ ],
+ "read_full_text": true
+}

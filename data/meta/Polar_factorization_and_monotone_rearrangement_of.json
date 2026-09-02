@@ -1,0 +1,31 @@
+{
+ "report_id": "Polar_factorization_and_monotone_rearrangement_of",
+ "arxiv_id": null,
+ "title": "Polar factorization and monotone rearrangement of vector-valued functions",
+ "tldr_zh": "二次代价下最优映射唯一且为凸势梯度，是扩散潜码≈OT映射的理论根基",
+ "tldr_en": "Quadratic-cost optimal maps are unique convex gradients, the basis for diffusion-latent-as-OT claims",
+ "tags": [
+  "optimal transport",
+  "Brenier theorem",
+  "Monge problem",
+  "convex analysis",
+  "T01"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Benamou_Brenier_2000_dynamic",
+   "type": "extends"
+  },
+  {
+   "report_id": "Gangbo_McCann_1996_twist",
+   "type": "extends"
+  },
+  {
+   "report_id": "McCann_1997_displacement_interpolation",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": false
+}

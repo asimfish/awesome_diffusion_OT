@@ -1,0 +1,44 @@
+{
+ "report_id": "The_flow_map_of_the_Fokker_Planck_equation_does_no",
+ "arxiv_id": "",
+ "title": "The flow map of the Fokker-Planck equation does not provide optimal transport",
+ "tldr_zh": "严格反例：FP流映射一般非到标准高斯的OT映射，障碍为Hessian非交换项；量化次优度留为开放问题",
+ "tldr_en": "Rigorous counterexample: the Fokker-Planck flow map is generally not the OT map to the standard Gaussian; obstruction is a Hessian non-commutativity; quantifying the defect left open.",
+ "tags": [
+  "counterexample",
+  "monge-map",
+  "fokker-planck",
+  "theory",
+  "brenier",
+  "diffusion-ot"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Necessary condition Eq.(9): D^2(log det D^2u - |grad u|^2/2) must commute with D^2u everywhere",
+  "Counterexample phi(x1,x2)=x1 x2 + x1^4 in R^2: D^2 phi(0)=[[0,1],[1,0]] and D^2 Delta phi(0)=[[24,0],[0,0]] do not commute",
+  "Velocity decay |v(t,x)| <= e^{-t} ||v(0,.)||_inf (Eq.(6))"
+ ],
+ "relations": [
+  {
+   "report_id": "2202.07477",
+   "type": "competes"
+  },
+  {
+   "report_id": "1709.06464",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.14250",
+   "type": "extends"
+  },
+  {
+   "report_id": "2311.03886",
+   "type": "competes"
+  },
+  {
+   "report_id": "2603.25182",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": true
+}

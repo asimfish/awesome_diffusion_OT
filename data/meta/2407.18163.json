@@ -1,0 +1,52 @@
+{
+ "report_id": "2407.18163",
+ "arxiv_id": "2407.18163",
+ "title": "Statistical optimal transport",
+ "tldr_zh": "统计侧系统讲义；第 1 章是最紧凑的严格预备（Brenier、循环单调、对偶三合一），其余归 T06/T05",
+ "tldr_en": "Saint-Flour lecture notes on statistical OT: Chapter 1 is a compact rigorous primer (Brenier via cyclical monotonicity, duality); Chapters 2-8 cover rates and Wasserstein geometry.",
+ "tags": [
+  "textbook",
+  "lecture-notes",
+  "ot-foundations",
+  "statistical-ot",
+  "brenier",
+  "cyclical-monotonicity",
+  "kantorovich-duality",
+  "sample-complexity",
+  "reading-guide"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "8 chapters, 290 pages (v2 Nov 2024)",
+  "Prop. 2.1: E W_1(mu_n,mu) <~ sqrt(d) * n^{-1/d} for d>=3, (log n/n)^{1/2} for d=2, n^{-1/2} for d=1, unimprovable (Sec. 2.1)",
+  "Thm 1.14: optimal coupling <=> graph of convex gradient <=> strong duality, potentials f=|x|^2-2phi, g=|y|^2-2phi* (Sec. 1.5.3)",
+  "Thm 1.6: W_p^p <= D^p d_TV on a ball of diameter D (Sec. 1.2)"
+ ],
+ "relations": [
+  {
+   "report_id": "2505.06589",
+   "type": "uses"
+  },
+  {
+   "report_id": "Polar_factorization_and_monotone_rearrangement_of",
+   "type": "uses"
+  },
+  {
+   "report_id": "Optimal_Transport_for_Applied_Mathematicians",
+   "type": "uses"
+  },
+  {
+   "report_id": "1905.05828",
+   "type": "uses"
+  },
+  {
+   "report_id": "1905.11882",
+   "type": "uses"
+  },
+  {
+   "report_id": "1910.04091",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

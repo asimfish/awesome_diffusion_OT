@@ -1,0 +1,86 @@
+{
+ "report_id": "2405.18750",
+ "arxiv_id": "2405.18750",
+ "title": "T2V-Turbo: Breaking the Quality Bottleneck of Video Consistency Model with Mixed Reward Feedback",
+ "tldr_zh": "VCM 蒸馏中混入图文/视频文本奖励反馈，4 步 VBench 总分超 Gen-2 与 Pika",
+ "tldr_en": "Mixed image/video-text reward feedback in VCM distillation; 4-step VBench total score surpasses Gen-2 and Pika",
+ "tags": [
+  "text-to-video",
+  "consistency distillation",
+  "reward feedback",
+  "video consistency model",
+  "VBench"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "81.01",
+   "description": "T2V-Turbo (VC2) 4-step VBench Total Score",
+   "source": "Table 1"
+  },
+  {
+   "number": "80.58",
+   "description": "Gen-2 VBench Total Score",
+   "source": "Table 1"
+  },
+  {
+   "number": "80.40",
+   "description": "Pika VBench Total Score",
+   "source": "Table 1"
+  },
+  {
+   "number": "80.44",
+   "description": "VideoCrafter2 teacher VBench Total Score",
+   "source": "Table 1"
+  },
+  {
+   "number": "73.97",
+   "description": "VCM (VC2) baseline VBench Total Score",
+   "source": "Table 1"
+  },
+  {
+   "number": "73.1%",
+   "description": "Human preference for T2V-Turbo (VC2) 4-step over teacher 50-step on Visual Quality",
+   "source": "Figure 3"
+  },
+  {
+   "number": "70.7%",
+   "description": "Human preference for T2V-Turbo (VC2) 4-step over teacher 50-step on General Preference",
+   "source": "Figure 3"
+  },
+  {
+   "number": "12.5x",
+   "description": "Inference acceleration of 4-step vs 50-step teacher",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "10K",
+   "description": "Training gradient steps on 8 A100 GPUs",
+   "source": "Sec. 4 Settings"
+  },
+  {
+   "number": "20",
+   "description": "CD skipping interval k",
+   "source": "Sec. 4 Settings"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2312.09109",
+   "type": "继承"
+  },
+  {
+   "report_id": "2401.09047",
+   "type": "教师模型"
+  },
+  {
+   "report_id": "2312.12490",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2310.04378",
+   "type": "方法基础"
+  }
+ ],
+ "read_full_text": true
+}

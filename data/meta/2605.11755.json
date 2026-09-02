@@ -1,0 +1,46 @@
+{
+ "report_id": "2605.11755",
+ "arxiv_id": "2605.11755",
+ "title": "One-Step Generative Modeling via Wasserstein Gradient Flows",
+ "tldr_zh": "W-Flow 用 Sinkhorn divergence 的 WGF 速度场 T_{q,p}−T_{q,q} 规定训练期粒子演化，一步生成器回归之；作者报告 ImageNet-256 一步 FID 1.29",
+ "tldr_en": "W-Flow drives a one-step generator by the Wasserstein gradient flow of the Sinkhorn divergence (cross minus self barycentric maps); authors report 1.29 FID on ImageNet-256 in 1 NFE.",
+ "tags": [
+  "sinkhorn-divergence",
+  "wasserstein-gradient-flow",
+  "one-step-generation",
+  "entropic-ot",
+  "imagenet",
+  "preprint"
+ ],
+ "code_url": "https://hanjq17.github.io/W-Flow/",
+ "key_numbers": [
+  "ImageNet 256x256 class-conditional, 1 NFE: W-Flow XL/2 FID 1.29 / IS 265.4; L/2 1.35 / 272.5; B/2 1.52 / 271.8 (Table 3)",
+  "Baselines: Drifting Model L/2 1.54, iMeanFlow-XL/2 1.72, LightningDiT-XL/2 (250x2 NFE) 1.35, RAE+DiTDH-XL/2 1.13 (Table 3)",
+  "Energy ablation (B/2, 100 ep): Sinkhorn 7.29 vs Drifting 8.46 vs KL 10.17 vs MMD 10.40 FID (Table 2a); velocity CFG improves to 7.08 (Table 2b)",
+  "Self-transport estimator: one-batch 17.57 vs diagonal mask 7.45 vs two-batch 7.08 FID (Table 2c)",
+  "Theorem B.4: sup_t W2(empirical, q_t) <= e^{(L1+L2)T} W2(q0^N,q0) + ... + C_T eta (m2 terms); Sinkhorn Lipschitz constant <= diam^2/(2 eps) (Lemma B.6)"
+ ],
+ "relations": [
+  {
+   "report_id": "1810.08278",
+   "type": "uses"
+  },
+  {
+   "report_id": "2109.12004",
+   "type": "uses"
+  },
+  {
+   "report_id": "1706.00292",
+   "type": "extends"
+  },
+  {
+   "report_id": "1306.0895",
+   "type": "uses"
+  },
+  {
+   "report_id": "2202.08919",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

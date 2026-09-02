@@ -1,0 +1,87 @@
+{
+ "report_id": "2405.17873",
+ "arxiv_id": "2405.17873",
+ "title": "MixDQ: Memory-Efficient Few-Step Text-to-Image Diffusion Models with Metric-Decoupled Mixed Precision Quantization",
+ "tldr_zh": "少步扩散量化瓶颈在文本嵌入BOS离群值；BOS跳过+指标解耦+整数规划配比特，W4A8仅+0.5 FID",
+ "tldr_en": "Few-step diffusion quantization bottlenecked by BOS outliers; BOS-skip + metric-decoupled sensitivity + integer programming achieves W4A8 with +0.5 FID",
+ "tags": [
+  "quantization",
+  "few-step diffusion",
+  "text-to-image",
+  "PTQ",
+  "mixed precision",
+  "SDXL-turbo",
+  "edge deployment"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "9.7GB",
+   "description": "SDXL-turbo FP16 batch size 1 峰值内存",
+   "source": "Sec. 1"
+  },
+  {
+   "number": "823.5 vs 10-15",
+   "description": "BOS token 最大幅值 vs 其余 token 幅值范围",
+   "source": "Sec. 3.1, Fig. 4"
+  },
+  {
+   "number": "17.68 vs 17.15",
+   "description": "MixDQ W4A8 FID vs FP16 FID（SDXL-turbo 1步，全量 COCO）",
+   "source": "Tab. 1"
+  },
+  {
+   "number": "103.96 vs 76.18",
+   "description": "Naive PTQ vs Q-Diffusion W8A8 FID（SDXL-turbo 1步）",
+   "source": "Tab. 1"
+  },
+  {
+   "number": "3.03×",
+   "description": "MixDQ W4A8 峰值内存减少倍数",
+   "source": "Sec. 4.3, Fig. 7"
+  },
+  {
+   "number": "1.52×",
+   "description": "MixDQ W8A8 UNet 推理延迟加速比（RTX 4080）",
+   "source": "Sec. 4.3, Fig. 7"
+  },
+  {
+   "number": "31.65",
+   "description": "仅加 BOS-aware 后 W8A8 FID（从 103.96 下降）",
+   "source": "Tab. 3"
+  },
+  {
+   "number": "37.35",
+   "description": "BOS+混合精度但无 metric-decouple 的 W8A8 FID",
+   "source": "Tab. 3"
+  },
+  {
+   "number": "1%",
+   "description": "激活量化中保留不量化的最敏感层比例",
+   "source": "Sec. 4.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2211.16007",
+   "type": "baseline"
+  },
+  {
+   "report_id": "2305.10657",
+   "type": "baseline"
+  },
+  {
+   "report_id": "2309.14699",
+   "type": "baseline"
+  },
+  {
+   "report_id": "2411.05007",
+   "type": "succeeded_by"
+  },
+  {
+   "report_id": "2502.13533",
+   "type": "succeeded_by"
+  }
+ ],
+ "read_full_text": true
+}

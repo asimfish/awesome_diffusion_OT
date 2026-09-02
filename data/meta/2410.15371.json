@@ -1,0 +1,83 @@
+{
+ "report_id": "2410.15371",
+ "arxiv_id": "2410.15371",
+ "title": "FrameBridge: Improving Image-to-Video Generation with Bridge Models",
+ "tldr_zh": "把 I2V 从噪声到数据改为图像到视频的桥过程，零样本 FVD 从 192 降到 95",
+ "tldr_en": "Reformulates I2V as a data-to-data bridge process, reducing zero-shot FVD from 192 to 95",
+ "tags": [
+  "image-to-video",
+  "bridge models",
+  "Schrodinger bridge",
+  "diffusion models",
+  "video generation",
+  "SNR alignment",
+  "neural prior"
+ ],
+ "code_url": "https://framebridge-icml.github.io/",
+ "key_numbers": [
+  {
+   "number": "95",
+   "metric": "zero-shot FVD on MSR-VTT",
+   "source": "Table 1, Abstract"
+  },
+  {
+   "number": "192",
+   "metric": "zero-shot FVD of DynamiCrafter (reproduced) on MSR-VTT",
+   "source": "Table 1"
+  },
+  {
+   "number": "122",
+   "metric": "non-zero-shot FVD of FrameBridge-NP on UCF-101",
+   "source": "Table 3, Abstract"
+  },
+  {
+   "number": "171",
+   "metric": "non-zero-shot FVD of VDT-I2V on UCF-101",
+   "source": "Table 3"
+  },
+  {
+   "number": "141",
+   "metric": "FVD of Bridge w/ SAF at 5k iterations on UCF-101",
+   "source": "Table 4"
+  },
+  {
+   "number": "284",
+   "metric": "FVD of Bridge w/o SAF at 5k iterations on UCF-101",
+   "source": "Table 4"
+  },
+  {
+   "number": "85.93",
+   "metric": "VBench-I2V total score of FrameBridge-CogVideoX",
+   "source": "Table 2"
+  },
+  {
+   "number": "35.77",
+   "metric": "Dynamic Degree of FrameBridge-VideoCrafter on VBench",
+   "source": "Table 2"
+  },
+  {
+   "number": "81.95",
+   "metric": "Dynamic Degree of SparseCtrl on VBench",
+   "source": "Table 2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2312.03491",
+   "type": "继承桥过程公式（Bridge-gmax）"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "同属 data-to-data 生成框架家族（stochastic interpolants）"
+  },
+  {
+   "report_id": "2310.19512",
+   "type": "使用其作为基础 T2V 模型（VideoCrafter1）"
+  },
+  {
+   "report_id": "2405.04233",
+   "type": "使用其作为基础 T2V 模型（CogVideoX-2B）"
+  }
+ ],
+ "read_full_text": true
+}

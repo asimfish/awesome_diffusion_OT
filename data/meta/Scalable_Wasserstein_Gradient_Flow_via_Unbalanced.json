@@ -1,0 +1,40 @@
+{
+ "report_id": "Scalable_Wasserstein_Gradient_Flow_via_Unbalanced",
+ "arxiv_id": null,
+ "title": "Scalable Wasserstein Gradient Flow via Unbalanced OT",
+ "tldr_zh": "JKO 步等价于 UOT 问题，半对偶化将 WGF 生成训练复杂度从 O(K²) 降到 O(K)。",
+ "tldr_en": "JKO step equals a UOT problem; semi-dual form cuts WGF training cost from O(K²) to O(K).",
+ "tags": [
+  "unbalanced OT",
+  "Wasserstein gradient flow",
+  "JKO scheme",
+  "semi-dual",
+  "generative modeling"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "O(K^2) -> O(K)",
+   "source": "abstract"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "UOTM_NeurIPS2023",
+   "type": "method-neighbor"
+  },
+  {
+   "report_id": "UOT-FM_ICLR2024",
+   "type": "method-neighbor"
+  },
+  {
+   "report_id": "UOTM-SD_ICLR2024",
+   "type": "method-neighbor"
+  },
+  {
+   "report_id": "Light_UOT_NeurIPS2024",
+   "type": "method-neighbor"
+  }
+ ],
+ "read_full_text": false
+}

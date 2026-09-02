@@ -1,0 +1,44 @@
+{
+ "report_id": "1508.05216",
+ "arxiv_id": "1508.05216",
+ "title": "Unbalanced Optimal Transport: Dynamic and Kantorovich Formulation",
+ "tldr_zh": "建立非平衡 OT 的动态与静态半耦合两种等价形式，WFR 度量属于此类",
+ "tldr_en": "Establishes equivalence between dynamic and static semi-coupling formulations of unbalanced OT; WFR metric is a special case",
+ "tags": [
+  "unbalanced optimal transport",
+  "Wasserstein-Fisher-Rao",
+  "semi-couplings",
+  "Kantorovich duality",
+  "Benamou-Brenier"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "2",
+   "source": "Sec. 1.2, Eq. (1.1)",
+   "description": "WFR 动态代价中速度项与增长项各占 1/2 权重"
+  },
+  {
+   "number": "p > 1",
+   "source": "Proposition 2.10",
+   "description": "动态度量性质要求 Lagrangian 对 (v,g) 正 p-齐次且 p>1"
+  },
+  {
+   "number": "p ∈ [1, +∞[",
+   "source": "Theorem 3.7",
+   "description": "静态度量性质要求 c^{1/p} 是 Cone(Ω) 上的度量"
+  },
+  {
+   "number": "2",
+   "source": "Definition 3.2, Eq. (3.1)",
+   "description": "半耦合需要两个测度 γ0 和 γ1，分别固定源端与目标端的一个边缘"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1508.05216",
+   "type": "被继承"
+  }
+ ],
+ "read_full_text": true
+}

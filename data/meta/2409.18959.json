@@ -1,0 +1,54 @@
+{
+ "report_id": "2409.18959",
+ "arxiv_id": "2409.18959",
+ "title": "O(d/T) Convergence Theory for Diffusion Probabilistic Models under Minimal Assumptions",
+ "tldr_zh": "一阶矩有限+ℓ2 score 下 DDPM 的 TV≲d log³T/T+ε_score√logT；换后验方差系数后 d 变内在维数 k",
+ "tldr_en": "DDPM attains TV rate d/T (k/T with intrinsic dimension k) under finite first moment and L2-accurate scores, bypassing the KL/Girsanov barrier.",
+ "tags": [
+  "diffusion-theory",
+  "convergence-rate",
+  "ddpm",
+  "total-variation",
+  "intrinsic-dimension",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "TV(p_X1,p_Y1) ≤ c d log³T/T + c ε_score √logT (Thm 1, Eq. 3.1)",
+  "TV ≤ c k log³T/T + c ε_score √logT with σ*² = (1−α_t)(α_t−ᾱ_t)/(1−ᾱ_t) (Thm 2, Eq. 3.5)",
+  "Assumption 1: E||X0||_2 ≤ T^{c_M}; relaxable to any δ-th moment if T ≫ max{1,1/δ} d log²T",
+  "Prior best DDPM TV rate √(d/T) (Benton 2023a); low-dim prior √(k/T) (Potaptchik 2024, Huang 2024b) (Tables 1–2)",
+  "KL between forward/reverse paths ≥ Ω(d/T) even for Gaussian target (cites Chen 2022 Thm 7)"
+ ],
+ "relations": [
+  {
+   "report_id": "2308.03686",
+   "type": "extends"
+  },
+  {
+   "report_id": "2209.11215",
+   "type": "extends"
+  },
+  {
+   "report_id": "2508.16306",
+   "type": "competes"
+  },
+  {
+   "report_id": "2410.09046",
+   "type": "competes"
+  },
+  {
+   "report_id": "Denoising_Diffusion_Probabilistic_Models_Are_Optim",
+   "type": "competes"
+  },
+  {
+   "report_id": "2503.09583",
+   "type": "competes"
+  },
+  {
+   "report_id": "2010.02502",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

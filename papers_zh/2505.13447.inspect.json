@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.56pt but the original at this position is 10.06pt (ratio 0.75 vs page median 0.92) at x=232.9, y=236.3: 于式(1) 中的边缘化，计算该损失函数不可行，但提出改为评估条件流匹配损失"
+    },
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (14 words, 0 CJK chars) at x=108.0, y=282.6: Given a marginal velocity field v(zt, t), samples are ge"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (12 words, 0 CJK chars) at x=309.7, y=433.6: Note: in PyTorch and JAX, jvp returns the function outpu"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (2 words, 0 CJK chars) at x=108.0, y=638.0: z0 = z1u(z1, 0, 1), where z1 = ϵpprior(ϵ)."
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (11 words, 0 CJK chars) at x=240.9, y=133.6: (b) JVP computation.The correctjvp tangent is (v, 0, 1) "
+    }
+  ]
+}

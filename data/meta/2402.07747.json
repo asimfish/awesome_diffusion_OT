@@ -1,0 +1,68 @@
+{
+ "report_id": "2402.07747",
+ "arxiv_id": "2402.07747",
+ "title": "Optimal score estimation via empirical Bayes smoothing",
+ "tldr_zh": "确立 Lipschitz score 估计的 minimax 率 n^{-2/(d+4)}，Gaussian 核正则化 KDE 达到上界",
+ "tldr_en": "Establishes minimax rate n^{-2/(d+4)} for Lipschitz score estimation via regularized Gaussian KDE",
+ "tags": [
+  "score estimation",
+  "minimax rate",
+  "empirical Bayes",
+  "kernel density estimation",
+  "score-based generative models",
+  "curse of dimensionality"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "n^{-2/(d+4)}",
+   "context": "Lipschitz score 估计的 minimax 率（上下界匹配至对数因子）",
+   "source": "Theorem 1, Theorem 3"
+  },
+  {
+   "number": "n^{-2β/(d+2β+2)}",
+   "context": "β-Hölder score (0<β≤1) 的上界率",
+   "source": "Theorem 2"
+  },
+  {
+   "number": "h = (d^3(α^2 log n)^{d/2}/(L^2 n))^{2/(d+4)}",
+   "context": "最优 Gaussian 核带宽",
+   "source": "Theorem 1"
+  },
+  {
+   "number": "ε = n^{-2}",
+   "context": "正则化参数选择",
+   "source": "Theorem 1"
+  },
+  {
+   "number": "E H^2(ρ̂_h, ρ*_h) ≤ (1/n)(Cα^2 log n/h)^{d/2} + 4d/n",
+   "context": "平滑经验分布的 Hellinger 收敛率",
+   "source": "Lemma 2, Eq.(28)"
+  },
+  {
+   "number": "ñ = Õ(d^{d/2+2} α^d L^{d+2}/ε_TV^{d+4})",
+   "context": "DDPM 端到端样本复杂度",
+   "source": "Corollary 1"
+  },
+  {
+   "number": "Õ(η^{-d/2}(tn)^{-1})",
+   "context": "OU 流上小 t 大 n 时的 score 估计误差",
+   "source": "Theorem 4, Sec. 3.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2206.06227",
+   "type": "被本文引用（DDPM 收敛界来源之一）"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "同属 T06 统计端到端线，后续工作"
+  },
+  {
+   "report_id": "2409.07032",
+   "type": "后续工作，形式化最优 score matching 与最优采样关系"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,36 @@
+{
+ "report_id": "PET_Image_Denoising_based_on_Diffusion_Schr_dinger",
+ "arxiv_id": null,
+ "title": "PET Image Denoising based on Diffusion Schrödinger Bridge Model",
+ "tldr_zh": "低剂量 PET 去噪：从低剂量 PET 起步的 DSBM 加解剖 MR 先验，避免条件扩散过度增强 SNR。",
+ "tldr_en": "Low-dose PET denoising via DSBM starting from low-dose PET with anatomical MR prior, avoiding over-enhanced SNR of conditional diffusion.",
+ "tags": [
+  "PET denoising",
+  "Schrödinger bridge",
+  "diffusion model",
+  "anatomical MR prior",
+  "low-dose imaging",
+  "medical image translation"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "I2SB_ICML2023",
+   "type": "继承"
+  },
+  {
+   "report_id": "PET_DSBM",
+   "type": "同源/竞争"
+  },
+  {
+   "report_id": "PSI_DSBM",
+   "type": "同源"
+  },
+  {
+   "report_id": "SynDiff_TMI2023",
+   "type": "竞争"
+  }
+ ],
+ "read_full_text": false
+}

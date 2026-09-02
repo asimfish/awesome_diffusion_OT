@@ -1,0 +1,46 @@
+{
+ "report_id": "2510.01894",
+ "arxiv_id": "2510.01894",
+ "title": "Multi-marginal temporal Schrödinger Bridge Matching from unpaired data",
+ "tldr_zh": "IMF 按时间段因子化推广到多边缘（IMFF）；100 维单细胞 MMD 比 DMSB 低 41%，首次从非配对快照生成视频",
+ "tldr_en": "Factorized multi-marginal IMF (IMFF) extends DSBM to time-ordered snapshots; authors report -41% MMD vs DMSB on 100-d EB and first unpaired video generation.",
+ "tags": [
+  "schrodinger-bridge",
+  "multi-marginal",
+  "bridge-matching",
+  "trajectory-inference",
+  "single-cell",
+  "video"
+ ],
+ "code_url": "https://github.com/tgravier/MMDSBM-pytorch",
+ "key_numbers": [
+  "EB d=100 avg MMD 0.019 / SWD 0.130 vs DMSB 0.032 / 0.16 (Table 2)",
+  "EB held-out t3: MMD 0.06, SWD 0.31 vs 3MSBM 0.14 / 0.38 (Table 4)",
+  "MULTI d=100 W1 44.542 vs [SF]2M-Geo 52.203; GAGA 27.04 (Table 3)",
+  "2D Moons W2 0.148 vs single bridge 0.144; path energy 5.350 vs 3x single 4.740 (Table 1)",
+  "biotine DINOv2 KID all-times 17.1 (Table 5)"
+ ],
+ "relations": [
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "type": "extends"
+  },
+  {
+   "report_id": "Deep_Momentum_Multi_Marginal_SB_DMSB_Chen_et_al",
+   "type": "competes"
+  },
+  {
+   "report_id": "Momentum_Multi_Marginal_SB_Matching_3MSBM_Theodoro",
+   "type": "competes"
+  },
+  {
+   "report_id": "Simulation_free_Score_Flow_Matching_SF_M_Tong_et_a",
+   "type": "competes"
+  },
+  {
+   "report_id": "Schr_dinger_Bridge_Flow_IMF_DSBM_De_Bortoli_et_al",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

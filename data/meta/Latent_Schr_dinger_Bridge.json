@@ -1,0 +1,33 @@
+{
+ "report_id": "Latent_Schr_dinger_Bridge",
+ "arxiv_id": "2411.14863",
+ "title": "Latent Schrödinger Bridge",
+ "tldr_zh": "SB PF-ODE速度场拆为源/目标/噪声三预测子，用预训练SD免训练近似",
+ "tldr_en": "Decomposes the SB probability-flow velocity into source, target and noise predictors from a pretrained Stable Diffusion with prompt optimization; training-free unpaired translation.",
+ "tags": [
+  "schrodinger-bridge",
+  "training-free",
+  "unpaired-i2i",
+  "stable-diffusion",
+  "preprint"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "No abstract or full text available; authors report beating SDEdit/DDIB at low NFE (per manifest)"
+ ],
+ "relations": [
+  {
+   "report_id": "2203.08382",
+   "type": "extends"
+  },
+  {
+   "report_id": "UNSB_Unpaired_Neural_Schr_dinger_Bridge",
+   "type": "competes"
+  },
+  {
+   "report_id": "ASBM_Adversarial_Schr_dinger_Bridge_Matching",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

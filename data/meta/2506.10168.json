@@ -1,0 +1,77 @@
+{
+ "report_id": "2506.10168",
+ "arxiv_id": "2506.10168",
+ "title": "Momentum Multi-Marginal Schrödinger Bridge Matching",
+ "tldr_zh": "相空间提升+多点条件化随机桥，学习满足多个位置约束的测度值样条；matching 迭代中保持中间边缘不变，解决两两插值丢失长程时序依赖的问题",
+ "tldr_en": "Phase-space lifting with multi-point conditional bridges learns smooth measure-valued splines satisfying multiple positional constraints; matching preserves intermediate marginals throughout training",
+ "tags": [
+  "multi-marginal Schrödinger bridge",
+  "momentum dynamics",
+  "bridge matching",
+  "trajectory inference",
+  "phase space",
+  "stochastic optimal control"
+ ],
+ "code_url": "https://github.com/panostheo98/3MSBM",
+ "key_numbers": [
+  {
+   "number": "0.13±0.01",
+   "description": "LV t3 SWD，3MSBM 最低",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.05±0.01",
+   "description": "GoM Rest SWD，3MSBM 最低",
+   "source": "Table 3"
+  },
+  {
+   "number": "9.78±1.58",
+   "description": "Beijing t5 SWD，3MSBM vs MMFM 23.94±1.97 vs DMSB 21.92±1.78",
+   "source": "Table 4"
+  },
+  {
+   "number": "0.18±0.01",
+   "description": "EB MMD t1，3MSBM vs SBIRR 0.71±0.08 vs MMFM 0.37±0.02 vs DMSB 0.38±0.04",
+   "source": "Table 5"
+  },
+  {
+   "number": "2.5x",
+   "description": "DMSB 训练时间约为 3MSBM 的 2.5 倍（EB 任务）",
+   "source": "Sec. 4.4"
+  },
+  {
+   "number": "5.1%",
+   "description": "边际数从 3 增到 5，per-epoch 训练时间增幅",
+   "source": "Table 6"
+  },
+  {
+   "number": "3.3%",
+   "description": "EB-100 上条件桥计算时间占比，bridge matching 占 96.7%",
+   "source": "Table 7"
+  },
+  {
+   "number": "K=n+3",
+   "description": "pinned points 数量超过 n+3 后性能 plateau",
+   "source": "Sec. 4.5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2303.00275",
+   "type": "继承（同一 mmSB 问题，DMSB 用 IPF，3MSBM 用 matching）"
+  },
+  {
+   "report_id": "2408.06277",
+   "type": "竞争（SBIRR 是 simulation-free 但缺全局耦合）"
+  },
+  {
+   "report_id": "2503.00530",
+   "type": "竞争（Smooth SB 有全局耦合和平滑轨迹但非 simulation-free）"
+  },
+  {
+   "report_id": "2508.04351",
+   "type": "竞争（MMSFM 一阶动力学，缺全局耦合）"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,77 @@
+{
+ "report_id": "2503.06674",
+ "arxiv_id": "2503.06674",
+ "title": "Learning Few-Step Diffusion Models by Trajectory Distribution Matching",
+ "tldr_zh": "TDM 用数据自由的轨迹分布匹配蒸馏，4 步生成在 SDXL/PixArt-α/CogVideoX-2B 上超过教师",
+ "tldr_en": "Data-free trajectory distribution matching distills 4-step generators surpassing teachers on SDXL, PixArt-α, CogVideoX-2B",
+ "tags": [
+  "diffusion distillation",
+  "score distillation",
+  "trajectory matching",
+  "few-step generation",
+  "text-to-video",
+  "data-free"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "HPS 34.88 (SDXL 4-step TDM)",
+   "source": "Table 1"
+  },
+  {
+   "number": "HPS 33.21 (PixArt-α 4-step TDM) vs 32.21 teacher 25-step",
+   "source": "Table 1"
+  },
+  {
+   "number": "VBench total 81.65 (TDM 4 NFE) vs 80.91 (CogVideoX-2B teacher)",
+   "source": "Table 4"
+  },
+  {
+   "number": "2 A800 hours / 500 iterations for PixArt-α distillation",
+   "source": "Abstract, Table 3"
+  },
+  {
+   "number": "2 A800 days for SDXL vs DMD2 160 A100 days",
+   "source": "Table 3"
+  },
+  {
+   "number": "User preference 76.2% TDM-SDXL vs SDXL teacher",
+   "source": "Fig. 6"
+  },
+  {
+   "number": "LoRA FID 20.23 (Realistic) vs Hyper-SD 37.83",
+   "source": "Table 2"
+  },
+  {
+   "number": "Ablation: w/o sampling-step conditioning 1-step HPS drops 28.90→26.11",
+   "source": "Table 5"
+  },
+  {
+   "number": "TDM LoRA reaches DMD2 converged FID in 4% of training time",
+   "source": "Fig. 9"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2405.14867",
+   "type": "竞争（DMD2，同为 score distillation 少步蒸馏）"
+  },
+  {
+   "report_id": "2305.18455",
+   "type": "继承（Diff-Instruct 的 score distillation 框架）"
+  },
+  {
+   "report_id": "2303.01469",
+   "type": "继承（Consistency Models 启发代理目标）"
+  },
+  {
+   "report_id": "2310.14189",
+   "type": "继承（iCT 的 Pseudo-Huber 度量）"
+  },
+  {
+   "report_id": "2408.06072",
+   "type": "应用（蒸馏 CogVideoX-2B 教师）"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,117 @@
+{
+ "report_id": "2310.02391",
+ "arxiv_id": "2310.02391",
+ "title": "SE(3)-Stochastic Flow Matching for Protein Backbone Generation",
+ "tldr_zh": "SE(3)^N 上流匹配蛋白骨架生成，OT 耦合提设计性，随机桥提新颖性",
+ "tldr_en": "Flow matching on SE(3)^N for protein backbones; OT coupling boosts designability, stochastic bridges boost novelty",
+ "tags": [
+  "flow matching",
+  "SE(3)",
+  "protein backbone",
+  "Riemannian OT",
+  "stochastic bridge",
+  "generative model"
+ ],
+ "code_url": "https://github.com/DreamFold/FoldFlow",
+ "key_numbers": [
+  {
+   "number": "0.820 ± 0.037",
+   "context": "FoldFlow-OT designability fraction (scRMSD < 2.0Å)",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.716 ± 0.040",
+   "context": "FoldFlow-SFM designability fraction",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.657 ± 0.042",
+   "context": "FoldFlow-Base designability fraction",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.612 ± 0.060",
+   "context": "FrameDiff-Retrained designability fraction",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.969 ± 0.023",
+   "context": "RFDiffusion designability fraction",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.544 ± 0.061",
+   "context": "FoldFlow-SFM novelty fraction (TM-score < 0.5)",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.411 ± 0.023",
+   "context": "FoldFlow-SFM avg. max TM-score to PDB",
+   "source": "Table 2"
+  },
+  {
+   "number": "2.673",
+   "context": "FoldFlow-OT training speed (iters/sec)",
+   "source": "Table 2"
+  },
+  {
+   "number": "1.278",
+   "context": "FrameDiff-Retrained training speed (iters/sec)",
+   "source": "Table 2"
+  },
+  {
+   "number": "17m vs 60m",
+   "context": "FoldFlow vs RFDiffusion parameter count",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "10 vs 1800",
+   "context": "FoldFlow vs RFDiffusion GPU days",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "22,248",
+   "context": "PDB training subset size",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "4.379",
+   "context": "FoldFlow W2 on BPTI equilibrium conformations (all angles)",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.406",
+   "context": "FoldFlow W2@56 on BPTI residue 56",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.228",
+   "context": "Designability without inference annealing (ablation)",
+   "source": "Fig. 4c"
+  },
+  {
+   "number": "1.25 ± 0.12",
+   "context": "FoldFlow-OT W2 (×10⁻¹) on SO(3) synthetic data",
+   "source": "Table 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2302.03660",
+   "type": "继承（Riemannian CFM 框架）"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "继承（OT-CFM / minibatch OT）"
+  },
+  {
+   "report_id": "2302.02277",
+   "type": "竞争（FrameDiff，非预训练 SOTA 基线）"
+  },
+  {
+   "report_id": "2309.15817",
+   "type": "竞争（FrameFlow，同期类似工作）"
+  }
+ ],
+ "read_full_text": true
+}

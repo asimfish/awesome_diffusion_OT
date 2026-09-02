@@ -1,0 +1,61 @@
+{
+ "report_id": "2304.14772",
+ "arxiv_id": "2304.14772",
+ "title": "Multisample Flow Matching: Straightening Flows with Minibatch Couplings",
+ "tldr_zh": "把 FM 的独立耦合换成 batch 内 OT/稳定匹配耦合，ImageNet 上同 FID 省 30–60% NFE，训练开销 <4%。",
+ "tldr_en": "Marginal-preserving minibatch couplings (BatchOT/EOT/Stable) for flow matching: lower gradient variance, straighter flows, 30-60% fewer NFEs on ImageNet.",
+ "tags": [
+  "flow-matching",
+  "minibatch-ot",
+  "coupling",
+  "theory",
+  "imagenet",
+  "straightness"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "ImageNet-32 FID 4.68 @146 NFE (BatchOT) vs 5.04 @139 (FM-CondOT), NLL 3.58 both (Table 6)",
+  "ImageNet-64 FID 12.37 (BatchOT), 11.82 (Stable) vs 13.93 (CondOT) (Table 6)",
+  "NFE to reach FID=10 on ImageNet-32: 14 (BatchOT/Stable) vs 20 (CondOT), >=40 diffusion (Table 1)",
+  "NFE to reach FID=20 on ImageNet-64: 12 (BatchOT) vs 29 (CondOT) (Table 1)",
+  "Var(u_t) 507 (BatchOT) vs 594 (CondOT) on ImageNet-32 (Table 6)",
+  "Joint CFM value at convergence on 2D: BatchOT 0.24 vs CondOT 10.72 (Fig. 2)",
+  "Training-time overhead +0.8% ImageNet-32, +4% ImageNet-64 (Sec. 6.2)",
+  "Coupling batch k=256 (ImageNet-32) / k=50 (ImageNet-64) per GPU (Table 10, App. E.1)"
+ ],
+ "relations": [
+  {
+   "report_id": "2302.00482",
+   "type": "competes"
+  },
+  {
+   "report_id": "1910.04091",
+   "type": "extends"
+  },
+  {
+   "report_id": "2102.05912",
+   "type": "competes"
+  },
+  {
+   "report_id": "2506.05526",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2603.15279",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2509.25519",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2605.12174",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2503.10636",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

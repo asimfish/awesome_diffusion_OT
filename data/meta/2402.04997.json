@@ -1,0 +1,95 @@
+{
+ "report_id": "2402.04997",
+ "arxiv_id": "2402.04997",
+ "title": "Generative Flows on Discrete State-Spaces: Enabling Multimodal Flows with Applications to Protein Co-Design",
+ "tldr_zh": "用 CTMC 实现离散 flow matching，与 FrameFlow 组合成 Multiflow，co-design designability 达 0.86",
+ "tldr_en": "Discrete flow matching via CTMCs, combined with FrameFlow into Multiflow for protein co-design, achieving 0.86 co-design designability",
+ "tags": [
+  "discrete flow matching",
+  "CTMC",
+  "protein co-design",
+  "multimodal generative model",
+  "SE(3) flow"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "0.86",
+   "description": "Multiflow Co-design 1 designability",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.99",
+   "description": "Multiflow PMPNN 8 designability",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.42",
+   "description": "Multiflow w/o distillation Co-design 1 designability",
+   "source": "Table 3"
+  },
+  {
+   "number": "4179",
+   "description": "额外合成结构训练样本数",
+   "source": "Sec. 6.2"
+  },
+  {
+   "number": "18684",
+   "description": "原始 PDB 训练蛋白数",
+   "source": "Sec. 6.2"
+  },
+  {
+   "number": "500",
+   "description": "Multiflow 采样 timesteps",
+   "source": "Sec. 6.2.1"
+  },
+  {
+   "number": "20",
+   "description": "蛋白采样最优 η",
+   "source": "Sec. 6.2.1"
+  },
+  {
+   "number": "15",
+   "description": "text8 最优 η",
+   "source": "Sec. 6.1"
+  },
+  {
+   "number": "2.2 ± 2.6",
+   "description": "Multiflow 逆折叠 scRMSD",
+   "source": "Table 4"
+  },
+  {
+   "number": "15.3 ± 4.5",
+   "description": "Multiflow 正折叠 RMSD",
+   "source": "Table 4"
+  },
+  {
+   "number": "86M",
+   "description": "text8 transformer 非嵌入参数量",
+   "source": "Sec. 6.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2309.15817",
+   "type": "继承（结构流基础 FrameFlow）"
+  },
+  {
+   "report_id": "2310.02391",
+   "type": "竞争/互补（FoldFlow SE(3) Riemannian OT）"
+  },
+  {
+   "report_id": "2410.20354",
+   "type": "被后续工作扩展（FoldFlow-2 引入 minibatch Riemannian OT）"
+  },
+  {
+   "report_id": "2107.03006",
+   "type": "基线（D3PM 离散扩散）"
+  },
+  {
+   "report_id": "2310.16834",
+   "type": "基线（SEDD 离散扩散）"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,67 @@
+{
+ "report_id": "2402.03828",
+ "arxiv_id": "2402.03828",
+ "title": "Estimating Barycenters of Distributions with Neural Optimal Transport",
+ "tldr_zh": "用 Neural OT 对偶把 barycenter 写成双层 max-min，支持一般代价，含恢复计划质量界",
+ "tldr_en": "Bi-level max-min Neural OT objective for Wasserstein barycenters with general costs and recovery bounds",
+ "tags": [
+  "Wasserstein barycenter",
+  "Neural Optimal Transport",
+  "weak OT",
+  "max-min duality",
+  "StyleGAN latent space"
+ ],
+ "code_url": "https://github.com/justkolesov/NOTBarycenters",
+ "key_numbers": [
+  {
+   "number": "39.0 / 38.6 / 39.8",
+   "context": "Data-space FID on Ave, celeba! for k=1,2,3, best among SCWB and WIN",
+   "source": "Table 2"
+  },
+  {
+   "number": "30.7 / 31.0 / 31.7",
+   "context": "Manifold-constrained FID (classical cost), worse than EgBary 8.4/8.7/10.2",
+   "source": "Table 2"
+  },
+  {
+   "number": "2/β",
+   "context": "Classical cost quality bound constant for W2^2 error of recovered plans",
+   "source": "Theorem 4.2, Statement 1"
+  },
+  {
+   "number": "1/ε",
+   "context": "ε-KL cost quality bound constant for TV^2 error",
+   "source": "Theorem 4.2, Statement 2"
+  },
+  {
+   "number": "2/γ",
+   "context": "γ-Energy cost quality bound constant for ρ_ℓ^2 error",
+   "source": "Theorem 4.2, Statement 3"
+  },
+  {
+   "number": "K=3",
+   "context": "Number of reference distributions in 2D Twister and Ave, celeba! experiments",
+   "source": "§5.1, §5.3"
+  },
+  {
+   "number": "ε ∈ {0.01, 0.1}",
+   "context": "KL regularization strengths tested in Shape-Color experiment",
+   "source": "§5.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2310.01105",
+   "type": "继承并替换算法（能量引导→Neural OT 双层对抗）"
+  },
+  {
+   "report_id": "2303.xxxxx",
+   "type": "方法基础（Neural OT solver, Korotin et al. 2023b）"
+  },
+  {
+   "report_id": "2110.xxxxx",
+   "type": "竞争（三层 min-max-min barycenter, Fan et al. 2021 / Korotin et al. 2022）"
+  }
+ ],
+ "read_full_text": true
+}

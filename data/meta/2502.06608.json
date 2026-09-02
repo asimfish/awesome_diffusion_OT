@@ -1,0 +1,84 @@
+{
+ "report_id": "2502.06608",
+ "arxiv_id": "2502.06608",
+ "title": "TripoSG: High-Fidelity 3D Shape Synthesis using Large-Scale Rectified Flow Models",
+ "tldr_zh": "1.5B/4B rectified flow transformer + SDF-VAE，2M 数据上图生 3D，作者报告 SOTA",
+ "tldr_en": "Large-scale rectified flow transformer with SDF-VAE for image-to-3D, trained on 2M samples",
+ "tags": [
+  "3D generation",
+  "rectified flow",
+  "SDF-VAE",
+  "image-to-3D",
+  "MoE",
+  "latent diffusion"
+ ],
+ "code_url": "作者声明将开源，具体地址原文未给出",
+ "key_numbers": [
+  {
+   "number": "4B",
+   "context": "最大模型参数（MoE 扩展自 1.5B）",
+   "source": "Sec.3.2"
+  },
+  {
+   "number": "4096",
+   "context": "最大潜分辨率 tokens",
+   "source": "Sec.3.2"
+  },
+  {
+   "number": "2M",
+   "context": "高质量训练样本数",
+   "source": "Abstract, Sec.4"
+  },
+  {
+   "number": "160 A100 GPU × 3 周",
+   "context": "主训练算力",
+   "source": "Sec.5.1"
+  },
+  {
+   "number": "8 专家 top-2 激活",
+   "context": "MoE 配置，仅 decoder 最后 6 层",
+   "source": "Sec.3.2"
+  },
+  {
+   "number": "λ_sn=10, λ_eik=0.1, λ_kl=0.001",
+   "context": "VAE 损失权重",
+   "source": "Sec.5.1"
+  },
+  {
+   "number": "512³ UDF 网格，τ=3/512",
+   "context": "水密化与 iso-surface 提取",
+   "source": "Sec.4.4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "3DShape2VecSet",
+   "type": "继承（VAE 潜表示与架构基础）"
+  },
+  {
+   "report_id": "DiT",
+   "type": "继承（flow backbone 基础）"
+  },
+  {
+   "report_id": "SD3",
+   "type": "继承（logit-normal 采样与 timestep shifting）"
+  },
+  {
+   "report_id": "CLAY",
+   "type": "竞争（大规模 3D 生成，图像条件注入方式对比）"
+  },
+  {
+   "report_id": "Michelangelo",
+   "type": "竞争（图像条件注入方式对比）"
+  },
+  {
+   "report_id": "NSOT",
+   "type": "对照（RF 在 3D 上未利用 OT 耦合，NSOT 系统检验 exact OT）"
+  },
+  {
+   "report_id": "WFM",
+   "type": "对照（WFM 在 Wasserstein 空间做 FM，TripoSG 在欧氏潜空间做 RF）"
+  }
+ ],
+ "read_full_text": false
+}

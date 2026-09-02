@@ -1,0 +1,31 @@
+{
+ "report_id": "Riemannian_Diffusion_Mixture_Jo_Hwang",
+ "arxiv_id": null,
+ "title": "Riemannian Diffusion Mixture, Jo & Hwang",
+ "tldr_zh": "桥过程混合构造流形生成扩散，漂移为数据方向切向量加权平均，绕开热核与散度",
+ "tldr_en": "Bridge mixture constructs manifold generative diffusion with data-direction tangent weighted drift, avoiding heat kernel and divergence",
+ "tags": [
+  "Riemannian diffusion",
+  "bridge process mixture",
+  "simulation-free",
+  "generative modeling",
+  "manifold"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "RFM_Chen_Lipman",
+   "type": "related"
+  },
+  {
+   "report_id": "RSGM_DeBortoli",
+   "type": "contrast"
+  },
+  {
+   "report_id": "RDSB_Thornton",
+   "type": "contrast"
+  }
+ ],
+ "read_full_text": false
+}

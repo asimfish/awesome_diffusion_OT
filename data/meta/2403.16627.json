@@ -1,0 +1,104 @@
+{
+ "report_id": "2403.16627",
+ "arxiv_id": "2403.16627",
+ "title": "SDXS: Real-Time One-Step Latent Diffusion Models with Image Conditions",
+ "tldr_zh": "UNet+VAE 双小型化 + 特征匹配/分数蒸馏一步训练，512² 约 100 FPS，1024² 约 30 FPS",
+ "tldr_en": "Dual miniaturization of UNet and VAE plus feature-matching/score-distillation one-step training; ~100 FPS at 512², ~30 FPS at 1024²",
+ "tags": [
+  "diffusion distillation",
+  "one-step generation",
+  "model compression",
+  "ControlNet",
+  "edge deployment",
+  "score distillation",
+  "feature matching"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "9 ms",
+   "context": "SDXS-512 总延迟（float16, batch=1, 编译后）",
+   "source": "Table 3"
+  },
+  {
+   "number": "32 ms",
+   "context": "SDXS-1024 总延迟（float16, batch=1, 编译后）",
+   "source": "Table 3"
+  },
+  {
+   "number": "319M",
+   "context": "SDXS-512 U-Net 参数（SD v1.5 为 860M）",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.74B",
+   "context": "SDXS-1024 U-Net 参数（SDXL 为 2.56B）",
+   "source": "Table 3"
+  },
+  {
+   "number": "1.2M",
+   "context": "蒸馏后图像解码器参数（原 50M）",
+   "source": "Table 1, Table 2"
+  },
+  {
+   "number": "28.21",
+   "context": "SDXS-512 FID（SD v1.5 为 24.28，Tiny SD 为 31.16）",
+   "source": "Table 3"
+  },
+  {
+   "number": "30.92",
+   "context": "SDXS-1024 FID（SDXL 为 24.60，Vega 为 29.24）",
+   "source": "Table 3"
+  },
+  {
+   "number": "32.81",
+   "context": "SDXS-512 CLIP Score（SD v1.5 为 31.84）",
+   "source": "Table 3"
+  },
+  {
+   "number": "32.32",
+   "context": "SDXS-1024 CLIP Score（SDXL 为 33.77）",
+   "source": "Table 3"
+  },
+  {
+   "number": "1024-2048",
+   "context": "训练 mini-batch size 范围",
+   "source": "Sec. 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2305.15798",
+   "type": "继承（U-Net block removal 蒸馏策略）"
+  },
+  {
+   "report_id": "2305.18455",
+   "type": "继承（Diff-Instruct score distillation 理论基础）"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "对照（Rectified Flow 轨迹拉直）"
+  },
+  {
+   "report_id": "2310.04378",
+   "type": "依赖（LCM 用于轨迹拉直）"
+  },
+  {
+   "report_id": "2311.17042",
+   "type": "竞争（ADD/SD Turbo 一步蒸馏，GAN 微调设置来源）"
+  },
+  {
+   "report_id": "2402.13929",
+   "type": "竞争（SDXL-Lightning 一步模型）"
+  },
+  {
+   "report_id": "2401.02677",
+   "type": "依赖（Vega 作为 SDXS-1024 初始化）"
+  },
+  {
+   "report_id": "2302.05543",
+   "type": "继承（ControlNet 架构）"
+  }
+ ],
+ "read_full_text": true
+}

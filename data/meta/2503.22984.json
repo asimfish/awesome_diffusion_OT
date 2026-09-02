@@ -1,0 +1,89 @@
+{
+ "report_id": "2503.22984",
+ "arxiv_id": "2503.22984",
+ "title": "Optimal Transport-Guided Source-Free Adaptation for Face Anti-Spoofing",
+ "tldr_zh": "OT 搬运源原型到目标域，免参或轻量适配活体检测，跨域 HTER 平均 2.91%",
+ "tldr_en": "OT shifts source prototypes to target domain for training-free or lightweight FAS adaptation, avg HTER 2.91%",
+ "tags": [
+  "optimal transport",
+  "source-free adaptation",
+  "face anti-spoofing",
+  "prototype learning",
+  "geodesic mixup",
+  "few-shot adaptation"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "19.17%",
+   "description": "跨域和跨攻击场景下 HTER 平均相对改善",
+   "source": "Abstract"
+  },
+  {
+   "number": "8.58%",
+   "description": "跨域和跨攻击场景下 AUC 平均相对改善（Sec. 1 写 8.56%）",
+   "source": "Abstract"
+  },
+  {
+   "number": "2.91%",
+   "description": "OTA lightweight 版本跨域平均 HTER",
+   "source": "Table 1"
+  },
+  {
+   "number": "3.21%",
+   "description": "OTA training-free 版本跨域平均 HTER",
+   "source": "Table 1"
+  },
+  {
+   "number": "3.43%",
+   "description": "OTA zero-shot 版本跨域平均 HTER",
+   "source": "Table 1"
+  },
+  {
+   "number": "99.63±0.11",
+   "description": "OTA lightweight 在 3D 未见攻击上的 AUC",
+   "source": "Table 2(b)"
+  },
+  {
+   "number": "0.17±0.03 min",
+   "description": "training-free 适配时间（10 次试验）",
+   "source": "Sec. 4.4"
+  },
+  {
+   "number": "22.73±3.51 min",
+   "description": "lightweight 适配时间（10 次试验）",
+   "source": "Sec. 4.4"
+  },
+  {
+   "number": "3.9 KB",
+   "description": "lightweight 适配额外参数负载",
+   "source": "Sec. 4.4"
+  },
+  {
+   "number": "10",
+   "description": "测试阶段每类 few-shot 样本数",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "50",
+   "description": "每类子中心数 K",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "5.29%",
+   "description": "OTA zero-shot 收敛评估平均 HTER（最后 10 次评估）",
+   "source": "Table 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2503.22984",
+   "type": "extends"
+  },
+  {
+   "report_id": "2503.22984",
+   "type": "related_to"
+  }
+ ],
+ "read_full_text": true
+}

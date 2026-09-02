@@ -1,0 +1,89 @@
+{
+ "report_id": "2302.04867",
+ "arxiv_id": "2302.04867",
+ "title": "UniPC: A Unified Predictor-Corrector Framework for Fast Sampling of Diffusion Models",
+ "tldr_zh": "统一预测-校正框架 UniPC，校正器零额外 NFE 提升精度，10 步 FID 3.87/7.51",
+ "tldr_en": "Unified predictor-corrector sampler with zero-extra-NFE corrector, 3.87 FID on CIFAR10 at 10 NFE",
+ "tags": [
+  "diffusion models",
+  "training-free sampler",
+  "ODE solver",
+  "predictor-corrector",
+  "exponential integrator"
+ ],
+ "code_url": "https://github.com/wl-zhao/UniPC",
+ "key_numbers": [
+  {
+   "number": "3.87",
+   "metric": "FID",
+   "dataset": "CIFAR10 unconditional",
+   "nfe": 10,
+   "source": "Abstract; Table 1a"
+  },
+  {
+   "number": "7.51",
+   "metric": "FID",
+   "dataset": "ImageNet 256x256 conditional",
+   "nfe": 10,
+   "source": "Abstract; Table 5"
+  },
+  {
+   "number": "6.0 / 5.9 / 8.5",
+   "metric": "FID improvement over DPM-Solver++",
+   "dataset": "CIFAR10 / LSUN Bedroom / FFHQ",
+   "nfe": "few-step",
+   "source": "Sec. 4.1, p.6"
+  },
+  {
+   "number": "22.98 vs 9.03",
+   "metric": "FID",
+   "dataset": "CIFAR10",
+   "nfe": 6,
+   "source": "Table 4 (order schedule 123456 vs 123432)"
+  },
+  {
+   "number": "60.99 vs 6.29",
+   "metric": "FID",
+   "dataset": "CIFAR10",
+   "nfe": 7,
+   "source": "Table 4 (order schedule 1234567 vs 1223334)"
+  },
+  {
+   "number": "0.49 / 0.78 / 1.07",
+   "metric": "inference time (s)",
+   "dataset": "stable-diffusion, RTX 3090",
+   "nfe": "5/10/15",
+   "source": "Table 7"
+  },
+  {
+   "number": "6.3",
+   "metric": "memory (GB)",
+   "dataset": "stable-diffusion",
+   "nfe": null,
+   "source": "Sec. 4.2, p.9"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2206.00927",
+   "type": "继承"
+  },
+  {
+   "report_id": "2211.01095",
+   "type": "竞争/基线"
+  },
+  {
+   "report_id": "2204.13902",
+   "type": "竞争/对照"
+  },
+  {
+   "report_id": "2010.02502",
+   "type": "退化特例"
+  },
+  {
+   "report_id": "2202.00512",
+   "type": "被比较（训练基方法）"
+  }
+ ],
+ "read_full_text": true
+}

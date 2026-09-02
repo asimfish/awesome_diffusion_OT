@@ -1,0 +1,83 @@
+{
+ "report_id": "2411.04746",
+ "arxiv_id": "2411.04746",
+ "title": "Taming Rectified Flow for Inversion and Editing",
+ "tldr_zh": "免训练高阶求解器降低 rectified flow ODE 反演误差，配合特征共享在 FLUX/OpenSora 上改进图像与视频编辑",
+ "tldr_en": "Training-free high-order solver reduces rectified flow ODE inversion error; feature sharing enables image/video editing on FLUX and OpenSora",
+ "tags": [
+  "rectified flow",
+  "inversion",
+  "image editing",
+  "video editing",
+  "training-free",
+  "ODE solver",
+  "FLUX",
+  "OpenSora"
+ ],
+ "code_url": "https://github.com/wangjiangshan0725/RF-Solver-Edit",
+ "key_numbers": [
+  {
+   "number": "23.98",
+   "metric": "FID",
+   "task": "T2I generation",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.0092",
+   "metric": "MSE",
+   "task": "image inversion-reconstruction",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.0134",
+   "metric": "MSE",
+   "task": "video inversion-reconstruction",
+   "source": "Table 2"
+  },
+  {
+   "number": "18.41",
+   "metric": "PSNR",
+   "task": "video inversion-reconstruction",
+   "source": "Table 2"
+  },
+  {
+   "number": "33.66",
+   "metric": "CLIP Score",
+   "task": "image editing",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.9501",
+   "metric": "VBench SC",
+   "task": "video editing",
+   "source": "Table 4"
+  },
+  {
+   "number": "0.01",
+   "metric": "delta t for derivative estimation",
+   "task": "RF-Solver",
+   "source": "Sec. 3.2"
+  },
+  {
+   "number": "5",
+   "metric": "default feature sharing steps",
+   "task": "RF-Edit",
+   "source": "Sec. 4.5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "继承"
+  },
+  {
+   "report_id": "2211.01095",
+   "type": "竞争/平行"
+  },
+  {
+   "report_id": "2412.03603",
+   "type": "被扩展"
+  }
+ ],
+ "read_full_text": true
+}

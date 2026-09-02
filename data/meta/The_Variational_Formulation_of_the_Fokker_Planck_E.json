@@ -1,0 +1,35 @@
+{
+ "report_id": "The_Variational_Formulation_of_the_Fokker_Planck_E",
+ "arxiv_id": null,
+ "title": "The Variational Formulation of the Fokker–Planck Equation",
+ "tldr_zh": "把 Fokker–Planck 方程写成 KL 散度在 Wasserstein-2 度量下的梯度流，提出 JKO 隐式离散格式。",
+ "tldr_en": "Reformulates the Fokker–Planck equation as the Wasserstein-2 gradient flow of KL divergence and proposes the JKO minimizing movement scheme.",
+ "tags": [
+  "Wasserstein gradient flow",
+  "JKO scheme",
+  "Fokker-Planck equation",
+  "optimal transport",
+  "KL divergence"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Otto_2001_Otto_calculus",
+   "type": "被后续形式化"
+  },
+  {
+   "report_id": "JKO_ICNN_Mokrov_2021",
+   "type": "被后续神经化"
+  },
+  {
+   "report_id": "S_JKO_Xu_2023",
+   "type": "被后续规模化"
+  },
+  {
+   "report_id": "JKOnet_Bunne_2021",
+   "type": "被后续反问题扩展"
+  }
+ ],
+ "read_full_text": false
+}

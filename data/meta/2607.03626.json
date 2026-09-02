@@ -1,0 +1,40 @@
+{
+ "report_id": "2607.03626",
+ "arxiv_id": "2607.03626",
+ "title": "Reflected Schrödinger Bridge Matching",
+ "tldr_zh": "把 α-DSBM 推广到单位立方体上的反射 Brownian 参考过程，样本不越界，训练开销约 +1.5%",
+ "tldr_en": "Extends alpha-DSBM to reflected Brownian reference on the unit cube via closed-form reflected score and bridge sampler; negligible overhead, samples stay in-domain.",
+ "tags": [
+  "schrodinger-bridge",
+  "bridge-matching",
+  "constrained-generation",
+  "reflected-sde",
+  "unpaired-translation"
+ ],
+ "code_url": "https://github.com/viktor765/rsbm",
+ "key_numbers": [
+  "MNIST->EMNIST FID 5.22 vs alpha-DSBM 6.41; MSD 0.356 vs 0.416 (Table 1)",
+  "AFHQ cat->wild FID 26.1 vs 27.6, MSD 0.084 vs 0.131; wild->cat FID 33.8 vs 31.5 (Table 1)",
+  "Training time 32 h vs 31.5 h (MNIST), 109 h vs 108 h (AFHQ) (Sec. 5)",
+  "alpha-DSBM: 100% of MNIST samples have out-of-bounds pixels, avg 46% pixels; AFHQ ~2% entries (Sec. 5)"
+ ],
+ "relations": [
+  {
+   "report_id": "Schr_dinger_Bridge_Flow_IMF_DSBM_De_Bortoli_et_al",
+   "type": "extends"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "type": "extends"
+  },
+  {
+   "report_id": "Likelihood_Training_of_SB_using_FBSDEs_SB_FBSDE_Ch",
+   "type": "competes"
+  },
+  {
+   "report_id": "2605.11429",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

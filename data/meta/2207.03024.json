@@ -1,0 +1,53 @@
+{
+ "report_id": "2207.03024",
+ "arxiv_id": "2207.03024",
+ "title": "Riemannian Diffusion Schrödinger Bridge",
+ "tldr_zh": "把 DSB/IPF 推广到紧黎曼流形，用流形时间反演+score matching 做球面数据生成与插值",
+ "tldr_en": "Extends DSB/IPF to compact Riemannian manifolds for generation and interpolation on spherical data",
+ "tags": [
+  "Riemannian diffusion",
+  "Schrödinger bridge",
+  "IPF",
+  "score-based generative model",
+  "manifold",
+  "spherical data"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "N=10 diffusion steps",
+   "source": "Sec. 3"
+  },
+  {
+   "number": "5 IPF iterations",
+   "source": "Sec. 3.1, Fig. 1-2"
+  },
+  {
+   "number": "2 IPF iterations for interpolation",
+   "source": "Sec. 3.2, Fig. 3"
+  },
+  {
+   "number": "4-layer FC networks, hidden width 512",
+   "source": "Sec. 3"
+  },
+  {
+   "number": "g^2(t) peak 0.05 at t=T/2, low 0.001 at t=0,T",
+   "source": "Sec. 3"
+  },
+  {
+   "number": "2L drift networks (f^n, b^n for n=0..L)",
+   "source": "Sec. 2, Algorithm 2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2202.02763",
+   "type": "继承/直接前作"
+  },
+  {
+   "report_id": "2103.01322",
+   "type": "欧氏版 DSB，本文直接推广对象"
+  }
+ ],
+ "read_full_text": true
+}

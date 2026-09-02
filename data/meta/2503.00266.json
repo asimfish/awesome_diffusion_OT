@@ -1,0 +1,49 @@
+{
+ "report_id": "2503.00266",
+ "arxiv_id": "2503.00266",
+ "title": "Flow Matching for Medical Image Synthesis: Bridging the Gap Between Speed and Quality",
+ "tldr_zh": "直线路径 FM（独立耦合，无 minibatch OT）做超声/3D 脑 MRI 生成，10 步 FID 与下游分割 Dice 超 50 步 DDPM；生成而非模态转换",
+ "tldr_en": "Straight-path flow matching (independent coupling, no minibatch OT) for ultrasound and 3D brain MRI synthesis; 10-step MOTFM beats 50-step DDPM on FID and downstream segmentation Dice.",
+ "tags": [
+  "flow-matching",
+  "medical-imaging",
+  "image-synthesis",
+  "few-step-sampling",
+  "downstream-evaluation",
+  "mask-conditioning",
+  "3d-generation"
+ ],
+ "code_url": "https://github.com/milad1378yz/MOTFM",
+ "key_numbers": [
+  "CAMUS unconditional FID: MOTFM 3.04 / .16 / .04 at 1/10/50 steps vs DDPM 1.9e2 / 22.83 / 1.84 (Table 1)",
+  "CAMUS mask-conditional FID (10 steps): MOTFM-M .58 vs DDPM-M 14.58, ControlNet 2.25; SPADE .46 (Table 1)",
+  "MSD 3D brain MRI 3D-FID: MOTFM 32.10 / 9.27 / 7.93 vs DDPM 146.47 / 51.68 / 29.67 (Table 2)",
+  "Downstream segmentation trained on synthetic only (UNet-Res50): Dice 0.91 (MOTFM 10) vs 0.73 (DDPM 50) vs 0.92 (real); HD 20.89 vs 133.18 vs 15.02 (Table 3)",
+  "Downstream classification ResNet18 ACC: real 0.89, MOTFM 0.82, DDPM 0.78 (Table 3)",
+  "Inference: 10-step MOTFM 1.47 s vs 50-step DDPM 6.20 s vs SPADE 0.68 s (Sec. 3)",
+  "Speckle denoising (10 steps): PSNR 21.61 -> 32.76, SSIM 0.5802 -> 0.8401, no baseline (Sec. 3)"
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "uses"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "uses"
+  },
+  {
+   "report_id": "2505.03114",
+   "type": "competes"
+  },
+  {
+   "report_id": "2404.11741",
+   "type": "competes"
+  },
+  {
+   "report_id": "2501.14171",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

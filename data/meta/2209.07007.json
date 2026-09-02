@@ -1,0 +1,69 @@
+{
+ "report_id": "2209.07007",
+ "arxiv_id": "2209.07007",
+ "title": "Gromov-Wasserstein Autoencoders",
+ "tldr_zh": "用 GW 度量直接匹配 latent 与 data 距离结构，替换 ELBO，解耦与聚类上不改目标即优于 VAE 系基线",
+ "tldr_en": "Replaces ELBO with GW metric to match latent and data distance structures, outperforming VAE baselines on disentanglement and clustering",
+ "tags": [
+  "Gromov-Wasserstein",
+  "representation learning",
+  "variational autoencoder",
+  "optimal transport",
+  "disentanglement",
+  "clustering"
+ ],
+ "code_url": "https://github.com/ganmodokix/gwae",
+ "key_numbers": [
+  {
+   "number": "0.9080 ± 0.0002",
+   "context": "GWAE (FNP) DCI-C on 3D Shapes, highest among 8 methods",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.7024 ± 0.0002",
+   "context": "GWAE (FNP) DCI-D, lower than WAE (0.7544) and β-VAE (0.7328)",
+   "source": "Table 1"
+  },
+  {
+   "number": "1.0000",
+   "context": "GWAE (GMP) AUC for OoD detection, MNIST vs Omniglot",
+   "source": "Fig. 3"
+  },
+  {
+   "number": "45.3",
+   "context": "GWAE (NP) FID on CelebA, best among methods with self-computed FID",
+   "source": "Table 2"
+  },
+  {
+   "number": "22.82 dB",
+   "context": "GWAE (NP) PSNR on CelebA, highest among all compared methods",
+   "source": "Table 2"
+  },
+  {
+   "number": "ρ = 1",
+   "context": "Chosen GW order to reduce outlier effect for training stability",
+   "source": "Sec. 3.2.2"
+  },
+  {
+   "number": "L = 16",
+   "context": "Latent size for disentanglement experiments on 3D Shapes",
+   "source": "Table 1"
+  },
+  {
+   "number": "L = 64",
+   "context": "Latent size for generation/reconstruction experiments on CelebA",
+   "source": "Table 2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1711.01558",
+   "type": "继承"
+  },
+  {
+   "report_id": "2410.xxxxx",
+   "type": "被发展"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,73 @@
+{
+ "report_id": "2410.12557",
+ "arxiv_id": "2410.12557",
+ "title": "One Step Diffusion via Shortcut Models",
+ "tldr_zh": "步长 d 作为条件输入，自蒸馏只需 log2(T) 次 bootstrap；单网络单阶段支持任意步数预算",
+ "tldr_en": "Condition on step size d; self-distillation needs only log2(T) bootstraps; single network supports any step budget",
+ "tags": [
+  "shortcut models",
+  "few-step generation",
+  "self-distillation",
+  "flow matching",
+  "consistency models",
+  "diffusion distillation"
+ ],
+ "code_url": "https://github.com/kvfrans/shortcut-models",
+ "key_numbers": [
+  {
+   "number": "log2(128)+1=8 个 shortcut 长度",
+   "source": "Sec. 3.1"
+  },
+  {
+   "number": "训练成本比等价扩散模型多约 16%",
+   "source": "Sec. 3.1"
+  },
+  {
+   "number": "自洽目标占比 k=1/4",
+   "source": "Sec. 3.1"
+  },
+  {
+   "number": "CelebA-HQ-256: 128步 6.9 / 4步 13.8 / 1步 20.5 FID",
+   "source": "Table 1"
+  },
+  {
+   "number": "ImageNet-256: 128步 15.5 / 4步 28.3 / 1步 40.3 FID",
+   "source": "Table 1"
+  },
+  {
+   "number": "ImageNet-256 DiT-XL: 1步 10.6 / 128步 3.8 FID",
+   "source": "Sec. 5.3, Appendix Table 2"
+  },
+  {
+   "number": "Push-T 1步 0.87 vs Diffusion Policy 100步 0.95",
+   "source": "Fig. 7"
+  },
+  {
+   "number": "Transport 1步 0.80 vs Diffusion Policy 100步 1.00",
+   "source": "Fig. 7"
+  },
+  {
+   "number": "Reflow 合成数据: CelebA 50k 条, ImageNet 1M 条, 每条 128 次前向",
+   "source": "Sec. 5.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2303.01469",
+   "type": "被对比/竞争（Consistency Models，端到端基线）"
+  },
+  {
+   "report_id": "2202.00512",
+   "type": "被对比/继承（Progressive Distillation，二分时间蒸馏的两阶段版）"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "继承（flow-matching 基础 + Reflow 基线）"
+  },
+  {
+   "report_id": "2406.07507",
+   "type": "相关（Flow Map Matching，flow 设置下的 consistency 变体）"
+  }
+ ],
+ "read_full_text": true
+}

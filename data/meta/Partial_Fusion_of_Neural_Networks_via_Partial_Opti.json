@@ -1,0 +1,35 @@
+{
+ "report_id": "Partial_Fusion_of_Neural_Networks_via_Partial_Opti",
+ "arxiv_id": null,
+ "title": "Partial Fusion of Neural Networks via Partial Optimal Transport",
+ "tldr_zh": "用 partial OT 放宽 OTFusion 完全匹配假设，允许神经元部分对应地融合。",
+ "tldr_en": "Relaxes OTFusion's full matching via partial OT for partially corresponding neurons.",
+ "tags": [
+  "partial optimal transport",
+  "model fusion",
+  "OTFusion",
+  "neuron alignment",
+  "ICML 2026"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "OTFusion_NeurIPS_2020",
+   "type": "继承"
+  },
+  {
+   "report_id": "Transformer_Fusion_ICLR_2024",
+   "type": "同线"
+  },
+  {
+   "report_id": "GW_Barycenter_RNN_Fusion_arXiv_2210_06671",
+   "type": "同线"
+  },
+  {
+   "report_id": "AAAI_2025_Fusion_Backdoor",
+   "type": "同线"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,91 @@
+{
+ "report_id": "2511.07499",
+ "arxiv_id": "2511.07499",
+ "title": "Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance",
+ "tldr_zh": "用对抗代价的 Sinkhorn attention 构造劣化分支做 guidance，免训练提升扩散采样保真度",
+ "tldr_en": "Adversarial Sinkhorn attention builds degraded branch for guidance, training-free fidelity gains",
+ "tags": [
+  "optimal transport",
+  "Sinkhorn",
+  "diffusion guidance",
+  "self-attention",
+  "training-free",
+  "T2I"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "92.01",
+   "metric": "FID (SDXL unconditional, ASAG)",
+   "source": "Table 1"
+  },
+  {
+   "number": "23.30",
+   "metric": "FID (SDXL conditional, ASAG)",
+   "source": "Table 1"
+  },
+  {
+   "number": "22.87",
+   "metric": "FID (SD3 conditional, ASAG)",
+   "source": "Table 1"
+  },
+  {
+   "number": "10.54",
+   "metric": "Inception Score (SDXL unconditional, ASAG)",
+   "source": "Table 1"
+  },
+  {
+   "number": "25.85",
+   "metric": "CLIPScore (SDXL conditional, ASAG)",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.459",
+   "metric": "ImageReward (SDXL conditional, ASAG)",
+   "source": "Table 1"
+  },
+  {
+   "number": "1.551",
+   "metric": "Inference time per prompt (sec, ASAG)",
+   "source": "Table 4"
+  },
+  {
+   "number": "+0.35",
+   "metric": "Inference time overhead vs CFG (sec)",
+   "source": "Table 4"
+  },
+  {
+   "number": "2",
+   "metric": "Sinkhorn iterations sufficient in practice",
+   "source": "Sec. Ablation, p.6"
+  },
+  {
+   "number": "1.5",
+   "metric": "Default guidance scale s",
+   "source": "Sec. Experiments, p.5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "Sinkformer",
+   "type": "继承（attention=Sinkhorn 第一轮迭代的理论基础）"
+  },
+  {
+   "report_id": "OTSeg",
+   "type": "继承（Sinkhorn attention 公式直接来源）"
+  },
+  {
+   "report_id": "PAG",
+   "type": "竞争（被 ASAG 替代的启发式扰动 guidance）"
+  },
+  {
+   "report_id": "SEG",
+   "type": "竞争（被 ASAG 替代的启发式扰动 guidance）"
+  },
+  {
+   "report_id": "STORM",
+   "type": "镜像（正向 OT attention 引导 vs 反向对抗引导）"
+  }
+ ],
+ "read_full_text": true
+}

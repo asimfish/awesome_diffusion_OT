@@ -1,0 +1,45 @@
+{
+ "report_id": "Optimal_Transport_for_Applied_Mathematicians",
+ "arxiv_id": null,
+ "title": "Optimal Transport for Applied Mathematicians",
+ "tldr_zh": "应用数学侧 OT 标准参考书，严格证明对偶、Brenier、BB 动态与 W 空间几何",
+ "tldr_en": "Applied-math OT reference with rigorous proofs of duality, Brenier, Benamou-Brenier, and Wasserstein geometry",
+ "tags": [
+  "optimal transport",
+  "Kantorovich duality",
+  "Brenier theorem",
+  "Benamou-Brenier",
+  "Wasserstein space",
+  "textbook",
+  "T01"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Villani_2003_Topics_in_OT",
+   "type": "predecessor"
+  },
+  {
+   "report_id": "Villani_2009_OT_Old_and_New",
+   "type": "predecessor"
+  },
+  {
+   "report_id": "Peyre_Cuturi_2019_Computational_OT",
+   "type": "successor"
+  },
+  {
+   "report_id": "Cuturi_2013_Sinkhorn",
+   "type": "related"
+  },
+  {
+   "report_id": "Benamou_Brenier_2000",
+   "type": "related"
+  },
+  {
+   "report_id": "Kitagawa_Merigot_Thibert_2019",
+   "type": "related"
+  }
+ ],
+ "read_full_text": false
+}

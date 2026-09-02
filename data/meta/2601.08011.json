@@ -1,0 +1,82 @@
+{
+ "report_id": "2601.08011",
+ "arxiv_id": "2601.08011",
+ "title": "TP-Blend: Textual-Prompt Attention Pairing for Precise Object-Style Blending in Diffusion Models",
+ "tldr_zh": "TP-Blend 用熵正则 OT 在 cross-attention 全头维度上重分配特征，实现对象与风格双 prompt 融合",
+ "tldr_en": "TP-Blend uses entropy-regularized OT on full multi-head cross-attention features for dual-prompt object-style blending",
+ "tags": [
+  "optimal transport",
+  "diffusion models",
+  "cross-attention",
+  "style transfer",
+  "training-free editing",
+  "Sinkhorn"
+ ],
+ "code_url": "https://github.com/felixxinjin1/TP-Blend",
+ "key_numbers": [
+  {
+   "number": "0.8031",
+   "description": "CAOF 的 BOM 分数（Table 1），次优 Nano Banana 为 0.7324",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.8656",
+   "description": "CAOF+SASF 的 BOSM 分数（Table 2），纯 CAOF 为 0.6639",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.8292",
+   "description": "CAOF 的 1−LPIPS_O 感知保真度，表中最高",
+   "source": "Table 1"
+  },
+  {
+   "number": "640",
+   "description": "SD-XL 中完整多头拼接特征维度 D = H·d_k",
+   "source": "Sec. 3.3"
+  },
+  {
+   "number": "4096×4096",
+   "description": "完整维度 OT 代价矩阵规模，对比逐头的 40960×40960",
+   "source": "Sec. 3.3"
+  },
+  {
+   "number": "0.1",
+   "description": "Sinkhorn 熵正则参数 γ",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "0.7 / 0.3",
+   "description": "OT 代价权重 λ_feature / λ_spatial",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "4000",
+   "description": "测试样本数：40 基图 × 20 对象组合 × 5 风格",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "0.2530",
+   "description": "联合阈值 60% 时 blend prompt CLIP 相似度峰值",
+   "source": "Sec. 4.3, Fig. 12"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "STORM",
+   "type": "同属采样期 OT 注入 cross-attention，STORM 做单 prompt attention map 重定位，TP-Blend 做双 prompt 全头维特征传输"
+  },
+  {
+   "report_id": "ASAG",
+   "type": "同属采样期 OT 操控 attention，ASAG 用对抗代价构造负样本，TP-Blend 用正向 OT 做特征融合"
+  },
+  {
+   "report_id": "UNITE",
+   "type": "TP-Blend 的不对称边际约束（destination 严格 + source 下界）是 UNITE 不平衡 OT 的简化形态"
+  },
+  {
+   "report_id": "OTComp",
+   "type": "SASF 的高频纹理注入与 OTComp 的纹理传输目标重叠，但 TP-Blend 用高斯滤波残差注入而非 OT"
+  }
+ ],
+ "read_full_text": true
+}

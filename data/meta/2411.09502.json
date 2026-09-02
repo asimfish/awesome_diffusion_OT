@@ -1,0 +1,49 @@
+{
+ "report_id": "2411.09502",
+ "arxiv_id": "2411.09502",
+ "title": "Golden Noise for Diffusion Models: A Learning Framework",
+ "tldr_zh": "10 万对反演噪声训练 NPNet，一次前传把随机噪声变黄金噪声；SDXL ImageReward 58.01→65.01",
+ "tldr_en": "NPNet learns random-to-golden noise mapping from 100k re-denoise inversion pairs; plug-and-play, +0.4s, ImageReward 58.01 to 65.01 on SDXL.",
+ "tags": [
+  "noise-optimization",
+  "initial-noise",
+  "learned-noise-mapping",
+  "text-to-image",
+  "inference-time",
+  "ddim-inversion"
+ ],
+ "code_url": "https://github.com/xie-lab-ml/Golden-Noise-for-Diffusion-Models",
+ "key_numbers": [
+  "SDXL Pick-a-Pic ImageReward 58.01 -> 65.01, PickScore 21.69 -> 21.86, HPSv2 28.48 -> 28.68 (Table 2)",
+  "DreamShaper-xl-v2-turbo Pick-a-Pic ImageReward 98.09 -> 106.74 (Table 2)",
+  "Hunyuan-DiT fine-tuned with only 600 pairs: ImageReward 91.33 -> 100.82 (Table 3)",
+  "GenEval overall 51.58 -> 53.49 but Colors 85.11 -> 82.98 (Table 14)",
+  "FID-5K on ImageNet fish class 512px: 68.33 -> 59.83 (Fig. 12)",
+  "Overhead +0.4 s/image (11.69 -> 12.10 s, Table 11), +500 MB (Fig. 15)",
+  "HPSv2 filter keeps 23.88% of noise pairs (Table 9); learned alpha=1e-4, beta=-0.0189 (Table 15)",
+  "Ablation w/o singular-value branch: ImageReward 49.03 < Standard 58.01 (Table 4)"
+ ],
+ "relations": [
+  {
+   "report_id": "2412.03895",
+   "type": "competes"
+  },
+  {
+   "report_id": "2404.04650",
+   "type": "competes"
+  },
+  {
+   "report_id": "2406.04312",
+   "type": "competes"
+  },
+  {
+   "report_id": "2412.05101",
+   "type": "competes"
+  },
+  {
+   "report_id": "Scaling_Inference_Time_Compute_for_Diffusion_Model",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

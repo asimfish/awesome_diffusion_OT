@@ -1,0 +1,56 @@
+{
+ "report_id": "2312.02027",
+ "arxiv_id": "2312.02027",
+ "title": "Stochastic Optimal Control Matching",
+ "tldr_zh": "把随机最优控制变成最小二乘回归，用 path-wise reparameterization trick 降方差，4 个控制问题中 3 个取得最低 L2 误差。",
+ "tldr_en": "Casts stochastic optimal control as least-squares regression with a path-wise reparameterization trick for variance reduction; lowest L2 error on 3 of 4 control problems.",
+ "tags": [
+  "stochastic optimal control",
+  "iterative diffusion optimization",
+  "path-wise reparameterization",
+  "variance reduction",
+  "least squares"
+ ],
+ "code_url": "https://github.com/facebookresearch/SOC-matching",
+ "key_numbers": [
+  {
+   "number": "10x lower error than all existing IDO methods on Quadratic OU (easy)",
+   "source": "Sec.4, Fig.1"
+  },
+  {
+   "number": "5x smaller error than any existing method on Linear OU",
+   "source": "Sec.4, Fig.2"
+  },
+  {
+   "number": "SOCM per-iteration time 0.222 s vs Cross-entropy 0.086 s (Quadratic OU easy)",
+   "source": "Table 1"
+  },
+  {
+   "number": "Cross-entropy control objective 2.915 ± 0.008 at d=64 in Gaussian mixture sampling",
+   "source": "Fig.4 caption"
+  },
+  {
+   "number": "At d=128: Adjoint 0.146 ± 0.001, SOCM 7.49 ± 0.01, Cross-entropy 12.61 ± 0.02",
+   "source": "Sec.4, Fig.4 text"
+  },
+  {
+   "number": "Double Well terminal cost g has 1024 modes",
+   "source": "Sec.4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2102.xxxxx",
+   "type": "extends"
+  },
+  {
+   "report_id": "2206.xxxxx",
+   "type": "uses-baseline"
+  },
+  {
+   "report_id": "2307.xxxxx",
+   "type": "complements"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,91 @@
+{
+ "report_id": "2103.04737",
+ "arxiv_id": "2103.04737",
+ "title": "Low-Rank Sinkhorn Factorization",
+ "tldr_zh": "直接约束耦合非负秩，任意 cost 通用，低秩 cost 下线性时间，证明非渐近平稳收敛",
+ "tldr_en": "Directly constrains coupling nonnegative rank, arbitrary costs, linear time under low-rank cost, non-asymptotic stationary convergence",
+ "tags": [
+  "low-rank OT",
+  "mirror descent",
+  "Dykstra",
+  "nonnegative rank",
+  "linear time",
+  "Sinkhorn alternative"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "O(n^3 log n)",
+   "context": "离散 OT LP 复杂度",
+   "source": "Sec. 1"
+  },
+  {
+   "number": "O((n+m)r)",
+   "context": "Dykstra 内层每迭代复杂度",
+   "source": "Sec. 3.3 Computational Cost"
+  },
+  {
+   "number": "O(NT(n+m)r + Nnmr)",
+   "context": "无 cost 分解时 LOT 总复杂度",
+   "source": "Sec. 3.3 Computational Cost"
+  },
+  {
+   "number": "O((n+m)dr)",
+   "context": "Assumption 1 下计算 ξ 的复杂度",
+   "source": "Sec. 3.5"
+  },
+  {
+   "number": "4L_{ε,α}D_0/N",
+   "context": "MD 非渐近平稳收敛上界",
+   "source": "Proposition 4"
+  },
+  {
+   "number": "0.99",
+   "context": "距离矩阵低秩近似成功概率",
+   "source": "Sec. 3.5"
+  },
+  {
+   "number": "α=10^{-5}",
+   "context": "所有实验中 g 的下界",
+   "source": "Sec. 4"
+  },
+  {
+   "number": "n=m=5000",
+   "context": "实验 1 样本量（2D 高斯，平方欧氏）",
+   "source": "Fig. 2"
+  },
+  {
+   "number": "n=m=10000",
+   "context": "实验 2 样本量（2D 高斯混合，欧氏距离）",
+   "source": "Fig. 3"
+  },
+  {
+   "number": "n=1000",
+   "context": "实验 3 图节点数（最短路径距离）",
+   "source": "Fig. 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2406.03946",
+   "type": "被继承/泛化"
+  },
+  {
+   "report_id": "2502.07530",
+   "type": "被继承/构件化"
+  },
+  {
+   "report_id": "1811.05189",
+   "type": "竞争路线（核低秩近似）"
+  },
+  {
+   "report_id": "2002.07942",
+   "type": "竞争路线（核低秩近似）"
+  },
+  {
+   "report_id": "1806.01815",
+   "type": "直接前作（平方欧氏专用）"
+  }
+ ],
+ "read_full_text": true
+}

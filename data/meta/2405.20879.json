@@ -1,0 +1,54 @@
+{
+ "report_id": "2405.20879",
+ "arxiv_id": "2405.20879",
+ "title": "Flow matching achieves almost minimax optimal convergence",
+ "tldr_zh": "高斯条件核 FM 在 Besov 类上 W_r(1≤r≤2) 率 n^{-(s+1/(2κ)-δ)/(2s+d)}，σ_t≍√t 时几乎 minimax，与扩散持平",
+ "tldr_en": "Gaussian-kernel flow matching attains W_r rate n^{-(s+1/(2k)-delta)/(2s+d)} on Besov densities; almost minimax iff sigma_t ~ sqrt(t), matching diffusion models.",
+ "tags": [
+  "flow-matching",
+  "minimax",
+  "wasserstein",
+  "besov",
+  "statistical-rate",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "E[W_r(P̂_{T0},P_true)] = O(n^{-(s+(2κ)^{-1}-δ)/(2s+d)}), 1≤r≤2 (Thm 9, Eq. 22)",
+  "Minimax lower bound n^{-(s+1)/(2s+d)} (Prop. 2, Niles-Weed–Berthet 2022); optimal iff κ=1/2",
+  "Without time partition only Õ(n^{-s/(2s+d)}) (Sec. 4.4)",
+  "Solving ODE to τ=1 with σ_min gives Gaussian KDE, MSE at best n^{-4/(4+d)} (Sec. 3.1)",
+  "W_2(P̂_t,P_t) ≤ √t (∫∫ e^{2∫L} ||v̂−v||² dP_s ds)^{1/2} (Thm 3, Eq. 13)"
+ ],
+ "relations": [
+  {
+   "report_id": "Diffusion_Models_are_Minimax_Optimal_Distribution",
+   "type": "extends"
+  },
+  {
+   "report_id": "2305.16860",
+   "type": "uses"
+  },
+  {
+   "report_id": "2209.15571",
+   "type": "uses"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "uses"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "competes"
+  },
+  {
+   "report_id": "2503.09583",
+   "type": "competes"
+  },
+  {
+   "report_id": "2402.15602",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

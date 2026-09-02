@@ -1,0 +1,76 @@
+{
+ "report_id": "2407.20444",
+ "arxiv_id": "2407.20444",
+ "title": "Importance Corrected Neural JKO Sampling",
+ "tldr_zh": "CNF 做 JKO 局部步 + 重要性拒绝重采样非局部步，修正多峰质量错配，可产 iid 样本并评估密度",
+ "tldr_en": "CNF-based JKO local steps plus importance rejection resampling correct multimodal mass mismatch, yielding iid samples and density evaluation",
+ "tags": [
+  "neural JKO",
+  "Wasserstein gradient flow",
+  "continuous normalizing flow",
+  "importance sampling",
+  "rejection sampling",
+  "unnormalized density sampling"
+ ],
+ "code_url": "https://github.com/johertrich/neural_JKO_ic",
+ "key_numbers": [
+  {
+   "number": "d=1600",
+   "source": "Abstract",
+   "context": "最高测试维度"
+  },
+  {
+   "number": "r=0.2",
+   "source": "Remark 4.4",
+   "context": "拒绝步重采样比例"
+  },
+  {
+   "number": "3",
+   "source": "Sec. 4 末",
+   "context": "每块中拒绝步数量"
+  },
+  {
+   "number": "τ_{k+1}=4τ_k",
+   "source": "Sec. 4 末",
+   "context": "JKO 步长指数增长规则"
+  },
+  {
+   "number": "energy distance 1.2×10^{-5} vs 1.3×10^{-1}",
+   "source": "Table 1",
+   "context": "shifted 8 Modes 上 neural JKO IC vs 无拒绝步 neural JKO"
+  },
+  {
+   "number": "KL(μ̃,ν) ≤ KL(μ,ν)",
+   "source": "Theorem 4.2(ii)",
+   "context": "拒绝步单调降低 reverse KL"
+  },
+  {
+   "number": "O(1/√N)",
+   "source": "Corollary 4.3",
+   "context": "接受率估计的期望绝对误差界"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2106.01946",
+   "type": "继承"
+  },
+  {
+   "report_id": "2106.12958",
+   "type": "继承"
+  },
+  {
+   "report_id": "2302.00034",
+   "type": "继承"
+  },
+  {
+   "report_id": "2305.14907",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2201.13117",
+   "type": "竞争"
+  }
+ ],
+ "read_full_text": true
+}

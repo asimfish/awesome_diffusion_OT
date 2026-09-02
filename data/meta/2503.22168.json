@@ -1,0 +1,91 @@
+{
+ "report_id": "2503.22168",
+ "arxiv_id": "2503.22168",
+ "title": "Spatial Transport Optimization by Repositioning Attention Map for Training-Free Text-to-Image Synthesis",
+ "tldr_zh": "STORM 用带空间方向代价的 OT 在早期去噪步重定位 attention map，免训练纠正物体错位",
+ "tldr_en": "STORM repositions cross-attention maps via spatial-cost OT in early denoising steps, training-free",
+ "tags": [
+  "optimal transport",
+  "text-to-image",
+  "training-free",
+  "cross-attention",
+  "spatial alignment",
+  "diffusion models",
+  "Sinkhorn"
+ ],
+ "code_url": "https://micv-yonsei.github.io/storm2025/",
+ "key_numbers": [
+  {
+   "number": "61.01",
+   "metric": "OA (%) on VISOR, SD 1.4",
+   "source": "Table 1"
+  },
+  {
+   "number": "57.58",
+   "metric": "VISOR uncond (%), SD 1.4",
+   "source": "Table 1"
+  },
+  {
+   "number": "94.39",
+   "metric": "VISOR cond (%), SD 1.4",
+   "source": "Table 1"
+  },
+  {
+   "number": "25.70",
+   "metric": "VISOR4 (%), SD 1.4",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.6458",
+   "metric": "Attribute Binding Color, SD 1.4",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.1613",
+   "metric": "Object Relationship Spatial, SD 1.4",
+   "source": "Table 2"
+  },
+  {
+   "number": "35.92",
+   "metric": "User study Spatial Correctness (%)",
+   "source": "Table 3"
+  },
+  {
+   "number": "46.62",
+   "metric": "OA (%) with STO at timesteps 19-24",
+   "source": "Table 4, Exp. A1"
+  },
+  {
+   "number": "31.38",
+   "metric": "OA (%) with ST Cost without overlap prevention",
+   "source": "Table 5, Exp. B3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2301.13826",
+   "type": "baseline/被比较"
+  },
+  {
+   "report_id": "2404.04600",
+   "type": "baseline/被比较"
+  },
+  {
+   "report_id": "2404.04374",
+   "type": "baseline/被比较"
+  },
+  {
+   "report_id": "1306.0895",
+   "type": "方法基础（Sinkhorn 算法）"
+  },
+  {
+   "report_id": "2212.10015",
+   "type": "评测基准（VISOR）"
+  },
+  {
+   "report_id": "2307.06350",
+   "type": "评测基准（T2I-CompBench）"
+  }
+ ],
+ "read_full_text": true
+}

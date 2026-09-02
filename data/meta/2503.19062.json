@@ -1,0 +1,76 @@
+{
+ "report_id": "2503.19062",
+ "arxiv_id": "2503.19062",
+ "title": "Color Transfer with Modulated Flows",
+ "tldr_zh": "用 rectified flow 学 RGB 到均匀立方体的双射，编码器预测流权重，零微调泛化颜色迁移",
+ "tldr_en": "Rectified flows map RGB to a uniform cube; an encoder predicts flow weights for zero-finetune color transfer",
+ "tags": [
+  "color transfer",
+  "rectified flow",
+  "optimal transport",
+  "image style transfer",
+  "encoder distillation"
+ ],
+ "code_url": "https://github.com/maria-larchenko/modflows",
+ "key_numbers": [
+  {
+   "number": "5,826",
+   "source": "Sec. Experiments and Metrics, Dataset",
+   "description": "训练集图像数（DIV2K + CLIC2020 + laion-art-en-colorcanny 子集）"
+  },
+  {
+   "number": "8,195",
+   "source": "Sec. Experiments and Metrics, Encoder",
+   "description": "EfficientNet B6 输出维度 = 数据集中每个 rectified flow 的参数量（两层 MLP，1024 隐藏单元）"
+  },
+  {
+   "number": "1,891",
+   "source": "Sec. Experiments and Metrics, Test set",
+   "description": "Unsplash Lite 1.2.2 中选出的 content-style 测试对数"
+  },
+  {
+   "number": "0.129 / 0.217 / 0.220",
+   "source": "Table 1",
+   "description": "ModFlows 聚合 DISTS 分数：Grayscale / Depth / Edge (HED)"
+  },
+  {
+   "number": "0.123 ± 0.001",
+   "source": "Table 1",
+   "description": "ModFlows 风格距离（Wasserstein，6,000 像素样本估计）；DAST d 为 0.112 最低"
+  },
+  {
+   "number": "37.26 ± 0.79",
+   "source": "Table 3",
+   "description": "ModFlows 平均 Lipschitz 常数，对比 Rectified flows 91.34、PhotoWCT2 160.12"
+  },
+  {
+   "number": "751k",
+   "source": "Sec. Experiments and Metrics, Encoder",
+   "description": "编码器训练迭代数，batch size 8，前 100k 迭代 lr=5e-4 后降至 1e-4"
+  },
+  {
+   "number": "8",
+   "source": "Sec. Experiments and Metrics, Test set",
+   "description": "推理时 ODE 求解器步数（前向 + 逆向共 16 步）"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "方法基础（rectified flow 训练目标与双射性质）"
+  },
+  {
+   "report_id": "neural_preset_cvpr2023",
+   "type": "直接竞争（编码器预测变换参数；本文替代其 LUT 依赖）"
+  },
+  {
+   "report_id": "sw_guidance_neurips2025",
+   "type": "同课题并行（OT×扩散在颜色迁移；training-free 引导 vs 预训练流+编码器）"
+  },
+  {
+   "report_id": "ms_swd_eccv2024",
+   "type": "度量立场冲突（本文称 LAB/OkLAB 不显著改善，MS-SWD 主张 CIELAB 更优）"
+  }
+ ],
+ "read_full_text": true
+}

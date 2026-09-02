@@ -1,0 +1,47 @@
+{
+ "report_id": "2106.03812",
+ "arxiv_id": "2106.03812",
+ "title": "Neural Monge Map estimation and its applications",
+ "tldr_zh": "Monge 问题 Lagrange 松弛成 max-min，一般 cost、跨维度，duality gap 给后验误差界；unpaired 文生图与补全",
+ "tldr_en": "Lagrangian max-min for the Monge problem with general costs and unequal dimensions, a duality-gap posterior error bound, applied to unpaired text-to-image and inpainting.",
+ "tags": [
+  "neural-ot",
+  "monge-map",
+  "general-cost",
+  "max-min",
+  "duality-gap",
+  "unpaired-translation",
+  "theory"
+ ],
+ "code_url": "https://github.com/sbyebss/monge_map_solver",
+ "key_numbers": [
+  "Unpaired inpainting CelebA64 FID: alpha=0 18.79, alpha=1000 4.76, alpha=10000 3.71 vs WGAN-GP 6.75 (Table 1)",
+  "Class-preserving map accuracy MNIST->KMNIST 99.59%, FMNIST->MNIST 99.73% vs Asadulaev et al. 79.20/82.97 (deterministic) (Table 2)",
+  "Class-preserving FID MNIST->KMNIST 18.07 vs 17.26/9.69, FMNIST->MNIST 5.78 vs 7.15/5.26 (Table 2)",
+  "Error bound ||T-T*||_{L2(beta rho_a)} <= sqrt(2(E1+E2)) under c-concave f and consistent saddle point (Theorem 4)",
+  "Text-to-image training 21h on RTX A6000; CelebA64/128 inpainting 10h/45h (Appendix F)"
+ ],
+ "relations": [
+  {
+   "report_id": "2110.02999",
+   "type": "competes"
+  },
+  {
+   "report_id": "2106.01954",
+   "type": "uses"
+  },
+  {
+   "report_id": "2201.12220",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2205.15403",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2301.12874",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

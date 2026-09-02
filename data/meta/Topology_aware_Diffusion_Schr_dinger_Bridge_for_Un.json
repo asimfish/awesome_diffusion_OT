@@ -1,0 +1,46 @@
+{
+ "report_id": "Topology_aware_Diffusion_Schr_dinger_Bridge_for_Un",
+ "arxiv_id": null,
+ "title": "Topology-aware Diffusion Schrödinger Bridge for Unpaired H&E-to-IHC Stain Translation",
+ "tldr_zh": "UNSB 引入 H&E→IHC 染色转换，加拓扑引导与双域 patch-NCE，7 任务 SOTA",
+ "tldr_en": "UNSB for H&E-to-IHC stain translation with topology guidance and dual-domain patch-NCE; SOTA on 7 tasks",
+ "tags": [
+  "Schrödinger bridge",
+  "unpaired stain translation",
+  "histopathology",
+  "topology preservation",
+  "patch-NCE"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "7",
+   "meaning": "转换任务数，报告 SOTA",
+   "source": "abstract"
+  },
+  {
+   "number": "2",
+   "meaning": "UNSB 被修补的缺陷数（拓扑引导模块 + 双域自适应 patch-NCE）",
+   "source": "abstract"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "LMSB_report",
+   "type": "同向哲学：成本/约束即医学先验"
+  },
+  {
+   "report_id": "OT_StainNet_report",
+   "type": "同线：病理染色 OT 匹配"
+  },
+  {
+   "report_id": "USIGAN_report",
+   "type": "同线：病理染色不平衡 OT"
+  },
+  {
+   "report_id": "PASB_report",
+   "type": "同线：病理语义护栏"
+  }
+ ],
+ "read_full_text": false
+}

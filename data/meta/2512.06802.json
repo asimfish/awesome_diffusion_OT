@@ -1,0 +1,102 @@
+{
+ "report_id": "2512.06802",
+ "arxiv_id": "2512.06802",
+ "title": "VDOT: Efficient Unified Video Creation via Optimal Transport Distillation",
+ "tldr_zh": "熵正则 OT 距离加入 DMD，4 步统一视频生成匹敌 100 步 VACE-Wan-14B",
+ "tldr_en": "Entropic OT regularizer added to DMD enables 4-step unified video creation matching 100-step VACE-Wan-14B",
+ "tags": [
+  "optimal transport",
+  "distribution matching distillation",
+  "video generation",
+  "few-step distillation",
+  "entropic OT",
+  "GAN",
+  "unified video creation"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "4 NFE",
+   "context": "VDOT 推理步数，对比 VACE-Wan-14B 的 100 NFE",
+   "source": "Table 2"
+  },
+  {
+   "number": "78.50% vs 77.34%",
+   "context": "Depth 任务 Normalized Average，VDOT 对 VACE-Wan-14B",
+   "source": "Table 2"
+  },
+  {
+   "number": "80.54% vs 79.56%",
+   "context": "Pose 任务 Normalized Average，VDOT 对 VACE-Wan-14B",
+   "source": "Table 2"
+  },
+  {
+   "number": "80.18% vs 80.35%",
+   "context": "Flow 任务 Normalized Average，VDOT 略低于 VACE-Wan-14B",
+   "source": "Table 2"
+  },
+  {
+   "number": "81.32% vs 82.54%",
+   "context": "R2V 任务 Normalized Average，VDOT 低于 VACE-Wan-14B",
+   "source": "Table 2"
+  },
+  {
+   "number": "4.82 vs 4.64",
+   "context": "R2V 用户研究平均分，Keling1.6 对 VDOT",
+   "source": "Table 2"
+  },
+  {
+   "number": "250,000",
+   "context": "Artgrid 生成的 4K 训练视频数量",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "18 tasks × 20 cases",
+   "context": "UVCBench 覆盖 18 个任务，每任务 20 个测试样例",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "1,500 / 1,200 steps",
+   "context": "Stage 1 / Stage 2 训练步数",
+   "source": "Sec. 6.1"
+  },
+  {
+   "number": "batch size 1 per GPU × 4 H200",
+   "context": "训练 batch 配置，总 batch 为 4",
+   "source": "Sec. 6.1"
+  },
+  {
+   "number": "O(IJ)",
+   "context": "Sinkhorn 算法求解 EOT 的复杂度",
+   "source": "Sec. 4.2, Eq. 7 后文"
+  },
+  {
+   "number": "20 volunteers",
+   "context": "用户研究参与人数",
+   "source": "Sec. 6.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2311.18828",
+   "type": "继承"
+  },
+  {
+   "report_id": "2506.08009",
+   "type": "继承"
+  },
+  {
+   "report_id": "2503.07598",
+   "type": "继承"
+  },
+  {
+   "report_id": "2504.11267",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2405.14867",
+   "type": "继承"
+  }
+ ],
+ "read_full_text": true
+}

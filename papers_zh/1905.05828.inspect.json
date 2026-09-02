@@ -1,0 +1,89 @@
+{
+  "issue_count": 14,
+  "issues": [
+    {
+      "page": 2,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 2: displayed equation at y=182 shifted horizontally by 30pt vs original"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (5 words, 0 CJK chars) at x=126.5, y=469.7: Tα(M, R) = {T ∈T (M) : T is ⌊α⌋-times diﬀerentiable and "
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (6 words, 0 CJK chars) at x=72.0, y=213.2: Moreover, for every q′ ∈[1, ∞], s′ > 0, and 1 ≤p ≤p′ ≤∞s"
+    },
+    {
+      "page": 27,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 27: displayed equation at y=646 shifted horizontally by 28pt vs original"
+    },
+    {
+      "page": 30,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 30: paragraph still in English (4 words, 0 CJK chars) at x=99.3, y=669.1: If α is integer, then"
+    },
+    {
+      "page": 31,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 31: block set at 9.04pt but the original at this position is 10.91pt (ratio 0.83 vs page median 0.92) at x=72.8, y=623.8: 定理25（伯恩斯坦链式，[vW07, 引理3.4.2]）。设为一类可测函数，使得对所有有和。则"
+    },
+    {
+      "page": 33,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 33: block set at 10.04pt but the original at this position is 10.91pt (ratio 0.92 vs page median 1.12) at x=72.8, y=296.2: 引理31（瓦尔沙莫夫-吉尔伯特引理）。[Tsy09, 引理2.9] 设"
+    },
+    {
+      "page": 33,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 33: block set at 10.04pt but the original at this position is 10.91pt (ratio 0.92 vs page median 1.12) at x=72.8, y=426.3: 定理32（基于两个假设的下界）。[Tsy09, 定理2.2] 设"
+    },
+    {
+      "page": 33,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 33: block set at 10.04pt but the original at this position is 10.91pt (ratio 0.92 vs page median 1.12) at x=337.5, y=426.3: T_{0}, T_{1} 为两个假设，其关联的概率测度为"
+    },
+    {
+      "page": 34,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 34: displayed equation at y=292 shifted horizontally by 21pt vs original"
+    },
+    {
+      "page": 34,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 34: displayed equation at y=305 shifted horizontally by 15pt vs original"
+    },
+    {
+      "page": 45,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 45: block set at 8.74pt but the original at this position is 10.91pt (ratio 0.80 vs page median 0.92) at x=200.8, y=66.6: ˆT_{ker} 的情况下，我们绘制了所有考虑组合的一个子集。首先，对于小波估计器"
+    },
+    {
+      "page": 45,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 45: block set at 8.74pt but the original at this position is 10.91pt (ratio 0.80 vs page median 0.92) at x=72.8, y=95.3: 们观察到最佳的偏差-方差权衡在较小的"
+    },
+    {
+      "page": 45,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 45: block set at 8.74pt but the original at this position is 10.91pt (ratio 0.80 vs page median 0.92) at x=72.8, y=108.4: ˆT_{emp} 的误差曲线形状，直到由于数值误差而趋于平坦。这很可能是由于所涉及的网格近似所致"
+    }
+  ]
+}

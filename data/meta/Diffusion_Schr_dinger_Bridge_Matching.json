@@ -1,0 +1,41 @@
+{
+ "report_id": "Diffusion_Schr_dinger_Bridge_Matching",
+ "arxiv_id": "2303.16852",
+ "title": "Diffusion Schrödinger Bridge Matching",
+ "tldr_zh": "IMF+桥匹配的通用SB求解器，翻译类桥方法的算法底座（详见T03）",
+ "tldr_en": "General Schrödinger bridge solver combining Iterative Markovian Fitting with bridge matching; the algorithmic base for bridge-based translation methods (details in T03).",
+ "tags": [
+  "schrodinger-bridge",
+  "imf",
+  "bridge-matching",
+  "solver",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "No abstract or full text available in this topic; no numbers"
+ ],
+ "relations": [
+  {
+   "report_id": "2309.16948",
+   "type": "competes"
+  },
+  {
+   "report_id": "2410.22637",
+   "type": "competes"
+  },
+  {
+   "report_id": "ASBM_Adversarial_Schr_dinger_Bridge_Matching",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "UNSB_Unpaired_Neural_Schr_dinger_Bridge",
+   "type": "competes"
+  },
+  {
+   "report_id": "2203.08382",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

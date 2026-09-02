@@ -1,0 +1,49 @@
+{
+ "report_id": "2404.11741",
+ "arxiv_id": "2404.11741",
+ "title": "Diffusion Schrödinger Bridge Models for High-Quality MR-to-CT Synthesis for Head and Neck Proton Treatment Planning",
+ "tldr_zh": "I2SB 配对桥做头颈 MR→CT，46 例训练 1–3 步即胜 pix2pix/nnU-Net，像素 MAE 降 5 HU 但 gamma 仅升 0.1 pp",
+ "tldr_en": "I2SB-style paired bridge for head-and-neck MR-to-CT; 1-3 steps beat pix2pix/nnU-Net on MAE/Dice, yet proton gamma pass rate improves by only 0.1 pp.",
+ "tags": [
+  "schrodinger-bridge",
+  "i2sb",
+  "medical-imaging",
+  "mr-to-ct",
+  "proton-therapy",
+  "dosimetry",
+  "paired-translation"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "MAE 72.30±8.31 HU (DSBM 3-step) vs 77.41±7.81 (pix2pix), 80.44±9.02 (nnU-Net) (Table 1)",
+  "Dice_bone 83.10±3.90% (DSBM 3-step) vs 80.72±3.74 (pix2pix) (Table 1)",
+  "DSBM 1-step MAE 73.00 HU already close to 3-step 72.30; 50-step 73.29 (Table 1)",
+  "Gamma 1%/1mm: DSBM 95.47-95.53% vs pix2pix 95.42%, nnU-Net 95.28% (Table 3)",
+  "Mean dose error Dose>90%: DSBM 3-step 0.33±0.30% vs pix2pix 0.37±0.25% (Table 2)",
+  "0.2 s per sampling step for a 128x128x4 batch; claimed 10-50x faster than >100-step diffusion (Sec. 4)",
+  "58 H&N patients: 46 train / 12 test (Sec. 2.2)"
+ ],
+ "relations": [
+  {
+   "report_id": "I2SB_Image_to_Image_Schr_dinger_Bridge",
+   "type": "uses"
+  },
+  {
+   "report_id": "2405.06789",
+   "type": "competes"
+  },
+  {
+   "report_id": "Anatomy_Conserving_Unpaired_CBCT_to_CT_Translation",
+   "type": "competes"
+  },
+  {
+   "report_id": "2505.03114",
+   "type": "competes"
+  },
+  {
+   "report_id": "2503.00266",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

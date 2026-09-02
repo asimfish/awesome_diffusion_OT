@@ -1,0 +1,36 @@
+{
+ "report_id": "Riemannian_Proximal_Sampler_Guan_Balasubramanian_M",
+ "arxiv_id": null,
+ "title": "Riemannian Proximal Sampler, Guan, Balasubramanian & Ma",
+ "tldr_zh": "MBI+热核双 oracle 的流形高精度采样，O(log(1/ε)) 迭代，可视为 Wasserstein 空间上熵正则黎曼 proximal point 离散化。",
+ "tldr_en": "Manifold sampling via MBI+heat kernel oracles with O(log(1/ε)) iterations, as discretized entropic Riemannian proximal point on Wasserstein space.",
+ "tags": [
+  "Riemannian sampling",
+  "proximal point",
+  "Wasserstein space",
+  "heat kernel",
+  "entropic regularization"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "O(log(1/ε))",
+   "source": "调研 agent 一句话贡献；摘要未给出，原文截断，未见"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "RSGM_NeurIPS_2022",
+   "type": "继承/竞争"
+  },
+  {
+   "report_id": "RCM_manifold_consistency",
+   "type": "正交"
+  },
+  {
+   "report_id": "WFM_BW_FM",
+   "type": "同板块"
+  }
+ ],
+ "read_full_text": false
+}

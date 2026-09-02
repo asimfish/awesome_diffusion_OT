@@ -1,0 +1,56 @@
+{
+ "report_id": "2112.02424",
+ "arxiv_id": "2112.02424",
+ "title": "Variational Wasserstein gradient flow",
+ "tldr_zh": "用 f-divergence 变分对偶式替代显式密度项，JKO 步变为 (T,h) min-max，训练时间不随维数增长",
+ "tldr_en": "Replaces density-dependent functionals in JKO steps by the f-divergence variational form, yielding a primal-dual min-max per step whose cost is dimension-independent.",
+ "tags": [
+  "wasserstein-gradient-flow",
+  "jko-scheme",
+  "f-divergence",
+  "variational-dual",
+  "primal-dual",
+  "sampling",
+  "generative-model"
+ ],
+ "code_url": "https://github.com/sbyebss/variational_wgf",
+ "key_numbers": [
+  "CIFAR-10 unconditional FID 23.1 (JKO-Flow, JSD, a=5, K=30) vs GLOW 45.99, VGrow 28.8, WGAN-GP 31.1, SN-GAN 21.7 (Table 3)",
+  "Same-architecture GAN comparison: GAN (a->inf, K=1) >= 80, WGAN-GP 62.3, SN-GAN 43.2, JKO-Flow 23.1 (Table 7); OTM 20.69 / IS 7.41 vs JKO-Flow 23.1 / IS 7.48 (Table 8)",
+  "OU process training time per two JKO steps: JKO-ICNN-d 25s (n=2) -> 105s (n=32), JKO-ICNN-a 25 -> 95s, Ours 22+-5s constant (Sec. 5.2)",
+  "Bayesian logistic regression, Ours vs JKO-ICNN-d vs SVGD accuracy/LL: covtype 0.753/-0.528 vs 0.75/-0.515 vs 0.75/-0.515; image 0.866/-0.394 vs 0.82/-0.43 vs 0.815/-0.44 (Table 5)",
+  "Per-step complexity O(J1 k M H) independent of dimension n vs Mokrov O(J1((k+n)MH + n^3)) (Sec. 3.3); each image JKO step ~20 min (Appendix E.1)",
+  "Embedding inequality alpha/2 d_H^2 <= D_f^H <= L/2 d_H^2 for alpha-strongly-convex, L-smooth f (Proposition 4.1(3))"
+ ],
+ "relations": [
+  {
+   "report_id": "2106.00736",
+   "type": "extends"
+  },
+  {
+   "report_id": "Optimizing_Functionals_on_the_Space_of_Probabiliti",
+   "type": "competes"
+  },
+  {
+   "report_id": "2106.06345",
+   "type": "competes"
+  },
+  {
+   "report_id": "2212.14424",
+   "type": "competes"
+  },
+  {
+   "report_id": "2402.05443",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2605.11755",
+   "type": "competes"
+  },
+  {
+   "report_id": "2106.01954",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.66pt but the original at this position is 10.06pt (ratio 0.76 vs page median 0.92) at x=108.8, y=284.1: 关于使用大批大小与选择使用更大批大小的动机在于批量最优传输的根本偏差在于，由于最优传输的维度灾难"
+    },
+    {
+      "page": 8,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 8: preserved region at x=108, y=220 (396x11pt) renders with ink coverage 0.88 vs original"
+    }
+  ]
+}

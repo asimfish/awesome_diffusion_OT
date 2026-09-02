@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 10,
+      "code": "reference_content_changed",
+      "severity": "error",
+      "message": "Page 10: protected references gained 23 translated CJK characters"
+    },
+    {
+      "page": 30,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 30: paragraph still in English (5 words, 0 CJK chars) at x=108.0, y=115.1: Let α(t) denote the integral of β(t):"
+    },
+    {
+      "page": 33,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 33: paragraph still in English (3 words, 0 CJK chars) at x=107.6, y=378.6: ∇x log ¯pi(x),(200)where"
+    }
+  ]
+}

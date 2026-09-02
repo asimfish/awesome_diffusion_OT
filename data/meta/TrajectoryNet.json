@@ -1,0 +1,40 @@
+{
+ "report_id": "TrajectoryNet",
+ "arxiv_id": null,
+ "title": "TrajectoryNet",
+ "tldr_zh": "用连续正规化流加动态OT惩罚，把离散快照插值变成连续细胞轨迹模型。",
+ "tldr_en": "CNF with dynamic OT penalty turns discrete snapshot interpolation into continuous cell trajectories.",
+ "tags": [
+  "TrajectoryNet",
+  "continuous normalizing flow",
+  "dynamic optimal transport",
+  "single-cell",
+  "trajectory inference",
+  "ICML 2020"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "WaddingtonOT",
+   "type": "继承"
+  },
+  {
+   "report_id": "MIOFlow",
+   "type": "被继承"
+  },
+  {
+   "report_id": "TIGON",
+   "type": "被继承"
+  },
+  {
+   "report_id": "SF2M",
+   "type": "被取代（部分）"
+  },
+  {
+   "report_id": "DeepRUOT",
+   "type": "被取代（部分）"
+  }
+ ],
+ "read_full_text": false
+}

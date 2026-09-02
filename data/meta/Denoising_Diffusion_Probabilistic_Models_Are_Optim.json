@@ -1,0 +1,40 @@
+{
+ "report_id": "Denoising_Diffusion_Probabilistic_Models_Are_Optim",
+ "arxiv_id": "2410.18784",
+ "title": "Denoising Diffusion Probabilistic Models Are Optimally Adaptive to Unknown Low Dimensionality",
+ "tldr_zh": "（未读全文）DDPM 无需知道内在维数 k 即以近 k-线性迭代复杂度收敛，且 KL 下该依赖最优",
+ "tldr_en": "(Abstract-only) DDPM automatically attains nearly k-linear iteration complexity in intrinsic dimension k without knowing it, and this dependence is optimal in KL.",
+ "tags": [
+  "diffusion-theory",
+  "intrinsic-dimension",
+  "ddpm",
+  "kl-divergence",
+  "lower-bound",
+  "theory",
+  "abstract-only"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "TV rate √(k/T) under bounded support + metric-entropy intrinsic dimension, as reported in 2409.18959 Table 2 (second-hand)",
+  "No first-hand numbers: full text unavailable"
+ ],
+ "relations": [
+  {
+   "report_id": "2409.18959",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2410.09046",
+   "type": "competes"
+  },
+  {
+   "report_id": "2308.03686",
+   "type": "extends"
+  },
+  {
+   "report_id": "Diffusion_Models_are_Minimax_Optimal_Distribution",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

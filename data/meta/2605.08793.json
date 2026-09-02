@@ -1,0 +1,85 @@
+{
+ "report_id": "2605.08793",
+ "arxiv_id": "2605.08793",
+ "title": "cuRegOT: A GPU-Accelerated Solver for Entropic-Regularized Optimal Transport",
+ "tldr_zh": "把 SPLR 拟牛顿 OT 求解器 GPU 化，摊销符号分析+异步 Sinkhorn 候选+融合梯度 kernel，小 η 难例上快于 Sinkhorn 系",
+ "tldr_en": "GPU-accelerated SPLR quasi-Newton OT solver with amortized symbolic analysis, async Sinkhorn candidates, and fused gradient kernel",
+ "tags": [
+  "entropic OT",
+  "GPU solver",
+  "quasi-Newton",
+  "SPLR",
+  "CUDA",
+  "sparse Cholesky"
+ ],
+ "code_url": "https://github.com/yixuan/regot-cuda",
+ "key_numbers": [
+  {
+   "number": "η=0.001",
+   "source": "Sec. 6.1",
+   "context": "主实验固定的小正则化参数"
+  },
+  {
+   "number": "S=10",
+   "source": "Sec. 4.2 / Sec. 6.1",
+   "context": "符号分析摊销周期（每 10 次迭代做一次）"
+  },
+  {
+   "number": "32×D, D=8",
+   "source": "Sec. 4.4",
+   "context": "融合梯度 kernel 的线程块尺寸"
+  },
+  {
+   "number": "O(nm/K)",
+   "source": "Table 1",
+   "context": "融合 kernel 中 T 矩阵元素计算复杂度，K 为 GPU 线程数"
+  },
+  {
+   "number": "O(5nm/K)",
+   "source": "Table 1",
+   "context": "行归约复杂度"
+  },
+  {
+   "number": "n=m=5000",
+   "source": "Sec. 6.3",
+   "context": "CIFAR-10 每类 5000 张图构成的 OT 问题尺寸"
+  },
+  {
+   "number": "10 次重复取中位数",
+   "source": "Sec. 6.1",
+   "context": "实验重复次数与统计方式"
+  },
+  {
+   "number": "线性收敛率 r<1",
+   "source": "Theorem 5.2",
+   "context": "修改后算法的收敛率保证，r 依赖问题参数"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "wang_qiu_2025_splr",
+   "type": "继承基础算法"
+  },
+  {
+   "report_id": "tang_2024_sns",
+   "type": "同族二阶方法"
+  },
+  {
+   "report_id": "tang_qiu_2024_ssns",
+   "type": "同族二阶方法"
+  },
+  {
+   "report_id": "lin_2022_accsinkhorn",
+   "type": "实验基线"
+  },
+  {
+   "report_id": "lu_yang_2024_pdot",
+   "type": "竞争（不同精度定位）"
+  },
+  {
+   "report_id": "flasysinkhorn_2026",
+   "type": "互补（kernel 级 IO 工程 vs 二阶算法 GPU 化）"
+  }
+ ],
+ "read_full_text": true
+}

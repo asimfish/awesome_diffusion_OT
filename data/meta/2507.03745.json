@@ -1,0 +1,90 @@
+{
+ "report_id": "2507.03745",
+ "arxiv_id": "2507.03745",
+ "title": "StreamDiT: Real-Time Streaming Text-to-Video Generation",
+ "tldr_zh": "流匹配加移动缓冲训练 4B 模型，蒸馏后单 GPU 16 FPS 流式生成 512p 视频",
+ "tldr_en": "Flow matching with moving buffer trains 4B model; distilled to 16 FPS streaming 512p on one GPU",
+ "tags": [
+  "text-to-video",
+  "flow matching",
+  "streaming generation",
+  "distillation",
+  "real-time",
+  "DiT",
+  "window attention"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "16 FPS",
+   "source": "Sec. 5.4, Abstract"
+  },
+  {
+   "number": "482 ms per denoising step",
+   "source": "Sec. 5.4"
+  },
+  {
+   "number": "4B parameters",
+   "source": "Sec. 5.1, Abstract"
+  },
+  {
+   "number": "8 sampling steps after distillation (no CFG)",
+   "source": "Sec. 4.2, Sec. 5.4"
+  },
+  {
+   "number": "128 teacher steps (s=16, N=8, with CFG)",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "Quality Score 0.8185 (Ours) vs 0.8019 (ReuseDiffuse) vs 0.7981 (FIFO)",
+   "source": "Tab. 2"
+  },
+  {
+   "number": "Dynamic Degree 0.7040 (Ours-distill) vs 0.2900 (ReuseDiffuse) vs 0.3094 (FIFO)",
+   "source": "Tab. 2"
+  },
+  {
+   "number": "Mixed training all chunk sizes Quality Score 0.8144",
+   "source": "Tab. 3"
+  },
+  {
+   "number": "3K high-quality videos + 2.6M pretraining videos",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "10K iterations per stage on 128 H100 GPUs",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "TAE compression 4x temporal, 8x spatial, latent channel 8",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "Window attention complexity ratio Fw*Hw*Ww / (F*H*W)",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "50 prompts for VBench and human evaluation",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "5-minute infinite streaming demo",
+   "source": "Sec. 5.4, Fig. 8"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2504.08476",
+   "type": "complementary: VDOT provides OT distillation objective; StreamDiT provides streaming buffer distillation structure"
+  },
+  {
+   "report_id": "2412.07768",
+   "type": "contrast: HIWYN optimizes frame-to-frame noise transport; StreamDiT uses shared noise with monotonic tau without OT coupling"
+  },
+  {
+   "report_id": "2505.22591",
+   "type": "competitor: Self-Forcing AR streaming vs StreamDiT buffer full-attention streaming"
+  }
+ ],
+ "read_full_text": true
+}

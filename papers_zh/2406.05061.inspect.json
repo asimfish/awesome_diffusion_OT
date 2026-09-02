@@ -1,0 +1,41 @@
+{
+  "issue_count": 6,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (10 words, 0 CJK chars) at x=108.0, y=375.9: where F := {(f, g) ∈L1(µ) × L1(ν) : f(x) + g(y) ≤h(x −y)"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.96pt but the original at this position is 10.06pt (ratio 0.79 vs page median 0.92) at x=108.5, y=167.0: 该联系在普拉迪安与奈尔斯-威德（Pooladian and Niles-Weed）[2021，命"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (50 words, 0 CJK chars) at x=108.0, y=92.3: In Section 5.1, we demonstrated the performance of PROGO"
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=241.7, y=379.3: and"
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=363.7, y=379.3: and"
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=412.7, y=380.1: for"
+    }
+  ]
+}

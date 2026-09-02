@@ -1,0 +1,80 @@
+{
+ "report_id": "2606.05327",
+ "arxiv_id": "2606.05327",
+ "title": "Multimarginal flow matching with optimal transport potentials",
+ "tldr_zh": "把逐段CFM的中间边缘硬约束松弛为动态OT作用量中的软势能项，得到simulation-free多边缘FM，并给出势强度—Wasserstein偏差界",
+ "tldr_en": "Relaxes piecewise CFM hard marginal constraints into soft potential terms in the dynamic OT action, yielding simulation-free multimarginal FM with Wasserstein alignment bounds",
+ "tags": [
+  "multimarginal flow matching",
+  "dynamic optimal transport",
+  "trajectory inference",
+  "consistency models",
+  "single-cell RNA-seq"
+ ],
+ "code_url": "https://github.com/Bexorg-Inc/OTP-FM",
+ "key_numbers": [
+  {
+   "number": "0.0675",
+   "description": "EB 100D L2O MMD, OTP-FM (W2^2), best in ablation",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.435±0.003",
+   "description": "CITE 5D L1O W1, OTP-FM (W2^2), best",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.068±0.001",
+   "description": "EB 100D L2O MMD, OTP-FM (W2^2), best",
+   "source": "Table 3"
+  },
+  {
+   "number": "17.28±0.56",
+   "description": "Beijing Air Quality holdout W2, OTP-FM (W2^2), vs 38.09±3.67 for 3MSBM",
+   "source": "Table 4"
+  },
+  {
+   "number": "0.107±0.001",
+   "description": "Gulf of Mexico holdout W2, OTP-FM (W2^2), best",
+   "source": "Table 4"
+  },
+  {
+   "number": "3-5 minutes",
+   "description": "OTP-FM training time on NVIDIA L40S GPU in all settings",
+   "source": "Sec. 6.3"
+  },
+  {
+   "number": "O(1/w^2)",
+   "description": "W2^2 alignment bound decay rate with potential strength w",
+   "source": "Prop. 4.1"
+  },
+  {
+   "number": "≤5 Picard iterations",
+   "description": "MMD/KLD fixed-point solver iterations per training step",
+   "source": "Sec. 4.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "MMFM_ICLR2025",
+   "type": "被取代/竞争"
+  },
+  {
+   "report_id": "3MSBM_NeurIPS2025",
+   "type": "被取代/竞争"
+  },
+  {
+   "report_id": "CFM_Lipman2023",
+   "type": "继承"
+  },
+  {
+   "report_id": "TreeDSB_2023",
+   "type": "平行路线"
+  },
+  {
+   "report_id": "WLF_Neklyudov2024",
+   "type": "竞争/互补"
+  }
+ ],
+ "read_full_text": true
+}

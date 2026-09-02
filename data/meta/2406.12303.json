@@ -1,0 +1,76 @@
+{
+ "report_id": "2406.12303",
+ "arxiv_id": "2406.12303",
+ "title": "Immiscible Diffusion: Accelerating Diffusion Training with Noise Assignment",
+ "tldr_zh": "batch 内就近分配噪声给图像，训练加速最高 3×，开销 22.8ms/1024 batch",
+ "tldr_en": "Batch-wise nearest noise assignment accelerates diffusion training up to 3x with negligible overhead",
+ "tags": [
+  "diffusion training",
+  "minibatch OT",
+  "noise assignment",
+  "training acceleration",
+  "Hungarian matching"
+ ],
+ "code_url": "https://yhli123.github.io/immiscible-diffusion",
+ "key_numbers": [
+  {
+   "number": "3x",
+   "context": "Consistency Model + CIFAR-10 训练加速",
+   "source": "Sec.5, Fig.4(a)"
+  },
+  {
+   "number": "1.3x",
+   "context": "Consistency Model + CelebA 训练加速",
+   "source": "Sec.5"
+  },
+  {
+   "number": "1.2x",
+   "context": "Consistency Model + Tiny ImageNet 训练加速",
+   "source": "Sec.5"
+  },
+  {
+   "number": "16.43 vs 17.92",
+   "context": "类别条件 Stable Diffusion + ImageNet 20k 步 FID",
+   "source": "Fig.6(a), Sec.4.2"
+  },
+  {
+   "number": "10.28 vs 11.45",
+   "context": "Stable Diffusion v1.4 微调 ImageNet 5k 步 FID",
+   "source": "Fig.6(b), Sec.4.2"
+  },
+  {
+   "number": "1.93%-2.44%",
+   "context": "batch 128-1024 指派后 L2 距离缩减",
+   "source": "Tab.2"
+  },
+  {
+   "number": "5.4-22.8 ms",
+   "context": "batch 128-1024 指派耗时",
+   "source": "Tab.2"
+  },
+  {
+   "number": "1.385 vs 1.436",
+   "context": "类别条件 ImageNet CMMD",
+   "source": "Sec.4.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2304.11772",
+   "type": "继承（batch 内 OT 耦合思想）"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "继承（batch 内 OT 耦合思想）"
+  },
+  {
+   "report_id": "2301.11298",
+   "type": "竞争（曲率解释 vs miscibility 解释）"
+  },
+  {
+   "report_id": "2404.03169",
+   "type": "并发（batch OT 用于扩散）"
+  }
+ ],
+ "read_full_text": true
+}

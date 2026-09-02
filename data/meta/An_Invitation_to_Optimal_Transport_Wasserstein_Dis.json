@@ -1,0 +1,38 @@
+{
+ "report_id": "An_Invitation_to_Optimal_Transport_Wasserstein_Dis",
+ "arxiv_id": null,
+ "title": "An Invitation to Optimal Transport, Wasserstein Distances, and Gradient Flows",
+ "tldr_zh": "146 页最短严格 OT 入门教材，覆盖对偶、Brenier、W 距离、JKO/Otto 微积分，含带解答习题。",
+ "tldr_en": "A 146-page minimal rigorous OT textbook covering duality, Brenier, Wasserstein distances, JKO/Otto calculus, with solved exercises.",
+ "tags": [
+  "T01",
+  "OT textbook",
+  "Wasserstein distance",
+  "Brenier theorem",
+  "JKO scheme",
+  "Otto calculus",
+  "EMS Textbooks"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "146 页",
+   "source": "调研 agent 一句话贡献，非原文摘要"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "Peyre_Cuturi_Computational_OT_2019",
+   "type": "互补：计算取向 vs 严格数学基础"
+  },
+  {
+   "report_id": "Villani_Optimal_Transport_Old_and_New_2009",
+   "type": "继承：理论百科的课程化精炼"
+  },
+  {
+   "report_id": "Santambrogio_Optimal_Transport_Applied_2015",
+   "type": "继承：应用数学教材的进一步压缩"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 5.46pt but the original at this position is 10.06pt (ratio 0.54 vs page median 0.92) at x=328.0, y=585.0: 我们表示度量空间上的概率分布集合（单位质量的正拉东测度）"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 5.46pt but the original at this position is 10.06pt (ratio 0.54 vs page median 0.92) at x=335.6, y=605.2: x∈X.处的狄拉克（单位质量）分布。对于某个连续映射"
+    },
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 5.46pt but the original at this position is 10.06pt (ratio 0.54 vs page median 0.92) at x=329.8, y=615.5: g:Z →X，我们记相应的前推算子，它是分布之间的线性映射。这对应于定义，对于"
+    },
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (4 words, 0 CJK chars) at x=202.1, y=730.1: where k is an appropri-"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 7.29pt but the original at this position is 10.06pt (ratio 0.72 vs page median 0.92) at x=76.0, y=211.3: x_{i} 也依赖）。注意，这只是当两个输入测度都是离散的（狄拉克质量之和）时对（3）的重新表述"
+    },
+    {
+      "page": 5,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 5: displayed equation at y=345 shifted horizontally by 23pt vs original"
+    },
+    {
+      "page": 11,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 11: block set at 6.46pt but the original at this position is 10.06pt (ratio 0.64 vs page median 0.92) at x=226.7, y=216.5: p 距离，而能量距离距离，这是最大均值差异范数的一种特殊情况，对于"
+    }
+  ]
+}

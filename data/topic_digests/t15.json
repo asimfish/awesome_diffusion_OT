@@ -1,0 +1,95 @@
+{
+ "digest_zh": "T15 课题解决的核心问题是：在医学影像模态转换中，如何把解剖/病理/物理约束显式注入 OT/SB/扩散框架，以抑制像素级指标无法暴露的解剖漂移与幻觉。方法谱系呈现三条演进线：一是从 I2SB 配对桥直接落地（DSBM、SelfRDB、HA-DSB），增量在条件化与噪声调度；二是从 UNSB 无配对桥出发加解剖护栏（ACSB、FGSB、TDSB/PASB），增量在架构、损失与先验注入；三是 OT 作为弱监督匹配器或理论骨架（OT-StainNet、OT-cycleGAN、PaBoT），增量在对应关系发现与路径正则。当前共识是：像素指标与任务指标（剂量学、病灶 Dice、下游分割）排序不一致，医学桥必须补任务级验证；配对桥中随机性是净损害，少步或确定性路径几乎无代价。分歧集中在解剖保真的实现层：LMSB 主张改传输成本度量，ACSB 主张改架构与频率损失，FGSB 主张 mask 加权损失，PaBoT 主张路径长度正则，尚无统一理论说明哪种先验注入方式在解剖等价类上最优。",
+ "observations": [
+  {
+   "claim": "像素指标与任务指标在医学 SB/扩散翻译中排序不一致，且像素改善常被任务层持平或反转。",
+   "evidence": [
+    "2404.11741",
+    "2501.14171",
+    "2503.00266"
+   ],
+   "detail": "DSBM 的 MAE 降 5 HU 仅换来 gamma 通过率 +0.1 个百分点（N=12，无显著性检验）；FGSB 在 CAVAS 上 PSNR 低于 I2I-Mamba（25.95 vs 26.04）但病灶 Dice 高 0.109（0.421 vs 0.312）；MOTFM 显示 DDPM(50) 合成数据训练的分割器 HD 达 133.18，而真图仅 15.02，FID 差距远小于此。"
+  },
+  {
+   "claim": "配对医学桥中随机性是净损害，少步或确定性路径几乎无下游代价。",
+   "evidence": [
+    "2404.11741",
+    "2501.14171",
+    "2403.06069"
+   ],
+   "detail": "DSBM 1-step MAE 73.00 HU 已接近 3-step 72.30，50-step 反而退到 73.29；FGSB 的 NFE=5 时 Dice 0.381，NFE=10/20 不升反降；I3SB 通过非马尔可夫重参数化在自然图像上以 25 步达到 100 步 I2SB 的 FID 并加速 4×，但医学只加速 1.4–2×，作者归因于端点假设。"
+  },
+  {
+   "claim": "解剖保真的实现层存在四种竞争路线，均缺乏解剖等价类上的形式化保证。",
+   "evidence": [
+    "Harmonizing_Optical_Coherence_Tomography_Across_De",
+    "Anatomy_Conserving_Unpaired_CBCT_to_CT_Translation",
+    "2505.03114",
+    "2501.14171"
+   ],
+   "detail": "LMSB 学潜度量再训 SB，但潜度量由可逆网络数据驱动学习，无解剖不变性保证；ACSB 靠 AC-ViT 架构与焦点频率损失，但同区增益仅 0.001 SSIM、0.1–0.3 dB 量级；PaBoT 用逐层 Jacobian 路径长度正则，头部骨 Dice 0.84 vs SynDiff 0.81，但骨轮廓生成器的监督来源未交代；FGSB 用病灶 mask 加权损失，病灶 Dice 提升 0.082 但 PSNR 仅 +0.23 dB。"
+  },
+  {
+   "claim": "医学桥的排名对数据分布极敏感，同一方法在不同数据集上结论可反转。",
+   "evidence": [
+    "2607.07401",
+    "2405.06789",
+    "2501.14171"
+   ],
+   "detail": "HA-DSB 在全身 LAVA→T2 数据上报告 SelfRDB 低于 I2SB（SSIM 84.9 vs 84.6），与 SelfRDB 原文在 IXI/BRATS 上比 I2SB 高 8.93 dB 的结论相反；FGSB 的 MT-Net 基线预训练数据远多于训练集却表现最差，暗示复现或微调问题。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "解剖等价类上的传输成本理论缺失",
+   "why_open": "LMSB 的潜度量、ACSB 的频率损失、PaBoT 的路径正则、FGSB 的 mask 加权损失都是数据驱动或启发式的解剖先验注入，没有一个工作证明「成本在解剖等价类内为零 ⇒ 桥只移动外观分量」；LMSB 的潜度量甚至没有解剖不变性保证。",
+   "evidence": [
+    "Harmonizing_Optical_Coherence_Tomography_Across_De",
+    "Anatomy_Conserving_Unpaired_CBCT_to_CT_Translation",
+    "2505.03114"
+   ]
+  },
+  {
+   "problem": "任务感知传输成本如何端到端优化下游指标",
+   "why_open": "DSBM 显示 MAE 降 5 HU 仅换 gamma +0.1 pp，说明像素层传输成本与剂量学目标脱节；PaBoT 的骨加权路径代价和 FGSB 的 mask 加权损失是初步尝试，但均未把剂量学误差或下游诊断损失直接写进传输成本/漂移项并验证 gamma 或 Dice 的显著提升。",
+   "evidence": [
+    "2404.11741",
+    "2505.03114",
+    "2501.14171"
+   ]
+  },
+  {
+   "problem": "统一 med-bridge benchmark 缺失导致方法排名不可比",
+   "why_open": "HA-DSB 与 SelfRDB 在同一数据上排名反转，FGSB 的基线设置不对等，ACSB 与 PaBoT 的「无配对」实为配准数据打乱训练；各工作数据集、配对条件、评测指标（像素 vs 骨 Dice vs 剂量学 vs 病灶 Dice）均不统一，无法判断解剖保真方法的真实优劣。",
+   "evidence": [
+    "2607.07401",
+    "2405.06789",
+    "Anatomy_Conserving_Unpaired_CBCT_to_CT_Translation",
+    "2505.03114"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "1909.12116",
+   "why": "OT 进医学逆问题的理论起点"
+  },
+  {
+   "report_id": "2404.11741",
+   "why": "配对桥医学落地的剂量学基准"
+  },
+  {
+   "report_id": "2501.14171",
+   "why": "病灶保真与像素指标张力样本"
+  },
+  {
+   "report_id": "Harmonizing_Optical_Coherence_Tomography_Across_De",
+   "why": "传输成本度量的最新方向"
+  },
+  {
+   "report_id": "2505.03114",
+   "why": "无配对路径正则与骨保真"
+  }
+ ],
+ "n_reports": 15
+}

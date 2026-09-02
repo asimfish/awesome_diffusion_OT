@@ -1,0 +1,47 @@
+{
+ "report_id": "Anatomy_Conserving_Unpaired_CBCT_to_CT_Translation",
+ "arxiv_id": null,
+ "title": "Anatomy-Conserving Unpaired CBCT-to-CT Translation via Schrödinger Bridge",
+ "tldr_zh": "UNSB 骨架 + AC-ViT 生成器 + 焦点频率损失做无配对 CBCT→CT，跨区泛化最好，但只报像素指标",
+ "tldr_en": "UNSB-style Schrödinger bridge with an AC-ViT generator and focal frequency loss for unpaired CBCT-to-CT; best PSNR/MAE intra- and cross-region, pixel metrics only.",
+ "tags": [
+  "schrodinger-bridge",
+  "unpaired-translation",
+  "medical-imaging",
+  "cbct-to-ct",
+  "radiotherapy",
+  "vision-transformer"
+ ],
+ "code_url": "https://github.com/Lalala-iks/ACSB",
+ "key_numbers": [
+  "H&N->H&N: ACSB SSIM 0.962 / PSNR 33.791 / MAE 1.655 vs ResViT 0.963 / 33.483 / 1.753, UNSB 0.957 / 33.350 / 1.885 (Table 1)",
+  "Chest->Chest: ACSB PSNR 31.457 / MAE 2.018 vs UNSB 31.187 / 2.080, CUT 31.381 / 2.054 (Table 1)",
+  "Cross-region H&N->Chest: ACSB MAE 3.203 vs UNSB 5.184, SynDiff 9.528 (Table 2)",
+  "Cross-region Chest->H&N: ACSB MAE 2.980 vs UNSB 3.030, SynDiff 20.921 (Table 2)",
+  "Ablation: 4->2 downsampling MAE 2.862->1.717; +L_freq 1.717->1.655 (Table 3)",
+  "Train 2,232 / test 480 registered CBCT-CT slice pairs, shuffled for unpaired training (Sec. 3.1)"
+ ],
+ "relations": [
+  {
+   "report_id": "UNSB_Unpaired_Neural_Schr_dinger_Bridge",
+   "type": "extends"
+  },
+  {
+   "report_id": "2404.11741",
+   "type": "competes"
+  },
+  {
+   "report_id": "2505.03114",
+   "type": "competes"
+  },
+  {
+   "report_id": "Harmonizing_Optical_Coherence_Tomography_Across_De",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.06789",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

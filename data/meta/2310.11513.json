@@ -1,0 +1,96 @@
+{
+ "report_id": "2310.11513",
+ "arxiv_id": "2310.11513",
+ "title": "GenEval: An Object-Focused Framework for Evaluating Text-to-Image Alignment",
+ "tldr_zh": "用现成目标检测器+CLIP做六任务组合评测，人评一致率83%，已成端侧标配指标",
+ "tldr_en": "Object-detector-based compositional T2I evaluation with 83% human agreement, now standard in on-device papers",
+ "tags": [
+  "benchmark",
+  "text-to-image",
+  "compositional evaluation",
+  "object detection",
+  "human agreement"
+ ],
+ "code_url": "https://github.com/djghosh13/geneval",
+ "key_numbers": [
+  {
+   "number": "83%",
+   "context": "GenEval 与人评总体一致率",
+   "source": "Sec. 4 Analysis"
+  },
+  {
+   "number": "88%",
+   "context": "标注者间一致率",
+   "source": "Sec. 4 Analysis"
+  },
+  {
+   "number": "80%",
+   "context": "CLIPScore 与人评总体一致率（逐任务调阈值）",
+   "source": "Sec. 4 Analysis"
+  },
+  {
+   "number": "91% vs 87%",
+   "context": "5 人一致同意的 860 例上 GenEval vs CLIPScore 一致率",
+   "source": "Sec. 4 Analysis"
+  },
+  {
+   "number": "22 个百分点",
+   "context": "counting 任务 GenEval 相对 CLIPScore 的人评一致率提升",
+   "source": "Sec. 4 Analysis"
+  },
+  {
+   "number": "0.61",
+   "context": "IF-XL 总体 GenEval 分数（最佳模型）",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.50",
+   "context": "SDv2.1 总体 GenEval 分数",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.15",
+   "context": "position 任务最佳分数（SD-XL）",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.35",
+   "context": "attribute binding 任务最佳分数（IF-XL）",
+   "source": "Table 2"
+  },
+  {
+   "number": "553",
+   "context": "benchmark prompt 总数",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "1200",
+   "context": "人评图像总数",
+   "source": "Sec. 4 Format"
+  },
+  {
+   "number": "6000",
+   "context": "人评标注总数",
+   "source": "Sec. 4 Format"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2202.10792",
+   "type": "前作（DALL-Eval，任务专用检测器）"
+  },
+  {
+   "report_id": "2205.09660",
+   "type": "前作（VISOR，空间关系专项）"
+  },
+  {
+   "report_id": "2303.11897",
+   "type": "同期竞争（TIFA，VQA-based）"
+  },
+  {
+   "report_id": "2104.08718",
+   "type": "被对比基线（CLIPScore）"
+  }
+ ],
+ "read_full_text": true
+}

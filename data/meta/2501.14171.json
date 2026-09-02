@@ -1,0 +1,50 @@
+{
+ "report_id": "2501.14171",
+ "arxiv_id": "2501.14171",
+ "title": "Fully Guided Neural Schrödinger Bridge for Brain MR Image Synthesis",
+ "tldr_zh": "UNSB 改配对：源图全程条件 + L1/patchNCE/互信息正则 + 病灶 mask 加权损失，NFE=5，作者报告 5 个脑 MRI 数据集像素与 WMH Dice 多为最优",
+ "tldr_en": "Paired UNSB variant with full source guidance, MI regularizer and lesion-mask weighted losses; NFE=5; authors report best PSNR and WMH segmentation Dice on most of five brain MRI datasets.",
+ "tags": [
+  "schrodinger-bridge",
+  "unsb",
+  "medical-imaging",
+  "multi-contrast-mri",
+  "lesion-preservation",
+  "downstream-evaluation",
+  "paired-translation",
+  "preprint"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "MICCAI2017 WMH T1w->FLAIR: PSNR 27.39 / SSIM 0.928 / WMH Dice 0.381 / Recall 0.386 vs I2I-Mamba 25.38 / 0.909 / 0.315 / 0.274; real FLAIR upper bound Dice 0.679 (Table 2)",
+  "CAVAS: I2I-Mamba better PSNR (26.04 vs 25.95) but worse Dice (0.312 vs 0.421) and Recall (0.499 vs 0.669) (Table 2)",
+  "VALDO T1w->T2*: PSNR 28.11 vs Pix2Pix/I2I-Mamba 26.89 (Table 2); CMBs not reconstructed by any method (Sec. 5.2)",
+  "Ablation: lesion losses add +0.082 Dice but only +0.23 dB PSNR (Table 4)",
+  "NFE 5/10/20: Dice 0.381 / 0.352 / 0.345 (Table 5)",
+  "Inference params 14.67M, 0.69 s/iter at NFE=5 (Table 3)",
+  "Training subjects: IXI 25, BraTS 15, MICCAI2017 10, VALDO 19, CAVAS 10 (Sec. 4.1)"
+ ],
+ "relations": [
+  {
+   "report_id": "UNSB_Unpaired_Neural_Schr_dinger_Bridge",
+   "type": "extends"
+  },
+  {
+   "report_id": "Anatomy_Conserving_Unpaired_CBCT_to_CT_Translation",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.06789",
+   "type": "competes"
+  },
+  {
+   "report_id": "2607.07401",
+   "type": "competes"
+  },
+  {
+   "report_id": "2404.11741",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

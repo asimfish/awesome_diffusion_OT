@@ -1,0 +1,76 @@
+{
+ "report_id": "1809.00013",
+ "arxiv_id": "1809.00013",
+ "title": "Gromov-Wasserstein Alignment of Word Embedding Spaces",
+ "tldr_zh": "用 Gromov-Wasserstein 距离无监督对齐跨语言词嵌入，单步优化，性能与 SOTA 相当",
+ "tldr_en": "Unsupervised cross-lingual word embedding alignment via Gromov-Wasserstein distance, single-step, comparable to SOTA",
+ "tags": [
+  "Gromov-Wasserstein",
+  "optimal transport",
+  "word embeddings",
+  "cross-lingual alignment",
+  "unsupervised learning"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "81.7",
+   "description": "G-W (λ=10^-5) EN→ES P@1 on Conneau dataset",
+   "source": "Table 1"
+  },
+  {
+   "number": "45.1",
+   "description": "G-W (λ=10^-5) EN→RU P@1, lowest among EN pairs",
+   "source": "Table 1"
+  },
+  {
+   "number": "37",
+   "description": "G-W (λ=10^-5) average runtime in minutes per language pair",
+   "source": "Table 1"
+  },
+  {
+   "number": "49.21",
+   "description": "G-W + NORMALIZE EN-IT P@1 on Dinu dataset, best among all methods",
+   "source": "Table 2"
+  },
+  {
+   "number": "18.3",
+   "description": "G-W + NORMALIZE EN-FI P@1 on Dinu dataset, far below Artetxe's 33.50",
+   "source": "Table 2"
+  },
+  {
+   "number": "20000",
+   "description": "Maximum vocabulary size for pure GW optimization on the authors' personal computer",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "1.5",
+   "description": "GW distance ES-RU (scaled by 10^2), closest cross-family pair",
+   "source": "Fig. 4"
+  },
+  {
+   "number": "8.2",
+   "description": "GW distance EN-ZH (scaled by 10^2), largest among all pairs",
+   "source": "Fig. 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1606.04275",
+   "type": "method_source"
+  },
+  {
+   "report_id": "1710.04087",
+   "type": "baseline"
+  },
+  {
+   "report_id": "1707.01292",
+   "type": "competitor"
+  },
+  {
+   "report_id": "1606.04460",
+   "type": "theoretical_basis"
+  }
+ ],
+ "read_full_text": true
+}

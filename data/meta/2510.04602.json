@@ -1,0 +1,92 @@
+{
+ "report_id": "2510.04602",
+ "arxiv_id": "2510.04602",
+ "title": "Wasserstein Gradient Flows for Scalable and Regularized Barycenter Computation",
+ "tldr_zh": "把 barycenter 写成 Wasserstein 梯度流，mini-batch OT 提速 2–50×，支持标签与正则，DA 上 SOTA",
+ "tldr_en": "Barycenter as Wasserstein gradient flow with mini-batch OT, 2-50x speedup, label-aware regularization, SOTA DA",
+ "tags": [
+  "Wasserstein barycenter",
+  "gradient flow",
+  "mini-batch OT",
+  "domain adaptation",
+  "fairness"
+ ],
+ "code_url": "https://github.com/SigmaNova/barycentric-gradient-flows",
+ "key_numbers": [
+  {
+   "number": "2×–50×",
+   "context": "WGF 相对 Cuturi-Doucet 离散求解器的加速范围",
+   "source": "Fig. 5a, Sec. 4.1"
+  },
+  {
+   "number": "2.1×–8.3×",
+   "context": "GPU 向量化单独贡献的加速",
+   "source": "Fig. 5b, Sec. 4.1"
+  },
+  {
+   "number": "0.201",
+   "context": "无监督 WGF 在 Swiss roll 上的 W2 到 ground-truth",
+   "source": "Fig. 3e"
+  },
+  {
+   "number": "0.129",
+   "context": "监督 WGF 在 Swiss roll 上的 W2 到 ground-truth",
+   "source": "Fig. 4b"
+  },
+  {
+   "number": "89.52 / 78.42 / 57.68 / 80.02 / 86.87",
+   "context": "监督 WGF 在 Office31 / OfficeHome / BCI-CIV-2a / ISRUC / TEP 的平均准确率",
+   "source": "Table 2"
+  },
+  {
+   "number": "1.9",
+   "context": "监督 WGF 在五个 DA benchmark 上的平均排名",
+   "source": "Table 2"
+  },
+  {
+   "number": "3.14",
+   "context": "联合修复 WGF 在公平性 14 个 metric cells 上的平均排名",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.0424",
+   "context": "WGF 在 CrimeRace 上的 MSE，比基线 0.0182 差",
+   "source": "Table 3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "chizat2025doubly",
+   "type": "继承"
+  },
+  {
+   "report_id": "cuturi2014fast",
+   "type": "竞争"
+  },
+  {
+   "report_id": "montesuma2023dadil",
+   "type": "继承"
+  },
+  {
+   "report_id": "korotin2021cw2b",
+   "type": "竞争"
+  },
+  {
+   "report_id": "kolesov2024not",
+   "type": "竞争"
+  },
+  {
+   "report_id": "gazdieva2024unot",
+   "type": "竞争"
+  },
+  {
+   "report_id": "chewi2020bures",
+   "type": "理论前身"
+  },
+  {
+   "report_id": "alvarez-esteban2016fixed",
+   "type": "理论前身"
+  }
+ ],
+ "read_full_text": true
+}

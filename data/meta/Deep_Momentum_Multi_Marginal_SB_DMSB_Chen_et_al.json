@@ -1,0 +1,31 @@
+{
+ "report_id": "Deep_Momentum_Multi_Marginal_SB_DMSB_Chen_et_al",
+ "arxiv_id": null,
+ "title": "Deep Momentum Multi-Marginal SB (DMSB), Chen et al.",
+ "tldr_zh": "相空间 Bregman-IPF 解多边缘 SB，从位置快照重建速度分布",
+ "tldr_en": "Phase-space Bregman-IPF for multi-marginal SB, recovering velocity from position snapshots",
+ "tags": [
+  "Schrodinger Bridge",
+  "multi-marginal",
+  "phase space",
+  "Bregman-IPF",
+  "trajectory inference"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "3MSBM_NeurIPS_2025",
+   "type": "extends"
+  },
+  {
+   "report_id": "DSB_NeurIPS_2021",
+   "type": "generalizes"
+  },
+  {
+   "report_id": "DSBM_NeurIPS_2023",
+   "type": "complements"
+  }
+ ],
+ "read_full_text": false
+}

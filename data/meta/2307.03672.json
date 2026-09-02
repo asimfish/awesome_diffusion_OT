@@ -1,0 +1,27 @@
+{
+ "report_id": "2307.03672",
+ "arxiv_id": null,
+ "title": "Simulation-Free Schrödinger Bridges via Score and Flow Matching",
+ "tldr_zh": "用静态熵正则 OT 耦合加 score/flow 双回归，免模拟求解 Schrödinger bridge",
+ "tldr_en": "Static entropic OT coupling plus score/flow regression solves Schrödinger bridges simulation-free",
+ "tags": [
+  "Schrödinger bridge",
+  "flow matching",
+  "score matching",
+  "entropic OT",
+  "simulation-free"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "OT_CFM_Tong_2023",
+   "type": "extends"
+  },
+  {
+   "report_id": "Multisample_FM_Pooladian_2023",
+   "type": "related"
+  }
+ ],
+ "read_full_text": false
+}

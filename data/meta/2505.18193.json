@@ -1,0 +1,57 @@
+{
+ "report_id": "2505.18193",
+ "arxiv_id": "2505.18193",
+ "title": "Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry",
+ "tldr_zh": "全局微分同胚 pullback 度量下，黎曼 CFM 等价于变换后欧氏 CFM；SPD 用矩阵对数、相关矩阵用归一化 Cholesky，训练快 8 倍采样快 10 倍",
+ "tldr_en": "Pullback metrics from global diffeomorphisms make Riemannian CFM equivalent to Euclidean CFM after transformation; 8x faster training, 10x faster sampling on SPD/correlation matrices",
+ "tags": [
+  "Riemannian flow matching",
+  "pullback metric",
+  "SPD manifold",
+  "correlation matrices",
+  "brain connectivity",
+  "conditional flow matching"
+ ],
+ "code_url": "https://github.com/antoinecollas/DiffeoCFM",
+ "key_numbers": [
+  {
+   "number": "8x faster training, 10x faster sampling vs RIEMCFM",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "ADNI α,β-F1: 0.68±0.06 (DIFFEOCFM) vs 0.01±0.01 (TRIANGCFM)",
+   "source": "Table 1"
+  },
+  {
+   "number": "BNCI2014-002 training time: 253.04±0.33s (DIFFEOCFM) vs 1983.58±0.97s (RIEMCFM)",
+   "source": "Table 1"
+  },
+  {
+   "number": "BNCI2015-001 sampling time: 1.02±0.08s (DIFFEOCFM) vs 11.02±0.59s (RIEMCFM)",
+   "source": "Table 1"
+  },
+  {
+   "number": "Projection degrades α,β-F1 by -0.69 (ADNI) and -0.64 (OASIS-3)",
+   "source": "Table 2"
+  },
+  {
+   "number": "4600+ fMRI scans from 2800 subjects; 30000+ EEG trials from 26 subjects",
+   "source": "Abstract"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2302.03660",
+   "type": "继承并简化（Riemannian CFM 的 pullback 特例）"
+  },
+  {
+   "report_id": "2202.02763",
+   "type": "同属流形生成线，本文避免热核计算"
+  },
+  {
+   "report_id": "corrgan",
+   "type": "竞争（欧氏训练+后处理投影 vs 微分同胚保约束）"
+  }
+ ],
+ "read_full_text": true
+}

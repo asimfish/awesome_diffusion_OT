@@ -1,0 +1,48 @@
+{
+ "report_id": "SANA_Efficient_High_Resolution_Text_to_Image_Synth",
+ "arxiv_id": null,
+ "title": "SANA: Efficient High-Resolution Text-to-Image Synthesis with Linear Diffusion Transformers",
+ "tldr_zh": "0.6B 线性 DiT 配 32× AE 与小 LLM 编码器，笔记本 GPU 上 1024² 生成 <1s",
+ "tldr_en": "0.6B linear DiT with 32x AE and small LLM encoder generates 1024² images in <1s on laptop GPU",
+ "tags": [
+  "text-to-image",
+  "linear attention",
+  "flow matching",
+  "efficient deployment",
+  "DiT"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "0.6B",
+   "source": "调研 agent 一句话贡献，非摘要原文"
+  },
+  {
+   "number": "32×",
+   "source": "调研 agent 一句话贡献，非摘要原文"
+  },
+  {
+   "number": "<1s / 1024²",
+   "source": "调研 agent 一句话贡献，非摘要原文"
+  },
+  {
+   "number": "8GB (SVDQuant 4-bit)",
+   "source": "调研 agent 一句话贡献，非摘要原文"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "SVDQuant_W4A4_Quantization",
+   "type": "配套量化方案"
+  },
+  {
+   "report_id": "SnapGen_Mobile_1024",
+   "type": "同期端侧从头设计路线"
+  },
+  {
+   "report_id": "SD3_Flow_Matching",
+   "type": "训练公式同源"
+  }
+ ],
+ "read_full_text": false
+}

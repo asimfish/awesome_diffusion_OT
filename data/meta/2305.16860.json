@@ -1,0 +1,91 @@
+{
+ "report_id": "2305.16860",
+ "arxiv_id": "2305.16860",
+ "title": "Error Bounds for Flow Matching Methods",
+ "tldr_zh": "给出 flow matching 确定性采样下 W2 误差界，对 L² 训练误差多项式依赖",
+ "tldr_en": "W2 error bounds for deterministic flow matching, polynomial in L2 training error",
+ "tags": [
+  "flow matching",
+  "Wasserstein error bound",
+  "deterministic sampling",
+  "probability flow ODE",
+  "Lipschitz regularity",
+  "convergence theory"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "W2 ≤ ε exp(∫L_t dt)",
+   "context": "Theorem 1 主误差界",
+   "source": "Theorem 1"
+  },
+  {
+   "number": "ε^{1/(2λ+1)}",
+   "context": "Corollary 1 对 ε 的依赖",
+   "source": "Corollary 1"
+  },
+  {
+   "number": "d^{2λ/(4λ+2)}",
+   "context": "Corollary 1 对 d 的依赖",
+   "source": "Corollary 1"
+  },
+  {
+   "number": "2 log(γ_max/γ_min)",
+   "context": "γ_t 积分第一项",
+   "source": "Lemma 2"
+  },
+  {
+   "number": "λ(1 + log(1/γ_1))",
+   "context": "VP ODE Lipschitz 积分界",
+   "source": "Corollary 2(i)"
+  },
+  {
+   "number": "λ log(1/γ_1)",
+   "context": "VE ODE Lipschitz 积分界",
+   "source": "Corollary 2(ii)"
+  },
+  {
+   "number": "ε(e/γ_1)^λ",
+   "context": "VP ODE W2 界",
+   "source": "Theorem 6(i)"
+  },
+  {
+   "number": "ε(1/γ_1)^λ",
+   "context": "VE ODE W2 界",
+   "source": "Theorem 6(ii)"
+  },
+  {
+   "number": "1 + R²/σ²",
+   "context": "高斯混合的 λ 值",
+   "source": "Appendix A.1"
+  },
+  {
+   "number": "O(dτ²)",
+   "context": "最坏情况 λ 的 d 依赖（高概率）",
+   "source": "Appendix A.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2303.08797",
+   "type": "framework_source"
+  },
+  {
+   "report_id": "2208.14699",
+   "type": "framework_source"
+  },
+  {
+   "report_id": "2305.11798",
+   "type": "complementary"
+  },
+  {
+   "report_id": "2308.03686",
+   "type": "same_group_followup"
+  },
+  {
+   "report_id": "2306.09251",
+   "type": "related"
+  }
+ ],
+ "read_full_text": true
+}

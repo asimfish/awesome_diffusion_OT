@@ -1,0 +1,36 @@
+{
+ "report_id": "Simulation_free_Score_Flow_Matching_SF_M_Tong_et_a",
+ "arxiv_id": null,
+ "title": "Simulation-free Score & Flow Matching ([SF]²M), Tong et al.",
+ "tldr_zh": "用静态 minibatch Sinkhorn 耦合替代迭代，免仿真逼近 Schrödinger Bridge。",
+ "tldr_en": "Static minibatch Sinkhorn coupling plus score/flow matching approximates SB without simulation.",
+ "tags": [
+  "Schrödinger Bridge",
+  "flow matching",
+  "score matching",
+  "Sinkhorn",
+  "simulation-free",
+  "single-cell dynamics"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "DSB_NeurIPS_2021",
+   "type": "继承/替代"
+  },
+  {
+   "report_id": "DSBM_NeurIPS_2023",
+   "type": "竞争/简化"
+  },
+  {
+   "report_id": "LightSB_M_ICML_2024",
+   "type": "被理论收口"
+  },
+  {
+   "report_id": "VSDM_ICML_2024",
+   "type": "同目标不同路线"
+  }
+ ],
+ "read_full_text": false
+}

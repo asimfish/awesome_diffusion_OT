@@ -1,0 +1,77 @@
+{
+ "report_id": "2506.09007",
+ "arxiv_id": "2506.09007",
+ "title": "Branched Schrödinger Bridge Matching",
+ "tldr_zh": "把广义SB拆成多条带权unbalanced随机最优控制分支，学分支速度场+增长网络，重建多模态终点与分叉轨迹",
+ "tldr_en": "Decomposes generalized SB into weighted unbalanced SOC branches with per-branch velocity and growth networks for multimodal endpoints",
+ "tags": [
+  "Schrödinger bridge",
+  "unbalanced optimal transport",
+  "branching dynamics",
+  "single-cell trajectory inference",
+  "perturbation modeling",
+  "flow matching"
+ ],
+ "code_url": "https://github.com/sophtang/BranchSBM",
+ "key_numbers": [
+  {
+   "number": "0.239±0.001 vs 0.975±0.009 (W1)",
+   "source": "Table 1, LiDAR navigation, BranchSBM vs single-branch SBM"
+  },
+  {
+   "number": "0.309±0.003 vs 1.285±0.007 (W2)",
+   "source": "Table 1, LiDAR navigation"
+  },
+  {
+   "number": "0.366±0.034 vs 0.582±0.020 (W1 at t1)",
+   "source": "Table 3, mouse hematopoiesis"
+  },
+  {
+   "number": "0.210±0.042 vs 0.940±0.075 (W1 at t2)",
+   "source": "Table 3, mouse hematopoiesis"
+  },
+  {
+   "number": "K=11 branches",
+   "source": "Sec. 5.2, pancreatic β-cell differentiation, Leiden clustering"
+  },
+  {
+   "number": "51,274 cells, 8 time points, 30 PCs",
+   "source": "Sec. 5.2, pancreatic β-cell data"
+  },
+  {
+   "number": "0.065±0.001 vs 0.279±0.024 (RBF-MMD, 50 PCs)",
+   "source": "Table 4, Clonidine perturbation"
+  },
+  {
+   "number": "0.053±0.001 vs 0.246±0.013 (RBF-MMD)",
+   "source": "Table 5, Trametinib perturbation"
+  },
+  {
+   "number": "w1,0=0.603, w1,1=0.255, w1,2=0.142",
+   "source": "Fig. 5D, Trametinib branch weights"
+  },
+  {
+   "number": "top 50 PCs capture ~38% variance",
+   "source": "Sec. 5.3, Clonidine setup"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "DeepRUOT",
+   "type": "baseline_and_theoretical_predecessor"
+  },
+  {
+   "report_id": "CytoBridge",
+   "type": "baseline_and_contemporary"
+  },
+  {
+   "report_id": "MetricFM",
+   "type": "inherits_neural_interpolant_and_state_cost"
+  },
+  {
+   "report_id": "GENOT",
+   "type": "complementary_paradigm"
+  }
+ ],
+ "read_full_text": true
+}

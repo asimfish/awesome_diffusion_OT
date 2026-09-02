@@ -1,0 +1,62 @@
+{
+ "report_id": "2402.07802",
+ "arxiv_id": "2402.07802",
+ "title": "Towards a mathematical theory for consistency training in diffusion models",
+ "tldr_zh": "证明一致性训练步数超 O(d^{5/2}/ε) 即可使一步采样 W1 距离 ε-接近目标",
+ "tldr_en": "Proves consistency training with >O(d^{5/2}/ε) steps yields one-step samples ε-close in W1",
+ "tags": [
+  "consistency models",
+  "diffusion models",
+  "Wasserstein distance",
+  "non-asymptotic theory",
+  "probability flow ODE",
+  "one-step sampling"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "C_1 L_f^3 d^{5/2} log^5 T / T + ε + ε_F",
+   "context": "W1 误差上界",
+   "source": "Eq. (24)"
+  },
+  {
+   "number": "rO(L_f^3 d^{5/2}/(ε + ε_F))",
+   "context": "所需训练步数",
+   "source": "Eq. (25)"
+  },
+  {
+   "number": "P(‖X_0‖_2 ≤ T^{c_R}) = 1",
+   "context": "目标分布有界支撑假设",
+   "source": "Eq. (22)"
+  },
+  {
+   "number": "β_1 = 1/T^{c_0}",
+   "context": "学习率调度第一步",
+   "source": "Eq. (23a)"
+  },
+  {
+   "number": "α_T ≤ 1/T^{c_2}, c_2 ≥ 1000",
+   "context": "末端噪声水平",
+   "source": "Eq. (27d)"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2303.01469",
+   "type": "理论对象（一致性模型原始论文）"
+  },
+  {
+   "report_id": "2305.14251",
+   "type": "继承（学习率调度与证明框架）"
+  },
+  {
+   "report_id": "2202.00512",
+   "type": "作者指出分析框架可能适用（Progressive Distillation）"
+  },
+  {
+   "report_id": "FMM-TMLR-2025",
+   "type": "互补（蒸馏场景的 W2 理论统一框架）"
+  }
+ ],
+ "read_full_text": true
+}

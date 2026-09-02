@@ -55,22 +55,27 @@
   },
   {
    "key": "t23__schro_dinger_bridge_for_generative_speech_enhancement",
-   "report_id": "Schr_dinger_Bridge_for_Generative_Speech_Enhanceme",
+   "report_id": "2407.16074",
    "title": "Schrödinger Bridge for Generative Speech Enhancement",
-   "authors": "Jukić et al., NVIDIA",
+   "authors": [
+    "Ante Jukić",
+    "Roman Korostik",
+    "Jagadeesh Balam",
+    "Boris Ginsburg"
+   ],
    "year": 2024,
    "venue": "Interspeech",
    "evidence": "P",
    "star": true,
-   "arxiv_id": null,
-   "published": null,
-   "abstract": "",
+   "arxiv_id": "2407.16074",
+   "published": "2024-07-22",
+   "abstract": "This paper proposes a generative speech enhancement model based on Schrödinger bridge (SB). The proposed model is employing a tractable SB to formulate a data-to-data process between the clean speech distribution and the observed noisy speech distribution. The model is trained with a data prediction loss, aiming to recover the complex-valued clean speech coefficients, and an auxiliary time-domain loss is used to improve training of the model. The effectiveness of the proposed SB-based model is evaluated in two different speech enhancement tasks: speech denoising and speech dereverberation. The experimental results demonstrate that the proposed SB-based outperforms diffusion-based models in terms of speech quality metrics and ASR performance, e.g., resulting in relative word error rate reduction of 20% for denoising and 6% for dereverberation compared to the best baseline model. The proposed model also demonstrates improved efficiency, achieving better quality than the baselines for the same number of sampling steps and with a reduced computational cost.",
    "contribution_zh": "SB 增强开山：clean-noisy 配对 SB + 数据预测损失 + 时域辅助损失，去噪/去混响相对 WER 降 20%/6%，已入 NeMo",
    "links": {
     "ISCA": "https://www.isca-archive.org/interspeech_2024/jukic24_interspeech.html"
    },
-   "pdf": "papers/t23_2024_Jukic_SB_Speech_Enhancement.pdf",
-   "text": "data/text/t23_2024_Jukic_SB_Speech_Enhancement.txt",
+   "pdf": "papers/2407.16074.pdf",
+   "text": "data/text/2407.16074.txt",
    "text_chars": 30665,
    "pages": 5
   },
@@ -164,24 +169,29 @@
   },
   {
    "key": "t23__bridge_sr_schro_dinger_bridge_for_efficient_sr",
-   "report_id": "Bridge_SR_Schr_dinger_Bridge_for_Efficient_SR",
+   "report_id": "2501.07897",
    "title": "Bridge-SR: Schrödinger Bridge for Efficient SR",
-   "authors": "Li et al., 清华",
+   "authors": [
+    "Chang Li",
+    "Zehua Chen",
+    "Fan Bao",
+    "Jun Zhu"
+   ],
    "year": 2025,
    "venue": "ICASSP",
    "evidence": "P",
    "star": false,
-   "arxiv_id": null,
-   "published": null,
-   "abstract": "",
+   "arxiv_id": "2501.07897",
+   "published": "2025-01-14",
+   "abstract": "Speech super-resolution (SR), which generates a waveform at a higher sampling rate from its low-resolution version, is a long-standing critical task in speech restoration. Previous works have explored speech SR in different data spaces, but these methods either require additional compression networks or exhibit limited synthesis quality and inference speed. Motivated by recent advances in probabilistic generative models, we present Bridge-SR, a novel and efficient any-to-48kHz SR system in the speech waveform domain. Using tractable Schrödinger Bridge models, we leverage the observed low-resolution waveform as a prior, which is intrinsically informative for the high-resolution target. By optimizing a lightweight network to learn the score functions from the prior to the target, we achieve efficient waveform SR through a data-to-data generation process that fully exploits the instructive content contained in the low-resolution observation. Furthermore, we identify the importance of the noise schedule, data scaling, and auxiliary loss functions, which further improve the SR quality of bridge-based systems. The experiments conducted on the benchmark dataset VCTK demonstrate the efficiency of our system: (1) in terms of sample quality, Bridge-SR outperforms several strong baseline methods under different SR settings, using a lightweight network backbone (1.7M); (2) in terms of inference speed, our 4-step synthesis achieves better performance than the 8-step conditional diffusion counterpart (LSD: 0.911 vs 0.927). Demo at https://bridge-sr.github.io.",
    "contribution_zh": "波形域 any-to-48kHz 语音超分：低分辨率波形作先验的可解 SB，1.7M 参数骨干 4 步胜 8 步条件扩散",
    "links": {
     "IEEE": "https://doi.org/10.1109/ICASSP49660.2025.10890104"
    },
-   "pdf": null,
-   "text": null,
-   "text_chars": null,
-   "pages": null
+   "pdf": "papers/2501.07897.pdf",
+   "text": "data/text/2501.07897.txt",
+   "text_chars": 25916,
+   "pages": 5
   },
   {
    "key": "t23__2501.11311",

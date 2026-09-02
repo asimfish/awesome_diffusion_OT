@@ -1,0 +1,30 @@
+{
+ "report_id": "The_Procrustes_Wasserstein_Barycenter_Problem",
+ "arxiv_id": null,
+ "title": "The Procrustes-Wasserstein Barycenter Problem",
+ "tldr_zh": "联合优化正交/刚体对齐与 Wasserstein barycenter，解决输入分布姿态不对齐时的平均失真。",
+ "tldr_en": "Jointly optimizes orthogonal/rigid alignment with Wasserstein barycenter to handle pose-misaligned input distributions.",
+ "tags": [
+  "Wasserstein barycenter",
+  "Procrustes alignment",
+  "multimarginal OT",
+  "ICML 2025"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Wasserstein_ball_center_ICML2025",
+   "type": "parallel"
+  },
+  {
+   "report_id": "Janati_2020_debiased_barycenter",
+   "type": "related"
+  },
+  {
+   "report_id": "OTFusion_NeurIPS2020",
+   "type": "application_context"
+  }
+ ],
+ "read_full_text": false
+}

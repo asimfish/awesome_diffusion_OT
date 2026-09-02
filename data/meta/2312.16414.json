@@ -1,0 +1,60 @@
+{
+ "report_id": "2312.16414",
+ "arxiv_id": "2312.16414",
+ "title": "Bellman Optimal Stepsize Straightening of Flow-Matching Models",
+ "tldr_zh": "动态规划求 K 步最优非均匀 Euler 步长，再按步长把速度场拉成分段直线；6 NFE 下 256×256 数据 FID 约为 reflow 一半，LoRA 2% 参数即可",
+ "tldr_en": "Dynamic programming finds Bellman-optimal non-uniform Euler stepsizes; retraining the velocity along them halves 6-NFE FID vs reflow on 256x256 datasets with only 12k iterations or 2% LoRA params.",
+ "tags": [
+  "rectified-flow",
+  "stepsize-optimization",
+  "dynamic-programming",
+  "few-step-generation",
+  "low-resource",
+  "lora",
+  "distillation"
+ ],
+ "code_url": "https://github.com/nguyenngocbaocmt02/BOSS",
+ "key_numbers": [
+  "Bellman stepsizes alone (no training), CelebA-HQ 8 NFE FID 109.42 -> 49.80 (Table 1)",
+  "BOSS-6 vs Uniform-Reflow vs Distill-6-Reflow at 6 NFE: CelebA-HQ 18.67 / 43.57 / 34.56; LSUN-Church 17.43 / 40.45 / 34.52; CIFAR-10 4.80 / 4.33 / 4.35 (Table 2)",
+  "Finetuning 12,000 iterations, batch 15, 3.6-14.2 h on one RTX A5000 (Appendix A)",
+  "LoRA-4 trains 2.02% params, CelebA-HQ FID 36.70 vs full-rank 33.86 at 175k iters (Table 8, Fig. 8)",
+  "Stepsize search ~115 s for 256x256 datasets, K_max=100, N=100 (Table 3)",
+  "Optimal stepsizes small at both ends, e.g. CelebA-HQ K=8: [0.02,0.05,0.11,0.17,0.21,0.20,0.16,0.08] (Table 5)"
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "extends"
+  },
+  {
+   "report_id": "2309.06380",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.07510",
+   "type": "competes"
+  },
+  {
+   "report_id": "2410.14949",
+   "type": "competes"
+  },
+  {
+   "report_id": "2404.14507",
+   "type": "competes"
+  },
+  {
+   "report_id": "2503.21774",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.15506",
+   "type": "competes"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

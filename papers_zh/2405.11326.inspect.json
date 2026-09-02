@@ -1,0 +1,29 @@
+{
+  "issue_count": 4,
+  "issues": [
+    {
+      "page": 5,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 5: displayed equation at y=261 shifted horizontally by 14pt vs original"
+    },
+    {
+      "page": 15,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 15: block set at 8.36pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=55.8, y=84.5: 进一步，根据期望的线性性质，其中"
+    },
+    {
+      "page": 15,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 15: displayed equation at y=66 shifted horizontally by 44pt vs original"
+    },
+    {
+      "page": 23,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 23: block set at 7.76pt but the original at this position is 9.96pt (ratio 0.78 vs page median 0.92) at x=170.2, y=659.1: _{θ}(ˆx_{t}_{n}) +v-y_{i})/h ；(ii) 利用均值漂移中高斯核（见("
+    }
+  ]
+}

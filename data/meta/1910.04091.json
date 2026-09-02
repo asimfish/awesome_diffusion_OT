@@ -1,0 +1,46 @@
+{
+ "report_id": "1910.04091",
+ "arxiv_id": "1910.04091",
+ "title": "Learning with minibatch Wasserstein: asymptotic and gradient properties",
+ "tldr_zh": "minibatch OT 是隐式正则化：估计与梯度无偏、集中界与维度无关，但失去距离性质、平均 plan 非最优。",
+ "tldr_en": "Minibatch OT losses are unbiased with dimension-free concentration and unbiased gradients, but lose the metric property and yield non-optimal averaged plans.",
+ "tags": [
+  "minibatch-ot",
+  "theory",
+  "u-statistics",
+  "sinkhorn",
+  "gradient-flow",
+  "color-transfer"
+ ],
+ "code_url": "https://github.com/kilianFatras/minibatch_Wasserstein",
+ "key_numbers": [
+  "Deviation bound M_h(sqrt(log(2/delta)/(2 floor(n/m))) + sqrt(2 log(2/delta)/k)), dimension-free, M_h = O(log m) (Theorem 1)",
+  "Marginal error of subsampled plan <= sqrt(2 log(2/delta)/k) (Theorem 2), O(k^-1/2) confirmed empirically (Fig. 6)",
+  "Color transfer on ~943k-pixel images: m=10 needs K=1e7, m=100 K=2e6, m=1000 K=6e5 (Fig. 5)",
+  "CelebA gradient flow 5000 male -> 5000 female, m=500, k=10, 750 iterations (Fig. 4)",
+  "Memory O(n) for minibatch barycentric mapping vs O(n^2) exact OT (Sec. 4.3)"
+ ],
+ "relations": [
+  {
+   "report_id": "2102.05912",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2304.14772",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2605.12174",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2506.05526",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,77 @@
+{
+ "report_id": "2406.07524",
+ "arxiv_id": "2406.07524",
+ "title": "Simple and Effective Masked Diffusion Language Models",
+ "tldr_zh": "masked diffusion 的 ELBO 化简为加权 MLM 交叉熵，工程化训练后扩散 LM 困惑度逼近 AR",
+ "tldr_en": "Simplifies masked diffusion ELBO to weighted MLM cross-entropy, closing the perplexity gap to AR",
+ "tags": [
+  "masked diffusion",
+  "language modeling",
+  "ELBO",
+  "Rao-Blackwellization",
+  "BERT",
+  "semi-autoregressive"
+ ],
+ "code_url": "https://github.com/kuleshov-group/mdlm",
+ "key_numbers": [
+  {
+   "number": "≤27.04",
+   "context": "MDLM PPL on LM1B, 33B tokens, 110M params",
+   "source": "Table 1"
+  },
+  {
+   "number": "≤23.00",
+   "context": "MDLM PPL on LM1B, 327B tokens",
+   "source": "Table 1"
+  },
+  {
+   "number": "17%",
+   "context": "MDLM improvement over SEDD at 33B tokens on LM1B",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "≤23.21",
+   "context": "MDLM PPL on OWT, 262B tokens",
+   "source": "Table 2"
+  },
+  {
+   "number": "27.18",
+   "context": "MDLM semi-AR generative PPL for 2048-token sequences",
+   "source": "Table 5"
+  },
+  {
+   "number": "89.3 sec/seq",
+   "context": "MDLM semi-AR decoding time vs SSD-LM 2473.9 sec/seq",
+   "source": "Table 5"
+  },
+  {
+   "number": "≤3.199 ± .010",
+   "context": "MDLM PPL on HG38 DNA, 467K params",
+   "source": "Table 6"
+  },
+  {
+   "number": "82.06",
+   "context": "BERT + MDLM-FT average GLUE score vs BERT 81.62",
+   "source": "Table 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2310.16834",
+   "type": "竞争/被超越"
+  },
+  {
+   "report_id": "2107.03006",
+   "type": "继承/简化"
+  },
+  {
+   "report_id": "2211.15029",
+   "type": "竞争/改进"
+  },
+  {
+   "report_id": "2210.17432",
+   "type": "竞争（SAR 解码对比）"
+  }
+ ],
+ "read_full_text": true
+}

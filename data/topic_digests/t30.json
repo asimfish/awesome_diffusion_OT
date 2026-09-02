@@ -1,0 +1,91 @@
+{
+ "digest_zh": "本课题解决端侧文生图部署的完整链路：模型小型化（架构搜索/从头训练）、少步化（蒸馏/对抗微调）、量化（PTQ/QAT）与评测协议。方法谱系从 SnapFusion 的「压缩现有模型」双轴范式，演进到 MobileDiffusion/SDXS 的架构搜索与一步蒸馏，再到 SnapGen/SANA 的「为端侧从头设计」转折，量化线从 MixDQ 的 W4A8 推进到 SVDQuant 的 W4A4。当前共识是：少步化是端侧部署的必要条件，FM/RF 公式因轨迹更直而成为新端侧模型默认训练目标；FID 对少步/压缩模型系统性不公平，需多指标组合。分歧在于：QAT 与 PTQ 路线在极低比特下的质量-成本权衡尚无定论，NPU 对 FM 原生 DiT 模型的适配仍是空白。",
+ "observations": [
+  {
+   "claim": "少步化是端侧部署的必要条件，但少步模型对量化噪声更脆弱，形成「少步×低比特」复合误差。",
+   "evidence": [
+    "2311.16567",
+    "2405.17873",
+    "2411.05007"
+   ],
+   "detail": "MobileDiffusion 一步模型 FID 11.67 比 50 步 8.65 退化约 3 点；MixDQ 显示 SDXL-turbo 1 步 W8A8 下 Naive PTQ FID 从 17.15 崩到 103.96，而 LCM-Lora 4 步仅从 25.56 到 23.36；SVDQuant 在 FLUX.1-schnell 4 步上验证 W4A4 仍保持质量，但未做 NFE×位宽交互矩阵。"
+  },
+  {
+   "claim": "FID 的正态假设与 Inception 特征对少步/压缩模型系统性不公平，社区已转向多指标组合评测。",
+   "evidence": [
+    "2401.09603",
+    "Exposing_flaws_of_generative_model_evaluation_metr",
+    "2406.04333"
+   ],
+   "detail": "CMMD 论文证明 COCO 30K Inception 嵌入三种正态性检验 p 值均为 0.0，且人评偏好 92.5% 的模型 FID 反而更差（18.42 vs 21.40）；Stein 等最大规模人评实验显示无指标与人评强相关；BitsFusion 记录 FID 与人评背离（Fig. 7 vs Fig. 6），人评偏好 54.41%。"
+  },
+  {
+   "claim": "端侧模型从「压缩大模型」转向「从头设计小模型」，FM/RF 公式成为新端侧模型默认训练目标。",
+   "evidence": [
+    "SnapGen_Taming_High_Resolution_Text_to_Image_Model",
+    "SANA_Efficient_High_Resolution_Text_to_Image_Synth",
+    "2306.00980"
+   ],
+   "detail": "SnapFusion 将 SD-v1.5 UNet 从 860M 压到 848M，参数几乎未减；SnapGen 从头训练 379M 模型在 iPhone 16 Pro-Max 上 1024² 约 1.4s，GenEval 0.66 超 SDXL；SANA 用 0.6B 线性 DiT 配 flow matching 实现笔记本 GPU 上 <1s 生成。"
+  },
+  {
+   "claim": "量化方法从 W8A8/W4A8 推进到 W4A4，但硬件评测仍以桌面 GPU 为主，NPU 适配证据薄弱。",
+   "evidence": [
+    "2405.17873",
+    "2411.05007",
+    "2404.11925"
+   ],
+   "detail": "MixDQ 只在 RTX 4080 上评测，标题声称面向 mobile 但无 NPU 数据；SVDQuant 的 Nunchaku kernel fusion 针对 NVIDIA GPU 优化，NPU 可移植性存疑；EdgeFusion 是唯一 NPU 实测工作（Exynos 2400 上 738.5ms），但量化评估仅 3 个 prompt 定性对比。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "少步×低比特复合误差的交互矩阵缺失",
+   "why_open": "SVDQuant 提供 FLUX.1-schnell 4 步 W4A4 单点，MixDQ 提供 1 步 vs 4 步对比，但无 NFE∈{1,2,4,8}×位宽∈{W8A8,W4A8,W4A4} 的系统矩阵；量化噪声在 few-step ODE 离散化下的累积行为未建模。",
+   "evidence": [
+    "2411.05007",
+    "2405.17873"
+   ]
+  },
+  {
+   "problem": "FM 原生 DiT 模型的 NPU 部署空白",
+   "why_open": "EdgeFusion 是 DDPM 系 UNet 的 NPU 工程样本；SANA/SnapGen 等 FM 原生模型尚无 NPU 移植工作，linear attention DiT 与 FlowMatch 调度器在 NPU 上的算子适配未验证。",
+   "evidence": [
+    "2404.11925",
+    "SANA_Efficient_High_Resolution_Text_to_Image_Synth"
+   ]
+  },
+  {
+   "problem": "端侧少步生成缺乏统一 benchmark 协议",
+   "why_open": "各论文自报指标：SnapGen 只报 GenEval 0.66，MobileDiffusion 报 FID/CLIP/HPS v2，EdgeFusion 报人评胜率；无固定 prompt 集×多指标×实测设备延迟/内存/能耗的 Pareto 前沿对比。",
+   "evidence": [
+    "SnapGen_Taming_High_Resolution_Text_to_Image_Model",
+    "2311.16567",
+    "2404.11925"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "2306.00980",
+   "why": "部署线起点，确立双轴范式"
+  },
+  {
+   "report_id": "2311.16567",
+   "why": "架构搜索+一步蒸馏代表"
+  },
+  {
+   "report_id": "2405.17873",
+   "why": "少步量化脆弱性首证"
+  },
+  {
+   "report_id": "2411.05007",
+   "why": "W4A4 量化 SOTA"
+  },
+  {
+   "report_id": "2401.09603",
+   "why": "FID 缺陷机制与 CMMD 替代"
+  }
+ ],
+ "n_reports": 13
+}

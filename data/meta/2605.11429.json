@@ -1,0 +1,34 @@
+{
+ "report_id": "2605.11429",
+ "arxiv_id": "2605.11429",
+ "title": "From Schrodinger Bridge to Optimal Transport over Sub-Riemannian Manifolds",
+ "tldr_zh": "沿控制方向加噪声定义退化 SB：bracket-generating 下适定、强对偶，ε→0 收敛到 sub-Riemannian OT",
+ "tldr_en": "Noise only along control directions yields a well-posed hypoelliptic SB under bracket-generating assumptions; strong duality and convergence to sub-Riemannian OT as noise vanishes.",
+ "tags": [
+  "schrodinger-bridge",
+  "theory",
+  "sub-riemannian",
+  "stochastic-control",
+  "sinkhorn"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "No quantitative results; single 3D Heisenberg-group example (alpha=1/4) with eps in {1,0.5,0.1,0.01} (Figs. 3-4)",
+  "Minimum nontrivial dimension is 3 (Sec. 5)"
+ ],
+ "relations": [
+  {
+   "report_id": "2005.10963",
+   "type": "extends"
+  },
+  {
+   "report_id": "L_onard_A_Survey_of_the_Schr_dinger_Problem",
+   "type": "extends"
+  },
+  {
+   "report_id": "2607.03626",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

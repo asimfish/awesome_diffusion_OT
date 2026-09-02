@@ -1,0 +1,71 @@
+{
+  "issue_count": 11,
+  "issues": [
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.46pt but the original at this position is 10.06pt (ratio 0.74 vs page median 0.92) at x=416.9, y=70.1: (x_{⋆},z) 从独立耦合中采样，索引从均匀随机采样，且"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 5.06pt but the original at this position is 10.06pt (ratio 0.50 vs page median 0.92) at x=56.2, y=398.8: α̸= 2 ，则它们各自的极限并不相同，因为的函数"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (4 words, 0 CJK chars) at x=55.4, y=163.9: where R(θ) is defined by"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (3 words, 0 CJK chars) at x=307.7, y=509.6: 4.2.1. REDUCING R(θ) WITH GC"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=417.9, y=515.3: WITH"
+    },
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (19 words, 0 CJK chars) at x=55.1, y=472.3: Acknowledgements.This research was funded by grantNos. 2"
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (16 words, 0 CJK chars) at x=75.4, y=183.0: corresponding to these limiting scaled consistency losse"
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (4 words, 0 CJK chars) at x=75.0, y=230.6: where R(θ) is defined by"
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 8.38pt but the original at this position is 9.98pt (ratio 0.84 vs page median 0.92) at x=241.0, y=280.7: t→∞时成立。直观上，这是因为对于较大的"
+    },
+    {
+      "page": 23,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 23: paragraph still in English (23 words, 0 CJK chars) at x=55.4, y=113.3: Scheduling functions and hyperparameters from Song and D"
+    },
+    {
+      "page": 23,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 23: paragraph still in English (9 words, 0 CJK chars) at x=55.1, y=125.4: i=0 which is chosen as in Karras et al.(2022). Precisely"
+    }
+  ]
+}

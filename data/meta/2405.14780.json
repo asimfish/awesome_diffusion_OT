@@ -1,0 +1,50 @@
+{
+ "report_id": "2405.14780",
+ "arxiv_id": "2405.14780",
+ "title": "Metric Flow Matching for Smooth Interpolations on the Data Manifold",
+ "tldr_zh": "用数据依赖黎曼度量的近似测地线替代 CFM 直线插值，路径贴合流形，单细胞轨迹 SOTA",
+ "tldr_en": "Replaces straight CFM interpolants with approximate geodesics of a data-dependent Riemannian metric, keeping paths on the data manifold",
+ "tags": [
+  "flow matching",
+  "Riemannian metric",
+  "trajectory inference",
+  "optimal transport",
+  "single-cell"
+ ],
+ "code_url": "https://github.com/kksniak/metric-flow-matching",
+ "key_numbers": [
+  "OT-MFMLAND EMD 0.0813 ± 0.009 vs OT-CFM 0.6081 ± 0.023 on Arch (Table 1)",
+  "OT-MFMRBF FID 37.87 vs OT-CFM 41.42 on AFHQ (Table 2)",
+  "OT-MFMLAND W1 0.724 ± 0.070 vs WLF-UOT 0.733 ± 0.063 on Cite 5D (Table 4)",
+  "OT-MFMLAND W1 0.713 ± 0.039 vs WLF-UOT 0.738 ± 0.014 on EB 5D (Table 4)",
+  "OT-MFMLAND W1 0.890 ± 0.123 vs WLF-UOT 0.911 ± 0.147 on Multi 5D (Table 4)",
+  "OT-MFMRBF W1 41.784 ± 1.020 vs OT-CFM 45.393 ± 0.416 on Cite 100D (Table 3)"
+ ],
+ "relations": [
+  {
+   "report_id": "2302.00482",
+   "type": "继承耦合选择"
+  },
+  {
+   "report_id": "2302.03660",
+   "type": "对比/替代"
+  },
+  {
+   "report_id": "2302.00079",
+   "type": "推广其动能目标"
+  },
+  {
+   "report_id": "2310.02279",
+   "type": "对比/替代其势函数设计"
+  },
+  {
+   "report_id": "2302.05817",
+   "type": "实验基线"
+  },
+  {
+   "report_id": "2310.02794",
+   "type": "实验基线"
+  }
+ ],
+ "read_full_text": true
+}

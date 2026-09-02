@@ -1,0 +1,62 @@
+{
+ "report_id": "2412.14528",
+ "arxiv_id": "2412.14528",
+ "title": "Multi-Level Optimal Transport for Universal Cross-Tokenizer Knowledge Distillation on Language Models",
+ "tldr_zh": "双层 OT（token 级排序截断 + 序列级 Sinkhorn）对齐不同词表 logit，跨 tokenizer 蒸馏优于 ULD",
+ "tldr_en": "Dual-level OT (token-level ranking/truncation + sequence-level Sinkhorn) aligns logits across tokenizers, outperforming ULD in CTKD",
+ "tags": [
+  "optimal transport",
+  "knowledge distillation",
+  "cross-tokenizer",
+  "Sinkhorn distance",
+  "LLM"
+ ],
+ "code_url": "https://github.com/2018cx/Multi-Level-OT",
+ "key_numbers": [
+  {
+   "number": "71%",
+   "context": "QED 有标签蒸馏上相比 ULD 缩小的师生性能差距比例",
+   "source": "Sec. Results and Discussions"
+  },
+  {
+   "number": "58.97 / 61.79 / 62.58",
+   "context": "Ours 在 QED 上 OPT-350M / Pythia-410M / Bloomz-560M 的 F1",
+   "source": "Table 1"
+  },
+  {
+   "number": "53.22 / 43.28 / 36.83",
+   "context": "Ours 在无标签蒸馏平均 QED F1 / FairytaleQA Rouge-LSum / DIALOGSum Rouge-LSum",
+   "source": "Table 2"
+  },
+  {
+   "number": "k=50",
+   "context": "top-k 截断阈值最优值",
+   "source": "Table 8"
+  },
+  {
+   "number": "N=20",
+   "context": "Sinkhorn 迭代数饱和点",
+   "source": "Table 7"
+  },
+  {
+   "number": "41.37 / 34.01 / 33.01",
+   "context": "Ours 在 mT0-300M 上的 QED F1 / FairytaleQA Rouge-LSum / DIALOGSum Rouge-LSum",
+   "source": "Table 5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2402.12030",
+   "type": "前作/继承"
+  },
+  {
+   "report_id": "2406.17328",
+   "type": "竞争方法"
+  },
+  {
+   "report_id": "2401.10491",
+   "type": "基线方法"
+  }
+ ],
+ "read_full_text": true
+}

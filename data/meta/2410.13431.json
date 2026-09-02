@@ -1,0 +1,45 @@
+{
+ "report_id": "2410.13431",
+ "arxiv_id": "2410.13431",
+ "title": "Solving Prior Distribution Mismatch in Diffusion Models via Optimal Transport",
+ "tldr_zh": "半离散 OT（几何变分 Brenier 势）把 N(0,I) 一步映到前向终态消 prior error，再短程扩散；作者报告 CIFAR-10 FID 1.31@50NFE",
+ "tldr_en": "Semi-discrete OT map (geometric-variational Brenier potential) sends N(0,I) onto the forward terminal law to kill prior error, then short diffusion; authors report CIFAR-10 FID 1.31 at 50 NFE.",
+ "tags": [
+  "prior-mismatch",
+  "semi-discrete-ot",
+  "brenier-potential",
+  "monge-ampere",
+  "accelerated-sampling",
+  "theory",
+  "laguerre-cells"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Prior error W2(p_T,q_T) at T=500: identity 0.19/0.36/0.70/1.04 (CIFAR-10/CelebA/FFHQ/AFHQ), AE-OT 0.02/0.04/0.10/0.11, unsmoothed OT 0.00 everywhere (Table 2)",
+  "Smoothing tau=0.02 reintroduces prior error 0.0457 (CIFAR-10, T'=50) and 0.1179 (FFHQ) (Table 3)",
+  "CIFAR-10: unsmoothed OT + 50-step SDE FID 1.31, Precision 0.66, Recall 0.76; tau=0.02 FID 1.34 (Table 3)",
+  "CelebA 64: FID 1.88 (P 0.79, R 0.75) at 50 NFE vs DDPM 3.26 at 1000 NFE (Table 3)",
+  "FFHQ 256: FID 2.14 at 50 NFE vs EDM 2.39 at 79 NFE (Table 3)",
+  "Theorem 3.11: probability flow converges to static OT gradient with rate {I(T)/I(s) W2(p_inf,p_T)}^{2/15} (Eq. 19)",
+  "Theorem 3.2: exact score cannot remove prior error, W2(p_eps,q_eps) bounded below by (I(T)/I(eps)) W2(p_T,q_T) (Eq. 12)"
+ ],
+ "relations": [
+  {
+   "report_id": "2403.05069",
+   "type": "competes"
+  },
+  {
+   "report_id": "2505.18521",
+   "type": "competes"
+  },
+  {
+   "report_id": "2412.05101",
+   "type": "competes"
+  },
+  {
+   "report_id": "The_Emergence_of_Reproducibility_and_Consistency_i",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

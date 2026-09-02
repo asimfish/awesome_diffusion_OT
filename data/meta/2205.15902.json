@@ -1,0 +1,51 @@
+{
+ "report_id": "2205.15902",
+ "arxiv_id": "2205.15902",
+ "title": "Variational inference via Wasserstein gradient flows",
+ "tldr_zh": "Gaussian VI 即 KL 在 Bures-Wasserstein 子流形上的梯度流（Särkkä ODE），强 log-concave 下有 e^{-2αt} 与 SGD 非渐近界",
+ "tldr_en": "Gaussian VI is the KL gradient flow on the Bures-Wasserstein manifold (Särkkä's ODE); strongly log-concave targets give exponential rates and a non-asymptotic SGD bound; mixtures become interacting Gaussian particles.",
+ "tags": [
+  "wasserstein-gradient-flow",
+  "bures-wasserstein",
+  "variational-inference",
+  "jko-scheme",
+  "theory",
+  "gaussian-mixture",
+  "sampling"
+ ],
+ "code_url": "https://github.com/marc-h-lambert/W-VI",
+ "key_numbers": [
+  "Continuous time: W2^2(p_t, pi_hat) <= exp(-2 alpha t) W2^2(p_0, pi_hat) when Hessian V >= alpha I > 0 (Corollary 3)",
+  "BW-SGD: E W2^2(p_k, pi_hat) <= exp(-alpha k h) W2^2(p_0, pi_hat) + 36 d h / alpha^2 for h <= alpha^2/60; eps^2 accuracy with k >~ d/(alpha^3 eps^2) log(W2(p_0,pi_hat)/eps) (Theorem 4)",
+  "Stationarity of Gaussian VI: E_pi_hat grad V = 0, E_pi_hat Hess V = Sigma_hat^{-1} (Eq. 7)",
+  "Experiments: logistic-regression posterior in d=2 and d=100, KL below Laplace approximation (Fig. 2, curves only); 40 Gaussian particles fit a GMM target (Fig. 3, qualitative)",
+  "Mixture-of-Gaussians KL objective is non-convex on P2(BW) even for strongly log-concave pi (Appendix G)"
+ ],
+ "relations": [
+  {
+   "report_id": "2106.00736",
+   "type": "competes"
+  },
+  {
+   "report_id": "2112.02424",
+   "type": "competes"
+  },
+  {
+   "report_id": "2506.07534",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2411.00698",
+   "type": "extends"
+  },
+  {
+   "report_id": "2406.08938",
+   "type": "competes"
+  },
+  {
+   "report_id": "2509.16974",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

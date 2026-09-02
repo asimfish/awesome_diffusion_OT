@@ -94,24 +94,29 @@
   },
   {
    "key": "t24__branched_schro_dinger_bridge_matching",
-   "report_id": "Branched_Schr_dinger_Bridge_Matching",
+   "report_id": "2506.09007",
    "title": "Branched Schrödinger Bridge Matching",
-   "authors": "BranchSBM, Tang et al.",
+   "authors": [
+    "Sophia Tang",
+    "Yinuo Zhang",
+    "Alexander Tong",
+    "Pranam Chatterjee"
+   ],
    "year": 2026,
    "venue": "ICLR",
    "evidence": "A",
    "star": false,
-   "arxiv_id": null,
-   "published": null,
-   "abstract": "",
+   "arxiv_id": "2506.09007",
+   "published": "2025-06-10",
+   "abstract": "Predicting the intermediate trajectories between an initial and target distribution is a central problem in generative modeling. Existing approaches, such as flow matching and Schrödinger bridge matching, effectively learn mappings between two distributions by modeling a single stochastic path. However, these methods are inherently limited to unimodal transitions and cannot capture branched or divergent evolution from a common origin to multiple distinct modes. To address this, we introduce Branched Schrödinger Bridge Matching (BranchSBM), a novel framework that learns branched Schrödinger bridges. BranchSBM parameterizes multiple time-dependent velocity fields and growth processes, enabling the representation of population-level divergence into multiple terminal distributions. We show that BranchSBM is not only more expressive but also essential for tasks involving multi-path surface navigation, modeling cell fate bifurcations from homogeneous progenitor states, and simulating diverging cellular responses to perturbations.",
    "contribution_zh": "分支 SB：把广义 SB 分解为多条带权 unbalanced 随机最优控制分支（每支独立速度+增长网络），建模命运分叉与扰动分歧",
    "links": {
     "OpenReview": "https://openreview.net/forum?id=ctq8BfUXWz"
    },
-   "pdf": null,
-   "text": null,
-   "text_chars": null,
-   "pages": null
+   "pdf": "papers/2506.09007.pdf",
+   "text": "data/text/2506.09007.txt",
+   "text_chars": 90000,
+   "pages": 44
   },
   {
    "key": "t24__deepruot_learning_stochastic_dynamics_from_snapshots_through",
@@ -191,24 +196,30 @@
   },
   {
    "key": "t24__modeling_cell_dynamics_and_interactions_with_unbalanced_mean",
-   "report_id": "Modeling_Cell_Dynamics_and_Interactions_with_Unbal",
+   "report_id": "2505.11197",
    "title": "Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge",
-   "authors": "CytoBridge, Zhang et al.",
+   "authors": [
+    "Zhenyi Zhang",
+    "Zihan Wang",
+    "Yuhao Sun",
+    "Tiejun Li",
+    "Peijie Zhou"
+   ],
    "year": 2025,
    "venue": "NeurIPS",
    "evidence": "P",
    "star": false,
-   "arxiv_id": null,
-   "published": null,
-   "abstract": "",
+   "arxiv_id": "2505.11197",
+   "published": "2025-05-16",
+   "abstract": "Modeling the dynamics from sparsely time-resolved snapshot data is crucial for understanding complex cellular processes and behavior. Existing methods leverage optimal transport, Schrödinger bridge theory, or their variants to simultaneously infer stochastic, unbalanced dynamics from snapshot data. However, these approaches remain limited in their ability to account for cell-cell interactions. This integration is essential in real-world scenarios since intercellular communications are fundamental life processes and can influence cell state-transition dynamics. To address this challenge, we formulate the Unbalanced Mean-Field Schrödinger Bridge (UMFSB) framework to model unbalanced stochastic interaction dynamics from snapshot data. Inspired by this framework, we further propose CytoBridge, a deep learning algorithm designed to approximate the UMFSB problem. By explicitly modeling cellular transitions, proliferation, and interactions through neural networks, CytoBridge offers the flexibility to learn these processes directly from data. The effectiveness of our method has been extensively validated using both synthetic gene regulatory data and real scRNA-seq datasets. Compared to existing methods, CytoBridge identifies growth, transition, and interaction patterns, eliminates false transitions, and reconstructs the developmental landscape with greater accuracy. Code is available at: https://github.com/zhenyiizhang/CytoBridge-NeurIPS.",
    "contribution_zh": "UMFSB：unbalanced SB 加 mean-field 交互项，四网络（速度/增长/对数密度/交互势）从快照学细胞间相互作用",
    "links": {
     "OpenReview": "https://openreview.net/forum?id=Z6DJJIN8IJ"
    },
-   "pdf": null,
-   "text": null,
-   "text_chars": null,
-   "pages": null
+   "pdf": "papers/2505.11197.pdf",
+   "text": "data/text/2505.11197.txt",
+   "text_chars": 90000,
+   "pages": 34
   },
   {
    "key": "t24__dest_ot_alignment_of_spatiotemporal_transcriptomics_data",

@@ -1,0 +1,66 @@
+{
+ "report_id": "2403.01639",
+ "arxiv_id": "2403.01639",
+ "title": "Theoretical Insights for Diffusion Guidance: A Case Study for Gaussian Mixture Models",
+ "tldr_zh": "GMM 下证明 guidance 提升分类置信度、降低微分熵，覆盖 DDPM/DDIM",
+ "tldr_en": "Proves guidance boosts classification confidence and reduces differential entropy in GMMs, covering DDPM/DDIM",
+ "tags": [
+  "diffusion guidance",
+  "Gaussian mixture models",
+  "DDPM",
+  "DDIM",
+  "differential entropy",
+  "classification confidence",
+  "Fokker-Planck"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "P(x_T, y) → 1 as η → ∞, rate ≥ 1 − O(η^{-1} log η)",
+   "source": "Theorem 3.6 (DDIM)"
+  },
+  {
+   "number": "P(x̄_T, y) → 1 as η → ∞, rate ≥ 1 − O(η^{-e^{-T}} (log η)^{2e^{-T}})",
+   "source": "Theorem 3.8 (DDPM)"
+  },
+  {
+   "number": "H_0(t) ≥ H(t) for all t ∈ [0, T]",
+   "source": "Theorem 4.2 (DDIM entropy)"
+  },
+  {
+   "number": "η_0 ≤ 1/(‖μ‖_2^2 max δ_k) for convergent phase",
+   "source": "Proposition 6.1"
+  },
+  {
+   "number": "ε ≤ ‖μ_y − μ_0‖_2^2 / 3 in Assumption 3.1",
+   "source": "Assumption 3.1"
+  },
+  {
+   "number": "10^4 samples per guidance strength in numerical experiments",
+   "source": "Figure 2 caption"
+  },
+  {
+   "number": "η ∈ {0, 1, 2, 10} in density visualization",
+   "source": "Figure 1"
+  },
+  {
+   "number": "δ_k = 0.1 vs 0.04 in phase transition experiments",
+   "source": "Figure 3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2207.12598",
+   "type": "被本文引用（classifier-free guidance 原始论文）"
+  },
+  {
+   "report_id": "2105.05233",
+   "type": "被本文引用（classifier guidance 原始论文）"
+  },
+  {
+   "report_id": "2403.01639",
+   "type": "self"
+  }
+ ],
+ "read_full_text": true
+}

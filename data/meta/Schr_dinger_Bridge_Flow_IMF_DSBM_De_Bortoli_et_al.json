@@ -1,0 +1,36 @@
+{
+ "report_id": "Schr_dinger_Bridge_Flow_IMF_DSBM_De_Bortoli_et_al",
+ "arxiv_id": "",
+ "title": "Schrödinger Bridge Flow for Unpaired Data Translation (α-DSBM)",
+ "tldr_zh": "IMF 连续化为 SB Flow，离散化得 α-IMF；α<1 单网络在线微调收敛到 SB",
+ "tldr_en": "Continuous 'Schrödinger Bridge Flow' whose discretization gives alpha-IMF; for alpha<1 a single network is finetuned online and converges to the SB.",
+ "tags": [
+  "schrodinger-bridge",
+  "bridge-matching",
+  "online",
+  "unpaired-translation"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Not read in full; alpha-DSBM re-implemented baseline in 2607.03626: MNIST->EMNIST FID 6.41, AFHQ cat->wild FID 27.6"
+ ],
+ "relations": [
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "type": "extends"
+  },
+  {
+   "report_id": "2409.09376",
+   "type": "competes"
+  },
+  {
+   "report_id": "2607.03626",
+   "type": "uses"
+  },
+  {
+   "report_id": "2510.20871",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": false
+}

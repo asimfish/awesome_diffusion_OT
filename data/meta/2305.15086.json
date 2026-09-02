@@ -1,0 +1,36 @@
+{
+ "report_id": "2305.15086",
+ "arxiv_id": "",
+ "title": "Unpaired Image-to-Image Translation via Neural Schrödinger Bridge",
+ "tldr_zh": "用SB自相似性拆成对抗学习序列，首次做通高分辨率非配对I2I（据课题笔记）",
+ "tldr_en": "Decomposes the unpaired Schrödinger bridge into a sequence of adversarial sub-problems via self-similarity; reported first success on high-res unpaired I2I.",
+ "tags": [
+  "schrodinger-bridge",
+  "unpaired-i2i",
+  "adversarial",
+  "high-resolution"
+ ],
+ "code_url": "https://github.com/cyclomon/UNSB",
+ "key_numbers": [
+  "No abstract or full text available; no numbers"
+ ],
+ "relations": [
+  {
+   "report_id": "ASBM_Adversarial_Schr_dinger_Bridge_Matching",
+   "type": "competes"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching",
+   "type": "uses"
+  },
+  {
+   "report_id": "2203.08382",
+   "type": "competes"
+  },
+  {
+   "report_id": "Latent_Schr_dinger_Bridge",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

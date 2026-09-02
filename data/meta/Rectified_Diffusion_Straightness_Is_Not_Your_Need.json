@@ -1,0 +1,31 @@
+{
+ "report_id": "Rectified_Diffusion_Straightness_Is_Not_Your_Need",
+ "arxiv_id": null,
+ "title": "Rectified Diffusion: Straightness Is Not Your Need in Rectified Flow",
+ "tldr_zh": "论证 rectification 本质是配对重训而非直线度，推广为一般扩散的一阶 ODE 目标",
+ "tldr_en": "Argues rectification is about paired retraining, not straightness; generalizes to first-order ODE for diffusion",
+ "tags": [
+  "Rectified Flow",
+  "reflow",
+  "straightness",
+  "diffusion",
+  "ODE"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "rfpp_NeurIPS2024",
+   "type": "同向反思：一轮 reflow 足够"
+  },
+  {
+   "report_id": "Bansal_W2_bound",
+   "type": "理论张力：直线度作为误差代理"
+  },
+  {
+   "report_id": "Hertrich_reflow_counterexample",
+   "type": "同向解耦：直线化与最优性"
+  }
+ ],
+ "read_full_text": false
+}

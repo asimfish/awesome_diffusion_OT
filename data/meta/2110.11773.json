@@ -1,0 +1,63 @@
+{
+ "report_id": "2110.11773",
+ "arxiv_id": "2110.11773",
+ "title": "Sinkformers: Transformers with Doubly Stochastic Attention",
+ "tldr_zh": "用 Sinkhorn 双随机归一化替换 softmax attention，attention 可解释为 Wasserstein 梯度流，实验精度小幅提升",
+ "tldr_en": "Replace softmax attention with Sinkhorn doubly stochastic normalization; attention becomes a Wasserstein gradient flow with modest accuracy gains",
+ "tags": [
+  "attention",
+  "optimal transport",
+  "Sinkhorn",
+  "doubly stochastic",
+  "Wasserstein gradient flow",
+  "Transformer"
+ ],
+ "code_url": "https://github.com/michaelsdr/sinkformers",
+ "key_numbers": [
+  {
+   "number": "89.1% vs 87.8%",
+   "context": "Set Sinkformer vs Set Transformer best test accuracy on ModelNet 40",
+   "source": "Table 1"
+  },
+  {
+   "number": "93.1% vs 93.2%",
+   "context": "Point Cloud Sinkformer vs Transformer best test accuracy on ModelNet 40",
+   "source": "Table 1"
+  },
+  {
+   "number": "34.73 vs 34.68",
+   "context": "Sinkformer vs Transformer median BLEU on IWSLT'14 after fine-tuning",
+   "source": "Table 2"
+  },
+  {
+   "number": "79.5% vs 79.0%",
+   "context": "Sinkformer vs Transformer median test accuracy on cats vs dogs",
+   "source": "Sec. 6.4"
+  },
+  {
+   "number": "3-5 iterations",
+   "context": "Sinkhorn iterations typically sufficient for near double stochasticity",
+   "source": "Sec. 3"
+  },
+  {
+   "number": "4m22s vs 4m02s",
+   "context": "Sinkformer vs Transformer training time per epoch on IMDb",
+   "source": "Sec. 6.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2103.03404",
+   "type": "complementary"
+  },
+  {
+   "report_id": "2010.11929",
+   "type": "baseline"
+  },
+  {
+   "report_id": "1810.00825",
+   "type": "baseline"
+  }
+ ],
+ "read_full_text": true
+}

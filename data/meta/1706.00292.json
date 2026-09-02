@@ -1,0 +1,50 @@
+{
+ "report_id": "1706.00292",
+ "arxiv_id": "1706.00292",
+ "title": "Learning Generative Models with Sinkhorn Divergences",
+ "tldr_zh": "把 L 步 Sinkhorn 迭代当可自动微分的损失层，用 minibatch Sinkhorn loss 训练生成器；证 ε→0 得 OT、ε→∞ 得 MMD",
+ "tldr_en": "Trains generators by backpropagating through L Sinkhorn iterations on minibatches; proves the Sinkhorn loss interpolates between OT (eps to 0) and MMD (eps to infinity).",
+ "tags": [
+  "sinkhorn-divergence",
+  "generative-models",
+  "entropic-ot",
+  "unrolled-differentiation",
+  "minibatch",
+  "gan"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "CIFAR-10 Inception Score: Sinkhorn eps=1000 4.14+-0.06 vs MMD 4.04+-0.07; eps=100 3.09+-0.036; eps=10 3.11+-0.031 (Table 2)",
+  "Theorem 1: W_bar_{c,eps} -> 2 W_c as eps -> 0 and -> MMD_{-c} as eps -> infinity",
+  "MNIST: eps=1 with L=10 Sinkhorn iterations matches eps=0.1 with L=100; minibatch m=200 sufficient, m=10 poor (Fig. 3)",
+  "Empirical sample complexity R_{eps,d}(N) ~ N^{-kappa}: kappa ~ p/d for eps<1 (OT-like), kappa ~ 1 for eps>1 (MMD-like) (Appendix A.1, Fig. 5-6)",
+  "Iris ellipse fit: eps=0.1 diagonal counts 44/38/40 of 50 per class vs MMD 36/39/42 (Table 1)"
+ ],
+ "relations": [
+  {
+   "report_id": "1306.0895",
+   "type": "uses"
+  },
+  {
+   "report_id": "1810.08278",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "1803.05573",
+   "type": "competes"
+  },
+  {
+   "report_id": "1810.01118",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "1905.11882",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2205.06688",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

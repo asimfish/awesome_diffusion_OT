@@ -1,0 +1,50 @@
+{
+ "report_id": "2302.05872",
+ "arxiv_id": "2302.05872",
+ "title": "I2SB: Image-to-Image Schrödinger Bridge",
+ "tldr_zh": "配对边界SB可解析、免模拟训练；ImageNet修复7/9项FID最佳",
+ "tldr_en": "With paired boundaries the Schrödinger bridge becomes tractable and simulation-free; best FID on 7 of 9 ImageNet-256 restoration tasks.",
+ "tags": [
+  "schrodinger-bridge",
+  "image-restoration",
+  "paired-i2i",
+  "simulation-free",
+  "imagenet-256"
+ ],
+ "code_url": "https://github.com/NVlabs/I2SB",
+ "key_numbers": [
+  "SR 4× Bicubic FID 2.8 vs ADM 14.8, ΠGDM 3.6 (Table 2)",
+  "JPEG QF=5 FID 4.6 / CA 67.9 vs Palette 8.3 / 64.2 (Table 3)",
+  "Inpaint Freeform 10-20% FID 2.9 / CA 74.9 vs Palette 4.0 (Table 4)",
+  "OT-ODE variant: JPEG QF=5 FID +5.3 worse, Deblur Uniform CA +6.0 better (Table 6)",
+  "Inpaint 1-NFE FID 4.1 vs DeepFillv2 6.7, Palette 9.6 (Table 8)",
+  "edges→shoes FID 73.9/54.2/37.8 at NFE 1/5/1000 vs Pix2pix 73.9 (Table 7)"
+ ],
+ "relations": [
+  {
+   "report_id": "2309.16948",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2405.15885",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2410.22637",
+   "type": "uses"
+  },
+  {
+   "report_id": "2205.07680",
+   "type": "competes"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching",
+   "type": "competes"
+  },
+  {
+   "report_id": "2503.07535",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

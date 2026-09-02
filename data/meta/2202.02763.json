@@ -1,0 +1,80 @@
+{
+ "report_id": "2202.02763",
+ "arxiv_id": "2202.02763",
+ "title": "Riemannian Score-Based Generative Modelling",
+ "tldr_zh": "把 SGM 前向/反向 SDE 推广到黎曼流形，用测地随机游走采样，在球面、环面、SO(3) 上验证",
+ "tldr_en": "Extends score-based generative models to Riemannian manifolds via geodesic random walks and heat kernel approximations",
+ "tags": [
+  "Riemannian diffusion",
+  "score-based generative model",
+  "geodesic random walk",
+  "heat kernel",
+  "manifold learning"
+ ],
+ "code_url": "https://github.com/oxcsml/riemannian-score-sde",
+ "key_numbers": [
+  {
+   "number": "−4.92±0.25",
+   "context": "RSGM Volcano 负对数似然",
+   "source": "Table 4"
+  },
+  {
+   "number": "−0.19±0.07",
+   "context": "RSGM Earthquake 负对数似然",
+   "source": "Table 4"
+  },
+  {
+   "number": "0.45±0.17",
+   "context": "RSGM Flood 负对数似然",
+   "source": "Table 4"
+  },
+  {
+   "number": "−1.33±0.06",
+   "context": "RSGM Fire 负对数似然",
+   "source": "Table 4"
+  },
+  {
+   "number": "0.89±0.03",
+   "context": "RSGM SO(3) M=16 测试对数似然",
+   "source": "Table 5"
+  },
+  {
+   "number": "0.1±0.0",
+   "context": "RSGM SO(3) NFE（×10³）",
+   "source": "Table 5"
+  },
+  {
+   "number": "d ≥ 10",
+   "context": "Moser Flow 无法训练的环面维度",
+   "source": "Sec. 6.2"
+  },
+  {
+   "number": "W1 ≤ C(e^{-λ1T} + √(T/2)M + e^T γ^{1/2})",
+   "context": "RSGM 收敛界",
+   "source": "Theorem 4.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2011.13456",
+   "type": "继承自"
+  },
+  {
+   "report_id": "2002.02428",
+   "type": "竞争/对比"
+  },
+  {
+   "report_id": "2101.03210",
+   "type": "竞争/对比"
+  },
+  {
+   "report_id": "2302.03660",
+   "type": "被后续工作取代（部分）"
+  },
+  {
+   "report_id": "2207.03024",
+   "type": "后续扩展（Schrödinger bridge）"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,59 @@
+{
+ "report_id": "2503.09583",
+ "arxiv_id": "2503.09583",
+ "title": "Minimax Optimality of the Probability Flow ODE for Diffusion Models",
+ "tldr_zh": "次高斯+β-Hölder(β≤2) 密度下，软阈值高斯核 score 估计器+PF-ODE 采样器 TV 误差 Õ(n^{-β/(d+2β)})，确定性采样器首次（近）minimax（预印本）",
+ "tldr_en": "Preprint: a soft-thresholded Gaussian-kernel score estimator controlling both L2 and Jacobian error makes the PF-ODE sampler near-minimax in TV, rate n^{-β/(d+2β)}, for subgaussian β-Hölder (β≤2) targets.",
+ "tags": [
+  "diffusion-theory",
+  "probability-flow-ode",
+  "minimax",
+  "score-estimation",
+  "jacobian",
+  "total-variation",
+  "preprint",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "E[TV(p_Y,p*)] ≤ C n^{-β/(d+2β)} (log n)^{(d+1)/2} log K, for K ≥ n^{β/(d+2β)} log³K (Thm 1, Eq. 21)",
+  "ODE convergence: E[TV] ≲ d log⁴K/K + ε_sc √d log^{3/2}K + ε_jcb d log K (Thm 2, Eq. 34)",
+  "Per-t L2 score error ≤ (C_d/n)(1/t + σ^d/t^{d/2+1})(log n)^{d/2+1}, C_d=(4/√π)^d (Prop. 1, Eq. 37)",
+  "Initial smoothing bias TV ≤ C₂(1−ᾱ₁+τ)^{β/2∧1} log^{d/2}(·) (Prop. 3, Eq. 43); τ = n^{-2/(d+2β)}"
+ ],
+ "relations": [
+  {
+   "report_id": "2409.18959",
+   "type": "extends"
+  },
+  {
+   "report_id": "Diffusion_Models_are_Minimax_Optimal_Distribution",
+   "type": "competes"
+  },
+  {
+   "report_id": "2402.15602",
+   "type": "extends"
+  },
+  {
+   "report_id": "2402.07747",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.20879",
+   "type": "competes"
+  },
+  {
+   "report_id": "2010.02502",
+   "type": "uses"
+  },
+  {
+   "report_id": "2206.00927",
+   "type": "uses"
+  },
+  {
+   "report_id": "2508.16306",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,56 @@
+{
+ "report_id": "Diffusion_Models_are_Minimax_Optimal_Distribution",
+ "arxiv_id": "2303.01861",
+ "title": "Diffusion Models are Minimax Optimal Distribution Estimators",
+ "tldr_zh": "Besov 密度+经验 score matching：TV 率 n^{-s/(2s+d)} minimax、W1 率 n^{-(s+1-δ)/(2s+d)} 几乎 minimax；线性子空间数据率只含 d'",
+ "tldr_en": "With Besov-class densities and empirical score matching, diffusion models achieve minimax TV rate n^{-s/(2s+d)} and almost-minimax W1 rate; subspace data give intrinsic-dimension rates.",
+ "tags": [
+  "diffusion-theory",
+  "minimax",
+  "besov",
+  "statistical-rate",
+  "score-approximation",
+  "neural-network",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "E[TV(X0,Ŷ)] ≲ n^{-s/(2s+d)} log^{(5d+8s)/(2d)} n (Thm 5.1); lower bound n^{-s/(2s+d)} (Prop. 5.2)",
+  "E[W1(X0,Ŷ)] ≲ n^{-(s+1-δ)/(d+2s)} with switched networks (Thm 5.4); lower bound n^{-(s+1)/(2s+d)} (Prop. 5.3)",
+  "Score approximation error ≲ N^{-2s/d} log N / σ_t² with L=O(log⁴N), S=O(N log⁸N) (Thm 3.1)",
+  "Generalization: E∫‖ŝ−∇log p_t‖² ≲ n^{-2s/(d+2s)} log^{18} n (Eq. 4)",
+  "Discretization: TV ≲ Õ(η² T̲^{-3} + n^{-s/(d+2s)}) (Thm 5.7)",
+  "Subspace data: E[W1] ≲ n^{-(s+1-δ)/(d'+2s)} (Thm 6.4)"
+ ],
+ "relations": [
+  {
+   "report_id": "2405.20879",
+   "type": "extends"
+  },
+  {
+   "report_id": "2402.15602",
+   "type": "extends"
+  },
+  {
+   "report_id": "2503.09583",
+   "type": "extends"
+  },
+  {
+   "report_id": "2209.11215",
+   "type": "uses"
+  },
+  {
+   "report_id": "2402.07747",
+   "type": "competes"
+  },
+  {
+   "report_id": "2410.09046",
+   "type": "competes"
+  },
+  {
+   "report_id": "1905.05828",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,60 @@
+{
+ "report_id": "2406.12616",
+ "arxiv_id": "2406.12616",
+ "title": "Learning diffusion at lightspeed",
+ "tldr_zh": "JKOnet*：用 JKO 步一阶最优性条件替代双层优化，单层二次损失同时学 potential/interaction/internal 能量，线性参数化有闭式解",
+ "tldr_en": "JKOnet* replaces the bilevel JKO inverse problem by a quadratic loss on the JKO first-order optimality condition, learning potential, interaction and internal energies with a closed form for linear features.",
+ "tags": [
+  "jko-scheme",
+  "inverse-problem",
+  "energy-learning",
+  "first-order-optimality",
+  "single-cell",
+  "population-dynamics",
+  "wasserstein-gradient-flow",
+  "closed-form"
+ ],
+ "code_url": "https://github.com/antonioterpin/jkonet-star",
+ "key_numbers": [
+  "Embryoid-body scRNA-seq one-step EMD (5 PCs, 60/40 split, 5 seeds): JKOnet*_V time-varying 0.624+-0.007 vs JKOnet 1.363+-0.214, JKOnet-vanilla 3.237+-1.135 (Sec. 4.4 table)",
+  "Literature numbers under a different protocol: DMSB 0.67, NLSB 0.74, OT-CFM 0.790, MIOFLOW 0.79, Reg. CNF 0.825, TrajectoryNet 0.848, DSB 0.862, I-CFM 0.872, SB-CFM 1.221 (Sec. 4.4 table)",
+  "Per-epoch complexity: JKOnet O(T(DNd + N^2 log N / eps^2)) vs JKOnet* O(TNd) without interaction, O(TN^2 d) with interaction; linear version closed form O(TNdn + n^3) in one epoch (Table 1)",
+  "Precomputing OT couplings costs 0.03+-0.01 s on synthetic tasks (tau=0.01, T=5, 15 potentials); JKOnet-vanilla diverges (NaN) on several potentials (Fig. 3)",
+  "Scaling: N in {1000..10000}, d in {10..50}, EMD grows sublinearly in d (Fig. 4); training on scRNA-seq takes minutes vs hours for baselines (Sec. 4.4)"
+ ],
+ "relations": [
+  {
+   "report_id": "2106.06345",
+   "type": "extends"
+  },
+  {
+   "report_id": "2205.15902",
+   "type": "competes"
+  },
+  {
+   "report_id": "2509.16974",
+   "type": "competes"
+  },
+  {
+   "report_id": "2402.05443",
+   "type": "competes"
+  },
+  {
+   "report_id": "2408.14608",
+   "type": "competes"
+  },
+  {
+   "report_id": "Momentum_Multi_Marginal_SB_Matching_3MSBM_Theodoro",
+   "type": "competes"
+  },
+  {
+   "report_id": "Learning_Single_Cell_Perturbation_Responses_using",
+   "type": "competes"
+  },
+  {
+   "report_id": "Optimal_Transport_Analysis_of_Single_Cell_Gene_Exp",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,82 @@
+{
+ "report_id": "2501.08331",
+ "arxiv_id": "2501.08331",
+ "title": "Go-with-the-Flow: Motion-Controllable Video Diffusion Models Using Real-Time Warped Noise",
+ "tldr_zh": "实时噪声 warp 算法把光流编码进初始噪声，零架构改动实现视频运动控制",
+ "tldr_en": "Real-time noise warping encodes optical flow into initial noise for motion-controllable video diffusion without architecture changes",
+ "tags": [
+  "noise warping",
+  "video diffusion",
+  "motion control",
+  "optical flow",
+  "Gaussianity preservation",
+  "T12"
+ ],
+ "code_url": "https://github.com/Eyeline-Labs/Go-with-the-Flow",
+ "key_numbers": [
+  {
+   "number": "26×",
+   "context": "本文噪声 warp 比 HIWYN 快 26 倍（2.14 ms vs 55.2 ms，1024×1024，A100 40GB）",
+   "source": "Tab. 1, Sec. 4.2"
+  },
+  {
+   "number": "0.00014",
+   "context": "本文 warped noise 的 Moran's I（p=0.84），表明无空间自相关",
+   "source": "Tab. 1, Sec. 4.1"
+  },
+  {
+   "number": "0.060",
+   "context": "本文 warped noise 的 K-S test 统计量（p=0.44），表明服从正态分布",
+   "source": "Tab. 1, Sec. 4.1"
+  },
+  {
+   "number": "41.1",
+   "context": "VIPSeg 局部物体运动控制 FID（MotionClone 85.2，SG-I2V 61.4）",
+   "source": "Tab. 2, Sec. 4.4.1"
+  },
+  {
+   "number": "82% / 90%",
+   "context": "用户研究中 cut-and-drag 局部控制胜率 82%，可旋转相机控制胜率 90%",
+   "source": "Sec. 4.4.1"
+  },
+  {
+   "number": "48.4",
+   "context": "DL3DV 相机运动迁移 FID（MotionClone 82.7，ImageConductor 89.2）",
+   "source": "Tab. 2, Sec. 4.4.2"
+  },
+  {
+   "number": "0.70",
+   "context": "DAVIS 运动迁移 T2V 的 CoTracker mIoU，低于 MotionCtrl 的 0.85",
+   "source": "Tab. 2, Sec. 4.4.2"
+  },
+  {
+   "number": "40 GPU days",
+   "context": "CogVideoX-5B 微调开销：8×A100 80GB，30,000 迭代，4M 视频数据集",
+   "source": "Sec. 3.5"
+  },
+  {
+   "number": "O(D)",
+   "context": "噪声 warp 算法时间复杂度，关于像素数线性",
+   "source": "Proposition 2, Sec. 3.1.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "HIWYN",
+   "type": "继承（直接前身，本文替换其二次复杂度算法）"
+  },
+  {
+   "report_id": "InfRes",
+   "type": "并发工作（同为噪声 warp 算法，Tab. 1 对比）"
+  },
+  {
+   "report_id": "CogVideoX",
+   "type": "基础模型（黑盒微调）"
+  },
+  {
+   "report_id": "AnimateDiff",
+   "type": "基础模型（展示模型无关性）"
+  }
+ ],
+ "read_full_text": true
+}

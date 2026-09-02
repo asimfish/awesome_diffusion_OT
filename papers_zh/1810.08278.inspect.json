@@ -1,0 +1,41 @@
+{
+  "issue_count": 6,
+  "issues": [
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=126.7, y=418.0: X为紧度量空间，具有利普希茨代价函数"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=76.4, y=212.7: 命题1（OT的性质）最优势存在且唯一-几乎处处，至多相差一个加性常数，即也是最优的。在最优时，我"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (4 words, 0 CJK chars) at x=75.6, y=448.7: where (f, g) satisﬁes f = T(β, g) and g = T(α, f)"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (4 words, 0 CJK chars) at x=206.9, y=438.4: j=1 δyj is a ﬁxed target"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (9 words, 0 CJK chars) at x=75.6, y=453.5: i=1 δxi(t) is parameterized bya time-varying point cloud"
+    },
+    {
+      "page": 12,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 12: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=76.4, y=99.9: 命题8。若与是中的弱收敛序列，则得到"
+    }
+  ]
+}

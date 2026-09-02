@@ -1,0 +1,77 @@
+{
+ "report_id": "2403.03206",
+ "arxiv_id": "2403.03206",
+ "title": "Scaling Rectified Flow Transformers for High-Resolution Image Synthesis",
+ "tldr_zh": "61 变体对照确立 RF+logit-normal 时间步采样最优，MMDiT 架构随规模可预测提升",
+ "tldr_en": "Large-scale study establishes RF with logit-normal timestep sampling as superior; MMDiT scales predictably",
+ "tags": [
+  "rectified flow",
+  "text-to-image",
+  "MMDiT",
+  "logit-normal sampling",
+  "scaling laws",
+  "diffusion models"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "1.54",
+   "context": "rf/lognorm(0.00, 1.00) 全局平均排名（61 变体中第一）",
+   "source": "Table 1"
+  },
+  {
+   "number": "5.67",
+   "context": "RF 均匀采样全局平均排名",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.74",
+   "context": "depth=38, 1024², DPO 模型 GenEval Overall 分数，超过 DALL-E 3 的 0.67",
+   "source": "Table 5"
+  },
+  {
+   "number": "2.71%",
+   "context": "depth=38 模型 5/50 步 CLIP 分数相对下降",
+   "source": "Table 6"
+  },
+  {
+   "number": "185.96",
+   "context": "depth=38 模型路径长度（50 步求和）",
+   "source": "Table 6"
+  },
+  {
+   "number": "3.0",
+   "context": "1024×1024 分辨率下时间步偏移值 α",
+   "source": "Sec. 5.3.2"
+  },
+  {
+   "number": "61",
+   "context": "公式对照研究中训练的变体数量",
+   "source": "Sec. 5.1.1"
+  },
+  {
+   "number": "49.78",
+   "context": "50/50 合成 caption 混合的 GenEval 总分（原始 caption 43.27）",
+   "source": "Table 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "继承"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "继承"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2212.09748",
+   "type": "继承"
+  }
+ ],
+ "read_full_text": false
+}

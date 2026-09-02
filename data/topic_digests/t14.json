@@ -1,0 +1,93 @@
+{
+ "digest_zh": "T14 课题解决的核心问题是：如何把图像到图像翻译（I2I）建模为给定端点耦合下的扩散桥或 Schrödinger 桥，并在推理速度与翻译质量之间取得平衡。方法谱系从 BBDM（2205.07680）的 latent Brownian bridge 与 I2SB 的 Dirac delta 桥奠基，经 DDBM（2309.16948）用 Doob h-transform 统一 VE/VP 桥并实现 simulation-free 训练，到 UniDB（2505.21528）用随机最优控制（SOC）把 h-transform 解释为终端惩罚 γ→∞ 的特例，形成统一框架。加速线分两支：免训练的 DBIM（2405.15885）与 UniDB++ 给出非马尔可夫 ODE 采样器，训练式的 CDBM（2410.22637）与 LBM（2503.07535）用一致性蒸馏压到 1–2 NFE。非配对线从 DDIB（2203.08382）的 latent 拼接，到 UNSB 与 ASBM 的对抗式 SB 求解。当前共识是：配对桥在保真度上优于条件生成，随机桥优于确定性直线（DDBM Sec. 5、LBM 消融、I2SB Table 6 一致指向熵正则强度是质量旋钮）；分歧在于加速路线（免训练 vs 蒸馏）与终端耦合保持（CDBM Proposition 3.2 只保 PF-ODE 解映射，不保耦合）。",
+ "observations": [
+  {
+   "claim": "随机桥（有限熵正则）在翻译质量上系统性优于确定性直线/ODE 极限，熵正则强度是可调的跨域质量旋钮。",
+   "evidence": [
+    "2309.16948",
+    "I2SB_Image_to_Image_Schr_dinger_Bridge",
+    "2205.07680"
+   ],
+   "detail": "DDBM Sec. 5 指出纯 ODE 输出发糊、Fig. 4 显示注入噪声改善 FID；I2SB Table 6 的 OT-ODE 消融与 BBDM Table 5 的 s 扫描（s=1 时 FID 最低、Diversity 单调升）都表明噪声强度与质量/多样性存在非单调权衡。"
+  },
+  {
+   "claim": "免训练采样加速（DBIM/UniDB++）与训练式蒸馏加速（CDBM/LBM）是两条平行路线，前者受限于预训练桥模型上限，后者引入额外训练代价且不保证终端耦合保持。",
+   "evidence": [
+    "2405.15885",
+    "2410.22637",
+    "2503.07535"
+   ],
+   "detail": "DBIM 在 ImageNet 修复 20 NFE 达 FID 4.07 胜 DDBM 500 NFE 的 4.27（25×），但作者承认不能超过预训练桥模型上限；CDBM 的 CBT 2 NFE 达 E→H FID 0.80，但 Proposition 3.2 只保证一致性函数逼近 PF-ODE 解映射，无终端耦合陈述；LBM 摘要无数字，单步蒸馏后是否仍是桥未谈。"
+  },
+  {
+   "claim": "Doob h-transform 桥（DDBM/GOUB）在 SOC 视角下是终端硬约束的极限情形，有限终端惩罚 γ 提供端点松弛的新设计轴。",
+   "evidence": [
+    "2505.21528",
+    "GOUB_Generalized_Ornstein_Uhlenbeck_Bridge",
+    "2309.16948"
+   ],
+   "detail": "UniDB 把 h-transform 解释为 SOC 中 γ→∞ 的特例，有限 γ 时端点不再被精确钉住；DDBM 的 VE/VP 桥与 GOUB 的 OU 型桥都被收为同一机制的不同参考过程选择，但 UniDB 摘要未量化有限 γ 下'改善细节'与'偏离配对目标'的权衡。"
+  },
+  {
+   "claim": "非配对翻译线（DDIB/UNSB/ASBM/LSB）的耦合学习与最优性验证是共同空白，各方法均未在可算 ground-truth EOT 的基准上量化耦合误差。",
+   "evidence": [
+    "UNSB_Unpaired_Neural_Schr_dinger_Bridge",
+    "ASBM_Adversarial_Schr_dinger_Bridge_Matching",
+    "Latent_Schr_dinger_Bridge"
+   ],
+   "detail": "UNSB 摘要无定量结果，非配对 SB 学到的耦合与真 EOT 耦合的偏差未量化；ASBM 只在 CelebA 128 一个数据集有报告，D-IMF 的耦合误差未测；LSB 的三预测子分解依赖强假设，免训练近似离 SB 多远无验证。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "蒸馏/加速后的桥模型是否保持教师模型的终端耦合 q(x0|xT)？",
+   "why_open": "CDBM Proposition 3.2 只保证一致性函数逼近 PF-ODE 解映射，无耦合保持陈述；LBM 单步蒸馏后是否仍是桥未谈；DBIM 的 η=0 确定性映射可作为参考耦合但未用于蒸馏评估。",
+   "evidence": [
+    "2410.22637",
+    "2503.07535",
+    "2405.15885"
+   ]
+  },
+  {
+   "problem": "端点奇异（t→T 时桥方差趋零）导致的欠拟合与模糊，能否通过有限终端惩罚 γ 或端点自适应噪声调度解决？",
+   "why_open": "I2SB 的 Dirac delta 端点依赖神经网络外推，DDBM 在 t→T 端点欠拟合；UniDB 提出有限 γ 松弛端点但未量化 FID–LPIPS 权衡；DBIM 的 η 最优值随 NFE 与任务变化，无统一调度。",
+   "evidence": [
+    "I2SB_Image_to_Image_Schr_dinger_Bridge",
+    "2505.21528",
+    "2405.15885"
+   ]
+  },
+  {
+   "problem": "非配对 SB 翻译学到的耦合与真 EOT 耦合的偏差如何度量，更接近 EOT 是否等于更好翻译？",
+   "why_open": "UNSB/ASBM/LSB 均未在可算 ground-truth EOT 的合成基准上报告耦合误差；DSBM 可作为 ground truth 工具但本课题内无直接结果；对抗训练的稳定性与泛化性无证据。",
+   "evidence": [
+    "UNSB_Unpaired_Neural_Schr_dinger_Bridge",
+    "ASBM_Adversarial_Schr_dinger_Bridge_Matching",
+    "Diffusion_Schr_dinger_Bridge_Matching"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "2309.16948",
+   "why": "框架化节点，统一 VE/VP 桥"
+  },
+  {
+   "report_id": "2405.15885",
+   "why": "免训练加速，25× 关键数字"
+  },
+  {
+   "report_id": "2410.22637",
+   "why": "训练式蒸馏，保耦合空白"
+  },
+  {
+   "report_id": "2505.21528",
+   "why": "SOC 统一，γ 旋钮"
+  },
+  {
+   "report_id": "2205.07680",
+   "why": "奠基，latent 桥起点"
+  }
+ ],
+ "n_reports": 14
+}

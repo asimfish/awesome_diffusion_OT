@@ -1,0 +1,90 @@
+{
+ "report_id": "2510.02390",
+ "arxiv_id": "2510.02390",
+ "title": "F-scheduler: illuminating the free-lunch design space for fast sampling of diffusion models",
+ "tldr_zh": "免训练调度器配合 Free-U 与 β-VAE 噪声容忍，6 步 1024² 采样 FID 超过部分蒸馏模型",
+ "tldr_en": "Training-free scheduler with Free-U and β-VAE noise tolerance achieves 6-step 1024² sampling FID surpassing some distilled models",
+ "tags": [
+  "training-free sampler",
+  "time schedule",
+  "Free-U",
+  "latent diffusion",
+  "information bottleneck",
+  "few-step inference"
+ ],
+ "code_url": "https://github.com/TheLovesOfLadyPurple/F-scheduler",
+ "key_numbers": [
+  {
+   "number": "FID 14.72",
+   "context": "UniPC 6-step + F-scheduler, 512×512, COCO 2014, scale 5.5",
+   "source": "Table 2"
+  },
+  {
+   "number": "FID 18.68",
+   "context": "DPM++ 2m 20-step, 512×512, COCO 2014, scale 5.5",
+   "source": "Table 2"
+  },
+  {
+   "number": "FID 17.87",
+   "context": "UniPC 8-step + F-scheduler, 1024×1024, COCO 2014, scale 5.5",
+   "source": "Table 5"
+  },
+  {
+   "number": "FID 22.23",
+   "context": "Flash Diffusion 6-step, 1024×1024, COCO 2014",
+   "source": "Table 5"
+  },
+  {
+   "number": "FID 19.64",
+   "context": "DMD2 4-step, 1024×1024, COCO 2014",
+   "source": "Table 5"
+  },
+  {
+   "number": "FID 25.20",
+   "context": "UniPC 6-step, Free-U at 4th step, 1024×1024, COCO 2017",
+   "source": "Table 1"
+  },
+  {
+   "number": "FID 28.88",
+   "context": "UniPC 6-step, Free-U every step, 1024×1024, COCO 2017",
+   "source": "Table 1"
+  },
+  {
+   "number": "FID 16.51",
+   "context": "DMD2 4-step, 1024×1024, LAION",
+   "source": "Table 7"
+  },
+  {
+   "number": "FID 20.41",
+   "context": "UniPC 8-step + F-scheduler, 1024×1024, LAION, scale 5.5",
+   "source": "Table 7"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2309.11497",
+   "type": "uses"
+  },
+  {
+   "report_id": "2206.00927",
+   "type": "builds_on"
+  },
+  {
+   "report_id": "2302.04867",
+   "type": "builds_on"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "builds_on"
+  },
+  {
+   "report_id": "2209.14577",
+   "type": "contrasts_with"
+  },
+  {
+   "report_id": "2402.15170",
+   "type": "related"
+  }
+ ],
+ "read_full_text": true
+}

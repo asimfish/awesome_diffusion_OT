@@ -1,0 +1,32 @@
+{
+ "report_id": "Diffusion_Adversarial_SB_via_IPMF_Kholkin_et_al",
+ "arxiv_id": "",
+ "title": "Diffusion & Adversarial Schrödinger Bridges via Iterative Proportional Markovian Fitting",
+ "tldr_zh": "证明双向交替 IMF 启发式 = IMF+IPF 组合（IPMF），多设定收敛，给相似度-质量旋钮",
+ "tldr_en": "Shows the practical bidirectional alternating IMF heuristic is an IMF+IPF combination (IPMF), proves convergence in several settings, exposes a similarity-quality knob.",
+ "tags": [
+  "schrodinger-bridge",
+  "imf",
+  "ipf",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Not read in full; no numbers available"
+ ],
+ "relations": [
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "type": "extends"
+  },
+  {
+   "report_id": "Adversarial_SB_Matching_ASBM_Gushchin_et_al",
+   "type": "extends"
+  },
+  {
+   "report_id": "Schr_dinger_Bridge_Flow_IMF_DSBM_De_Bortoli_et_al",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

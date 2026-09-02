@@ -1,0 +1,48 @@
+{
+ "report_id": "2510.22560",
+ "arxiv_id": "2510.22560",
+ "title": "Statistical Analysis of the Sinkhorn Iterations for Two-Sample Schrödinger Bridge Estimation",
+ "tldr_zh": "两样本 Sinkhorn bridge 的 TV² 误差 O(1/m+1/n+r^{4k})；[SF]²M/LightSB(-M)/DSBM-IMF/BM² 的最优估计量与之相同",
+ "tldr_en": "Two-sample Sinkhorn bridge error is O(1/m+1/n+r^{4k}) in squared TV; [SF]2M, LightSB(-M), DSBM-IMF and BM2 share this estimator and hence the guarantee.",
+ "tags": [
+  "schrodinger-bridge",
+  "theory",
+  "statistics",
+  "sinkhorn",
+  "sample-complexity"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Statistical rate O(1/m+1/n) with constant (R/eps)^{9 d_nu+4} (Theorem 1, Eq. 14)",
+  "Algorithmic rate (tau/(1-tau)) R^6/eps^2 tanh^{4k}(R^2/eps) (Theorem 2)",
+  "Improves n^{-1/2} of Pooladian & Niles-Weed 2024 to n^{-1} (Remark 1)",
+  "Toy experiments only: 3D Gaussian (eps=0.1, 0.005), eight-Gaussians->moons with 1000 samples (Sec. 4)"
+ ],
+ "relations": [
+  {
+   "report_id": "Simulation_free_Score_Flow_Matching_SF_M_Tong_et_a",
+   "type": "uses"
+  },
+  {
+   "report_id": "Light_and_Optimal_SB_Matching_LightSB_M_Gushchin_e",
+   "type": "uses"
+  },
+  {
+   "report_id": "Light_Schr_dinger_Bridge_LightSB_Korotin_et_al",
+   "type": "uses"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "type": "uses"
+  },
+  {
+   "report_id": "2409.09376",
+   "type": "uses"
+  },
+  {
+   "report_id": "2510.20871",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

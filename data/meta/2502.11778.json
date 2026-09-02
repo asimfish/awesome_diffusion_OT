@@ -1,0 +1,52 @@
+{
+ "report_id": "2502.11778",
+ "arxiv_id": "2502.11778",
+ "title": "Private Synthetic Graph Generation and Fused Gromov-Wasserstein Distance",
+ "tldr_zh": "用 TV-PSMM 生成顶点级 ε-DP 属性图，FGW 距离给出 O((εn)^(-1/(d+1))) 精度上界",
+ "tldr_en": "Vertex-level ε-DP attributed graph generation via TV-PSMM, with FGW-based utility bounds of O((εn)^(-1/(d+1)))",
+ "tags": [
+  "differential privacy",
+  "synthetic graphs",
+  "fused Gromov-Wasserstein",
+  "random connection model",
+  "utility bounds"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "O((εn)^(-1/(d+1)))",
+   "source": "Sec. 4.3, Eq. after (8)"
+  },
+  {
+   "number": "0.751 / 0.681 (n=100, ε=1, Cor 4.2 / Cor 4.5)",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.162 / 0.14 (n=10000, ε=1, Cor 4.2 / Cor 4.5)",
+   "source": "Table 1"
+  },
+  {
+   "number": "3.061 / 3.721 (n=100, ε=0.01, Cor 4.2 / Cor 4.5)",
+   "source": "Table 1"
+  },
+  {
+   "number": "2m variables, 3m+1 constraints in LP",
+   "source": "Algorithm 2"
+  },
+  {
+   "number": "E|Λ| = 2e^{-ε}/(1-e^{-2ε}) for Lap_Z(1/ε)",
+   "source": "Sec. 4.1, citing Inusah and Kozubowski 2006"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2502.09934",
+   "type": "related"
+  },
+  {
+   "report_id": "2506.14020",
+   "type": "related"
+  }
+ ],
+ "read_full_text": true
+}

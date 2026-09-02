@@ -1,0 +1,35 @@
+{
+ "report_id": "Score_identity_Distillation",
+ "arxiv_id": null,
+ "title": "Score identity Distillation",
+ "tldr_zh": "用三个 score 恒等式构造 data-free 蒸馏损失，作者报告 FID 指数速率下降、逼近甚至超过教师",
+ "tldr_en": "Three score identities yield a data-free distillation loss; authors report exponential FID decrease, matching or surpassing the teacher",
+ "tags": [
+  "score distillation",
+  "data-free",
+  "diffusion models",
+  "few-step sampling",
+  "consistency"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "DMD",
+   "type": "同族方法，SiD 去掉其数据依赖"
+  },
+  {
+   "report_id": "DMD2",
+   "type": "同族方法，均报告超越教师"
+  },
+  {
+   "report_id": "VDOT",
+   "type": "后续 OT 距离引入 DMD 的对照"
+  },
+  {
+   "report_id": "MeanFlow",
+   "type": "同为恒等式驱动的少步/一步生成，可对比"
+  }
+ ],
+ "read_full_text": false
+}

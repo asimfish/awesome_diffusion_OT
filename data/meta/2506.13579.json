@@ -1,0 +1,77 @@
+{
+ "report_id": "2506.13579",
+ "arxiv_id": "2506.13579",
+ "title": "Flexible-length Text Infilling for Discrete Diffusion Models",
+ "tldr_zh": "DDOT 用 sample-level OT 位置耦合让离散扩散同时去噪 token 值与位置，首次实现无 ground-truth 位置数据的灵活长度/位置文本填充。",
+ "tldr_en": "DDOT jointly denoises token values and positions with sample-level OT coupling, enabling flexible-length text infilling in discrete diffusion without ground-truth positions.",
+ "tags": [
+  "discrete diffusion",
+  "optimal transport",
+  "text infilling",
+  "position coupling",
+  "SEDD",
+  "masked diffusion"
+ ],
+ "code_url": "https://andrew-zhang.github.io/ddot-page",
+ "key_numbers": [
+  {
+   "number": "SR 100 on One-Billion-Word-Block and Yelp-Block for DDOT-U",
+   "source": "Table 2"
+  },
+  {
+   "number": "DDOT-U B2/B4 = 63.7/58.4 on One-Billion-Word-Block",
+   "source": "Table 2"
+  },
+  {
+   "number": "DDOT-U B2/B4 = 64.9/59.5 on Yelp-Block",
+   "source": "Table 2"
+  },
+  {
+   "number": "OT ablation: B2 drops from 15.7 to 13.2 on One-Billion-Word without OT",
+   "source": "Table 4"
+  },
+  {
+   "number": "OT computation: 16 min 11 s for 10B-token FineWeb-Edu subset on 64-core Xeon",
+   "source": "Sec. 5.3"
+  },
+  {
+   "number": "DDOT-U 2-step inference: 0.44 s/batch, B2 = 59.4; 64-step: 12.0 s/batch, B2 = 63.7",
+   "source": "Table 5"
+  },
+  {
+   "number": "CodeParrot-Block SR = 10.8 for DDOT-U vs 0.34 for PoP",
+   "source": "Table 2"
+  },
+  {
+   "number": "Model sizes: small 90M, medium 320M non-embedding params",
+   "source": "Sec. 5.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2310.16834",
+   "type": "继承"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "继承"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "继承"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "继承"
+  },
+  {
+   "report_id": "2406.07524",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2407.15595",
+   "type": "竞争"
+  }
+ ],
+ "read_full_text": true
+}

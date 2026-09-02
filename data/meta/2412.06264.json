@@ -1,0 +1,84 @@
+{
+ "report_id": "2412.06264",
+ "arxiv_id": "2412.06264",
+ "title": "Flow Matching Guide and Code",
+ "tldr_zh": "官方综述+PyTorch库，统一连续/离散/流形/Generator Matching记号与训练实践",
+ "tldr_en": "Official tutorial and PyTorch library unifying FM notation across continuous, discrete, manifold, and generator matching",
+ "tags": [
+  "flow matching",
+  "generative modeling",
+  "survey",
+  "PyTorch",
+  "continuous normalizing flows",
+  "generator matching",
+  "diffusion models"
+ ],
+ "code_url": "https://github.com/facebookresearch/flow_matching",
+ "key_numbers": [
+  {
+   "number": "56",
+   "unit": "行",
+   "description": "独立 PyTorch 实现代码行数（约）",
+   "source": "Code 1, Sec. 2"
+  },
+  {
+   "number": "10000",
+   "unit": "步",
+   "description": "make_moons 示例训练步数",
+   "source": "Code 1, Sec. 2"
+  },
+  {
+   "number": "8",
+   "unit": "步",
+   "description": "make_moons 示例采样步数（中点法）",
+   "source": "Code 1, Sec. 2"
+  },
+  {
+   "number": "100",
+   "unit": "步",
+   "description": "库中 likelihood 计算示例的 ODE 步数",
+   "source": "Code 3, Sec. 3.6"
+  },
+  {
+   "number": "6",
+   "unit": "个",
+   "description": "摘要列举的 FM 达到 SOTA 的应用领域数（图像、视频、语音、音频、蛋白质、机器人）",
+   "source": "Sec. 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "lipman2022flow",
+   "type": "继承"
+  },
+  {
+   "report_id": "albergo2022stochastic",
+   "type": "继承"
+  },
+  {
+   "report_id": "liu2022rectified",
+   "type": "继承"
+  },
+  {
+   "report_id": "holderrieth2024generator",
+   "type": "统一"
+  },
+  {
+   "report_id": "chen2024riemannian",
+   "type": "统一"
+  },
+  {
+   "report_id": "campbell2024discrete",
+   "type": "统一"
+  },
+  {
+   "report_id": "song2021score",
+   "type": "被统一"
+  },
+  {
+   "report_id": "ho2020ddpm",
+   "type": "被统一"
+  }
+ ],
+ "read_full_text": true
+}

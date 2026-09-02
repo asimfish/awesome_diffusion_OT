@@ -1,0 +1,79 @@
+{
+ "report_id": "2602.03067",
+ "arxiv_id": "2602.03067",
+ "title": "FlashSinkhorn: IO-Aware Entropic Optimal Transport on GPU",
+ "tldr_zh": "Sinkhorn 更新重写为 biased-LSE，Triton 流式融合，A100 前向最高 32×、端到端 161×",
+ "tldr_en": "Rewrites Sinkhorn as biased-LSE, streams via fused Triton kernels; up to 32x fwd, 161x e2e on A100",
+ "tags": [
+  "entropic optimal transport",
+  "Sinkhorn",
+  "GPU",
+  "IO-aware",
+  "FlashAttention",
+  "Triton",
+  "Hessian-vector product",
+  "OTDD"
+ ],
+ "code_url": "https://github.com/ot-triton-lab/flash-sinkhorn",
+ "key_numbers": [
+  {
+   "number": "32x forward speedup vs KeOps",
+   "source": "Table 3, n=10k d=512; abstract"
+  },
+  {
+   "number": "161x end-to-end speedup vs KeOps",
+   "source": "Table 3, n=10k d=512 Fwd+Bwd; abstract"
+  },
+  {
+   "number": "5.1x max speedup vs OTT-JAX",
+   "source": "Sec. 4.1 text"
+  },
+  {
+   "number": "0.08 GB HBM R/W vs 98 GB tensorized, 0.14 GB KeOps",
+   "source": "Table 2, n=m=10k d=64 10 iters"
+  },
+  {
+   "number": "8.2 ms runtime vs 54.0 ms tensorized, 125.5 ms KeOps",
+   "source": "Table 2"
+  },
+  {
+   "number": "O(n) memory vs O(n^1.74)-O(n^1.92) tensorized",
+   "source": "Figure 3, d=1024"
+  },
+  {
+   "number": "HVP 4.2s vs 14.5s KeOps at n=m=50k d=64",
+   "source": "Sec. 4.1 HVP paragraph"
+  },
+  {
+   "number": "fp32 rel err 4e-5 (eps=0.10) to 7.7e-4 (eps=0.01)",
+   "source": "Table 20"
+  },
+  {
+   "number": "OTDD peak memory <1 GB at n=60000, tensorized OOM >20000",
+   "source": "Figure 4, Sec. 4.2"
+  },
+  {
+   "number": "Newton median 11 steps post-escape, 71/72 Adam escapes",
+   "source": "Sec. 4.2 shuffled regression"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2205.14135",
+   "type": "method_inherits"
+  },
+  {
+   "report_id": "2201.12324",
+   "type": "baseline"
+  },
+  {
+   "report_id": "2508.08369",
+   "type": "parallel_interpretation"
+  },
+  {
+   "report_id": "2010.06635",
+   "type": "related_second_order"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,82 @@
+{
+ "report_id": "2310.13268",
+ "arxiv_id": "2310.13268",
+ "title": "DPM-Solver-v3: Improved Diffusion ODE Solver with Empirical Model Statistics",
+ "tldr_zh": "用经验模型统计量自动选最优参数化，5–10 NFE 下优于 DPM-Solver++ 与 UniPC",
+ "tldr_en": "Empirical model statistics select optimal parameterization, improving 5-10 NFE sampling over prior solvers",
+ "tags": [
+  "diffusion models",
+  "ODE solver",
+  "training-free sampling",
+  "exponential integrator",
+  "parameterization"
+ ],
+ "code_url": "https://github.com/thu-ml/DPM-Solver-v3",
+ "key_numbers": [
+  {
+   "number": "12.21",
+   "unit": "FID",
+   "context": "CIFAR10 EDM 模型 5 NFE",
+   "source": "Table 1"
+  },
+  {
+   "number": "2.51",
+   "unit": "FID",
+   "context": "CIFAR10 EDM 模型 10 NFE",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.55",
+   "unit": "MSE",
+   "context": "Stable-Diffusion 5 NFE, guidance 7.5",
+   "source": "Abstract"
+  },
+  {
+   "number": "3.06",
+   "unit": "FID",
+   "context": "LSUN-Bedroom 12 NFE",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "15%-30%",
+   "unit": "加速比",
+   "context": "相对此前最优免训练方法",
+   "source": "Abstract"
+  },
+  {
+   "number": "1024~4096",
+   "unit": "数据点数 K",
+   "context": "EMS 估计",
+   "source": "Sec. 3.4"
+  },
+  {
+   "number": "120~1200",
+   "unit": "时间步数 N",
+   "context": "EMS 积分估计",
+   "source": "Sec. 3.4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2206.00927",
+   "type": "继承"
+  },
+  {
+   "report_id": "2211.01095",
+   "type": "继承"
+  },
+  {
+   "report_id": "2302.04867",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2204.13902",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "竞争"
+  }
+ ],
+ "read_full_text": true
+}

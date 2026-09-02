@@ -1,0 +1,84 @@
+{
+ "report_id": "1810.01118",
+ "arxiv_id": "1810.01118",
+ "title": "Sinkhorn AutoEncoders",
+ "tldr_zh": "在 WAE 框架内用 Sinkhorn 散度做 latent 匹配，证明 W_p 惩罚给出原目标上界，γ 是解码器 Lipschitz 常数",
+ "tldr_en": "Uses Sinkhorn divergence for latent matching in WAE; proves W_p penalty upper-bounds the OT objective with γ as decoder Lipschitz constant",
+ "tags": [
+  "Sinkhorn",
+  "Wasserstein AutoEncoder",
+  "entropic OT",
+  "latent matching",
+  "generative modeling"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "17.2 / 12.5",
+   "source": "Table 1",
+   "context": "SAE FID on MNIST with Gaussian / hyperspherical prior"
+  },
+  {
+   "number": "187 / 56",
+   "source": "Table 1",
+   "context": "SAE FID on CelebA with Gaussian / hyperspherical prior"
+  },
+  {
+   "number": "293 / 58",
+   "source": "Table 1",
+   "context": "HAE FID on CelebA with Gaussian / hyperspherical prior"
+  },
+  {
+   "number": "ε=10 (Gaussian), ε=0.1 (hypersphere)",
+   "source": "Table 1 note",
+   "context": "SAE entropy regularization hyperparameter"
+  },
+  {
+   "number": "β=100",
+   "source": "Table 1",
+   "context": "latent matching weight for SAE/HAE"
+  },
+  {
+   "number": "O(M³) Hungarian vs near O(M²) Sinkhorn",
+   "source": "Sec. 3.1",
+   "context": "time complexity comparison"
+  },
+  {
+   "number": "O(M^{-1/k}) sample complexity for exact W_p",
+   "source": "Sec. 3.1",
+   "context": "k is latent dimension, citing Weed & Bach 2017"
+  },
+  {
+   "number": "O(ε log(1/ε)) deviation from W_c for small ε",
+   "source": "Sec. 3.1",
+   "context": "Sinkhorn divergence bias, citing Genevay et al. 2019"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1711.01558",
+   "type": "extends"
+  },
+  {
+   "report_id": "1706.00292",
+   "type": "uses_method"
+  },
+  {
+   "report_id": "1810.08278",
+   "type": "uses_method"
+  },
+  {
+   "report_id": "1306.0895",
+   "type": "uses_method"
+  },
+  {
+   "report_id": "1804.01947",
+   "type": "competes"
+  },
+  {
+   "report_id": "1804.00891",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

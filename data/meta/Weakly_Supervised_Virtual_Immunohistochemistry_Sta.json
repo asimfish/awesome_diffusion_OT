@@ -1,0 +1,40 @@
+{
+ "report_id": "Weakly_Supervised_Virtual_Immunohistochemistry_Sta",
+ "arxiv_id": null,
+ "title": "Weakly Supervised Virtual Immunohistochemistry Staining via Schrödinger Bridge",
+ "tldr_zh": "用 Schrödinger Bridge 做 H&E→IHC 虚拟染色，区域颜色状态损失注入病理相似性，聚合策略平衡质量与一致性。",
+ "tldr_en": "SB-based H&E to IHC virtual staining with regional color status loss and aggregation for pathology consistency.",
+ "tags": [
+  "Schrödinger Bridge",
+  "virtual staining",
+  "H&E to IHC",
+  "weakly supervised",
+  "pathology",
+  "medical image translation"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "OT_StainNet",
+   "type": "extended_by"
+  },
+  {
+   "report_id": "USIGAN",
+   "type": "extended_by"
+  },
+  {
+   "report_id": "TDSB",
+   "type": "extended_by"
+  },
+  {
+   "report_id": "PASB",
+   "type": "extended_by"
+  },
+  {
+   "report_id": "LMSB",
+   "type": "related"
+  }
+ ],
+ "read_full_text": false
+}

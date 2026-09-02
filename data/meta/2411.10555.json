@@ -1,0 +1,61 @@
+{
+ "report_id": "2411.10555",
+ "arxiv_id": "2411.10555",
+ "title": "Low-Rank Optimal Transport through Factor Relaxation with Latent Coupling",
+ "tldr_zh": "LC 因子化解耦低秩 OT 为三个子 OT，坐标镜像下降统一 W/GW/FGW 与均衡/非均衡/半松弛",
+ "tldr_en": "Latent coupling factorization decouples low-rank OT into three sub-OT problems solved by coordinate mirror descent",
+ "tags": [
+  "low-rank OT",
+  "latent coupling",
+  "coordinate mirror descent",
+  "Gromov-Wasserstein",
+  "unbalanced OT",
+  "semi-relaxed OT"
+ ],
+ "code_url": "https://github.com/raphael-group/FRLC",
+ "key_numbers": [
+  {
+   "number": "FRLC runtime = half of LOT runtime (CPU), n=m=1000, rank r=100",
+   "source": "Sec. 4.1, Table 2"
+  },
+  {
+   "number": "FRLC-SR Spearman ρ = 0.467 (W), 0.275 (GW), 0.465 (FGW) on ST alignment",
+   "source": "Fig. 4b"
+  },
+  {
+   "number": "FRLC-SR ARI = 0.475 (W), 0.318 (GW), 0.469 (FGW)",
+   "source": "Fig. 4b"
+  },
+  {
+   "number": "FRLC-SR AMI = 0.492 (W), 0.381 (GW), 0.499 (FGW)",
+   "source": "Fig. 4b"
+  },
+  {
+   "number": "LOT-U GW Spearman ρ = 0.005, ARI = 0.0, AMI = 0.0",
+   "source": "Fig. 4b"
+  },
+  {
+   "number": "FRLC beats GWL and SpecGWL on 9/12 and 11/12 graph datasets",
+   "source": "Sec. 4.4, Table 3"
+  },
+  {
+   "number": "Convergence bound: min Δ_k ≤ 2D²L²/Nα²",
+   "source": "Proposition 3.4"
+  },
+  {
+   "number": "E11.5 slice ≈ 30,000 cells, E12.5 slice ≈ 50,000 cells",
+   "source": "Sec. 4.3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2411.10555",
+   "type": "extends"
+  },
+  {
+   "report_id": "2411.10555",
+   "type": "compares_to"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,71 @@
+{
+ "report_id": "2311.15100",
+ "arxiv_id": "2311.15100",
+ "title": "Unbalancedness in Neural Monge Maps Improves Unpaired Domain Translation",
+ "tldr_zh": "证明 unbalanced Monge map 等价于重缩放测度间的 balanced map，可插入任意估计器；UOT-FM 在图像翻译上优于 OT-FM",
+ "tldr_en": "Unbalanced Monge map equals balanced map between rescaled measures; UOT-FM improves unpaired image translation over OT-FM",
+ "tags": [
+  "unbalanced OT",
+  "Monge map",
+  "flow matching",
+  "unpaired image translation",
+  "single-cell"
+ ],
+ "code_url": "https://github.com/ExplainableML/uot-fm",
+ "key_numbers": [
+  {
+   "number": "69% vs 7%",
+   "context": "Ngn3 EP 正确转换率 UOT-ICNN vs OT-ICNN",
+   "source": "Table 1"
+  },
+  {
+   "number": "23.0 vs 36.9",
+   "context": "EMNIST 平均 FID UOT-FM vs OT-FM",
+   "source": "Table 2"
+  },
+  {
+   "number": "42.6 vs 83.1",
+   "context": "EMNIST 8→B FID UOT-FM vs OT-FM",
+   "source": "Table 2"
+  },
+  {
+   "number": "13.9 vs 14.6",
+   "context": "CelebA Male→Female FID UOT-FM vs OT-FM",
+   "source": "Table 3"
+  },
+  {
+   "number": "56.8 vs 59.3",
+   "context": "CelebA Male→Female T-Cost UOT-FM vs OT-FM",
+   "source": "Table 3"
+  },
+  {
+   "number": "3.42 vs 3.59",
+   "context": "CIFAR-10 FID UOT-FM(τ=0.97) vs OT-FM",
+   "source": "Table 5"
+  },
+  {
+   "number": "35 drugs",
+   "context": "UOT-MG 在几乎所有 35 种药物上优于 OT-MG",
+   "source": "Fig. 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2303.01789",
+   "type": "同期竞争（UOTM 走半对偶生成模型路线，本文走重缩放化归路线）"
+  },
+  {
+   "report_id": "2403.06543",
+   "type": "后续工作（UOTM-SD 用 divergence 调度解决本文 τ 敏感问题）"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "继承（OT-FM 的 balanced 版本是本文 UOT-FM 的基础）"
+  },
+  {
+   "report_id": "2203.05789",
+   "type": "修正对象（Lübeck et al. 的重缩放边际非最优，本文 Prop. 3.1 给出正确方案）"
+  }
+ ],
+ "read_full_text": true
+}

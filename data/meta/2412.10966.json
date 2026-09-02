@@ -1,0 +1,108 @@
+{
+ "report_id": "2412.10966",
+ "arxiv_id": "2412.10966",
+ "title": "FlowDock: Geometric Flow Matching for Generative Protein-Ligand Docking and Affinity Prediction",
+ "tldr_zh": "CFM 直接 apo→holo 多配体对接并预测亲和力，盲对接超单序列 AF3",
+ "tldr_en": "CFM maps apo to holo multi-ligand docking with affinity prediction, beating single-sequence AF3",
+ "tags": [
+  "flow matching",
+  "protein-ligand docking",
+  "binding affinity",
+  "conditional flow matching",
+  "unbalanced coupling",
+  "NeuralPLexer",
+  "PoseBusters",
+  "CASP16"
+ ],
+ "code_url": "https://github.com/BioinfoMachineLearning/FlowDock",
+ "key_numbers": [
+  {
+   "number": "51%",
+   "context": "PoseBusters 盲对接成功率（加能量最小化），超过单序列 AF3",
+   "source": "Abstract, Sec. 4.1"
+  },
+  {
+   "number": "10%",
+   "context": "FlowDock 比 NeuralPLexer 高出的对接成功率（无能量最小化）",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "16%",
+   "context": "FlowDock 比 DynamicBind 高出的对接成功率",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "33%",
+   "context": "DockGen-E 上所有方法的最佳对接成功率",
+   "source": "Sec. 4.1, Fig. 4"
+  },
+  {
+   "number": "0.705",
+   "context": "PDBBind 测试集 Pearson 相关系数（FlowDock）",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.674",
+   "context": "PDBBind 测试集 Spearman 相关系数（FlowDock）",
+   "source": "Table 2"
+  },
+  {
+   "number": "39.34 秒",
+   "context": "Astex Diverse 25% 子集平均运行时间",
+   "source": "Table 1"
+  },
+  {
+   "number": "25.61 GB",
+   "context": "GPU 内存峰值",
+   "source": "Table 1"
+  },
+  {
+   "number": "40 步",
+   "context": "Euler 积分步数",
+   "source": "Sec. 3.6"
+  },
+  {
+   "number": "32 倍",
+   "context": "FlowDock 相对 Chai-1/AF3 的 GPU 小时数缩减",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "第 5 名",
+   "context": "CASP16 配体类别亲和力估计排名（n=140）",
+   "source": "Sec. 4.3, Fig. 7"
+  },
+  {
+   "number": "17,743 + 46,567",
+   "context": "PDBBind-E 训练集复合物数量（PDBBind + Binding MOAD）",
+   "source": "Sec. 3.5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2410.xxxxx",
+   "type": "同期工作/竞争",
+   "note": "Corso et al. (2024b) FlexDock 前身，unbalanced flow matching 对接"
+  },
+  {
+   "report_id": "2302.00487",
+   "type": "理论基础",
+   "note": "Chen & Lipman Riemannian flow matching"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "理论基础",
+   "note": "Tong et al. minibatch OT flow matching"
+  },
+  {
+   "report_id": "2304.11772",
+   "type": "方法继承",
+   "note": "Pooladian et al. CondOT 路径"
+  },
+  {
+   "report_id": "2402.04832",
+   "type": "方法继承",
+   "note": "AlphaFlow 的 flow matching 微调范式"
+  }
+ ],
+ "read_full_text": true
+}

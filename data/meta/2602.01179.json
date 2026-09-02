@@ -1,0 +1,81 @@
+{
+ "report_id": "2602.01179",
+ "arxiv_id": "2602.01179",
+ "title": "Rethinking the Flow-Based Gradual Domain Adaptation: A Semi-Dual Optimal Transport Perspective",
+ "tldr_zh": "用熵正则半对偶 UOT 替代目标 PDF 估计，逐步生成 GDA 中间域，三个 GDA 数据集与 Office-Home 上精度最高",
+ "tldr_en": "Entropy-regularized semi-dual UOT replaces target PDF estimation for flow-based GDA intermediate domain generation, achieving best accuracy on GDA and Office-Home benchmarks",
+ "tags": [
+  "gradual domain adaptation",
+  "semi-dual optimal transport",
+  "unbalanced optimal transport",
+  "entropy regularization",
+  "flow-based models",
+  "gradient flow"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "86.4%",
+   "context": "E-SUOT accuracy on Portraits, best among all GDA baselines",
+   "source": "Table 1"
+  },
+  {
+   "number": "72.1%",
+   "context": "E-SUOT accuracy on MNIST 45°, best",
+   "source": "Table 1"
+  },
+  {
+   "number": "51.0%",
+   "context": "E-SUOT accuracy on MNIST 60°, best",
+   "source": "Table 1"
+  },
+  {
+   "number": "+21.5% / +23.4% / +38.6%",
+   "context": "E-SUOT improvement over source-only on Portraits / MNIST 45° / MNIST 60°",
+   "source": "Table 1"
+  },
+  {
+   "number": "73.5%",
+   "context": "E-SUOT average accuracy on Office-Home, best among all methods",
+   "source": "Table 2"
+  },
+  {
+   "number": "52.0% / 34.9%",
+   "context": "Adversarial KL (no entropy regularization) accuracy on MNIST 45° / MNIST 60°, worst ablation",
+   "source": "Table 3"
+  },
+  {
+   "number": "+8.1% / +3.3% / +1.0% / +0.5%",
+   "context": "Average relative improvement of E-SUOT over MSTN / RSDA / FixBi / CoVi backbones on Office-Home",
+   "source": "Table 4"
+  },
+  {
+   "number": "9.7e0 vs 7.8e-4",
+   "context": "W2^2 of EstTrans vs DirTrans in motivation experiment",
+   "source": "Figure 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "GGF_Zhuang_2024",
+   "type": "继承并改进（提供 UMAP embeddings 与 flow-based GDA 基线）"
+  },
+  {
+   "report_id": "CNF_Sagawa_Hino_2025",
+   "type": "同属 flow-based GDA，本文指出其 PDF 估计依赖问题"
+  },
+  {
+   "report_id": "GOAT_He_2024",
+   "type": "OT 构造中间域的 GDA 基线"
+  },
+  {
+   "report_id": "Choi_Choi_2024",
+   "type": "熵正则 UOT 的 Schrödinger bridge 解法，本文区分参考测度"
+  },
+  {
+   "report_id": "Korotin_2023",
+   "type": "semi-dual OT 生成建模方法学来源"
+  }
+ ],
+ "read_full_text": true
+}

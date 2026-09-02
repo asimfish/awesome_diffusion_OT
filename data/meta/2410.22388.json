@@ -1,0 +1,95 @@
+{
+ "report_id": "2410.22388",
+ "arxiv_id": "2410.22388",
+ "title": "ET-Flow: Equivariant Flow-Matching for Molecular Conformer Generation",
+ "tldr_zh": "等变Transformer+flow matching+harmonic prior+Kabsch对齐，8.3M参数在GEOM-DRUGS精度超242M的MCF-L，5步采样仍SOTA",
+ "tldr_en": "Equivariant transformer flow matching with harmonic prior and Kabsch alignment achieves SOTA conformer precision with 8.3M params",
+ "tags": [
+  "flow matching",
+  "equivariant transformer",
+  "molecular conformer generation",
+  "harmonic prior",
+  "Kabsch alignment",
+  "GEOM"
+ ],
+ "code_url": "https://github.com/shenoynikhil/ETFlow",
+ "key_numbers": [
+  {
+   "number": "8.3M",
+   "description": "ET-Flow 参数量",
+   "source": "Table 1"
+  },
+  {
+   "number": "242M",
+   "description": "MCF-L 参数量",
+   "source": "Table 1"
+  },
+  {
+   "number": "74.38/81.04",
+   "description": "ET-Flow Precision Coverage mean/median on GEOM-DRUGS",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.541/0.470",
+   "description": "ET-Flow Precision AMR mean/median on GEOM-DRUGS",
+   "source": "Table 1"
+  },
+  {
+   "number": "66.8/71.3",
+   "description": "MCF-L Precision Coverage mean/median on GEOM-DRUGS",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.618/0.530",
+   "description": "MCF-L Precision AMR mean/median on GEOM-DRUGS",
+   "source": "Table 1"
+  },
+  {
+   "number": "5",
+   "description": "最小推理步数，仍保持 SOTA 精度",
+   "source": "Table 4"
+  },
+  {
+   "number": "0.18±0.01",
+   "description": "ET-Flow 能量 median error (kcal/mol)",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.02±0.00",
+   "description": "ET-Flow E_min median error (kcal/mol)",
+   "source": "Table 3"
+  },
+  {
+   "number": "304k",
+   "description": "GEOM-DRUGS 分子数",
+   "source": "Sec. 4.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2302.00482",
+   "type": "继承（OT-CFM 底座）"
+  },
+  {
+   "report_id": "2302.08246",
+   "type": "继承（Equivariant FM 的 Kabsch 对齐）"
+  },
+  {
+   "report_id": "2203.02923",
+   "type": "竞争（GeoDiff 基线）"
+  },
+  {
+   "report_id": "2210.01776",
+   "type": "竞争（Torsional Diffusion 基线）"
+  },
+  {
+   "report_id": "2405.15888",
+   "type": "竞争（MCF 基线）"
+  },
+  {
+   "report_id": "2202.02541",
+   "type": "继承（TorchMD-NET 架构底座）"
+  }
+ ],
+ "read_full_text": true
+}

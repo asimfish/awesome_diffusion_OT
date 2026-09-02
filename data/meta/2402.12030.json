@@ -1,0 +1,63 @@
+{
+ "report_id": "2402.12030",
+ "arxiv_id": "2402.12030",
+ "title": "Towards Cross-Tokenizer Distillation: the Universal Logit Distillation Loss for LLMs",
+ "tldr_zh": "用排序概率向量的 W1 距离做跨词表 logit 蒸馏，作者报告平均比纯文本蒸馏高 2.30 点 F1",
+ "tldr_en": "Cross-tokenizer logit distillation via sorted-probability W1 distance; authors report +2.30 avg F1 over text-only distillation",
+ "tags": [
+  "knowledge distillation",
+  "optimal transport",
+  "Wasserstein distance",
+  "cross-tokenizer",
+  "LLM"
+ ],
+ "code_url": "https://github.com/Nicolas-BZRD/llm-recipes",
+ "key_numbers": [
+  {
+   "number": "2.30",
+   "description": "ULD 在抽取式 QA 上平均比 Raw Text 高的 F1 点数",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "30.03%",
+   "description": "Bloomz tokenizer 覆盖 Mistral 词表的比例",
+   "source": "Fig. 1"
+  },
+  {
+   "number": "1.5",
+   "description": "ULD 损失中 λ 的取值",
+   "source": "Sec. 3.2"
+  },
+  {
+   "number": "O(n log n)",
+   "description": "均匀成本假设下 W1 闭式解的计算复杂度",
+   "source": "Sec. 3.3, Eq. 5"
+  },
+  {
+   "number": "55.79 vs 53.01",
+   "description": "Bloomz-560m + ULD 在 QED 上超过其教师 Mistral 的 F1",
+   "source": "Table 2 vs Table 1"
+  },
+  {
+   "number": "2.63",
+   "description": "跨架构蒸馏中 ULD 在生成式任务上比 Raw Text 高的 BERTScore 点数",
+   "source": "Sec. 6"
+  },
+  {
+   "number": "50%",
+   "description": "ULD 用一半数据超过 Raw Text 用全量数据的性能",
+   "source": "Sec. 5.3, Fig. 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2502.18961",
+   "type": "被后续工作改进（MultiLevelOT 用语义成本替代均匀成本）"
+  },
+  {
+   "report_id": "2402.12030",
+   "type": "self"
+  }
+ ],
+ "read_full_text": true
+}

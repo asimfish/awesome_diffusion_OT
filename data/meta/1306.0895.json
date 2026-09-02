@@ -1,0 +1,45 @@
+{
+ "report_id": "1306.0895",
+ "arxiv_id": "1306.0895",
+ "title": "Sinkhorn Distances: Lightspeed Computation of Optimal Transportation Distances",
+ "tldr_zh": "给 OT 加熵约束/熵罚，最优耦合为 diag(u)e^{-λM}diag(v)，Sinkhorn–Knopp 缩放求解，比 EMD 快数个量级且 MNIST 分类更好",
+ "tldr_en": "Entropic regularization turns OT into a strictly convex problem solved by Sinkhorn-Knopp matrix scaling, orders of magnitude faster than EMD solvers, with better MNIST accuracy.",
+ "tags": [
+  "entropic-ot",
+  "sinkhorn",
+  "foundations",
+  "computation",
+  "gpu"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Theorem 1: d_{M,alpha} is symmetric and satisfies the triangle inequality for all alpha >= 0; 1_{r!=c} d_{M,alpha} is a distance",
+  "Optimal regularized plan has the form P = diag(u) exp(-lambda M) diag(v) (Eq. 3)",
+  "Sinkhorn on CPU is more than 100,000x faster than EMD solvers for large d at tolerance 0.01; GPU adds another order of magnitude (Sec. 5.3, Fig. 4)",
+  "Sinkhorn distance stays about 10% above EMD on MNIST pairs even for large lambda (Fig. 3, Sec. 5.2)",
+  "MNIST classification: Sinkhorn distance beats EMD, Hellinger, chi2, TV, Gaussian kernels; lambda=9/q50(M) best in most folds, 20 fixed iterations (Fig. 2, curves only)"
+ ],
+ "relations": [
+  {
+   "report_id": "1706.00292",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "1810.08278",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "1905.11882",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2109.12004",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2406.05061",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

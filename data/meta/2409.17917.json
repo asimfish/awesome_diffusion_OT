@@ -1,0 +1,75 @@
+{
+ "report_id": "2409.17917",
+ "arxiv_id": "2409.17917",
+ "title": "WaSt-3D: Wasserstein-2 Distance for Scene-to-Scene Stylization on 3D Gaussians",
+ "tldr_zh": "用熵正则 W2/Sinkhorn 散度匹配 3D 高斯分布，training-free 场景级 3DGS 风格迁移",
+ "tldr_en": "Training-free 3DGS scene stylization via entropy-regularized W2 matching of Gaussian distributions",
+ "tags": [
+  "3D style transfer",
+  "Gaussian Splatting",
+  "Sinkhorn divergence",
+  "optimal transport",
+  "training-free"
+ ],
+ "code_url": "https://compvis.github.io/wast3d/",
+ "key_numbers": [
+  {
+   "number": "84.40%",
+   "source": "Table 1",
+   "context": "CLIP high-level details similarity, WaSt-3D vs ARF 74.79%, Style-RF 74.94%, SNeRF 76.99%"
+  },
+  {
+   "number": "75.5%",
+   "source": "Table 1",
+   "context": "Human preference score, WaSt-3D vs ARF 12.5%, Style-RF 1.5%, SNeRF 10.5%"
+  },
+  {
+   "number": "8 min",
+   "source": "Table 1 / Sec. 4",
+   "context": "Optimization time on single A100 GPU, vs ARF 11min, Style-RF 18min, SNeRF 30min"
+  },
+  {
+   "number": "16GB",
+   "source": "Table 1 / Sec. 4",
+   "context": "VRAM for largest style scenes with 8e6 Gaussians, vs ARF 9GB, Style-RF 6GB, SNeRF 8GB"
+  },
+  {
+   "number": "400",
+   "source": "Sec. 4",
+   "context": "Default number of content scene clusters via K-Means"
+  },
+  {
+   "number": "0.05",
+   "source": "Sec. 4.1",
+   "context": "Default entropy regularization coefficient gamma"
+  },
+  {
+   "number": "1e6-4e6",
+   "source": "Sec. 4",
+   "context": "Average number of Gaussians in optimized scene"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1904.01843",
+   "type": "继承"
+  },
+  {
+   "report_id": "2308.04079",
+   "type": "依赖"
+  },
+  {
+   "report_id": "2206.02160",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2303.10598",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2202.00623",
+   "type": "竞争"
+  }
+ ],
+ "read_full_text": true
+}

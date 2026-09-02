@@ -1,0 +1,50 @@
+{
+ "report_id": "2212.12848",
+ "arxiv_id": "2212.12848",
+ "title": "Gromov-Wasserstein Distances: Entropic Regularization, Duality, and Sample Complexity",
+ "tldr_zh": "用辅助矩阵变量把二次 GW 线性化为 OT/EOT 族下确界，建立首个对偶理论与尖锐经验收敛率",
+ "tldr_en": "Linearizes quadratic GW via auxiliary matrix into OT/EOT infimum, establishing first duality theory and sharp empirical convergence rates",
+ "tags": [
+  "Gromov-Wasserstein",
+  "entropic regularization",
+  "duality",
+  "sample complexity",
+  "optimal transport",
+  "empirical process theory"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "n^{-1/2}",
+   "context": "EGW 经验收敛率（单样本与双样本），参数率，任意维度成立",
+   "source": "Theorem 2"
+  },
+  {
+   "number": "n^{-2/max{min(dx,dy),4}}",
+   "context": "标准 GW 双样本经验收敛率（上界与匹配下界），min(dx,dy)=4 时乘 log n 因子",
+   "source": "Theorem 3"
+  },
+  {
+   "number": "n^{-2/max{dx,4}}",
+   "context": "标准 GW 单样本经验收敛率（上界与匹配下界）",
+   "source": "Theorem 3"
+  },
+  {
+   "number": "O(ε log(1/ε))",
+   "context": "EGW 与 GW 平方代价的近似间隙，对任意四阶矩有界分布成立",
+   "source": "Proposition 1"
+  },
+  {
+   "number": "O(n^2)",
+   "context": "follow-up 工作 [RGK23] 基于本文对偶形式提出的 EGW 计算时间",
+   "source": "Sec. 1.2, Follow-up work"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2212.12848",
+   "type": "被继承"
+  }
+ ],
+ "read_full_text": true
+}

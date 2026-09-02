@@ -1,0 +1,97 @@
+{
+ "digest_zh": "本课题解决神经 OT 映射的学习与无配对图像翻译问题，核心张力在于：如何在无配对数据下学到既保真又多样的映射，同时克服 max-min 训练的不稳定性。方法谱系从 Korotin 系 W2 benchmark（2106.01954）确立「map 精度与生成质量不相关」的实证起点，经 OTM（2110.02999）与 NOT（2201.12220）建立 max-min 骨架，随后分化为三条修复路线：一是改 cost 注入结构（Kernel NOT 2205.15269、General Cost Functionals 2205.15403、Extremal 2301.12874），二是松弛边际约束走 unbalanced 分支（UOTM 2305.14777、UOT-FM 2311.15100、UOTM-SD 2310.02611、CUOTM 2603.06972），三是用正则或替代目标稳定训练（Monge Gap 2302.04953、ENOT 2403.03777、DIOTM 2410.03783、OTP）。当前共识是：max-min 鞍点存在 spurious solution 且训练易发散，FID 不能作为 map 精度的代理指标。分歧在于：unbalanced 化归（UOT-FM）与半对偶调度（UOTM-SD）谁更可扩展，以及确定性 map 与随机 plan 在翻译任务中的适用边界。",
+ "observations": [
+  {
+   "claim": "max-min 半对偶框架的 spurious solution 问题被多篇论文独立发现并给出不同修复路径。",
+   "evidence": [
+    "2201.12220",
+    "2205.15269",
+    "Overcoming_Spurious_Solutions_in_Semi_Dual_Neural",
+    "2410.03783"
+   ],
+   "detail": "NOT 承认鞍点解集含非 OT map（Sec. 6）；Kernel NOT 证明 γ-weak 二次 cost 下所有条件均值正确的函数都是 fake solution（Theorem 1）；OTP 针对强 cost 给出恢复真 map 的充分条件；DIOTM 用 HJB 正则稳定训练。"
+  },
+  {
+   "claim": "FID 与 map 精度脱节，benchmark 上的 L2-UVP 才是 map 质量的可靠度量。",
+   "evidence": [
+    "2106.01954",
+    "2403.03777",
+    "2302.04953"
+   ],
+   "detail": "W2 benchmark 显示 QC 方法 map 完全错（UVP 88.2%）却生成好，W2 方法 map 准却生成差；ENOT 在 W2 benchmark 上报告 L2-UVP 从 0.02 到 0.67（D=2..256）；Monge Gap 提出用 Monge gap 作为免训练诊断工具。"
+  },
+  {
+   "claim": "unbalanced 分支从半对偶生成模型演进为可即插即用的化归框架，但 τ 敏感性是共同痛点。",
+   "evidence": [
+    "2305.14777",
+    "2311.15100",
+    "2310.02611",
+    "2603.06972"
+   ],
+   "detail": "UOTM 首次将 UOT 半对偶做成生成模型（CIFAR-10 FID 2.97），但 Fig. 7 显示 τ 过小或过大都崩；UOT-FM 证明 unbalanced map 可化归为重缩放边际的 balanced 问题（Prop. 3.1）；UOTM-SD 用 α 调度缓解 τ 敏感（FID 2.51）；CUOTM 在条件场景下仍报告 τ 高度敏感。"
+  },
+  {
+   "claim": "cost 设计是注入任务先验的主要手段，从 weak cost 到 kernel cost 再到 extremal transport 形成谱系。",
+   "evidence": [
+    "2201.12220",
+    "2205.15269",
+    "2301.12874",
+    "2205.15403"
+   ],
+   "detail": "NOT 用 γ-weak cost 控制一对多多样性；Kernel NOT 改用特征核 cost 后 128px 翻译 FID 从 25.97 降到 15.16；Extremal 把翻译形式化为到 Supp(Q) 的最近邻（incomplete transport 极限）；General Cost Functionals 统一为任意凸泛函 F(π)。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "weak/UOT 半对偶的可计算后验误差证书缺失",
+   "why_open": "General Cost Functionals 的 Theorem 3 要求 F 强凸，实际使用的 F_G 未证明强凸；UOT 的 φ-散度松弛不在其框架内；CUOTM 的 Theorem III.3 给出界但实验未用其做定量验证。",
+   "evidence": [
+    "2205.15403",
+    "2603.06972",
+    "2311.15100"
+   ]
+  },
+  {
+   "problem": "τ 或 α 调度的手工设定缺乏理论指导",
+   "why_open": "UOTM 的 τ 敏感区间无选择准则；UOTM-SD 的 α 调度引入新超参（α_min, α_max, 调度形式）；UOT-FM 的 τ 靠网格搜索；CUOTM 在条件场景下仍报告 τ 高度敏感。",
+   "evidence": [
+    "2305.14777",
+    "2310.02611",
+    "2311.15100",
+    "2603.06972"
+   ]
+  },
+  {
+   "problem": "map 级收敛保证与 plan 级收敛之间的差距未闭合",
+   "why_open": "UOTM-SD 的 Theorem 4.1 只保证 plan 弱收敛，不保证 map 收敛；OTP 的收敛保证是子序列意义；Extremal 的 Theorem 3 只给子列弱-* 收敛且无速率。",
+   "evidence": [
+    "2310.02611",
+    "Overcoming_Spurious_Solutions_in_Semi_Dual_Neural",
+    "2301.12874"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "2106.01954",
+   "why": "实证起点，确立 map 精度与 FID 脱节"
+  },
+  {
+   "report_id": "2110.02999",
+   "why": "max-min 骨架首次大规模可用"
+  },
+  {
+   "report_id": "2201.12220",
+   "why": "统一框架，引入 weak cost 与随机 plan"
+  },
+  {
+   "report_id": "2205.15269",
+   "why": "发现并修复 fake solution 问题"
+  },
+  {
+   "report_id": "2305.14777",
+   "why": "unbalanced 分支起点，τ 敏感问题暴露"
+  }
+ ],
+ "n_reports": 15
+}

@@ -1,0 +1,36 @@
+{
+ "report_id": "Harmonizing_Optical_Coherence_Tomography_Across_De",
+ "arxiv_id": null,
+ "title": "Harmonizing OCT Across Devices with Latent-Metric Schrödinger Bridges (NeurIPS 2025)",
+ "tldr_zh": "用可逆网络学潜空间度量替代欧氏成本再训 SB，跨设备 OCT 协调保解剖",
+ "tldr_en": "Learns a pullback latent metric via invertible network, then trains SB to preserve anatomy in cross-device OCT harmonization",
+ "tags": [
+  "Schrödinger bridge",
+  "optimal transport",
+  "medical imaging",
+  "OCT harmonization",
+  "latent metric",
+  "anatomy preservation"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "ACSB",
+   "type": "同支线-成本设计"
+  },
+  {
+   "report_id": "DSBM",
+   "type": "前序-医学SB剂量学评测"
+  },
+  {
+   "report_id": "SelfRDB",
+   "type": "前序-端点方差软先验"
+  },
+  {
+   "report_id": "I2SB",
+   "type": "基础-图像级SB"
+  }
+ ],
+ "read_full_text": false
+}

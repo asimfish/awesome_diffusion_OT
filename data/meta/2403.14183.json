@@ -1,0 +1,81 @@
+{
+ "report_id": "2403.14183",
+ "arxiv_id": "2403.14183",
+ "title": "OTSeg: Multi-prompt Sinkhorn Attention for Zero-Shot Semantic Segmentation",
+ "tldr_zh": "Sinkhorn 替换跨注意力归一化，多 prompt 全局匹配像素语义，ZS3 三基准 SOTA",
+ "tldr_en": "Sinkhorn replaces cross-attention softmax for multi-prompt pixel matching, SOTA on ZS3",
+ "tags": [
+  "optimal transport",
+  "Sinkhorn attention",
+  "zero-shot semantic segmentation",
+  "CLIP",
+  "cross-attention",
+  "multimodal alignment"
+ ],
+ "code_url": "https://github.com/cubeyoung/OTSeg",
+ "key_numbers": [
+  {
+   "number": "87.1 hIoU",
+   "source": "Table 1, VOC 2012 inductive, OTSeg+"
+  },
+  {
+   "number": "57.7 hIoU",
+   "source": "Table 1, PASCAL Context inductive, OTSeg+"
+  },
+  {
+   "number": "41.5 hIoU",
+   "source": "Table 1, COCO-Stuff164K inductive, OTSeg+"
+  },
+  {
+   "number": "94.4 hIoU",
+   "source": "Table 1, VOC 2012 transductive, OTSeg+"
+  },
+  {
+   "number": "13.8M parameters",
+   "source": "Table 3, same as ZegCLIP"
+  },
+  {
+   "number": "23.6 FPS",
+   "source": "Table 3, OTSeg vs ZegCLIP 25.6 FPS"
+  },
+  {
+   "number": "+3% hIoU vs cross-attention",
+   "source": "Table 5(b), VOC 2012, 87.1 vs 84.3"
+  },
+  {
+   "number": "+7% hIoU vs cross-attention",
+   "source": "Table 5(b), PASCAL Context, 57.7 vs 50.3"
+  },
+  {
+   "number": "N=6 prompts optimal for VOC 2012",
+   "source": "Table 5(a)"
+  },
+  {
+   "number": "N=8 prompts optimal for PASCAL Context",
+   "source": "Table 5(a)"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2202.00769",
+   "type": "继承（Sinkformer 的 SoftMax→Sinkhorn 替换策略）"
+  },
+  {
+   "report_id": "2210.01253",
+   "type": "同方向（OT 对齐 prompt-token 集合，但做图像级分类）"
+  },
+  {
+   "report_id": "2212.03588",
+   "type": "直接基线（ZegCLIP，OTSeg 在其框架上替换 attention）"
+  },
+  {
+   "report_id": "2003.11402",
+   "type": "动机同源（OT 解决 many-to-one 错配）"
+  },
+  {
+   "report_id": "2104.03367",
+   "type": "可接改进（非均匀边际/自适应质量学习）"
+  }
+ ],
+ "read_full_text": true
+}

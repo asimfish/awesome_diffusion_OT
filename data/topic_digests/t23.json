@@ -1,0 +1,92 @@
+{
+ "digest_zh": "T23 课题解决的核心问题是：如何用流匹配（FM）与 Schrödinger 桥（SB）替代扩散模型，在语音/音频生成中实现更少采样步数、更低计算成本，同时保持或提升质量。方法谱系呈现两条主线：一是 OT-CFM 条件路径路线，从 Voicebox 确立「FM + masked infilling」范式，经 Matcha-TTS 轻量化、E2 TTS 极简化、F5-TTS 加 Sway Sampling，再到 CosyVoice 2 的流式化与 MusicFlow 的跨域迁移；二是配对数据可解 SB 路线，从 Bridge-TTS 的 informative prior 出发，延伸至 SB-SE 语音增强、Bridge-SR 超分、A2SB 音乐修复、SBCTM 少步蒸馏。当前共识是：数据到数据过程在少步区间优于噪声到数据过程，OT 直线路径有效降低 NFE。分歧在于：FM 路线从高斯先验出发但规模化成熟，SB 路线利用观测端结构但验证规模小；minibatch-OT 耦合在语音上从未被系统消融，Sway Sampling 类免重训调度缺乏理论依据。",
+ "observations": [
+  {
+   "claim": "配对数据可解 SB 路线在少步采样区间系统性优于从高斯噪声出发的扩散/FM 基线，但验证规模远小于 FM 路线。",
+   "evidence": [
+    "2312.03491",
+    "2407.16074",
+    "2501.07897"
+   ],
+   "detail": "Bridge-TTS 在 2 步 MOS 4.04 超过 CoMoSpeech 的 3.87，4 步 MOS 4.10 超过 ResGrad 的 4.02；SB-SE 去噪 WER 4.69% 优于 SGMSE+ 的 9.52%；Bridge-SR 以 1.7M 参数 4 步胜过 8 步条件扩散。但三者均只在单数据集（LJ Speech 24h、WSJ0、VCTK）上验证。"
+  },
+  {
+   "claim": "OT-CFM 的「独立采样 + 直线条件路径」配方在语音生成中成为事实标准，但 batch 内 OT 耦合从未被系统消融。",
+   "evidence": [
+    "F5_TTS_A_Fairytaler_that_Fakes_Fluent_and_Faithful",
+    "2309.03199",
+    "2306.15687"
+   ],
+   "detail": "F5-TTS 的 Eq.3、Matcha-TTS 的 Eq.4、Voicebox 的训练均采用 x0 与 x1 独立采样，未使用 minibatch OT 耦合。语音 mel 的谐波/共振峰结构可能使耦合显著降低路径交叉，但该空白点在 2023-2025 的 FM 语音系统中持续存在。"
+  },
+  {
+   "claim": "免重训的推理期时间步重分配（Sway Sampling 类）在多个任务上显示收益，但均为启发式单参数，缺乏理论依据。",
+   "evidence": [
+    "F5_TTS_A_Fairytaler_that_Fakes_Fluent_and_Faithful",
+    "2501.11311",
+    "2507.11925"
+   ],
+   "detail": "F5-TTS 的 Sway Sampling 系数 s 默认取 -1，无理论推导；A2SB 的 t-range partitioning 用微调而非免训练实现时间重分配；SBCTM 的固定 schedule 参数 ρ=7 也是启发式。三者均未给出「给定预训练速度场，最小化离散化误差的最优时间步分布」的推导。"
+  },
+  {
+   "claim": "「FM + masked infilling」作为跨任务域可迁移配方，从语音 TTS 扩展到音乐生成与语音增强，但级联误差传播未被量化。",
+   "evidence": [
+    "2410.20478",
+    "2306.15687",
+    "2310.16338"
+   ],
+   "detail": "MusicFlow 直接复用 Voicebox 的训练目标、span masking、CFG 与 backbone，仅换表示与数据；SpeechFlow 用同样目标做无监督预训练。但 MusicFlow 未报告 Stage 1 采样误差对 Stage 2 的影响，SpeechFlow 的多任务微调在分离任务上 SI-SDRi 从 12.41 退化到 9.73，说明级联/多任务冲突的误差传播机制尚不清楚。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "minibatch-OT 耦合在语音 FM 训练中的收益从未被系统消融",
+   "why_open": "所有主流 FM 语音系统（Voicebox、Matcha-TTS、F5-TTS、StableVC）均采用独立采样，语音 mel 的强结构（谐波、共振峰）理论上可能使耦合显著降低路径交叉，但缺乏实验证据；负结果同样有信息量。",
+   "evidence": [
+    "F5_TTS_A_Fairytaler_that_Fakes_Fluent_and_Faithful",
+    "2309.03199",
+    "2306.15687"
+   ]
+  },
+  {
+   "problem": "Sway Sampling 类免重训时间步重分配缺乏理论化与自适应机制",
+   "why_open": "F5-TTS 的 s 是全局固定启发式，SBCTM 的 ρ=7 固定，A2SB 的 partitioning 需微调；尚无工作推导「给定预训练 FM 速度场，最小化离散化误差的最优时间步分布」，也未按输入难度自适应调整。",
+   "evidence": [
+    "F5_TTS_A_Fairytaler_that_Fakes_Fluent_and_Faithful",
+    "2507.11925",
+    "2501.11311"
+   ]
+  },
+  {
+   "problem": "SB 生成式语音增强的幻觉问题未被量化",
+   "why_open": "SB-SE 声称「显著更少幻觉」但全文无幻觉率或音素保持率指标；SBCTM 也未报告 ASR 一致性。生成式增强把音素改掉的风险在整条 SB-SE 线中未被测量，无法验证 SB 是否真正解决了引言提出的幻觉问题。",
+   "evidence": [
+    "2407.16074",
+    "2507.11925"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "2306.15687",
+   "why": "FM 进入语音的标志性工作，确立 masked infilling 范式"
+  },
+  {
+   "report_id": "2312.03491",
+   "why": "SB 路线首个 TTS 实例，informative prior 核心论证"
+  },
+  {
+   "report_id": "F5_TTS_A_Fairytaler_that_Fakes_Fluent_and_Faithful",
+   "why": "极简化 FM 路线 + Sway Sampling 免重训调度"
+  },
+  {
+   "report_id": "2407.16074",
+   "why": "SB 从 TTS 迁移到语音增强的桥接工作"
+  },
+  {
+   "report_id": "2507.11925",
+   "why": "SB 增强与少步蒸馏交叉点，一步推理验证"
+  }
+ ],
+ "n_reports": 15
+}

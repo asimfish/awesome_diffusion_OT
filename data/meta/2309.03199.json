@@ -1,0 +1,50 @@
+{
+ "report_id": "2309.03199",
+ "arxiv_id": "2309.03199",
+ "title": "Matcha-TTS: A fast TTS architecture with conditional flow matching",
+ "tldr_zh": "OT-CFM 训练 ODE 解码器 + 1D CNN-Transformer 架构，2 步合成 MOS 超 VITS，内存最小",
+ "tldr_en": "OT-CFM-trained ODE decoder with 1D CNN-Transformer U-Net achieves 2-step synthesis surpassing VITS MOS with smallest memory",
+ "tags": [
+  "TTS",
+  "flow matching",
+  "OT-CFM",
+  "acoustic modelling",
+  "non-autoregressive",
+  "LJ Speech"
+ ],
+ "code_url": "https://shivammehta25.github.io/Matcha-TTS/",
+ "key_numbers": [
+  "MAT-2 MOS 3.65±0.08，VITS MOS 3.71±0.08，差异不显著（Table 1, Sec. 4.2）",
+  "MAT-10 MOS 3.84±0.08，显著高于 VITS 3.71±0.08（Table 1, Sec. 4.2）",
+  "MAT 训练最小 GPU RAM 4.8 GiB，GRAD 7.8 GiB，VITS 12.4 GiB（Table 1）",
+  "MAT 参数量 18.2M，VITS 36.3M，FS2 41.2M（Table 1）",
+  "MAT-2 RTF 0.015±0.006，FS2 RTF 0.010±0.004（Table 1）",
+  "MAT-2 WER 2.34%，VITS WER 2.52%，GRAD-10 WER 3.44%（Table 1）",
+  "MAT-4 > GCFM-4 > GRAD-4（MOS），消融显示架构与训练目标均有贡献（Sec. 4.2）",
+  "训练 500k updates，2 GPU，batch size 32，lr 1e-4（Sec. 4.1）",
+  "MOS 测试 40 条话语，80 名听者，每条件 800 评分（Sec. 4.2）"
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "继承方法（OT-CFM 框架）"
+  },
+  {
+   "report_id": "2105.06337",
+   "type": "直接基线 + 继承对齐/时长机制"
+  },
+  {
+   "report_id": "2306.15687",
+   "type": "同期竞争（FM 语音，论文中对比）"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "同期方法（rectified flow，论文中列为 concurrent）"
+  },
+  {
+   "report_id": "2005.11129",
+   "type": "继承架构（编码器与 MAS）"
+  }
+ ],
+ "read_full_text": true
+}

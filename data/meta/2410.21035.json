@@ -1,0 +1,76 @@
+{
+ "report_id": "2410.21035",
+ "arxiv_id": "2410.21035",
+ "title": "Beyond Autoregression: Fast LLMs via Self-Distillation Through Time",
+ "tldr_zh": "跨时间自蒸馏把 masked 扩散 LM 采样步数压到 16–32 步，生成质量仍超 GPT-2 级 AR",
+ "tldr_en": "Self-distillation through time cuts masked diffusion LM sampling to 16-32 steps while beating GPT-2-level AR quality",
+ "tags": [
+  "discrete diffusion",
+  "language model",
+  "knowledge distillation",
+  "masked diffusion",
+  "few-step sampling",
+  "MDLM"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "32-64x",
+   "context": "采样步数压缩比",
+   "source": "Abstract, p.1"
+  },
+  {
+   "number": "8x",
+   "context": "1.3B 参数、16 步解码时相对带 KV caching AR 的加速比",
+   "source": "Abstract, p.1; Sec. 4.4, p.9"
+  },
+  {
+   "number": "4x",
+   "context": "32 步解码时的加速比（复现 Deschenaux & Gulcehre 2024）",
+   "source": "Sec. 4.4, p.9"
+  },
+  {
+   "number": "860M",
+   "context": "最大蒸馏模型参数量",
+   "source": "Abstract, p.1; Sec. 4.3, p.9"
+  },
+  {
+   "number": "2",
+   "context": "self-BLEU 多样性最大变化（KLD 学生）；AR 蒸馏通常增加 15",
+   "source": "Sec. 4.1, p.7"
+  },
+  {
+   "number": "10k",
+   "context": "每轮 SDTT 默认训练迭代数",
+   "source": "Sec. 4.1, p.7"
+  },
+  {
+   "number": "30-50",
+   "context": "单模型逐步增大步长方案损失发散所需步数",
+   "source": "Sec. 3.1, p.6"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2406.07524",
+   "type": "继承基础模型与训练框架（MDLM）"
+  },
+  {
+   "report_id": "2310.16834",
+   "type": "继承离散扩散 LM 路线（SEDD）"
+  },
+  {
+   "report_id": "2202.00512",
+   "type": "连续域对应方法（progressive distillation）"
+  },
+  {
+   "report_id": "2406.11473",
+   "type": "延迟对比基线来源"
+  },
+  {
+   "report_id": "2306.13649",
+   "type": "多样性对比基线（on-policy distillation）"
+  }
+ ],
+ "read_full_text": true
+}

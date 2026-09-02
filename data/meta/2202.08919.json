@@ -1,0 +1,46 @@
+{
+ "report_id": "2202.08919",
+ "arxiv_id": "2202.08919",
+ "title": "Debiaser Beware: Pitfalls of Centering Regularized Transport Maps",
+ "tldr_zh": "Sinkhorn map T^D_ε=T_ε+∇α_ε 在 ε→0 时不比 entropic map 差（Gaussian 下 O(ε⁴) vs O(ε²)），但 ε 大或样本少时可被任意倍劣化",
+ "tldr_en": "Debiased Sinkhorn map matches the entropic map as epsilon to 0 (O(eps^4) vs O(eps^2) for Gaussians) but can be arbitrarily worse for large epsilon or small samples.",
+ "tags": [
+  "entropic-ot",
+  "debiasing",
+  "map-estimation",
+  "sinkhorn-divergence",
+  "theory",
+  "statistics"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Lemma 1: ||grad alpha_eps||^2_{L2(P)} <= (eps^2/4) I_0(P,P)",
+  "Theorem 3: as eps -> inf, R(T_eps) -> Var(Q) while R(T^D_eps) -> W_2^2(P_centered, Q_centered); neither dominates",
+  "Theorem 4: for any eps < 1 and M > 0 there exist (P_eps, Q_eps) with R(T^D_eps) >= M R(T_eps)",
+  "Gaussian case: ||T_eps - T_0||^2 <= (eps^2/4) Tr(A^{-1}) + O(eps^4) (Theorem 5) vs ||T^D_eps - T_0||^2 <~ eps^4 (Theorem 6)",
+  "Finite samples: in d=15 with concentrated target, Sinkhorn map worse than entropic map for all eps <= 1 (Fig. 5b); on single-cell day0->day1 (d=30) entropic map wins for small eps (Fig. 6)"
+ ],
+ "relations": [
+  {
+   "report_id": "2109.12004",
+   "type": "extends"
+  },
+  {
+   "report_id": "1810.08278",
+   "type": "extends"
+  },
+  {
+   "report_id": "2006.08172",
+   "type": "competes"
+  },
+  {
+   "report_id": "2406.05061",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2605.11755",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

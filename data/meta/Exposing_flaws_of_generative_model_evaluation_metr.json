@@ -1,0 +1,40 @@
+{
+ "report_id": "Exposing_flaws_of_generative_model_evaluation_metr",
+ "arxiv_id": null,
+ "title": "Exposing flaws of generative model evaluation metrics and their unfair treatment of diffusion models",
+ "tldr_zh": "最大规模人评实验：现有生成评测指标与人评无强相关，Inception 特征压低扩散模型排名，建议换 DINOv2 特征。",
+ "tldr_en": "Largest human evaluation shows no metric strongly correlates with human judgment; Inception features unfairly rank diffusion models lower; DINOv2 features proposed.",
+ "tags": [
+  "evaluation",
+  "FID",
+  "human-evaluation",
+  "diffusion-models",
+  "DINOv2",
+  "Inception-V3",
+  "benchmark"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "0",
+   "description": "与人评强相关的现有指标数量",
+   "source": "摘要"
+  },
+  {
+   "number": "DINOv2-ViT-L/14",
+   "description": "建议用于计算 FD 的特征提取器",
+   "source": "摘要"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "CMMD_2024",
+   "type": "被后续工作继承/攻击对象延伸"
+  },
+  {
+   "report_id": "FID_original",
+   "type": "否定其作为扩散模型评测指标的可靠性"
+  }
+ ],
+ "read_full_text": false
+}

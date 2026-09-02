@@ -1,0 +1,52 @@
+{
+ "report_id": "2505.13660",
+ "arxiv_id": "2505.13660",
+ "title": "Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis",
+ "tldr_zh": "无约束凹对偶+Sobolev梯度上升算精确barycenter，免c-concave投影，O(T^{-1/2})收敛，每步O(mn log n)",
+ "tldr_en": "Constraint-free concave dual with Sobolev gradient ascent computes exact barycenter without c-concave projection, O(T^{-1/2}) rate",
+ "tags": [
+  "Wasserstein barycenter",
+  "Sobolev gradient",
+  "optimal transport",
+  "convergence analysis",
+  "exact solver"
+ ],
+ "code_url": "未公开（supplementary material）",
+ "key_numbers": [
+  {
+   "number": "O(T^{-1/2})",
+   "source": "Theorem 6(i)"
+  },
+  {
+   "number": "O(mn log n) per iteration",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "SGA time 202-700s vs WDHA 498-1064s vs CWB 1145-2520s vs DSB 3643-5192s",
+   "source": "Table 1"
+  },
+  {
+   "number": "SGA barycenter value 1.645-5.964 (×10^3), lowest in all 12 weight settings",
+   "source": "Table 1"
+  },
+  {
+   "number": "3D barycenter values 1.443, 1.577, 1.455 (×10^-3)",
+   "source": "Fig. 3"
+  },
+  {
+   "number": "WDHA diverges in 3D setting, SGA does not",
+   "source": "Sec. 5.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2505.13660",
+   "type": "extends"
+  },
+  {
+   "report_id": "2505.13660",
+   "type": "competes_with"
+  }
+ ],
+ "read_full_text": true
+}

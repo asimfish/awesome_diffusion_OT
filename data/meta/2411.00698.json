@@ -1,0 +1,91 @@
+{
+ "report_id": "2411.00698",
+ "arxiv_id": "2411.00698",
+ "title": "Wasserstein Flow Matching: Generative Modeling Over Families of Distributions",
+ "tldr_zh": "把 FM 提升到 Wasserstein 空间，样本本身是分布，Gaussian 用闭式 BW 路径、点云用 entropic OT 估计",
+ "tldr_en": "Lifts flow matching to Wasserstein space over distributions, using closed-form Bures-Wasserstein paths for Gaussians and entropic OT for point clouds",
+ "tags": [
+  "flow matching",
+  "Wasserstein geometry",
+  "Bures-Wasserstein",
+  "point cloud generation",
+  "entropic optimal transport",
+  "single-cell genomics"
+ ],
+ "code_url": "https://github.com/DoronHav/WassersteinFlowMatching",
+ "key_numbers": [
+  {
+   "number": "2.98e-4",
+   "description": "BW-FM (R) 在 Spiral-16 上的最小 W2^2 距离，优于 BW-FM (E) 的 4.00e-4 和 Frobenius FM 的 1.03e-3",
+   "source": "Table 2"
+  },
+  {
+   "number": "1.31",
+   "description": "BW-FM (R) 在 scRNA-seq (32D) 上的最小 W2^2 距离，对比 BW-FM (E) 2.74 和 Frobenius FM 3.21",
+   "source": "Table 2"
+  },
+  {
+   "number": "69.88",
+   "description": "WFM 在 ShapeNet Airplane 上的 1-NN CD 准确率，为所有对比方法中最低（最好）",
+   "source": "Table 3"
+  },
+  {
+   "number": "53.41",
+   "description": "WFM 在 ShapeNet Car 上的 1-NN CD 准确率，为所有对比方法中最低（最好）",
+   "source": "Table 3"
+  },
+  {
+   "number": "58.10",
+   "description": "WFM 在 ShapeNet Car 上的 1-NN EMD 准确率，为所有对比方法中最差",
+   "source": "Table 3"
+  },
+  {
+   "number": "63.34",
+   "description": "WFM 在变大小 MNIST (4) 上的 1-NN CD 准确率",
+   "source": "Table 4"
+  },
+  {
+   "number": "52.80",
+   "description": "WFM 在 MERFISH 高维微环境生成上的 1-NN CD 准确率",
+   "source": "Table 4"
+  },
+  {
+   "number": "2048",
+   "description": "ShapeNet 实验中每个形状采样的点数，用于近似 OT 映射",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "254",
+   "description": "MERFISH 图谱的基因数",
+   "source": "Sec. 4.2.2"
+  },
+  {
+   "number": "16",
+   "description": "每个 Sst 神经元微环境用 16 个最近邻表示",
+   "source": "Sec. 4.2.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2302.03660",
+   "type": "framework_source"
+  },
+  {
+   "report_id": "2405.14664",
+   "type": "parallel_work"
+  },
+  {
+   "report_id": "2405.16441",
+   "type": "parallel_work"
+  },
+  {
+   "report_id": "2408.14608",
+   "type": "related_work"
+  },
+  {
+   "report_id": "2109.12034",
+   "type": "method_source"
+  }
+ ],
+ "read_full_text": true
+}

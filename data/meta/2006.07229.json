@@ -1,0 +1,61 @@
+{
+ "report_id": "2006.07229",
+ "arxiv_id": "2006.07229",
+ "title": "A Sliced Wasserstein Loss for Neural Texture Synthesis",
+ "tldr_zh": "用 Sliced Wasserstein Distance 替代 Gram 矩阵作纹理损失，捕获完整特征分布，纹理合成质量优于 Gram。",
+ "tldr_en": "Replaces Gram-matrix loss with Sliced Wasserstein Distance for neural texture synthesis, capturing full feature distributions.",
+ "tags": [
+  "sliced-wasserstein",
+  "texture-synthesis",
+  "style-transfer",
+  "optimal-transport",
+  "neural-loss"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "12",
+   "description": "使用的 VGG-19 卷积层数",
+   "source": "Sec. 2"
+  },
+  {
+   "number": "1.7-2.8x",
+   "description": "LSW 相对 LGram 的计算成本倍数",
+   "source": "Sec. 4"
+  },
+  {
+   "number": "N_l",
+   "description": "每层使用的随机投影方向数（等于特征维度）",
+   "source": "Sec. 4"
+  },
+  {
+   "number": "100x100",
+   "description": "LCX 纹理合成的分辨率上限（内存崩溃）",
+   "source": "Appendix A, Figure 13"
+  },
+  {
+   "number": "2048",
+   "description": "监控收敛时使用的方向数",
+   "source": "Figure 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "STROTSS_CVPR2019",
+   "type": "竞争/同范式"
+  },
+  {
+   "report_id": "MS-SWD_ECCV2024",
+   "type": "被继承"
+  },
+  {
+   "report_id": "SW-Guidance_NeurIPS2025",
+   "type": "被继承"
+  },
+  {
+   "report_id": "Pitie_ICCV2005",
+   "type": "继承"
+  }
+ ],
+ "read_full_text": true
+}

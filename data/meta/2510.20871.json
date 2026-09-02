@@ -1,0 +1,35 @@
+{
+ "report_id": "2510.20871",
+ "arxiv_id": "2510.20871",
+ "title": "Exponential Convergence Guarantees for Iterative Markovian Fitting",
+ "tldr_zh": "首次给出 IMF 非渐近指数收敛率，覆盖对数凹与弱对数凹边缘分布",
+ "tldr_en": "First non-asymptotic exponential convergence rate for IMF under log-concave and weakly log-concave marginals",
+ "tags": [
+  "Schrödinger Bridge",
+  "Iterative Markovian Fitting",
+  "convergence rate",
+  "Markovian projection",
+  "DSBM"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "dsbm_neurips2023",
+   "type": "为 DSBM 提供理论保证"
+  },
+  {
+   "report_id": "idbm_jmlr2023",
+   "type": "继承 IMF 算法框架"
+  },
+  {
+   "report_id": "sinkhorn_bridge_stats_2510.22560",
+   "type": "可拼接泛化误差界"
+  },
+  {
+   "report_id": "ipmf_iclr2026",
+   "type": "同属 IMF 理论收口线"
+  }
+ ],
+ "read_full_text": false
+}

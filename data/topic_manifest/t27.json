@@ -61,22 +61,27 @@
   },
   {
    "key": "t27__momentum_multi_marginal_schro_dinger_bridge_matching",
-   "report_id": "Momentum_Multi_Marginal_Schr_dinger_Bridge_Matchin",
+   "report_id": "2506.10168",
    "title": "Momentum Multi-Marginal Schrödinger Bridge Matching",
-   "authors": "",
+   "authors": [
+    "Panagiotis Theodoropoulos",
+    "Augustinos D. Saravanos",
+    "Evangelos A. Theodorou",
+    "Guan-Horng Liu"
+   ],
    "year": 2025,
    "venue": "NeurIPS",
    "evidence": "P",
    "star": true,
-   "arxiv_id": null,
-   "published": null,
-   "abstract": "",
+   "arxiv_id": "2506.10168",
+   "published": "2025-06-11",
+   "abstract": "Understanding complex systems by inferring trajectories from sparse sample snapshots is a fundamental challenge in a wide range of domains, e.g., single-cell biology, meteorology, and economics. Despite advancements in Bridge and Flow matching frameworks, current methodologies rely on pairwise interpolation between adjacent snapshots. This hinders their ability to capture long-range temporal dependencies and potentially affects the coherence of the inferred trajectories. To address these issues, we introduce \\textbf{Momentum Multi-Marginal Schrödinger Bridge Matching (3MSBM)}, a novel matching framework that learns smooth measure-valued splines for stochastic systems that satisfy multiple positional constraints. This is achieved by lifting the dynamics to phase space and generalizing stochastic bridges to be conditioned on several points, forming a multi-marginal conditional stochastic optimal control problem. The underlying dynamics are then learned by minimizing a variational objective, having fixed the path induced by the multi-marginal conditional bridge. As a matching approach, 3MSBM learns transport maps that preserve intermediate marginals throughout training, significantly improving convergence and scalability. Extensive experimentation in a series of real-world applications validates the superior performance of 3MSBM compared to existing methods in capturing complex dynamics with temporal dependencies, opening new avenues for training matching frameworks in multi-marginal settings.",
    "contribution_zh": "相空间提升+多点条件化随机桥，学习满足多个位置约束的测度值样条；matching 迭代中保持中间边缘不变，解决两两插值丢失长程时序依赖的问题",
    "links": {
     "官方": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/7c3875b86bd2b0639ab1e858c678af40-Abstract-Conference.html"
    },
-   "pdf": "papers/t27_2025_Theodoropoulos_3MSBM_momentum_mmsb_matching.pdf",
-   "text": "data/text/t27_2025_Theodoropoulos_3MSBM_momentum_mmsb_matching.txt",
+   "pdf": "papers/2506.10168.pdf",
+   "text": "data/text/2506.10168.txt",
    "text_chars": 90000,
    "pages": 31
   },
@@ -278,24 +283,29 @@
   },
   {
    "key": "t27__tree_based_diffusion_schro_dinger_bridge",
-   "report_id": "Tree_Based_Diffusion_Schr_dinger_Bridge",
+   "report_id": "2305.16557",
    "title": "Tree-Based Diffusion Schrödinger Bridge with Applications to Wasserstein Barycenters",
-   "authors": "TreeDSB",
+   "authors": [
+    "Maxence Noble",
+    "Valentin De Bortoli",
+    "Arnaud Doucet",
+    "Alain Durmus"
+   ],
    "year": 2023,
    "venue": "NeurIPS Spotlight",
    "evidence": "P",
    "star": false,
-   "arxiv_id": null,
-   "published": null,
-   "abstract": "",
+   "arxiv_id": "2305.16557",
+   "published": "2023-05-26",
+   "abstract": "Multi-marginal Optimal Transport (mOT), a generalization of OT, aims at minimizing the integral of a cost function with respect to a distribution with some prescribed marginals. In this paper, we consider an entropic version of mOT with a tree-structured quadratic cost, i.e., a function that can be written as a sum of pairwise cost functions between the nodes of a tree. To address this problem, we develop Tree-based Diffusion Schrödinger Bridge (TreeDSB), an extension of the Diffusion Schrödinger Bridge (DSB) algorithm. TreeDSB corresponds to a dynamic and continuous state-space counterpart of the multimarginal Sinkhorn algorithm. A notable use case of our methodology is to compute Wasserstein barycenters which can be recast as the solution of a mOT problem on a star-shaped tree. We demonstrate that our methodology can be applied in high-dimensional settings such as image interpolation and Bayesian fusion.",
    "contribution_zh": "树结构代价的熵正则 MMOT 的动态连续版本（多边缘 Sinkhorn 的 DSB 对应物）；星形树即 barycenter，可在高维做图像插值与贝叶斯融合——「用扩散模型算 barycenter」的奠基工作",
    "links": {
     "官方": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/ad08767706825033b99122332293033d-Abstract.html"
    },
-   "pdf": null,
-   "text": null,
-   "text_chars": null,
-   "pages": null
+   "pdf": "papers/2305.16557.pdf",
+   "text": "data/text/2305.16557.txt",
+   "text_chars": 90000,
+   "pages": 44
   },
   {
    "key": "t27__1910.05653",

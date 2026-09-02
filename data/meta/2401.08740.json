@@ -1,0 +1,52 @@
+{
+ "report_id": "2401.08740",
+ "arxiv_id": "2401.08740",
+ "title": "SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers",
+ "tldr_zh": "DiT 骨干不改参数，逐项切换连续时间/速度预测/Linear 插值/可调 w_t SDE 采样，ImageNet-256 FID 2.27→2.06、512 上 2.62",
+ "tldr_en": "On an unchanged DiT backbone, switching to continuous time, velocity prediction, linear interpolant and tunable-diffusion SDE sampling lowers ImageNet-256 FID from 2.27 to 2.06 (2.62 at 512).",
+ "tags": [
+  "stochastic-interpolants",
+  "flow-matching",
+  "diffusion-transformer",
+  "ablation",
+  "sampler",
+  "image-generation",
+  "imagenet"
+ ],
+ "code_url": "https://github.com/willisma/SiT",
+ "key_numbers": [
+  "ImageNet-256 cfg=1.5: SiT-XL SDE FID 2.06 / sFID 4.49 / IS 277.50 vs DiT-XL 2.27 / 4.60 / 278.24 (Table 7)",
+  "ImageNet-512 cfg=1.5: SiT-XL SDE FID 2.62 vs DiT-XL 3.04 (Table 7)",
+  "SiT-B 400K ablation: DDPM 44.2 -> continuous 43.6 -> velocity 39.8 -> Linear 34.8 / GVP 34.6 -> SDE w^KL 33.6 / 32.9 (Tables 2-5)",
+  "No-CFG 400K: DiT S/B/L/XL 68.4/43.5/23.3/19.5 vs SiT 57.6/33.0/18.8/17.2; 7M steps XL 9.6 vs 8.3 (Table 1)",
+  "Optimal diffusion coefficient w_t^KL = 2(sigma_t sigma_t' - alpha_t' sigma_t^2/alpha_t) minimizes SI KL bound; equals beta_t for VP (Eq. 13, Appendix A.5)",
+  "SDE beats ODE at 250 NFE for all sizes (e.g. SiT-XL 7M: 9.35 vs 8.26) while ODE is better at low NFE (Table 8, Fig. 5)"
+ ],
+ "relations": [
+  {
+   "report_id": "2303.08797",
+   "type": "uses"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "uses"
+  },
+  {
+   "report_id": "2306.06626",
+   "type": "uses"
+  },
+  {
+   "report_id": "2303.00848",
+   "type": "uses"
+  },
+  {
+   "report_id": "2310.03725",
+   "type": "competes"
+  },
+  {
+   "report_id": "2505.13447",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

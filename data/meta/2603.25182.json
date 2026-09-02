@@ -1,0 +1,41 @@
+{
+ "report_id": "2603.25182",
+ "arxiv_id": "2603.25182",
+ "title": "Learning Monge maps with constrained drifting models",
+ "tldr_zh": "在OT映射凸锥内做KL约束梯度流，证明长时存在并维数无关指数收敛到Monge映射；参数化=自然梯度，玩具MMD 0.019 vs Adam 0.029",
+ "tldr_en": "Constrained gradient flow of KL inside the convex cone of OT maps exists globally and converges to the Monge map at a dimension-free exponential rate; parameterized version is natural gradient descent (toy MMD 0.019 vs Adam 0.029).",
+ "tags": [
+  "monge-map",
+  "constrained-gradient-flow",
+  "icnn",
+  "natural-gradient",
+  "drifting-models",
+  "theory",
+  "preprint"
+ ],
+ "code_url": "https://github.com/theodumont/monge-constrained-flow",
+ "key_numbers": [
+  "Theorem 2.13(iii): lambda-convex D => ||T_t - T*||^2 <= (4/lambda) e^{-2 lambda t}(D(rho0)-D(gamma)), rate independent of d",
+  "Corollary 2.17: KL w.r.t. log-concave gamma (lambda=0): entropy O(1/t), map O(t^{-1/6}); lambda>0: both O(e^{-2 lambda t})",
+  "Toy 2D 4-mode GMM -> N(0,I), ICNN 2x20, 100 seeds, energy-distance MMD: explicit constrained 0.0194+-0.0098, implicit 0.0241+-0.0179, Euclidean GD 0.1213+-0.1138, Euclidean+Adam 0.0291+-0.0156 (Figure 2)"
+ ],
+ "relations": [
+  {
+   "report_id": "The_flow_map_of_the_Fokker_Planck_equation_does_no",
+   "type": "extends"
+  },
+  {
+   "report_id": "1709.06464",
+   "type": "extends"
+  },
+  {
+   "report_id": "2202.07477",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.14250",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

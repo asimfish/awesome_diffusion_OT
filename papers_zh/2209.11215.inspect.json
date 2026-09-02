@@ -1,0 +1,53 @@
+{
+  "issue_count": 8,
+  "issues": [
+    {
+      "page": 5,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 5: displayed equation at y=84 shifted horizontally by 19pt vs original"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 9.17pt but the original at this position is 9.96pt (ratio 0.92 vs page median 1.10) at x=71.2, y=72.5: 定理2（去噪扩散概率模型）。假设假设1、2 和3 成立。设为去噪扩散概率模型算法（第2.1节）在"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 9.17pt but the original at this position is 9.96pt (ratio 0.92 vs page median 1.10) at x=72.8, y=215.7: ^{L}^{2}^{d} _{ε}_{2}) 与在对数索博列夫不等式（LSI）下采样的朗之万蒙特"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 9.17pt but the original at this position is 9.96pt (ratio 0.92 vs page median 1.10) at x=72.8, y=243.2: 据表明我们的离散化界在维度、精度参数以及无高阶光滑性假设下至少具有正确的阶数。"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 9.17pt but the original at this position is 9.96pt (ratio 0.92 vs page median 1.10) at x=72.8, y=672.1: 推论4（紧支撑数据，BL 度量）。假设支撑在半径为的球上。令"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=179.5, y=147.0: for"
+    },
+    {
+      "page": 11,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 11: block set at 6.57pt but the original at this position is 9.96pt (ratio 0.66 vs page median 0.92) at x=72.4, y=74.7: 定理8. 对于t∈[0, T]，设L^{t}=Lt=，其中Bis aQ-布朗运动。假设EQ R_"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=280.7, y=576.5: where"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+ "report_id": "1805.09114",
+ "arxiv_id": "1805.09114",
+ "title": "Optimal Transport for structured data with application on graphs",
+ "tldr_zh": "提出 FGW 距离，凸组合特征 Wasserstein 与结构 GW，用于图分类与 barycenter 聚类",
+ "tldr_en": "Proposes Fused Gromov-Wasserstein distance combining feature Wasserstein and structural GW for graph classification and barycenter clustering",
+ "tags": [
+  "Fused Gromov-Wasserstein",
+  "graph classification",
+  "optimal transport",
+  "graph barycenter",
+  "structured data"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "85.12±4.15",
+   "context": "FGW 在 BZR 上的分类准确率",
+   "source": "Table 1"
+  },
+  {
+   "number": "88.42±5.67",
+   "context": "FGW WL H=4 在 MUTAG 上的分类准确率",
+   "source": "Table 2"
+  },
+  {
+   "number": "86.42±1.63",
+   "context": "FGW WL H=4 在 NCI1 上的分类准确率",
+   "source": "Table 2"
+  },
+  {
+   "number": "65.31±7.90",
+   "context": "FGW WL H=4 在 PTC-MR 上的分类准确率",
+   "source": "Table 2"
+  },
+  {
+   "number": "63.80±3.49",
+   "context": "GW SP 在 IMDB-B 上的分类准确率",
+   "source": "Table 3"
+  },
+  {
+   "number": "100.00±0.00",
+   "context": "FGW 在 SYNTHETIC 上的分类准确率",
+   "source": "Table 1"
+  },
+  {
+   "number": "O(mn^2+m^2n)",
+   "context": "q=2 时 FGW 梯度计算复杂度",
+   "source": "Sec. 3.3"
+  },
+  {
+   "number": "4/6",
+   "context": "向量属性数据集中 FGW 表现最好的数据集数量",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "30",
+   "context": "聚类实验中 barycenter 固定节点数",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "40",
+   "context": "聚类数据集图总数（4 组 × 10 图）",
+   "source": "Sec. 4.3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1605.xxxx",
+   "type": "继承自 GW 定义（Mémoli 2011）"
+  },
+  {
+   "report_id": "1606.xxxx",
+   "type": "继承自 entropic GW（Peyré et al. 2016）"
+  },
+  {
+   "report_id": "2002.08276",
+   "type": "后续扩展：partial GW"
+  },
+  {
+   "report_id": "2009.04266",
+   "type": "后续扩展：unbalanced GW"
+  },
+  {
+   "report_id": "2502.09934",
+   "type": "后续扩展：FPGW"
+  }
+ ],
+ "read_full_text": true
+}

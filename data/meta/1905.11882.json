@@ -1,0 +1,66 @@
+{
+ "report_id": "1905.11882",
+ "arxiv_id": "1905.11882",
+ "title": "Statistical bounds for entropic optimal transport: sample complexity and the central limit theorem",
+ "tldr_zh": "EOT 经验估计对 subgaussian 分布达 O(1/√n)，无指数因子，并证 CLT",
+ "tldr_en": "EOT empirical cost converges at O(1/sqrt(n)) for subgaussian measures, with CLT",
+ "tags": [
+  "entropic optimal transport",
+  "sample complexity",
+  "central limit theorem",
+  "subgaussian",
+  "entropy estimation"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "O(1/√n)",
+   "context": "EOT 经验估计的收敛速率，对 σ²-subgaussian 测度",
+   "source": "Theorem 2, Eq.(6)"
+  },
+  {
+   "number": "K_d·ε(1+σ^{⌈5d/2⌉+6}/ε^{⌈5d/4⌉+3})·1/√n",
+   "context": "一般 ε 下的样本复杂度上界",
+   "source": "Corollary 1"
+  },
+  {
+   "number": "e^{D²/ε}",
+   "context": "Genevay et al. (2019) 界中的指数因子，本文消除",
+   "source": "Theorem 1, Eq.(5)"
+  },
+  {
+   "number": "n^{-1/d}",
+   "context": "未正则化 Wasserstein 距离的维数灾难速率",
+   "source": "Sec. 2 首段"
+  },
+  {
+   "number": "16,000",
+   "context": "每个 n 值的实验重复次数",
+   "source": "Figure 1 说明"
+  },
+  {
+   "number": "O(n²)",
+   "context": "OT 基熵估计器的内存需求（存储距离矩阵）",
+   "source": "Sec. 5 末段"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1810.02733",
+   "type": "improves"
+  },
+  {
+   "report_id": "1810.08278",
+   "type": "builds_on"
+  },
+  {
+   "report_id": "1810.11589",
+   "type": "compares_with"
+  },
+  {
+   "report_id": "1711.08947",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": true
+}

@@ -76,10 +76,10 @@
    "links": {
     "CVF": "https://openaccess.thecvf.com/content/CVPR2025/html/Han_Spatial_Transport_Optimization_by_Repositioning_Attention_Map_for_Training-Free_Text-to-Image_CVPR_2025_paper.html"
    },
-   "pdf": null,
-   "text": null,
-   "text_chars": null,
-   "pages": null
+   "pdf": "papers/2503.22168.pdf",
+   "text": "data/text/2503.22168.txt",
+   "text_chars": 90000,
+   "pages": 28
   },
   {
    "key": "t16__otseg_multi_prompt_sinkhorn_attention_for_zero_shot_semantic",

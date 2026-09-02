@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (11 words, 0 CJK chars) at x=73.8, y=495.9: xtis(ti), σ(ti)), the discretized learnt SDE of this sol"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (27 words, 0 CJK chars) at x=55.1, y=440.0: where x0→t represents the entire path from the start (t "
+    }
+  ]
+}

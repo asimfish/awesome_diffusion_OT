@@ -1,0 +1,27 @@
+{
+ "report_id": "Score_Based_Generative_Modeling_through_SDEs",
+ "arxiv_id": null,
+ "title": "Score-Based Generative Modeling through SDEs",
+ "tldr_zh": "用 SDE 统一扩散模型，提出逆向 SDE 与 PF-ODE 两种采样路径",
+ "tldr_en": "Unifies diffusion models via SDEs, proposing reverse SDE and PF-ODE",
+ "tags": [
+  "diffusion models",
+  "SDE",
+  "PF-ODE",
+  "score-based generative modeling",
+  "T02"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Khrulkov_ICLR2023_OT_diffusion",
+   "type": "被其引用/继承"
+  },
+  {
+   "report_id": "Lavenant_Santambrogio_2022_counterexample",
+   "type": "被其引用/继承"
+  }
+ ],
+ "read_full_text": false
+}

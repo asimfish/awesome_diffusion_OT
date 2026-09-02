@@ -1,0 +1,39 @@
+{
+ "report_id": "2310.19075",
+ "arxiv_id": "2310.19075",
+ "title": "Bespoke Solvers for Generative Flow Models",
+ "tldr_zh": "对预训练流模型学 scale-time 变换+RK 的定制求解器（约 80 参数、约 1% 训练算力），CIFAR-10 10 NFE FID 2.73，ImageNet-64 20 NFE 距 GT 2%",
+ "tldr_en": "Learns a tiny scale-time-transformed RK solver per pretrained flow (about 80 params, about 1% train compute): CIFAR-10 FID 2.73 at 10 NFE, ImageNet-64 within 2% of GT at 20 NFE.",
+ "tags": [
+  "fast-sampling",
+  "ode-solver",
+  "flow-matching",
+  "noise-schedule",
+  "training-free",
+  "consistency"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "CIFAR-10 FM-OT RK2-Bespoke: FID 3.13/2.73/2.60/2.59 at 8/10/16/20 NFE, GT FID 2.57 (Table 3)",
+  "CIFAR-10 10 NFE: Bespoke FM-OT 2.73 vs DEIS 4.17, DPM 4.7, GENIE 5.28, DDIM 13.36 (Table 1)",
+  "ImageNet-64 FM/v-CS RK2-Bespoke: FID 2.95/2.20/1.79/1.71/1.69 at 8/10/16/20/24 NFE, GT 1.68 at 176 NFE (Table 2)",
+  "ImageNet-128 FM-OT RK2-Bespoke: FID 5.28/3.58/2.64/2.45/2.31 at 8-24 NFE, GT 2.30 at 230 NFE (Table 2)",
+  "EDM released CIFAR-10 model: EDM sampler FID 3.05 at 35 NFE vs RK2-Bespoke 2.99 at 20 NFE, 42% fewer NFE (Fig. 4)",
+  "Bespoke training costs 0.5-3.6% of original model GPU time; RK2-Bespoke has 8n-1 parameters (Tables 2-3, Sec. 2.2)"
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "uses"
+  },
+  {
+   "report_id": "2303.00848",
+   "type": "uses"
+  },
+  {
+   "report_id": "2306.06626",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": true
+}

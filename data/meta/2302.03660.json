@@ -1,0 +1,72 @@
+{
+ "report_id": "2302.03660",
+ "arxiv_id": "2302.03660",
+ "title": "Flow Matching on General Geometries",
+ "tldr_zh": "用 premetric 闭式构造流形条件向量场，简单几何 simulation-free，首次在网格流形训练 CNF",
+ "tldr_en": "Riemannian Flow Matching with premetric-based closed-form conditional vector fields; simulation-free on simple geometries, first CNF training on mesh manifolds",
+ "tags": [
+  "Riemannian Flow Matching",
+  "continuous normalizing flows",
+  "manifold generative models",
+  "spectral distances",
+  "premetric"
+ ],
+ "code_url": "https://github.com/facebookresearch/riemannian-fm",
+ "key_numbers": [
+  {
+   "number": "-7.93±1.67",
+   "source": "Table 2, Volcano test NLL, RFM w/ Geodesic"
+  },
+  {
+   "number": "-1.86±0.11",
+   "source": "Table 2, Fire test NLL, RFM w/ Geodesic"
+  },
+  {
+   "number": "-5.20±0.067",
+   "source": "Table 3, RNA 7D torus test NLL, RFM w/ Geodesic"
+  },
+  {
+   "number": "1.01±0.025",
+   "source": "Table 3, General 2D protein test NLL, RFM w/ Geodesic"
+  },
+  {
+   "number": "1.06±0.05",
+   "source": "Table 4, Bunny k=10 test NLL, Biharmonic"
+  },
+  {
+   "number": "k=200",
+   "source": "Sec. 5, eigenfunctions used for mesh manifold training"
+  },
+  {
+   "number": "k=30",
+   "source": "Sec. 5, eigenfunctions used for maze boundary manifolds"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "继承欧氏 Flow Matching 框架"
+  },
+  {
+   "report_id": "2206.04119",
+   "type": "同方向前作，流形 CNF 匹配"
+  },
+  {
+   "report_id": "2202.02763",
+   "type": "竞争基线，Riemannian Score-Based"
+  },
+  {
+   "report_id": "2208.07949",
+   "type": "竞争基线，Riemannian Diffusion Model"
+  },
+  {
+   "report_id": "2006.10605",
+   "type": "前作，Riemannian CNF，需模拟训练"
+  },
+  {
+   "report_id": "2106.05254",
+   "type": "竞争基线，Moser Flow"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,29 @@
+{
+  "issue_count": 4,
+  "issues": [
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (12 words, 0 CJK chars) at x=108.0, y=468.7: M P G such that no pair of points has any shared coordin"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (16 words, 0 CJK chars) at x=108.0, y=479.5: M P RDˆD, where each row of each matrix is randomly samp"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (17 words, 0 CJK chars) at x=108.0, y=506.2: mq.Finally, we normalize the mixture to have axis-wise v"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (3 words, 0 CJK chars) at x=162.7, y=529.3: m“1 Npµm, Σmq, where µm “ aµ1"
+    }
+  ]
+}

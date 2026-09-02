@@ -1,0 +1,36 @@
+{
+ "report_id": "The_Emergence_of_Reproducibility_and_Consistency_i",
+ "arxiv_id": "",
+ "title": "The Emergence of Reproducibility and Consistency in Diffusion Models",
+ "tldr_zh": "同一初始噪声 + 确定性采样器下，不同架构/训练的扩散模型输出几乎相同；噪声↔样本耦合是数据内在、可跨模型复用的对象",
+ "tldr_en": "Independently trained diffusion models map the same initial noise to nearly the same image under deterministic sampling; the noise-sample coupling is a property of the data.",
+ "tags": [
+  "reproducibility",
+  "noise-sample-coupling",
+  "cross-model-consistency",
+  "pf-ode",
+  "empirical-study",
+  "brief-card"
+ ],
+ "code_url": "",
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "2412.05101",
+   "type": "uses"
+  },
+  {
+   "report_id": "2411.09502",
+   "type": "uses"
+  },
+  {
+   "report_id": "2505.18521",
+   "type": "uses"
+  },
+  {
+   "report_id": "2403.05069",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,68 @@
+{
+ "report_id": "2409.13074",
+ "arxiv_id": "2409.13074",
+ "title": "What does guidance do? A fine-grained analysis in a simple setting",
+ "tldr_zh": "严格证明 guidance 不采样 tilted 分布；w 增大时样本堆向条件支撑集边界，score 有误差时逸出支撑集",
+ "tldr_en": "Proves guidance does not sample tilted distribution; samples concentrate at support boundary as w grows, escape support under score error",
+ "tags": [
+  "diffusion guidance",
+  "classifier-free guidance",
+  "probability flow ODE",
+  "mixture models",
+  "score estimation error",
+  "support boundary",
+  "theoretical analysis"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "1 - exp(-wα₁²/(512β²))",
+   "context": "Theorem 4 中 guided ODE 终点落在 [α₂(1-32/√ln w), α₂] 的概率下界",
+   "source": "Theorem 4"
+  },
+  {
+   "number": "32/√ln w",
+   "context": "Theorem 4 中终点区间相对宽度",
+   "source": "Theorem 4"
+  },
+  {
+   "number": "P(x̃(1) ≥ 0) ≥ 1 - e^{-Ω(w²)}",
+   "context": "Gaussian 混合下输出为正的概率下界",
+   "source": "Theorem 5"
+  },
+  {
+   "number": "P(x̃(1) ≥ √w + 1/4) ≥ 1 - e^{-Ω(w)}",
+   "context": "Gaussian 混合下输出超过 √w 的概率下界",
+   "source": "Theorem 5"
+  },
+  {
+   "number": "w ≥ e^{Ω̃(√log log(1/ε))}",
+   "context": "Theorem 3 中 score 误差 ε 下逸出支撑集所需的 guidance 强度下界",
+   "source": "Theorem 3"
+  },
+  {
+   "number": "x'(t) ≥ a_t α₁ √w / (2β b_t²)",
+   "context": "Lemma 2 中粒子在阈值以下的正向速度下界",
+   "source": "Lemma 2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "wu2024guidance",
+   "type": "同课题并行工作，本文给出更精细的轨迹终点刻画"
+  },
+  {
+   "report_id": "bradley2024guidance",
+   "type": "同课题并行工作，本文补充紧支撑情形的严格证明"
+  },
+  {
+   "report_id": "fkc2025",
+   "type": "后续修正方法，用 Feynman-Kac 加权精确采样 tilted 分布"
+  },
+  {
+   "report_id": "tangxu_w2_guidance",
+   "type": "后续 W2 视角的 guidance 分布偏移界"
+  }
+ ],
+ "read_full_text": true
+}

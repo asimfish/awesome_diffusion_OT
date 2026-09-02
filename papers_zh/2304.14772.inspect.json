@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (7 words, 0 CJK chars) at x=75.8, y=533.0: 0has not triedto match with yetif ∃i′ s.t. σ(i′) = j the"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (21 words, 0 CJK chars) at x=55.4, y=152.4: Using this and the definition of ˜qk, and applying Jense"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (8 words, 0 CJK chars) at x=61.1, y=425.6: 1(x0) −x0∥2 is the optimal cost and S∗= 0, we write Ex0∼"
+    },
+    {
+      "page": 26,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 26: paragraph still in English (35 words, 0 CJK chars) at x=55.1, y=510.5: Theorem D.6 ((Cuesta-Albertos et al., 1997), Theorem 3.2"
+    },
+    {
+      "page": 26,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 26: paragraph still in English (26 words, 0 CJK chars) at x=54.3, y=532.8: w−→denotes weak convergence of probability measures.Let "
+    },
+    {
+      "page": 26,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 26: paragraph still in English (7 words, 0 CJK chars) at x=168.8, y=559.5: L−→denotes convergence of random variables in distributi"
+    },
+    {
+      "page": 28,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 28: paragraph still in English (4 words, 0 CJK chars) at x=283.6, y=541.5: pt(x + uk), where uk ∼[U(0, 1)]D,(66)"
+    }
+  ]
+}

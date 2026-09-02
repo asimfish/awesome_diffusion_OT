@@ -1,0 +1,82 @@
+{
+ "report_id": "2405.14664",
+ "arxiv_id": "2405.14664",
+ "title": "Fisher Flow Matching for Generative Modeling over Discrete Data",
+ "tldr_zh": "把离散类别分布嵌入 Fisher-Rao 球面正象限做流匹配，用黎曼 OT 耦合改善训练，在 DNA 与 LM1B 上优于离散扩散基线",
+ "tldr_en": "Embeds categorical distributions into Fisher-Rao sphere positive orthant for flow matching with Riemannian OT coupling, outperforming discrete diffusion baselines on DNA and LM1B",
+ "tags": [
+  "discrete generative modeling",
+  "flow matching",
+  "Fisher-Rao metric",
+  "Riemannian optimal transport",
+  "information geometry",
+  "DNA sequence design",
+  "language modeling"
+ ],
+ "code_url": "https://github.com/olsdavis/fisher-flow",
+ "key_numbers": [
+  {
+   "number": "0.029 ± 0.001",
+   "context": "Promoter DNA MSE, best among baselines",
+   "source": "Table 1"
+  },
+  {
+   "number": "1.4 ± 2.7",
+   "context": "Promoter DNA PPL, std larger than mean",
+   "source": "Table 1"
+  },
+  {
+   "number": "1.4 ± 0.1 / 1.4 ± 0.66",
+   "context": "Enhancer Melanoma / Fly Brain PPL",
+   "source": "Table 2"
+  },
+  {
+   "number": "98.6 / 95.3 / 88.2",
+   "context": "QM9 Atoms S / Mols Val / Mols S (%)",
+   "source": "Table 3"
+  },
+  {
+   "number": "26.51 / 22.42",
+   "context": "LM1B test PPL upper bound at 33B / 327B tokens, 110M params",
+   "source": "Table 4"
+  },
+  {
+   "number": "88,470",
+   "context": "Promoter training sequences, length 1,024",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "512,000",
+   "context": "Samples used for KL evaluation in toy experiment",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "11.5% / 11.2%",
+   "context": "FBD classifier test accuracy on Melanoma / FlyBrain, deemed unrepresentative",
+   "source": "Sec. 4.3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2305.10474",
+   "type": "继承/超越"
+  },
+  {
+   "report_id": "2302.03660",
+   "type": "方法基础"
+  },
+  {
+   "report_id": "2107.03006",
+   "type": "基线对比"
+  },
+  {
+   "report_id": "2406.07524",
+   "type": "concurrent 对比"
+  },
+  {
+   "report_id": "2405.14947",
+   "type": "concurrent 对比"
+  }
+ ],
+ "read_full_text": true
+}

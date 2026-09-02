@@ -1,0 +1,41 @@
+{
+ "report_id": "2407.16074",
+ "arxiv_id": "2407.16074",
+ "title": "Schrödinger Bridge for Generative Speech Enhancement",
+ "tldr_zh": "配对 SB 做复数 STFT 域语音增强，去噪 WER 相对降 20%、去混响降 6%，比扩散基线省算力",
+ "tldr_en": "Paired Schrödinger bridge in complex STFT domain for SE; 20% relative WER reduction on denoising, 6% on dereverberation",
+ "tags": [
+  "Schrödinger bridge",
+  "speech enhancement",
+  "denoising",
+  "dereverberation",
+  "complex STFT",
+  "data-to-data"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "去噪 SB-VP WER 4.69% vs SGMSE+ 9.52% vs StoRM 5.39%（Table 3）",
+  "去噪最佳组合（ODE+ℓ1）相对 StoRM WER 降幅 >20%（Sec. 4.3）",
+  "去混响 SB-VE PESQ 2.68 vs StoRM 2.52（Table 4）",
+  "去混响最佳组合（SDE+ℓ1）相对 StoRM WER 降幅 >6%（Sec. 4.3）",
+  "骨干 NCSN++ 约 25.2M 参数（Sec. 4.2）",
+  "去噪训练集约 13k 句 / 25h，测试集 650 句 / 1.5h（Sec. 4.1）",
+  "VE 调度最大方差 0.3，为 OUVE 最大方差 0.15 的两倍（Sec. 4.2）",
+  "推理默认 50 步，SB 每步 1 次骨干调用 vs 基线 predictor-corrector 每步 2 次（Sec. 4.2, 4.3）"
+ ],
+ "relations": [
+  {
+   "report_id": "2312.03491",
+   "type": "继承方法（配对 SB 闭式解、数据预测损失、采样器）"
+  },
+  {
+   "report_id": "2306.xxxxx",
+   "type": "竞争（SGMSE+ 扩散 SE 基线）"
+  },
+  {
+   "report_id": "2306.xxxxx",
+   "type": "竞争（StoRM 混合 SE 基线）"
+  }
+ ],
+ "read_full_text": true
+}

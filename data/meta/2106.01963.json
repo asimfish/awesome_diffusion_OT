@@ -1,0 +1,53 @@
+{
+ "report_id": "2106.01963",
+ "arxiv_id": "2106.01963",
+ "title": "A Survey on Optimal Transport for Machine Learning: Theory and Applications",
+ "tldr_zh": "面向 ML 读者的 OT 入门综述，覆盖历史、对偶/熵正则数学预备与五类应用，无新理论或新实验。",
+ "tldr_en": "An application-focused OT survey for ML readers covering history, duality/entropic regularization math prerequisites, and five application areas; no new theory or experiments.",
+ "tags": [
+  "optimal transport",
+  "survey",
+  "Wasserstein distance",
+  "entropic regularization",
+  "Kantorovich duality",
+  "machine learning"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "7.4 (or 26%)",
+   "context": "semantic correspondence PCK improvement over SOTA reported by Liu et al.",
+   "source": "Sec. 6.1.2"
+  },
+  {
+   "number": "1 trillion",
+   "context": "Google NLP model parameter count cited as outside OT scope",
+   "source": "Sec. 7"
+  },
+  {
+   "number": "1781",
+   "context": "Monge first posed the OT problem",
+   "source": "Sec. 3"
+  },
+  {
+   "number": "2013",
+   "context": "Cuturi's Sinkhorn entropy-regularized OT",
+   "source": "Table 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1701.07875",
+   "type": "cited_by_survey"
+  },
+  {
+   "report_id": "1705.10743",
+   "type": "cited_by_survey"
+  },
+  {
+   "report_id": "math/0412299",
+   "type": "cited_by_survey"
+  }
+ ],
+ "read_full_text": true
+}

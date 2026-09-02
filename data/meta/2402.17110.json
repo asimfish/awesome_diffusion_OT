@@ -1,0 +1,68 @@
+{
+ "report_id": "2402.17110",
+ "arxiv_id": "2402.17110",
+ "title": "Sinkhorn Distance Minimization for Knowledge Distillation",
+ "tldr_zh": "用 Sinkhorn 距离替代 KL/RKL/JS 做 logits 蒸馏，批级重构感知分布几何",
+ "tldr_en": "Sinkhorn distance replaces KL/RKL/JS for logits distillation with batch-wise OT reformulation",
+ "tags": [
+  "knowledge distillation",
+  "Sinkhorn distance",
+  "optimal transport",
+  "logits-based KD",
+  "LLM compression"
+ ],
+ "code_url": "https://github.com/2018cx/SinKD",
+ "key_numbers": [
+  {
+   "number": "82.92",
+   "description": "SinKD 在 GLUE 上的平均分，超过 AD-KD 0.47%、ReAugKD 1.17%",
+   "source": "Table 1"
+  },
+  {
+   "number": "57%",
+   "description": "相比 AD-KD，SinKD 将学生与教师的性能差距缩小超过 57%",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "60.2 vs 53.6",
+   "description": "去掉 Sinkhorn 损失后 CoLA MCC 从 60.2 降至 53.6",
+   "source": "Table 2"
+  },
+  {
+   "number": "60.2 vs 54.2",
+   "description": "batch-wise SinKD 在 CoLA 上超过 sample-wise 6.0 个 MCC 点",
+   "source": "Table 3"
+  },
+  {
+   "number": "89.9",
+   "description": "T0-3B 学生在 RTE 上 KL+SinKD 的准确率，超过 KL+JS 的 88.1",
+   "source": "Table 8"
+  },
+  {
+   "number": "65.0",
+   "description": "GPT-Neo-125M 学生在 RTE 上 KL+SinKD 的准确率，超过 KL 的 64.7",
+   "source": "Table 9"
+  },
+  {
+   "number": "O(b^2(d+T))",
+   "description": "SinKD 的计算复杂度，对比 f-divergence 的 O(bd)",
+   "source": "Table 4"
+  },
+  {
+   "number": "32",
+   "description": "batch size 超过 32 后性能收益饱和",
+   "source": "Table 6, Sec. 5.3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "T08",
+   "type": "shares-idea"
+  },
+  {
+   "report_id": "T22",
+   "type": "topic-anchor"
+  }
+ ],
+ "read_full_text": true
+}

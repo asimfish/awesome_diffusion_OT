@@ -1,0 +1,91 @@
+{
+ "report_id": "2401.04082",
+ "arxiv_id": "2401.04082",
+ "title": "Improved motif-scaffolding with SE(3) flow matching",
+ "tldr_zh": "FrameFlow 扩展出 motif amortization 与免重训 motif guidance，多样性达 RFdiffusion 的 2.5 倍",
+ "tldr_en": "Extends FrameFlow with motif amortization and training-free motif guidance, achieving 2.5x diversity over RFdiffusion",
+ "tags": [
+  "SE(3) flow matching",
+  "motif-scaffolding",
+  "protein backbone generation",
+  "conditional generation",
+  "reconstruction guidance",
+  "T21"
+ ],
+ "code_url": "https://github.com/microsoft/protein-frame-flow",
+ "key_numbers": [
+  {
+   "number": "353",
+   "description": "FrameFlow-amortization 的总唯一设计性 scaffold 聚类数",
+   "source": "Table 1"
+  },
+  {
+   "number": "141",
+   "description": "RFdiffusion 的总唯一设计性 scaffold 聚类数",
+   "source": "Table 1"
+  },
+  {
+   "number": "2.5",
+   "description": "FrameFlow 相对 RFdiffusion 的设计性且唯一 scaffold 倍数",
+   "source": "Abstract"
+  },
+  {
+   "number": "20/24",
+   "description": "FrameFlow 两种方法解决的 motif 数",
+   "source": "Table 1"
+  },
+  {
+   "number": "18s",
+   "description": "FrameFlow 采样长度 100 蛋白耗时（A6000）",
+   "source": "Table 1"
+  },
+  {
+   "number": "50s",
+   "description": "RFdiffusion 采样长度 100 蛋白耗时（A6000）",
+   "source": "Table 1"
+  },
+  {
+   "number": "16.8M",
+   "description": "FrameFlow 参数量",
+   "source": "Sec. 4 footnote 5"
+  },
+  {
+   "number": "59.8M",
+   "description": "RFdiffusion 参数量",
+   "source": "Sec. 4 footnote 5"
+  },
+  {
+   "number": "500",
+   "description": "采样 timesteps（Euler-Maruyama）",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "0.5",
+   "description": "TM-score 聚类阈值",
+   "source": "Sec. 5.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2310.05297",
+   "type": "extends"
+  },
+  {
+   "report_id": "2310.02391",
+   "type": "related"
+  },
+  {
+   "report_id": "2306.17775",
+   "type": "extends"
+  },
+  {
+   "report_id": "2302.03660",
+   "type": "uses"
+  },
+  {
+   "report_id": "2302.02277",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

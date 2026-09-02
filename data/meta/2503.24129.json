@@ -1,0 +1,83 @@
+{
+ "report_id": "2503.24129",
+ "arxiv_id": "2503.24129",
+ "title": "It's a (Blind) Match! Towards Vision-Language Correspondence without Parallel Data",
+ "tldr_zh": "把无平行数据的视觉-语言匹配写成 QAP，提出 factorized Hahn-Grant 求解器，实证基础模型嵌入可无监督结构对齐",
+ "tldr_en": "Formulates blind vision-language matching as a QAP, proposes a factorized Hahn-Grant solver, and empirically shows unsupervised structural alignment of foundation model embeddings",
+ "tags": [
+  "Gromov-Wasserstein",
+  "quadratic assignment problem",
+  "vision-language alignment",
+  "unsupervised matching",
+  "platonic representation hypothesis"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "80%",
+   "context": "DINOv2 在 CIFAR-10 上最高匹配准确率",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "100%",
+   "context": "DINOv2 在 CINIC-10 上最高匹配准确率",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "5.3% / 7.6%",
+   "context": "DINOv2 平均比第二好的预训练策略在 CIFAR-10 / CINIC-10 上的优势",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "100.0±0.0%",
+   "context": "本文求解器与 Gurobi 在小规模问题上的匹配准确率和全局最优达成率",
+   "source": "Tab. 1"
+  },
+  {
+   "number": "33.5±19.8%",
+   "context": "entropic OT 求解器在小规模问题上的匹配准确率",
+   "source": "Tab. 1"
+  },
+  {
+   "number": "18.5±29.2%",
+   "context": "LocalCKA 在小规模问题上的匹配准确率",
+   "source": "Tab. 1"
+  },
+  {
+   "number": "N≤40",
+   "context": "本文求解器达到全局最优的最大问题规模",
+   "source": "Sec. 5.3, Fig. 6"
+  },
+  {
+   "number": "N>40",
+   "context": "Gurobi 超过 1.5 小时时限的问题规模",
+   "source": "Sec. 5.3, Fig. 6"
+  },
+  {
+   "number": "51.1±7.1%",
+   "context": "无监督分类最好准确率（DINOv2 + All-Roberta-large-v1, CIFAR-10）",
+   "source": "Tab. 2"
+  },
+  {
+   "number": "O(N^5) / O(N^3)",
+   "context": "factorized Hahn-Grant 的运行时间 / 内存复杂度",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "32 vision / 27 language",
+   "context": "实验使用的视觉和语言模型数量",
+   "source": "Sec. 5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2503.24129",
+   "type": "extends"
+  },
+  {
+   "report_id": "2503.24129",
+   "type": "competes_with"
+  }
+ ],
+ "read_full_text": true
+}

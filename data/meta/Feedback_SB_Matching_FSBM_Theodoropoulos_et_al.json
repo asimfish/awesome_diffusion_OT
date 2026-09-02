@@ -1,0 +1,28 @@
+{
+ "report_id": "Feedback_SB_Matching_FSBM_Theodoropoulos_et_al",
+ "arxiv_id": "",
+ "title": "Feedback Schrödinger Bridge Matching",
+ "tldr_zh": "半监督 SB：<8% 配对样本作为 state feedback 嵌入广义 EOT，作者报告训练加速、泛化提升",
+ "tldr_en": "Semi-supervised SB: under 8% paired samples enter a generalized EOT objective as state feedback; authors report faster training and better generalization.",
+ "tags": [
+  "schrodinger-bridge",
+  "semi-supervised",
+  "generalized-sb",
+  "matching"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Not read in full; '<8% paired samples' from manifest summary only"
+ ],
+ "relations": [
+  {
+   "report_id": "Generalized_SB_Matching_GSBM_Liu_et_al",
+   "type": "extends"
+  },
+  {
+   "report_id": "Momentum_Multi_Marginal_SB_Matching_3MSBM_Theodoro",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,73 @@
+{
+ "report_id": "2311.16567",
+ "arxiv_id": "2311.16567",
+ "title": "MobileDiffusion: Instant Text-to-Image Generation on Mobile Devices",
+ "tldr_zh": "系统搜索 <400M 参数 UNet 架构 + UFOGen 一步采样，iPhone 15 Pro 上 0.2s 生成 512² 图像",
+ "tldr_en": "Systematic UNet architecture search under 400M params plus UFOGen one-step sampling, achieving 0.2s 512² generation on iPhone 15 Pro",
+ "tags": [
+  "mobile deployment",
+  "text-to-image",
+  "diffusion-GAN",
+  "architecture search",
+  "one-step sampling",
+  "UFOGen"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "386M params / 182 GFLOPs",
+   "source": "Table 1"
+  },
+  {
+   "number": "FID-30K 8.65 (50-step DDIM), 11.67 (1-step)",
+   "source": "Table 2"
+  },
+  {
+   "number": "238ms total latency on iPhone 15 Pro (1-step)",
+   "source": "Table 4"
+  },
+  {
+   "number": "0.2s for 512×512 image on iPhone 15 Pro",
+   "source": "Sec. 1, Abstract"
+  },
+  {
+   "number": "VAE decoder 3× faster than SD decoder",
+   "source": "Sec. 3.5, Table 4"
+  },
+  {
+   "number": "HPS v2 avg 27.30 (50-step) vs SD-v2.0 27.17",
+   "source": "Table 3"
+  },
+  {
+   "number": "512 TPU × 15 days for network search",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "150M image-text pairs training data, 40M over 512²",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "relu attention finetuning within 10,000 iterations",
+   "source": "Sec. 3.2"
+  },
+  {
+   "number": "feed-forward expansion ratio 4→3: FID +0.27, params −10%",
+   "source": "Sec. 3.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2306.00980",
+   "type": "被取代（移动端 SOTA 从 SnapFusion 8步/1740ms 到本文 1步/238ms）"
+  },
+  {
+   "report_id": "2305.15798",
+   "type": "同线竞争（BK-SDM 架构压缩但依赖蒸馏，本文从头训练）"
+  },
+  {
+   "report_id": "2402.13929",
+   "type": "concurrent work（SDXL-Lightning 参数高效对抗蒸馏，不支持一步生成）"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,86 @@
+{
+ "report_id": "2505.11197",
+ "arxiv_id": "2505.11197",
+ "title": "Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge",
+ "tldr_zh": "UMFSB 框架把细胞交互项加入 unbalanced SB，CytoBridge 四网络从快照学速度/增长/密度/交互势，合成与 scRNA-seq 上 W1、TMV 优于 DeepRUOT 等基线",
+ "tldr_en": "UMFSB adds cell-cell interaction to unbalanced SB; CytoBridge learns velocity, growth, density, interaction potential from snapshots, beating DeepRUOT on W1/TMV",
+ "tags": [
+  "unbalanced Schrödinger bridge",
+  "mean-field interaction",
+  "trajectory inference",
+  "scRNA-seq",
+  "neural ODE",
+  "Fisher regularization"
+ ],
+ "code_url": "https://github.com/zhenyiizhang/CytoBridge-NeurIPS",
+ "key_numbers": [
+  {
+   "number": "0.038±0.003",
+   "metric": "W1 at t=4 on synthetic GRN (attractive, σ=0.05)",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.057±0.003",
+   "metric": "DeepRUOT W1 at t=4 on synthetic GRN",
+   "source": "Table 1"
+  },
+  {
+   "number": "6.013±0.002",
+   "metric": "W1 at t=1 on mouse hematopoiesis",
+   "source": "Table 2"
+  },
+  {
+   "number": "6.052±0.002",
+   "metric": "DeepRUOT W1 at t=1 on mouse hematopoiesis",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.078±0.013",
+   "metric": "TMV at t=2 on mouse hematopoiesis",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.260±0.007",
+   "metric": "DeepRUOT TMV at t=2 on mouse hematopoiesis",
+   "source": "Table 2"
+  },
+  {
+   "number": "49,302",
+   "metric": "cells in mouse hematopoiesis dataset",
+   "source": "Sec. 6"
+  },
+  {
+   "number": "16,819",
+   "metric": "cells in Embryoid Body dataset",
+   "source": "Sec. 6"
+  },
+  {
+   "number": "O((p-1)N)",
+   "metric": "RBM complexity reduction from O(N²)",
+   "source": "Sec. 5.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "DeepRUOT",
+   "type": "direct predecessor"
+  },
+  {
+   "report_id": "SF2M",
+   "type": "baseline"
+  },
+  {
+   "report_id": "MetaFM",
+   "type": "baseline"
+  },
+  {
+   "report_id": "TIGON",
+   "type": "baseline"
+  },
+  {
+   "report_id": "UOT-FM",
+   "type": "baseline"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,48 @@
+{
+ "report_id": "2607.07401",
+ "arxiv_id": "2607.07401",
+ "title": "Heterogeneity-Adaptive Diffusion Schrodinger Bridge for PET-Guided Whole-Body MRI Translation",
+ "tldr_zh": "I2SB 配对桥做全身 LAVA→T2，VLM 区域嵌入 + PET 空间噪声调制/注意力；作者报告 SSIM 91.1% 超 ResViT 4.5 pp，病灶切片 PET 引导 +0.8 dB",
+ "tldr_en": "I2SB bridge for whole-body LAVA-to-T2 MRI with VLM-derived region embeddings and PET-guided spatial noise modulation/attention; authors report SSIM 91.1% (+4.5 pp over ResViT), +0.8 dB on lesion slices.",
+ "tags": [
+  "schrodinger-bridge",
+  "i2sb",
+  "medical-imaging",
+  "whole-body-mri",
+  "pet-mr",
+  "conditioning",
+  "spatial-noise-schedule",
+  "preprint"
+ ],
+ "code_url": "https://github.com/xyw-medical-research/HADSB",
+ "key_numbers": [
+  "Avg SSIM 91.1% / PSNR 26.25 dB (HA-DSB PET) vs ResViT 86.6 / 23.95, I2SB 84.6 / 22.77, SelfRDB 84.9 / 22.06 (Table 1)",
+  "Abdomen (hardest): HA-DSB 88.5% / 24.15 dB vs ResViT 85.3 / 22.89 (Table 1)",
+  "PET guidance on lesion slices: PSNR 23.46->24.26 (+0.80 dB), SSIM 86.4->88.1 (+1.7) vs +0.16 dB / +0.3 on full testset (Table 2)",
+  "Dataset: 246 subjects, train 204 (20,306 slices) / test 42 (4,162 slices); Table 1 on 2,087 slices from 21 subjects (Sec. 3)",
+  "Noise modulation range s_min=0.2, s_max=2.0; T=200, beta_max=0.35 (Sec. 3)"
+ ],
+ "relations": [
+  {
+   "report_id": "I2SB_Image_to_Image_Schr_dinger_Bridge",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.06789",
+   "type": "competes"
+  },
+  {
+   "report_id": "2404.11741",
+   "type": "competes"
+  },
+  {
+   "report_id": "2501.14171",
+   "type": "competes"
+  },
+  {
+   "report_id": "Harmonizing_Optical_Coherence_Tomography_Across_De",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

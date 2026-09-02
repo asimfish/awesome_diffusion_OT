@@ -1,0 +1,76 @@
+{
+ "report_id": "2411.00759",
+ "arxiv_id": "2411.00759",
+ "title": "Minibatch Optimal Transport and Perplexity Bound Estimation in Discrete Flow Matching",
+ "tldr_zh": "离散 flow matching 引入 minibatch OT 耦合，推理步数最多降 32 倍且不损多样性",
+ "tldr_en": "Minibatch OT in discrete flow matching cuts inference steps up to 32x without diversity loss",
+ "tags": [
+  "discrete flow matching",
+  "minibatch OT",
+  "perplexity bound",
+  "multimask flow",
+  "Benamou-Brenier"
+ ],
+ "code_url": "github.com/ehaxholli/DFM-OT",
+ "key_numbers": [
+  {
+   "number": "32x",
+   "context": "推理步数从 1024 降至 32 达到相同生成 perplexity（DFM-B-Exact-EMA 32 步 182.40 vs DFM-B 1024 步 185.12）",
+   "source": "Table 3, Sec 5.4"
+  },
+  {
+   "number": "74.87",
+   "context": "Shakespeare Morse-code 上 OT(ε=0.01) 的 jumps，低于理论最小期望 85.33",
+   "source": "Table 1, Sec 5.1"
+  },
+  {
+   "number": "0.3%",
+   "context": "minibatch OT 在小规模实验中的训练时间增加比例",
+   "source": "Sec 5.1"
+  },
+  {
+   "number": "3.4%",
+   "context": "batch 512、L=128 时 OT 相对纯 flow 训练的开销",
+   "source": "Table 4, Sec 5.5"
+  },
+  {
+   "number": "12%",
+   "context": "batch 1024-4096 区间 OT 相对开销",
+   "source": "Sec 5.5"
+  },
+  {
+   "number": "0.933",
+   "context": "perplexity 界与生成 perplexity 的 Pearson 相关系数",
+   "source": "Appendix C.7"
+  },
+  {
+   "number": "132.55",
+   "context": "DFM-MMF-Exact-EMA 在 1024 步的生成 perplexity，全表最优",
+   "source": "Table 3"
+  },
+  {
+   "number": "50257",
+   "context": "multimask flow 使用的 mask token 数，等于数据 token 数",
+   "source": "Sec 5.3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2302.00482",
+   "type": "继承/离散化"
+  },
+  {
+   "report_id": "2407.15595",
+   "type": "基础框架"
+  },
+  {
+   "report_id": "2310.16834",
+   "type": "界的来源"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "被排除的替代方案"
+  }
+ ],
+ "read_full_text": true
+}

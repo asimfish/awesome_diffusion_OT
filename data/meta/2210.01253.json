@@ -1,0 +1,100 @@
+{
+ "report_id": "2210.01253",
+ "arxiv_id": "2210.01253",
+ "title": "PLOT: Prompt Learning with Optimal Transport for Vision-Language Models",
+ "tldr_zh": "用 Sinkhorn OT 对齐局部视觉特征与多 prompt 集合，防止 prompt 坍缩，few-shot 识别超 CoOp",
+ "tldr_en": "Sinkhorn OT aligns local visual features with multiple prompts to prevent prompt collapse, outperforming CoOp on few-shot recognition",
+ "tags": [
+  "optimal transport",
+  "prompt learning",
+  "CLIP",
+  "few-shot recognition",
+  "Sinkhorn",
+  "vision-language"
+ ],
+ "code_url": "https://github.com/CHENGY12/PLOT",
+ "key_numbers": [
+  {
+   "number": "+3.03%",
+   "context": "PLOT 相对 CoOp 在 11 数据集平均 1-shot 精度提升",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "+3.45%",
+   "context": "PLOT 相对 CoOp 在 11 数据集平均 2-shot 精度提升",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "+2.13%",
+   "context": "PLOT 相对 CoOp 在 11 数据集平均 4-shot 精度提升",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "+1.38%",
+   "context": "PLOT 相对 CoOp 在 11 数据集平均 8-shot 精度提升",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "+0.61%",
+   "context": "PLOT 相对 CoOp 在 11 数据集平均 16-shot 精度提升",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "63.01 vs 61.91",
+   "context": "PLOT vs CoOp 在 ImageNet source 域精度（16 shots）",
+   "source": "Table 1"
+  },
+  {
+   "number": "55.61 vs 54.21",
+   "context": "PLOT vs CoOp 在 ImageNet-R 精度（16 shots）",
+   "source": "Table 1"
+  },
+  {
+   "number": "约 20%",
+   "context": "直接用 feature map 替换全局特征在 1-shot 下的精度下降幅度",
+   "source": "Sec. 4.4"
+  },
+  {
+   "number": "N=4",
+   "context": "默认 prompt 数量，在 Caltech101 上调参",
+   "source": "Sec. 4.4"
+  },
+  {
+   "number": "约 10% / 5%",
+   "context": "PLOT 相对 CoOp 的额外推理/训练时间开销",
+   "source": "Sec. 4.4"
+  },
+  {
+   "number": "76.20 vs 75.83",
+   "context": "Tip-Adapter-F + PLOT vs Tip-Adapter-F 在 11 数据集 16-shot 平均精度",
+   "source": "Table 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2109.01134",
+   "type": "baseline"
+  },
+  {
+   "report_id": "2203.05557",
+   "type": "compared"
+  },
+  {
+   "report_id": "2103.00020",
+   "type": "backbone"
+  },
+  {
+   "report_id": "2111.03930",
+   "type": "adapter_baseline"
+  },
+  {
+   "report_id": "OTSeg_ECCV2024",
+   "type": "extended_by"
+  },
+  {
+   "report_id": "Sinkformer_AISTATS2022",
+   "type": "shares_technical_core"
+  }
+ ],
+ "read_full_text": true
+}

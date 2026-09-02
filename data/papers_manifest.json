@@ -2110,5 +2110,71 @@
   "bytes": 16880329,
   "source": "https://arxiv.org/pdf/2405.17873",
   "key": "t30__mixdq_memory_efficient_few_step_text_to_image_diffusion_mode"
+ },
+ "2303.16852.pdf": {
+  "sha256": "fc6ccc41bbfd488bd4f466843d062e0c26290989f55c2820ff448482b752e50d",
+  "bytes": 19927420,
+  "source": "https://arxiv.org/pdf/2303.16852",
+  "key": "t03__diffusion_schro_dinger_bridge_matching_shi_et_al"
+ },
+ "2302.05872.pdf": {
+  "sha256": "039dac8b98cdb6c2d8853d40efa045b669c1c94f404dfea53335877fb1b1863a",
+  "bytes": 25991995,
+  "source": "https://arxiv.org/pdf/2302.05872",
+  "key": "t14__i2sb_image_to_image_schro_dinger_bridge"
+ },
+ "2305.15086.pdf": {
+  "sha256": "9fa11ce59b595796a24bd7857a4027c42eb1bf0018dae8d20632263957886e76",
+  "bytes": 22450357,
+  "source": "https://arxiv.org/pdf/2305.15086",
+  "key": "t14__unsb_unpaired_neural_schro_dinger_bridge"
+ },
+ "2407.16074.pdf": {
+  "sha256": "11788abe5dbec407fd4e6273e1167aa5034e5b8433c3392d31d16acac238b735",
+  "bytes": 164403,
+  "source": "https://arxiv.org/pdf/2407.16074",
+  "key": "t23__schro_dinger_bridge_for_generative_speech_enhancement"
+ },
+ "2506.10168.pdf": {
+  "sha256": "71311bbf4ee01f98379b638ba3734f99059f6ae07a23245d26ecb9e1c7acea16",
+  "bytes": 8373614,
+  "source": "https://arxiv.org/pdf/2506.10168",
+  "key": "t27__momentum_multi_marginal_schro_dinger_bridge_matching"
+ },
+ "2310.01174.pdf": {
+  "sha256": "21ca8cfaefe4415c3980955d28d35f091850498f6bcdd9c21cc2bad1a4e2ab7e",
+  "bytes": 26658890,
+  "source": "https://arxiv.org/pdf/2310.01174",
+  "key": "t03__light_schro_dinger_bridge_korotin_et_al"
+ },
+ "2307.03672.pdf": {
+  "sha256": "4b492b1d7b03f377e04c91d672578a4708b5bb908a7a7cc1bd311e5de2750a55",
+  "bytes": 8637684,
+  "source": "https://arxiv.org/pdf/2307.03672",
+  "key": "t08__simulation_free_schro_dinger_bridges_via_score_and_flow_matc"
+ },
+ "2405.14449.pdf": {
+  "sha256": "9429ffa1b38b41e67ef0a35a836d74cb6937f0d626561a9280d9a6e1bbf1b667",
+  "bytes": 27544427,
+  "source": "https://arxiv.org/pdf/2405.14449",
+  "key": "t14__asbm_adversarial_schro_dinger_bridge_matching"
+ },
+ "2501.07897.pdf": {
+  "sha256": "fce5620975afc3023f603f962970789916e0dd8ff8b5e4e09909cbeaf3b770f5",
+  "bytes": 1300667,
+  "source": "https://arxiv.org/pdf/2501.07897",
+  "key": "t23__bridge_sr_schro_dinger_bridge_for_efficient_sr"
+ },
+ "2505.11197.pdf": {
+  "sha256": "c8a77d99849754ec3f36aeb0fbd9645b5f232e2d64907a22d60e74792df57363",
+  "bytes": 20649136,
+  "source": "https://arxiv.org/pdf/2505.11197",
+  "key": "t24__modeling_cell_dynamics_and_interactions_with_unbalanced_mean"
+ },
+ "2305.16557.pdf": {
+  "sha256": "c416b5e0eef3b329c5081db5fd7efb1764efb03291fc77acef6c81391acce9d0",
+  "bytes": 6538666,
+  "source": "https://arxiv.org/pdf/2305.16557",
+  "key": "t27__tree_based_diffusion_schro_dinger_bridge"
  }
 }

@@ -1,0 +1,70 @@
+{
+ "report_id": "2111.11521",
+ "arxiv_id": "2111.11521",
+ "title": "The Brownian transport map",
+ "tldr_zh": "用 Föllmer 过程构造 Wiener 测度到目标测度的传输映射，在 OT 映射收缩性开放情形证明几乎必然收缩，导出新泛函不等式与 Stein kernel 结果",
+ "tldr_en": "Constructs a transport map via the Föllmer process from Wiener measure to Euclidean target measures, proving almost-sure contraction where OT map contraction is open, yielding new functional inequalities and Stein kernels",
+ "tags": [
+  "Brownian transport map",
+  "Föllmer process",
+  "Malliavin calculus",
+  "contraction",
+  "functional inequalities",
+  "Stein kernel",
+  "KLS conjecture",
+  "optimal transport",
+  "Wiener space"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "1/sqrt(kappa)",
+   "context": "收缩常数，当 kappa*S^2 >= 4 且 p 是 kappa-log-concave",
+   "source": "Theorem 3.1(1)(a)"
+  },
+  {
+   "number": "((e^(2-kappa*S^2/2+1))/8)^(1/2) * S",
+   "context": "收缩常数，当 kappa*S^2 < 4",
+   "source": "Theorem 3.1(1)(b)"
+  },
+  {
+   "number": "((e^(R^2/2)-1)/2)^(1/2) * R",
+   "context": "收缩常数，高斯混合 p = gamma_d * nu，R = diam(supp(nu))",
+   "source": "Theorem 3.1(2)"
+  },
+  {
+   "number": "zeta^m * (2m+1)! * (log d)^(12m)",
+   "context": "期望收缩界 E[|D X_1|^(2m)] 的上界，各向同性 log-concave 紧支撑",
+   "source": "Theorem 1.4"
+  },
+  {
+   "number": "a * d * (log d)^24 * sqrt(E_p[|grad chi|^8_op])",
+   "context": "Stein kernel tau_q 的 Hilbert-Schmidt 范数期望上界",
+   "source": "Theorem 1.6"
+  },
+  {
+   "number": "a * (sqrt(E_p[|grad chi|^8_op]) * d * (log d)^24 + k) / n",
+   "context": "CLT 的 W_2^2 收敛速率上界",
+   "source": "Corollary 1.7"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "kim-milman-2012",
+   "type": "extends"
+  },
+  {
+   "report_id": "lassalle-causal-ot",
+   "type": "builds_on"
+  },
+  {
+   "report_id": "caffarelli-contraction",
+   "type": "contrasts"
+  },
+  {
+   "report_id": "kls-conjecture-progress",
+   "type": "builds_on"
+  }
+ ],
+ "read_full_text": true
+}

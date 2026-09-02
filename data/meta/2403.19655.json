@@ -1,0 +1,50 @@
+{
+ "report_id": "2403.19655",
+ "arxiv_id": "2403.19655",
+ "title": "GaussianCube: A Structured and Explicit Radiance Representation for 3D Generative Modeling",
+ "tldr_zh": "定数化 3DGS 拟合后用 OT 线性指派把 Gaussians 摆进 voxel 网格，使标准 3D U-Net 扩散可直接生成 3D 资产",
+ "tldr_en": "Fits fixed-count 3DGS then uses OT assignment to arrange Gaussians into voxel grid, enabling standard 3D U-Net diffusion for 3D generation",
+ "tags": [
+  "3D generation",
+  "3D Gaussian Splatting",
+  "Optimal Transport",
+  "diffusion models",
+  "radiance representation"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  "GaussianCube 参数 0.46M，比 Triplane 6.30M 少约 13.7 倍，比 Voxels 67.12M 少约 145.9 倍（Table 1, Table 2）",
+  "ShapeNet Car 拟合 PSNR 34.94 / LPIPS 0.0347 / SSIM 0.9863，优于所有 NeRF 类结构化表示（Table 2）",
+  "ShapeNet Car 无条件生成 FID-50K 13.01，对比 DiffTF 51.88、GET3D 17.15、EG3D 30.48（Table 3）",
+  "ShapeNet Chair 无条件生成 FID-50K 15.99，对比 DiffTF 47.08、GET3D 19.24、EG3D 27.98（Table 3）",
+  "OmniObject3D 类别条件生成 FID-50K 11.62 / KID-50K 2.78‰，对比 DiffTF 46.06 / 22.86‰（Table 3）",
+  "头像生成 CSIM 0.7821 / FID-5K 8.32，对比 Rodin 0.6466 / 20.02（Table 4）",
+  "文本到 3D CLIP Score 30.56，推理 2.30 秒/样本（单 A100）（Table 5）",
+  "消融：无 OT 结构化时 FID-50K 21.41，加 OT 后 13.01；拟合指标不变（PSNR 34.94）（Table 6）",
+  "N_max=32768，C=14，GaussianCube 尺寸 32×32×32×14（Sec. 4.2）",
+  "拟合每物体约 2.67 分钟（单 V100），OT 结构化约 2 分钟（AMD EPYC 7763v CPU）（Sec. 4.2）"
+ ],
+ "relations": [
+  {
+   "report_id": "2308.04079",
+   "type": "基础表示（3DGS）"
+  },
+  {
+   "report_id": "2403.12957",
+   "type": "同期竞争（GVGen，作者在 Sec. 2 提及）"
+  },
+  {
+   "report_id": "2212.04488",
+   "type": "基线（DiffTF）"
+  },
+  {
+   "report_id": "2212.06135",
+   "type": "基线（Rodin）"
+  },
+  {
+   "report_id": "2305.02463",
+   "type": "基线（Shap-E）"
+  }
+ ],
+ "read_full_text": true
+}

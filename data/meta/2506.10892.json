@@ -1,0 +1,69 @@
+{
+ "report_id": "2506.10892",
+ "arxiv_id": "2506.10892",
+ "title": "The Diffusion Duality",
+ "tldr_zh": "证明 uniform 离散扩散是高斯扩散的 argmax 投影，借此引入课程学习与离散一致性蒸馏，采样加速两个数量级",
+ "tldr_en": "Shows uniform-state discrete diffusion emerges from Gaussian diffusion via argmax projection, enabling curriculum learning and discrete consistency distillation for 2-orders-of-magnitude faster sampling",
+ "tags": [
+  "discrete diffusion",
+  "uniform-state diffusion",
+  "consistency distillation",
+  "curriculum learning",
+  "text generation",
+  "diffusion duality"
+ ],
+ "code_url": "http://s-sahoo.github.io/duo",
+ "key_numbers": [
+  {
+   "number": "3.0 PPL improvement over UDLM on LM1B (33.7 vs 36.7)",
+   "source": "Table 1, Table 3"
+  },
+  {
+   "number": "2× training speedup claimed (Duo at 510K steps: PPL 35.2 vs UDLM at 1M steps: 36.7)",
+   "source": "Sec. 5.1, p.8"
+  },
+  {
+   "number": "128× sampling speedup with Greedy-Tail (1024→8 steps), 64× with ancestral (1024→16 steps)",
+   "source": "Fig. 4, Sec. 5.2, p.9"
+  },
+  {
+   "number": "3/7 zero-shot benchmarks where Duo surpasses AR model (PTB, Wikitext, Lambada)",
+   "source": "Table 2, Sec. 5.1, p.8"
+  },
+  {
+   "number": "~1 order of magnitude gradient variance reduction from curriculum learning (top-100 highest-variance weights)",
+   "source": "Fig. 2, Sec. 5.1, p.8"
+  },
+  {
+   "number": "Rao-Blackwellized loss contributes ~1.7 PPL, curriculum ~1.3 PPL of total 3.0 PPL improvement",
+   "source": "Table 3, Sec. 5.1, p.9"
+  },
+  {
+   "number": "Duo PPL 43.0 at 100K steps vs Plaid 89.9 at 100K steps on LM1B",
+   "source": "Sec. 5.1, p.8"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2406.07524",
+   "type": "竞争/基线（MDLM，masked diffusion SOTA，Duo 在 PPL 上仍落后但在低 NFE 采样上超越）"
+  },
+  {
+   "report_id": "2502.03892",
+   "type": "继承/改进（UDLM，Duo 的直接前身，加入 Rao-Blackwellized 损失与课程学习）"
+  },
+  {
+   "report_id": "2310.16834",
+   "type": "竞争/基线（SEDD Uniform，Duo 在全部零样本基准上超越）"
+  },
+  {
+   "report_id": "2410.08142",
+   "type": "竞争（SDTT，MDM 蒸馏方法，DCD 在低 NFE 区间超越）"
+  },
+  {
+   "report_id": "2405.11462",
+   "type": "竞争/基线（Plaid，高斯扩散文本模型，Duo 在 PPL 上大幅超越）"
+  }
+ ],
+ "read_full_text": true
+}

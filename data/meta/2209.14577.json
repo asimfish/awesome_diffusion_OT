@@ -1,0 +1,45 @@
+{
+ "report_id": "2209.14577",
+ "arxiv_id": "2209.14577",
+ "title": "Rectified Flow: A Marginal Preserving Approach to Optimal Transport",
+ "tldr_zh": "速度场限制为 ∇c*(∇f) 的 c-rectified flow，声称不动点即 c-最优耦合；纯理论无实验",
+ "tldr_en": "c-rectified flow constrains velocity to gradient form; author claims fixed points are c-optimal couplings via HJ equation. Pure theory, later shown to need stronger assumptions.",
+ "tags": [
+  "rectified-flow",
+  "optimal-transport",
+  "theory",
+  "c-rectified-flow",
+  "hamilton-jacobi",
+  "helmholtz-decomposition",
+  "preprint"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "min_k L_{Z^k,c} + S_c(Z^{k+1}) = O(1/K) (Cor. 5.7)",
+  "E[c(X1-X0)] - E[c(Z1-Z0)] = S_c(Z) + L_{X,c}(f^{X,c}) (Eq. 28)",
+  "Example 3.5: rotation coupling (X0, A X0) of N(0,I) is straight but not c-optimal"
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "extends"
+  },
+  {
+   "report_id": "2505.19712",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2410.14949",
+   "type": "competes"
+  },
+  {
+   "report_id": "2202.07477",
+   "type": "competes"
+  },
+  {
+   "report_id": "A_computational_fluid_mechanics_solution_to_the_Mo",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

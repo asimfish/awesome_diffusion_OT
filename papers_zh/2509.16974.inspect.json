@@ -1,0 +1,119 @@
+{
+  "issue_count": 19,
+  "issues": [
+    {
+      "page": 1,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 1: block set at 3.37pt but the original at this position is 9.94pt (ratio 0.34 vs page median 0.92) at x=227.8, y=632.4: ∇^{δF} _{δμ} ，可解释为关于2-Wasserstein 度量的梯度下降（Jordan"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (10 words, 0 CJK chars) at x=113.7, y=432.8: • We say that µ is an (ε, δ)-saddle point, if ∥∇µF(µ)∥L2"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (4 words, 0 CJK chars) at x=113.7, y=334.4: • ∇µF is L1-Lipschitz, i.e. for any γ ∈Γ(µ, ν),"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (4 words, 0 CJK chars) at x=130.5, y=375.4: µF is L2-Lipschitz, i.e. for any γ ∈Γ(µ, ν),"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (6 words, 0 CJK chars) at x=287.7, y=539.4: , we verify that12∥x∥2 + hψ(x) is convex and"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (5 words, 0 CJK chars) at x=200.4, y=557.7: = (Id + h∇ψ)(x) is L2(µ) integrable for all h ∈[−¯h.¯h]."
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=146.2, y=535.6: From"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (6 words, 0 CJK chars) at x=108.0, y=329.9: In this case, we denote ξ ∼GP(m, K)."
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (3 words, 0 CJK chars) at x=135.4, y=531.6: • For any constant M > R2 ≥"
+    },
+    {
+      "page": 26,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 26: paragraph still in English (5 words, 0 CJK chars) at x=108.0, y=106.6: Proposition D.7 that for any M ≥R2 ≥∥Hµ∥HS,L2(µ) ="
+    },
+    {
+      "page": 28,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 28: paragraph still in English (3 words, 0 CJK chars) at x=135.4, y=143.3: • For any constant M > R2 ≥"
+    },
+    {
+      "page": 29,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 29: paragraph still in English (5 words, 0 CJK chars) at x=107.7, y=675.8: That is, µt = Xt#µ0, ˜µt = ˜Xt#˜µ0, and"
+    },
+    {
+      "page": 31,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 31: paragraph still in English (10 words, 0 CJK chars) at x=107.6, y=373.3: where we used the equation w0 = ˜Y0 −Y0 = ηp(˜ξ −ξ) = ηp"
+    },
+    {
+      "page": 32,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 32: paragraph still in English (9 words, 0 CJK chars) at x=107.6, y=497.0: where we used in the second line the inequality e"
+    },
+    {
+      "page": 33,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 33: displayed equation at y=509 shifted horizontally by 16pt vs original"
+    },
+    {
+      "page": 33,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 33: paragraph still in English (5 words, 0 CJK chars) at x=143.6, y=409.8: Take ω1, ω2 ∈Ωsuch that |X(ω1)| ∨|X(ω2)| ≤M, ξ(ω2) = ξ(ω"
+    },
+    {
+      "page": 40,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 40: paragraph still in English (6 words, 0 CJK chars) at x=107.6, y=662.0: where µo ∈P (k+l) is the true feature and ζµo,µ(z) = hµo"
+    },
+    {
+      "page": 43,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 43: displayed equation at y=476 shifted horizontally by 44pt vs original"
+    },
+    {
+      "page": 45,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 45: paragraph still in English (4 words, 0 CJK chars) at x=108.0, y=190.9: for some ˜C > 0. For any γ ∈Γo(µ, µo),"
+    }
+  ]
+}

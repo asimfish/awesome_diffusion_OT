@@ -260,10 +260,10 @@
    "links": {
     "OpenReview": "https://openreview.net/forum?id=ymjI8feDTD"
    },
-   "pdf": null,
-   "text": null,
-   "text_chars": null,
-   "pages": null
+   "pdf": "papers/2310.02279.pdf",
+   "text": "data/text/2310.02279.txt",
+   "text_chars": 90000,
+   "pages": 33
   },
   {
    "key": "t10__dmd2_improved_distribution_matching_distillation",
@@ -354,10 +354,10 @@
    "links": {
     "CVF": "https://openaccess.thecvf.com/content/CVPR2024/html/Wei_Adversarial_Score_Distillation_When_score_distillation_meets_GAN_CVPR_2024_paper.html"
    },
-   "pdf": null,
-   "text": null,
-   "text_chars": null,
-   "pages": null
+   "pdf": "papers/2312.00739.pdf",
+   "text": "data/text/2312.00739.txt",
+   "text_chars": 51133,
+   "pages": 15
   },
   {
    "key": "t10__theory_of_consistency_diffusion_models",

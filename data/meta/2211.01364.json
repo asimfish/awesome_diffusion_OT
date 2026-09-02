@@ -1,0 +1,44 @@
+{
+ "report_id": "2211.01364",
+ "arxiv_id": "2211.01364",
+ "title": "An optimal control perspective on diffusion-based generative modeling",
+ "tldr_zh": "时间反转log密度满足HJB，ELBO=verification theorem；路径空间KL表述与从未归一化密度采样的DIS",
+ "tldr_en": "Time-reversed log-density solves an HJB equation; ELBO follows from the verification theorem; path-space KL view yields the DIS sampler for unnormalized densities.",
+ "tags": [
+  "stochastic-optimal-control",
+  "hjb",
+  "path-space-kl",
+  "sampling",
+  "theory",
+  "schrodinger-bridge"
+ ],
+ "code_url": "https://github.com/juliusberner/sde_sampler",
+ "key_numbers": [
+  "GMM: Delta log Z DDS 0.176 / DIS(KL) 0.046 / DIS(log-variance) 0.013; Delta std 2.48 / 2.83 / 0.01 (App. Table 1)",
+  "Funnel d=10: Delta log Z DDS 0.121 / DIS(KL) 0.017 / DIS(log-var) 0.021 (App. Table 1)",
+  "DIS beats PIS on log Z for GMM and Funnel, slight gain on DW d=20 (Figure 4); scales to DW d=50 with 32 modes (Figure 5)"
+ ],
+ "relations": [
+  {
+   "report_id": "Score_Based_Generative_Modeling_through_SDEs",
+   "type": "extends"
+  },
+  {
+   "report_id": "2402.06162",
+   "type": "extends"
+  },
+  {
+   "report_id": "2312.02027",
+   "type": "extends"
+  },
+  {
+   "report_id": "2409.08861",
+   "type": "extends"
+  },
+  {
+   "report_id": "2403.11262",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

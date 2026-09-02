@@ -1,0 +1,46 @@
+{
+ "report_id": "2412.03895",
+ "arxiv_id": "2412.03895",
+ "title": "A Noise is Worth Diffusion Guidance",
+ "tldr_zh": "LoRA 噪声精炼器把高斯噪声映到免引导噪声空间，SD2.1 无 CFG 达 CFG 质量，FID 11.39 vs 13.38，约 2× 快",
+ "tldr_en": "NoiseRefine learns a one-shot noise-to-guidance-free-noise map via multistep score distillation; SD2.1 without CFG matches CFG quality at 2x speed.",
+ "tags": [
+  "noise-refinement",
+  "initial-noise",
+  "guidance-free",
+  "classifier-free-guidance",
+  "learned-noise-mapping",
+  "text-to-image",
+  "inference-time"
+ ],
+ "code_url": "https://cvlab-kaist.github.io/NoiseRefine/",
+ "key_numbers": [
+  "MS-COCO 30K: FID 42.71 (Gaussian, no guidance) / 11.39 (refined, no guidance) / 13.38 (Gaussian + guidance); IS 20.86 / 35.73 / 37.64 (Table 2)",
+  "Inference 1.357 s / 1.504 s / 2.589 s per image at 20 steps on RTX 3090 (Table 2)",
+  "DrawBench PickScore 19.67 -> 20.90 (refined) vs 21.29 (guidance); ImageReward -1.399 -> -0.291 vs -0.020 (Table 1)",
+  "User study 45 participants x 30 pairs: quality 53.96% prefer refined noise over Gaussian+CFG (Table 4)",
+  "Training data filtering (AES > 6.0, ~25% kept): FID 15.27 -> 13.55 (Table 3)",
+  "LoRA on pretrained SD2.1 vs UNet from scratch: FID 13.74 vs 37.87 (Table 5)",
+  "Only the (0, 0.1) normalized low-frequency band of refined noise carries the layout (Fig. 20)",
+  "Training: 50K self-generated pairs, 8 A100-40GB, batch 4, 39k steps (Appendix D.2)"
+ ],
+ "relations": [
+  {
+   "report_id": "2411.09502",
+   "type": "competes"
+  },
+  {
+   "report_id": "2406.04312",
+   "type": "competes"
+  },
+  {
+   "report_id": "2404.04650",
+   "type": "competes"
+  },
+  {
+   "report_id": "2412.05101",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

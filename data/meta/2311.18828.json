@@ -1,0 +1,61 @@
+{
+ "report_id": "2311.18828",
+ "arxiv_id": "2311.18828",
+ "title": "One-step Diffusion with Distribution Matching Distillation",
+ "tldr_zh": "反向 KL 梯度 = 真/假 score 之差，加教师 ODE 噪声-图像对回归锚定，一步 ImageNet-64 FID 2.62、COCO-30k 11.49。",
+ "tldr_en": "DMD trains a one-step generator with a reverse-KL gradient (real minus fake score) plus LPIPS regression on teacher ODE noise-image pairs: FID 2.62 on ImageNet-64, 11.49 zero-shot COCO.",
+ "tags": [
+  "distillation",
+  "distribution-matching",
+  "one-step",
+  "score-distillation",
+  "coupling",
+  "text-to-image"
+ ],
+ "code_url": "https://github.com/tianweiy/DMD2",
+ "key_numbers": [
+  "ImageNet-64 FID 2.62 (1 NFE) vs teacher EDM 2.32 (512 NFE), CM 6.20 (Table 1)",
+  "CIFAR-10 cond FID 2.66, uncond 3.77 (Table 6)",
+  "Ablation CIFAR/ImageNet: w/o distribution matching 3.82/9.21, w/o regression 5.58/5.61 (Table 2)",
+  "Weighting: sigma_t/alpha_t 3.60, sigma_t^3/alpha_t 3.71, Eq.8 2.66 (Table 2)",
+  "COCO-30k zero-shot FID 11.49 @0.09s vs SD v1.5 8.78 @2.59s, CFG 3 (Table 3)",
+  "COCO-30k CFG 8: DMD 14.93 / CLIP 0.320 vs SD 13.45 / 0.322 (Table 4)",
+  "Paired set: 100k pairs CIFAR-10 cond, 25k ImageNet-64, 500k LAION-6.25+, 12M LAION-6+ (Appendix B)",
+  "lambda_reg = 0.25; L2 instead of LPIPS gives 2.78 vs 2.66 (Appendix I)"
+ ],
+ "relations": [
+  {
+   "report_id": "DMD2_Improved_Distribution_Matching_Distillation",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Score_identity_Distillation",
+   "type": "competes"
+  },
+  {
+   "report_id": "2311.17042",
+   "type": "competes"
+  },
+  {
+   "report_id": "2312.00739",
+   "type": "competes"
+  },
+  {
+   "report_id": "2512.06802",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2303.01469",
+   "type": "competes"
+  },
+  {
+   "report_id": "2309.06380",
+   "type": "competes"
+  },
+  {
+   "report_id": "2503.06674",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

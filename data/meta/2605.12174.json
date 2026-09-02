@@ -1,0 +1,86 @@
+{
+ "report_id": "2605.12174",
+ "arxiv_id": "2605.12174",
+ "title": "Expected Batch Optimal Transport Plans and Consequences for Flow Matching",
+ "tldr_zh": "期望 batch OT 耦合 π̄_k 在半离散情形有成本 O(k^{-1/2})、plan O(k^{-1/4}) 收敛速率，FM 速度场良定；增大 batch 主要改善低 NFE 采样。",
+ "tldr_en": "Expected batch OT plan converges at O(k^{-1/2}) cost bias and O(k^{-1/4}) plan rate in semidiscrete case; FM velocity field is well-posed; larger batch mainly helps low-NFE sampling.",
+ "tags": [
+  "minibatch OT",
+  "flow matching",
+  "semidiscrete OT",
+  "rectifiability",
+  "NFE tradeoff",
+  "expected batch OT plan"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "O(k^{-1/2})",
+   "description": "成本偏差速率，μ ∈ P_q(R^d), q > 4，ν 有限支撑均匀",
+   "source": "Proposition 3.3(3)"
+  },
+  {
+   "number": "O(k^{-1})",
+   "description": "成本偏差速率，μ 紧支撑、对偶 OT 唯一非退化",
+   "source": "Proposition 3.3(2)"
+  },
+  {
+   "number": "O(k^{-1/4})",
+   "description": "W_2^2(π̄_k, π⋆) 收敛速率，μ = N(0, I_d), ν 有限均匀",
+   "source": "Proposition 3.4(2)"
+  },
+  {
+   "number": "exp(−2π/√3 · n^{2/3})",
+   "description": "两原子模型 Euler 积分误差随 NFE n 的渐近衰减",
+   "source": "Proposition 4.3"
+  },
+  {
+   "number": "k^{-1/2}",
+   "description": "两原子模型 Euler 积分误差随 OT batch size k 的渐近衰减",
+   "source": "Proposition 4.3"
+  },
+  {
+   "number": "90",
+   "description": "两原子模型中补偿 NFE 从 25 降到 10 所需的 OT batch size",
+   "source": "Figure 5, Section 4.4"
+  },
+  {
+   "number": "3%",
+   "description": "k ≤ 1024 时精确 OT batch 的训练时间开销",
+   "source": "Table 2, Section 4.5"
+  },
+  {
+   "number": "55%",
+   "description": "k = 8192 时精确 OT batch 的训练时间开销",
+   "source": "Table 2, Section 4.5"
+  },
+  {
+   "number": "8192",
+   "description": "图像实验中最大 OT batch size，受计算预算限制",
+   "source": "Section 4.5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2302.00482",
+   "type": "继承并补全"
+  },
+  {
+   "report_id": "2101.01792",
+   "type": "继承"
+  },
+  {
+   "report_id": "2506.05526",
+   "type": "竞争/互补"
+  },
+  {
+   "report_id": "2509.25519",
+   "type": "竞争/互补"
+  },
+  {
+   "report_id": "2505.19712",
+   "type": "理论关联"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,83 @@
+{
+ "report_id": "2605.00161",
+ "arxiv_id": "2605.00161",
+ "title": "Consistent Diffusion Language Models",
+ "tldr_zh": "用精确后验桥做多路径离散一致性训练，单阶段 teacher-free 模型在 few-step 文本生成上超过蒸馏基线",
+ "tldr_en": "Exact posterior bridges replace PF-ODE for multi-path discrete consistency; single-stage teacher-free CDLM beats distilled baselines in few-step text generation",
+ "tags": [
+  "discrete diffusion",
+  "consistency training",
+  "language model",
+  "masked diffusion",
+  "teacher-free",
+  "few-step generation"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "331.2 (entropy 5.0)",
+   "context": "MCDLM-PPLOptimized 4-step generative PPL on OpenWebText, FP64",
+   "source": "Table 1"
+  },
+  {
+   "number": "1654.5 (entropy 5.8)",
+   "context": "MDLM 4-step generative PPL on OpenWebText, FP64",
+   "source": "Table 1"
+  },
+  {
+   "number": "369.6 (entropy 5.3)",
+   "context": "MDLM-SDTT distilled 4-step generative PPL",
+   "source": "Table 1"
+  },
+  {
+   "number": "64x-128x",
+   "context": "MCDLM-PPLOptimized speedup over MDLM in NFE",
+   "source": "Sec. 4.3, p.7"
+  },
+  {
+   "number": "16x-32x",
+   "context": "NFE reduction to match AR baseline at 32-64 steps",
+   "source": "Sec. 4.3, p.7"
+  },
+  {
+   "number": "377.3 (entropy 5.2)",
+   "context": "UCDLM 4-step generative PPL vs UDLM 516.6 and DUO 514.4",
+   "source": "Table 2"
+  },
+  {
+   "number": "3.9",
+   "context": "DUO-DCD greedy entropy at 4 steps, indicating mode collapse",
+   "source": "Table 2"
+  },
+  {
+   "number": "31.6 / 62.8",
+   "context": "MCDLM-PPLOptimized OpenWebText conditional 8-step PPL/BLEU2 vs SDTT 34.0/62.4",
+   "source": "Table 3"
+  },
+  {
+   "number": "110M",
+   "context": "model parameter scale for all experiments",
+   "source": "Sec. 4.2, p.7"
+  },
+  {
+   "number": "150K",
+   "context": "training steps for base models",
+   "source": "Sec. 4.2, p.7"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2406.07524",
+   "type": "被统一为特例（MDLM NELBO 是 CDLM 的 max-step 极限）"
+  },
+  {
+   "report_id": "2303.01469",
+   "type": "离散化推广（连续一致性模型的离散对应）"
+  },
+  {
+   "report_id": "2107.03006",
+   "type": "理论基础（后验桥公式来源）"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,85 @@
+{
+ "report_id": "2602.06658",
+ "arxiv_id": "2602.06658",
+ "title": "Gromov-Wasserstein at Scale, Beyond Squared Norms",
+ "tldr_zh": "CNT 代价下 GW 分解为 lifted 线性对齐 + 平方欧氏 OT，线性内存、二次时间、可微、可探索能量景观",
+ "tldr_en": "CNT-cost GW reduces to lifted linear alignment plus squared-Euclidean OT, enabling linear memory, quadratic time, differentiable solvers",
+ "tags": [
+  "Gromov-Wasserstein",
+  "conditionally negative type",
+  "entropic optimal transport",
+  "scalable solver",
+  "energy landscape",
+  "Sinkhorn divergence"
+ ],
+ "code_url": "https://github.com/guillaumeHoury/egw-solvers",
+ "key_numbers": [
+  {
+   "number": "O(N+M) memory, O(NM) time for CNT-GW iterations",
+   "source": "Sec. 5, Complexity"
+  },
+  {
+   "number": "O(N^2D+M^2E+NM n_inner n_outer) total time",
+   "source": "Sec. 5, Complexity"
+  },
+  {
+   "number": "n_inner 20-200, n_outer 10-50",
+   "source": "Sec. 5, Complexity"
+  },
+  {
+   "number": "MSGW 355s on FAUST 177k points, GW objective 1.4e-2",
+   "source": "Table 1"
+  },
+  {
+   "number": "MSGW 196s on VESSELS 100k points, GW objective 7.4e-3",
+   "source": "Table 1"
+  },
+  {
+   "number": "MSGW 83s on KIDS 60k points, GW objective 2.0e-2",
+   "source": "Table 1"
+  },
+  {
+   "number": "MSGW one to two orders of magnitude faster than competitors",
+   "source": "Sec. 6, Benchmarks"
+  },
+  {
+   "number": "25 local minima from 500 random initializations; 8 best attract 82% of seeds",
+   "source": "Sec. 6, Optimization Landscape, Fig. 5"
+  },
+  {
+   "number": "default epsilon=1e-3, embedding dim D=E=20 explaining 80-90% kernel variance",
+   "source": "Sec. 6, Setup"
+  },
+  {
+   "number": "SGW_e >= 0 for CNT costs; SGW_e = 0 if isometric, converse false",
+   "source": "Theorem 4.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "rioux2024squared",
+   "type": "direct predecessor"
+  },
+  {
+   "report_id": "sebbouh2024concave",
+   "type": "related framework"
+  },
+  {
+   "report_id": "chen2024sdp",
+   "type": "complementary (certification line)"
+  },
+  {
+   "report_id": "scetbon2022lowrank",
+   "type": "competing baseline"
+  },
+  {
+   "report_id": "peyre2016entropic",
+   "type": "foundational baseline"
+  },
+  {
+   "report_id": "genot2024",
+   "type": "downstream consumer (flow matching with GW plans)"
+  }
+ ],
+ "read_full_text": true
+}

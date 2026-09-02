@@ -1,0 +1,48 @@
+{
+ "report_id": "2301.12874",
+ "arxiv_id": "2301.12874",
+ "title": "Extremal Domain Translation with Neural Optimal Transport",
+ "tldr_zh": "extremal transport 形式化最保真翻译（映到 Supp(Q) 的最近邻），证明它是 incomplete transport T#P<=wQ 在 w->inf 的极限，并给出 max-min 求解器",
+ "tldr_en": "Extremal transport formalizes the most input-faithful unpaired translation (nearest neighbors in Supp(Q)); it is the w->inf limit of incomplete transport T#P<=wQ, solved by a scalable max-min algorithm.",
+ "tags": [
+  "neural-ot",
+  "partial-ot",
+  "extremal-transport",
+  "incomplete-transport",
+  "unpaired-translation",
+  "similarity",
+  "theory"
+ ],
+ "code_url": "https://github.com/milenagazdieva/ExtremalNeuralOptimalTransport",
+ "key_numbers": [
+  "celeba->anime 64px test l2 cost / FID: w=1 0.297/14.65, w=2 0.154/20.79, w=4 0.133/22.18, w=8 0.094/22.84 (Table 1)",
+  "handbag->shoes 128px test l2 cost / FID: w=1 0.368/27.10, w=8 0.252/53.80 (Table 1)",
+  "CycleGAN with l1 identity weight on celeba->anime: l2 cost 0.33->0.01 but FID 22.9->122.2 as lambda 0->250 (Tables 2-3)",
+  "StarGAN-v2 + l1 on celeba->anime lambda=10: cost 0.094, FID 42.30; lambda=50: 0.017/99.68 (Tables 4-5)",
+  "Discrete partial OT + barycentric projection on celeba->anime: FID 185.35 (w=1) to 82.19 (w=8), 82.24 (w=inf) (Table 7)",
+  "Training 2 (w=1) to 6 (w=8) days on a single V100 (Appendix E)"
+ ],
+ "relations": [
+  {
+   "report_id": "2201.12220",
+   "type": "extends"
+  },
+  {
+   "report_id": "2205.15269",
+   "type": "uses"
+  },
+  {
+   "report_id": "2205.15403",
+   "type": "competes"
+  },
+  {
+   "report_id": "2305.14777",
+   "type": "competes"
+  },
+  {
+   "report_id": "2311.15100",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

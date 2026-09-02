@@ -1,0 +1,44 @@
+{
+ "report_id": "2102.05912",
+ "arxiv_id": "2102.05912",
+ "title": "On Transportation of Mini-batches: A Hierarchical Approach",
+ "tldr_zh": "BoMb-OT 在 minibatch 之间再解一层 k×k OT 加权聚合，逼近一个真度量；m-OT 是其熵正则 λ→∞ 极限。",
+ "tldr_en": "Batch-of-Mini-batches OT couples mini-batches with a second-level k x k OT, approximating a true metric; m-OT is its infinite-entropy limit.",
+ "tags": [
+  "minibatch-ot",
+  "hierarchical-ot",
+  "theory",
+  "domain-adaptation",
+  "generative-model",
+  "unbalanced-ot"
+ ],
+ "code_url": "https://github.com/UT-Austin-Data-Science-Group/Mini-batch-OT",
+ "key_numbers": [
+  "CIFAR10 FID 53.44 (BoMb-OT, SW2, k=8, m=50) vs 59.68 (m-OT) (Table 1)",
+  "CelebA FID 49.63 (BoMb-OT, W2eps, k=8) vs 51.92 (m-OT) (Table 1)",
+  "SVHN->MNIST accuracy 95.23+-0.44 (BoMb-OT) vs 94.17+-0.39 (m-OT), k=8 (Table 2)",
+  "VisDA accuracy 74.65+-0.03 (BoMb-UOT) vs 72.95+-0.06 (m-UOT), k=4 (Table 3)",
+  "Office-Home avg 70.40 (BoMb-UOT) vs 70.17 (m-UOT/JUMBOT), best in 7/12 tasks (Table 4)",
+  "Approximation rate O_P(m^(1-1/p)/n^(1/N)) for W_p, O_P(m^(1-1/p)/n^(1/2)) for SW_p (Theorem 3.4)",
+  "Complexity O(k^2(m^2+1)/eps^2) vs m-OT O(k^2 m^2/eps^2) (Sec. 3.1)"
+ ],
+ "relations": [
+  {
+   "report_id": "1910.04091",
+   "type": "extends"
+  },
+  {
+   "report_id": "2304.14772",
+   "type": "competes"
+  },
+  {
+   "report_id": "2603.15279",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2605.12174",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

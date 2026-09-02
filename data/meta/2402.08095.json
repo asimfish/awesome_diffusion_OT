@@ -1,0 +1,58 @@
+{
+ "report_id": "2402.08095",
+ "arxiv_id": "2402.08095",
+ "title": "Convergence Analysis of Discrete Diffusion Model: Exact Implementation through Uniformization",
+ "tldr_zh": "用 CTMC uniformization 精确模拟反向链，给出超立方体上 TV/KL 收敛保证，对齐连续扩散最优结果",
+ "tldr_en": "Exact reverse CTMC simulation via uniformization yields TV/KL convergence guarantees on hypercube, matching continuous diffusion optimal results",
+ "tags": [
+  "discrete diffusion",
+  "CTMC",
+  "uniformization",
+  "convergence analysis",
+  "score entropy",
+  "hypercube"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "O(d log(d/εδ))",
+   "context": "KL 误差为 O(ε) 时的算法复杂度（Poisson 参数 λ）",
+   "source": "Theorem 6(1), Sec. 4.3"
+  },
+  {
+   "number": "O(d log(d/ε^{3/4}))",
+   "context": "TV 误差为 O(√ε) 时的算法复杂度",
+   "source": "Theorem 6(2), Sec. 4.3"
+  },
+  {
+   "number": "Θ(d)",
+   "context": "真值反向过程单位时间内的期望转移次数，线性维度依赖不可避免",
+   "source": "Sec. 4.3, Discussion on near optimality"
+  },
+  {
+   "number": "KL(p(T)||γ) ≤ e^{-T} KL(p(0)||γ) ≲ de^{-T}",
+   "context": "前向独立翻转过程的指数收敛速率",
+   "source": "Proposition 4, Sec. 3.2"
+  },
+  {
+   "number": "p_{x+e_i}(t)/p_x(t) ≲ max(1/t, 1)",
+   "context": "真值离散 score 的一致上界，与数据分布无关",
+   "source": "Proposition 5, Sec. 4.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2207.11198",
+   "type": "前驱"
+  },
+  {
+   "report_id": "2301.11237",
+   "type": "对齐目标"
+  },
+  {
+   "report_id": "2210.16886",
+   "type": "目标函数来源"
+  }
+ ],
+ "read_full_text": true
+}

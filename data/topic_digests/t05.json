@@ -1,0 +1,85 @@
+{
+ "digest_zh": "本课题围绕「Fokker–Planck 方程 = KL 散度在 Wasserstein-2 度量下的梯度流」这一理论底座（The_Variational_Formulation_of_the_Fokker_Planck_E），发展 JKO 隐式离散格式的神经化与规模化。方法谱系分三条支线演进：正问题求解器从 ICNN 参数化 Brenier 势（2106.00736、Optimizing_Functionals_on_the_Space_of_Probabiliti）起步，经变分对偶消除 log-det（2112.02424）、残差块显式密度（2212.14424），到 UOT 半对偶 + 重参数化实现 O(K) 训练与一步采样（2402.05443）；反问题从 JKOnet 双层优化（2106.06345）演进到 JKOnet* 一阶最优性条件单层闭式解（2406.12616）；理论深化则包括 Gaussian 子流形上的非渐近收敛（2205.15902）、镜像/预条件几何（2406.08938）、WoW 测度之测度流（2506.07534）与非凸二阶最优性（2509.16974）。当前共识是 JKO 提供 score matching 之外的第二套构造原理，且已获得与扩散模型同量级的生成质量；分歧在于「忠实于真实 WGF 轨迹」与「生成质量」出现分离，以及非测地凸泛函下的一阶/二阶最优性条件仍缺乏可验证的通用判据。",
+ "observations": [
+  {
+   "claim": "JKO 步的求解器从「ICNN 凸势 + 精确 log-det」演进为「对偶 min-max + 重参数化」，训练复杂度从 O(K²) 降至 O(K)，但代价是 Brenier 结构丢失。",
+   "evidence": [
+    "2106.00736",
+    "2112.02424",
+    "2402.05443"
+   ],
+   "detail": "Mokrov 等（2106.00736）的 ICNN 方案训练时间 ∝ k² 且 log-det 为 O(D³)；Fan 等（2112.02424）用 Nguyen 变分对偶消除密度项但保留 K 个生成器；S-JKO（2402.05443）用 UOT 半对偶 + ΔT_k∘T_{k-1} 重参数化把训练降到 O(K)，CIFAR-10 FID 从 23.1 推到 2.62，但 T_k 不再保证是 OT 映射。"
+  },
+  {
+   "claim": "反问题支线从双层优化转向一阶最优性条件拟合，能量类从 potential 扩展到 interaction/internal，但一阶条件是必要非充分。",
+   "evidence": [
+    "2106.06345",
+    "2406.12616"
+   ],
+   "detail": "JKOnet（2106.06345）通过展开 50–100 步 Adam 反传做双层优化，内层只到梯度范数 ≤1 的粗精度；JKOnet*（2406.12616）用一阶条件 ∇V(x_{t+1}) + (x_{t+1}−x_t)/τ = 0 把学习变成单层二次损失，线性参数化有闭式解，scRNA-seq 一步预测 EMD 0.624，但当 J 非测地凸时拟合一阶条件可能学到使观测成为鞍点的能量。"
+  },
+  {
+   "claim": "WGF 生成模型的「生成质量」与「忠实于真实梯度流」出现分离：规模化方法 FID 更好，但逼近真实 WGF 轨迹的精度反而更低。",
+   "evidence": [
+    "2402.05443",
+    "2212.14424"
+   ],
+   "detail": "S-JKO（2402.05443）Table 6–7 显示其对真值 WGF 的 SymKL 逊于 ICNN JKO，但 CIFAR-10 FID 2.62 远优于 JKO-iFlow 的 29.10（2212.14424）；JKO-iFlow 的无穷小极限 f* = s_q − s_p 正是概率流 ODE 速度场，说明「不学 score 直接学 FPE 传输」与 flow matching 是同一 ODE 的不同训练目标。"
+  },
+  {
+   "claim": "非测地凸泛函下测度空间优化的二阶理论开始建立，但可扩展实现与实验验证仍缺失。",
+   "evidence": [
+    "2509.16974",
+    "2205.15902"
+   ],
+   "detail": "PWGF（2509.16974）沿 Wasserstein Hessian 最小特征方向注入 GP 扰动，给出 tilde{O}(Δ_F(1/ε² + 1/δ⁴)) 的二阶驻点收敛保证，但正文无任何数值实验，GP 核 K_μ 需要 ∇²_μF 的积分；Gaussian VI（2205.15902）在混合 Gaussian 情形 KL 非凸、极小点非唯一（Appendix G），正是 PWGF 处理的具体实例。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "非测地凸泛函下 JKO 一阶/二阶最优性条件的可验证判据缺失",
+   "why_open": "PWGF 的 Assumption 2 要求 Wasserstein 梯度空间梯度上确界被 L² 范数线性控制，在一般非凸泛函上是否成立未讨论；JKOnet* 的一阶条件拟合在非凸能量下可能学到鞍点而非极小点，但文中未验证学到的能量前向 JKO 是否重现轨迹。",
+   "evidence": [
+    "2509.16974",
+    "2406.12616"
+   ]
+  },
+  {
+   "problem": "JKO 步的 OT 求解质量与生成质量之间的关系未量化",
+   "why_open": "S-JKO 的 ΔT_k 由 argmin_y[c(x,y)−v(y)] 参数化，但 GAN 式交替更新不保证得到该 argmin；邻近项比较的样本用不同辅助噪声，Eq.(21) 的 W₂² 解释在实现层面已被打破，而正文未讨论这一偏离的影响。",
+   "evidence": [
+    "2402.05443"
+   ]
+  },
+  {
+   "problem": "Wasserstein 二阶方法（Hessian 引导扰动）的可扩展实现",
+   "why_open": "PWGF 的 GP 核 K_μ 需要 ∇²_μF 的显式积分或特征分解，作者仅提出用 Hutchinson 估计器或随机 Lanczos 作为未来方向，无实验验证粒子离散版本在实际问题上的表现。",
+   "evidence": [
+    "2509.16974"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "The_Variational_Formulation_of_the_Fokker_Planck_E",
+   "why": "理论源头：FPE=KL 的 W₂ 梯度流与 JKO 格式"
+  },
+  {
+   "report_id": "2106.00736",
+   "why": "神经化 JKO 起点：ICNN 参数化 Brenier 势"
+  },
+  {
+   "report_id": "2112.02424",
+   "why": "变分对偶消除 log-det，通向 GAN 式求解"
+  },
+  {
+   "report_id": "2402.05443",
+   "why": "规模化转折：UOT 半对偶 + O(K) 训练 + 一步采样"
+  },
+  {
+   "report_id": "2406.12616",
+   "why": "反问题闭环：一阶最优性条件单层能量学习"
+  }
+ ],
+ "n_reports": 13
+}

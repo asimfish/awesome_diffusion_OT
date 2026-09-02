@@ -1,0 +1,56 @@
+{
+ "report_id": "Simplifying_Stabilizing_and_Scaling_Continuous_tim",
+ "arxiv_id": null,
+ "title": "Simplifying, Stabilizing and Scaling Continuous-time CMs (sCM)",
+ "tldr_zh": "TrigFlow 统一参数化加连续时间稳定化，把 CM 训到 1.5B 参数，两步逼近扩散模型。",
+ "tldr_en": "TrigFlow unifies parameterization and stabilizes continuous-time CM training, scaling to 1.5B params with two-step near-diffusion quality.",
+ "tags": [
+  "consistency models",
+  "continuous-time training",
+  "TrigFlow",
+  "few-step generation",
+  "PF-ODE"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "1.5B",
+   "context": "模型参数量",
+   "source": "调研 agent，摘要未见"
+  },
+  {
+   "number": "2.06",
+   "context": "CIFAR-10 两步 FID",
+   "source": "调研 agent，摘要未见"
+  },
+  {
+   "number": "1.48",
+   "context": "ImageNet-64 两步 FID",
+   "source": "调研 agent，摘要未见"
+  },
+  {
+   "number": "1.88",
+   "context": "ImageNet-512 两步 FID",
+   "source": "调研 agent，摘要未见"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "CM_ICML2023",
+   "type": "继承"
+  },
+  {
+   "report_id": "iCT_ICLR2024",
+   "type": "继承"
+  },
+  {
+   "report_id": "ECT_arXiv2310.06922",
+   "type": "继承"
+  },
+  {
+   "report_id": "CTM_ICLR2024",
+   "type": "竞争"
+  }
+ ],
+ "read_full_text": false
+}

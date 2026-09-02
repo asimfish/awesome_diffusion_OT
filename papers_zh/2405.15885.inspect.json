@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=108.8, y=666.1: 命题4.1（与概率流常微分方程的等价性，证明见附录B.3）。假设"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=108.8, y=677.0: s_{θ} 相关，则公式(16) 可以转换为DDBM 中提出的PF-ODE（公式(8)）。"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (34 words, 0 CJK chars) at x=108.0, y=700.0: We conduct experiments including (1) image-to-image tran"
+    },
+    {
+      "page": 17,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 17: paragraph still in English (5 words, 0 CJK chars) at x=108.0, y=351.6: where sθ is related to xθ by"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (17 words, 0 CJK chars) at x=108.0, y=549.3: which can facilitate subsequent calculation. We first co"
+    },
+    {
+      "page": 19,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 19: block set at 8.07pt but the original at this position is 9.96pt (ratio 0.81 vs page median 0.92) at x=108.8, y=535.3: q^{(}^{ρ}^{)}(x_{t}_{n}_{+1}|x_{0},x_{t}_{n},x_{"
+    },
+    {
+      "page": 19,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 19: displayed equation at y=579 shifted horizontally by 14pt vs original"
+    }
+  ]
+}

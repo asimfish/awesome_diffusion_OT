@@ -1,0 +1,104 @@
+{
+ "report_id": "2310.02611",
+ "arxiv_id": "2310.02611",
+ "title": "Analyzing and Improving Optimal-Transport-based Adversarial Networks",
+ "tldr_zh": "统一 OT-based GAN 框架；α 调度 UOTM-SD 缓解 τ 敏感，CIFAR-10 FID 2.51",
+ "tldr_en": "Unifies OT-based GANs; α-scheduled UOTM-SD reduces τ sensitivity, FID 2.51 on CIFAR-10",
+ "tags": [
+  "neural OT",
+  "unbalanced optimal transport",
+  "GAN",
+  "UOTM",
+  "generative modeling",
+  "semi-dual"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "2.51",
+   "metric": "FID",
+   "dataset": "CIFAR-10",
+   "model": "UOTM-SD (Linear)",
+   "source": "Table 3"
+  },
+  {
+   "number": "5.99",
+   "metric": "FID",
+   "dataset": "CelebA-HQ-256",
+   "model": "UOTM-SD",
+   "source": "Table 4"
+  },
+  {
+   "number": "2.97",
+   "metric": "FID",
+   "dataset": "CIFAR-10",
+   "model": "UOTM",
+   "source": "Table 3"
+  },
+  {
+   "number": "4.15",
+   "metric": "FID",
+   "dataset": "CIFAR-10",
+   "model": "OTM†",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.62",
+   "metric": "Recall",
+   "dataset": "CIFAR-10",
+   "model": "UOTM (SP)",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.02",
+   "metric": "Recall",
+   "dataset": "CIFAR-10",
+   "model": "WGAN",
+   "source": "Table 2"
+  },
+  {
+   "number": "218.02",
+   "metric": "max FID under τ sweep",
+   "dataset": "CIFAR-10",
+   "model": "UOTM",
+   "source": "Sec. 4 (τ Robustness)"
+  },
+  {
+   "number": "25",
+   "metric": "τ_max/τ_min ratio",
+   "dataset": "CIFAR-10",
+   "model": "τ-robustness setting",
+   "source": "Sec. 4 (τ Robustness)"
+  },
+  {
+   "number": "1/5 to 5",
+   "metric": "(α_min, α_max)",
+   "dataset": "CIFAR-10",
+   "model": "UOTM-SD best setting",
+   "source": "Sec. 4 (Generation Results)"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2305.10069",
+   "type": "被继承/改进"
+  },
+  {
+   "report_id": "2202.03367",
+   "type": "被统一分析"
+  },
+  {
+   "report_id": "2403.02553",
+   "type": "后续互补"
+  },
+  {
+   "report_id": "1701.07875",
+   "type": "被统一分析"
+  },
+  {
+   "report_id": "1704.00028",
+   "type": "被统一分析"
+  }
+ ],
+ "read_full_text": true
+}

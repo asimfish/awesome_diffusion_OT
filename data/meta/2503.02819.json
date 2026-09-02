@@ -1,0 +1,82 @@
+{
+ "report_id": "2503.02819",
+ "arxiv_id": "2503.02819",
+ "title": "Feynman-Kac Correctors in Diffusion: Annealing, Guidance, and Product of Experts",
+ "tldr_zh": "用 Feynman-Kac 权重+SMC 重采样修正扩散推理，精确采样退火/几何平均/乘积分布",
+ "tldr_en": "Feynman-Kac weights plus SMC resampling correct diffusion inference to exactly sample annealed, geometric-averaged, and product distributions",
+ "tags": [
+  "diffusion models",
+  "classifier-free guidance",
+  "Feynman-Kac",
+  "sequential Monte Carlo",
+  "product of experts",
+  "annealed sampling",
+  "compositional generation"
+ ],
+ "code_url": "https://github.com/martaskrt/fkc-diffusion",
+ "key_numbers": [
+  {
+   "number": "28.74 → 28.97 (CLIP, γ=10, N=32)",
+   "source": "Table 2"
+  },
+  {
+   "number": "−0.25 → 0.03 (ImageReward, γ=10, N=32)",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.189 → 0.048 (Distance-W2, LJ-13, T_S=0.8, Target Score + FKC)",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.268 (DEM direct) vs 0.066 (Tempered Noise + FKC, T_S=1.5, Distance-W2)",
+   "source": "Table 3"
+  },
+  {
+   "number": "−7.421 → −7.720 (max(P1,P2), β=2.0, PoE + FKC)",
+   "source": "Table 4"
+  },
+  {
+   "number": "0.383 → 0.450 (Better than ref., β=2.0, PoE + FKC)",
+   "source": "Table 4"
+  },
+  {
+   "number": "0.961 → 0.862 (Val. & Uniq., β=2.0, PoE + FKC)",
+   "source": "Table 4"
+  },
+  {
+   "number": "K=2 已有收益，K=8 最佳",
+   "source": "Sec. 5.1, p.7 (Table A3)"
+  },
+  {
+   "number": "参考分子平均 docking score −7.915 ± 2.841",
+   "source": "Table 4 注"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2408.09000",
+   "type": "直接对话/修正对象"
+  },
+  {
+   "report_id": "2302.02453",
+   "type": "对比基线（energy-based 组合生成）"
+  },
+  {
+   "report_id": "2410.02711",
+   "type": "方法谱系前身（Feynman-Kac SMC）"
+  },
+  {
+   "report_id": "2402.06320",
+   "type": "方法谱系前身（energy-based SMC）"
+  },
+  {
+   "report_id": "2406.02632",
+   "type": "基础模型（DEM，LJ-13 实验）"
+  },
+  {
+   "report_id": "2405.07314",
+   "type": "互补理论（CFG 偏移分析）"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,50 @@
+{
+ "report_id": "2406.04312",
+ "arxiv_id": "2406.04312",
+ "title": "ReNO: Enhancing One-step Text-to-Image Models through Reward-based Noise Optimization",
+ "tldr_zh": "一步模型上以四个偏好 reward 之和对初始噪声做 50 步梯度上升（20–50 s），SD-Turbo GenEval 0.49→0.62",
+ "tldr_en": "Gradient-ascent on initial noise of one-step T2I models with a sum of four preference rewards; 50 steps, 20-50 s, GenEval 0.49 to 0.62 for SD-Turbo.",
+ "tags": [
+  "noise-optimization",
+  "initial-noise",
+  "reward-model",
+  "one-step-model",
+  "test-time-optimization",
+  "text-to-image",
+  "reward-hacking"
+ ],
+ "code_url": "https://github.com/ExplainableML/ReNO",
+ "key_numbers": [
+  "GenEval mean: SD-Turbo 0.49 -> 0.62, SDXL-Turbo 0.54 -> 0.65, HyperSDXL 0.56 -> 0.65, FLUX-schnell 0.64 -> 0.72 (Table 3)",
+  "T2I-CompBench SD-Turbo Color/Shape/Texture 0.55/0.44/0.57 -> 0.78/0.62/0.75 (Table 2)",
+  "User study: SD-Turbo+ReNO beats SDXL 50-step 62.9%; HyperSDXL+ReNO beats SD3 54.6% (Fig. 4)",
+  "Cost: SD-Turbo 0.4 s/iter, 20 s total, 15 GB; HyperSDXL 1.0 s/iter, 50 s, 39 GB (Table 6)",
+  "vs DOODL: 100x faster, 75% less VRAM, attribute-binding gains +21.7/+28.9/+21.0 (Table 5)",
+  "Diversity (author-defined pairwise LPIPS/DINO similarity, lower = more diverse): SD-Turbo 0.382/0.770 -> +ReNO 0.246/0.712 (Table 4)",
+  "Prompt-independent LAION aesthetic reward raises the score without visual gain, i.e. reward hacking (Appendix E.5.3)",
+  "Hyperparameters: lambda_reg = 0.01 chi_d norm regularizer, lr 5, momentum 0.9, grad clip 0.1, 50 steps (Alg. 1, Appendix E.2)"
+ ],
+ "relations": [
+  {
+   "report_id": "2404.04650",
+   "type": "extends"
+  },
+  {
+   "report_id": "2411.09502",
+   "type": "competes"
+  },
+  {
+   "report_id": "2412.03895",
+   "type": "competes"
+  },
+  {
+   "report_id": "2412.05101",
+   "type": "competes"
+  },
+  {
+   "report_id": "Scaling_Inference_Time_Compute_for_Diffusion_Model",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

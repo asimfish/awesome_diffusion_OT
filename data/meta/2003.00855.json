@@ -1,0 +1,52 @@
+{
+ "report_id": "2003.00855",
+ "arxiv_id": "2003.00855",
+ "title": "Optimal transport: discretization and algorithms",
+ "tldr_zh": "以 Kantorovich 对偶为主线自包含分析 auction、Sinkhorn、半离散 Oliker–Prussner/阻尼 Newton 的讲义，半离散 OT 最佳入口",
+ "tldr_en": "Handbook chapter giving self-contained convergence analyses of auction, Sinkhorn-Knopp and semi-discrete (Laguerre-cell, damped Newton) algorithms via Kantorovich duality.",
+ "tags": [
+  "lecture-notes",
+  "ot-foundations",
+  "semi-discrete-ot",
+  "laguerre-cells",
+  "kantorovich-duality",
+  "sinkhorn",
+  "auction-algorithm",
+  "numerical-analysis",
+  "reading-guide"
+ ],
+ "code_url": "https://github.com/sd-ot/pysdot",
+ "key_numbers": [
+  "Thm 22: auction from psi=0 takes at most N(C/eps+1) steps, N^2(C/eps+1) operations; Thm 24: eps-scaling gives O(N^3 log(C/eta)) (Sec. 3.2)",
+  "Thm 35: Sinkhorn map is a contraction with constant 1-exp(-2||c||_{o,inf}/eta); Remark 15: k >~ exp(2C/eta) log(1/eps) iterations (Sec. 3.3)",
+  "Cor. 16: grad K(psi) = (mu(Lag_y(psi)) - nu_y)_y when cell boundaries are null (Sec. 2.3)",
+  "Prop. 37: for any prices psi, T_psi is optimal between rho and T_psi#rho (Sec. 4.1)"
+ ],
+ "relations": [
+  {
+   "report_id": "1603.05579",
+   "type": "extends"
+  },
+  {
+   "report_id": "1803.00567",
+   "type": "competes"
+  },
+  {
+   "report_id": "2505.06589",
+   "type": "uses"
+  },
+  {
+   "report_id": "Polar_factorization_and_monotone_rearrangement_of",
+   "type": "uses"
+  },
+  {
+   "report_id": "1306.0895",
+   "type": "uses"
+  },
+  {
+   "report_id": "A_Combinatorial_Algorithm_for_Semi_Discrete_Optima",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

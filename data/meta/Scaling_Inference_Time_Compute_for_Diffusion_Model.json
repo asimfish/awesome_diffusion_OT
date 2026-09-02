@@ -1,0 +1,36 @@
+{
+ "report_id": "Scaling_Inference_Time_Compute_for_Diffusion_Model",
+ "arxiv_id": "",
+ "title": "Scaling Inference Time Compute for Diffusion Models (Inference-Time Scaling beyond Denoising Steps)",
+ "tldr_zh": "把找好噪声形式化为 verifier × 搜索算法（random / zero-order / search-over-paths）设计空间，噪声搜索成为 test-time scaling 第二轴",
+ "tldr_en": "Frames noise search as a verifier x search-algorithm design space (random, zero-order, search over paths), a second axis of diffusion inference-time scaling.",
+ "tags": [
+  "inference-time-scaling",
+  "noise-search",
+  "verifier",
+  "initial-noise",
+  "test-time-compute",
+  "brief-card"
+ ],
+ "code_url": "https://inference-scale-diffusion.github.io/",
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "2412.05101",
+   "type": "competes"
+  },
+  {
+   "report_id": "2406.04312",
+   "type": "competes"
+  },
+  {
+   "report_id": "2411.09502",
+   "type": "competes"
+  },
+  {
+   "report_id": "2412.03895",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,80 @@
+{
+ "report_id": "2503.03025",
+ "arxiv_id": "2503.03025",
+ "title": "Hierarchical Refinement: Optimal Transport to Infinity and Beyond",
+ "tldr_zh": "低秩 OT 因子与 Monge map 共聚类，递归细化出全秩双射，百万点规模跑通",
+ "tldr_en": "Low-rank OT factors co-cluster Monge pairs; recursive refinement yields full-rank bijection at million-point scale",
+ "tags": [
+  "optimal transport",
+  "low-rank OT",
+  "Monge map",
+  "hierarchical refinement",
+  "scalable OT solver",
+  "assignment problem"
+ ],
+ "code_url": "https://github.com/raphael-group/HiRef",
+ "key_numbers": [
+  {
+   "number": "1024",
+   "description": "HiRef 在 1024 对样本上输出恰好 1024 个非零元（双射）；Sinkhorn 输出 624733-678720 个，ProgOT 输出 271087-337258 个",
+   "source": "Sec. 4.1, Table S3"
+  },
+  {
+   "number": "1048576",
+   "description": "HiRef 在 Half-Moon & S-Curve 上对齐 2^20=1048576 点（共 2097152 点），Sinkhorn/ProgOT 只能跑到 16384 点",
+   "source": "Sec. 4.1, Fig. 2"
+  },
+  {
+   "number": "14.35 / 13.78 / 14.29 / 12.79",
+   "description": "HiRef 在 MOSTA E12-13.5 至 E15-16.5 四个时间点的 primal OT cost，均低于 MB 128/1024 和 FRLC",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.8098",
+   "description": "HiRef 在 MERFISH 脑切片上对 Slc17a7 基因表达迁移的 cosine similarity；FRLC 为 0.2373，LOT 为 0.3390",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "18.974",
+   "description": "HiRef 在 ImageNet 128.1 万图像 ResNet50 嵌入对齐上的 primal OT cost；FRLC(r=40) 为 24.119，MB 1024 为 19.58",
+   "source": "Table 2"
+  },
+  {
+   "number": "Θ(ndr log_r n)",
+   "description": "HiRef 时间复杂度，n 为点数，d 为 cost 分解秩，r 为每层秩；空间 Θ(n)",
+   "source": "Sec. 3.4"
+  },
+  {
+   "number": "121767",
+   "description": "MOSTA E16.5 时间点细胞数，Sinkhorn/ProgOT 在 E10.5(n=18408) 之后无法运行，HiRef 可扩展到 >10^5",
+   "source": "Sec. 4.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2503.03025",
+   "type": "extends"
+  },
+  {
+   "report_id": "2402.09937",
+   "type": "uses"
+  },
+  {
+   "report_id": "2102.08834",
+   "type": "extends"
+  },
+  {
+   "report_id": "1706.07691",
+   "type": "competes"
+  },
+  {
+   "report_id": "2406.03341",
+   "type": "competes"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "enables"
+  }
+ ],
+ "read_full_text": true
+}

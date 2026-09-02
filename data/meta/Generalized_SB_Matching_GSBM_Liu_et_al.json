@@ -1,0 +1,35 @@
+{
+ "report_id": "Generalized_SB_Matching_GSBM_Liu_et_al",
+ "arxiv_id": null,
+ "title": "Generalized SB Matching (GSBM), Liu et al.",
+ "tldr_zh": "把任务 state cost 纳入 SB 匹配，用条件随机最优控制求解广义 SB，训练保持可行 transport",
+ "tldr_en": "Incorporates task-specific state cost into SB matching via conditional stochastic optimal control, maintaining feasible transport during training",
+ "tags": [
+  "Schrodinger Bridge",
+  "stochastic optimal control",
+  "state cost",
+  "matching",
+  "ICLR 2024"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "DSB_IPF_Score_NeurIPS_2021",
+   "type": "继承"
+  },
+  {
+   "report_id": "SB_FBSDE_Chen_et_al_ICLR_2022",
+   "type": "继承"
+  },
+  {
+   "report_id": "LightSB_ICLR_2024",
+   "type": "同期"
+  },
+  {
+   "report_id": "VSDM_ICML_2024",
+   "type": "同期"
+  }
+ ],
+ "read_full_text": false
+}

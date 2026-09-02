@@ -1,0 +1,87 @@
+{
+ "report_id": "2405.20313",
+ "arxiv_id": "2405.20313",
+ "title": "Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation",
+ "tldr_zh": "FoldFlow-2 用 pLM 序列条件化 SE(3)-FM，无条件生成全面超 RFDiffusion，并解锁折叠与 scaffolding",
+ "tldr_en": "FoldFlow-2 conditions SE(3)-flow matching on pLM-encoded sequences, outperforming RFDiffusion on unconditional generation and enabling folding/scaffolding",
+ "tags": [
+  "SE(3) flow matching",
+  "protein backbone generation",
+  "protein language model",
+  "minibatch Riemannian OT",
+  "motif scaffolding",
+  "ReFT"
+ ],
+ "code_url": "https://github.com/DreamFold/FoldFlow",
+ "key_numbers": [
+  {
+   "number": "0.976 ± 0.010",
+   "context": "FoldFlow-2 designability (scRMSD<2Å fraction), vs RFDiffusion 0.969 ± 0.023",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.368 ± 0.031",
+   "context": "FoldFlow-2 novelty (TM<0.3 fraction), vs RFDiffusion 0.116 ± 0.020, absolute +25.2pp",
+   "source": "Table 3, Sec 4.1"
+  },
+  {
+   "number": "0.205",
+   "context": "FoldFlow-2 pairwise TM-score diversity, vs RFDiffusion 0.256, relative +19.9%",
+   "source": "Table 3, Sec 4.1"
+  },
+  {
+   "number": "0.348",
+   "context": "FoldFlow-2 MaxCluster diversity, vs RFDiffusion 0.172, relative +102.3%",
+   "source": "Table 3, Sec 4.1"
+  },
+  {
+   "number": "3.237 ± 4.145",
+   "context": "FoldFlow-2 folding RMSD on 268 PDB test proteins, vs ESMFold 2.322 ± 4.270, MultiFlow 14.995 ± 3.977",
+   "source": "Table 4"
+  },
+  {
+   "number": "24/24",
+   "context": "Motif scaffolding solved on Watson et al. benchmark by FoldFlow-2 (+FT) and RFDiffusion",
+   "source": "Table 5"
+  },
+  {
+   "number": "9/25",
+   "context": "VHH nanobody CDR scaffolds solved by FoldFlow-2 (+FT), vs RFDiffusion 5/25",
+   "source": "Table 5"
+  },
+  {
+   "number": "160K",
+   "context": "Final training dataset size (PDB + filtered SwissProt AlphaFold2 structures), ~8x prior works",
+   "source": "Sec 3.2"
+  },
+  {
+   "number": "0.297 ± 0.004",
+   "context": "FoldFlow-2 zero-shot pairwise RMSD Pearson r on ATLAS, vs ESMFlow-MD 0.293 ± 0.005",
+   "source": "Table 6"
+  },
+  {
+   "number": "4.5x / 33x / 6x",
+   "context": "FoldFlow-2 vs ESMFlow-MD: less GPU hours / fewer trainable params / faster inference",
+   "source": "Sec 4.5, Table 13"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2310.02349",
+   "type": "继承"
+  },
+  {
+   "report_id": "2309.15817",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2402.04997",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2405.20313",
+   "type": "self"
+  }
+ ],
+ "read_full_text": true
+}

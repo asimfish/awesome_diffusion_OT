@@ -1,0 +1,39 @@
+{
+ "report_id": "Overcoming_Spurious_Solutions_in_Semi_Dual_Neural",
+ "arxiv_id": null,
+ "title": "Overcoming Spurious Solutions in Semi-Dual Neural Optimal Transport",
+ "tldr_zh": "给出 semi-dual max-min 恢复真 OT map 的充分条件；源平滑化+退火可学随机 plan",
+ "tldr_en": "Sufficient conditions for semi-dual max-min to recover true OT map; smoothing plus annealing learns stochastic plans",
+ "tags": [
+  "neural OT",
+  "semi-dual max-min",
+  "spurious solutions",
+  "stochastic map",
+  "unpaired translation"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "OTM_ICLR2022",
+   "type": "继承"
+  },
+  {
+   "report_id": "NOT_ICLR2023",
+   "type": "继承"
+  },
+  {
+   "report_id": "Kernel_NOT_ICLR2023",
+   "type": "回应"
+  },
+  {
+   "report_id": "DIOTM_ICLR2025",
+   "type": "并行"
+  },
+  {
+   "report_id": "UOTM_SD_ICLR2024",
+   "type": "并行"
+  }
+ ],
+ "read_full_text": false
+}

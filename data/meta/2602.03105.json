@@ -1,0 +1,77 @@
+{
+ "report_id": "2602.03105",
+ "arxiv_id": "2602.03105",
+ "title": "Gromov Wasserstein Optimal Transport for Semantic Correspondences",
+ "tldr_zh": "用 GW 空间平滑先验的 OT 匹配替代最近邻，DINOv2 单模型即可竞争 SD ensemble，快 5–10 倍",
+ "tldr_en": "GW spatial smoothness prior in OT matching replaces SD features, DINOv2-only competitive at 5-10x speedup",
+ "tags": [
+  "semantic correspondence",
+  "Gromov Wasserstein",
+  "optimal transport",
+  "DINOv2",
+  "spatial smoothness",
+  "unbalanced OT"
+ ],
+ "code_url": "https://github.com/fsnelgar/semantic_matching_gwot",
+ "key_numbers": [
+  {
+   "number": "92.3",
+   "description": "TSS Avg. PCK，超过所有对比方法含监督方法",
+   "source": "Tab. 1"
+  },
+  {
+   "number": "62.3",
+   "description": "SPair-71k per-keypoint PCK α=0.1，比 DINOv2 基线高 6.6 个百分点",
+   "source": "Tab. 2"
+  },
+  {
+   "number": "217 ms",
+   "description": "总耗时（特征提取 97 + 匹配 120），比 DIFT 快约 10.6 倍",
+   "source": "Tab. 3"
+  },
+  {
+   "number": "87M",
+   "description": "参数量，仅为 SD 方法（1.2–1.3B）的约 7%",
+   "source": "Tab. 3"
+  },
+  {
+   "number": "+6.6",
+   "description": "GW+UB+Sym 三项消融合计 PCK 提升（55.7→62.3）",
+   "source": "Tab. 4"
+  },
+  {
+   "number": "+0.3",
+   "description": "单独加 OT（不含 GW/UB/Sym）的 PCK 提升",
+   "source": "Tab. 4"
+  },
+  {
+   "number": "50",
+   "description": "投影梯度下降求解步数",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "20+",
+   "description": "SD 特征在 Plant 和 TV 类别上超过 DINOv2 的百分点数",
+   "source": "Sec. 5.4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "SCOT_CVPR2020",
+   "type": "继承"
+  },
+  {
+   "report_id": "ToTF_NeurIPS2023",
+   "type": "竞争"
+  },
+  {
+   "report_id": "TLfR_CVPR2024",
+   "type": "继承（对称性目标来源）"
+  },
+  {
+   "report_id": "ShapeOfYou_CVPR2026",
+   "type": "被后续工作发展"
+  }
+ ],
+ "read_full_text": true
+}

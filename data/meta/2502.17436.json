@@ -1,0 +1,59 @@
+{
+ "report_id": "2502.17436",
+ "arxiv_id": "2502.17436",
+ "title": "Towards Hierarchical Rectified Flow",
+ "tldr_zh": "速度空间再做一层 RF（学加速度）建模多模态速度分布，采样路径可相交更直；CIFAR-10 5 NFE FID 30.9 vs RF 36.2，位置层仅 1–2 步",
+ "tldr_en": "Hierarchical rectified flow learns the full multimodal velocity distribution via a second RF in velocity space; intersecting, straighter paths give lower FID at equal total NFE on MNIST/CIFAR-10.",
+ "tags": [
+  "rectified-flow",
+  "hierarchical",
+  "velocity-distribution",
+  "random-differential-equation",
+  "few-step-generation",
+  "theory"
+ ],
+ "code_url": "https://riccizz.github.io/HRF/",
+ "key_numbers": [
+  "CIFAR-10 FID at total NFE 5/10/50/500: RF 36.21/14.11/5.51/3.89 vs HRF2 30.88/12.07/4.85/3.71 (Table 7)",
+  "MNIST FID at 50 NFE: RF 5.61 vs HRF2 2.66 with ~1.07M params each (Table 7)",
+  "ImageNet-32 FID at 5 NFE: RF 69.23 vs HRF2 48.93; at 20/50 NFE HRF2 slightly worse (Table 7)",
+  "1D 5-Gaussian target 1-Wasserstein: RF 0.042, HRF2 0.022, HRF3 0.014 (Fig. 4a)",
+  "HRF2 CIFAR-10 model 44.81M params vs RF 35.75M; inference ~33% slower at equal NFE (Tables 5-6)",
+  "Velocity distribution closed form pi_1(v;x_t,t) = rho_0(x_t - t v) rho_1(x_t + (1-t) v) / rho_t(x_t) (Thm 1)"
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "extends"
+  },
+  {
+   "report_id": "2411.00322",
+   "type": "competes"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "uses"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "uses"
+  },
+  {
+   "report_id": "2304.14772",
+   "type": "competes"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "competes"
+  },
+  {
+   "report_id": "2410.14949",
+   "type": "competes"
+  },
+  {
+   "report_id": "2505.19712",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

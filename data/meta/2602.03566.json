@@ -1,0 +1,84 @@
+{
+ "report_id": "2602.03566",
+ "arxiv_id": "2602.03566",
+ "title": "Riemannian Neural Optimal Transport",
+ "tldr_zh": "证明离散化流形 OT 必遭维数灾难，提出 c-凹神经势 RNOT 以次指数复杂度逼近连续 OT map",
+ "tldr_en": "Proves discrete manifold OT suffers CoD; introduces c-concave neural potential RNOT with sub-exponential complexity",
+ "tags": [
+  "Riemannian OT",
+  "neural optimal transport",
+  "c-concavity",
+  "curse of dimensionality",
+  "manifold generative modeling"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "m^{-1/p}",
+   "context": "离散输出映射逼近 OT map 的 RMSE 下界，p 为流形维数",
+   "source": "Theorem 3.1, Eq. (6)"
+  },
+  {
+   "number": "W_ε = O(ε^{-4p/(3(kp+1))})",
+   "context": "RNOT 网络参数数上界，k 为预势光滑度参数",
+   "source": "Theorem 5.1"
+  },
+  {
+   "number": "L_ε = O(ε^{-2p/(3(kp+1))})",
+   "context": "RNOT 网络深度上界",
+   "source": "Theorem 5.1"
+  },
+  {
+   "number": "d(T_ε(x), T*(x)) ≤ 2√(ε/C(x))",
+   "context": "势的 ε 逼近诱导 map 的逐点误差界",
+   "source": "Theorem 5.3"
+  },
+  {
+   "number": "KL 0.0037 vs 0.03",
+   "context": "S² 上 RCPM vs RNOT-FPS 的前向 KL",
+   "source": "Table 1"
+  },
+  {
+   "number": "KL 0.13 vs 0.93",
+   "context": "T² 上 RNOT-FPS vs RCPM 的前向 KL",
+   "source": "Table 2"
+  },
+  {
+   "number": "986 ± 2 s vs 37.3 ± 0.6 s",
+   "context": "S² 上 RNOT-FPS vs RCPM 训练时间",
+   "source": "Table 1"
+  },
+  {
+   "number": "p ∈ {2,...,10}",
+   "context": "维数扫描范围（正文），附录扩展到 40",
+   "source": "Fig. 3, Appendix Fig. 5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2102.01687",
+   "type": "被本文判定维数灾难的直接基线"
+  },
+  {
+   "report_id": "1908.10962",
+   "type": "欧氏 neural OT 源头，本文的流形推广对象"
+  },
+  {
+   "report_id": "2201.12220",
+   "type": "欧氏 neural OT 基线"
+  },
+  {
+   "report_id": "2101.05390",
+   "type": "Theorem 5.1 的理论来源，本文加强其逼近保证"
+  },
+  {
+   "report_id": "2006.10605",
+   "type": "实验基线 RCNF"
+  },
+  {
+   "report_id": "2108.10892",
+   "type": "实验基线 Moser Flow"
+  }
+ ],
+ "read_full_text": true
+}

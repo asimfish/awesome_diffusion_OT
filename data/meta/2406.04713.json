@@ -1,0 +1,92 @@
+{
+ "report_id": "2406.04713",
+ "arxiv_id": "2406.04713",
+ "title": "FlowMM: Generating Materials with Riemannian Flow Matching",
+ "tldr_zh": "晶体环面+晶格+种类联合流形上做黎曼流匹配，CSP匹配率61.39%，找稳定材料积分步数省约3倍",
+ "tldr_en": "Riemannian FM on torus+lattice+species manifold for crystals; 61.39% CSP match rate, ~3x fewer integration steps for stable materials",
+ "tags": [
+  "Riemannian Flow Matching",
+  "crystal generation",
+  "periodic geometry",
+  "CSP",
+  "DNG",
+  "materials science"
+ ],
+ "code_url": "https://github.com/facebookresearch/flowmm",
+ "key_numbers": [
+  {
+   "number": "61.39%",
+   "description": "MP-20 CSP Match Rate",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.0566",
+   "description": "MP-20 CSP RMSE",
+   "source": "Table 1"
+  },
+  {
+   "number": "17.54%",
+   "description": "MPTS-52 CSP Match Rate",
+   "source": "Table 1"
+  },
+  {
+   "number": "~50 steps",
+   "description": "FlowMM 达到最大 Match Rate 所需积分步数",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "~450 steps",
+   "description": "FlowMM 比 DiffCSP 提前达到最大 Match Rate 的步数差",
+   "source": "Figure 2 caption"
+  },
+  {
+   "number": "0.58 steps/stable",
+   "description": "FlowMM 250步 DNG Cost",
+   "source": "Table 2"
+  },
+  {
+   "number": "1.98 steps/stable",
+   "description": "DiffCSP DNG Cost",
+   "source": "Table 2"
+  },
+  {
+   "number": "1.05 steps/S.U.N.",
+   "description": "FlowMM 250步 S.U.N. Cost",
+   "source": "Table 2"
+  },
+  {
+   "number": "2.99 steps/S.U.N.",
+   "description": "DiffCSP S.U.N. Cost",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.079",
+   "description": "FlowMM 500步 wdist(Nel)",
+   "source": "Table 2"
+  },
+  {
+   "number": "7 dimensions/atom",
+   "description": "二进制原子种类表示维度",
+   "source": "Sec. 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2402.03647",
+   "type": "method_base"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "method_base"
+  },
+  {
+   "report_id": "2309.04475",
+   "type": "direct_baseline"
+  },
+  {
+   "report_id": "2110.06197",
+   "type": "baseline"
+  }
+ ],
+ "read_full_text": true
+}

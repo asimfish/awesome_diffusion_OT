@@ -1,0 +1,90 @@
+{
+ "report_id": "2406.18009",
+ "arxiv_id": "2406.18009",
+ "title": "E2 TTS: Embarrassingly Easy Fully Non-Autoregressive Zero-Shot TTS",
+ "tldr_zh": "字符序列补 filler token 对齐 mel 长度后直接 FM infilling，砍掉时长模型/G2P/单调对齐，仍达人类级自然度",
+ "tldr_en": "Character sequence with filler tokens aligned to mel length, trained via FM infilling; no duration model, G2P, or monotonic alignment, yet human-level naturalness",
+ "tags": [
+  "zero-shot TTS",
+  "flow matching",
+  "non-autoregressive",
+  "speech infilling",
+  "filler token alignment"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "335M",
+   "description": "模型总参数量",
+   "source": "Sec. 3.2"
+  },
+  {
+   "number": "50,000 hours",
+   "description": "Libriheavy 训练数据规模",
+   "source": "Sec. 3.1"
+  },
+  {
+   "number": "200,000 hours",
+   "description": "专有扩展训练数据规模",
+   "source": "Sec. 3.1"
+  },
+  {
+   "number": "1.9%",
+   "description": "P2 模型 WER，优于 Ground Truth 的 2.0%",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.708",
+   "description": "P2 模型 SIM-o，优于 Ground Truth 的 0.695",
+   "source": "Table 1"
+  },
+  {
+   "number": "-0.05",
+   "description": "P2 模型 CMOS，作者判定为与 ground truth 不可区分",
+   "source": "Table 2"
+  },
+  {
+   "number": "32",
+   "description": "推理 NFE（midpoint ODE solver）",
+   "source": "Sec. 3.4"
+  },
+  {
+   "number": "70%–100%",
+   "description": "训练时掩码长度占 mel 长度的比例范围",
+   "source": "Sec. 3.2"
+  },
+  {
+   "number": "15%",
+   "description": "X2 训练时词替换为音素序列的概率",
+   "source": "Sec. 2.5.2"
+  },
+  {
+   "number": "2.1",
+   "description": "X2 在 50% 词替换为音素序列时的 WER",
+   "source": "Table 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2306.15687",
+   "type": "继承并简化"
+  },
+  {
+   "report_id": "2309.03199",
+   "type": "对照（对齐策略不同）"
+  },
+  {
+   "report_id": "2403.03100",
+   "type": "基线对比"
+  },
+  {
+   "report_id": "2410.06885",
+   "type": "被其改进（解决收敛慢）"
+  },
+  {
+   "report_id": "2406.02430",
+   "type": "同期相似工作"
+  }
+ ],
+ "read_full_text": true
+}

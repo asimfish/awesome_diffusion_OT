@@ -1,0 +1,38 @@
+{
+ "report_id": "Stochastic_Interpolants_for_Revealing_Stylistic_Fl",
+ "arxiv_id": null,
+ "title": "Stochastic Interpolants for Revealing Stylistic Flows across the History of Art",
+ "tldr_zh": "用 stochastic interpolants+DDIB 无配对对齐跨世纪艺术分布，发布 65 万艺术品数据集",
+ "tldr_en": "Models art style evolution as OT distribution matching via stochastic interpolants+DDIB; releases 650k artwork dataset",
+ "tags": [
+  "stochastic interpolants",
+  "DDIB",
+  "optimal transport",
+  "style evolution",
+  "art dataset",
+  "unpaired alignment"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "650,000",
+   "description": "发布艺术品数据集规模",
+   "source": "abstract"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "DDIB_latent_OT_alignment",
+   "type": "继承"
+  },
+  {
+   "report_id": "ModFlows_AAAI2025",
+   "type": "同期同路线"
+  },
+  {
+   "report_id": "SW_Guidance_NeurIPS2025",
+   "type": "同期扩散机制层"
+  }
+ ],
+ "read_full_text": false
+}

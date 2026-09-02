@@ -1,0 +1,65 @@
+{
+ "report_id": "1909.12116",
+ "arxiv_id": "1909.12116",
+ "title": "Optimal Transport driven CycleGAN for Unsupervised Learning in Inverse Problems",
+ "tldr_zh": "从 Kantorovich 对偶推导 OT-cycleGAN，前向算子已知时砍掉一半生成器，在加速 MRI、SMLM、低剂量 CT 验证",
+ "tldr_en": "Derives OT-cycleGAN from Kantorovich duality; known forward operator halves the architecture; validated on accelerated MRI, SMLM, low-dose CT",
+ "tags": [
+  "optimal transport",
+  "cycleGAN",
+  "inverse problems",
+  "unsupervised learning",
+  "medical imaging",
+  "Kantorovich duality"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "28.17 dB PSNR / 0.6550 SSIM",
+   "source": "Table 2, accelerated MRI, proposed OT-cycleGAN"
+  },
+  {
+   "number": "25.01 dB PSNR / 0.4689 SSIM",
+   "source": "Table 2, conventional CycleGAN"
+  },
+  {
+   "number": "27.96 dB PSNR / 0.6419 SSIM",
+   "source": "Table 2, supervised learning"
+  },
+  {
+   "number": "26.81 dB PSNR / 0.6419 SSIM",
+   "source": "Table 2, input (×4 undersampled)"
+  },
+  {
+   "number": "|K - D| ≤ 0.5·ℓ_cycle",
+   "source": "Eq. 3.8, Proposition 3.1"
+  },
+  {
+   "number": "3500 slices, 3000 train / 500 test, acceleration factor 4, ACS 4%",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "discriminator updated 5 times per generator update, 100 epochs, lr=0.0001",
+   "source": "Sec. 4.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1701.07875",
+   "type": "继承"
+  },
+  {
+   "report_id": "1704.00028",
+   "type": "继承"
+  },
+  {
+   "report_id": "1703.10593",
+   "type": "竞争/被取代"
+  },
+  {
+   "report_id": "1812.08873",
+   "type": "继承"
+  }
+ ],
+ "read_full_text": false
+}

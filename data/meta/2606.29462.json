@@ -1,0 +1,78 @@
+{
+ "report_id": "2606.29462",
+ "arxiv_id": "2606.29462",
+ "title": "MIRROR: Aligning Semantic Relations from Language to Image via Gromov–Wasserstein",
+ "tldr_zh": "把 GW 逆问题做成 MLLM 训练正则，闭式解给出理想视觉几何，关系推理提升且通用 VQA 不降",
+ "tldr_en": "Semi-inverse GW regularizer aligns visual geometry to language relational structure in MLLMs, improving relational reasoning without hurting general VQA",
+ "tags": [
+  "Gromov-Wasserstein",
+  "semi-inverse GW",
+  "MLLM alignment",
+  "relational reasoning",
+  "cross-modal geometry",
+  "training regularization"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "O(n_t^2 n_v + n_v^2 n_t)",
+   "context": "SI-GW 损失闭式解的计算复杂度，对比直接评估的 O(n_t^2 n_v^2)",
+   "source": "Sec. 3.1, Step 4"
+  },
+  {
+   "number": "+0.77 / +0.34 / +0.82 / +0.62",
+   "context": "GQA 总体增益（LLaVA-1.5-7B/13B, LLaVA-NeXT-7B/13B）",
+   "source": "Tab. 1"
+  },
+  {
+   "number": "+3.16",
+   "context": "GQA Global 类最大增益（LLaVA-1.5-7B）",
+   "source": "Tab. 1"
+  },
+  {
+   "number": "+7.9",
+   "context": "BLINK 语义对应任务最大增益（LLaVA-NeXT-13B）",
+   "source": "Tab. 2"
+  },
+  {
+   "number": "+1.8",
+   "context": "VQAv2 增益（LLaVA-1.5-7B）",
+   "source": "Tab. 3"
+  },
+  {
+   "number": "-7.3",
+   "context": "移除 head selection 后 BLINK 下降幅度",
+   "source": "Tab. 4"
+  },
+  {
+   "number": "λ=0.002",
+   "context": "SI-GW 损失权重，最佳值",
+   "source": "Sec. 4.1, Tab. 5"
+  },
+  {
+   "number": "k=8",
+   "context": "保留的最低熵 cross-attention 头数",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "Layer 1 / Layer 16 / final ViT",
+   "context": "A_t / C / A_v 的提取层",
+   "source": "Sec. 4.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2402.03209",
+   "type": "同属跨空间生成对齐线，GENOT 学耦合、MIRROR 固定耦合学几何"
+  },
+  {
+   "report_id": "2405.07987",
+   "type": "理论动机来源（Platonic Representation Hypothesis）"
+  },
+  {
+   "report_id": "2509.26625",
+   "type": "理论动机来源（LLM 从文本发展视觉推理先验）"
+  }
+ ],
+ "read_full_text": true
+}

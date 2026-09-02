@@ -1,0 +1,83 @@
+{
+ "report_id": "F5_TTS_A_Fairytaler_that_Fakes_Fluent_and_Faithful",
+ "arxiv_id": null,
+ "title": "F5-TTS: A Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching",
+ "tldr_zh": "ConvNeXt 精炼文本解决 E2 TTS 对齐鲁棒性，推理期 Sway Sampling 免重训重分配流步，RTF 0.15",
+ "tldr_en": "ConvNeXt text refinement fixes E2 TTS alignment robustness; inference-time Sway Sampling redistributes flow steps without retraining, RTF 0.15",
+ "tags": [
+  "TTS",
+  "flow matching",
+  "OT-CFM",
+  "DiT",
+  "ConvNeXt",
+  "Sway Sampling",
+  "zero-shot",
+  "non-autoregressive"
+ ],
+ "code_url": "https://SWivid.github.io/F5-TTS/",
+ "key_numbers": [
+  {
+   "number": "WER 2.42 / SIM-o 0.66 / RTF 0.31 (32 NFE, LibriSpeech-PC test-clean)",
+   "source": "Table 1"
+  },
+  {
+   "number": "WER 2.53 / RTF 0.15 (16 NFE, LibriSpeech-PC test-clean)",
+   "source": "Table 1"
+  },
+  {
+   "number": "WER 1.83 / SIM-o 0.67 / CMOS 0.31 / SMOS 3.89 (Seed-TTS test-en, 32 NFE)",
+   "source": "Table 2"
+  },
+  {
+   "number": "WER 1.56 / SIM-o 0.76 / CMOS 0.21 / SMOS 3.83 (Seed-TTS test-zh, 32 NFE)",
+   "source": "Table 2"
+  },
+  {
+   "number": "E2 TTS 小模型 WER 9.63 vs F5-TTS 4.17 (800K updates, 945h Mandarin)",
+   "source": "Sec.5.1, Fig.2"
+  },
+  {
+   "number": "E2 TTS 始终有 7% 测试样本失败 (WER>50%)",
+   "source": "Sec.5.1"
+  },
+  {
+   "number": "总参数量 335.8M (DiT 22 层 + ConvNeXt V2 4 层)",
+   "source": "Sec.4 Training"
+  },
+  {
+   "number": "训练数据约 95K 小时 (Emilia 过滤后英中数据)",
+   "source": "Sec.4 Datasets"
+  },
+  {
+   "number": "训练 1.2M updates, batch 307,200 frames (0.91h), 8×A100 80G, 超一周",
+   "source": "Sec.4 Training"
+  },
+  {
+   "number": "默认 CFG strength 2, Sway Sampling 系数 -1",
+   "source": "Sec.5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "E2_TTS_Embarrassingly_Easy",
+   "type": "继承并改进"
+  },
+  {
+   "report_id": "Voicebox_Text_Guided_Multilingual",
+   "type": "继承训练范式"
+  },
+  {
+   "report_id": "Matcha_TTS_Fast_TTS_CFM",
+   "type": "同路线竞争"
+  },
+  {
+   "report_id": "DiTTo_TTS_Diffusion_Transformer",
+   "type": "同路线竞争"
+  },
+  {
+   "report_id": "Seed_TTS_Family",
+   "type": "对比基线"
+  }
+ ],
+ "read_full_text": true
+}

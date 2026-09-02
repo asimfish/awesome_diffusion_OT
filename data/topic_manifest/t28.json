@@ -33,108 +33,138 @@
   },
   {
    "key": "t28__wasserstein_flow_matching_haviv_et_al",
-   "report_id": "Wasserstein_Flow_Matching_WFM_BW_FM_Haviv_et_al",
-   "title": "Wasserstein Flow Matching: Generative Modeling Over Families of Distributions",
-   "authors": "",
+   "report_id": "2411.00698",
+   "title": "Wasserstein Flow Matching: Generative modeling over families of distributions",
+   "authors": [
+    "Doron Haviv",
+    "Aram-Alexandre Pooladian",
+    "Dana Pe'er",
+    "Brandon Amos"
+   ],
    "year": 2025,
    "venue": "ICML",
    "evidence": "P",
    "star": true,
-   "arxiv_id": null,
-   "published": null,
-   "abstract": "",
+   "arxiv_id": "2411.00698",
+   "published": "2024-11-01",
+   "abstract": "Generative modeling typically concerns transporting a single source distribution to a target distribution via simple probability flows. However, in fields like computer graphics and single-cell genomics, samples themselves can be viewed as distributions, where standard flow matching ignores their inherent geometry. We propose Wasserstein flow matching (WFM), which lifts flow matching onto families of distributions using the Wasserstein geometry. Notably, WFM is the first algorithm capable of generating distributions in high dimensions, whether represented analytically (as Gaussians) or empirically (as point-clouds). Our theoretical analysis establishes that Wasserstein geodesics constitute proper conditional flows over the space of distributions, making for a valid FM objective. Our algorithm leverages optimal transport theory and the attention mechanism, demonstrating versatility across computational regimes: exploiting closed-form optimal transport paths for Gaussian families, while using entropic estimates on point-clouds for general distributions. WFM successfully generates both 2D & 3D shapes and high-dimensional cellular microenvironments from spatial transcriptomics data. Code is available at https://github.com/DoronHav/WassersteinFlowMatching .",
    "contribution_zh": "把 FM 提升到\"分布的分布\"：证明 Wasserstein 测地是合法条件流，高斯族用闭式 Bures-Wasserstein 路径、点云用熵 OT 估计",
    "links": {
     "PMLR": "https://proceedings.mlr.press/v267/haviv25a.html"
    },
-   "pdf": null,
-   "text": null,
-   "text_chars": null,
-   "pages": null
+   "pdf": "papers/2411.00698.pdf",
+   "text": "data/text/2411.00698.txt",
+   "text_chars": 79441,
+   "pages": 21
   },
   {
    "key": "t28__flow_matching_on_general_geometries_chen_lipman",
-   "report_id": "Flow_Matching_on_General_Geometries_RFM_Chen_Lipma",
+   "report_id": "2302.03660",
    "title": "Flow Matching on General Geometries",
-   "authors": "",
+   "authors": [
+    "Ricky T. Q. Chen",
+    "Yaron Lipman"
+   ],
    "year": 2024,
    "venue": "ICLR Oral",
    "evidence": "P",
    "star": true,
-   "arxiv_id": null,
-   "published": null,
-   "abstract": "",
+   "arxiv_id": "2302.03660",
+   "published": "2023-02-07",
+   "abstract": "We propose Riemannian Flow Matching (RFM), a simple yet powerful framework for training continuous normalizing flows on manifolds. Existing methods for generative modeling on manifolds either require expensive simulation, are inherently unable to scale to high dimensions, or use approximations for limiting quantities that result in biased training objectives. Riemannian Flow Matching bypasses these limitations and offers several advantages over previous approaches: it is simulation-free on simple geometries, does not require divergence computation, and computes its target vector field in closed-form. The key ingredient behind RFM is the construction of a relatively simple premetric for defining target vector fields, which encompasses the existing Euclidean case. To extend to general geometries, we rely on the use of spectral decompositions to efficiently compute premetrics on the fly. Our method achieves state-of-the-art performance on many real-world non-Euclidean datasets, and we demonstrate tractable training on general geometries, including triangular meshes with highly non-trivial curvature and boundaries.",
    "contribution_zh": "用 premetric（测地/谱距离）闭式构造流形条件向量场，简单几何上完全 simulation-free，奠定黎曼 FM 范式",
    "links": {
     "proceedings": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/d1f9936d3be6997ffffab692977eebe6-Abstract-Conference.html"
    },
-   "pdf": "papers/t28_2024_Chen_riemannian_flow_matching.pdf",
-   "text": "data/text/t28_2024_Chen_riemannian_flow_matching.txt",
+   "pdf": "papers/2302.03660.pdf",
+   "text": "data/text/2302.03660.txt",
    "text_chars": 76384,
    "pages": 24
   },
   {
    "key": "t28__metric_flow_matching_kapusniak_et_al",
-   "report_id": "Metric_Flow_Matching_MFM_Kapusniak_et_al",
+   "report_id": "2405.14780",
    "title": "Metric Flow Matching for Smooth Interpolations on the Data Manifold",
-   "authors": "",
+   "authors": [
+    "Kacper Kapuśniak",
+    "Peter Potaptchik",
+    "Teodora Reu",
+    "Leo Zhang",
+    "Alexander Tong",
+    "Michael Bronstein",
+    "Avishek Joey Bose",
+    "Francesco Di Giovanni"
+   ],
    "year": 2024,
    "venue": "NeurIPS",
    "evidence": "P",
    "star": true,
-   "arxiv_id": null,
-   "published": null,
-   "abstract": "",
+   "arxiv_id": "2405.14780",
+   "published": "2024-05-23",
+   "abstract": "Matching objectives underpin the success of modern generative models and rely on constructing conditional paths that transform a source distribution into a target distribution. Despite being a fundamental building block, conditional paths have been designed principally under the assumption of Euclidean geometry, resulting in straight interpolations. However, this can be particularly restrictive for tasks such as trajectory inference, where straight paths might lie outside the data manifold, thus failing to capture the underlying dynamics giving rise to the observed marginals. In this paper, we propose Metric Flow Matching (MFM), a novel simulation-free framework for conditional flow matching where interpolants are approximate geodesics learned by minimizing the kinetic energy of a data-induced Riemannian metric. This way, the generative model matches vector fields on the data manifold, which corresponds to lower uncertainty and more meaningful interpolations. We prescribe general metrics to instantiate MFM, independent of the task, and test it on a suite of challenging problems including LiDAR navigation, unpaired image translation, and modeling cellular dynamics. We observe that MFM outperforms the Euclidean baselines, particularly achieving SOTA on single-cell trajectory prediction.",
    "contribution_zh": "在数据诱导度量下学最小动能插值（近似测地线）替代直线插值，OT-MFM 在单细胞轨迹上 SOTA；\"数据流形\"版黎曼 FM",
    "links": {
     "OpenReview": "https://openreview.net/forum?id=fE3RqiF4Nx"
    },
-   "pdf": "papers/t28_2024_Kapusniak_metric_flow_matching.pdf",
-   "text": "data/text/t28_2024_Kapusniak_metric_flow_matching.txt",
+   "pdf": "papers/2405.14780.pdf",
+   "text": "data/text/2405.14780.txt",
    "text_chars": 86641,
    "pages": 25
   },
   {
    "key": "t28__riemannian_score_based_generative_modelling_de_bortoli_et_al",
-   "report_id": "Riemannian_Score_Based_Generative_Modelling_RSGM_D",
+   "report_id": "2202.02763",
    "title": "Riemannian Score-Based Generative Modelling",
-   "authors": "",
+   "authors": [
+    "Valentin De Bortoli",
+    "Emile Mathieu",
+    "Michael Hutchinson",
+    "James Thornton",
+    "Yee Whye Teh",
+    "Arnaud Doucet"
+   ],
    "year": 2022,
    "venue": "NeurIPS",
    "evidence": "P",
    "star": true,
-   "arxiv_id": null,
-   "published": null,
-   "abstract": "",
+   "arxiv_id": "2202.02763",
+   "published": "2022-02-06",
+   "abstract": "Score-based generative models (SGMs) are a powerful class of generative models that exhibit remarkable empirical performance. Score-based generative modelling (SGM) consists of a ``noising'' stage, whereby a diffusion is used to gradually add Gaussian noise to data, and a generative model, which entails a ``denoising'' process defined by approximating the time-reversal of the diffusion. Existing SGMs assume that data is supported on a Euclidean space, i.e. a manifold with flat geometry. In many domains such as robotics, geoscience or protein modelling, data is often naturally described by distributions living on Riemannian manifolds and current SGM techniques are not appropriate. We introduce here Riemannian Score-based Generative Models (RSGMs), a class of generative models extending SGMs to Riemannian manifolds. We demonstrate our approach on a variety of manifolds, and in particular with earth and climate science spherical data.",
    "contribution_zh": "把 SGM 的前向/反向 SDE 定义到紧流形（测地随机游走+热核），开创流形扩散并给出地球科学球面基准",
    "links": {
     "proceedings": "https://papers.nips.cc/paper_files/paper/2022/hash/105112d52254f86d5854f3da734a52b4-Abstract-Conference.html"
    },
-   "pdf": null,
-   "text": null,
-   "text_chars": null,
-   "pages": null
+   "pdf": "papers/2202.02763.pdf",
+   "text": "data/text/2202.02763.txt",
+   "text_chars": 90000,
+   "pages": 50
   },
   {
    "key": "t28__trivialized_momentum_diffusion_zhu_et_al",
-   "report_id": "Trivialized_Momentum_Diffusion_TDM_Zhu_et_al",
+   "report_id": "2405.16381",
    "title": "Trivialized Momentum Facilitates Diffusion Generative Modeling on Lie Groups",
-   "authors": "",
+   "authors": [
+    "Yuchen Zhu",
+    "Tianrong Chen",
+    "Lingkai Kong",
+    "Evangelos A. Theodorou",
+    "Molei Tao"
+   ],
    "year": 2025,
    "venue": "ICLR",
    "evidence": "P",
    "star": false,
-   "arxiv_id": null,
-   "published": null,
-   "abstract": "",
+   "arxiv_id": "2405.16381",
+   "published": "2024-05-25",
+   "abstract": "The generative modeling of data on manifolds is an important task, for which diffusion models in flat spaces typically need nontrivial adaptations. This article demonstrates how a technique called `trivialization' can transfer the effectiveness of diffusion models in Euclidean spaces to Lie groups. In particular, an auxiliary momentum variable was algorithmically introduced to help transport the position variable between data distribution and a fixed, easy-to-sample distribution. Normally, this would incur further difficulty for manifold data because momentum lives in a space that changes with the position. However, our trivialization technique creates a new momentum variable that stays in a simple fixed vector space. This design, together with a manifold preserving integrator, simplifies implementation and avoids inaccuracies created by approximations such as projections to tangent space and manifold, which were typically used in prior work, hence facilitating generation with high-fidelity and efficiency. The resulting method achieves state-of-the-art performance on protein and RNA torsion angle generation and sophisticated torus datasets. We also, arguably for the first time, tackle the generation of data on high-dimensional Special Orthogonal and Unitary groups, the latter essential for quantum problems. Code is available at https://github.com/yuchen-zhu-zyc/TDM.",
    "contribution_zh": "李群上引入平凡化动量：score 在固定李代数（平坦空间）学习，无投影/切空间近似，首次做高维 SO(n)/U(n) 生成",
    "links": {
     "proceedings": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/b3cff9947cde08b4fa70652cb8ac9209-Abstract-Conference.html"
    },
-   "pdf": null,
-   "text": null,
-   "text_chars": null,
-   "pages": null
+   "pdf": "papers/2405.16381.pdf",
+   "text": "data/text/2405.16381.txt",
+   "text_chars": 86914,
+   "pages": 30
   },
   {
    "key": "t28__stochastic_variance_reduced_vi_on_the_bures_wasserstein_mani",
@@ -186,24 +216,29 @@
   },
   {
    "key": "t28__diffeocfm_rfm_for_brain_connectivity_via_pullback_geometry_c",
-   "report_id": "DiffeoCFM_RFM_for_Brain_Connectivity_via_Pullback",
+   "report_id": "2505.18193",
    "title": "Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry",
-   "authors": "",
+   "authors": [
+    "Antoine Collas",
+    "Ce Ju",
+    "Nicolas Salvy",
+    "Bertrand Thirion"
+   ],
    "year": 2025,
    "venue": "NeurIPS",
    "evidence": "P",
    "star": false,
-   "arxiv_id": null,
-   "published": null,
-   "abstract": "",
+   "arxiv_id": "2505.18193",
+   "published": "2025-05-20",
+   "abstract": "Generating realistic brain connectivity matrices is key to analyzing population heterogeneity in brain organization, understanding disease, and augmenting data in challenging classification problems. Functional connectivity matrices lie in constrained spaces, such as the set of symmetric positive definite or correlation matrices, that can be modeled as Riemannian manifolds. However, using Riemannian tools typically requires redefining core operations (geodesics, norms, integration), making generative modeling computationally inefficient. In this work, we propose DiffeoCFM, an approach that enables conditional flow matching (CFM) on matrix manifolds by exploiting pullback metrics induced by global diffeomorphisms on Euclidean spaces. We show that Riemannian CFM with such metrics is equivalent to applying standard CFM after data transformation. This equivalence allows efficient vector field learning, and fast sampling with standard ODE solvers. We instantiate DiffeoCFM with two different settings: the matrix logarithm for covariance matrices and the normalized Cholesky decomposition for correlation matrices. We evaluate DiffeoCFM on three large-scale fMRI datasets with more than 4600 scans from 2800 subjects (ADNI, ABIDE, OASIS-3) and two EEG motor imagery datasets with over 30000 trials from 26 subjects (BNCI2014-002 and BNCI2015-001). It enables fast training and achieves state-of-the-art performance, all while preserving manifold constraints. Code: https://github.com/antoinecollas/DiffeoCFM",
    "contribution_zh": "全局微分同胚 pullback 度量下的黎曼 CFM 等价于\"变换后做欧氏 CFM\"：SPD 用矩阵对数、相关矩阵用归一化 Cholesky，fMRI/EEG 大规模验证",
    "links": {
     "proceedings": "https://papers.nips.cc/paper_files/paper/2025/hash/5616112a0120c15bf7d47a6bccc21bc3-Abstract-Conference.html"
    },
-   "pdf": null,
-   "text": null,
-   "text_chars": null,
-   "pages": null
+   "pdf": "papers/2505.18193.pdf",
+   "text": "data/text/2505.18193.txt",
+   "text_chars": 90000,
+   "pages": 51
   },
   {
    "key": "t28__riemannian_consistency_model_cheng_et_al",

@@ -1,0 +1,93 @@
+{
+ "report_id": "2412.02214",
+ "arxiv_id": "2412.02214",
+ "title": "GIST: Towards Photorealistic Style Transfer via Multiscale Geometric Representations",
+ "tldr_zh": "小波/Contourlet 子带上高斯闭式 W2 匹配做免训练照片级风格迁移，推理 0.1s",
+ "tldr_en": "Training-free photorealistic style transfer via Gaussian closed-form W2 matching on wavelet/contourlet subbands",
+ "tags": [
+  "style-transfer",
+  "optimal-transport",
+  "wavelet",
+  "contourlet",
+  "training-free",
+  "photorealistic"
+ ],
+ "code_url": "https://github.com/renanrojasg/gist",
+ "key_numbers": [
+  {
+   "number": "0.1 s",
+   "source": "Table I, GIST Wavelets inference time"
+  },
+  {
+   "number": "0.18 s",
+   "source": "Table I, GIST Contourlets inference time"
+  },
+  {
+   "number": "0.37 s",
+   "source": "Table I, WCT2 (Sum) inference time"
+  },
+  {
+   "number": "0.7404 SSIM",
+   "source": "Table I, GIST Wavelets content preservation"
+  },
+  {
+   "number": "0.7664 LPIPS",
+   "source": "Table I, GIST Wavelets style alignment"
+  },
+  {
+   "number": "192.43 FID",
+   "source": "Table I, GIST Wavelets"
+  },
+  {
+   "number": "7,500 image pairs",
+   "source": "Sec. V-A, 75 content × 100 style images"
+  },
+  {
+   "number": "0 trainable parameters",
+   "source": "Table I, GIST rows"
+  },
+  {
+   "number": "3,505,219 trainable parameters",
+   "source": "Table I, WCT2 (Sum)"
+  },
+  {
+   "number": "L=3 scales, Daubechies-2, SWT",
+   "source": "Sec. V-A, Wavelet setup"
+  },
+  {
+   "number": "K=(1,4,4) directions, pkva filters",
+   "source": "Sec. V-A, Contourlet setup"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1811.01656",
+   "type": "继承"
+  },
+  {
+   "report_id": "2006.07229",
+   "type": "平行/竞争"
+  },
+  {
+   "report_id": "2407.08467",
+   "type": "平行"
+  },
+  {
+   "report_id": "2506.03162",
+   "type": "潜在结合"
+  },
+  {
+   "report_id": "2205.15268",
+   "type": "潜在结合"
+  },
+  {
+   "report_id": "2506.11748",
+   "type": "潜在结合"
+  },
+  {
+   "report_id": "2407.07721",
+   "type": "潜在结合"
+  }
+ ],
+ "read_full_text": true
+}

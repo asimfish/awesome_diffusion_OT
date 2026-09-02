@@ -1,0 +1,46 @@
+{
+ "report_id": "2209.15571",
+ "arxiv_id": "2209.15571",
+ "title": "Building Normalizing Flows with Stochastic Interpolants",
+ "tldr_zh": "随机插值定义任意两分布间路径，速度场为二次目标唯一极小点；对插值 max-min 可达 Benamou-Brenier OT",
+ "tldr_en": "Stochastic interpolants define a density path between any two distributions; its velocity minimizes a quadratic loss, and maximizing over interpolants recovers Benamou-Brenier OT.",
+ "tags": [
+  "flow-matching",
+  "stochastic-interpolants",
+  "foundations",
+  "theory",
+  "optimal-transport",
+  "wasserstein-bound"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "CIFAR-10 unconditional: NLL 2.99 BPD, FID 10.27 vs ScoreFlow 2.81 / 5.40 (Table 2 right)",
+  "ImageNet-32 unconditional: NLL 3.48 BPD, FID 8.49 vs ScoreFlow 3.76 / 10.18 (Table 2 right; text says 3.45)",
+  "Tabular NLL POWER/GAS/HEPMASS/MINIBOONE/BSDS300: -0.57/-12.35/14.85/10.42/-156.22 vs FFJORD -0.46/-8.59/14.92/10.43/-157.40 (Table 2 left)",
+  "W2^2(rho_1, hat rho_1) <= e^{1+2K} H(hat v) with K the Lipschitz constant of the learned velocity (Proposition 3, Eq. 26)",
+  "Learned Fourier interpolant (M=7) shortens path length and improves log-likelihood on 2D checkerboard (Fig. H.1, curves only)"
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "competes"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2310.03725",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2401.08740",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2210.06662",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

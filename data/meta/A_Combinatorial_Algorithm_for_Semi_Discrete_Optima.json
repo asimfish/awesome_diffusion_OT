@@ -1,0 +1,30 @@
+{
+ "report_id": "A_Combinatorial_Algorithm_for_Semi_Discrete_Optima",
+ "arxiv_id": null,
+ "title": "A Combinatorial Algorithm for Semi-Discrete Optimal Transport",
+ "tldr_zh": "提出半离散 OT 的组合算法路径，区别于主流 smooth dual/Newton 方法",
+ "tldr_en": "A combinatorial algorithm path for semi-discrete OT, distinct from smooth dual/Newton methods",
+ "tags": [
+  "semi-discrete optimal transport",
+  "combinatorial algorithm",
+  "OT computation",
+  "NeurIPS 2024"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Kitagawa_Merigot_Thibert_2019",
+   "type": "competes_with"
+  },
+  {
+   "report_id": "Merigot_2011",
+   "type": "extends"
+  },
+  {
+   "report_id": "Aurenhammer_1998",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": false
+}

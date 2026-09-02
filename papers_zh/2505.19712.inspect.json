@@ -1,0 +1,101 @@
+{
+  "issue_count": 16,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (6 words, 0 CJK chars) at x=193.6, y=682.4: ˙zt(x) = vt(zt(x)),with initial conditionz0(x) = x.(4)"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (9 words, 0 CJK chars) at x=205.3, y=348.9: t= arg minwt L(wt|AX0 + b, AX1 + b) is given by vA,b"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (7 words, 0 CJK chars) at x=199.0, y=381.8: t = arg minwt L(wt|X0, X1 + b) is given by vb"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (5 words, 0 CJK chars) at x=123.9, y=90.4: (X0, X1) = Rp(X0, X1) ⇔∃vt = ∇φt : L(vt|X0, X1) = 0 ⇔(X0"
+    },
+    {
+      "page": 7,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 7: displayed equation at y=632 shifted horizontally by 14pt vs original"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (16 words, 0 CJK chars) at x=108.0, y=269.7: Corollary 9. Let (X0, X1) ∼µ0 ⊗µ1 with µ0 = N(0, Id). Th"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=285.5, y=275.6: with"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=147.5, y=286.5: from"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=455.4, y=297.4: for"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=332.8, y=307.6: and"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (6 words, 0 CJK chars) at x=116.9, y=163.3: Rp(X0, X1) = (X0, X1)⇔L(vt|X0, X1) = 0⇔(X0, X1) is an op"
+    },
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (4 words, 0 CJK chars) at x=230.8, y=639.4: 1 ) is rectifiable and that (X(i)"
+    },
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (6 words, 0 CJK chars) at x=143.9, y=642.2: 1 ) are couplingsbetween µ0 and µ1 for all i, i.e., that"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (9 words, 0 CJK chars) at x=143.5, y=681.1: where we used ˙r =c(1−t+tc)2 . Thus, we have (Z0, cZ1) ="
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (5 words, 0 CJK chars) at x=108.0, y=649.6: Proof. Since W (i) is independent of (Z(i)"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (9 words, 0 CJK chars) at x=170.8, y=258.9: 0 = 1, such that the above formula is is equal to"
+    }
+  ]
+}

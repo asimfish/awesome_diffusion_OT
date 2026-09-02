@@ -1,0 +1,37 @@
+{
+ "report_id": "An_Optimal_Transport_View_of_Activation_Steering_i",
+ "arxiv_id": null,
+ "title": "An Optimal Transport View of Activation Steering in Masked Diffusion Models",
+ "tldr_zh": "把 dLLM 激活转向统一为仿射 OT map，推理零开销提升指令遵循",
+ "tldr_en": "Unifies dLLM activation steering as affine OT maps with moment matching",
+ "tags": [
+  "masked diffusion",
+  "activation steering",
+  "optimal transport",
+  "LLaDA",
+  "Dream",
+  "inference-time control"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "+6.5~11.9 分",
+   "source": "调研 agent 转述，摘要原文未见"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "fisher_flow_riemannian_ot",
+   "type": "同属连续化绕行路线"
+  },
+  {
+   "report_id": "haxholli_discrete_dynamic_ot",
+   "type": "互补：训练期 OT vs 推理期 OT"
+  },
+  {
+   "report_id": "llada_8b",
+   "type": "被评估模型"
+  }
+ ],
+ "read_full_text": false
+}

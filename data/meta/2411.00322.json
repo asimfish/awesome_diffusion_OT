@@ -1,0 +1,64 @@
+{
+ "report_id": "2411.00322",
+ "arxiv_id": "2411.00322",
+ "title": "Constant Acceleration Flow",
+ "tldr_zh": "常加速度二次轨迹 + 初速度条件化消除路径交叉歧义；CIFAR-10 一步 FID 4.81（+GAN 1.39），耦合保持 PSNR 46.68 vs RF 33.34",
+ "tldr_en": "Constant-acceleration ODE with initial-velocity conditioning resolves flow crossing; one-step CIFAR-10 FID 4.81 (1.39 with GAN), ImageNet-64 1.69 with GAN, far better coupling preservation than rectified flow.",
+ "tags": [
+  "rectified-flow",
+  "constant-acceleration",
+  "flow-crossing",
+  "one-step-generation",
+  "coupling-preservation",
+  "inversion",
+  "adversarial-finetuning"
+ ],
+ "code_url": "https://github.com/mlvlab/CAF",
+ "key_numbers": [
+  "CIFAR-10 one-step FID: CAF 4.81 uncond / 2.68 cond; CAF+GAN 1.48 / 1.39 (Table 1)",
+  "ImageNet-64 one-step FID: CAF 6.52 (Rec 0.62); CAF+GAN 1.69 (IS 62.03, Rec 0.64) vs CTM 1.92, DMD 2.62 (Table 2)",
+  "Coupling preservation on CIFAR-10 1K pairs: LPIPS 0.041 vs 2-RF 0.092; PSNR 33.16 vs 29.79 (Table 3)",
+  "Reconstruction one-step PSNR 46.68 / LPIPS 0.007 vs 2-RF two-step 33.34 / 0.094 (Table 6)",
+  "Ablation cond CIFAR-10 N=1: 2-RF 6.88 -> constant accel 3.82 -> +IVC (h=1.5) 2.68 (Table 5)",
+  "N-step CAF needs N+1 NFE (Appendix D.1); adversarial stage 21 days x 8 A100 on ImageNet (Appendix A)"
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.20320",
+   "type": "uses"
+  },
+  {
+   "report_id": "2502.17436",
+   "type": "competes"
+  },
+  {
+   "report_id": "Rectified_Diffusion_Straightness_Is_Not_Your_Need",
+   "type": "competes"
+  },
+  {
+   "report_id": "2309.06380",
+   "type": "extends"
+  },
+  {
+   "report_id": "2310.02279",
+   "type": "competes"
+  },
+  {
+   "report_id": "2311.18828",
+   "type": "competes"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "uses"
+  },
+  {
+   "report_id": "2410.12557",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

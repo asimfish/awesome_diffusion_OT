@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 6.31pt but the original at this position is 10.06pt (ratio 0.63 vs page median 0.92) at x=227.5, y=501.1: ∇_{y}c(x, y) =x-y的一阶最优性准则，并且可以在损失函数中使用以下表达式"
+    }
+  ]
+}

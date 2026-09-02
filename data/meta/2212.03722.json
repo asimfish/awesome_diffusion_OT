@@ -1,0 +1,58 @@
+{
+ "report_id": "2212.03722",
+ "arxiv_id": "2212.03722",
+ "title": "Optimal transport map estimation in general function spaces",
+ "tldr_zh": "半对偶 ERM 推广到任意势类：Poincaré 源+度量熵 ⇒ oracle 不等式 ℓ*+n^{-2/(2+γ)}（强凸更快）；首次覆盖高斯源与 Barron/ICNN 网络 map，并证计算-统计鸿沟",
+ "tldr_en": "Unified oracle inequalities for semi-dual OT map estimation over arbitrary potential classes under a Poincaré source and metric-entropy control; first rates for Gaussian sources and shallow-network maps, plus a CLWE-based hardness result.",
+ "tags": [
+  "optimal-transport",
+  "map-estimation",
+  "statistical-ot",
+  "poincare-inequality",
+  "metric-entropy",
+  "barron-space",
+  "icnn",
+  "hardness",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Bounded case: E||∇φ̂−∇φ0||² ≲_log ℓ* + n^{-2/(2+γ)} ∨ n^{-1} (Thm 1, Eq. 15)",
+  "Strongly convex + (C2): ≲ ℓ* + n^{-2(m−γ)/(2m+γ(m−4))} (Thm 2, Eq. 22)",
+  "Recovers Hütter–Rigollet rate n^{-2(s−1)/(2s+d−4)} under Poincaré only (Thm 3, Eq. 35)",
+  "Barron space: n^{-(2s+k(1−2/d))/(2s+2k(1−2/d))} (Thm 4, Eq. 46); ReLU map upper n^{-1/2−1/(d−1)} vs lower n^{-1/2−5/(4d+2)} (Prop. 6)",
+  "Stability: ||∇φ1−∇φ0||² ≲ log₊(1/ℓ)^b ℓ (Prop. 1, Eq. 9)",
+  "Hardness: poly-time estimator at accuracy c'/√d for spiked class would solve CLWE/GapSVP (Thm 7); convex-hull PGD runs in O_J(n² log n) (Thm 6)"
+ ],
+ "relations": [
+  {
+   "report_id": "1905.05828",
+   "type": "extends"
+  },
+  {
+   "report_id": "2107.12364",
+   "type": "competes"
+  },
+  {
+   "report_id": "2109.12004",
+   "type": "competes"
+  },
+  {
+   "report_id": "2407.18163",
+   "type": "uses"
+  },
+  {
+   "report_id": "Optimizing_Functionals_on_the_Space_of_Probabiliti",
+   "type": "competes"
+  },
+  {
+   "report_id": "2603.25182",
+   "type": "competes"
+  },
+  {
+   "report_id": "2209.11215",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

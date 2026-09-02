@@ -1,0 +1,38 @@
+{
+ "report_id": "2203.08382",
+ "arxiv_id": "2203.08382",
+ "title": "Dual Diffusion Implicit Bridges for Image-to-Image Translation",
+ "tldr_zh": "两域独立扩散经PF-ODE latent拼接翻译，等价两段SB串联",
+ "tldr_en": "Chains two independently trained diffusion PF-ODEs through a shared latent for training-free translation, interpreted as two concatenated Schrödinger bridges.",
+ "tags": [
+  "schrodinger-bridge",
+  "unpaired-i2i",
+  "training-free",
+  "pf-ode",
+  "cycle-consistency"
+ ],
+ "code_url": "https://github.com/suxuann/ddib",
+ "key_numbers": [
+  "No numbers in abstract; full text not read",
+  "Third-party reproduction: Edges→Handbags FID 186.84, DIODE 242.3 in pixel space (DDBM Table 2)"
+ ],
+ "relations": [
+  {
+   "report_id": "Latent_Schr_dinger_Bridge",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2309.16948",
+   "type": "competes"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching",
+   "type": "uses"
+  },
+  {
+   "report_id": "2405.15885",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

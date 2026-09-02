@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (16 words, 0 CJK chars) at x=307.1, y=641.7: This section presents a succinct overview of static and "
+    },
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.96pt but the original at this position is 9.96pt (ratio 0.80 vs page median 0.92) at x=56.2, y=68.1: 对于任意博雷尔集。由Monge（1781）引入，Monge问题旨在所有保测度映射中寻找最优传输映"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (17 words, 0 CJK chars) at x=55.4, y=457.2: T in (9)converges to continuous case. Under the above fo"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.06pt but the original at this position is 9.92pt (ratio 0.81 vs page median 0.92) at x=56.2, y=641.9: τ 并得到以下布雷尼尔势的可控近似"
+    },
+    {
+      "page": 6,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 6: displayed equation at y=266 shifted horizontally by 16pt vs original"
+    }
+  ]
+}

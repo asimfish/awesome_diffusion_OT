@@ -1,0 +1,54 @@
+{
+ "report_id": "2505.03114",
+ "arxiv_id": "2505.03114",
+ "title": "Path and Bone-Contour Regularized Unpaired MRI-to-CT Translation",
+ "tldr_zh": "无配对 MRI→CT：共享潜空间 θ 连续生成器 + 逐层 Jacobian 路径长度正则 + 可训练骨轮廓正则，三数据集 PSNR/SSIM 最优，骨 Dice 0.84 vs 0.81",
+ "tldr_en": "Unpaired MRI-to-CT via shared latent space, theta-conditioned generator with layer-wise Jacobian path-length regularization and a learned bone-contour loss; best PSNR/SSIM on three datasets, bone Dice 0.84 vs 0.81.",
+ "tags": [
+  "unpaired-translation",
+  "mr-to-ct",
+  "medical-imaging",
+  "path-regularization",
+  "bone-contour",
+  "radiotherapy",
+  "latent-space",
+  "downstream-evaluation"
+ ],
+ "code_url": "https://github.com/kennysyp/PaBoT",
+ "key_numbers": [
+  "Pelvic (Gold Atlas): PSNR 28.52 / SSIM 90.56 / LPIPS 0.0915 vs Senta 27.73 / 88.34 / 0.1174, SynDiff 26.02 / 89.68 / 0.0999 (Table 1)",
+  "Head: PSNR 23.74 / SSIM 86.72 vs SynDiff 22.90 / 85.58, Senta 22.93 / 85.10 (Table 1)",
+  "SynthRAD2023 brain: PSNR 25.44 vs SynDiff 24.97; LPIPS 0.1365 vs SynDiff 0.1331 (Table 1)",
+  "Bone segmentation Dice (head, HU>300): PaBoT 0.84±0.06 vs SynDiff 0.81, Senta 0.81, CycleGAN 0.76, CUT 0.32 (Table 2)",
+  "Ablation head PSNR: none 22.60 -> +path 23.11 -> +bone contour 23.74 (Table 3)",
+  "Sobel MRI edges instead of learned G_bone: head 23.23 vs 23.74 (Table 5)",
+  "Loss weights: recon 5.0, adv 1.0, path 0.1, contour 5.0; h ~ U(0.1,0.2) (Sec. 3.2, 4.2)"
+ ],
+ "relations": [
+  {
+   "report_id": "Anatomy_Conserving_Unpaired_CBCT_to_CT_Translation",
+   "type": "competes"
+  },
+  {
+   "report_id": "2404.11741",
+   "type": "competes"
+  },
+  {
+   "report_id": "Harmonizing_Optical_Coherence_Tomography_Across_De",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.06789",
+   "type": "uses"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "uses"
+  },
+  {
+   "report_id": "2201.12220",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

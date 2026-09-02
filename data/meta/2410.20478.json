@@ -1,0 +1,106 @@
+{
+ "report_id": "2410.20478",
+ "arxiv_id": "2410.20478",
+ "title": "MusicFlow: Cascaded Flow Matching for Text Guided Music Generation",
+ "tldr_zh": "级联双 FM（文本→HuBERT 语义→Encodec 声学）+ masked 预测，参数小 2-5 倍、步数少 5 倍，零样本续写/填充",
+ "tldr_en": "Cascaded dual flow matching (text→semantic→acoustic) with masked prediction; 2-5x smaller, 5x fewer steps, zero-shot infilling",
+ "tags": [
+  "flow matching",
+  "text-to-music",
+  "cascaded generation",
+  "masked prediction",
+  "HuBERT",
+  "Encodec",
+  "classifier-free guidance"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "330M",
+   "description": "MusicFlow (bidirectional FM+FM) 总参数量",
+   "source": "Table 1"
+  },
+  {
+   "number": "2.82",
+   "description": "MusicFlow 在 MusicCaps 上的 FAD",
+   "source": "Table 1"
+  },
+  {
+   "number": "3.40→2.82",
+   "description": "相对 MusicGen 的 FAD 改善（约 20%），参数仅为其约 20%",
+   "source": "Sec. 4.2, Table 1"
+  },
+  {
+   "number": "3.13→2.82",
+   "description": "相对 AudioLDM-2 的 FAD 改善（约 10%），参数约少 50%",
+   "source": "Sec. 4.2, Table 1"
+  },
+  {
+   "number": "20%",
+   "description": "MusicFlow 用 MusicGen 20% 的推理步数即超过 MusicGen（FAD 3.13 vs 3.40）",
+   "source": "Sec. 4.2, Fig. 3"
+  },
+  {
+   "number": "50%",
+   "description": "最终模型仅需 MusicGen 50% 的网络前向传播次数",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "1.63 / 1.71",
+   "description": "续写 / 填充任务的 FAD（vs AudioLDM 2.08 / 2.09）",
+   "source": "Table 2"
+  },
+  {
+   "number": "近 50%",
+   "description": "3s 音频上下文使 FAD 降低近 50%",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "3.34±0.18 / 3.47±0.18 / 3.42±0.19",
+   "description": "TTM / 续写 / 填充的 MOS（95% CI）",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "约 30%",
+   "description": "HuBERT 级联带来的相对 FAD 改善",
+   "source": "Sec. 4.4.1"
+  },
+  {
+   "number": "20K 小时 / 约 400K tracks",
+   "description": "训练数据规模（私有）",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "0.3",
+   "description": "两个阶段的条件丢弃概率 pH 和 pE",
+   "source": "Sec. 4.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2306.15687",
+   "type": "方法模板继承（Voicebox 的 FM+masked infilling 范式）"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "OT-CFM 条件路径来源（Lipman et al.）"
+  },
+  {
+   "report_id": "2301.11325",
+   "type": "级联语义/声学结构的前作（MusicLM，LM 版）"
+  },
+  {
+   "report_id": "2306.05284",
+   "type": "主要 LM 基线（MusicGen）"
+  },
+  {
+   "report_id": "2308.05734",
+   "type": "主要扩散基线（AudioLDM2）"
+  },
+  {
+   "report_id": "2308.04729",
+   "type": "MusicCaps FAD SOTA 对比对象（Jen-1）"
+  }
+ ],
+ "read_full_text": true
+}

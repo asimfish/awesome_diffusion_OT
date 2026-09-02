@@ -1,0 +1,76 @@
+{
+ "report_id": "2506.09018",
+ "arxiv_id": "2506.09018",
+ "title": "Edit Flows: Flow Matching with Edit Operations",
+ "tldr_zh": "在整条序列空间上定义 CTMC，转移=插入/删除/替换，经辅助对齐过程+Bregman 散度损失可训练，原生支持变长生成",
+ "tldr_en": "CTMC over full sequence space with insert/delete/substitute transitions; trained via auxiliary alignment process and Bregman divergence loss; natively supports variable-length generation",
+ "tags": [
+  "discrete flow matching",
+  "CTMC",
+  "edit operations",
+  "variable-length generation",
+  "non-autoregressive",
+  "sequence modeling",
+  "text generation",
+  "code generation"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "3×",
+   "description": "Edit Flows 在同等算力和内存下比 Mask DFM 多处理 3 倍训练数据",
+   "source": "Sec. 5, Architecture and hyperparameters 段"
+  },
+  {
+   "number": "48%",
+   "description": "Localized Edit Flow 在 MBPP Pass@1 上相对非局部化 Edit Flow 的相对提升",
+   "source": "Sec. 5, Code benchmarks 段"
+  },
+  {
+   "number": "138%",
+   "description": "Localized Edit Flow 在 MBPP Pass@1 上相对 Mask DFM 的相对提升",
+   "source": "Sec. 5, Code benchmarks 段"
+  },
+  {
+   "number": "27.4 / 108.1 / 21.1 / 29.0",
+   "description": "Edit Flow 在 MS COCO 上的 METEOR / CIDEr / SPICE / ROUGE-L",
+   "source": "Table 1"
+  },
+  {
+   "number": "49.0",
+   "description": "Edit Flow 在 HellaSwag 上的 zero-shot 准确率，Mask DFM 为 38.3，AR 为 49.5",
+   "source": "Table 2"
+  },
+  {
+   "number": "14.0",
+   "description": "Localized Edit Flow 在 HumanEval Pass@1，Llama3 AR 为 17.0",
+   "source": "Table 3"
+  },
+  {
+   "number": "14.8",
+   "description": "Localized Edit Flow 在 MBPP Pass@1，Llama3 AR 为 25.6",
+   "source": "Table 3"
+  },
+  {
+   "number": "1024",
+   "description": "所有模型训练时的最大序列长度",
+   "source": "Sec. 5, Architecture and hyperparameters 段"
+  },
+  {
+   "number": "280M / 1.3B",
+   "description": "实验使用的 Llama 架构参数量",
+   "source": "Sec. 5, Architecture and hyperparameters 段"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2506.09018",
+   "type": "extends"
+  },
+  {
+   "report_id": "2506.09018",
+   "type": "builds_on"
+  }
+ ],
+ "read_full_text": true
+}

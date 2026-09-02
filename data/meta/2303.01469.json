@@ -1,0 +1,70 @@
+{
+ "report_id": "2303.01469",
+ "arxiv_id": "2303.01469",
+ "title": "Consistency Models",
+ "tldr_zh": "学习 PF-ODE 的自一致映射（任意轨迹点→起点），蒸馏版 CD 在 CIFAR-10 一步 FID 3.55、两步 2.93。",
+ "tldr_en": "Consistency models map any PF-ODE trajectory point to its origin; distillation (CD) reaches one-step FID 3.55 on CIFAR-10, training (CT) needs no teacher.",
+ "tags": [
+  "consistency-models",
+  "distillation",
+  "one-step",
+  "pf-ode",
+  "flow-map",
+  "theory"
+ ],
+ "code_url": "https://github.com/openai/consistency_models",
+ "key_numbers": [
+  "CIFAR-10 CD FID 3.55 (1 NFE) / 2.93 (2 NFE) (Table 1)",
+  "CIFAR-10 CT FID 8.70 (1 NFE) / 5.83 (2 NFE) (Table 1)",
+  "CIFAR-10 PD FID 8.34 (1 NFE) / 5.58 (2 NFE) (Table 1)",
+  "ImageNet-64 CD FID 6.20 / 4.70, Rec 0.63 / 0.64 (Table 2)",
+  "ImageNet-64 CT FID 13.0 / 11.1, Rec 0.47 / 0.56 (Table 2)",
+  "LSUN Bedroom 256 CD FID 7.80 / 5.22 vs PD 16.92 / 8.47 (Table 2)",
+  "LSUN Cat 256 CD FID 11.0 / 8.84 vs PD 29.6 / 15.5 (Table 2)",
+  "Best CD config: LPIPS + Heun + N=18 (Fig. 3)",
+  "Theorem 1: zero CD loss => sup-norm map error O((dt)^p)"
+ ],
+ "relations": [
+  {
+   "report_id": "2310.14189",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2310.02279",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Flow_Map_Matching",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2406.09570",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2402.07802",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Theory_of_Consistency_Diffusion_Models",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Simplifying_Stabilizing_and_Scaling_Continuous_tim",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "uses"
+  },
+  {
+   "report_id": "Score_Based_Generative_Modeling_through_SDEs",
+   "type": "uses"
+  },
+  {
+   "report_id": "2410.22637",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

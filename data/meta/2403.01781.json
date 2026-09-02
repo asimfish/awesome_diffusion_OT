@@ -1,0 +1,72 @@
+{
+ "report_id": "2403.01781",
+ "arxiv_id": "2403.01781",
+ "title": "Integrating Efficient Optimal Transport and Functional Maps For Unsupervised Shape Correspondence Learning",
+ "tldr_zh": "用 sliced Wasserstein 距离替代 Sinkhorn 做无监督形状对应特征对齐，加自适应精化，在多个非刚性匹配基准上超过 ULRSSM",
+ "tldr_en": "Replaces Sinkhorn with sliced Wasserstein distance for unsupervised shape correspondence feature alignment, plus adaptive refinement, outperforming ULRSSM on several non-rigid matching benchmarks",
+ "tags": [
+  "shape correspondence",
+  "functional maps",
+  "sliced Wasserstein",
+  "optimal transport",
+  "unsupervised learning",
+  "3D mesh"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "1.5 / 3.4 / 5.5",
+   "context": "Ours 在 FAUST / SCAPE / SHREC'19 上的 mean geodesic error (×100)",
+   "source": "Table 1"
+  },
+  {
+   "number": "4.0 / 4.2",
+   "context": "Ours 在 SMAL / DT4D-H 上的 mean geodesic error (×100)",
+   "source": "Table 2"
+  },
+  {
+   "number": "87.8 / 60.5",
+   "context": "Ours 在分割迁移 coarse / fine-grained 上的 mIOU",
+   "source": "Table 3"
+  },
+  {
+   "number": "4.7 vs 7.2",
+   "context": "去掉自适应精化后 SHREC'19 从 4.7 退化到 7.2",
+   "source": "Table 4"
+  },
+  {
+   "number": "34.3 vs 4.7",
+   "context": "MSE 损失替代 OT 损失后 SHREC'19 从 4.7 退化到 34.3",
+   "source": "Table 4"
+  },
+  {
+   "number": "O(m log m) / O(m)",
+   "context": "SWD 的时间 / 内存复杂度",
+   "source": "Sec. 1"
+  },
+  {
+   "number": "O(m^2)",
+   "context": "Sinkhorn 的内存复杂度",
+   "source": "Sec. 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2010.15261",
+   "type": "被继承/对比"
+  },
+  {
+   "report_id": "2304.14419",
+   "type": "竞争基线"
+  },
+  {
+   "report_id": "2012.00888",
+   "type": "特征提取器"
+  },
+  {
+   "report_id": "2310.07979",
+   "type": "EBSW 损失来源"
+  }
+ ],
+ "read_full_text": true
+}

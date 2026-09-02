@@ -1,0 +1,27 @@
+{
+ "report_id": "Momentum_Multi_Marginal_SB_Matching_3MSBM_Theodoro",
+ "arxiv_id": null,
+ "title": "Momentum Multi-Marginal Schrödinger Bridge Matching (3MSBM)",
+ "tldr_zh": "相空间提升与多点条件桥，用 matching 解多边缘 SB，保持全部中间边缘",
+ "tldr_en": "Phase-space lifting plus multi-point conditional bridges for multi-marginal SB matching",
+ "tags": [
+  "Schrödinger Bridge",
+  "multi-marginal",
+  "bridge matching",
+  "phase-space",
+  "NeurIPS 2025"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "DMSB_2023",
+   "type": "extends"
+  },
+  {
+   "report_id": "MMtSBM_2025",
+   "type": "related"
+  }
+ ],
+ "read_full_text": false
+}

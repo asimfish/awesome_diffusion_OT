@@ -1,0 +1,35 @@
+{
+ "report_id": "Keypoint_Guided_Optimal_Transport",
+ "arxiv_id": null,
+ "title": "Keypoint-Guided Optimal Transport",
+ "tldr_zh": "用 mask 约束 plan 加关系保持，把少量 keypoint 语义先验注入 OT，支持异构空间与 partial 设定。",
+ "tldr_en": "Inject sparse keypoint semantic priors into OT via mask-constrained plan and relation preservation, supporting heterogeneous spaces and partial settings.",
+ "tags": [
+  "optimal transport",
+  "semantic correspondence",
+  "keypoint prior",
+  "partial OT",
+  "heterogeneous spaces"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "SCOT",
+   "type": "继承"
+  },
+  {
+   "report_id": "UNITE",
+   "type": "继承"
+  },
+  {
+   "report_id": "STORM",
+   "type": "共享动机"
+  },
+  {
+   "report_id": "ASAG",
+   "type": "共享动机"
+  }
+ ],
+ "read_full_text": false
+}

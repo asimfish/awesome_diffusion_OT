@@ -1,0 +1,52 @@
+{
+ "report_id": "2405.06789",
+ "arxiv_id": "2405.06789",
+ "title": "Self-Consistent Recursive Diffusion Bridge for Medical Image Translation",
+ "tldr_zh": "配对扩散桥终点改为加噪源图（方差单调递增软先验）+ 每步递归自洽估计 x0，多对比 MRI/MRI→CT 上 PSNR 高 SynDiff 1.2–1.5 dB",
+ "tldr_en": "Paired diffusion bridge whose end-point is a noised source image (monotone variance, soft prior) plus self-consistent recursive x0 estimation; +1.2-1.5 dB PSNR over SynDiff/DDPM on MRI and MRI-CT.",
+ "tags": [
+  "diffusion-bridge",
+  "medical-imaging",
+  "paired-translation",
+  "multi-contrast-mri",
+  "mr-to-ct",
+  "noise-schedule",
+  "adversarial-diffusion"
+ ],
+ "code_url": "https://github.com/icon-lab/SelfRDB",
+ "key_numbers": [
+  "IXI T2->T1 PSNR 31.56 / SSIM 95.65 vs SynDiff 30.13 / 94.60, DDPM 29.08 / 93.43, I2SB 21.07 / 47.06, pix2pix 27.98 / 92.18 (Table I)",
+  "BRATS T1->T2 PSNR 27.42 vs SynDiff 22.21, DDPM 25.97 (Table II)",
+  "Pelvic T2->CT PSNR 28.58 / SSIM 93.28 vs DDPM 26.88 / 91.18, I2SB 26.54 / 85.94 (Table III)",
+  "Avg gain over DDMs: +1.25 dB (IXI), +1.49 dB (BRATS), +1.42 dB (MRI-CT) (Sec. V)",
+  "Ablation IXI T2->T1: w/o soft prior 30.16, w/o source guidance 20.43, w/o self-consistency 31.28 vs full 31.56 (Table IV)",
+  "Hyperparameters: T=1000, gamma=2.2, lambda1=lambda2=1, 50 epochs (Sec. IV-B)"
+ ],
+ "relations": [
+  {
+   "report_id": "I2SB_Image_to_Image_Schr_dinger_Bridge",
+   "type": "extends"
+  },
+  {
+   "report_id": "2404.11741",
+   "type": "competes"
+  },
+  {
+   "report_id": "2403.06069",
+   "type": "competes"
+  },
+  {
+   "report_id": "2501.14171",
+   "type": "competes"
+  },
+  {
+   "report_id": "Anatomy_Conserving_Unpaired_CBCT_to_CT_Translation",
+   "type": "competes"
+  },
+  {
+   "report_id": "2309.16948",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

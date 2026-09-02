@@ -1,0 +1,39 @@
+{
+ "report_id": "2309.11713",
+ "arxiv_id": "2309.11713",
+ "title": "Quasi-Monte Carlo for 3D Sliced Wasserstein",
+ "tldr_zh": "用球面 QMC 点集替代 MC 投影方向，QSW 降近似误差，RQSW 随机化后保无偏可做 SGD",
+ "tldr_en": "Replaces MC projection directions with spherical QMC point sets; QSW reduces approximation error, RQSW adds randomization for unbiased SGD",
+ "tags": [
+  "sliced-wasserstein",
+  "quasi-monte-carlo",
+  "3d-point-cloud",
+  "unbiased-estimator",
+  "optimal-transport"
+ ],
+ "code_url": "https://github.com/khainb/Quasi-SW",
+ "key_numbers": [
+  "MC 误差上界 O(L^{-1/2})，来源 Sec. 2.1",
+  "QSW 时间 O(Ln log n + Ldn)、空间 O(Ld + Ln)，来源 Sec. 3.2",
+  "点云插值 Step 500 W2：SW 0.004±0.001，RCQSW 0.003±0.001，CQSW 0.065±0.0，来源 Table 1",
+  "风格迁移最终 W2：SW 458.29，CQSW 148.22，RCQSW 1.27，来源 Fig. 3",
+  "自编码器 Epoch 400：CQSW SW2 1.84±0.02 / W2 9.06±0.02，SW 1.94±0.06 / 9.21±0.06，来源 Table 2",
+  "GQSW 自编码器 Epoch 400 SW2 14.82±0.02（数值问题），来源 Table 2",
+  "近似误差实验：L 从 10 到 10000，population 用 L=100000 MC 估计，来源 Sec. 4.1"
+ ],
+ "relations": [
+  {
+   "report_id": "1506.04500",
+   "type": "继承"
+  },
+  {
+   "report_id": "2010.07300",
+   "type": "继承"
+  },
+  {
+   "report_id": "2103.12345",
+   "type": "方法相关"
+  }
+ ],
+ "read_full_text": true
+}

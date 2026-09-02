@@ -1,0 +1,28 @@
+{
+ "report_id": "TIGON",
+ "arxiv_id": null,
+ "title": "TIGON",
+ "tldr_zh": "用 WFR 动态 unbalanced OT 的 neural ODE 同时重建轨迹、增殖率与基因调控网络",
+ "tldr_en": "Neural ODE for Wasserstein-Fisher-Rao dynamic unbalanced OT reconstructs trajectories, proliferation and gene regulatory networks",
+ "tags": [
+  "unbalanced OT",
+  "Wasserstein-Fisher-Rao",
+  "neural ODE",
+  "scRNA-seq",
+  "trajectory inference",
+  "gene regulatory network"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "TrajectoryNet",
+   "type": "同代连续动力学化工作"
+  },
+  {
+   "report_id": "DeepRUOT",
+   "type": "后续免仿真推进，部分取代"
+  }
+ ],
+ "read_full_text": false
+}

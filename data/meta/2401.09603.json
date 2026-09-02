@@ -1,0 +1,82 @@
+{
+ "report_id": "2401.09603",
+ "arxiv_id": "2401.09603",
+ "title": "Rethinking FID: Towards a Better Evaluation Metric for Image Generation",
+ "tldr_zh": "FID 正态假设不成立、样本效率差且与人评矛盾；提出 CLIP+MMD 的 CMMD 替代",
+ "tldr_en": "FID's normality assumption fails and contradicts human raters; CMMD uses CLIP embeddings with MMD as a robust alternative",
+ "tags": [
+  "evaluation metric",
+  "FID",
+  "MMD",
+  "CLIP",
+  "text-to-image",
+  "CMMD",
+  "sample efficiency"
+ ],
+ "code_url": "https://github.com/google-research/google-research/tree/master/cmmd",
+ "key_numbers": [
+  {
+   "number": "92.5% vs 6.9%",
+   "context": "人评偏好 Model-A vs Model-B，FID 却认为 Model-B 更好（18.42 vs 21.40）",
+   "source": "Table 3"
+  },
+  {
+   "number": "p 值 = 0.0（机器精度）",
+   "context": "三种正态性检验（Mardia 偏度、Mardia 峰度、Henze-Zirkler）均拒绝 COCO 30K Inception 嵌入的正态假设",
+   "source": "Sec. 3.3, Appendix A"
+  },
+  {
+   "number": ">20,000 张",
+   "context": "可靠估计 FID 所需图像数，CMMD 小样本即稳定",
+   "source": "Sec. 6.3, Fig. 8"
+  },
+  {
+   "number": "7007.59 ms vs 71.42 ms",
+   "context": "n=30,000, d=2048 时 Fréchet 距离 vs MMD 距离计算时间（TPUv4 + JAX）",
+   "source": "Table 4"
+  },
+  {
+   "number": "σ = 10",
+   "context": "CMMD 的 Gaussian RBF 核带宽，固定以保持数值一致",
+   "source": "Sec. 4"
+  },
+  {
+   "number": "×1000",
+   "context": "CMMD 数值缩放因子，因平方 MMD 上界为 2",
+   "source": "Sec. 4"
+  },
+  {
+   "number": "400M vs 1M",
+   "context": "CLIP 训练图像-文本对数量 vs Inception-v3 训练图像数（约 100 万，1000 类）",
+   "source": "Sec. 4"
+  },
+  {
+   "number": "FD/FD∞ 恒为 0.0，MMD 增至 244.9",
+   "context": "合成实验中混合高斯偏离参考分布但均值协方差不变时，Fréchet 距离误导性为零，MMD 正确捕捉偏离",
+   "source": "Table 2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1911.07023",
+   "type": "继承并批评（FID 有偏性，FID∞ 仍继承正态假设缺陷）"
+  },
+  {
+   "report_id": "2104.11222",
+   "type": "继承（resize 对 FID 影响，本文采用其抗锯齿建议）"
+  },
+  {
+   "report_id": "1706.08500",
+   "type": "批评对象（FID 原始提出）"
+  },
+  {
+   "report_id": "1801.01401",
+   "type": "同族方法（KID 也用 MMD 但基于 Inception 特征）"
+  },
+  {
+   "report_id": "2103.00020",
+   "type": "方法依赖（CMMD 使用 CLIP ViT-L/14@336px 嵌入）"
+  }
+ ],
+ "read_full_text": true
+}

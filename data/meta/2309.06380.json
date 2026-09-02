@@ -1,0 +1,64 @@
+{
+ "report_id": "2309.06380",
+ "arxiv_id": "2309.06380",
+ "title": "InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation",
+ "tldr_zh": "文本条件 reflow 理顺 SD 噪声-图像耦合后蒸馏，首个 SD 级一步文生图：COCO-5k FID 23.4，199 A100 天",
+ "tldr_en": "Text-conditioned reflow refines Stable Diffusion's noise-image coupling so one-step distillation works: COCO-5k FID 23.4 in 0.09s, 199 A100 GPU days.",
+ "tags": [
+  "rectified-flow",
+  "reflow",
+  "distillation",
+  "text-to-image",
+  "one-step-generation",
+  "stable-diffusion"
+ ],
+ "code_url": "https://github.com/gnobitab/InstaFlow",
+ "key_numbers": [
+  "InstaFlow-0.9B one-step FID-5k 23.4 / CLIP 0.304 on MS COCO 2017, 0.09s (Table 2a)",
+  "InstaFlow-1.7B one-step FID-5k 22.4 (Table 2a)",
+  "InstaFlow-0.9B FID-30k 13.10 on COCO 2014 vs StyleGAN-T 13.90, GigaGAN 9.09 (Table 2b)",
+  "SD 1.4 direct distillation FID-5k 40.9 vs 2-RF+Distill 31.0; 2-RF one-step without distill 68.3 (Table 1a)",
+  "PD-SD one-step FID-5k 37.2 (Table 2a, read from PD paper)",
+  "Training cost 199.2 A100 GPU days for InstaFlow-0.9B (Appendix D); PD lower bound 108.8 (Appendix C.3)",
+  "3-RF 25-step FID 23.6 worse than 2-RF 22.1; 3-RF needs lr 1e-7 (Table 4, App. C.2)"
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "extends"
+  },
+  {
+   "report_id": "2209.14577",
+   "type": "uses"
+  },
+  {
+   "report_id": "2405.20320",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2405.07510",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2407.12718",
+   "type": "extends"
+  },
+  {
+   "report_id": "2507.10218",
+   "type": "competes"
+  },
+  {
+   "report_id": "Rectified_Diffusion_Straightness_Is_Not_Your_Need",
+   "type": "competes"
+  },
+  {
+   "report_id": "2311.17042",
+   "type": "competes"
+  },
+  {
+   "report_id": "2303.01469",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,71 @@
+{
+ "report_id": "2306.09099",
+ "arxiv_id": "2306.09099",
+ "title": "Unbalanced Diffusion Schrödinger Bridge",
+ "tldr_zh": "推导带 killing/birth 项 SDE 的时间反演，把 DSB 推广到任意有限质量边缘",
+ "tldr_en": "Extends DSB to unbalanced marginals via time reversal of SDEs with killing/birth",
+ "tags": [
+  "unbalanced optimal transport",
+  "Schrödinger bridge",
+  "diffusion models",
+  "killing/birth processes",
+  "single-cell"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "1.75e-2 (0.11e-2)",
+   "context": "UDSB-F 在单细胞药物响应数据上的 MMD，10 次运行均值（标准差）",
+   "source": "Table 1"
+  },
+  {
+   "number": "6.11 (0.11)",
+   "context": "UDSB-F 的 W_epsilon",
+   "source": "Table 1"
+  },
+  {
+   "number": "1.86e-2 (0.04e-2)",
+   "context": "Chen et al. (2021) 标准 SB 的 MMD",
+   "source": "Table 1"
+  },
+  {
+   "number": "6.23 (0.02)",
+   "context": "Chen et al. (2021) 标准 SB 的 W_epsilon",
+   "source": "Table 1"
+  },
+  {
+   "number": "50",
+   "context": "单细胞特征空间维度",
+   "source": "Sec. 6"
+  },
+  {
+   "number": "3",
+   "context": "合成数据中的点组数",
+   "source": "Fig. 3a"
+  },
+  {
+   "number": "10",
+   "context": "单细胞实验重复次数",
+   "source": "Table 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2209.09893",
+   "type": "继承并区分（TD 损失来源，但 Liu et al. 无 killing/birth）"
+  },
+  {
+   "report_id": "2110.xxxxx",
+   "type": "继承（DSB/IPF 神经参数化框架，De Bortoli et al. 2021）"
+  },
+  {
+   "report_id": "chen2022unbalanced",
+   "type": "理论继承（Chen et al. 2022 的 unbalanced SB 解刻画）"
+  },
+  {
+   "report_id": "caffarelli2010free",
+   "type": "概念继承（coffin state 与 partial OT 等价性）"
+  }
+ ],
+ "read_full_text": true
+}

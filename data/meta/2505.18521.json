@@ -1,0 +1,44 @@
+{
+ "report_id": "2505.18521",
+ "arxiv_id": "2505.18521",
+ "title": "Improved Immiscible Diffusion: Accelerate Diffusion Training by Reducing Its Miscibility",
+ "tldr_zh": "把噪声指派推广为降低轨迹可混性，KNN 噪声选择 O(n)、0.2ms/256；CIFAR-10 DDIM FID 6.63→4.45，训练加速 >4×",
+ "tldr_en": "Generalizes immiscible diffusion to miscibility reduction; O(n) KNN noise selection and image scaling give up to 4x faster training, CIFAR-10 DDIM FID 6.63 to 4.45.",
+ "tags": [
+  "noise-assignment",
+  "training-efficiency",
+  "immiscible-diffusion",
+  "knn-noise-selection",
+  "minibatch-ot",
+  "data-pipeline"
+ ],
+ "code_url": "https://github.com/yhli123/Immiscible-Diffusion",
+ "key_numbers": [
+  "Final FID CIFAR-10 DDIM/FM/CM: vanilla 6.63/4.92/10.22, KNN 4.45/3.56/9.16, linear assignment 5.14/5.02/8.54 (Table 3)",
+  "Assignment time at batch 1024: linear assignment 22.8 ms vs KNN 0.7 ms (Table 2)",
+  "Noise-cluster mean L2 distance: vanilla 0.92, assignment 4.11, KNN 2.17 (Sec. 4.2, Sec. 6)",
+  "KNN-selected noise KL to Gaussian 48.60 vs 48.25 for true Gaussian samples (Sec. 4.3)",
+  "Best k grows with dimension: 8/4/4 at 3072-d, 64 at 4096-d (Table 7); DDIM k=2..32 FID 4.94/4.77/4.45/4.85/5.19 (Table 8)",
+  "Baselines need 2.5-4.5x training steps to match (Fig. 5); PushT coverage 79.56% -> 82.83% (Table 6)",
+  "Noise perturbation W=20% leaves generated image nearly unchanged; 30% starts changing objects (Fig. 3)"
+ ],
+ "relations": [
+  {
+   "report_id": "2403.05069",
+   "type": "competes"
+  },
+  {
+   "report_id": "2412.05101",
+   "type": "competes"
+  },
+  {
+   "report_id": "The_Emergence_of_Reproducibility_and_Consistency_i",
+   "type": "uses"
+  },
+  {
+   "report_id": "2410.13431",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

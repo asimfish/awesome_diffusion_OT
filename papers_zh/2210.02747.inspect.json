@@ -1,0 +1,65 @@
+{
+  "issue_count": 10,
+  "issues": [
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=352.3, y=323.8: and"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=205.7, y=335.5: and"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=108.8, y=81.9: 定理3。设为方程10 中的高斯概率路径，为方程11 中对应的流映射。则定义的唯一向量场具有如下形"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (12 words, 0 CJK chars) at x=108.0, y=406.6: The reversed (noise→data) Variance Preserving (VP) diffu"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=108.8, y=658.4: 定理3。设为方程10 中的高斯概率路径，为方程11 中对应的流映射。则定义的唯一向量场具有如下形"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=352.3, y=310.2: and"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=205.7, y=321.9: and"
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 7.87pt but the original at this position is 9.96pt (ratio 0.79 vs page median 0.92) at x=170.8, y=605.5: ̃u_{t}(x) =-u_{1}_{-}_{t}(x) 在从以下初始条件出发时生成路径"
+    },
+    {
+      "page": 18,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 18: block set at 7.57pt but the original at this position is 9.96pt (ratio 0.76 vs page median 0.92) at x=108.8, y=497.1: 方差保持（Variance Preserving ，VP）路径VP 路径的随机微分方程为"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (4 words, 0 CJK chars) at x=261.5, y=668.0: pt(x + uk), where uk ∼U(0, 1),(47)"
+    }
+  ]
+}

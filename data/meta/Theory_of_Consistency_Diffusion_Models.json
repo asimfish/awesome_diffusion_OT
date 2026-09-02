@@ -1,0 +1,78 @@
+{
+ "report_id": "Theory_of_Consistency_Diffusion_Models",
+ "arxiv_id": null,
+ "title": "Theory of Consistency Diffusion Models: Distribution Estimation Meets Fast Sampling",
+ "tldr_zh": "把 CM 训练形式化为 W1 最小化，蒸馏得 n^{-1/(2(d+5))} 率，免蒸馏得 n^{-1/d} 率",
+ "tldr_en": "First statistical theory for consistency models: W1 estimation rates matching vanilla diffusion for distillation, n^{-1/d} for isolation",
+ "tags": [
+  "consistency models",
+  "Wasserstein distance",
+  "statistical estimation",
+  "diffusion models",
+  "score estimation",
+  "distillation",
+  "isolation training"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "n^{-1/(2(d+5))}",
+   "source": "Remark 4.3, Theorem 4.1",
+   "context": "蒸馏情形 W1 估计率（调参后）"
+  },
+  {
+   "number": "n^{-1/d}",
+   "source": "Remark 4.5, Theorem 4.2",
+   "context": "免蒸馏情形 W1 估计率（调参后）"
+  },
+  {
+   "number": "6RN'n^{-1/d}",
+   "source": "Lemma 5.4, Theorem 4.1",
+   "context": "经验-总体集中差距项"
+  },
+  {
+   "number": "R\\bar{\\beta} d L T / \\sqrt{M}",
+   "source": "Theorem 4.1",
+   "context": "ODE 离散化误差项"
+  },
+  {
+   "number": "\\sqrt{d}R\\exp(-\\underline{\\beta}T/2)",
+   "source": "Lemma 5.5, Theorem 4.1",
+   "context": "前向过程收敛误差项"
+  },
+  {
+   "number": "\\varepsilon_score = O(n^{-1/(d+5)})",
+   "source": "Theorem 4.1",
+   "context": "score 估计误差"
+  },
+  {
+   "number": "890M",
+   "source": "Sec. 1",
+   "context": "作者举例的最小 stable diffusion 模型参数量"
+  },
+  {
+   "number": "500-1000",
+   "source": "Sec. 1",
+   "context": "扩散模型典型采样步数"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "FMM_TMLR_2025",
+   "type": "被后续统一/扩展"
+  },
+  {
+   "report_id": "Consistency_Models_ICML_2023",
+   "type": "继承其训练算法并给出理论"
+  },
+  {
+   "report_id": "Score_Approx_LowDim_Chen_2023",
+   "type": "引用其 score 逼近结果"
+  },
+  {
+   "report_id": "Lyu_CM_Sampling_2023",
+   "type": "互补：本文给样本复杂度，对方假设 score 已准确"
+  }
+ ],
+ "read_full_text": true
+}

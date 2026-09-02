@@ -1,0 +1,80 @@
+{
+ "report_id": "2106.01128",
+ "arxiv_id": "2106.01128",
+ "title": "Linear-Time Gromov Wasserstein Distances using Low Rank Couplings and Costs",
+ "tldr_zh": "低秩耦合+低秩代价分解把GW从O(n³)降到O(n²)乃至O(n)，单细胞对齐快几个数量级",
+ "tldr_en": "Low-rank couplings and costs reduce GW from O(n³) to O(n²) or O(n), orders of magnitude faster on single-cell alignment",
+ "tags": [
+  "Gromov-Wasserstein",
+  "low-rank coupling",
+  "linear-time algorithm",
+  "optimal transport",
+  "single-cell alignment"
+ ],
+ "code_url": "https://github.com/meyerscetbon/LinearGromov",
+ "key_numbers": [
+  {
+   "number": "O(n)",
+   "context": "Lin LR 每迭代复杂度，时间和内存均线性",
+   "source": "Sec. 5"
+  },
+  {
+   "number": "O(n²)",
+   "context": "LR 每迭代复杂度，无代价低秩假设",
+   "source": "Sec. 4"
+  },
+  {
+   "number": "O(n³)",
+   "context": "entropic GW 基线复杂度",
+   "source": "Sec. 1"
+  },
+  {
+   "number": "r = n/100",
+   "context": "合成与单细胞实验中 LR 达到与 Ent 相似 GW loss 所用的耦合秩",
+   "source": "Fig. 5, Fig. 4"
+  },
+  {
+   "number": "n = m = 1e5",
+   "context": "大规模实验中只有 Lin LR 可计算的样本量",
+   "source": "Fig. 8"
+  },
+  {
+   "number": "n = 34079, m = 27906",
+   "context": "BRAIN 数据集规模，Lin LR 准确率一致优于 MREC",
+   "source": "Fig. 10"
+  },
+  {
+   "number": "4L_αD₀/N",
+   "context": "MD 方案 N 次迭代内平稳收敛上界",
+   "source": "Prop. 2"
+  },
+  {
+   "number": "0.99",
+   "context": "距离矩阵低秩近似的成功概率下界",
+   "source": "Sec. 3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2106.01134",
+   "type": "继承"
+  },
+  {
+   "report_id": "peyre2016gromov",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2001.01666",
+   "type": "竞争"
+  },
+  {
+   "report_id": "1810.10046",
+   "type": "依赖"
+  },
+  {
+   "report_id": "1905.01442",
+   "type": "依赖"
+  }
+ ],
+ "read_full_text": true
+}

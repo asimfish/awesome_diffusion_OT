@@ -1,0 +1,68 @@
+{
+ "report_id": "2312.14572",
+ "arxiv_id": "2312.14572",
+ "title": "Semidefinite Relaxations of the Gromov-Wasserstein Distance",
+ "tldr_zh": "用 SDP 松弛 GW 非凸 QP，给出可认证全局下界与最优性证书，实验中频繁达到全局最优",
+ "tldr_en": "SDP relaxation of GW gives certifiable global lower bounds and optimality certificates, frequently exact in experiments",
+ "tags": [
+  "Gromov-Wasserstein",
+  "SDP relaxation",
+  "global optimality",
+  "optimal transport",
+  "quadratic assignment"
+ ],
+ "code_url": "https://github.com/tbng/gwsdp",
+ "key_numbers": [
+  {
+   "number": "0.6425 vs 1.0593 vs 1.009",
+   "context": "n=16 高斯匹配目标值：GW-SDP vs CG-GW vs eGW",
+   "source": "Figure 1b"
+  },
+  {
+   "number": "92.97% vs 93.75% vs 23.05%",
+   "context": "n=16 高斯匹配稀疏度：GW-SDP vs CG-GW vs eGW",
+   "source": "Figure 1b"
+  },
+  {
+   "number": "216.3645 s",
+   "context": "n=20 时 GW-SDP 平均运行时间（标准差 14.1123）",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.0014 s",
+   "context": "n=20 时 GW-CG 平均运行时间",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.4577 vs 1.135940",
+   "context": "n=10 时 GW-SDP vs GW-CG 目标值",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.028 vs 0.055 vs 0.104",
+   "context": "SBM 图匹配目标值：GW-SDP vs GW-CG vs eGW",
+   "source": "Figure 4a"
+  },
+  {
+   "number": "0.143 vs 0.143 vs 0.325",
+   "context": "FGW 图匹配目标值（ξ=0.8）：FGW-SDP vs FGW-CG vs Fused-eGW",
+   "source": "Figure 4b"
+  },
+  {
+   "number": "0.007416 vs 0.043879 vs 0.025688",
+   "context": "Elephant-Elephant 形状匹配目标值：GW-SDP vs GW-CG vs eGW-PPA",
+   "source": "Table 3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2312.14572",
+   "type": "extends"
+  },
+  {
+   "report_id": "2312.14572",
+   "type": "competes_with"
+  }
+ ],
+ "read_full_text": true
+}

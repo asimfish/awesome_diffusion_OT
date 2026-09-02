@@ -1,0 +1,80 @@
+{
+ "report_id": "2505.19476",
+ "arxiv_id": "2505.19476",
+ "title": "FlowSE: Efficient and High-Quality Speech Enhancement via Flow Matching",
+ "tldr_zh": "FM 语音增强：noisy mel 单程变换到 clean mel，RTF 0.31，DNSMOS 最高 3.643",
+ "tldr_en": "Flow matching SE: noisy-to-clean mel in one pass, RTF 0.31, DNSMOS up to 3.643",
+ "tags": [
+  "flow matching",
+  "speech enhancement",
+  "DiT",
+  "mel spectrogram",
+  "rectified flow",
+  "generative SE"
+ ],
+ "code_url": "https://github.com/Honee-W/FlowSE/",
+ "key_numbers": [
+  {
+   "number": "RTF 0.31",
+   "source": "Table 2",
+   "context": "FlowSE-w/ text 和 w/o text 在单张 NVIDIA 4090D 上的实时因子，扩散基线为 3.27–3.49"
+  },
+  {
+   "number": "WER 8.79% / 8.81%",
+   "source": "Table 2",
+   "context": "模拟测试集上 FlowSE-w/ text 与 w/o text 的词错误率，Noisy 基线 28.10%，扩散基线 13.97–15.31%"
+  },
+  {
+   "number": "DNSMOS OVRL 3.643",
+   "source": "Table 1",
+   "context": "Real Recording 条件下 FlowSE-w/ text 的 OVRL 子项，为表中最高"
+  },
+  {
+   "number": "Spk Sim 0.940",
+   "source": "Table 1",
+   "context": "Without Reverb 条件下 FlowSE-w/ text 的说话人相似度，为表中最高；With Reverb 下为 0.809，低于 MaskSR 的 0.827"
+  },
+  {
+   "number": "1.2M 更新步 / 8×4090D",
+   "source": "Sec. 4.2",
+   "context": "训练配置：AdamW，峰值学习率 7.5e-5，20K 步 warmup"
+  },
+  {
+   "number": "DiT 22 层 / 16 头 / 隐藏维 1024 / FFN 2048",
+   "source": "Sec. 4.2",
+   "context": "速度场估计器架构参数"
+  },
+  {
+   "number": "100 维 log mel / 24 kHz / hop 256",
+   "source": "Sec. 4.2",
+   "context": "输入表示配置"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2410.06885",
+   "type": "继承"
+  },
+  {
+   "report_id": "2309.03199",
+   "type": "继承"
+  },
+  {
+   "report_id": "2406.18009",
+   "type": "继承"
+  },
+  {
+   "report_id": "2406.09286",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2406.02092",
+   "type": "对比基线"
+  },
+  {
+   "report_id": "2203.17004",
+   "type": "对比基线"
+  }
+ ],
+ "read_full_text": true
+}

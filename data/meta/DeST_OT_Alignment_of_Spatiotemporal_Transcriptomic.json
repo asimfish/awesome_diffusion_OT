@@ -1,0 +1,31 @@
+{
+ "report_id": "DeST_OT_Alignment_of_Spatiotemporal_Transcriptomic",
+ "arxiv_id": null,
+ "title": "DeST-OT: Alignment of Spatiotemporal Transcriptomics Data",
+ "tldr_zh": "用 semi-relaxed FGW 对齐时空转录组切片，建模生长/凋亡/分化并给出 growth-distortion 与 migration 度量。",
+ "tldr_en": "Aligns spatiotemporal transcriptomics slices via semi-relaxed FGW, modeling growth/apoptosis/differentiation with growth-distortion and migration metrics.",
+ "tags": [
+  "spatial transcriptomics",
+  "Gromov-Wasserstein",
+  "semi-relaxed OT",
+  "developmental biology",
+  "alignment"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "PASTE_alignment_spatial_transcriptomics",
+   "type": "前作/继承"
+  },
+  {
+   "report_id": "moscot_spatiotemporal",
+   "type": "同期/竞争"
+  },
+  {
+   "report_id": "WFM_flow_matching_tissue_niche",
+   "type": "后续方向/互补"
+  }
+ ],
+ "read_full_text": false
+}

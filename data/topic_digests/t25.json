@@ -1,0 +1,92 @@
+{
+ "digest_zh": "本课题解决非平衡/部分 OT 在生成建模中的理论奠基、动态化与 simulation-free 化问题。方法谱系从静态理论（1508.05216 的 WFR 半耦合与动态等价、Optimal_Entropy_Transport 的 HK 距离）出发，经 UDSB 引入 killing/birth 项把 SB 推广到质量不守恒，再到 DeepRUOT/Var-RUOT 用 Fisher 正则或 HJB 变分把 RUOT 做成可训练目标，最终在 WFR-FM 与 VGFM 中收敛为纯 flow matching 的 simulation-free 形式。当前共识是：非平衡性应作为第一等公民显式建模（速度场+增长场联合学习），而非仅靠重加权预处理；分歧在于增长场的几何来源——WFR-FM 基于 Wasserstein–Fisher–Rao 度量，VGFM 基于 semi-relaxed OT 的两段式分解，BranchSBM 则用分支结构显式参数化多模态。底层求解器（Light UOT、半离散 partial/robust OT）与任务特化应用（OTFM 一步 pansharpening）构成外围支撑。",
+ "observations": [
+  {
+   "claim": "非平衡 OT 的动态形式与静态半耦合形式等价，为后续所有 UOT 生成模型提供了双面模板。",
+   "evidence": [
+    "1508.05216",
+    "Optimal_Entropy_Transport_Problems_and_a_New_Helli"
+   ],
+   "detail": "1508.05216 证明动态形式（带源连续性方程）与静态半耦合形式等价，并证明 WFR 度量属于此类；Optimal_Entropy_Transport 系统化 KL 松弛边缘的熵-运输问题与 Hellinger–Kantorovich 距离，两者共同构成后续 UOTM、UOT-FM、WFR-FM 的数学基础。"
+  },
+  {
+   "claim": "RUOT 求解器谱系从需要 ODE/SDE 模拟演进到完全 simulation-free，DeepRUOT 是第一个深度求解器，WFR-FM 是终点。",
+   "evidence": [
+    "2410.00844",
+    "2505.11823",
+    "2601.06810"
+   ],
+   "detail": "DeepRUOT 用 Fisher 正则把 SDE 约束化成 ODE，免去 SDE 仿真；Var-RUOT 用 HJB 一阶最优性条件压缩参数化，训练更稳（27.60±5.75 epochs vs TIGON 228.40±223.71）；WFR-FM 用 traveling Dirac 闭式解完全免模拟，并在 Simulation Gene 上达到 W1=0.019 的最低值。"
+  },
+  {
+   "claim": "增长场的几何来源存在分歧：WFR 度量、semi-relaxed OT 两段式、分支结构三条路线并行。",
+   "evidence": [
+    "2601.06810",
+    "Joint_Velocity_Growth_Flow_Matching",
+    "2506.09007"
+   ],
+   "detail": "WFR-FM 基于 Wasserstein–Fisher–Rao 度量，Prop. 4.3 给出 δ→∞ 时退化为 OT-CFM 的极限；VGFM 从 semi-relaxed OT 出发得到先长质量后运输的两段式动态；BranchSBM 把多模态显式建模为 K 条分支（胰腺 β 细胞实验 K=11），但分支数需预指定。"
+  },
+  {
+   "claim": "非平衡 OT 的数值求解器与任务特化应用构成外围支撑，但理论保证与可扩展性证据参差不齐。",
+   "evidence": [
+    "2303.07988",
+    "Scalable_Wasserstein_Gradient_Flow_via_Unbalanced",
+    "2503.14975"
+   ],
+   "detail": "Light UOT 用 Gaussian mixture 参数化对偶变量，CPU 上 02:38 完成 Young→Adult 翻译，但表达能力受限于 Gaussian mixture；Scalable WGF 声称 JKO 步 UOT 半对偶化将复杂度从 O(K^2) 降到 O(K)，但摘要无实验数字；OTFM 用 UOT 对偶实现 1 NFE 的 pansharpening，但理论支撑薄弱且 f=exp 的选择缺乏敏感性分析。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "免仿真 unbalanced SB 的统一收敛理论缺失",
+   "why_open": "DeepRUOT 的 Fisher 正则路线与 SF²M 的静态熵耦合路线尚未统一，BranchSBM 的多分支联合训练（Stage 3–4）没有等价性命题，WFR-FM 的 mini-batch 耦合近似偏差未量化。",
+   "evidence": [
+    "2410.00844",
+    "2506.09007",
+    "2601.06810"
+   ]
+  },
+  {
+   "problem": "非平衡度超参数（δ/τ）的自适应选择缺乏原则性方法",
+   "why_open": "WFR-FM 的 δ 选择无原则性方法，Light UOT 的 τ 从 1 到 10^2 连续插值但未给出自动调度，UOTM-SD 的散度调度是经验性的；1508.05216 的 Γ-收敛结果提供了理论锚点但未转化为可操作算法。",
+   "evidence": [
+    "2601.06810",
+    "2303.07988",
+    "1508.05216"
+   ]
+  },
+  {
+   "problem": "增长场的几何来源与分支结构先验的系统消融缺失",
+   "why_open": "WFR 度量、semi-relaxed OT、分支结构三条路线各自独立验证，缺乏在同一基准上的系统对比；BranchSBM 的分支数需预指定，Var-RUOT 的 ψ(g) 选择依赖生物学先验，均未自动化。",
+   "evidence": [
+    "2506.09007",
+    "2505.11823",
+    "Joint_Velocity_Growth_Flow_Matching"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "1508.05216",
+   "why": "WFR 静态/动态等价的理论奠基"
+  },
+  {
+   "report_id": "Optimal_Entropy_Transport_Problems_and_a_New_Helli",
+   "why": "HK 距离与 conic 提升的静态理论"
+  },
+  {
+   "report_id": "2306.09099",
+   "why": "killing/birth 项把 SB 推广到非平衡"
+  },
+  {
+   "report_id": "2410.00844",
+   "why": "DeepRUOT 首个深度 RUOT 求解器"
+  },
+  {
+   "report_id": "2601.06810",
+   "why": "WFR-FM 收敛到 simulation-free 终点"
+  }
+ ],
+ "n_reports": 12
+}

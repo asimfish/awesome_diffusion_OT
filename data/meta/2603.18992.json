@@ -1,0 +1,45 @@
+{
+ "report_id": "2603.18992",
+ "arxiv_id": "2603.18992",
+ "title": "Foundations of Schrödinger Bridges for Generative Modeling",
+ "tldr_zh": "220 页自足教程：静态/动态 SB、随机控制、FBSDE、Markov/reciprocal 投影、离散 SB，统一 diffusion/score/flow matching",
+ "tldr_en": "220-page self-contained tutorial deriving static/dynamic SB, stochastic control, FBSDEs, Markovian/reciprocal projections and discrete SB as one framework for generative modeling.",
+ "tags": [
+  "schrodinger-bridge",
+  "tutorial",
+  "theory",
+  "survey"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "No experiments; 8 chapters, 220 pages (Contents)",
+  "Local text truncated at ~p.36 (Sec. 2.4); later chapters known only from ToC"
+ ],
+ "relations": [
+  {
+   "report_id": "L_onard_A_Survey_of_the_Schr_dinger_Problem",
+   "type": "extends"
+  },
+  {
+   "report_id": "2005.10963",
+   "type": "extends"
+  },
+  {
+   "report_id": "Likelihood_Training_of_SB_using_FBSDEs_SB_FBSDE_Ch",
+   "type": "uses"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "type": "uses"
+  },
+  {
+   "report_id": "Simulation_free_Score_Flow_Matching_SF_M_Tong_et_a",
+   "type": "uses"
+  },
+  {
+   "report_id": "Categorical_SB_Matching_CSBM_Ksenofontov_Korotin",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

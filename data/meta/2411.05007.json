@@ -1,0 +1,91 @@
+{
+ "report_id": "2411.05007",
+ "arxiv_id": "2411.05007",
+ "title": "SVDQuant: Absorbing Outliers by Low-Rank Components for 4-Bit Diffusion Models",
+ "tldr_zh": "SVDQuant 用低秩分支吸收离群值实现 W4A4 量化，FLUX.1 在笔记本 4090 上比 W4A16 快 3 倍",
+ "tldr_en": "SVDQuant absorbs outliers via low-rank branch for W4A4 diffusion quantization, 3x faster than W4A16 on laptop 4090",
+ "tags": [
+  "quantization",
+  "W4A4",
+  "diffusion models",
+  "low-rank decomposition",
+  "inference engine",
+  "edge deployment"
+ ],
+ "code_url": "https://github.com/mit-han-lab/nunchaku",
+ "key_numbers": [
+  {
+   "number": "3.0×",
+   "description": "INT4 在桌面和笔记本 RTX 4090 上相对 NF4 W4A16 的单步延迟加速",
+   "source": "Figure 8"
+  },
+  {
+   "number": "3.1×",
+   "description": "NVFP4 在 RTX 5090 上相对 NF4 的单步延迟加速",
+   "source": "Figure 8"
+  },
+  {
+   "number": "3.5×",
+   "description": "DiT 推理内存从 24.4 GiB 降至 6.9 GiB 的减少倍数",
+   "source": "Figure 8"
+  },
+  {
+   "number": "3.6×",
+   "description": "FLUX.1 模型大小从 22.2 GiB 降至 6.1 GiB 的减少倍数",
+   "source": "Figure 8"
+  },
+  {
+   "number": "10.1×",
+   "description": "笔记本 4090 上通过消除 CPU offloading 获得的总加速",
+   "source": "Figure 8"
+  },
+  {
+   "number": "19.9",
+   "description": "FLUX.1-dev INT W4A4 在 MJHQ 上的 FID，优于 BF16 的 20.3",
+   "source": "Table 1"
+  },
+  {
+   "number": "19.2",
+   "description": "PixArt-Σ INT W4A4 在 MJHQ 上的 FID，对比 ViDiT-Q W4A8 的 37.3",
+   "source": "Table 1"
+  },
+  {
+   "number": "5~10%",
+   "description": "Nunchaku kernel fusion 后低秩分支的额外延迟占比",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "50%",
+   "description": "朴素独立运行低秩分支的延迟开销占比",
+   "source": "Sec. 4.3, Figure 6a"
+  },
+  {
+   "number": "16 或 32",
+   "description": "低秩分支的典型秩 r 取值",
+   "source": "Sec. 4.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2405.17873",
+   "type": "继承/竞争（MixDQ，W4A8 量化基线）"
+  },
+  {
+   "report_id": "2406.02540",
+   "type": "继承/竞争（ViDiT-Q，W4A8/W4A4 基线）"
+  },
+  {
+   "report_id": "2402.08953",
+   "type": "方法对比（LoRC，量化后低秩补偿 vs 先分解再量化）"
+  },
+  {
+   "report_id": "2211.10438",
+   "type": "技术继承（SmoothQuant 的 smoothing 技术）"
+  },
+  {
+   "report_id": "2405.04532",
+   "type": "同组工作（QServe，W4A4 LLM 量化引擎）"
+  }
+ ],
+ "read_full_text": true
+}

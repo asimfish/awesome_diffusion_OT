@@ -1,0 +1,95 @@
+{
+ "report_id": "2502.12456",
+ "arxiv_id": "2502.12456",
+ "title": "Not-So-Optimal Transport Flows for 3D Point Cloud Generation",
+ "tldr_zh": "证明 equivariant OT 在大点云上算不动且完全 OT 耦合让 t≈0 处场难学，提出离线 superset OT + 混合耦合，少步数生成优于基线",
+ "tldr_en": "Shows equivariant OT scales poorly on large point clouds and full OT coupling makes t≈0 vector field hard to learn; proposes offline superset OT + hybrid coupling for few-step generation",
+ "tags": [
+  "flow matching",
+  "optimal transport",
+  "3D point cloud",
+  "permutation invariance",
+  "hybrid coupling",
+  "ShapeNet"
+ ],
+ "code_url": "https://research.nvidia.com/labs/genair/not-so-ot-flow",
+ "key_numbers": [
+  {
+   "number": "约 6%",
+   "context": "Minibatch OT 在 batch size 256 时的 cost 降低",
+   "source": "Fig. 3 left"
+  },
+  {
+   "number": "48.7%",
+   "context": "Equivariant OT 在 batch size 1 时的 cost 降低",
+   "source": "Fig. 3 left"
+  },
+  {
+   "number": "约 2.2 秒",
+   "context": "Equivariant OT 单次计算时间（N=2048, B=1）",
+   "source": "Fig. 3 right"
+  },
+  {
+   "number": "超过 40 倍",
+   "context": "Equivariant OT 比 independent coupling 慢",
+   "source": "Sec. 3.2"
+  },
+  {
+   "number": "约 30 秒",
+   "context": "100K 点 superset OT 预计算时间",
+   "source": "Sec. 3.3"
+  },
+  {
+   "number": "0.2",
+   "context": "最佳混合系数 β",
+   "source": "Sec. 3.4, Table 1"
+  },
+  {
+   "number": "0.5853 / 0.5741",
+   "context": "β=0.2 时 Chair 类 1-NNA-CD / EMD（100 步）",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.7289",
+   "context": "β=0（纯 OT）时 Chair 类 1-NNA-CD（100 步）",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.5725",
+   "context": "M=100K 时 Chair 类 1-NNA-CD（100 步）",
+   "source": "Table 2"
+  },
+  {
+   "number": "5 步 vs 约 50 步",
+   "context": "补全任务达到合理质量所需步数（本文 vs 其他方法）",
+   "source": "Sec. 4.2, Fig. 10"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2306.15030",
+   "type": "继承并批判"
+  },
+  {
+   "report_id": "2304.14772",
+   "type": "继承并批判"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "继承并批判"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "方法基础"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "竞争（rectified flow 路线）"
+  },
+  {
+   "report_id": "2210.06978",
+   "type": "竞争（扩散基线）"
+  }
+ ],
+ "read_full_text": true
+}

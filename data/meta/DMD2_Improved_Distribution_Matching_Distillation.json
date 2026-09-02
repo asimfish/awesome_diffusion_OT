@@ -1,0 +1,51 @@
+{
+ "report_id": "DMD2_Improved_Distribution_Matching_Distillation",
+ "arxiv_id": null,
+ "title": "DMD2: Improved Distribution Matching Distillation",
+ "tldr_zh": "去掉 ODE 对回归，TTUR+GAN 稳定纯分布匹配；一步 ImageNet-64 FID 1.28 超教师",
+ "tldr_en": "Removes ODE pair regression, uses TTUR+GAN for stable pure distribution matching; 1-step ImageNet-64 FID 1.28 beats teacher",
+ "tags": [
+  "distribution matching distillation",
+  "GAN",
+  "TTUR",
+  "few-step diffusion",
+  "score distillation",
+  "ImageNet-64"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "1.28",
+   "metric": "FID",
+   "dataset": "ImageNet-64",
+   "setting": "1-step generation",
+   "source": "abstract"
+  },
+  {
+   "number": "1",
+   "metric": "NFE",
+   "dataset": "ImageNet-64",
+   "setting": "single-step generation",
+   "source": "abstract"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "DMD_CVPR2024",
+   "type": "继承"
+  },
+  {
+   "report_id": "ADD_ECCV2024",
+   "type": "同族（对抗项/IPM 判别器）"
+  },
+  {
+   "report_id": "CTM_ICLR2024",
+   "type": "同族（对抗项/IPM 判别器）"
+  },
+  {
+   "report_id": "VDOT_CVPR2026",
+   "type": "被后续工作扩展（OT 距离引入 DMD）"
+  }
+ ],
+ "read_full_text": false
+}

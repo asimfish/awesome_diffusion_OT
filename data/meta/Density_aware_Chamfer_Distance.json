@@ -1,0 +1,35 @@
+{
+ "report_id": "Density_aware_Chamfer_Distance",
+ "arxiv_id": null,
+ "title": "Density-aware Chamfer Distance",
+ "tldr_zh": "提出有界且密度敏感的 Chamfer 距离变体，弥补 CD 密度盲区与 EMD 高成本",
+ "tldr_en": "Proposes a bounded, density-sensitive Chamfer Distance variant as a trainable loss",
+ "tags": [
+  "point cloud",
+  "Chamfer Distance",
+  "optimal transport",
+  "density-aware",
+  "generative model loss"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "InfoCD",
+   "type": "后继/同谱系"
+  },
+  {
+   "report_id": "HyperCD",
+   "type": "后继/同谱系"
+  },
+  {
+   "report_id": "UOT-UPC",
+   "type": "被反向消费"
+  },
+  {
+   "report_id": "PointFlow",
+   "type": "下游生成主干"
+  }
+ ],
+ "read_full_text": false
+}

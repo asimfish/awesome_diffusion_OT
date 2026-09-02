@@ -1,0 +1,41 @@
+{
+  "issue_count": 6,
+  "issues": [
+    {
+      "page": 5,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 5: displayed equation at y=197 shifted horizontally by 26pt vs original"
+    },
+    {
+      "page": 20,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 20: displayed equation at y=527 shifted horizontally by 19pt vs original"
+    },
+    {
+      "page": 31,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 31: displayed equation at y=385 shifted horizontally by 15pt vs original"
+    },
+    {
+      "page": 31,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 31: paragraph still in English (5 words, 0 CJK chars) at x=207.3, y=368.6: L(p) is minimal ⇐⇒p is a solution to (117),(119)"
+    },
+    {
+      "page": 31,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 31: paragraph still in English (5 words, 0 CJK chars) at x=204.2, y=397.3: L(V ) is minimal ⇐⇒V is a solution to (118).(120)"
+    },
+    {
+      "page": 35,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 35: preserved region at x=72, y=377 (269x17pt) renders with ink coverage 0.83 vs original"
+    }
+  ]
+}

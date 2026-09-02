@@ -1,0 +1,81 @@
+{
+ "report_id": "2503.19034",
+ "arxiv_id": "2503.19034",
+ "title": "Color Conditional Generation with Sliced Wasserstein Guidance",
+ "tldr_zh": "把可微 Sliced-1-Wasserstein 色彩距离注入扩散采样循环，training-free 实现颜色条件生成，色彩匹配优于先迁移流水线",
+ "tldr_en": "Injects differentiable Sliced-1-Wasserstein color distance into diffusion sampling for training-free color-conditional generation",
+ "tags": [
+  "sliced-wasserstein",
+  "diffusion-guidance",
+  "color-transfer",
+  "training-free",
+  "optimal-transport"
+ ],
+ "code_url": "https://github.com/alobashev/sw-guidance",
+ "key_numbers": [
+  {
+   "number": "0.0297 ± 0.0005",
+   "context": "SW-Guidance SDXL 的 2-Wasserstein 距离，为所有基线中最低",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.0543 ± 0.0011",
+   "context": "第二名 hm-mkl-hm 的 2-Wasserstein 距离",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.270 ± 0.002",
+   "context": "SW-Guidance 的 CLIP-T，在风格化生成基线中最高",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.285 ± 0.004",
+   "context": "SW-Guidance 的 CLIP-IQA，排第二，低于 InstantStyle 的 0.332",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.0385 ± 0.0006",
+   "context": "SD-1.5 上标准 SW 的 2-Wasserstein 距离，优于 Energy-Based SW (0.0390)、DSW (0.0547)、GSW (0.0879)",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.1176 ± 0.0016",
+   "context": "仅矩匹配（Moments only）的 2-Wasserstein 距离，远差于 SW only",
+   "source": "Table 3"
+  },
+  {
+   "number": "30 秒 / 1 分钟",
+   "context": "M=10, K=10 时 SD-1.5 / SDXL 的单张生成时间，RTX 4090",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "2 分钟",
+   "context": "RB-Modulation 的单张生成时间，作为对比",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "1000 prompts / 1000 photos",
+   "context": "测试集规模：ContraStyles 前 1000 prompt + Unsplash Lite 1000 参考图",
+   "source": "Sec. 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2405.17401",
+   "type": "继承（控制向量 u 的引入沿用 RB-Modulation）"
+  },
+  {
+   "report_id": "2209.14687",
+   "type": "继承（DPS 的预测无噪样本近似，Eq. 2-3）"
+  },
+  {
+   "report_id": "2302.07121",
+   "type": "继承（Universal Diffusion Guidance 的一般化距离引导，Eq. 4）"
+  },
+  {
+   "report_id": "2503.06746",
+   "type": "同期竞争（Color Alignment in Diffusion，因无开源实现被排除直接比较）"
+  }
+ ],
+ "read_full_text": true
+}

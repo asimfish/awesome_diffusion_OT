@@ -1,0 +1,65 @@
+{
+ "report_id": "2408.14608",
+ "arxiv_id": "2408.14608",
+ "title": "Meta Flow Matching: Integrating Vector Fields on the Wasserstein Manifold",
+ "tldr_zh": "用 GNN 嵌入初始群体，amortize Flow Matching 速度场，泛化到未见病人的治疗响应预测",
+ "tldr_en": "GNN-embedded initial populations amortize Flow Matching vector fields, generalizing to unseen patients",
+ "tags": [
+  "flow matching",
+  "Wasserstein manifold",
+  "GNN",
+  "single-cell",
+  "treatment response",
+  "meta learning",
+  "population dynamics"
+ ],
+ "code_url": "https://github.com/lazaratan/meta-flow-matching",
+ "key_numbers": [
+  {
+   "number": "927 population pairs",
+   "context": "organoid drug-screen dataset after preprocessing",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "10 patients, 11 treatments, 3 culture conditions",
+   "context": "organoid dataset composition",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "MFM k=100 W1 = 4.100 ± 0.093 vs FM W1 = 4.340 ± 0.078",
+   "context": "replicate split, best non-OT MFM vs FM",
+   "source": "Table 2"
+  },
+  {
+   "number": "MFM k=50 W1 = 4.087 ± 0.122 vs FMw/OT W1 = 4.064 ± 0.152",
+   "context": "patient split, MFM slightly worse than OT-augmented FM",
+   "source": "Table 3"
+  },
+  {
+   "number": "MFM k=0 Test(X) W1 = 0.202 ± 0.002 vs CGFM Test(X) W1 = 0.334 ± 0.000",
+   "context": "synthetic letters, unseen silhouette generalization",
+   "source": "Table 1"
+  },
+  {
+   "number": "MFM k=0 Train W1 = 0.081 ± 0.003 vs CGFM Train W1 = 0.090 ± 0.000",
+   "context": "synthetic letters, training fit",
+   "source": "Table 1"
+  },
+  {
+   "number": "43 biomarkers, ≥1000 cells per population",
+   "context": "organoid data filtering",
+   "source": "Sec. 5.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2408.14608",
+   "type": "extends"
+  },
+  {
+   "report_id": "2408.14608",
+   "type": "compares_to"
+  }
+ ],
+ "read_full_text": true
+}

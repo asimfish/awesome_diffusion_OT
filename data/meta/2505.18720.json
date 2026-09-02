@@ -1,0 +1,67 @@
+{
+ "report_id": "2505.18720",
+ "arxiv_id": "2505.18720",
+ "title": "Optimal Transport-Based Token Weighting scheme for Enhanced Preference Optimization",
+ "tldr_zh": "用 unbalanced OT 对齐 chosen/rejected 回复的 token 分布，以传输计划边际重加权 DPO 损失",
+ "tldr_en": "Unbalanced OT aligns chosen/rejected token distributions; transport plan marginals reweight DPO loss",
+ "tags": [
+  "DPO",
+  "optimal transport",
+  "token weighting",
+  "LLM alignment",
+  "unbalanced OT"
+ ],
+ "code_url": "https://github.com/Mimasss2/OTPO",
+ "key_numbers": [
+  {
+   "number": "10.9%",
+   "context": "OTPO 相对 DPO 的最大 length-controlled win rate 提升（AlpacaEval2）",
+   "source": "Abstract / Sec. 4.1"
+  },
+  {
+   "number": "53.37%",
+   "context": "Llama-3-8B + UltraFeedback 的 LC WR，OTPO 最高",
+   "source": "Tab. 2"
+  },
+  {
+   "number": "71.9%",
+   "context": "TL;DR 摘要 win rate，OTPO；最佳基线 SamPO 为 63.3%",
+   "source": "Fig. 4"
+  },
+  {
+   "number": "8.6%",
+   "context": "摘要任务 OTPO 相对最佳基线 SamPO 的 win rate 差距",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "26.38%",
+   "context": "无归一化消融的 LC WR，不到最佳的一半",
+   "source": "Tab. 3 / Sec. 4.2.2"
+  },
+  {
+   "number": "0.37",
+   "context": "两位人类评估专家的标注相关性",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "O(n^2)",
+   "context": "OT 步骤时间复杂度，对比 transformer 前向 O(ln^2d + lnd^2)",
+   "source": "Sec. 5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2405.14734",
+   "type": "继承（SimPO 是 OTPO 权重方案的特例，Tab. 1）"
+  },
+  {
+   "report_id": "2406.08682",
+   "type": "并行（AOT 用 OT 做 unpaired 偏好优化的分布支配，本文做 paired token 级对齐）"
+  },
+  {
+   "report_id": "2305.18290",
+   "type": "继承（DPO 是 OTPO 的基线，Eq. 5 的 ω=1 特例）"
+  }
+ ],
+ "read_full_text": true
+}

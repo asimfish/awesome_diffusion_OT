@@ -1,0 +1,53 @@
+{
+ "report_id": "2311.05672",
+ "arxiv_id": "2311.05672",
+ "title": "Conditional Optimal Transport on Function Spaces",
+ "tldr_zh": "无穷维函数空间上条件 OT 的存在性、对偶与 Monge 唯一性，用于 amortized Bayesian 推断",
+ "tldr_en": "Existence, duality, and Monge uniqueness of conditional OT on function spaces for amortized Bayesian inference",
+ "tags": [
+  "conditional OT",
+  "triangular maps",
+  "function spaces",
+  "Bayesian inverse problems",
+  "amortized inference",
+  "Kantorovich duality",
+  "Monge problem"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "p ∈ (1, ∞)",
+   "source": "Theorem 1.7 / Proposition 3.8",
+   "context": "代价 ∥u−v∥_U^p 中 p 的范围，保证 Monge 解存在唯一"
+  },
+  {
+   "number": "3",
+   "source": "Sec. 1.2.1",
+   "context": "本文相对 [28] 的三个偏离方向：(a) Hilbert/Polish 空间；(b) 任意代价；(c) 约束 Kantorovich 的详细刻画"
+  },
+  {
+   "number": "2",
+   "source": "Proposition 3.3",
+   "context": "条件 Kantorovich 解的两条性质：存在性 + 逐 y 分解为条件间 OT 最优耦合"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2206.14262",
+   "type": "related"
+  },
+  {
+   "report_id": "COT-FM-NeurIPS2024",
+   "type": "related"
+  },
+  {
+   "report_id": "Chemseddine-JMLR2025",
+   "type": "related"
+  },
+  {
+   "report_id": "C2OT-ICCV2025",
+   "type": "related"
+  }
+ ],
+ "read_full_text": false
+}

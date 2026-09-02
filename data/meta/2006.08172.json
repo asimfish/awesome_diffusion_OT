@@ -1,0 +1,83 @@
+{
+ "report_id": "2006.08172",
+ "arxiv_id": "2006.08172",
+ "title": "Faster Wasserstein Distance Estimation with the Sinkhorn Divergence",
+ "tldr_zh": "证明 debiased Sinkhorn divergence 估计平方 W₂ 距离在更大 ε 下仍达近最优误差，计算-统计两头受益",
+ "tldr_en": "Debiased Sinkhorn divergence estimates squared W2 with larger ε at near-optimal error, improving both computation and statistics",
+ "tags": [
+  "entropic OT",
+  "Sinkhorn divergence",
+  "Wasserstein estimation",
+  "Richardson extrapolation",
+  "sample complexity"
+ ],
+ "code_url": "https://gitlab.com/proussillon/wasserstein-estimation-sinkhorn-divergence",
+ "key_numbers": [
+  {
+   "number": "λ²/4 · max{I₀(μ,ν), (I₀(μ,μ)+I₀(ν,ν))/2}",
+   "context": "Sλ 与 W₂² 的偏差上界",
+   "source": "Theorem 1"
+  },
+  {
+   "number": "n^{-2/d} (d>4)",
+   "context": "plug-in 估计器 W₂² 的期望误差率",
+   "source": "Theorem 2"
+  },
+  {
+   "number": "n^{-2/(d'+4)}, d'=2⌊d/2⌋",
+   "context": "Sinkhorn divergence 估计器的期望误差率",
+   "source": "Proposition 4"
+  },
+  {
+   "number": "λ ≍ ε^{1/2} vs λ ≍ ε",
+   "context": "Sλ 与 plug-in 达到 ε 精度所需正则化量级",
+   "source": "Sec. 3.2"
+  },
+  {
+   "number": "Õ(n²ε^{-1.5}) vs Õ(n²ε^{-2})",
+   "context": "Sλ 与 Tλ 达到精度 ε≍n^{-2/(d'+4)} 的计算时间",
+   "source": "Proposition 5"
+  },
+  {
+   "number": "n^{-4/(d'+8)}",
+   "context": "Richardson 外推估计器在四阶展开假设下的期望误差率",
+   "source": "Proposition 8"
+  },
+  {
+   "number": "-λ²/8·d_b²(A⁻¹,B⁻¹) + λ⁴/384·d_b²(A⁻³,B⁻³) + O(λ⁵)",
+   "context": "高斯情形 Sλ−W₂² 的 Taylor 展开",
+   "source": "Sec. 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1810.08278",
+   "type": "继承"
+  },
+  {
+   "report_id": "1810.03717",
+   "type": "继承"
+  },
+  {
+   "report_id": "1909.12229",
+   "type": "继承"
+  },
+  {
+   "report_id": "1902.01782",
+   "type": "竞争"
+  },
+  {
+   "report_id": "1905.05828",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2006.02572",
+   "type": "引用"
+  },
+  {
+   "report_id": "2006.03416",
+   "type": "引用"
+  }
+ ],
+ "read_full_text": true
+}

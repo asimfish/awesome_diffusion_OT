@@ -1,0 +1,44 @@
+{
+ "report_id": "2210.06662",
+ "arxiv_id": "2210.06662",
+ "title": "Action Matching: Learning Stochastic Dynamics from Samples",
+ "tldr_zh": "只用各时刻独立边缘样本学梯度场复现任意密度路径，目标可解、无需耦合或 OT 求解器；含 entropic/unbalanced 扩展",
+ "tldr_en": "Learns a gradient field reproducing any density path from uncoupled marginal snapshots via a tractable action objective; entropic and unbalanced extensions.",
+ "tags": [
+  "action-matching",
+  "flow-matching",
+  "trajectory-inference",
+  "optimal-transport",
+  "benamou-brenier",
+  "single-cell",
+  "theory"
+ ],
+ "code_url": "https://github.com/necludov/jam",
+ "key_numbers": [
+  "CIFAR-10 AM: BPD 3.54, FID 10.04, IS 8.60, NFE 132 vs VP-SDE 3.25/3.71/9.12/199 and FM 2.99/6.35/-/142 (Table 3)",
+  "CIFAR-10 conditional AM: super-resolution FID 1.44 / IS 10.93 / NFE 166; colorization FID 2.47 / IS 9.88 / NFE 89 (Table 3)",
+  "Embryoid body scRNA-seq W2 at t1..t4: eAM 0.58/0.77/0.72/0.74 vs NLSB 0.63/0.75/0.75/0.72 (Table 1)",
+  "Hydrogen atom Schrodinger dynamics: AM avg MMD 5.7e-4 vs ALD+true scores 3.6e-2 (Table 2)",
+  "W2^2(hat q_tau, q_tau) <= e^{(1+2K)tau} * action gap (Proposition A.1)",
+  "Kinetic energy of AM target <= that of FM marginal field for all t (Eq. 27, Helmholtz decomposition)"
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "competes"
+  },
+  {
+   "report_id": "2209.15571",
+   "type": "uses"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "competes"
+  },
+  {
+   "report_id": "2306.06626",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

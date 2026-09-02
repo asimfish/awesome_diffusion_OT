@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>扩散模型 × 最优传输：深度调研汇报（2026-08-14）</title>
+<style>
+/* =====================================================================
+   学术演示样式：白底 / 衬线标题 / 深蓝 + 墨黑 + 单一暗红强调
+   零外部依赖：全部系统字体栈，无 CDN、无图片资源
+   ===================================================================== */
+:root {
+  --paper:  #fbfaf7;            /* 极浅暖白底 */
+  --ink:    #1d2129;            /* 墨黑正文 */
+  --blue:   #1e3a5f;            /* 深蓝：结构色 */
+  --blue-soft: #eef2f7;         /* 深蓝的浅底 */
+  --accent: #a1362b;            /* 唯一强调色：暗红 */
+  --accent-soft: #f7efec;
+  --muted:  #5c6470;            /* 次要文字 */
+  --line:   #d9d6cd;            /* 分隔线 */
+  --serif: Georgia, "Times New Roman", "Songti SC", "STSong", "STZhongsong", SimSun, "Noto Serif CJK SC", "Source Han Serif SC", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  --mono: "SF Mono", Menlo, Consolas, "Courier New", monospace;
+  --px: clamp(1.6rem, 5vw, 4.4rem);         /* 水平内边距 */
+  --fs-body:  clamp(12px, 1.22vw, 17px);
+  --fs-small: clamp(10px, 0.95vw, 13px);
+  --fs-tiny:  clamp(9px, 0.82vw, 11.5px);
+  --fs-h2:    clamp(19px, 2.35vw, 33px);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; background: var(--paper); }
+body {
+  font-family: var(--sans);
+  font-size: var(--fs-body);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ---------- 放映机制：绝对定位 + 渐显 ---------- */
+#deck { position: fixed; inset: 0; }
+.slide {
+  position: absolute; inset: 0;
+  width: 100vw; height: 100vh; height: 100dvh;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  background: var(--paper);
+  opacity: 0; visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .32s ease, transform .32s ease, visibility 0s linear .32s;
+}
+.slide.active {
+  opacity: 1; visibility: visible; transform: none;
+  transition: opacity .32s ease, transform .32s ease, visibility 0s;
+  z-index: 2;
+}
+@keyframes rise { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
+.slide.active .s-body > * { animation: rise .42s ease both; }
+.slide.active .s-body > :nth-child(2) { animation-delay: .06s; }
+.slide.active .s-body > :nth-child(3) { animation-delay: .12s; }
+.slide.active .s-body > :nth-child(4) { animation-delay: .18s; }
+.slide.active .s-body > :nth-child(5) { animation-delay: .24s; }
+.slide.active .s-body > :nth-child(n+6) { animation-delay: .3s; }
+@media (prefers-reduced-motion: reduce) {
+  .slide { transition: opacity .15s linear, visibility 0s; transform: none; }
+  .slide.active .s-body > * { animation: none; }
+}
+
+/* ---------- 页眉 / 正文 / 页脚 ---------- */
+.s-head {
+  padding: clamp(0.9rem, 2.6vh, 1.9rem) var(--px) clamp(0.4rem, 1.2vh, 0.7rem);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  flex: none;
+}
+.s-head::after {
+  content: ""; position: absolute; left: var(--px); bottom: -2px;
+  width: 72px; height: 3px; background: var(--accent);
+}
+.kicker {
+  font-family: var(--sans); font-size: var(--fs-small); font-weight: 600;
+  letter-spacing: 0.14em; color: var(--blue); text-transform: uppercase;
+  margin-bottom: 0.25em;
+}
+.s-head h2 {
+  font-family: var(--serif); font-size: var(--fs-h2); font-weight: 700;
+  color: var(--ink); line-height: 1.25; letter-spacing: 0.01em;
+}
+.s-body {
+  flex: 1; min-height: 0; overflow: hidden;
+  padding: clamp(0.7rem, 2vh, 1.35rem) var(--px);
+  display: flex; flex-direction: column;
+  justify-content: center;                 /* 内容少时垂直居中，版面均衡 */
+  gap: clamp(0.45rem, 1.4vh, 0.95rem);
+}
+.s-foot {
+  flex: none;
+  display: flex; justify-content: space-between; align-items: center; gap: 1em;
+  padding: 0.5rem var(--px) 0.75rem;
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-tiny); color: var(--muted);
+}
+.s-foot .f-mid { color: var(--blue); font-weight: 600; letter-spacing: 0.06em; }
+.s-foot .pageno { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+/* ---------- 通用组件 ---------- */
+.lead { font-size: calc(var(--fs-body) * 1.06); }
+.lead strong, .s-body strong { color: var(--ink); }
+em.k { font-style: normal; color: var(--accent); font-weight: 700; }
+.small { font-size: var(--fs-small); color: var(--muted); }
+.tiny  { font-size: var(--fs-tiny);  color: var(--muted); }
+.mono { font-family: var(--mono); font-size: 0.92em; }
+
+/* 出处徽标（会议+年份）与证据分级小标签 */
+.src {
+  display: inline-block; font-family: var(--sans); font-size: 0.72em; font-weight: 600;
+  color: var(--blue); background: var(--blue-soft);
+  padding: 0.05em 0.42em; border-radius: 2px; white-space: nowrap;
+  vertical-align: 0.08em; letter-spacing: 0.02em;
+}
+.ev {
+  display: inline-block; font-family: var(--mono); font-size: 0.68em; font-weight: 700;
+  line-height: 1.35; padding: 0 0.32em; border-radius: 2px;
+  vertical-align: 0.12em; white-space: nowrap;
+}
+.ev-p { background: var(--blue); color: #fff; }
+.ev-a { border: 1px solid var(--blue); color: var(--blue); }
+.ev-r { border: 1px solid var(--accent); color: var(--accent); }
+.ev-b { background: #6b7280; color: #fff; }
+.tref { font-family: var(--mono); font-size: 0.78em; color: var(--muted); white-space: nowrap; }
+
+/* 卡片 / 引示框 */
+.cards { display: grid; gap: clamp(0.5rem, 1.2vw, 0.95rem); min-height: 0; }
+.cards.c2 { grid-template-columns: 1fr 1fr; }
+.cards.c3 { grid-template-columns: 1fr 1fr 1fr; }
+.cards.c4 { grid-template-columns: repeat(4, 1fr); }
+.card {
+  background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--blue);
+  padding: clamp(0.5rem, 1.3vh, 0.85rem) clamp(0.6rem, 1vw, 0.95rem);
+  font-size: var(--fs-small); line-height: 1.5; min-width: 0;
+}
+.card.gap-card { border-top-color: var(--accent); }
+.card h4 {
+  font-family: var(--serif); font-size: calc(var(--fs-body) * 0.98);
+  color: var(--blue); margin-bottom: 0.3em; line-height: 1.3;
+}
+.card.gap-card h4 { color: var(--accent); }
+.cards.c2 .card { font-size: calc(var(--fs-small) * 1.12); }
+.cards.c2 .card h4 { font-size: calc(var(--fs-body) * 1.05); }
+.card .num {
+  font-family: var(--serif); font-size: 1.5em; font-weight: 700;
+  color: var(--accent); line-height: 1; display: block; margin-bottom: 0.18em;
+}
+.callout {
+  border-left: 3px solid var(--accent); background: var(--accent-soft);
+  padding: clamp(0.45rem, 1.2vh, 0.75rem) clamp(0.7rem, 1.2vw, 1rem);
+  font-size: var(--fs-small); line-height: 1.55;
+}
+.callout.blue { border-left-color: var(--blue); background: var(--blue-soft); }
+.callout .cl-t { font-weight: 700; color: var(--accent); margin-right: 0.5em; }
+.callout.blue .cl-t { color: var(--blue); }
+
+/* 列表 */
+ul.ls, ol.ls { padding-left: 1.25em; display: flex; flex-direction: column; gap: 0.42em; }
+ul.ls li::marker { color: var(--accent); }
+ol.ls li::marker { color: var(--blue); font-weight: 700; }
+ul.ls.tight, ol.ls.tight { gap: 0.26em; font-size: var(--fs-small); }
+
+/* 表格（booktabs 风格） */
+table.tbl { width: 100%; border-collapse: collapse; font-size: var(--fs-small); line-height: 1.42; }
+table.tbl th {
+  background: var(--blue-soft); color: var(--blue); font-weight: 700; text-align: left;
+  border-top: 2px solid var(--blue); border-bottom: 1px solid var(--blue);
+  padding: 0.34em 0.55em; white-space: nowrap;
+}
+table.tbl td { border-bottom: 1px solid var(--line); padding: 0.32em 0.55em; vertical-align: top; }
+table.tbl tr:last-child td { border-bottom: 2px solid var(--blue); }
+table.tbl.dense { font-size: var(--fs-tiny); line-height: 1.38; }
+table.tbl.dense th, table.tbl.dense td { padding: 0.24em 0.45em; }
+table.tbl .cnum { font-family: var(--mono); font-weight: 700; color: var(--accent); }
+.star { color: var(--accent); letter-spacing: 0.08em; white-space: nowrap; }
+
+/* 统计带 */
+.stat-band { display: flex; gap: clamp(0.5rem, 1.4vw, 1.1rem); }
+.stat {
+  flex: 1; background: #fff; border: 1px solid var(--line);
+  padding: 0.45em 0.7em; text-align: center; min-width: 0;
+}
+.stat .v { font-family: var(--serif); font-size: clamp(17px, 1.9vw, 27px); font-weight: 700; color: var(--blue); line-height: 1.15; }
+.stat .l { font-size: var(--fs-tiny); color: var(--muted); margin-top: 0.1em; }
+
+/* 键盘提示 */
+.kbd {
+  display: inline-block; border: 1px solid #c9cdd4; border-bottom-width: 2px; border-radius: 3px;
+  padding: 0 0.4em; background: #fff; font-family: var(--mono); font-size: 0.85em; color: var(--ink);
+}
+
+/* ---------- 封面页 ---------- */
+.title-slide .s-body { justify-content: center; align-items: center; text-align: center; gap: clamp(0.6rem, 1.8vh, 1.2rem); }
+.title-slide .t-kicker { font-size: var(--fs-small); letter-spacing: 0.32em; color: var(--muted); font-weight: 600; }
+.title-slide .t-rule { width: 96px; height: 1px; background: var(--blue); position: relative; }
+.title-slide .t-rule::after { content: ""; position: absolute; left: 50%; top: -2px; transform: translateX(-50%); width: 34px; height: 5px; background: var(--accent); }
+.title-slide h1 {
+  font-family: var(--serif); font-weight: 700; color: var(--ink);
+  font-size: clamp(28px, 4.6vw, 62px); line-height: 1.22; letter-spacing: 0.02em;
+}
+.title-slide h1 .t-sub { display: block; font-size: 0.52em; color: var(--blue); margin-top: 0.32em; letter-spacing: 0.14em; }
+.title-slide .tagline { font-family: var(--serif); font-size: clamp(14px, 1.55vw, 21px); color: var(--accent); letter-spacing: 0.06em; }
+.title-slide .t-meta { font-size: var(--fs-small); color: var(--muted); line-height: 1.9; }
+.title-slide .t-hint { font-size: var(--fs-tiny); color: var(--muted); }
+
+/* ---------- 全景图（第 4 页） ---------- */
+.map {
+  display: grid; min-height: 0;
+  grid-template-columns: 1fr 1fr 0.72fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+    "a a a"
+    "cap cap cap"
+    "b c e"
+    "d d e"
+    "f f f";
+  gap: clamp(0.35rem, 1vh, 0.7rem) clamp(0.4rem, 0.9vw, 0.8rem);
+  font-size: var(--fs-small);
+}
+.blk { background: #fff; border: 1px solid var(--line); padding: 0.55em 0.75em; min-width: 0; overflow: hidden; }
+.blk .bh { display: flex; align-items: baseline; gap: 0.5em; margin-bottom: 0.22em; }
+.blk .bl {
+  font-family: var(--serif); font-weight: 700; color: #fff; background: var(--blue);
+  padding: 0 0.45em; border-radius: 2px; font-size: 1.05em;
+}
+.blk .bn { font-weight: 700; color: var(--blue); font-size: 1.05em; }
+.blk .badge {
+  margin-left: auto; font-size: 0.92em; font-weight: 700; color: var(--accent);
+  border: 1px solid var(--accent); padding: 0 0.4em; border-radius: 2px; white-space: nowrap;
+}
+.blk .tt { color: var(--ink); line-height: 1.55; }
+.blk .tt .hl { color: var(--accent); font-weight: 700; }
+.blk-a { grid-area: a; border-top: 3px solid var(--blue); background: var(--blue-soft); }
+.blk-b { grid-area: b; border-left: 3px solid var(--accent); }
+.blk-c { grid-area: c; border-left: 3px solid var(--accent); }
+.blk-e { grid-area: e; }
+.blk-d { grid-area: d; background: #f6f5f1; }
+.blk-f { grid-area: f; background: #f6f5f1; }
+.map-cap { grid-area: cap; text-align: center; color: var(--muted); font-size: 1em; }
+.map-cap .arr { color: var(--blue); font-weight: 700; }
+.era-strip { display: flex; gap: clamp(0.4rem, 0.9vw, 0.8rem); font-size: var(--fs-tiny); }
+.era { flex: 1; border: 1px solid var(--line); background: #fff; padding: 0.32em 0.55em; min-width: 0; }
+.era b { color: var(--blue); display: block; margin-bottom: 0.08em; }
+
+/* ---------- 七环节管线（第 8 页） ---------- */
+.steps7 { display: grid; grid-template-columns: repeat(7, 1fr); gap: clamp(0.9rem, 1.6vw, 1.5rem); }
+.step {
+  position: relative; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--blue);
+  padding: 0.5em 0.55em; font-size: calc(var(--fs-tiny) * 1.12); line-height: 1.45; min-width: 0;
+}
+.step .sn {
+  font-family: var(--serif); font-weight: 700; color: #fff; background: var(--blue);
+  width: 1.5em; height: 1.5em; border-radius: 50%; display: inline-flex;
+  align-items: center; justify-content: center; margin-bottom: 0.25em; font-size: 1.05em;
+}
+.step .st { font-weight: 700; color: var(--ink); display: block; margin-bottom: 0.12em; }
+.step:not(:last-child)::after {
+  content: "→"; position: absolute; top: 42%;
+  right: calc(-1 * clamp(0.9rem, 1.6vw, 1.5rem) + 0.12em);
+  width: clamp(0.9rem, 1.6vw, 1.5rem); text-align: center;
+  color: var(--muted); font-weight: 700;
+}
+
+/* ---------- 方法页流水线（第 3 页） ---------- */
+.pipe { counter-reset: pipestep; display: flex; flex-direction: column; gap: 0.34em; font-size: var(--fs-small); }
+.pipe li { list-style: none; display: flex; gap: 0.6em; align-items: baseline; }
+.pipe li::before {
+  counter-increment: pipestep; content: counter(pipestep);
+  flex: none; font-family: var(--serif); font-weight: 700; color: #fff; background: var(--blue);
+  width: 1.45em; height: 1.45em; border-radius: 50%; text-align: center; line-height: 1.45em; font-size: 0.9em;
+}
+.evbar { display: flex; height: 14px; border: 1px solid var(--line); overflow: hidden; border-radius: 2px; }
+.evbar > div { height: 100%; }
+
+/* ---------- 时间线（第 18 页） ---------- */
+.timeline4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(0.5rem, 1.1vw, 0.9rem); min-height: 0; }
+.phase { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--blue); padding: 0.55em 0.7em; font-size: var(--fs-small); min-width: 0; }
+.phase .wk { font-family: var(--serif); font-weight: 700; color: var(--accent); font-size: 1.12em; display: block; margin-bottom: 0.1em; }
+.phase .ph-t { font-weight: 700; color: var(--blue); display: block; margin-bottom: 0.3em; }
+
+/* ---------- 结尾页 ---------- */
+.kb-tree { font-family: var(--mono); font-size: var(--fs-small); line-height: 1.85; background: #fff; border: 1px solid var(--line); padding: 0.8em 1.1em; }
+.kb-tree .d { color: var(--blue); font-weight: 700; }
+.kb-tree .c { color: var(--muted); font-family: var(--sans); }
+
+/* ---------- 两栏工具 ---------- */
+.cols { display: grid; gap: clamp(0.7rem, 1.6vw, 1.3rem); min-height: 0; }
+.cols.c-55 { grid-template-columns: 55fr 45fr; }
+.cols.c-60 { grid-template-columns: 60fr 40fr; }
+.cols.c-50 { grid-template-columns: 1fr 1fr; }
+.col { min-width: 0; display: flex; flex-direction: column; gap: clamp(0.4rem, 1.1vh, 0.8rem); }
+.col h3, .s-body h3 {
+  font-family: var(--serif); font-size: calc(var(--fs-body) * 1.02); color: var(--blue);
+  border-bottom: 1px solid var(--line); padding-bottom: 0.18em; line-height: 1.3;
+}
+
+/* ---------- 图表 ---------- */
+.chart-wrap { background: #fff; border: 1px solid var(--line); padding: 0.5em 0.7em 0.3em; }
+.chart-wrap svg { width: 100%; height: auto; display: block; }
+.chart-cap { font-size: var(--fs-tiny); color: var(--muted); text-align: center; padding: 0.25em 0 0.15em; }
+
+/* ---------- 导航 UI ---------- */
+#progressbar {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0;
+  background: var(--blue); z-index: 60; transition: width .3s ease;
+}
+#jumpbox, #toast {
+  position: fixed; left: 50%; transform: translateX(-50%);
+  background: var(--ink); color: #fff; font-size: 13px; font-family: var(--sans);
+  padding: 0.45em 1em; border-radius: 4px; z-index: 70; display: none; white-space: nowrap;
+}
+#jumpbox { bottom: 3.4rem; font-family: var(--mono); }
+#toast { top: 1.2rem; }
+
+/* ---------- 打印模式（屏幕预览：按 P 切换，类挂在 html 上） ---------- */
+html.print-mode, html.print-mode body { overflow: auto; height: auto; }
+html.print-mode #deck { position: static; height: auto; }
+html.print-mode .slide {
+  position: relative; inset: auto; opacity: 1; visibility: visible; transform: none;
+  width: 100%; height: 100vh; border-bottom: 2px dashed var(--line);
+}
+html.print-mode .slide .s-body > * { animation: none; }
+html.print-mode #progressbar { display: none; }
+
+/* ---------- 真实打印：A4 横向、每页一张 ---------- */
+@page { size: A4 landscape; margin: 0; }
+@media print {
+  html, body { overflow: visible; height: auto; background: #fff; }
+  #deck { position: static; height: auto; }
+  .slide {
+    position: relative; inset: auto; opacity: 1 !important; visibility: visible !important;
+    transform: none !important; width: 100%; height: 100vh;
+    page-break-after: always; break-after: page; border: none;
+  }
+  .slide .s-body > * { animation: none !important; }
+  #progressbar, #jumpbox, #toast { display: none !important; }
+}
+
+/* ---------- 小屏降级 ---------- */
+@media (max-width: 900px) {
+  .cards.c3, .cards.c4, .cols.c-55, .cols.c-60, .cols.c-50, .timeline4 { grid-template-columns: 1fr 1fr; }
+  .steps7 { grid-template-columns: repeat(4, 1fr); }
+  .step:not(:last-child)::after { content: none; }
+  .map { grid-template-columns: 1fr 1fr; grid-template-areas: "a a" "cap cap" "b c" "e d" "f f"; }
+}
+@media (max-width: 600px) {
+  .cards.c2, .cards.c3, .cards.c4, .cols.c-55, .cols.c-60, .cols.c-50, .timeline4 { grid-template-columns: 1fr; }
+  .steps7 { grid-template-columns: 1fr 1fr; }
+  .stat-band { flex-wrap: wrap; }
+  .stat { flex: 1 1 30%; }
+}
+@media (max-height: 620px) {
+  :root { --fs-body: clamp(11px, 1.6vh, 14px); --fs-small: clamp(9px, 1.35vh, 12px); --fs-tiny: clamp(8px, 1.15vh, 10.5px); --fs-h2: clamp(15px, 3.4vh, 24px); }
+}
+</style>
+<noscript><style>
+  /* 无 JS 时退化为纵向可滚动文档 */
+  html, body { overflow: auto !important; }
+  #deck { position: static !important; }
+  .slide { position: relative !important; opacity: 1 !important; visibility: visible !important; transform: none !important; }
+</style></noscript>
+</head>
+<body>
+<div id="progressbar"></div>
+<main id="deck">
+
+<!-- ================= 第 1 页 · 封面 ================= -->
+<section class="slide title-slide" data-sec="封面">
+  <div class="s-body">
+    <div class="t-kicker">深度文献调研汇报 · 2026-08-14</div>
+    <div class="t-rule"></div>
+    <h1>扩散模型 × 最优传输<span class="t-sub">深度调研汇报</span></h1>
+    <div class="tagline">30 agent 并行调研 · 477 条引用 · 证据分级</div>
+    <div class="t-meta">
+      证据底座：477 条引用行（去重约 445–455 篇）— <span class="ev ev-p">P</span> 正式论文集 372 ·
+      <span class="ev ev-a">A</span> 官方接收 26 ·
+      <span class="ev ev-r">R</span> 预印本 64 ·
+      <span class="ev ev-b">B</span> 教材综述 15 ｜ 234 篇本地 PDF（2.8GB）<br>
+      知识库 <span class="mono">~/Desktop/research/diffusion_ot_survey/</span> ｜ 流水线参考 PaperOrchestra · 证据纪律参考 PaperSpine
+    </div>
+    <div class="t-hint">
+      <span class="kbd">←</span> <span class="kbd">→</span> <span class="kbd">空格</span> 翻页 ·
+      <span class="kbd">Home</span>/<span class="kbd">End</span> 首末页 ·
+      数字 + <span class="kbd">Enter</span> 跳页 ·
+      <span class="kbd">P</span> 打印模式（A4 横向）
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">封面</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 2 页 · 执行摘要 ================= -->
+<section class="slide" data-sec="§1 执行摘要">
+  <header class="s-head">
+    <div class="kicker">§1 执行摘要</div>
+    <h2>一页速览：大方向成立，但要先做三处修正</h2>
+  </header>
+  <div class="s-body">
+    <p class="lead"><strong>博客的大方向判断成立，且比作者说的更有弹药</strong>：扩散×OT 在 2024→2026 处于爆发期（flow matching 顶会提及量连续两年约 <em class="k">3 倍</em>增长），理论、算法、落地三层都有明确空位。但有三处需要修正后再讲故事，否则会被审稿人反杀：</p>
+    <div class="cards c3">
+      <div class="card gap-card">
+        <span class="num">修正一</span>
+        <h4>“直线轨迹 ≈ 最优传输”是陷阱</h4>
+        rectified flow 的不动点可以不是 OT 映射，“损失趋零”也不等于最优 <span class="src">NeurIPS 2025</span><span class="ev ev-p">P</span>；Khrulkov 猜想早被 Lavenant–Santambrogio 反例证伪。<br>
+        <strong>正确讲法</strong>：OT 是设计语言与正则化手段；“量化次优度”本身就是公开的可发论文问题。<span class="tref">T09/T02</span>
+      </div>
+      <div class="card gap-card">
+        <span class="num">修正二</span>
+        <h4>“OT 耦合增益微弱”正在被挑战</h4>
+        2025 年 [R] 预印本证据表明旧共识是 batch 太小（n≈256）的伪象，n≈10⁶ 级 Sinkhorn 耦合 + 低熵正则才见真收益；但 3D 点云上又有“完全 OT 反而更难学”的反证。<br>
+        <strong>“OT 该用多少”是精确可研究的量，不是站队问题。</strong><span class="tref">T08/T20</span>
+      </div>
+      <div class="card gap-card">
+        <span class="num">修正三</span>
+        <h4>方向一 = 推理/数据管线的耦合工程</h4>
+        真正免重训的插入点有<em class="k">七个环节</em>：从数据管线噪声指派（Immiscible Diffusion，一行代码、最高 3× 提速）到黄金噪声传输映射 <span class="src">ICCV 2025</span><span class="ev ev-p">P</span>。已有正式论文集级先例，空位明确。<span class="tref">T12</span>
+      </div>
+    </div>
+    <div class="callout blue">
+      <span class="cl-t">最值得投入的三件事</span>
+      ① 免训练 batch 级保边缘噪声重排（T12）　② 保 OT 耦合的单步桥蒸馏 + 耦合漂移度量（T14/T15，SynthRAD2025 官方证实零 SB 参赛·已核验）　③ OT-aware 采样调度理论（T11）——完整排序见 Top-10（第 16–17 页）
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§1 执行摘要</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 3 页 · 调研方法 ================= -->
+<section class="slide" data-sec="§2 调研方法">
+  <header class="s-head">
+    <div class="kicker">§2 调研方法</div>
+    <h2>调研方法与证据口径：30 agent 流水线 + 句级证据纪律</h2>
+  </header>
+  <div class="s-body">
+    <div class="stat-band">
+      <div class="stat"><div class="v">30</div><div class="l">并行调研 agent / 七节笔记</div></div>
+      <div class="stat"><div class="v">477</div><div class="l">条引用·去重约450篇（[P]372 [A]26 [R]64 [B]15）</div></div>
+      <div class="stat"><div class="v">477</div><div class="l">聚合引用行（含 26 条跨课题重复）</div></div>
+      <div class="stat"><div class="v">234</div><div class="l">本地 PDF（2.8GB，已校验）</div></div>
+      <div class="stat"><div class="v">83%</div><div class="l">[P]+[A] 占比·按条目计（去重口径约88%）</div></div>
+    </div>
+    <div class="cols c-55">
+      <div class="col">
+        <h3>流水线（PaperOrchestra 式七阶段的调研版）</h3>
+        <ol class="pipe">
+          <li>任务拆解：6 板块 30 子课题，边界互斥</li>
+          <li>30 个 agent 并行检索（种子库 ot_variants_survey + WebSearch + arXiv API）</li>
+          <li>会议归属官方核验（PMLR / OpenReview venue / CVF / ECVA / AAAI OJS / NeurIPS proceedings；“submitted to”一律不算）</li>
+          <li>按七节模板写结构化笔记</li>
+          <li>下载核心 PDF 并校验（%PDF 头 + &gt;50KB）</li>
+          <li>主控机械聚合（477 条引用行）</li>
+          <li>综合为总报告（本汇报蓝本）</li>
+        </ol>
+      </div>
+      <div class="col">
+        <h3>证据分级（PaperSpine 式句级支撑）</h3>
+        <div class="evbar" aria-label="证据构成比例条">
+          <div style="flex:372" title="[P] 372"><div style="height:100%;background:var(--blue)"></div></div>
+          <div style="flex:26"  title="[A] 26"><div style="height:100%;background:#7d94b3"></div></div>
+          <div style="flex:64"  title="[R] 64"><div style="height:100%;background:var(--accent)"></div></div>
+          <div style="flex:15"  title="[B] 15"><div style="height:100%;background:#6b7280"></div></div>
+        </div>
+        <p class="small"><span class="ev ev-p">P</span> 正式论文集 372 　<span class="ev ev-a">A</span> 官方已接收 26 　<span class="ev ev-r">R</span> 预印本 64 　<span class="ev ev-b">B</span> 教材综述 15<br>强论断均可回溯到 <span class="mono">kb/</span> 笔记中带链接的表行；预印本结论一律带 [R] 限定词表述。</p>
+        <h3>质量事件记录（如实留档）</h3>
+        <ul class="ls tight">
+          <li>T22 首次运行被上游安全策略误拦截（零产出，重试成功）</li>
+          <li>T01 有 1 篇 PDF 因 arXiv 限流放弃（按纪律记失败，不硬重试）</li>
+          <li>T27 核验出派单描述一处会议归属口误（实为 <span class="src">UAI 2026</span>），种子库本身无误</li>
+          <li>T23 发现两篇撤稿预印本，如实降级为 <span class="ev ev-r">R</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§2 调研方法</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 4 页 · 领域全景 ================= -->
+<section class="slide" data-sec="§3 领域全景">
+  <header class="s-head">
+    <div class="kicker">§3 领域全景</div>
+    <h2>领域全景：六大板块 A–F · 30 子课题</h2>
+  </header>
+  <div class="s-body">
+    <div class="map">
+      <div class="blk blk-a">
+        <div class="bh"><span class="bl">A</span><span class="bn">理论基础</span></div>
+        <div class="tt">T01 数学装备 · T02 扩散≟OT · T03 SB 理论 · T04 熵正则 · T05 WGF/JKO · T06 收敛统计</div>
+      </div>
+      <div class="map-cap">提供：耦合语言 · 动态形式 · 误差界 <span class="arr">↓</span></div>
+      <div class="blk blk-b">
+        <div class="bh"><span class="bl">B</span><span class="bn">轨迹拉直</span><span class="badge">方向一</span></div>
+        <div class="tt">T07 FM 谱系 · T08 OT-CFM 耦合 · T09 Rectified Flow · T10 蒸馏的 OT 视角 · T11 免训练求解器 · <span class="hl">T12 推理期 OT 对齐 ★</span></div>
+      </div>
+      <div class="blk blk-c">
+        <div class="bh"><span class="bl">C</span><span class="bn">跨域生成</span><span class="badge">方向二</span></div>
+        <div class="tt">T13 神经 OT map · T14 扩散桥 I2I · <span class="hl">T15 医学模态转换 ★</span> · T16 OT 语义对应 · T17 风格/域适应 · T18 条件 OT/guidance</div>
+      </div>
+      <div class="blk blk-e">
+        <div class="bh"><span class="bl">E</span><span class="bn">OT 变体前沿</span></div>
+        <div class="tt">T25 UOT/partial · T26 GW 跨空间 · T27 MMOT/重心 · T28 黎曼流形 FM</div>
+      </div>
+      <div class="blk blk-d">
+        <div class="bh"><span class="bl">D</span><span class="bn">落地模态</span></div>
+        <div class="tt">T19 视频 · T20 3D · T21 分子 · T22 离散文本 · T23 语音 · T24 单细胞</div>
+      </div>
+      <div class="blk blk-f">
+        <div class="bh"><span class="bl">F</span><span class="bn">系统底座</span></div>
+        <div class="tt">T29 FlashSinkhorn / 求解器栈 · T30 端侧部署 / 评测 / 趋势</div>
+      </div>
+    </div>
+    <div class="era-strip">
+      <div class="era"><b>2021–2023 奠基</b>DSB · Flow Matching · Rectified Flow · NOT/I2SB/DDIB 翻译三范式 · Khrulkov 猜想与反例</div>
+      <div class="era"><b>2024 展开</b>OT-CFM（TMLR）· DDBM · Immiscible Diffusion · SD3 采用 RF · EDM/AYS/GITS 调度原理化</div>
+      <div class="era"><b>2025 收口与翻盘</b>SI 统一理论（JMLR）· IMF 指数收敛率 · “reflow≠OT”反例 · 大规模 Sinkhorn 挑战旧共识（[R]） · 端侧转折</div>
+      <div class="era"><b>2026 制高点</b>FlashSinkhorn（ICML Oral）· OTP-FM · VDOT（CVPR）· UniDB++（TPAMI）· SGM=WPO（SIMODS）</div>
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§3 领域全景</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 5 页 · 理论主线 I ================= -->
+<section class="slide" data-sec="§4 理论主线">
+  <header class="s-head">
+    <div class="kicker">§4 理论主线 · 1 / 3</div>
+    <h2>辩论线一：“扩散 ≟ OT”——从猜想、反例到量化次优度</h2>
+  </header>
+  <div class="s-body">
+    <div class="cards c3">
+      <div class="card">
+        <h4>猜想 <span class="src">ICLR 2023</span><span class="ev ev-p">P</span></h4>
+        Khrulkov et al. 证明<strong>高斯情形</strong> DDPM encoder 恰为 Monge map，并猜想一般情形成立。
+      </div>
+      <div class="card gap-card">
+        <h4>反例证伪</h4>
+        Lavenant &amp; Santambrogio 用 <em class="k">3 页反例</em>证伪（Hessian 非交换障碍）：一般情形下 DDPM encoder ≠ Monge map。
+      </div>
+      <div class="card">
+        <h4>延续（2026）</h4>
+        Dumont et al. 延续这条辩论线；问题从“是不是 OT”推进到“<strong>离 OT 有多远</strong>”。
+      </div>
+    </div>
+    <div class="callout">
+      <span class="cl-t">当前状态</span>
+      PF-ODE 映射“<strong>接近但不等于</strong>”OT；“接近多少”——次优度的量化上界与地形图——是原作者明示的 open problem（Top-10 #6）。
+    </div>
+    <div class="callout blue">
+      <span class="cl-t">工具已齐备</span>
+      高斯精确 W₂ 解 <span class="src">ICML 2025</span><span class="ev ev-p">P</span> + tensor-train FP 求解器 —— 量化次优度所需的计算工具链完整。<span class="tref">T02</span>
+    </div>
+    <p class="small">表述纪律（红线之一）：不说“我们的方法实现了最优传输”，说“<strong>以 OT 为设计目标并度量偏差</strong>”。</p>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§4 理论主线</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 6 页 · 理论主线 II ================= -->
+<section class="slide" data-sec="§4 理论主线">
+  <header class="s-head">
+    <div class="kicker">§4 理论主线 · 2 / 3</div>
+    <h2>辩论线二：“拉直 ≠ OT”——Rectified Flow 的理论边界</h2>
+  </header>
+  <div class="s-body">
+    <div class="cols c-50">
+      <div class="col">
+        <h3>证据线</h3>
+        <ul class="ls">
+          <li><strong>已确立</strong>：Liu et al. 的 reflow 以 <span class="mono">O(1/K)</span> 速率拉直轨迹；一轮 reflow 实践上就足够直 <span class="src">NeurIPS 2024</span><span class="ev ev-p">P</span></li>
+          <li><strong>反例定论</strong>：reflow 不动点可以<em class="k">非最优</em>，训练损失趋零 ≠ OT <span class="src">NeurIPS 2025</span><span class="ev ev-p">P</span></li>
+          <li><strong>关联反证</strong>：NSOT <span class="src">ICLR 2025</span><span class="ev ev-p">P</span> 显示完全 OT 耦合会让 t≈0 的速度场<strong>更难学</strong> <span class="tref">T20</span></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>研究含义</h3>
+        <ul class="ls">
+          <li>拉直的价值在<strong>少步采样</strong>（NFE–质量），不在“最优性”</li>
+          <li>理论空位：补“<strong>何种数据条件下 reflow 不动点唯一且 = W₂-OT</strong>”的正定理（T09；Top-10 #4）</li>
+          <li>耦合“OT 程度”与可学性存在 <strong>trade-off</strong>——OT 不是越多越好</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <span class="cl-t">合并结论</span>
+      与 T08 的大 batch 证据（[R] 预印本；n≈256 伪象 → n≈10⁶ 见真收益）合起来：“<strong>OT 用量</strong>”构成一个新研究变量，可精确刻画、可实验扫描，而非立场之争。
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§4 理论主线</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 7 页 · 理论主线 III ================= -->
+<section class="slide" data-sec="§4 理论主线">
+  <header class="s-head">
+    <div class="kicker">§4 理论主线 · 3 / 3</div>
+    <h2>收口线与工具箱：框架已稳，增量在骨架之上的空位</h2>
+  </header>
+  <div class="s-body">
+    <div class="cols c-50">
+      <div class="col">
+        <h3>收口线：SGM = WPO · SB 五代成熟</h3>
+        <ul class="ls tight">
+          <li>score-based 生成模型隐式实现 <strong>Wasserstein proximal 算子</strong>，据此解释/缓解记忆化 <span class="src">SIMODS 2026</span><span class="ev ev-p">P</span> <span class="tref">T05</span></li>
+          <li>SB 五代演进：IPF → IMF/matching → 轻量化（LightSB-M 闭式势）→ 在线/离散/多边缘 → IMF <strong>指数收敛率</strong> <span class="src">NeurIPS 2025</span><span class="ev ev-p">P</span>；2026 年已有专著收口 <span class="tref">T03</span></li>
+          <li>stochastic interpolants 把 flows / diffusions / SB 统一进一个框架 <span class="src">JMLR 2025</span><span class="ev ev-p">P</span> <span class="tref">T07</span></li>
+          <li><strong>含义</strong>：底层理论骨架已稳——新论文的增量应放在“学习误差下的收敛、耦合的统计性质、推理期机制”，而不是再造框架</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>工具箱线：收敛与统计理论</h3>
+        <ul class="ls tight">
+          <li>扩散收敛界：多项式 → <span class="mono">O(d/T)</span>（TV，最弱假设）＋内在维数自适应 <span class="mono">O(k/T)</span>；FM 有近 minimax 保证 <span class="tref">T06</span></li>
+          <li>OT map 估计率（plug-in / entropic / smooth）体系完整</li>
+          <li><em class="k">关键空白</em>：现有 FM 统计理论只覆盖独立耦合——<strong>OT-CFM 的端到端 W₂ 收敛率</strong>（熵 map 估计率作中间量）是天然交叉定理（Top-10 #5）</li>
+          <li>“加速是否吃掉统计精度”可用三项误差分解（map 估计 + score + 离散化）+ 迭代×样本联合下界正面回答 <span class="tref">T06×T08</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <span class="cl-t">写论文的三条红线</span>
+      ① 不说“实现了最优传输”，说“以 OT 为设计目标并度量偏差”；② 少步质量比较必须固定 NFE 口径并报告多样性指标（FID 对少步模型系统性失真，T30）；③ 会议归属与“已接收”表述必须官方可核验（本知识库 [P]/[A]/[R] 全部带链接）。
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§4 理论主线</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 8 页 · 方向一 1/3 ================= -->
+<section class="slide" data-sec="§5 方向一深评">
+  <header class="s-head">
+    <div class="kicker">§5 方向一深评 · 1 / 3</div>
+    <h2>无须重训的轨迹对齐：成立性与七个可插入环节</h2>
+  </header>
+  <div class="s-body">
+    <p class="lead"><strong>成立性：证据充分。</strong>已有 Immiscible Diffusion <span class="src">NeurIPS 2024</span><span class="ev ev-p">P</span>、Golden Noise <span class="src">ICCV 2025</span><span class="ev ev-p">P</span> 等正式论文集先例；“耦合是数据内在属性、可离线预计算跨模型复用”（<span class="src">ICML 2024</span><span class="ev ev-p">P</span> 可复现性现象）给了它理论依据。<span class="tref">T12</span></p>
+    <div class="steps7">
+      <div class="step"><span class="sn">1</span><span class="st">数据管线噪声指派</span>训练前；Immiscible / 量化指派 22.8ms@1024</div>
+      <div class="step"><span class="sn">2</span><span class="st">初值检索 / 搜索</span>NoiseQuery · top-1-of-k 选择</div>
+      <div class="step"><span class="sn">3</span><span class="st">初值连续变换</span>噪声优化 · Golden Noise 传输映射</div>
+      <div class="step"><span class="sn">4</span><span class="st">OT 桥接 prior</span>一步半离散 OT + 短程扩散；Monge–Ampère 理论化</div>
+      <div class="step"><span class="sn">5</span><span class="st">轨迹中段对齐</span>采样中途投影 / 引导</div>
+      <div class="step"><span class="sn">6</span><span class="st">跨帧噪声传输</span>视频 ∫-noise <span class="src">ICLR 2024</span></div>
+      <div class="step"><span class="sn">7</span><span class="st">inversion 侧耦合</span>编辑一致性</div>
+    </div>
+    <div class="callout">
+      <span class="cl-t">管线上最干净的空白</span>
+      环节 ② 与 ⑤ 之间——<strong>batch 级保边缘噪声重排</strong>（见下页；Top-10 #1）。七环节全线免重训、低算力，正是“设计映射机制换算力”的主场。
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§5 方向一深评</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 9 页 · 方向一 2/3 ================= -->
+<section class="slide" data-sec="§5 方向一深评">
+  <header class="s-head">
+    <div class="kicker">§5 方向一深评 · 2 / 3</div>
+    <h2>明确空位：四个可直接立项的选题</h2>
+  </header>
+  <div class="s-body">
+    <div class="cards c2">
+      <div class="card gap-card">
+        <h4>① batch 级保边缘重排 <span class="tref">T12 · Top-10 #1</span></h4>
+        环节 ② 与 ⑤ 之间的空白：batch 内（条件, 噪声）一次性 <strong>Hungarian / Sinkhorn 指派</strong>替代 top-1 检索——每个噪声恰用一次、边缘严格保持。<br>
+        <strong>理论卖点</strong>：保边缘性 + 方差降低；<strong>实验</strong>：T2I-CompBench / GenEval；理论与实验都是空位，算力需求小。
+      </div>
+      <div class="card gap-card">
+        <h4>② 实例级选择的分布漂移理论 <span class="tref">T12</span></h4>
+        top-1-of-k 本质是 <strong>order-statistics 耦合</strong>，其 W₂ / KL 漂移上界至今无人刻画——为整类“挑噪声”方法补上合法性证明。
+      </div>
+      <div class="card gap-card">
+        <h4>③ OT-aware 采样调度 <span class="tref">T11 · Top-10 #2</span></h4>
+        把 AYS 的 KLUB 换成 <strong>Benamou–Brenier 动能泛函</strong>；样本级“距 OT 偏差”（弧长 / 端点距离比）驱动<strong>自适应 NFE 分配</strong>。纯理论 + 免训练实验，正中“数学严谨性”的审稿口味。
+      </div>
+      <div class="card gap-card">
+        <h4>④ 视频 reflow <span class="tref">T19 · Top-10 #9</span></h4>
+        图像 reflow 成熟、<em class="k">视频公开工作缺席</em>：时空分解 reflow + “直耦合与时序一致性的冲突”分析，是模态扩展里最近的一块空地。
+      </div>
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§5 方向一深评</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 10 页 · 方向一 3/3 ================= -->
+<section class="slide" data-sec="§5 方向一深评">
+  <header class="s-head">
+    <div class="kicker">§5 方向一深评 · 3 / 3</div>
+    <h2>风险与审稿攻击点：提前把防线写进实验设计</h2>
+  </header>
+  <div class="s-body">
+    <p class="lead">定位一句话：方向一的正确定位是“<strong>推理 / 数据管线的耦合工程</strong>”——免重训 · 低算力 · 跨模型复用。</p>
+    <table class="tbl">
+      <thead><tr><th style="width:46%">审稿攻击点</th><th>对策（来自报告的实验纪律）</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>改耦合 vs 保边缘的张力</strong>——任何实例级挑选都使有效初始分布偏离标准高斯</td>
+          <td>必须报告<strong>多样性 / 漂移指标</strong>，把偏离作为一等公民度量</td>
+        </tr>
+        <tr>
+          <td>与“<strong>更大 teacher 蒸馏</strong>”基线的对比是否公平</td>
+          <td>固定<strong>算力口径</strong>再比较</td>
+        </tr>
+        <tr>
+          <td>“免训练”卖点是否名副其实</td>
+          <td>方法须对采样器 / 模型<strong>即插即用</strong>：跨 SD3 / FLUX 验证</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout blue">
+      <span class="cl-t">配套基建</span>
+      方向一选题共享同一套“NFE–质量–多样性”三轴评测脚手架（12 周计划 W3–4 搭建，直接服务 #1 / #2）。
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§5 方向一深评</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 11 页 · 方向二 1/3 ================= -->
+<section class="slide" data-sec="§6 方向二深评">
+  <header class="s-head">
+    <div class="kicker">§6 方向二深评 · 1 / 3</div>
+    <h2>OT 引导跨域生成：三条互补的技术路线</h2>
+  </header>
+  <div class="s-body">
+    <div class="cards c3">
+      <div class="card">
+        <h4>路线一 · 神经 OT map 直译 <span class="tref">T13</span></h4>
+        NOT 系 saddle-point 求解器 + UOTM 非平衡分支。<br>
+        <strong>特点</strong>：结构保持强、纹理弱；<br>
+        <strong>痛点</strong>：评测基建老化——2021 年的 W2 benchmark 已测不动 2024–2026 方法。
+      </div>
+      <div class="card">
+        <h4>路线二 · 扩散桥 / SB 翻译 <span class="tref">T14</span></h4>
+        I2SB / DDIB / DDBM → UniDB++ <span class="src">TPAMI 2026</span><span class="ev ev-p">P</span>。<br>
+        <strong>特点</strong>：质量高但采样贵；<br>
+        <strong>痛点</strong>：蒸馏后“<em class="k">终端耦合是否漂移</em>”目前零保证。
+      </div>
+      <div class="card">
+        <h4>路线三 · OT 代价先验做 guidance / 语义对应 <span class="tref">T16/T17/T18</span></h4>
+        OTCS 开创“OT 耦合 = 跨域配对先验” <span class="src">NeurIPS 2023</span><span class="ev ev-p">P</span>；FGW 外观+结构代价 <span class="src">CVPR 2026</span><span class="ev ev-p">P</span>；attention 重释为 OT <span class="src">AAAI 2026</span><span class="ev ev-p">P</span>；SW 色彩引导 <span class="src">NeurIPS 2025 spotlight</span><span class="ev ev-p">P</span>；条件几何的正确度量：joint W₂ 不控制 posterior W₂ <span class="src">JMLR 2025</span><span class="ev ev-p">P</span>。
+      </div>
+    </div>
+    <div class="callout blue">
+      <span class="cl-t">格局判断</span>
+      三条路线<strong>互补而非竞争</strong>——接口处（快的 map × 好的桥 × 免训练 guidance）正是空位所在（第 13 页）。
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§6 方向二深评</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 12 页 · 方向二 2/3 ================= -->
+<section class="slide" data-sec="§6 方向二深评">
+  <header class="s-head">
+    <div class="kicker">§6 方向二深评 · 2 / 3</div>
+    <h2>医学垂直：验证关已过，公开榜上仍是空位</h2>
+  </header>
+  <div class="s-body">
+    <div class="cols c-50">
+      <div class="col">
+        <h3>已过验证关（SB 系进入临床评测语境）<span class="tref"> T15</span></h3>
+        <ul class="ls">
+          <li>DSBM MR→CT：已入 <strong>Medical Physics 剂量学验证</strong> <span class="src">Medical Physics 2025</span><span class="ev ev-p">P</span></li>
+          <li>无配对 CBCT→CT <span class="src">MICCAI 2025</span><span class="ev ev-p">P</span></li>
+          <li>跨设备 OCT 协调 <span class="src">NeurIPS 2025</span><span class="ev ev-p">P</span></li>
+        </ul>
+        <div class="callout blue">
+          <span class="cl-t">安全性卖点</span>
+          桥后验 <strong>conformal 校准</strong>筛查“解剖幻觉”——把不确定性量化写进管线，正对医学审稿的安全性关切。
+        </div>
+      </div>
+      <div class="col">
+        <h3>具体空位（可直接刷榜）</h3>
+        <div class="callout">
+          <span class="cl-t">SynthRAD2025</span>
+          挑战赛<em class="k">零 SB/OT 方法参赛</em>（官方报告已证实）——“<strong>解剖商空间传输成本 + 3D 耦合 SB</strong>”是一条能直接刷公开榜的路线（Top-10 #7）。
+        </div>
+        <ul class="ls tight">
+          <li>行动衔接：医学线（#3 / #7）按 <strong>MICCAI 2027</strong> 时间表提前布局数据合规（12 周计划 W9–12）</li>
+          <li>更新触发点：SynthRAD2025 已核验·空位成立，榜单开放至 2030-03（第 19 页）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§6 方向二深评</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 13 页 · 方向二 3/3 ================= -->
+<section class="slide" data-sec="§6 方向二深评">
+  <header class="s-head">
+    <div class="kicker">§6 方向二深评 · 3 / 3</div>
+    <h2>跨路线空位与风险</h2>
+  </header>
+  <div class="s-body">
+    <div class="cols c-50">
+      <div class="col">
+        <h3>跨路线空位（接口缝合型）</h3>
+        <div class="card gap-card">
+          <h4>混合管线 <span class="tref">T13×T14 接口</span></h4>
+          一步 OT map（快、结构强）+ 少步扩散 refinement（纹理强）——两路线的接口处无人系统做过。
+        </div>
+        <div class="card gap-card">
+          <h4>基准检验 <span class="tref">T14</span></h4>
+          非配对桥在可算 ground-truth EOT 的基准上做“<strong>耦合误差 vs FID</strong>”检验——“更接近最优传输是否等于更好翻译”至今没被正面回答。
+        </div>
+      </div>
+      <div class="col">
+        <h3>风险与对策</h3>
+        <ul class="ls">
+          <li><strong>医学赛道</strong>：数据合规与评测协议成本高——须按会议时间表提前布局</li>
+          <li><strong>语义对应线</strong>：防“OT 只是 attention 重命名”的质疑——需消融证明<em class="k">耦合结构本身</em>带来增益</li>
+          <li><strong>guidance 理论</strong>：强度与分布偏移的理论（CFG 的 W₂ 刻画，<span class="tref">T18</span>）尚缺——<strong>先证界再上大实验</strong>更稳</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§6 方向二深评</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 14 页 · 周边速览 ================= -->
+<section class="slide" data-sec="§7 周边速览">
+  <header class="s-head">
+    <div class="kicker">§7 周边方向速览</div>
+    <h2>高价值周边方向：12 条模态 × 变体矩阵</h2>
+  </header>
+  <div class="s-body">
+    <table class="tbl dense">
+      <thead><tr><th>模态 / 变体</th><th>成熟度</th><th>一句话状态</th><th>空位举例（出处）</th></tr></thead>
+      <tbody>
+        <tr><td><strong>语音</strong> <span class="tref">T23</span></td><td><span class="star">★★★★</span> 最成熟落地</td><td>TTS 收敛到“FM+infilling”极简范式，SB 统治增强/修复</td><td>Sway Sampling 理论化；首个非配对 SB voice conversion</td></tr>
+        <tr><td><strong>分子/科学</strong> <span class="tref">T21</span></td><td><span class="star">★★★★</span> 全 [P] 证据</td><td>SE(3) 流形 OT 流范式确立（FoldFlow/FlowMM）</td><td>可扩展群-quotient 等变 OT 耦合；条件黎曼 OT 统一跨任务框架</td></tr>
+        <tr><td><strong>单细胞</strong> <span class="tref">T24</span></td><td><span class="star">★★★★</span></td><td>moscot 推到 170 万细胞规模，unbalanced 动态线活跃</td><td>免仿真 unbalanced SB 收敛理论；推理期 transport steering</td></tr>
+        <tr><td><strong>视频</strong> <span class="tref">T19</span></td><td><span class="star">★★★</span> 快速上升</td><td>VDOT 把熵 OT 写进视频蒸馏（<span class="src">CVPR 2026</span>）；∫-noise 奠基帧间传输</td><td>视频 reflow 完全空白；帧间噪声耦合的 OT 理论化</td></tr>
+        <tr><td><strong>3D/点云</strong> <span class="tref">T20</span></td><td><span class="star">★★★</span></td><td>Wasserstein FM 范式跃迁（把每朵点云当 W 空间的点）</td><td>Bures-Wasserstein 几何上直接生成 3DGS 资产</td></tr>
+        <tr><td><strong>离散/文本</strong> <span class="tref">T22</span></td><td><span class="star">★★★</span></td><td>SEDD（<span class="src">ICML 2024</span> 最佳论文）后 masked diffusion 起飞</td><td>Edit Flows×unbalanced OT；离散 kinetic-optimal 路径定理</td></tr>
+        <tr><td><strong>UOT/partial</strong> <span class="tref">T25</span></td><td><span class="star">★★★</span></td><td>“非平衡 Monge=重缩放平衡映射”使 UOT 即插即用</td><td>WFR 生灭率作推理期模式再平衡；污染率自适应 τ</td></tr>
+        <tr><td><strong>GW</strong> <span class="tref">T26</span></td><td><span class="star">★★★</span></td><td>CNT 代价类让 GW 线性内存进工作流（<span class="src">ICML 2026</span>）</td><td>跨维 Gromov-Schrödinger 桥；plan 稳定性→生成误差界</td></tr>
+        <tr><td><strong>MMOT/重心</strong> <span class="tref">T27</span></td><td><span class="star">★★★</span></td><td>OTP-FM 统一多边际 FM（<span class="src">ICML 2026</span>）</td><td>OT 势即插即用引导；扩散模型 barycentric merging</td></tr>
+        <tr><td><strong>黎曼流形</strong> <span class="tref">T28</span></td><td><span class="star">★★★</span></td><td>RFM（<span class="src">ICLR 2024</span> Oral）奠基，WFM 提升到分布族空间</td><td>黎曼 rectified flow 完全空白；BW 空间脑影像增广</td></tr>
+        <tr><td><strong>系统</strong> <span class="tref">T29</span></td><td><span class="star">★★★</span></td><td>FlashSinkhorn＝attention 同构（<span class="src">ICML 2026</span> Oral），161×</td><td>分布式 IO-aware Sinkhorn 空白；OT 配对开销统一 benchmark</td></tr>
+        <tr><td><strong>端侧/评测</strong> <span class="tref">T30</span></td><td><span class="star">★★★</span></td><td>范式转向“为端侧从头设计 FM 模型”（SnapGen/SANA）</td><td>直线度作可部署性代理指标；DINOv2 特征 Sinkhorn divergence 替代 FID</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§7 周边速览</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 15 页 · 顶会趋势 ================= -->
+<section class="slide" data-sec="§8 顶会趋势">
+  <header class="s-head">
+    <div class="kicker">§8 顶会趋势与竞争格局</div>
+    <h2>Flow Matching 已从“方法词”变成“基础设施词”</h2>
+  </header>
+  <div class="s-body">
+    <div class="cols c-55">
+      <div class="col">
+        <div class="chart-wrap">
+          <svg viewBox="0 0 960 424" role="img" aria-label="三大顶会 flow matching 提及级接收数柱状图：ICLR 2024至2026 为 7、46、144；ICML 2024至2026 为 13、56、167；NeurIPS 2023至2025 为 6、32、88">
+            <!-- 网格线与刻度 -->
+            <g stroke="#e3e0d8" stroke-width="1">
+              <line x1="50" y1="264" x2="910" y2="264"/>
+              <line x1="50" y1="168" x2="910" y2="168"/>
+              <line x1="50" y1="73"  x2="910" y2="73"/>
+            </g>
+            <g font-family="Georgia, serif" font-size="13" fill="#8a8f98" text-anchor="end">
+              <text x="44" y="268">50</text><text x="44" y="172">100</text><text x="44" y="77">150</text>
+            </g>
+            <line x1="50" y1="360" x2="910" y2="360" stroke="#1d2129" stroke-width="1.5"/>
+            <!-- ICLR：7 → 46 → 144 -->
+            <rect x="80"  y="347" width="54" height="13"  fill="#b9c9dd"/>
+            <rect x="144" y="272" width="54" height="88"  fill="#5c7ca6"/>
+            <rect x="208" y="84"  width="54" height="276" fill="#1e3a5f"/>
+            <!-- ICML：13 → 56 → 167 -->
+            <rect x="380" y="335" width="54" height="25"  fill="#b9c9dd"/>
+            <rect x="444" y="253" width="54" height="107" fill="#5c7ca6"/>
+            <rect x="508" y="40"  width="54" height="320" fill="#1e3a5f"/>
+            <!-- NeurIPS：6 → 32 → 88 -->
+            <rect x="680" y="348" width="54" height="12"  fill="#b9c9dd"/>
+            <rect x="744" y="299" width="54" height="61"  fill="#5c7ca6"/>
+            <rect x="808" y="191" width="54" height="169" fill="#1e3a5f"/>
+            <!-- 数值标签 -->
+            <g font-family="Georgia, serif" font-size="17" font-weight="700" fill="#1d2129" text-anchor="middle">
+              <text x="107" y="340">7</text><text x="171" y="265">46</text><text x="235" y="77">144</text>
+              <text x="407" y="328">13</text><text x="471" y="246">56</text><text x="535" y="33">167</text>
+              <text x="707" y="341">6</text><text x="771" y="292">32</text><text x="835" y="184">88</text>
+            </g>
+            <!-- 年份标签 -->
+            <g font-family="-apple-system, 'PingFang SC', sans-serif" font-size="14" fill="#5c6470" text-anchor="middle">
+              <text x="107" y="380">2024</text><text x="171" y="380">2025</text><text x="235" y="380">2026</text>
+              <text x="407" y="380">2024</text><text x="471" y="380">2025</text><text x="535" y="380">2026</text>
+              <text x="707" y="380">2023</text><text x="771" y="380">2024</text><text x="835" y="380">2025</text>
+            </g>
+            <!-- 会议名 -->
+            <g font-family="Georgia, serif" font-size="18" font-weight="700" fill="#1e3a5f" text-anchor="middle">
+              <text x="171" y="406">ICLR</text><text x="471" y="406">ICML</text><text x="771" y="406">NeurIPS</text>
+            </g>
+          </svg>
+          <div class="chart-cap">FM 提及级接收数（口径 A：OpenReview / proceedings 提及级，作热度上界；标题级口径 B 作下界）<span class="tref"> T30</span></div>
+        </div>
+        <p class="tiny">口径说明：ECCV 2026 论文集未发布（官方窗口 2026-08-13 起）、NeurIPS 2026 尚未放榜、CVPR 2026 dblp 未完全收录——三处均已从统计中剔除。</p>
+      </div>
+      <div class="col">
+        <h3>趋势判读</h3>
+        <ul class="ls tight">
+          <li>FM 提及级接收数<strong>逐年约 3 倍</strong>——从“方法词”变成“基础设施词”</li>
+          <li>OT 提及平稳上行，<strong>ICML 2026 翻倍（43→114）</strong>，主要作为 FM 文献的理论词汇渗透（minibatch 耦合、W₂ 界）</li>
+          <li>“Rectified flow”术语在 NeurIPS 2025 达峰后走平——被 FM 吸收（SD3 效应）</li>
+          <li>CVPR 标题级 FM/OT 极少（≤8/年）而 diffusion 标题 300+/年：<strong>理论主战场在 ML 三会，CVPR/MICCAI 是应用出口</strong>——理论证明投 ML 三会，垂直落地投 CV 会</li>
+        </ul>
+        <h3>竞争判读</h3>
+        <ul class="ls tight">
+          <li>大组已进场：Meta/NVIDIA/Google（FM 基础设施）、Vector/Mila（SB/CFM）、Skoltech 系（神经 OT）</li>
+          <li>但本报告列出的空位多为<strong>理论补全型</strong>与<strong>接口缝合型</strong>——高校实验室的比较优势（不需要预训练算力，需要证明与精巧实验）</li>
+          <li><em class="k">窗口期：理论空位约 12–18 个月</em>；落地垂直（医学/端侧）窗口更长</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§8 顶会趋势</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 16 页 · Top-10（上） ================= -->
+<section class="slide" data-sec="§9 Top-10 切入点">
+  <header class="s-head">
+    <div class="kicker">§9 可发论文切入点 · 1 / 2</div>
+    <h2>Top 10 切入点（#1–5）</h2>
+  </header>
+  <div class="s-body">
+    <p class="small">从 30 份笔记约 60 个候选中，按「新颖性 × 可行性（无需大规模预训练）× 与两方向的契合度 × 审稿风险」综合排序。</p>
+    <table class="tbl">
+      <thead><tr><th>#</th><th>切入点</th><th>类型</th><th>方向</th><th>算力</th><th>出处</th></tr></thead>
+      <tbody>
+        <tr><td class="cnum">1</td><td>免训练 batch 级保边缘噪声重排（Sinkhorn 一次性指派 + 保边缘/方差理论）</td><td>方法+理论</td><td>一</td><td>低</td><td class="tref">T12</td></tr>
+        <tr><td class="cnum">2</td><td>OT-aware 采样调度：Benamou–Brenier 动能泛函替代 KLUB，证 W₂ 最优调度定理</td><td>理论+免训练</td><td>一</td><td>低</td><td class="tref">T11</td></tr>
+        <tr><td class="cnum">3</td><td>保 OT 耦合的单步桥蒸馏 + 耦合漂移度量（医学模态转换直接受益）</td><td>方法</td><td>二</td><td>中</td><td class="tref">T14/T15</td></tr>
+        <tr><td class="cnum">4</td><td>reflow 正定理：何种数据条件下不动点唯一且 = W₂-OT（先高斯混合族完全刻画）</td><td>理论</td><td>一</td><td>低</td><td class="tref">T09</td></tr>
+        <tr><td class="cnum">5</td><td>OT-CFM 端到端统计收敛率（熵 map 估计率作中间量），回答“加速 vs 统计精度”</td><td>理论</td><td>一</td><td>低</td><td class="tref">T06/T08</td></tr>
+      </tbody>
+    </table>
+    <div class="callout blue">
+      <span class="cl-t">共同特征</span>
+      #1/#2/#4/#5 全部低算力——理论证明 + 免训练（或轻训练）实验即可闭环，契合“不卷从头预训练”的定位。
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§9 Top-10 切入点</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 17 页 · Top-10（下） ================= -->
+<section class="slide" data-sec="§9 Top-10 切入点">
+  <header class="s-head">
+    <div class="kicker">§9 可发论文切入点 · 2 / 2</div>
+    <h2>Top 10 切入点（#6–10）与选题组合</h2>
+  </header>
+  <div class="s-body">
+    <table class="tbl">
+      <thead><tr><th>#</th><th>切入点</th><th>类型</th><th>方向</th><th>算力</th><th>出处</th></tr></thead>
+      <tbody>
+        <tr><td class="cnum">6</td><td>PF-ODE 次优度量化（原作者 open problem，工具已齐：高斯精确解 + FP 求解器）</td><td>理论</td><td>通用</td><td>低</td><td class="tref">T02</td></tr>
+        <tr><td class="cnum">7</td><td>解剖商空间成本 + 3D 耦合 SB 刷 SynthRAD2025（官方证实零 SB 参赛）+ conformal 幻觉筛查</td><td>应用</td><td>二</td><td>中</td><td class="tref">T15</td></tr>
+        <tr><td class="cnum">8</td><td>FGW 语义对应闭环进扩散采样：编辑一致性引导（判别线与生成线的缝合）</td><td>方法</td><td>二</td><td>中</td><td class="tref">T16</td></tr>
+        <tr><td class="cnum">9</td><td>视频侧：时空分解 reflow（空白）或帧间噪声 Sinkhorn 耦合替代光流 warp</td><td>方法</td><td>一</td><td>中高</td><td class="tref">T19</td></tr>
+        <tr><td class="cnum">10</td><td>OT 系评测指标：DINOv2 特征上 Sinkhorn divergence 替代 FID + 人评相关性（D&amp;B）</td><td>评测</td><td>通用</td><td>低</td><td class="tref">T30</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <span class="cl-t">选题组合建议</span>
+      #1+#2 构成“推理期耦合工程”连击（共享代码基建）；#3+#7 构成“医学桥”主线（方法+落地各一篇）；#4/#5/#6 是纯理论线，适合数学背景强的学生单兵作战。
+    </div>
+    <p class="tiny">第二梯队（各笔记第 5 节共 ~50 条，择要）：CFG 分布偏移的 W₂ 刻画与最优 w 调度（T18）；WFR 生灭率作推理期模式再平衡（T25）；OTP-FM 势转 guidance 的误差传播界（T27）；黎曼 rectified flow（T28）；跨维 Gromov-Schrödinger 桥（T26）；分布式 IO-aware Sinkhorn（T29）；MeanFlow/flow map 的 W₂ 误差理论（T07）；OT 耦合式一致性训练冲击维度上界（T10）；Sway Sampling 理论化与非配对 SB 声转换（T23）；直线度×量化复合误差界（T30）。</p>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§9 Top-10 切入点</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 18 页 · 12 周行动路线 ================= -->
+<section class="slide" data-sec="§10 行动路线">
+  <header class="s-head">
+    <div class="kicker">§10 行动建议</div>
+    <h2>12 周行动路线：从装备到投递决策</h2>
+  </header>
+  <div class="s-body">
+    <div class="timeline4">
+      <div class="phase">
+        <span class="wk">W1–2</span><span class="ph-t">装备</span>
+        Peyré《OT for Machine Learners》(2025) 通读 → Benamou–Brenier 动态形式精读；用高斯族 Bures–Wasserstein 闭式解搭“随学随验”沙盒（T01 路线）。同步跑通 torchcfm + POT/OTT-JAX。
+      </div>
+      <div class="phase">
+        <span class="wk">W3–4</span><span class="ph-t">复现三件套</span>
+        Immiscible Diffusion（一行代码级）、OT-CFM（torchcfm 官方）、DPM-Solver++/AYS 调度对比；在 CIFAR/小 T2I 上建立 NFE–质量–多样性三轴评测脚手架（直接服务 #1/#2）。
+      </div>
+      <div class="phase">
+        <span class="wk">W5–8</span><span class="ph-t">立项冲刺</span>
+        主攻 #1（batch 保边缘重排）：先跑 top-1 检索 vs Sinkhorn 指派的对照，同步写保边缘引理；#2 作为并行理论线推导动能泛函调度。产出 workshop 级初稿。
+      </div>
+      <div class="phase">
+        <span class="wk">W9–12</span><span class="ph-t">扩展与投递决策</span>
+        若 #1 实验强 → 冲 ICLR 2027 主会；若理论线（#2/#4/#5）先成熟 → 补 GMM 闭式验证投 ICML；医学线（#3/#7）按 MICCAI 2027 时间表布局数据合规。
+      </div>
+    </div>
+    <div class="callout blue">
+      <span class="cl-t">持续动作</span>
+      ECCV 2026 论文集（8 月下旬起）与 NeurIPS 2026 放榜（9 月底）后，按更新触发点（下页）增量更新知识库。
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§10 行动路线</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 19 页 · 质量审计与局限 ================= -->
+<section class="slide" data-sec="§11 质量审计">
+  <header class="s-head">
+    <div class="kicker">§11 质量审计与局限</div>
+    <h2>覆盖度、证据分布与已知盲区（诚实说明）</h2>
+  </header>
+  <div class="s-body">
+    <div class="cards c2">
+      <div class="card">
+        <h4>覆盖度自检</h4>
+        30/30 子课题笔记七节齐全；477 条引用中 <strong>[P]+[A] 占 83%</strong>（按去重约 450 篇计约 88%，杜绝“预印本冒充接收”）；博客点名的四个关键词（FlashSinkhorn、黎曼流形、Barycenter、流匹配）分别由 T29/T28/T27/T07–T12 深度覆盖；两个方向各有专属课题群与空位清单。
+      </div>
+      <div class="card">
+        <h4>证据分布的诚实说明</h4>
+        <span class="ev ev-r">R</span> 64 篇集中在 2025H2–2026 前沿（视频蒸馏、GW 桥、黎曼 NOT），结论以“待正式接收”限定；T23 两篇撤稿预印本已降级标注；趋势统计为提及级口径，作“主题热度上界”解读，标题级口径作下界。
+      </div>
+      <div class="card">
+        <h4>方法局限</h4>
+        ① 30 agent 并行检索存在少量跨课题重复（26 条，主引用库已保留并标注）；② 检索以英文顶会为主，期刊（TPAMI/TMLR/JMLR/SIMODS）覆盖到但非穷尽，中文社区实践经验未纳入；③ 趋势数字受 OpenReview 反爬与 dblp 收录延迟影响，已双口径对冲；④ “算力需求”评级基于论文报告的规模推断，未实测。
+      </div>
+      <div class="card gap-card">
+        <h4>已知盲区与更新触发点</h4>
+        盲区：ECCV 2026 论文集未发布（窗口 2026-08-13 起）、NeurIPS 2026 尚未放榜、CVPR 2026 dblp 未完全收录。<br>
+        触发点（8/25 复审）：ECCV 2026 上线（尚未·9 月复查，补 T14/T16/T17/T19/T20 的 [P]）；NeurIPS 2026 放榜（9 月底）；FlashSinkhorn 已核（无新 release·T29 空位仍在）；SynthRAD2025 已核验（T15 空位经官方报告证实）。
+      </div>
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报</span><span class="f-mid">§11 质量审计</span><span class="pageno"></span></footer>
+</section>
+
+<!-- ================= 第 20 页 · 结尾 ================= -->
+<section class="slide" data-sec="结尾">
+  <header class="s-head">
+    <div class="kicker">结尾 · 知识库导航</div>
+    <h2>全部证据可回溯：从本汇报到 30 份笔记与 234 篇 PDF</h2>
+  </header>
+  <div class="s-body">
+    <div class="cols c-55">
+      <div class="col">
+        <h3>知识库结构 <span class="tiny">~/Desktop/research/diffusion_ot_survey/</span></h3>
+        <div class="kb-tree">
+<span class="d">diffusion_ot_survey/</span><br>
+├── INDEX.md <span class="c">—— 总索引</span><br>
+├── REPORT_DIFFUSION_OT_20260814.md <span class="c">—— 总纲报告（本汇报蓝本）</span><br>
+├── _brief/AGENT_BRIEF.md <span class="c">—— 30 个 agent 的统一作业规范</span><br>
+├── kb/t01–t30_*.md <span class="c">—— 30 份子课题结构化笔记（七节模板）</span><br>
+├── papers/t01–t30/ <span class="c">—— 234 篇核心论文 PDF（2.8GB）</span><br>
+└── refs/MASTER_BIBLIOGRAPHY.md <span class="c">—— 477 条带链接聚合引用</span>
+        </div>
+      </div>
+      <div class="col">
+        <h3>使用建议</h3>
+        <ol class="ls tight">
+          <li>先读 <span class="mono">REPORT_DIFFUSION_OT_20260814.md</span> 建全景，再按板块下钻对应 <span class="mono">kb/</span> 笔记</li>
+          <li>每份笔记第 5 节是“可发论文的切入点”，报告第 9 节有全局排序后的精选</li>
+          <li>找某篇论文：先查 <span class="mono">refs/MASTER_BIBLIOGRAPHY.md</span>（按课题分组，含链接与证据级），PDF 在对应 <span class="mono">papers/tNN/</span></li>
+          <li>OT 本身的系统学习路线见姊妹知识库 <span class="mono">../ot_variants_survey/</span>（教材精读指南 + OT 全景目录）</li>
+        </ol>
+        <div class="callout">
+          <span class="cl-t">一句话收尾</span>
+          OT 不是扩散模型自动实现的性质，而是可插拔的设计语言——耦合选择、调度设计、蒸馏正则、跨域先验，每处都以“可证明的界 + 免重训或轻训练的实验”为纲。
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="s-foot"><span>扩散模型 × 最优传输 · 深度调研汇报 · 2026-08-14</span><span class="f-mid">结尾</span><span class="pageno"></span></footer>
+</section>
+
+</main>
+<div id="jumpbox"></div>
+<div id="toast"></div>
+<script>
+(function () {
+  'use strict';
+  var deck = document.getElementById('deck');
+  var slides = Array.prototype.slice.call(deck.querySelectorAll('.slide'));
+  var bar = document.getElementById('progressbar');
+  var jumpbox = document.getElementById('jumpbox');
+  var toast = document.getElementById('toast');
+  var cur = 0;
+  var jumpBuf = '';
+  var jumpTimer = null;
+  var toastTimer = null;
+  var wheelLock = 0;
+  var touchX = null;
+
+  // 自动填充每页页码（保证与实际页数一致，打印同样生效）
+  slides.forEach(function (s, i) {
+    var el = s.querySelector('.pageno');
+    if (el) el.textContent = (i + 1) + ' / ' + slides.length;
+  });
+
+  function inPrintMode() { return document.documentElement.classList.contains('print-mode'); }
+
+  function goTo(i, setHash) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    slides[cur].classList.remove('active');
+    cur = i;
+    slides[cur].classList.add('active');
+    bar.style.width = ((cur + 1) / slides.length * 100) + '%';
+    if (setHash !== false) history.replaceState(null, '', '#' + (cur + 1));
+    if (inPrintMode()) slides[cur].scrollIntoView({ block: 'start' });
+  }
+  function next() { goTo(cur + 1); }
+  function prev() { goTo(cur - 1); }
+
+  function showToast(msg, ms) {
+    toast.textContent = msg;
+    toast.style.display = 'block';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.style.display = 'none'; }, ms || 2600);
+  }
+
+  // 数字键跳页：输入页码后回车
+  function showJump() {
+    jumpbox.textContent = '跳页：' + jumpBuf + ' ⏎';
+    jumpbox.style.display = 'block';
+    clearTimeout(jumpTimer);
+    jumpTimer = setTimeout(clearJump, 3000);
+  }
+  function clearJump() {
+    jumpBuf = '';
+    jumpbox.style.display = 'none';
+    clearTimeout(jumpTimer);
+  }
+
+  // P 键：打印模式（全部页面纵向铺开，配合浏览器打印为 A4 横向每页一张）
+  function togglePrint() {
+    var on = document.documentElement.classList.toggle('print-mode');
+    if (on) {
+      showToast('打印模式：用 ⌘/Ctrl+P 打印（A4 横向、每页一张）· 再按 P 返回放映', 4200);
+      slides[cur].scrollIntoView({ block: 'start' });
+    } else {
+      window.scrollTo(0, 0);
+      showToast('已返回放映模式');
+    }
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (/^[0-9]$/.test(k)) { jumpBuf = (jumpBuf + k).slice(0, 3); showJump(); return; }
+    if (k === 'Enter' && jumpBuf) { var n = parseInt(jumpBuf, 10); clearJump(); goTo(n - 1); return; }
+    if (k === 'Escape') { if (jumpBuf) { clearJump(); } else if (inPrintMode()) { togglePrint(); } return; }
+    if (k === 'p' || k === 'P') { e.preventDefault(); togglePrint(); return; }
+    if (k === '?') { showToast('← → ↑ ↓ 空格 翻页 · Home/End 首末页 · 数字+Enter 跳页 · P 打印模式', 4200); return; }
+    if (inPrintMode()) return;      // 打印模式下交给原生滚动
+    switch (k) {
+      case 'ArrowRight': case 'ArrowDown': case ' ': case 'PageDown':
+        e.preventDefault(); next(); break;
+      case 'ArrowLeft': case 'ArrowUp': case 'PageUp':
+        e.preventDefault(); prev(); break;
+      case 'Home': e.preventDefault(); goTo(0); break;
+      case 'End': e.preventDefault(); goTo(slides.length - 1); break;
+    }
+  });
+
+  // 滚轮翻页（节流，防触控板惯性连翻）
+  window.addEventListener('wheel', function (e) {
+    if (inPrintMode()) return;
+    var now = Date.now();
+    if (now < wheelLock || Math.abs(e.deltaY) < 24) return;
+    wheelLock = now + 680;
+    if (e.deltaY > 0) next(); else prev();
+  }, { passive: true });
+
+  // 触摸横滑翻页
+  document.addEventListener('touchstart', function (e) {
+    touchX = e.touches[0].clientX;
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (touchX === null || inPrintMode()) { touchX = null; return; }
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) { if (dx < 0) next(); else prev(); }
+    touchX = null;
+  }, { passive: true });
+
+  // URL 锚点（#页码）深链接
+  function fromHash() {
+    var m = location.hash.match(/(\d+)/);
+    if (m) goTo(parseInt(m[1], 10) - 1, false);
+  }
+  window.addEventListener('hashchange', fromHash);
+
+  // 初始化
+  slides[0].classList.add('active');
+  bar.style.width = (1 / slides.length * 100) + '%';
+  fromHash();
+})();
+</script>
+</body>
+</html>

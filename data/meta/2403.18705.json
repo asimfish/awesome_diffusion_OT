@@ -1,0 +1,68 @@
+{
+ "report_id": "2403.18705",
+ "arxiv_id": "2403.18705",
+ "title": "Conditional Wasserstein Distances with Applications in Bayesian OT Flow Matching",
+ "tldr_zh": "受限耦合定义条件 W2=后验 W2 期望；速度场 Y 分量为零，给出 Bayesian OT-FM",
+ "tldr_en": "Restricted-coupling conditional W2 equals expected posterior W2; velocity field has zero Y-component; yields Bayesian OT-FM",
+ "tags": [
+  "conditional Wasserstein distance",
+  "Bayesian inverse problems",
+  "OT flow matching",
+  "restricted couplings",
+  "geodesics",
+  "velocity fields"
+ ],
+ "code_url": "https://github.com/JChemseddine/Conditional_Wasserstein_Distances",
+ "key_numbers": [
+  {
+   "number": "0.0225 vs 0.0247",
+   "context": "GMM 逆问题 10 步 Euler 的 Sinkhorn 距离（OT Bayesian FM β=20 vs random Bayesian FM）",
+   "source": "Sec. 8.2 正文"
+  },
+  {
+   "number": "0.0760 vs 0.1044",
+   "context": "GMM 逆问题 3 步 Euler 的 Sinkhorn 距离（OT Bayesian FM vs random Bayesian FM）",
+   "source": "Sec. 8.2 正文"
+  },
+  {
+   "number": "4.10 (β=100) vs 4.92 (diagonal)",
+   "context": "CIFAR10 类条件生成的 FID",
+   "source": "Fig. 3 表格"
+  },
+  {
+   "number": "β=5 时每行只含一种数字",
+   "context": "MNIST 粒子流中 β 增大后标签拟合改善",
+   "source": "Sec. 8.1, Fig. 1 文字说明"
+  },
+  {
+   "number": "140k 参数",
+   "context": "GMM 实验所用前馈网络参数量",
+   "source": "Sec. 8.2 正文"
+  },
+  {
+   "number": "10000 训练 / 2000 验证",
+   "context": "GMM 实验数据集规模",
+   "source": "Sec. 8.2 正文"
+  },
+  {
+   "number": "500 epochs, 每 20 epochs 算 FID",
+   "context": "CIFAR10 实验训练设置",
+   "source": "Sec. 8.3 正文"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2402.05857",
+   "type": "并行工作（COT-FM，独立提出类似损失）"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "继承（OT-FM / minibatch OT-FM）"
+  },
+  {
+   "report_id": "2206.14262",
+   "type": "继承（CondOT 条件 Monge 映射）"
+  }
+ ],
+ "read_full_text": true
+}

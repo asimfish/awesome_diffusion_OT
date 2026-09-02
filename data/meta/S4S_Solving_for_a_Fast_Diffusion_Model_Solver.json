@@ -1,0 +1,62 @@
+{
+ "report_id": "S4S_Solving_for_a_Fast_Diffusion_Model_Solver",
+ "arxiv_id": null,
+ "title": "S4S: Solving for a Fast Diffusion Model Solver",
+ "tldr_zh": "低 NFE 下逐点跟踪真 ODE 轨迹不可行，改学求解器系数对齐教师端点；5 NFE 达 CIFAR-10 FID 3.73",
+ "tldr_en": "Pointwise tracking of true ODE trajectory is infeasible at low NFE; learn solver coefficients to match teacher endpoint, reaching CIFAR-10 FID 3.73 at 5 NFE",
+ "tags": [
+  "diffusion model",
+  "ODE solver",
+  "few-NFE sampling",
+  "solver distillation",
+  "training-free"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "3.73",
+   "context": "CIFAR-10 FID at 5 NFE",
+   "source": "abstract"
+  },
+  {
+   "number": "5",
+   "context": "NFE budget for reported FID",
+   "source": "abstract"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "GITS_Geometry_of_Implicit_denoising_Trajectories",
+   "type": "complementary"
+  },
+  {
+   "report_id": "TORS_Frenet-Serret_Scheduler",
+   "type": "complementary"
+  },
+  {
+   "report_id": "AYS_Align_Your_Steps",
+   "type": "related"
+  },
+  {
+   "report_id": "LD3_Differentiable_Scheduling",
+   "type": "related"
+  },
+  {
+   "report_id": "OSS_Optimal_Substructure_Scheduler",
+   "type": "related"
+  },
+  {
+   "report_id": "Bespoke_Solver_Distillation",
+   "type": "predecessor"
+  },
+  {
+   "report_id": "BNS_Bespoke_Non-Stationary_Solver",
+   "type": "predecessor"
+  },
+  {
+   "report_id": "EPD_Endpoint_Distillation",
+   "type": "successor"
+  }
+ ],
+ "read_full_text": false
+}

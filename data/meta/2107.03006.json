@@ -1,0 +1,51 @@
+{
+ "report_id": "2107.03006",
+ "arxiv_id": "2107.03006",
+ "title": "Structured Denoising Diffusion Models in Discrete State-Spaces",
+ "tldr_zh": "D3PM 用结构化转移矩阵统一离散扩散，absorbing 在文本、离散化高斯在图像上最优",
+ "tldr_en": "D3PM generalizes discrete diffusion via structured transition matrices; absorbing best for text, discretized Gaussian best for images",
+ "tags": [
+  "discrete diffusion",
+  "D3PM",
+  "transition matrix",
+  "absorbing state",
+  "text generation",
+  "CIFAR-10",
+  "diffusion models"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  "text8 D3PM absorbing NLL ≤1.45 bits/char (Table 1)",
+  "text8 Transformer XL NLL 1.08 bits/char (Table 1)",
+  "LM1B D3PM absorbing perplexity 76.9 (Table 2)",
+  "LM1B Transformer perplexity 43.6 (Table 2)",
+  "CIFAR-10 D3PM Gauss+logistic NLL ≤3.435 bits/dim (Table 3)",
+  "CIFAR-10 D3PM Gauss+logistic FID 7.34 (Table 3)",
+  "CIFAR-10 DDPM L_simple FID 3.17 (Table 3)",
+  "text8 20-step D3PM absorbing NLL ≤1.56 (Table 1)",
+  "LM1B 64-step D3PM absorbing perplexity 83.6 (Table 2)"
+ ],
+ "relations": [
+  {
+   "report_id": "2102.05379",
+   "type": "继承"
+  },
+  {
+   "report_id": "1503.03585",
+   "type": "继承"
+  },
+  {
+   "report_id": "2006.11239",
+   "type": "继承"
+  },
+  {
+   "report_id": "2205.14987",
+   "type": "被取代"
+  },
+  {
+   "report_id": "2310.16834",
+   "type": "被取代"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,23 @@
+{
+ "report_id": "Texture_Mapping_via_Optimal_Mass_Transport",
+ "arxiv_id": null,
+ "title": "Texture Mapping via Optimal Mass Transport",
+ "tldr_zh": "共形初始化后经OT梯度流得到保面积纹理贴图，最小化质量意义下的角度畸变",
+ "tldr_en": "Conformal init then OT gradient flow yields area-preserving texture maps with minimal mass-based angular distortion",
+ "tags": [
+  "texture-mapping",
+  "optimal-transport",
+  "area-preserving",
+  "conformal",
+  "UV-parameterization"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "OT_geometry_image_2511.18679",
+   "type": "被后续工作继承"
+  }
+ ],
+ "read_full_text": false
+}

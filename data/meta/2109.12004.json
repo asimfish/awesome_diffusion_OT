@@ -1,0 +1,46 @@
+{
+ "report_id": "2109.12004",
+ "arxiv_id": "2109.12004",
+ "title": "Entropic estimation of optimal transport maps",
+ "tldr_zh": "熵耦合的 barycentric projection = Id − ∇f_ε（熵版 Brenier），Sinkhorn 即可算，L² 风险率 n^{-(ᾱ+1)/(2(d+ᾱ+1))} log n",
+ "tldr_en": "The barycentric projection of the entropic plan equals Id minus the gradient of the entropic potential; computable by Sinkhorn with finite-sample L2 rates.",
+ "tags": [
+  "entropic-ot",
+  "map-estimation",
+  "sinkhorn",
+  "theory",
+  "statistics",
+  "brenier"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Two-sample rate: E||T_hat - T_0||^2_{L2(P)} <~ (1+I_0) n^{-(abar+1)/(2(d+abar+1))} log n with eps ~ n^{-1/(d+abar+1)}, abar = min(alpha,3) (Theorem 3)",
+  "Population bias: ||T_eps - T_0||^2_{L2(P)} <~ eps^2 I_0 + eps^{(abar+1)/2} (Corollary 1, Eq. 23)",
+  "Two-sample fluctuation: E||T_{eps,(n,n)} - T_{eps,n}||^2 <~ eps^{-d/2} log(n) n^{-1/2} (Theorem 5)",
+  "Finite Sinkhorn iterations k >~ n^{7/(d+abar+1)} log n suffice; total time n^{2+o_d(1)} (Theorem 7)",
+  "GPU (KeOps) run with n=10^4, d=10 takes about 1/3 second (Sec. 7.3.3, curves only)"
+ ],
+ "relations": [
+  {
+   "report_id": "2202.08919",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2406.05061",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "1905.11882",
+   "type": "uses"
+  },
+  {
+   "report_id": "2006.08172",
+   "type": "uses"
+  },
+  {
+   "report_id": "1306.0895",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

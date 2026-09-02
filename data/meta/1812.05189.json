@@ -1,0 +1,110 @@
+{
+ "report_id": "1812.05189",
+ "arxiv_id": "1812.05189",
+ "title": "Massively scalable Sinkhorn distances via the Nyström method",
+ "tldr_zh": "Nyström 低秩核近似 + Sinkhorn 缩放，近线性时间/内存计算 Sinkhorn 距离，有精度保证",
+ "tldr_en": "Nyström low-rank kernel approximation plus Sinkhorn scaling gives near-linear time/memory Sinkhorn distances with provable accuracy",
+ "tags": [
+  "optimal transport",
+  "Sinkhorn",
+  "Nyström",
+  "low-rank approximation",
+  "kernel approximation",
+  "scalability"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "O(n^2)",
+   "context": "标准 Sinkhorn 算法的时间与内存随 n^2 增长",
+   "source": "Sec. 1"
+  },
+  {
+   "number": "n≈10^4",
+   "context": "Cuturi (2013) 和 Genevay et al. (2016) 实验中标准算法可靠运行的问题规模",
+   "source": "Sec. 1"
+  },
+  {
+   "number": "n≈10^8",
+   "context": "Solomon et al. (2015) 网格数据方法可处理的问题规模",
+   "source": "Sec. 1"
+  },
+  {
+   "number": "O(nr(r+ηR^4/ε))",
+   "context": "Algorithm 1 的运行时间（Theorem 1）",
+   "source": "Theorem 1"
+  },
+  {
+   "number": "O(n(r+d))",
+   "context": "Algorithm 1 的空间复杂度（Theorem 1）",
+   "source": "Theorem 1"
+  },
+  {
+   "number": "KL(P̂∥P^η)≤ηε",
+   "context": "返回耦合 P̂ 与最优耦合 P^η 的 KL 散度上界",
+   "source": "Eq. (3b)"
+  },
+  {
+   "number": "r≤c·r*(X,η,ε')log(n/δ)",
+   "context": "近似秩 r 以概率 1-δ 不超过有效维度 r* 的对数倍",
+   "source": "Eq. (3d)"
+  },
+  {
+   "number": "(c(ηR²+log(n/(ε'η))))^d",
+   "context": "球内数据的有效维度上界（Theorem 2 非正式）",
+   "source": "Theorem 2"
+  },
+  {
+   "number": "c_{Ω,η}(log(n/ε'))^{5k/2}",
+   "context": "k 维流形上数据的有效维度上界（Theorem 2 非正式）",
+   "source": "Theorem 2"
+  },
+  {
+   "number": "λ_{t+1}(K)≤ne^{-(d/(2e))t^{1/d}log(d t^{1/d}/(4e²ηR²))}",
+   "context": "球内数据高斯核矩阵特征值衰减（对 t≥(2e)^d）",
+   "source": "Theorem 3"
+  },
+  {
+   "number": "λ_{p+1}(K)≤ne^{-cp^{2/(5k)}}",
+   "context": "k 维流形上高斯核矩阵特征值衰减",
+   "source": "Theorem 4"
+  },
+  {
+   "number": "‖Π^S(K)-Π^S(K̃)‖₁≤‖log K-log K̃‖∞",
+   "context": "Sinkhorn 投影在对数尺度上 1-Lipschitz",
+   "source": "Proposition 2"
+  },
+  {
+   "number": "hundreds of times larger",
+   "context": "Abstract 声称可在比现有技术大数百倍的数据集上计算 Sinkhorn 距离",
+   "source": "Abstract"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1306.0895",
+   "type": "被继承"
+  },
+  {
+   "report_id": "1706.00292",
+   "type": "被继承"
+  },
+  {
+   "report_id": "1802.04367",
+   "type": "被继承"
+  },
+  {
+   "report_id": "1805.07174",
+   "type": "竞争"
+  },
+  {
+   "report_id": "1506.01942",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2106.07328",
+   "type": "被取代"
+  }
+ ],
+ "read_full_text": true
+}

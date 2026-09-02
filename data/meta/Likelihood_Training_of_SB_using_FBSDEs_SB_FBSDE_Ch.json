@@ -1,0 +1,48 @@
+{
+ "report_id": "Likelihood_Training_of_SB_using_FBSDEs_SB_FBSDE_Ch",
+ "arxiv_id": "2110.11291",
+ "title": "Likelihood Training of Schrödinger Bridge using Forward-Backward SDEs Theory",
+ "tldr_zh": "用 FBSDE 把 SB 最优性 PDE 改写为精确对数似然目标，SGM 的 ELBO 是其特例；CIFAR10 FID 3.01",
+ "tldr_en": "FBSDE theory turns SB optimality PDEs into an exact log-likelihood objective generalizing SGM's ELBO; alternate IPF-style training reaches CIFAR10 FID 3.01.",
+ "tags": [
+  "schrodinger-bridge",
+  "likelihood",
+  "stochastic-control",
+  "fbsde",
+  "image-generation"
+ ],
+ "code_url": "https://github.com/ghliu/SB-FBSDE",
+ "key_numbers": [
+  "CIFAR10 NLL 2.96 bits/dim, FID 3.01 vs Multi-stage SB 12.32, DOT 15.78 (Table 1)",
+  "Main text reports NLL 2.98 / FID 3.18 (Sec. 4), inconsistent with Table 1",
+  "Training time +6.8%, sampling time -80%, memory 2-2.5x vs SGM on CIFAR10 (Sec. 3.3)",
+  "200 Euler-Maruyama steps on CIFAR10, 100 elsewhere (Sec. 4)"
+ ],
+ "relations": [
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_DSB_De_Bortoli_et_al",
+   "type": "competes"
+  },
+  {
+   "report_id": "Generalized_SB_Matching_GSBM_Liu_et_al",
+   "type": "extends"
+  },
+  {
+   "report_id": "Deep_Momentum_Multi_Marginal_SB_DMSB_Chen_et_al",
+   "type": "extends"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2607.03626",
+   "type": "competes"
+  },
+  {
+   "report_id": "2005.10963",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

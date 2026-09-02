@@ -1,0 +1,50 @@
+{
+ "report_id": "2306.00980",
+ "arxiv_id": "2306.00980",
+ "title": "SnapFusion: Text-to-Image Diffusion Model on Mobile Devices within Two Seconds",
+ "tldr_zh": "架构演化压缩 UNet + 数据蒸馏压 decoder + CFG 正则步蒸馏，iPhone 上 8 步 1.84s，FID/CLIP 优于 50 步 SD-v1.5",
+ "tldr_en": "Efficient UNet via architecture evolution, distilled decoder, CFG-aware step distillation; 8 steps in 1.84s on iPhone, better FID/CLIP than 50-step SD-v1.5",
+ "tags": [
+  "text-to-image",
+  "diffusion",
+  "mobile deployment",
+  "step distillation",
+  "architecture evolution",
+  "classifier-free guidance",
+  "efficient inference"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  "SD-v1.5 UNet 单步延迟约 1,700ms，50 步总计 85,000ms；SnapFusion UNet 单步 230ms，8 步 1,840ms（Table 1）",
+  "SD-v1.5 VAE decoder 369ms/50M 参数；SnapFusion decoder 116ms/13M 参数，3.8× 参数减少、3.2× 加速（Table 1, Sec. 3.2）",
+  "SnapFusion 总延迟约 1,964ms（8+1,840+116），denoising 1.84s（Table 1, Sec. 7）",
+  "8 步 SnapFusion 在 MS-COCO 2017 5K 上 FID 24.2 vs Meng et al. 26.9，CLIP 持平 0.30（Table 2）",
+  "同 FID 下 CLIP 比 50 步 SD-v1.5 高 0.004–0.010（MS-COCO 2014 全量 30K，Fig. 4 左）",
+  "UNet 参数 848M vs SD-v1.5 860M，几乎未减（Table 1）",
+  "每个架构动作评估约 2.5 A100 GPU hours（Sec. 3.1）",
+  "训练 batch size 2,048，16 或 32 节点 × 8 A100（Sec. 5）"
+ ],
+ "relations": [
+  {
+   "report_id": "2112.10752",
+   "type": "baseline"
+  },
+  {
+   "report_id": "2202.00512",
+   "type": "inherits"
+  },
+  {
+   "report_id": "2305.08891",
+   "type": "competes"
+  },
+  {
+   "report_id": "2010.02502",
+   "type": "uses"
+  },
+  {
+   "report_id": "2207.12598",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

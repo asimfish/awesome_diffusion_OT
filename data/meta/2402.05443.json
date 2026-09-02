@@ -1,0 +1,65 @@
+{
+ "report_id": "2402.05443",
+ "arxiv_id": "2402.05443",
+ "title": "Scalable Wasserstein Gradient Flow for Generative Modeling through Unbalanced Optimal Transport",
+ "tldr_zh": "S-JKO：JKO 步 = 源端固定 UOT，半对偶 + 重参数化把训练降到 O(K)，CIFAR-10 FID 2.62、CelebA-HQ-256 FID 5.46，一步采样",
+ "tldr_en": "S-JKO shows each JKO step is a source-fixed UOT problem, solves it via the UOT semi-dual with a reparametrized map T_k = dT_k o T_{k-1}, reducing training to O(K); FID 2.62 on CIFAR-10 with one-step sampling.",
+ "tags": [
+  "jko-scheme",
+  "wasserstein-gradient-flow",
+  "unbalanced-optimal-transport",
+  "semi-dual",
+  "adversarial",
+  "generative-model",
+  "one-step-generation",
+  "image-generation"
+ ],
+ "code_url": "https://github.com/Jae-Moo/Scalable-JKO",
+ "key_numbers": [
+  "CIFAR-10 FID: S-JKO (Large, NCSN++) 2.62+-0.04, S-JKO-JSD 2.66+-0.05 vs UOTM 2.97, Source-fixed UOTM 7.53, NSGF 5.55, JKO-Flow 23.1, JKO-iFlow 29.1, Score SDE (VE) 2.20 (Table 2)",
+  "CelebA-HQ 256 FID: S-JKO-JSD 5.46, S-JKO-KLD 6.40 vs UOTM 6.36, Source-fixed UOTM 7.36, Score SDE (VP) 7.23, LSGM 7.22 (Table 3)",
+  "Training on one RTX 3090 Ti: Small backbone 6 h / FID 8.78 (NFE 1) vs JKO-Flow >=50 h / 23.1 (NFE 160) and JKO-iFlow >=30 h / 29.1; Large 50 h (Table 1)",
+  "Ablations: K=10..200 gives FID 2.62-2.83 (Table 4); step size h=0.2 degrades KLD version to 6.11 while JSD stays 2.75 (Table 5)",
+  "OU-process log SymKL at t=0.5, d=10: ICNN JKO -1.8 vs S-JKO -0.1 vs EM 50K 0.4 (Table 6)",
+  "Schedule: K=50 JKO steps, 10K iterations first step then N=2000 per step, 110K total; ~48M params Large, ~0.4M Small (Appendix B.2)"
+ ],
+ "relations": [
+  {
+   "report_id": "2305.14777",
+   "type": "extends"
+  },
+  {
+   "report_id": "2112.02424",
+   "type": "extends"
+  },
+  {
+   "report_id": "2212.14424",
+   "type": "competes"
+  },
+  {
+   "report_id": "2106.00736",
+   "type": "competes"
+  },
+  {
+   "report_id": "2311.15100",
+   "type": "competes"
+  },
+  {
+   "report_id": "1508.05216",
+   "type": "uses"
+  },
+  {
+   "report_id": "2311.18828",
+   "type": "competes"
+  },
+  {
+   "report_id": "2605.11755",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Scalable_Wasserstein_Gradient_Flow_via_Unbalanced",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,85 @@
+{
+ "report_id": "2506.10177",
+ "arxiv_id": "2506.10177",
+ "title": "Geometric Regularity in Deterministic Sampling Dynamics of Diffusion-based Generative Models",
+ "tldr_zh": "扩散采样轨迹呈低维回旋镖形，KDE 闭式解等价 annealed mean-shift，DP 调度加速 5–10 NFE 生成",
+ "tldr_en": "Diffusion sampling trajectories show low-dimensional boomerang shape; KDE closed form links to annealed mean-shift; DP schedule accelerates 5-10 NFE generation",
+ "tags": [
+  "trajectory geometry",
+  "PF-ODE",
+  "mean-shift",
+  "KDE",
+  "dynamic programming",
+  "sampling schedule",
+  "training-free"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "0.0034",
+   "description": "ImageNet 轨迹最大偏差/端点距离比（30/8800）",
+   "source": "Sec. 3.1, p.8"
+  },
+  {
+   "number": "85%",
+   "description": "3-D 子空间（位移向量+前2主成分）解释方差",
+   "source": "Sec. 3.2, p.9, Fig. 4c/f/i"
+  },
+  {
+   "number": "80%",
+   "description": "轨迹近似直线段占比",
+   "source": "Sec. 3.3, p.13, Fig. 6"
+  },
+  {
+   "number": "7000/8250",
+   "description": "ImageNet 曲率开始上升弧长约 7000，挠率峰值弧长约 8250（采样时间约 4）",
+   "source": "Sec. 3.3, p.13, Fig. 6b"
+  },
+  {
+   "number": "5-10",
+   "description": "DP 调度有效 NFE 区间",
+   "source": "Abstract, Sec. 1"
+  },
+  {
+   "number": "5000",
+   "description": "图 3 轨迹统计样本数",
+   "source": "Fig. 3 caption"
+  },
+  {
+   "number": "100/1000",
+   "description": "轨迹模拟 NFE（图 3-5 用 100，图 6 用 1000）",
+   "source": "Fig. 3/5/6 captions"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "GITS_ICML2024",
+   "type": "is_extended_version_of"
+  },
+  {
+   "report_id": "AMED",
+   "type": "extends"
+  },
+  {
+   "report_id": "AYS",
+   "type": "competes"
+  },
+  {
+   "report_id": "LD3",
+   "type": "competes"
+  },
+  {
+   "report_id": "TORS",
+   "type": "complements"
+  },
+  {
+   "report_id": "DPM-Solver",
+   "type": "builds_on"
+  },
+  {
+   "report_id": "EDM",
+   "type": "uses_as_baseline"
+  }
+ ],
+ "read_full_text": false
+}

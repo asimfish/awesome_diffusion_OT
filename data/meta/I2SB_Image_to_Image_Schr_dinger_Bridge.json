@@ -1,0 +1,76 @@
+{
+ "report_id": "I2SB_Image_to_Image_Schr_dinger_Bridge",
+ "arxiv_id": "2302.05872",
+ "title": "I2SB: Image-to-Image Schrödinger Bridge",
+ "tldr_zh": "Dirac delta 边界使 SB 退化为可解析的 tractable 类，simulation-free 训练，ImageNet-256 修复超条件扩散",
+ "tldr_en": "Dirac boundary makes SB tractable and simulation-free; beats conditional diffusion on ImageNet-256 restoration",
+ "tags": [
+  "Schrödinger bridge",
+  "image restoration",
+  "diffusion models",
+  "optimal transport",
+  "image-to-image translation"
+ ],
+ "code_url": "https://i2sb.github.io/",
+ "key_numbers": [
+  {
+   "number": "6× slower, 3× memory",
+   "context": "SB vs SGM at 256×256 resolution",
+   "source": "Figure 2, p.2"
+  },
+  {
+   "number": "FID 2.7 (Pool SR), 2.8 (Bicubic SR)",
+   "context": "I2SB best FID on 4× super-resolution, vs ADM 3.1/14.8, ΠGDM 3.8/3.6",
+   "source": "Table 2, p.7"
+  },
+  {
+   "number": "FID 4.6 (QF=5), 3.6 (QF=10)",
+   "context": "I2SB JPEG restoration, vs Palette 8.3/5.4, ΠGDM 8.6/6.0",
+   "source": "Table 3, p.7"
+  },
+  {
+   "number": "FID 2.9 (Freeform 10-20%), 3.2 (20-30%)",
+   "context": "I2SB inpainting, vs Palette 4.0/4.1, DDNM 3.2/4.2",
+   "source": "Table 4, p.7"
+  },
+  {
+   "number": "2~10 NFE",
+   "context": "I2SB needs 2~10 NFE to match Palette's best at ≥100 NFE on Freeform 20-30% inpainting",
+   "source": "Sec. 5.2, p.8, Figure 8"
+  },
+  {
+   "number": "FID 4.1 (NFE=1)",
+   "context": "I2SB one-step inpainting Freeform 10-20%, vs DeepFillv2 6.7, HiFill 7.5, Palette 9.6",
+   "source": "Table 8, p.9"
+  },
+  {
+   "number": "7/9 tasks SOTA FID",
+   "context": "I2SB achieves state-of-the-art FID on seven out of nine restoration tasks",
+   "source": "Sec. 5.2, p.7"
+  },
+  {
+   "number": "FID 37.8 (edges→shoes, NFE=1000)",
+   "context": "I2SB general I2I translation, vs Pix2pix 73.9",
+   "source": "Table 7, p.9"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "DDIB_Su_2022",
+   "type": "被 I2SB 引用为 unpaired 翻译对照，I2SB 的配对假设限制使其不适用于 DDIB 场景"
+  },
+  {
+   "report_id": "DDBM_2023",
+   "type": "后续统一框架，收编 I2SB 的配对桥 simulation-free 训练配方"
+  },
+  {
+   "report_id": "BBDM_2023",
+   "type": "同期 latent Brownian bridge 工作，同属配对桥路线"
+  },
+  {
+   "report_id": "CDSB_Shi_2022",
+   "type": "I2SB 的 SB 基线，I2SB 在所有任务上大幅超越"
+  }
+ ],
+ "read_full_text": true
+}

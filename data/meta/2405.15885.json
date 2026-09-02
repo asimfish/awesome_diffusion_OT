@@ -1,0 +1,46 @@
+{
+ "report_id": "2405.15885",
+ "arxiv_id": "2405.15885",
+ "title": "Diffusion Bridge Implicit Models",
+ "tldr_zh": "非马尔可夫桥得DDIM式免训练采样器，20 NFE胜DDBM 500 NFE",
+ "tldr_en": "Non-Markovian bridges sharing DDBM marginals yield a DDIM-style training-free sampler; 20 NFE beats DDBM at 500 NFE on ImageNet inpainting.",
+ "tags": [
+  "diffusion-bridge",
+  "fast-sampling",
+  "training-free",
+  "non-markovian",
+  "high-order-solver"
+ ],
+ "code_url": "https://github.com/thu-ml/DiffusionBridge",
+ "key_numbers": [
+  "ImageNet 256² center inpainting FID 4.07 @ NFE 20 vs DDBM 4.27 @ NFE 500 (Table 3)",
+  "ImageNet inpainting FID 3.88 / CA 72.7 @ NFE 100 (Table 3)",
+  "Edges→Handbags FID 1.74 @ NFE 20 vs DDBM 1.83 @ NFE 118 (Table 2)",
+  "DIODE FID 2.57 @ NFE 100 vs DDBM 3.34 @ NFE 200 (Table 2)",
+  "η=0 converges to FID 3.91 at NFE≥100; η=1 reaches 3.80 at NFE 500 (Table 4)",
+  "3rd-order vs 1st-order: E→H NFE 10 FID 2.12 vs 2.49 (Table 6)"
+ ],
+ "relations": [
+  {
+   "report_id": "2309.16948",
+   "type": "extends"
+  },
+  {
+   "report_id": "2410.22637",
+   "type": "competes"
+  },
+  {
+   "report_id": "I2SB_Image_to_Image_Schr_dinger_Bridge",
+   "type": "extends"
+  },
+  {
+   "report_id": "UniDB_UniDB",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2205.07680",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

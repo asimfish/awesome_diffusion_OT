@@ -1,0 +1,36 @@
+{
+ "report_id": "GOUB_Generalized_Ornstein_Uhlenbeck_Bridge",
+ "arxiv_id": "",
+ "title": "GOUB: Generalized Ornstein-Uhlenbeck Bridge",
+ "tldr_zh": "广义OU过程上h-transform消掉稳态方差，得点对点修复桥并统一多种桥",
+ "tldr_en": "Applies Doob's h-transform to a generalized OU process to remove terminal variance, giving a point-to-point restoration bridge that unifies prior bridges; Mean-ODE variant.",
+ "tags": [
+  "diffusion-bridge",
+  "doob-h-transform",
+  "ornstein-uhlenbeck",
+  "image-restoration"
+ ],
+ "code_url": "https://github.com/Hammour-steak/GOUB",
+ "key_numbers": [
+  "No abstract or full text available; manifest claims SOTA on inpainting/deraining/SR without numbers"
+ ],
+ "relations": [
+  {
+   "report_id": "2309.16948",
+   "type": "competes"
+  },
+  {
+   "report_id": "2505.21528",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "UniDB_UniDB",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "I2SB_Image_to_Image_Schr_dinger_Bridge",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": false
+}

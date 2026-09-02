@@ -1,0 +1,73 @@
+{
+ "report_id": "2606.11221",
+ "arxiv_id": "2606.11221",
+ "title": "LAST: Bridging Vision-Language and Action Manifolds via Gromov-Wasserstein Alignment",
+ "tldr_zh": "LAST 用 Lie 代数线性化与协方差白化重构动作空间，LIBERO 平均成功率 95.8%",
+ "tldr_en": "LAST linearizes SE(3) actions via Lie algebra and whitens residuals for VL-compatible action tokenization",
+ "tags": [
+  "Gromov-Wasserstein",
+  "VLA",
+  "action tokenization",
+  "Lie algebra",
+  "manifold alignment",
+  "robotics"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "95.8%",
+   "context": "LAST-Continuous 在 LIBERO 平均成功率",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.6e-2",
+   "context": "LAST 重建 MAE",
+   "source": "Table 1"
+  },
+  {
+   "number": "96%",
+   "context": "LAST codebook utilization，对比 RVQVAE 51%",
+   "source": "Table 1"
+  },
+  {
+   "number": "57.3%",
+   "context": "LAST-Continuous 在 SimplerEnv 总体成功率",
+   "source": "Table 3"
+  },
+  {
+   "number": "73%/57%/48%",
+   "context": "LAST 真实世界 PlaceObj/ZipSeal/TubeRack 成功率",
+   "source": "Fig. 4"
+  },
+  {
+   "number": "2.5k steps",
+   "context": "LAST 达到性能平台期的训练步数，对比 π0-FAST 3.5k、BEAST 4k",
+   "source": "Fig. 3"
+  },
+  {
+   "number": "91.2%",
+   "context": "LAST-Continuous 在 LIBERO Long-horizon 成功率",
+   "source": "Table 2"
+  },
+  {
+   "number": "K=1024, d=6",
+   "context": "白化复杂度 O(Kd³) 在本文规模下的参数",
+   "source": "Impact Statement"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "GENOT_NeurIPS2024",
+   "type": "互补：GENOT 学 GW 耦合的流匹配映射，LAST 重构动作空间使对齐可行"
+  },
+  {
+   "report_id": "BlindMatch_CVPR2025",
+   "type": "上游：Blind Match 验证预训练表征结构可对齐，LAST 提供动作侧空间构造"
+  },
+  {
+   "report_id": "GW-at-Scale_ICML2026",
+   "type": "互补：GW-at-Scale 提供可扩展可微 GW 求解器，LAST 用几何预处理规避显式求解"
+  }
+ ],
+ "read_full_text": true
+}

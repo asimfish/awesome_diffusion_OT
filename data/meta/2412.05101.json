@@ -1,0 +1,48 @@
+{
+ "report_id": "2412.05101",
+ "arxiv_id": "2412.05101",
+ "title": "The Silent Assistant: NoiseQuery as Implicit Guidance for Goal-Driven Image Generation",
+ "tldr_zh": "无条件生成后验给 10 万噪声建特征库，推理 0.002 s 查库选初值；免训练、跨模型复用，偏好分小幅一致提升",
+ "tldr_en": "Offline noise library keyed by unconditional-generation features; 0.002 s retrieval picks prompt-aligned initial noise, model-agnostic, small consistent gains.",
+ "tags": [
+  "noise-retrieval",
+  "initial-noise",
+  "noise-library",
+  "training-free",
+  "text-to-image",
+  "inference-time",
+  "cross-model-consistency"
+ ],
+ "code_url": "https://github.com/wangruoyu02/NoiseQuery",
+ "key_numbers": [
+  "SD 2.1 DrawBench: ImageReward 0.12 -> 0.26, HPS v2 24.93 -> 25.39, CLIPScore 31.13 -> 31.68, time 1.301 -> 1.303 s (Table 2)",
+  "SD-Turbo + ReNO 1.67 -> +NoiseQuery 1.71 ImageReward (Table 2)",
+  "Retrieval cost ~0.0015 s for 100k library; CLIPScore 31.51 (0.5k) -> 31.74 (100k) (Table 3)",
+  "DIV (DINOv2 std over top-20 noises per prompt) 1.0996 vs random 1.1069 (Fig. 6)",
+  "SD residual signal at T: x_T = 0.068265 x_0 + 0.997667 eps (Eq. 3)",
+  "Zero-shot transfer of SD2.1 library to SD1.4/1.5/2.0/PixArt-alpha/SD-Turbo: PickScore +0.05 to +0.12 (Table S1)"
+ ],
+ "relations": [
+  {
+   "report_id": "Scaling_Inference_Time_Compute_for_Diffusion_Model",
+   "type": "competes"
+  },
+  {
+   "report_id": "2411.09502",
+   "type": "competes"
+  },
+  {
+   "report_id": "2412.03895",
+   "type": "competes"
+  },
+  {
+   "report_id": "2406.04312",
+   "type": "uses"
+  },
+  {
+   "report_id": "The_Emergence_of_Reproducibility_and_Consistency_i",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,96 @@
+{
+ "report_id": "2311.01226",
+ "arxiv_id": "2311.01226",
+ "title": "Optimal Transport-Guided Conditional Score-Based Diffusion Models",
+ "tldr_zh": "用 L2 正则 OT 估计非配对/半配对数据耦合，按相容性重采样训练条件分数模型，实现 OT 数据传输",
+ "tldr_en": "L2-regularized OT estimates coupling for unpaired/semi-paired data; resampling-by-compatibility trains conditional SBDM to realize OT transport",
+ "tags": [
+  "optimal transport",
+  "conditional diffusion",
+  "unpaired I2I",
+  "semi-paired I2I",
+  "score-based model",
+  "resampling-by-compatibility"
+ ],
+ "code_url": "https://github.com/XJTU-XGU/OTCS",
+ "key_numbers": [
+  {
+   "number": "1.77",
+   "metric": "FID on CelebA unpaired super-resolution",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.9313",
+   "metric": "SSIM on CelebA unpaired super-resolution",
+   "source": "Table 1"
+  },
+  {
+   "number": "13.68",
+   "metric": "FID on Animal images semi-paired I2I",
+   "source": "Table 1"
+  },
+  {
+   "number": "96.44",
+   "metric": "Accuracy (%) on Animal images semi-paired I2I",
+   "source": "Table 1"
+  },
+  {
+   "number": "5.12",
+   "metric": "FID on Digits semi-paired I2I",
+   "source": "Table 1"
+  },
+  {
+   "number": "67.42",
+   "metric": "Accuracy (%) on Digits semi-paired I2I",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.78",
+   "metric": "Oracle FID on CelebA (paired training)",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "0.9635",
+   "metric": "Oracle SSIM on CelebA (paired training)",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "3",
+   "metric": "paired image pairs for Animal images semi-paired I2I",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "10",
+   "metric": "paired image pairs for Digits semi-paired I2I",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "0.2",
+   "metric": "initial time M for CelebA reverse SDE",
+   "source": "Sec. 5.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "SCONES_NeurIPS2021",
+   "type": "继承并改进"
+  },
+  {
+   "report_id": "KPG-OT_NeurIPS2022",
+   "type": "继承半监督 OT 形式"
+  },
+  {
+   "report_id": "EGSDE_NeurIPS2022",
+   "type": "对比基线"
+  },
+  {
+   "report_id": "DDIB_ICLR2023",
+   "type": "对比基线"
+  },
+  {
+   "report_id": "RectifiedFlow_ICLR2023",
+   "type": "对比基线"
+  }
+ ],
+ "read_full_text": true
+}

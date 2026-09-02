@@ -1,0 +1,59 @@
+{
+ "report_id": "2505.19712",
+ "arxiv_id": "2505.19712",
+ "title": "On the Relation between Rectified Flows and Optimal Transport",
+ "tldr_zh": "反例证明梯度约束 reflow 有非最优不动点、损失趋零不蕴含最优；Liu22 Thm 5.6 需加连通支撑假设",
+ "tldr_en": "Counterexamples show gradient-constrained reflow has non-optimal fixed points and vanishing loss does not imply optimality; Liu22 Thm 5.6 needs connected-support assumption.",
+ "tags": [
+  "rectified-flow",
+  "optimal-transport",
+  "theory",
+  "counterexample",
+  "reflow",
+  "schrodinger-bridge",
+  "gaussian-case"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Smoothed rectification from non-optimal fixed point: transport distance 2.84->2.79 (c0=0, stuck) vs 2.68->2.66 (c0=0.2); optimum 2.66 (Appendix E, Table 1)",
+  "Cor. 17: loss < eps and W2^2(mu0^c, mu1) < eps but E||X1^c - X0^c||^2 > 4 - eps",
+  "Thm 18: min_i L^(i) = O(1/K + mean c_K) for noise-injected rectification",
+  "Thm 3(ii): independent Gaussian coupling with jointly diagonalizable covariances -> one rectification step gives the unique OT coupling",
+  "MLP 3x512, Adam 40000 steps, batch 256 for 2D verification (Appendix D)"
+ ],
+ "relations": [
+  {
+   "report_id": "2209.14577",
+   "type": "competes"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "extends"
+  },
+  {
+   "report_id": "2410.14949",
+   "type": "competes"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "uses"
+  },
+  {
+   "report_id": "2304.14772",
+   "type": "uses"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "type": "competes"
+  },
+  {
+   "report_id": "2202.07477",
+   "type": "competes"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

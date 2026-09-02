@@ -1,0 +1,50 @@
+{
+ "report_id": "2508.16306",
+ "arxiv_id": "2508.16306",
+ "title": "A Sharp KL-Convergence Analysis for Diffusion Models under Minimal Assumptions",
+ "tldr_zh": "「PF-ODE 双步+前向加噪单步」把 KL 迭代复杂度从 Õ(d/ε²) 提到 Õ(d log^{3/2}(1/δ)/ε)，仅需 L² score 与二阶矩（预印本）",
+ "tldr_en": "Preprint: an ODE-step-plus-forward-noising scheme achieves ε²-KL in Õ(d log^{3/2}(1/δ)/ε) steps under L2-accurate scores and finite second moment, improving Õ(d/ε²).",
+ "tags": [
+  "diffusion-theory",
+  "kl-divergence",
+  "convergence-rate",
+  "probability-flow-ode",
+  "preprint",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "KL(p_{t1}‖p̂_{t1}) ≲ (d+m²)e^{-T} + d²c³K + T ε_score² (Thm 3.1, Eq. 6)",
+  "Iteration complexity K = Θ(d log^{3/2}(1/δ)/ε_score) for Õ(ε_score²) KL (Cor. 3.2)",
+  "Previous best K = Θ(d log²(1/δ)/ε_score²) (Benton et al. 2023)",
+  "Per-step KL = e^{-2h}||x_{k-0.5} − x̂_{k-0.5}||² / (2(1−e^{-2h})) (Lemma A.1)",
+  "ODE discretization error ≤ ½(h_k+h_{k-1})³ ∫ e^{4t} E||s_r'||² dt (Lemma A.4)"
+ ],
+ "relations": [
+  {
+   "report_id": "2308.03686",
+   "type": "extends"
+  },
+  {
+   "report_id": "2409.18959",
+   "type": "competes"
+  },
+  {
+   "report_id": "2209.11215",
+   "type": "extends"
+  },
+  {
+   "report_id": "2010.02502",
+   "type": "uses"
+  },
+  {
+   "report_id": "Score_Based_Generative_Modeling_through_SDEs",
+   "type": "uses"
+  },
+  {
+   "report_id": "2503.09583",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

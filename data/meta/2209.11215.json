@@ -1,0 +1,58 @@
+{
+ "report_id": "2209.11215",
+ "arxiv_id": "2209.11215",
+ "title": "Sampling is as easy as learning the score: theory for diffusion models with minimal data assumptions",
+ "tldr_zh": "L² score+Lipschitz score+二阶矩下 DDPM 以 Θ̃(L²d/ε²) 步 TV-ε 逼近任意非 log-concave 分布；确立 Girsanov 范式",
+ "tldr_en": "With L2-accurate scores, DDPM samples any non-log-concave distribution in Θ̃(L²d/ε²) steps (TV); establishes the Girsanov path-KL analysis paradigm.",
+ "tags": [
+  "diffusion-theory",
+  "convergence-rate",
+  "girsanov",
+  "ddpm",
+  "cld",
+  "total-variation",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "TV(p_T,q) ≲ √KL(q‖γ_d) e^{-T} + (L√(dh)+L m_2 h)√T + ε_score √T (Thm 2)",
+  "Iteration complexity N = Θ̃(L²d/ε²) with ε_score ≤ Õ(ε) (Sec. 3.1)",
+  "Bounded-support early stopping: N = Θ̃(d³R⁴(R∨√d)⁴/(ε_TV² ε_W2⁸)) (Cor. 3); W2 version Θ̃(d³R⁸(R∨√d)⁴/ε¹²) (Cor. 5)",
+  "CLD path-KL lower bound KL(Q‖P) ≥ dhT for Gaussian target, exact score (Thm 7)"
+ ],
+ "relations": [
+  {
+   "report_id": "2308.03686",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2409.18959",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2508.16306",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2410.09046",
+   "type": "extends"
+  },
+  {
+   "report_id": "2402.07747",
+   "type": "competes"
+  },
+  {
+   "report_id": "Score_Based_Generative_Modeling_through_SDEs",
+   "type": "uses"
+  },
+  {
+   "report_id": "2212.06359",
+   "type": "competes"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_DSB_De_Bortoli_et_al",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

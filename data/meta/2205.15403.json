@@ -1,0 +1,50 @@
+{
+ "report_id": "2205.15403",
+ "arxiv_id": "2205.15403",
+ "title": "Neural Optimal Transport with General Cost Functionals",
+ "tldr_zh": "NOT 的 max-min 推广到任意凸 lsc 泛函 F(pi)，无位势凸性假设的 duality-gap 界；class-guided 泛函用每类 10 标签实现保类翻译",
+ "tldr_en": "Generalizes the NOT saddle-point solver to arbitrary convex lsc cost functionals F(pi), proves a duality-gap bound without potential convexity, and builds class- and pair-guided functionals.",
+ "tags": [
+  "neural-ot",
+  "general-cost",
+  "cost-functional",
+  "class-guided",
+  "semi-supervised",
+  "duality-gap",
+  "dataset-transfer",
+  "theory"
+ ],
+ "code_url": "https://github.com/machinestein/gnot",
+ "key_numbers": [
+  "FMNIST->MNIST class accuracy: F_G 83.22% vs NOT W2 10.96%, MUNIT 8.93%, OTDD 10.28%, Sinkhorn LpL1 10.67% with 10 target labels per class (Table 1)",
+  "FMNIST->MNIST FID: F_G 5.26 vs NOT W2 7.51, MUNIT 7.91, AugCycleGAN 26.35 (Table 2); MNIST->MNIST-M FID 6.67 vs 19.43/11.68 (Table 2)",
+  "MNIST->MNIST-M accuracy: F_G 94.62% vs MUNIT 97.95%, AugCycleGAN 98.2% (Table 1)",
+  "MNIST->KMNIST accuracy: F_G no z 79.20%, F_G 61.91% vs all baselines <13% (Table 3)",
+  "CelebAMask-HQ 256px pair-guided FID 21.1 (Sec. 6.2); Table 7 truncated",
+  "rho(pi_T, pi*) <= sqrt(2/beta)(sqrt(eps1)+sqrt(eps2)) for beta-strongly convex F, no assumption on potential (Theorem 3)",
+  "Compute: 5-15 hours on one V100 16GB for image data (Appendix C.1)"
+ ],
+ "relations": [
+  {
+   "report_id": "2201.12220",
+   "type": "extends"
+  },
+  {
+   "report_id": "2205.15269",
+   "type": "uses"
+  },
+  {
+   "report_id": "2301.12874",
+   "type": "competes"
+  },
+  {
+   "report_id": "2106.03812",
+   "type": "competes"
+  },
+  {
+   "report_id": "2110.02999",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": true
+}

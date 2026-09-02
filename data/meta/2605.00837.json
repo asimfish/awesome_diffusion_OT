@@ -1,0 +1,106 @@
+{
+ "report_id": "2605.00837",
+ "arxiv_id": "2605.00837",
+ "title": "Fast Log-Domain Sinkhorn Optimal Transport with Warp-Level GPU Reductions",
+ "tldr_zh": "原生 CUDA log-domain Sinkhorn，warp shuffle 归约，n=8192 比 POT 快 12×，ε 低至 1e-4 稳定",
+ "tldr_en": "Native CUDA log-domain Sinkhorn with warp shuffle; 12x over POT at n=8192, stable to eps=1e-4",
+ "tags": [
+  "optimal transport",
+  "Sinkhorn",
+  "CUDA",
+  "GPU",
+  "log-domain",
+  "warp-level reduction",
+  "numerical stability"
+ ],
+ "code_url": "https://github.com/xiao98/Fast-Sinkhorn-CUDA",
+ "key_numbers": [
+  {
+   "number": "12.0×",
+   "context": "speedup vs POT at n=8192, ε=0.01",
+   "source": "Table 1"
+  },
+  {
+   "number": "5.9×",
+   "context": "speedup vs PyTorch Sinkhorn at n=8192, ε=0.01",
+   "source": "Table 1"
+  },
+  {
+   "number": "371.6 ms",
+   "context": "wall-clock time at n=8192, ε=0.01 on RTX 3090",
+   "source": "Table 1"
+  },
+  {
+   "number": "256 MB",
+   "context": "cost matrix memory at n=m=8192",
+   "source": "Sec. 4.4"
+  },
+  {
+   "number": "1.93×",
+   "context": "slowdown when removing warp shuffle (shared-memory only)",
+   "source": "Table 2"
+  },
+  {
+   "number": "1.68×",
+   "context": "slowdown when checking convergence every iteration vs every 20",
+   "source": "Table 2"
+  },
+  {
+   "number": "1.14×",
+   "context": "overhead of log-domain vs standard-domain at ε=0.01",
+   "source": "Table 2"
+  },
+  {
+   "number": "10^-4",
+   "context": "smallest ε tested with stable convergence",
+   "source": "Sec. 5.4, Fig. 4"
+  },
+  {
+   "number": "0.005",
+   "context": "ε threshold below which standard-domain produces NaN",
+   "source": "Sec. 5.4, Fig. 4"
+  },
+  {
+   "number": "1.54 s",
+   "context": "time for n=16384, ε=0.01 on RTX 3090",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "1024 MB",
+   "context": "peak GPU memory at n=16384",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "180-200",
+   "context": "iteration count approximately independent of n at ε=0.01",
+   "source": "Sec. 5.2, Fig. 2c"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "cuturi2013sinkhorn",
+   "type": "inherits"
+  },
+  {
+   "report_id": "schmitzer2019stabilized",
+   "type": "inherits"
+  },
+  {
+   "report_id": "feydy2019geomloss",
+   "type": "competes"
+  },
+  {
+   "report_id": "flamary2021pot",
+   "type": "competes"
+  },
+  {
+   "report_id": "flashsinkhorn2026",
+   "type": "competes"
+  },
+  {
+   "report_id": "scetbon2021lowrank",
+   "type": "complements"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,50 @@
+{
+ "report_id": "2206.00927",
+ "arxiv_id": "2206.00927",
+ "title": "DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps",
+ "tldr_zh": "半线性结构：线性项解析、log-SNR 域泰勒展开网络项，1–3 阶指数积分器；10 NFE FID 4.70",
+ "tldr_en": "Exploits semi-linear diffusion ODE: analytic linear part, Taylor expansion in log-SNR; order-1/2/3 exponential integrators reach FID 4.70 at 10 NFE.",
+ "tags": [
+  "ode-solver",
+  "exponential-integrator",
+  "training-free",
+  "convergence-order",
+  "theory",
+  "few-step-sampling"
+ ],
+ "code_url": "https://github.com/LuChengTHU/dpm-solver",
+ "key_numbers": [
+  "CIFAR-10 FID 4.70 at 10 NFE, 2.87 at 20 NFE (Table 3)",
+  "DPM-Solver-2 FID 5.28 vs RK2(t) 16.40 at 12 NFE (Table 1)",
+  "12 NFE: CIFAR-10 4.65, CelebA-64 3.71, ImageNet-64 19.97, ImageNet-128 4.08 (Sec. 5.2)",
+  "4-16x speedup over previous training-free samplers (Sec. 5.2)",
+  "Theorem 3.2: global error O(h_max^k) for k=1,2,3"
+ ],
+ "relations": [
+  {
+   "report_id": "2010.02502",
+   "type": "extends"
+  },
+  {
+   "report_id": "2204.13902",
+   "type": "competes"
+  },
+  {
+   "report_id": "2211.01095",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2302.04867",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2310.13268",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2312.00094",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

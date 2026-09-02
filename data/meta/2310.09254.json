@@ -1,0 +1,72 @@
+{
+ "report_id": "2310.09254",
+ "arxiv_id": "2310.09254",
+ "title": "GENOT: Entropic (Gromov) Wasserstein Flow Matching with Applications to Single-Cell Genomics",
+ "tldr_zh": "条件 FM 学熵 OT 耦合的条件分布，支持任意成本、unbalanced 与 (F)GW 跨空间翻译",
+ "tldr_en": "Conditional flow matching learns entropic OT couplings for any cost, unbalanced and (F)GW settings",
+ "tags": [
+  "flow matching",
+  "entropic optimal transport",
+  "Gromov-Wasserstein",
+  "single-cell genomics",
+  "unbalanced OT",
+  "fused Gromov-Wasserstein"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "117/163",
+   "description": "药物扰动实验中完美校准的药物数量",
+   "source": "Fig. 12"
+  },
+  {
+   "number": "9",
+   "description": "U-GENOT 提高准确率的强效癌症药物数量",
+   "source": "Fig. 3"
+  },
+  {
+   "number": "O(n^2)",
+   "description": "Sinkhorn 算法时间复杂度（n 点）",
+   "source": "Sec. 2"
+  },
+  {
+   "number": "O(n^2) 或 O(n^3)",
+   "description": "QEOT 离散求解器时间复杂度",
+   "source": "Sec. 2, 引用 [70, Alg. 1&2]"
+  },
+  {
+   "number": "ε=0.01",
+   "description": "Swiss roll→spiral 二次 OT 实验的熵正则参数",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "163",
+   "description": "药物扰动数据集的药物数量",
+   "source": "Sec. 5.1, 引用 [78]"
+  },
+  {
+   "number": "3",
+   "description": "药物数据集中可划分的细胞类型数",
+   "source": "Sec. 5.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2302.00482",
+   "type": "竞争/被超越"
+  },
+  {
+   "report_id": "2303.16608",
+   "type": "竞争/被超越"
+  },
+  {
+   "report_id": "2310.03094",
+   "type": "继承（离散 OT 求解器）"
+  },
+  {
+   "report_id": "2405.10061",
+   "type": "后续工作（unbalanced 动力学路线）"
+  }
+ ],
+ "read_full_text": true
+}

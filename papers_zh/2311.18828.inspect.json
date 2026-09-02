@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 8.47pt but the original at this position is 9.96pt (ratio 0.85 vs page median 0.92) at x=309.7, y=260.9: 使用近似分数的梯度更新。对式（1）关于生成器参数求梯度："
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (12 words, 0 CJK chars) at x=67.2, y=73.3: “close-up photo of a unicorn in a forest, in a style of "
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (12 words, 0 CJK chars) at x=67.2, y=229.2: “wise old man with a white beard in the enchanted and ma"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (21 words, 0 CJK chars) at x=67.1, y=107.1: “3D render baby parrot, Chibi, adorable big eyes. In a g"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (39 words, 0 CJK chars) at x=67.1, y=289.0: “The giant magical deer god of the forest, sniffing flow"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+ "report_id": "Adversarial_SB_Matching_ASBM_Gushchin_et_al",
+ "arxiv_id": null,
+ "title": "Adversarial SB Matching (ASBM), Gushchin et al.",
+ "tldr_zh": "离散时间 IMF 理论 + DD-GAN，把 SB 推断从数百步降到几步",
+ "tldr_en": "Discrete-time IMF theory with DD-GAN cuts SB inference from hundreds of steps to a few",
+ "tags": [
+  "Schrodinger Bridge",
+  "discrete-time IMF",
+  "GAN",
+  "few-step generation",
+  "NeurIPS 2024"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "alpha_DSBM_NeurIPS_2024",
+   "type": "complementary"
+  },
+  {
+   "report_id": "CSBM_ICML_2025",
+   "type": "complementary"
+  },
+  {
+   "report_id": "LightSB_ICLR_2024",
+   "type": "alternative"
+  },
+  {
+   "report_id": "DSBM_NeurIPS_2023",
+   "type": "predecessor"
+  }
+ ],
+ "read_full_text": false
+}

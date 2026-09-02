@@ -1,0 +1,43 @@
+{
+ "report_id": "2405.11326",
+ "arxiv_id": "2405.11326",
+ "title": "On the Trajectory Regularity of ODE-based Diffusion Sampling",
+ "tldr_zh": "PF-ODE轨迹与内容无关呈线性-非线性-线性形、近落3维子空间；GITS动态规划时间表5-10 NFE大幅降FID",
+ "tldr_en": "PF-ODE sampling trajectories share a content-independent linear-nonlinear-linear shape in a ~3-D subspace; GITS DP time schedule cuts FID at 5-10 NFE.",
+ "tags": [
+  "trajectory-geometry",
+  "probability-flow-ode",
+  "time-schedule",
+  "fast-sampling",
+  "kde",
+  "diffusion-ot"
+ ],
+ "code_url": "https://github.com/zju-pi/diff-sampler",
+ "key_numbers": [
+  "Trajectory deviation / endpoint distance ~ 30/8868 = 0.0034 on ImageNet 64 (Figure 2)",
+  "3-D subspace (endpoint direction + 2 PCs) explains ~85% variance (Figure 3d)",
+  "CIFAR-10 FID NFE=5: iPNDM 13.59 -> iPNDM+GITS 8.38; DDIM 49.66 -> 28.05 (Table 1)",
+  "ImageNet 64 FID NFE=5: iPNDM 18.99 -> 10.79 (Table 1)",
+  "SD v1.4 MS-COCO FID NFE=10: DPM-Solver++(2M) 17.16 -> 15.53 with GITS (Table 2)",
+  "GITS overhead: 32.78 s CIFAR-10, 901.62 s LAION on A100 (Table 4)"
+ ],
+ "relations": [
+  {
+   "report_id": "2405.14250",
+   "type": "competes"
+  },
+  {
+   "report_id": "2202.07477",
+   "type": "extends"
+  },
+  {
+   "report_id": "The_flow_map_of_the_Fokker_Planck_equation_does_no",
+   "type": "extends"
+  },
+  {
+   "report_id": "Score_Based_Generative_Modeling_through_SDEs",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

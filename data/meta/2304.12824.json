@@ -1,0 +1,88 @@
+{
+ "report_id": "2304.12824",
+ "arxiv_id": "2304.12824",
+ "title": "Contrastive Energy Prediction for Exact Energy-Guided Diffusion Sampling in Offline Reinforcement Learning",
+ "tldr_zh": "给出中间时刻能量 guidance 的精确形式，用对比学习目标 CEP 估计，D4RL 上超过基线",
+ "tldr_en": "Exact intermediate energy guidance via contrastive energy prediction; outperforms baselines on D4RL",
+ "tags": [
+  "energy-guided diffusion",
+  "contrastive learning",
+  "offline reinforcement learning",
+  "diffusion models",
+  "guidance"
+ ],
+ "code_url": "https://github.com/thu-ml/CEP-energy-guided-diffusion",
+ "key_numbers": [
+  {
+   "number": "86.6",
+   "context": "QGPO 在 D4RL Locomotion 9 个任务的平均归一化分数",
+   "source": "Table 2"
+  },
+  {
+   "number": "78.3",
+   "context": "QGPO 在 D4RL AntMaze 6 个任务的平均归一化分数",
+   "source": "Table 2"
+  },
+  {
+   "number": "96.4 ± 1.4",
+   "context": "QGPO 在 AntMaze-umaze (Default) 的分数，5 种子",
+   "source": "Table 2"
+  },
+  {
+   "number": "66.6 ± 9.8",
+   "context": "QGPO 在 AntMaze-large (Play) 的分数，5 种子",
+   "source": "Table 2"
+  },
+  {
+   "number": "84.4 ± 4.1",
+   "context": "QGPO 在 Medium-Replay Walker2d 的分数，低于 D-QL 的 94.3",
+   "source": "Table 2"
+  },
+  {
+   "number": "3.17 / 2.97",
+   "context": "CEP / classifier guidance 在 ImageNet 128×128、250 步的 FID",
+   "source": "Table 3"
+  },
+  {
+   "number": "4.74 / 4.59",
+   "context": "CEP / classifier guidance 在 ImageNet 256×256、250 步的 FID",
+   "source": "Table 3"
+  },
+  {
+   "number": "K > 1",
+   "context": "CEP 对比学习所需的每状态支持动作数，Theorem 3.2 对任意 K>1 成立",
+   "source": "Sec. 3.2, Theorem 3.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2105.05233",
+   "type": "继承"
+  },
+  {
+   "report_id": "2207.12598",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2205.09991",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2208.06193",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2209.14687",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2209.14548",
+   "type": "继承"
+  },
+  {
+   "report_id": "2211.15657",
+   "type": "竞争"
+  }
+ ],
+ "read_full_text": true
+}

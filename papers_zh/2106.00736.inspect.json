@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 7.87pt but the original at this position is 9.96pt (ratio 0.79 vs page median 0.92) at x=108.3, y=663.0: 沃瑟斯坦­2 距离（Wasserstein­2 distance）。（平方）瓦瑟斯坦-2 度量"
+    },
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.10pt but the original at this position is 10.00pt (ratio 0.71 vs page median 0.92) at x=108.3, y=144.3: Wasserstein 梯度流。在欧几里得情形下，沿函数"
+    },
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.10pt but the original at this position is 10.00pt (ratio 0.71 vs page median 0.92) at x=108.3, y=144.3: f:R→R的梯度流遵循最速下降方向，并通过常微分方程"
+    },
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 8.26pt but the original at this position is 10.01pt (ratio 0.83 vs page median 0.92) at x=108.4, y=514.2: 解随机微分方程(3)，可以计算具有由(5) 给出的自由能泛函"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 8.07pt but the original at this position is 9.96pt (ratio 0.81 vs page median 0.92) at x=108.5, y=295.9: 该公式避免了计算瓦瑟斯坦-2距离的困难。另一个优势是我们可以从"
+    }
+  ]
+}

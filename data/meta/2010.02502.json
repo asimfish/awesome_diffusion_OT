@@ -1,0 +1,96 @@
+{
+ "report_id": "2010.02502",
+ "arxiv_id": "2010.02502",
+ "title": "Denoising Diffusion Implicit Models",
+ "tldr_zh": "把 DDPM 采样确定化为非马尔可夫隐式过程，10–50 步生成高质量样本，并给出确定性 encode–decode 映射",
+ "tldr_en": "Deterministic non-Markovian sampling for DDPMs, achieving 10-50x speedup with an ODE-based encode-decode mapping",
+ "tags": [
+  "DDIM",
+  "diffusion models",
+  "accelerated sampling",
+  "PF-ODE",
+  "implicit models",
+  "training-free"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "10x-50x",
+   "context": "wall-clock speedup vs DDPM, 20-100 steps matching 1000-step quality",
+   "source": "Sec. 5.1, Figure 4"
+  },
+  {
+   "number": "13.36",
+   "context": "CIFAR10 FID at S=10, DDIM (η=0)",
+   "source": "Table 1"
+  },
+  {
+   "number": "41.07",
+   "context": "CIFAR10 FID at S=10, DDPM (η=1)",
+   "source": "Table 1"
+  },
+  {
+   "number": "4.04",
+   "context": "CIFAR10 FID at S=1000, DDIM",
+   "source": "Table 1"
+  },
+  {
+   "number": "3.17",
+   "context": "CIFAR10 FID at S=1000, DDPM with σ-hat",
+   "source": "Table 1"
+  },
+  {
+   "number": "17.33",
+   "context": "CelebA FID at S=10, DDIM",
+   "source": "Table 1"
+  },
+  {
+   "number": "33.12",
+   "context": "CelebA FID at S=10, DDPM",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.014",
+   "context": "CIFAR-10 reconstruction MSE at S=10",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.0001",
+   "context": "CIFAR-10 reconstruction MSE at S=500 and S=1000",
+   "source": "Table 2"
+  },
+  {
+   "number": "20 hours",
+   "context": "time to sample 50k 32x32 images from DDPM on Nvidia 2080 Ti",
+   "source": "Sec. 1"
+  },
+  {
+   "number": "1000 hours",
+   "context": "time to sample 50k 256x256 images from DDPM on same GPU",
+   "source": "Sec. 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2006.11239",
+   "type": "被继承/泛化"
+  },
+  {
+   "report_id": "2011.13456",
+   "type": "同期等价性对象"
+  },
+  {
+   "report_id": "2206.00927",
+   "type": "后续改进（高阶指数积分器）"
+  },
+  {
+   "report_id": "2204.13902",
+   "type": "后续改进（同期独立发现）"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "后续统一设计空间"
+  }
+ ],
+ "read_full_text": true
+}

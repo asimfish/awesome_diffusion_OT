@@ -1,0 +1,77 @@
+{
+ "report_id": "2508.15487",
+ "arxiv_id": "2508.15487",
+ "title": "Dream 7B: Diffusion Large Language Models",
+ "tldr_zh": "AR 初始化 + token 级噪声重调度训练 7B 扩散 LM，规划任务超同规模 AR",
+ "tldr_en": "7B diffusion LM via AR init and token-level noise rescheduling, beats AR on planning",
+ "tags": [
+  "diffusion LM",
+  "discrete diffusion",
+  "masked diffusion",
+  "AR initialization",
+  "planning",
+  "T22"
+ ],
+ "code_url": "https://hkunlp.github.io/blog/2025/dream/",
+ "key_numbers": [
+  {
+   "number": "69.5",
+   "metric": "MMLU (5-shot)",
+   "source": "Table 1"
+  },
+  {
+   "number": "81.0",
+   "metric": "Sudoku accuracy",
+   "source": "Table 1"
+  },
+  {
+   "number": "16.0 vs 6.2",
+   "metric": "Countdown Dream 7B vs Qwen2.5 7B",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.6T",
+   "metric": "training tokens for Dream 7B",
+   "source": "Table 1"
+  },
+  {
+   "number": "2.3T",
+   "metric": "training tokens for LLaDA 8B",
+   "source": "Table 1"
+  },
+  {
+   "number": "18T",
+   "metric": "training tokens for Qwen2.5 7B",
+   "source": "Table 1"
+  },
+  {
+   "number": "57.9 vs 32.9",
+   "metric": "HumanEval Dream 7B vs LLaDA 8B",
+   "source": "Table 1"
+  },
+  {
+   "number": "5-20",
+   "metric": "diffusion steps where Dream beats Qwen2.5 on Countdown speed+quality",
+   "source": "Sec. 5.5.2, Figure 7"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "DiffuLLaMA",
+   "type": "继承"
+  },
+  {
+   "report_id": "LLaDA-8B",
+   "type": "竞争"
+  },
+  {
+   "report_id": "SEDD",
+   "type": "继承"
+  },
+  {
+   "report_id": "MDLM",
+   "type": "继承"
+  }
+ ],
+ "read_full_text": true
+}

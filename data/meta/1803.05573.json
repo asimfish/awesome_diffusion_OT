@@ -1,0 +1,82 @@
+{
+ "report_id": "1803.05573",
+ "arxiv_id": "1803.05573",
+ "title": "Improving GANs Using Optimal Transport",
+ "tldr_zh": "minibatch energy distance：primal Sinkhorn 距离嵌入对抗特征空间，梯度无偏、大 batch 稳定",
+ "tldr_en": "Minibatch energy distance combines primal Sinkhorn OT with adversarial features for unbiased GAN gradients",
+ "tags": [
+  "OT-GAN",
+  "minibatch energy distance",
+  "Sinkhorn",
+  "primal OT",
+  "GAN",
+  "unbiased gradients"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "8.47 ± .12",
+   "source": "Table 1",
+   "context": "OT-GAN Inception score on CIFAR-10, batch size 8000"
+  },
+  {
+   "number": "4.64",
+   "source": "Sec. 5.2",
+   "context": "CIFAR-10 Inception score with random matching instead of OT"
+  },
+  {
+   "number": "4.93",
+   "source": "Appendix C",
+   "context": "CIFAR-10 Inception score with fixed pixel-space cosine cost"
+  },
+  {
+   "number": "8.97 ± 0.09",
+   "source": "Sec. 5.3",
+   "context": "OT-GAN Inception score on ImageNet Dogs, batch size 2048"
+  },
+  {
+   "number": "3.84 ± .05",
+   "source": "Table 2",
+   "context": "OT-GAN Inception score on CUB text-to-image, batch size 2048"
+  },
+  {
+   "number": "3/8 modes",
+   "source": "Sec. 5.1 / Fig. 2",
+   "context": "DAN-S collapses to 3 of 8 Gaussian modes after fixing discriminator; OT-GAN covers all 8"
+  },
+  {
+   "number": "500",
+   "source": "Appendix B",
+   "context": "Sinkhorn iterations and entropy penalty 1/lambda both set to 500"
+  },
+  {
+   "number": "8 GPUs",
+   "source": "Sec. 6",
+   "context": "All experiments except 2D toy used 8 GPUs, trained for several days"
+  },
+  {
+   "number": "3 generator updates per critic update",
+   "source": "Appendix B",
+   "context": "CIFAR-10 training schedule"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1706.00292",
+   "type": "concurrent/contrast"
+  },
+  {
+   "report_id": "1705.10743",
+   "type": "extends"
+  },
+  {
+   "report_id": "1701.07875",
+   "type": "background"
+  },
+  {
+   "report_id": "1704.00028",
+   "type": "baseline"
+  }
+ ],
+ "read_full_text": true
+}

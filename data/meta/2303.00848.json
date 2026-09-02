@@ -1,0 +1,41 @@
+{
+ "report_id": "2303.00848",
+ "arxiv_id": "2303.00848",
+ "title": "Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation",
+ "tldr_zh": "所有常用 diffusion/FM 目标是按噪声级加权的 ELBO 积分，权重单调时等于加噪增广下的 ELBO；单调权重在 ImageNet 无引导 FID 最优",
+ "tldr_en": "All common diffusion/FM losses are weighted integrals of per-noise-level ELBOs; monotonic weighting equals ELBO with Gaussian-noise data augmentation.",
+ "tags": [
+  "diffusion",
+  "flow-matching",
+  "elbo",
+  "loss-weighting",
+  "noise-schedule",
+  "theory",
+  "unification",
+  "image-generation"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "FM-OT (CFM loss) equals weighted diffusion loss with w(lambda)=exp(-lambda/2), identical to v-prediction with cosine schedule (Appendix D.3, Eq. 86)",
+  "FM-OT linear path induces Logistic log-SNR density p(lambda)=sech^2(lambda/4)/8 (Eq. 68)",
+  "ImageNet-64 eps-prediction: baseline sech(lambda/2) FID 1.55 (EDM sampler) -> sigmoid(-lambda+2) 1.46 -> adaptive + EDM-monotonic 1.44 (Table 2)",
+  "ImageNet-128 no guidance: VDM++ EDM-monotonic FID-train 1.75 / FID-eval 2.88 vs Simple Diffusion 1.91 / 3.23 (Table 3/4)",
+  "ImageNet-256 no guidance: VDM++ FID 2.40 / IS 225.3 vs Simple Diffusion 2.77 / 211.8; ImageNet-512: 2.99 / 232.2 vs 3.54 / 205.3 (Table 4)",
+  "EDM reproduction FID 1.45 vs reported 1.36 (Sec. 5.1)"
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "uses"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "competes"
+  },
+  {
+   "report_id": "2306.06626",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

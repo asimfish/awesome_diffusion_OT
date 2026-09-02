@@ -1,0 +1,37 @@
+{
+ "report_id": "Optimal_Transport_Analysis_of_Single_Cell_Gene_Exp",
+ "arxiv_id": null,
+ "title": "Optimal-Transport Analysis of Single-Cell Gene Expression Identifies Developmental Trajectories in Reprogramming",
+ "tldr_zh": "用带增殖修正的熵正则 unbalanced OT 连接相邻时间点细胞快照，重建重编程发育谱系",
+ "tldr_en": "Entropic unbalanced OT with growth correction links adjacent time-point snapshots to reconstruct reprogramming lineages",
+ "tags": [
+  "single-cell",
+  "optimal-transport",
+  "unbalanced-OT",
+  "developmental-trajectory",
+  "reprogramming"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "315000",
+   "description": "重编程数据细胞数",
+   "source": "调研 agent 一句话贡献，摘要原文未直接给出"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "TrajectoryNet",
+   "type": "被后续工作连续化"
+  },
+  {
+   "report_id": "TIGON",
+   "type": "被后续工作扩展为速度+增殖动力学"
+  },
+  {
+   "report_id": "DeepRUOT",
+   "type": "被后续工作发展为 unbalanced SB 动力学"
+  }
+ ],
+ "read_full_text": false
+}

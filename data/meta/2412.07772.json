@@ -1,0 +1,77 @@
+{
+ "report_id": "2412.07772",
+ "arxiv_id": "2412.07772",
+ "title": "From Slow Bidirectional to Fast Autoregressive Video Diffusion Models",
+ "tldr_zh": "双向教师非对称蒸馏为4步因果学生，KV缓存流式9.4 FPS，VBench-Long 84.27",
+ "tldr_en": "Asymmetric DMD distillation from bidirectional teacher to 4-step causal student enables 9.4 FPS streaming video generation",
+ "tags": [
+  "video diffusion",
+  "distribution matching distillation",
+  "autoregressive generation",
+  "causal attention",
+  "KV caching",
+  "streaming inference"
+ ],
+ "code_url": "https://causvid.github.io/",
+ "key_numbers": [
+  {
+   "number": "84.27",
+   "source": "Sec. 5.1, VBench-Long total score"
+  },
+  {
+   "number": "9.4 FPS",
+   "source": "Tab. 3, throughput on H100"
+  },
+  {
+   "number": "1.3 s",
+   "source": "Tab. 3, initial latency for 10s 120-frame video"
+  },
+  {
+   "number": "160x latency reduction vs CogVideoX-5B",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "4 denoising steps",
+   "source": "Sec. 5, Models"
+  },
+  {
+   "number": "94.7 temporal quality (short T2V)",
+   "source": "Tab. 1"
+  },
+  {
+   "number": "1000 ODE pairs for initialization",
+   "source": "Sec. 5, Training"
+  },
+  {
+   "number": "6000 DMD iterations, 64 H100 GPUs, ~2 days",
+   "source": "Sec. 5, Training"
+  },
+  {
+   "number": "400K internal single-shot videos",
+   "source": "Sec. 5, Training"
+  },
+  {
+   "number": "219.2 s bidirectional teacher latency",
+   "source": "Tab. 3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "self_forcing",
+   "type": "被后续工作指出曝光偏差并修正"
+  },
+  {
+   "report_id": "vdot",
+   "type": "OT蒸馏对照，缓解KL-DMD的多样性下降"
+  },
+  {
+   "report_id": "hiwyn",
+   "type": "帧间噪声耦合的免训练工具，可改进其独立噪声初始化"
+  },
+  {
+   "report_id": "diffusion_forcing",
+   "type": "继承其per-chunk噪声时间步训练设置"
+  }
+ ],
+ "read_full_text": true
+}

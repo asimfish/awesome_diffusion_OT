@@ -1,0 +1,97 @@
+{
+ "report_id": "2507.11925",
+ "arxiv_id": "2507.11925",
+ "title": "Schrödinger Bridge Consistency Trajectory Models for Speech Enhancement",
+ "tldr_zh": "把 CTM 轨迹蒸馏接到 SB 语音增强，一步推理 RTF 约 16× 提升，PESQ 超教师模型",
+ "tldr_en": "Applies CTM distillation to Schrödinger bridge speech enhancement; 1-step RTF ~16× faster, PESQ exceeds teacher",
+ "tags": [
+  "speech enhancement",
+  "Schrödinger bridge",
+  "consistency trajectory models",
+  "distillation",
+  "diffusion models",
+  "audio generation"
+ ],
+ "code_url": "https://github.com/sony/sbctm/",
+ "key_numbers": [
+  {
+   "number": "3.56",
+   "metric": "PESQ @ NFE=1 (SBCTM)",
+   "source": "Table I"
+  },
+  {
+   "number": "3.50",
+   "metric": "PESQ (SB-PESQ1, teacher, original report)",
+   "source": "Table I"
+  },
+  {
+   "number": "3.58",
+   "metric": "PESQ @ NFE=16 (SBCTM)",
+   "source": "Table I"
+  },
+  {
+   "number": "0.045",
+   "metric": "RTF (SBCTM, NFE=1, RTX4080)",
+   "source": "Sec. V-A"
+  },
+  {
+   "number": "0.713",
+   "metric": "RTF (SB-PESQ, NFE=16, RTX4080)",
+   "source": "Sec. V-A"
+  },
+  {
+   "number": "~16×",
+   "metric": "RTF improvement",
+   "source": "Abstract, Sec. V-A"
+  },
+  {
+   "number": "66.0",
+   "metric": "SBCTM parameters (M)",
+   "source": "Table III"
+  },
+  {
+   "number": "2.3",
+   "metric": "SEMamba parameters (M)",
+   "source": "Table III"
+  },
+  {
+   "number": "12.2",
+   "metric": "SI-SDR @ NFE=1 (SBCTM)",
+   "source": "Table I"
+  },
+  {
+   "number": "19.9",
+   "metric": "SI-SDR @ NFE=1 (SE-Bridge)",
+   "source": "Table I"
+  },
+  {
+   "number": "69.3K",
+   "metric": "training steps (100 epochs)",
+   "source": "Sec. IV-B"
+  },
+  {
+   "number": "8× A100 40GB",
+   "metric": "training hardware",
+   "source": "Sec. IV-B"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2405.18503",
+   "type": "继承（SoundCTM 的 CTM 训练框架）"
+  },
+  {
+   "report_id": "2402.00809",
+   "type": "继承（CTM 原始方法）"
+  },
+  {
+   "report_id": "2309.05212",
+   "type": "继承（SB 语音增强，教师模型来源）"
+  },
+  {
+   "report_id": "2305.13796",
+   "type": "竞争（SE-Bridge，一致性 Brownian bridge 增强）"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,65 @@
+{
+ "report_id": "2410.00844",
+ "arxiv_id": "2410.00844",
+ "title": "Learning stochastic dynamics from snapshots through regularized unbalanced optimal transport",
+ "tldr_zh": "DeepRUOT 用 Fisher 正则把 RUOT 的 SDE 约束化成 ODE，无先验同时学增殖率与转移动力学，消除假转移并重建 Waddington 景观",
+ "tldr_en": "DeepRUOT solves regularized unbalanced OT via Fisher regularization, turning SDE constraints into ODEs to jointly learn growth and transport from snapshots",
+ "tags": [
+  "unbalanced optimal transport",
+  "Schrodinger bridge",
+  "single-cell RNA-seq",
+  "trajectory inference",
+  "Waddington landscape",
+  "Fisher regularization",
+  "neural ODE"
+ ],
+ "code_url": "https://github.com/zhenyiizhang/DeepRUOT",
+ "key_numbers": [
+  {
+   "number": "0.044±0.001 (W1, t=1)",
+   "context": "DeepRUOT 在合成基因调控数据上的 W1，优于 Unbalanced OT 的 0.047±0.000",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.104±0.001 (W1, t=4)",
+   "context": "DeepRUOT 在合成数据 t=4 的 W1，优于 SF²M 的 0.871±0.072",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.145026±0.002 (W1, t=1)",
+   "context": "DeepRUOT 在造血 scRNA-seq 数据 t=1 的 W1，优于 SF²M 的 0.167477±0.003",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.132411±0.006 (W1, t=2)",
+   "context": "DeepRUOT 在造血数据 t=2 的 W1，略劣于 Unbalanced SB 的 0.128254±0.003",
+   "source": "Table 2"
+  },
+  {
+   "number": "10 维",
+   "context": "高斯混合实验的维度",
+   "source": "Sec. 6"
+  },
+  {
+   "number": "10 维",
+   "context": "A549 TGFB1 EMT 数据经 PCA 投影后的潜空间维度",
+   "source": "Appendix B.4"
+  },
+  {
+   "number": "σ=0.25",
+   "context": "合成基因调控网络和造血 scRNA-seq 实验中的扩散率取值",
+   "source": "Fig. 2, Table 2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2410.00844",
+   "type": "extends"
+  },
+  {
+   "report_id": "2410.00844",
+   "type": "competes_with"
+  }
+ ],
+ "read_full_text": true
+}

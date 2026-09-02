@@ -1,0 +1,48 @@
+{
+ "report_id": "2405.14250",
+ "arxiv_id": "2405.14250",
+ "title": "Diffusion models for Gaussian distributions: Exact solutions and Wasserstein errors",
+ "tldr_zh": "高斯数据下逆向SDE/PF-ODE及离散格式闭式解，精确W2误差分解；SDE抗初始化误差，Heun最优",
+ "tldr_en": "Closed-form reverse SDE/PF-ODE and discretizations for Gaussian data; exact W2 error decomposition; SDE robust to init error, Heun best ODE scheme.",
+ "tags": [
+  "theory",
+  "gaussian",
+  "wasserstein-error",
+  "probability-flow-ode",
+  "samplers",
+  "diffusion-ot"
+ ],
+ "code_url": "https://github.com/emilePi/Diffusion-models-for-Gaussian-distributions-Exact-solutions-and-Wasserstein-errors",
+ "key_numbers": [
+  "CIFAR-10 Gaussian, eps=1e-3, NFE=500, N0 init: W2 Heun 0.18, RK4 0.17, Euler 0.32, EM 0.40, EI 0.41, DDPM 0.53 (Table 1)",
+  "ADSN microtexture exact score: W2 EM 5.16 vs Heun 3.73; learned score: W2emp EM 15.6 / FID 1.02 vs Heun 56.7 / FID 19.48 (Table 2)",
+  "W2(SDE-generated, p_t) <= W2(ODE-generated, p_t) for all t under Gaussian data (Prop. 4, Eq. 19)"
+ ],
+ "relations": [
+  {
+   "report_id": "2202.07477",
+   "type": "extends"
+  },
+  {
+   "report_id": "The_flow_map_of_the_Fokker_Planck_equation_does_no",
+   "type": "extends"
+  },
+  {
+   "report_id": "2311.03886",
+   "type": "competes"
+  },
+  {
+   "report_id": "2212.06359",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.11326",
+   "type": "uses"
+  },
+  {
+   "report_id": "Score_Based_Generative_Modeling_through_SDEs",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

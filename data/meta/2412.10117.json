@@ -1,0 +1,40 @@
+{
+ "report_id": "2412.10117",
+ "arxiv_id": "2412.10117",
+ "title": "CosyVoice 2: Scalable Streaming Speech Synthesis with Large Language Models",
+ "tldr_zh": "FSQ 替换 VQ、预训练 LLM 做骨干、chunk-aware 因果 FM，单模型统一流式/非流式 TTS，流式近乎无损",
+ "tldr_en": "FSQ tokenizer, pretrained LLM backbone, chunk-aware causal FM unify streaming and non-streaming TTS with near-lossless streaming quality",
+ "tags": [
+  "TTS",
+  "flow matching",
+  "streaming",
+  "FSQ",
+  "LLM",
+  "zero-shot",
+  "speech synthesis"
+ ],
+ "code_url": "https://github.com/FunAudioLLM/CosyVoice",
+ "key_numbers": [
+  "FSQ 码本利用率 100%（6,561/6,561），VQ 为 23%（963/4,096）— Table 4",
+  "LibriSpeech test-clean: CosyVoice 2 WER 2.47%、NMOS 3.96、SS 0.745，均超过 Human（2.66/3.84/0.697）— Table 5",
+  "SEED test-zh: CosyVoice 2 CER 1.45%、SS 0.748（ERes2Net 0.806），超过所有开源基线 — Table 6",
+  "SEED test-hard: 离线 WER 6.83%，流式 8.08%，流式在困难集上有退化 — Table 6",
+  "模块消融：+LLM init 使 test-zh CER 相对改善 18.46%，+FSQ 后从 2.56% 降到 1.45% — Table 7",
+  "流式模块消融：全流式（M4）test-zh CER 1.45% 与全离线（M1）相同，test-hard WER 8.08% vs 6.83% — Table 8",
+  "日语 test-ja CER 18.79%，韩语 test-ko CER 7.98%，日语显著差于韩语 — Table 9",
+  "指令生成 MOS-I 3.09（满分 5），移除指令后 CER/SS/NMOS 反而改善 — Table 10",
+  "训练数据：tokenizer 200,000 小时；CosyVoice 2 中文 130,000 小时、英文 30,000 小时、日文 4,600 小时、韩文 2,200 小时 — Table 2, 3",
+  "流式序列构造比例 N:M = 5:15，FM 推理 NFE=10、CFG β=0.7 — Sec. 2.3, 2.4"
+ ],
+ "relations": [
+  {
+   "report_id": "2412.10117",
+   "type": "extends"
+  },
+  {
+   "report_id": "2412.10117",
+   "type": "compares_with"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (10 words, 0 CJK chars) at x=141.6, y=554.4: 11+e2λt . Thus, we can directly compute the αt and σt fo"
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 5.44pt but the original at this position is 10.04pt (ratio 0.54 vs page median 0.91) at x=212.9, y=316.7: x_{λ}, λ)) 进行泰勒展开，指数积分器可改写为"
+    }
+  ]
+}

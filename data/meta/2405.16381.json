@@ -1,0 +1,71 @@
+{
+ "report_id": "2405.16381",
+ "arxiv_id": "2405.16381",
+ "title": "Trivialized Momentum Facilitates Diffusion Generative Modeling on Lie Groups",
+ "tldr_zh": "李群上用平凡化动量把 score 学习搬到固定李代数，首次生成高维 SO(n)/U(n) 数据",
+ "tldr_en": "Trivialized momentum moves score learning to a fixed Lie algebra, enabling first high-dim SO(n)/U(n) generation",
+ "tags": [
+  "Lie group",
+  "diffusion model",
+  "trivialization",
+  "momentum",
+  "score matching",
+  "manifold generative modeling"
+ ],
+ "code_url": "https://github.com/yuchen-zhu-zyc/TDM",
+ "key_numbers": [
+  {
+   "number": "0.69 ± 0.14",
+   "context": "TDM test NLL on General protein dataset (2D), vs RDM 1.04, RFM 1.01",
+   "source": "Table 1"
+  },
+  {
+   "number": "−6.86 ± 0.46",
+   "context": "TDM test NLL on RNA dataset (7D), vs RDM −3.70, RFM −5.20",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.292 ± 0.07",
+   "context": "TDM log likelihood on SO(3) with 32 mixture components, vs RSGM 0.20 ± 0.03",
+   "source": "Figure 5"
+  },
+  {
+   "number": "n > 3",
+   "context": "First reported SO(n) generation beyond n=3 (SO(4), SO(6), SO(8))",
+   "source": "Sec. 3, p.9"
+  },
+  {
+   "number": "U(8)",
+   "context": "Largest U(n) dimension tested (quantum oscillator and 3-qubit TFIM)",
+   "source": "Sec. 3, p.10, Figures 8-9"
+  },
+  {
+   "number": "9:1",
+   "context": "Train/test split ratio for all datasets",
+   "source": "Sec. 3, p.8"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2402.03247",
+   "type": "baseline_competitor"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "baseline_competitor"
+  },
+  {
+   "report_id": "2207.04711",
+   "type": "baseline_competitor"
+  },
+  {
+   "report_id": "2112.07068",
+   "type": "euclidean_counterpart"
+  },
+  {
+   "report_id": "2307.xxxxx",
+   "type": "related_lie_group_sampling"
+  }
+ ],
+ "read_full_text": true
+}

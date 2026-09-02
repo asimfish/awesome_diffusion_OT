@@ -1,0 +1,37 @@
+{
+ "report_id": "2503.07535",
+ "arxiv_id": "2503.07535",
+ "title": "LBM: Latent Bridge Matching for Fast Image-to-Image Translation",
+ "tldr_zh": "latent桥匹配蒸馏到单步，覆盖去物体/深度/重光照，作者称SOTA",
+ "tldr_en": "Bridge matching in VAE latent space enables single-step I2I (object removal, depth/normal, relighting, shadows); authors claim SOTA.",
+ "tags": [
+  "bridge-matching",
+  "latent-space",
+  "one-step",
+  "distillation",
+  "industrial-i2i"
+ ],
+ "code_url": "https://github.com/gojasper/LBM",
+ "key_numbers": [
+  "No numbers in abstract; full text not read"
+ ],
+ "relations": [
+  {
+   "report_id": "2205.07680",
+   "type": "extends"
+  },
+  {
+   "report_id": "2410.22637",
+   "type": "competes"
+  },
+  {
+   "report_id": "I2SB_Image_to_Image_Schr_dinger_Bridge",
+   "type": "extends"
+  },
+  {
+   "report_id": "2309.16948",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": false
+}

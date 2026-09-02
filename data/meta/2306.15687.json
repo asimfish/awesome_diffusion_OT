@@ -1,0 +1,96 @@
+{
+ "report_id": "2306.15687",
+ "arxiv_id": "2306.15687",
+ "title": "Voicebox: Text-Guided Multilingual Universal Speech Generation at Scale",
+ "tldr_zh": "50K+小时语音训练文本引导infilling的流匹配模型，统一零样本TTS/编辑/去噪，比VALL-E快20倍",
+ "tldr_en": "Flow-matching speech infilling model trained on 50K+ hours, unifying zero-shot TTS/editing/denoising, 20x faster than VALL-E",
+ "tags": [
+  "flow-matching",
+  "speech-generation",
+  "zero-shot-TTS",
+  "infilling",
+  "non-autoregressive",
+  "multilingual",
+  "classifier-free-guidance"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "60K hours",
+   "description": "VB-En 英文有声书训练数据量",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "50K hours",
+   "description": "VB-Multi 六语言有声书训练数据量",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "1.9% vs 5.9% WER",
+   "description": "VB-En 与 VALL-E 在英文零样本 TTS cross-sentence 的 WER 对比",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.681 vs 0.580 SIM-r",
+   "description": "VB-En 与 VALL-E 的音频相似度对比",
+   "source": "Table 2"
+  },
+  {
+   "number": "20x faster",
+   "description": "Voicebox 相比 VALL-E 的推理加速倍数",
+   "source": "Abstract"
+  },
+  {
+   "number": "330M parameters",
+   "description": "音频模型参数量（24层 Transformer）",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "NFE=32 default",
+   "description": "默认 midpoint 求解器步长 0.0625 对应的函数评估次数",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "5.2% vs 10.9% avg WER",
+   "description": "VB-Multi 与 YourTTS 跨语言零样本 TTS 平均 WER 对比",
+   "source": "Abstract"
+  },
+  {
+   "number": "0.481 vs 0.335 SIM-o",
+   "description": "VB-Multi 与 YourTTS 跨语言平均音频相似度对比",
+   "source": "Abstract"
+  },
+  {
+   "number": "0.4%/1.7% WER increase",
+   "description": "仅用 Voicebox 合成语音训练 ASR 相比真实数据的 WER 绝对增加（test-other/test-clean）",
+   "source": "Sec. 5.5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "继承方法（Lipman FM/OT路径）"
+  },
+  {
+   "report_id": "2301.02111",
+   "type": "竞争基线（VALL-E）"
+  },
+  {
+   "report_id": "2304.09116",
+   "type": "同期工作（NaturalSpeech2）"
+  },
+  {
+   "report_id": "2309.03199",
+   "type": "后续开源继承（Matcha-TTS）"
+  },
+  {
+   "report_id": "2303.12290",
+   "type": "对照路线（Bridge-TTS informative prior）"
+  },
+  {
+   "report_id": "2410.06885",
+   "type": "后续继承（F5-TTS，Sway Sampling可移植）"
+  }
+ ],
+ "read_full_text": true
+}

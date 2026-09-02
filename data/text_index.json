@@ -1758,5 +1758,60 @@
   "pages": 32,
   "chars": 90000,
   "truncated": true
+ },
+ "2302.05872": {
+  "pages": 21,
+  "chars": 67367,
+  "truncated": false
+ },
+ "2303.16852": {
+  "pages": 41,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2305.15086": {
+  "pages": 20,
+  "chars": 58104,
+  "truncated": false
+ },
+ "2305.16557": {
+  "pages": 44,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2307.03672": {
+  "pages": 29,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2310.01174": {
+  "pages": 30,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2405.14449": {
+  "pages": 40,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2407.16074": {
+  "pages": 5,
+  "chars": 30665,
+  "truncated": false
+ },
+ "2501.07897": {
+  "pages": 5,
+  "chars": 25916,
+  "truncated": false
+ },
+ "2505.11197": {
+  "pages": 34,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2506.10168": {
+  "pages": 31,
+  "chars": 90000,
+  "truncated": true
  }
 }

@@ -1,0 +1,95 @@
+{
+ "report_id": "2502.02150",
+ "arxiv_id": "2502.02150",
+ "title": "On the Guidance of Flow Matching",
+ "tldr_zh": "首个通用 FM 引导框架：免训练渐近精确引导、训练式引导损失，覆盖 DPS/LGD/ΠGDM 为特例",
+ "tldr_en": "First general flow matching guidance framework with training-free asymptotically exact guidance and training-based losses",
+ "tags": [
+  "flow matching",
+  "guidance",
+  "energy guidance",
+  "diffusion models",
+  "optimal transport",
+  "inverse problems",
+  "offline RL"
+ ],
+ "code_url": "https://github.com/AI4Science-WestlakeU/flow_guidance",
+ "key_numbers": [
+  {
+   "number": "81.0",
+   "source": "Table 1",
+   "description": "gMC 在 D4RL Locomotion OT-CFM 上的平均归一化分数，为所有方法最高"
+  },
+  {
+   "number": "3.5",
+   "source": "Sec. 4.2",
+   "description": "gMC 比第二好的 gcov-G 在 OT-CFM 上平均高 3.5 分"
+  },
+  {
+   "number": "8.0",
+   "source": "Sec. 4.2",
+   "description": "gcov-G 比 gcov-A 在 D4RL 上平均分数提升 8.0"
+  },
+  {
+   "number": "10.4",
+   "source": "Sec. 4.2",
+   "description": "gφ 在 D4RL 上落后最佳方法平均 10.4 分"
+  },
+  {
+   "number": "7/9",
+   "source": "Sec. 4.2",
+   "description": "gMC 在 9 个 D4RL 任务中 7 个最优"
+  },
+  {
+   "number": "8/12",
+   "source": "Sec. 4.3",
+   "description": "ΠGDM 在图像逆问题 12 个指标中 8 个最优"
+  },
+  {
+   "number": "1.5",
+   "source": "Sec. 4.3",
+   "description": "gsim-A 在 inpainting 和 deblurring 上 FID 比 ΠGDM 平均低 1.5"
+  },
+  {
+   "number": "22.75",
+   "source": "Table 2",
+   "description": "gMC 在 OT-CFM 中心 inpainting 上的 FID，表现差"
+  },
+  {
+   "number": "10^4",
+   "source": "Sec. 4.1, Figure 4",
+   "description": "gMC 渐近精确性验证中 MC 样本数上限，误差随 N 从 5 增至 10^4 递减"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "继承"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "继承"
+  },
+  {
+   "report_id": "2209.14687",
+   "type": "覆盖为特例"
+  },
+  {
+   "report_id": "2302.01318",
+   "type": "覆盖为特例"
+  },
+  {
+   "report_id": "2305.04391",
+   "type": "覆盖为特例"
+  },
+  {
+   "report_id": "2304.13839",
+   "type": "覆盖为特例"
+  },
+  {
+   "report_id": "2402.02370",
+   "type": "正交路线"
+  }
+ ],
+ "read_full_text": true
+}

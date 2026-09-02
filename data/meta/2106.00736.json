@@ -1,0 +1,55 @@
+{
+ "report_id": "2106.00736",
+ "arxiv_id": "2106.00736",
+ "title": "Large-Scale Wasserstein Gradient Flows",
+ "tldr_zh": "Brenier 定理把 JKO 步改写为凸势优化，ICNN 参数化 + SGD 求解，免网格免粒子且可采样算密度",
+ "tldr_en": "Rewrites each JKO step via Brenier as optimization over convex potentials parametrized by ICNNs and trained with SGD; grid-free, particle-free, with sampling and density evaluation.",
+ "tags": [
+  "wasserstein-gradient-flow",
+  "jko-scheme",
+  "icnn",
+  "fokker-planck",
+  "sampling",
+  "nonlinear-filtering",
+  "foundations"
+ ],
+ "code_url": "https://github.com/PetrMokrov/Large-Scale-Wasserstein-Gradient-Flows",
+ "key_numbers": [
+  "Bayesian logistic regression vs SVGD, accuracy/test LL: covtype 0.75/-0.515 vs 0.75/-0.515; german 0.67/-0.60 vs 0.65/-0.60; waveform 0.78/-0.485 vs 0.765/-0.465 (Table 1)",
+  "Stationary Gaussian-mixture convergence D=2..12 with K=40 JKO steps, h=0.1: lower SymKL than EM particles 1K/10K/50K (Fig. 1, curves only)",
+  "OU process D=1..12 at t=0.5/0.9: lowest SymKL vs EM, EM PR, Dual JKO (Fig. 3, curves only)",
+  "Complexity: log det Hessian O(DT + D^3); sampling from rho^(k) O((k-1)T); training K steps ~ K^2 (Table 2, Sec. 5)",
+  "Wall-clock: minutes to hours on a GTX 1080Ti per experiment vs seconds-minutes CPU for particle methods; ~100-150 GPU hours total (Sec. 4-5)"
+ ],
+ "relations": [
+  {
+   "report_id": "Optimizing_Functionals_on_the_Space_of_Probabiliti",
+   "type": "competes"
+  },
+  {
+   "report_id": "2112.02424",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2106.06345",
+   "type": "uses"
+  },
+  {
+   "report_id": "2212.14424",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2402.05443",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2407.20444",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2106.01954",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

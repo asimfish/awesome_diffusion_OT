@@ -1,0 +1,96 @@
+{
+ "digest_zh": "本课题解决的核心问题是：扩散模型（特别是 PF-ODE 的 encoder/flow map）与最优传输（OT）之间到底是什么关系。方法谱系呈现清晰的演进：从 Song et al. 定义 PF-ODE 提供映射对象，到 Khrulkov et al. 提出「encoder = Monge map」猜想并在高斯情形证明，再到 Tanana 与 Lavenant–Santambrogio 用反例证伪一般情形（障碍是 Hessian 非交换），随后 Pierret–Galerne 在高斯情形给出任意有限区间的精确解，P. Zhang et al. 在共线数据上给出有限区间正面结果，Dumont–Lacombe–Vialard 则用约束梯度流构造性地回应反例。当前共识是：逐时刻无穷小最优（梯度场）不蕴含全局最优（凸函数梯度），但数值上差距往往很小；分歧在于「近乎 OT」的量化程度以及何种条件下有限区间 PF 恰为 Monge 映射。同时，分布层的 W2 上界（Kwon–Fan–Lee）与变分层的 SOC/HJB 表述（Berner et al.、SOCM、Adjoint Matching、WPO）为 OT 度量下的训练与微调提供了独立于映射层辩论的理论工具。",
+ "observations": [
+  {
+   "claim": "「PF-ODE encoder 是否为 OT 映射」的辩论经历了猜想—反例—边界刻画的完整闭环，核心障碍被精确化为 Hessian 族的非交换性。",
+   "evidence": [
+    "2202.07477",
+    "The_flow_map_of_the_Fokker_Planck_equation_does_no",
+    "1709.06464",
+    "2311.03886"
+   ],
+   "detail": "Khrulkov et al. 在高斯情形证明 encoder 等于 Monge 映射（Theorem 3.1），但 Lavenant–Santambrogio 证明一般情形下 D²u 与 D²(log det D²u − |∇u|²/2) 的非交换（Eq. 9）使复合流映射离开凸函数梯度类；Tanana 的 DS∞ 非对称检验（数值反例 0.441 vs 0.467）是更早的前驱，P. Zhang et al. 的共线数据正面结果（Prop. 2/4）则说明可交换性在退化情形下自动成立。"
+  },
+  {
+   "claim": "高斯情形是唯一被完全解析的正面边界，但「高斯下 PF-ODE = OT 映射」依赖协方差可交换这一强条件，掩盖了非交换障碍。",
+   "evidence": [
+    "2405.14250",
+    "2202.07477",
+    "1709.06464"
+   ],
+   "detail": "Pierret–Galerne 的 Prop. 3 给出任意有限区间 [0,t] 上高斯 PF-ODE 的闭式解并确认其为 OT 映射，但该结论依赖 Σt 均为 Σ 的函数；Tanana 的反例（A=diag(4,1), B=[[2,1],[1,3]]）正说明当 A、B 非交换时热流映射的雅可比非对称，因此高斯正面结果不能外推。"
+  },
+  {
+   "claim": "分布层的 W2 保证与映射层的 OT 性质是两条独立的理论线：score matching 损失控制 W2 距离，但不要求 encoder 是 OT 映射。",
+   "evidence": [
+    "2212.06359",
+    "2405.14250",
+    "2111.11521"
+   ],
+   "detail": "Kwon–Fan–Lee 证明 W2(p0,q0) ≤ C√J_SM + I(T)W2(pT,qT)（Corollary 1），其中 I(T) 依赖单侧 Lipschitz 常数且可能指数增长；Pierret–Galerne 的高斯精确 W2 值（Heun 0.18 vs EM 0.40, NFE=500）为检验该上界松紧提供了测试床；Mikulincer–Shenfeld 的 Brownian transport map 收缩理论（Theorem 3.1）则从概率论侧给出随机传输映射的维数无关收缩常数。"
+  },
+  {
+   "claim": "变分层的 SOC/HJB 表述将扩散训练目标统一为路径空间 KL 最小化，与 OT 的 Benamou–Brenier 测地结构共享动能项但熵项不同。",
+   "evidence": [
+    "2211.01364",
+    "2402.06162",
+    "2312.02027",
+    "2409.08861"
+   ],
+   "detail": "Berner et al. 证明 ELBO/DSM 是控制论 verification theorem 的特例（running cost ½∫‖u‖² + terminal cost）；B. Zhang et al. 进一步将 SGM 刻画为交叉熵的 Wasserstein 近端算子（步长 h=β²T），与 OT-flow 作为 KL 的 WPO 并列；SOCM 与 Adjoint Matching 则把同一 SOC 问题转化为最小二乘回归，后者用 memoryless 噪声调度 σ(t)=√(2ηt) 消除初值偏差。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "量化 S∞ 与真 OT 映射的次优度：Lavenant–Santambrogio 只证明不相等，未给出差距上界。",
+   "why_open": "反例是 O(ε) 扰动的高斯，差距本身也是 O(ε)，数值上二者几乎一致；需要建立以交换子范数或 DS∞ 非对称部分为控制量的显式上界，但现有工具（TT 求解器、摄动展开）尚未系统结合。",
+   "evidence": [
+    "The_flow_map_of_the_Fokker_Planck_equation_does_no",
+    "2202.07477",
+    "1709.06464",
+    "2603.25182"
+   ]
+  },
+  {
+   "problem": "PF-ODE 确定性映射的 Lipschitz/收缩理论缺失：随机 Föllmer 映射有收缩保证，但确定性 encoder 的收缩性未知。",
+   "why_open": "Mikulincer–Shenfeld 的收缩结果针对随机映射且依赖 KLS 猜想进展；确定性 PF-ODE 映射的雅可比传播方程（Tanana ODE (4)）可积分但尚无收缩界，且 Kim–Milman 映射的 1-Lipschitz 性质在 Brenier 映射上仍是开放问题。",
+   "evidence": [
+    "2111.11521",
+    "1709.06464",
+    "2212.06359"
+   ]
+  },
+  {
+   "problem": "有限区间 PF 为 Monge 映射的充要条件：目前只有高斯（协方差可交换）与共线数据两个充分条件，一般充要条件未知。",
+   "why_open": "Lavenant–Santambrogio 的 Eq.(9) 给出必要条件（Hessian 族两两可交换），但充分性仅在退化情形验证；P. Zhang et al. 的共线结果本质是一维问题，高维非退化情形的可交换性缺陷如何影响映射最优性缺乏刻画。",
+   "evidence": [
+    "2311.03886",
+    "The_flow_map_of_the_Fokker_Planck_equation_does_no",
+    "2405.14250"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "Score_Based_Generative_Modeling_through_SDEs",
+   "why": "定义 PF-ODE 与逆向 SDE，是整个辩论的对象来源"
+  },
+  {
+   "report_id": "2202.07477",
+   "why": "提出 encoder = OT map 猜想并给出高斯证明"
+  },
+  {
+   "report_id": "The_flow_map_of_the_Fokker_Planck_equation_does_no",
+   "why": "证伪一般情形，给出 Hessian 非交换障碍"
+  },
+  {
+   "report_id": "2405.14250",
+   "why": "高斯情形的精确解与误差标尺，检验上界松紧"
+  },
+  {
+   "report_id": "2212.06359",
+   "why": "分布层 W2 上界，连接训练目标与 OT 度量"
+  }
+ ],
+ "n_reports": 15
+}

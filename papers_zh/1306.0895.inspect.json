@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (7 words, 0 CJK chars) at x=126.7, y=519.4: the d × d matrix whose (i, k)’s coeﬃcient is sik"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+ "report_id": "2309.16948",
+ "arxiv_id": "2309.16948",
+ "title": "Denoising Diffusion Bridge Models",
+ "tldr_zh": "去噪桥分数匹配学VE/VP扩散桥时间反演，配对翻译FID 1.83远超I2SB",
+ "tldr_en": "Learns the time-reversal of VE/VP diffusion bridges via denoising bridge score matching; paired translation FID 1.83 on Edges-to-Handbags.",
+ "tags": [
+  "diffusion-bridge",
+  "doob-h-transform",
+  "paired-i2i",
+  "framework",
+  "flow-matching-limit"
+ ],
+ "code_url": "https://github.com/alexzhou907/DDBM",
+ "key_numbers": [
+  "Edges→Handbags 64² FID 1.83 (VP) vs I2SB 7.43 (Table 2)",
+  "DIODE-Outdoor 256² FID 4.43 (VP) vs I2SB 9.34 (Table 2)",
+  "CIFAR-10 unconditional FID 2.06 @ NFE 35 vs EDM 2.04 (Table 4)",
+  "Day→Night latent FID 27.63 vs Rectified Flow 12.38 (Table 5)",
+  "DDBM N=40 steps = NFE 118 while baselines use NFE 40 (App. B)"
+ ],
+ "relations": [
+  {
+   "report_id": "I2SB_Image_to_Image_Schr_dinger_Bridge",
+   "type": "extends"
+  },
+  {
+   "report_id": "2205.07680",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.15885",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2410.22637",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2505.21528",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "GOUB_Generalized_Ornstein_Uhlenbeck_Bridge",
+   "type": "competes"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching",
+   "type": "competes"
+  },
+  {
+   "report_id": "2203.08382",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,53 @@
+{
+ "report_id": "2409.08861",
+ "arxiv_id": "2409.08861",
+ "title": "Adjoint Matching: Fine-tuning Flow and Diffusion Generative Models with Memoryless Stochastic Optimal Control",
+ "tldr_zh": "reward 微调必须用 memoryless 噪声调度 σ(t)=√(2η_t) 消除初值偏差；Adjoint Matching 是无 importance weighting 的最小二乘 SOC 回归",
+ "tldr_en": "Memoryless noise schedule σ(t)=√(2η_t) is necessary for unbiased reward fine-tuning; Adjoint Matching solves SOC via least-squares regression without importance weighting",
+ "tags": [
+  "stochastic optimal control",
+  "reward fine-tuning",
+  "flow matching",
+  "diffusion models",
+  "memoryless noise schedule",
+  "adjoint method"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "σ(t) = √(2η_t)",
+   "context": "memoryless noise schedule，唯一能消除初值 value-function 偏差的噪声调度",
+   "source": "Proposition 1, Theorem 1, Sec. 4.3"
+  },
+  {
+   "number": "σ(t) → ∞ at t=0, σ(t) → 0 at t=1",
+   "context": "memoryless schedule 的端点行为，由 α₀=β₁=0, α₁=β₀=1 约束导出",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "1",
+   "context": "Adjoint Matching 目标的唯一临界点是最优控制 u*",
+   "source": "Proposition 7, Appendix E.3"
+  },
+  {
+   "number": "0",
+   "context": "当 σ(t)=0 时，naive KL 正则化微调完全无效，因为 X₀ 完全决定 X₁",
+   "source": "Sec. 4.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "SOCM-Domingo-Enrich-2023",
+   "type": "继承"
+  },
+  {
+   "report_id": "Uehara-2024b",
+   "type": "竞争"
+  },
+  {
+   "report_id": "Berner-Richter-Ullrich-2024",
+   "type": "同框架"
+  }
+ ],
+ "read_full_text": true
+}

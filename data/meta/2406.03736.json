@@ -1,0 +1,82 @@
+{
+ "report_id": "2406.03736",
+ "arxiv_id": "2406.03736",
+ "title": "Your Absorbing Discrete Diffusion Secretly Models the Conditional Distributions of Clean Data",
+ "tldr_zh": "证明 absorbing 扩散的 concrete score 可分解为条件分布×时间标量，与任意序 AR 等价，支持缓存加速",
+ "tldr_en": "Absorbing diffusion concrete score factorizes into clean conditional distribution times analytic time scalar, unifying with AO-ARMs and enabling caching",
+ "tags": [
+  "discrete diffusion",
+  "absorbing process",
+  "concrete score",
+  "any-order autoregressive",
+  "language modeling",
+  "sampling acceleration",
+  "score entropy"
+ ],
+ "code_url": "https://github.com/ML-GSAI/RADD",
+ "key_numbers": [
+  {
+   "number": "49.57",
+   "description": "RADD-DSE small LAMBADA perplexity",
+   "source": "Table 1"
+  },
+  {
+   "number": "38.83",
+   "description": "RADD-DSE small WikiText2 perplexity",
+   "source": "Table 1"
+  },
+  {
+   "number": "42.30",
+   "description": "RADD-DSE medium LAMBADA perplexity",
+   "source": "Table 2"
+  },
+  {
+   "number": "29.17",
+   "description": "RADD-DSE medium WikiText2 perplexity",
+   "source": "Table 2"
+  },
+  {
+   "number": "75.16",
+   "description": "RADD-DSE medium PTB perplexity",
+   "source": "Table 2"
+  },
+  {
+   "number": "400K",
+   "description": "training iterations for main results",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "5",
+   "description": "zero-shot language modeling benchmarks",
+   "source": "Abstract"
+  },
+  {
+   "number": "E-NFEs(n) = n(1-(1-1/n)^l)",
+   "description": "expected NFEs with caching under Tweedie tau-leaping and log-linear schedule",
+   "source": "Eq. 3.4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2310.16834",
+   "type": "继承并改进"
+  },
+  {
+   "report_id": "2107.03006",
+   "type": "前身工作"
+  },
+  {
+   "report_id": "2205.14987",
+   "type": "理论框架来源"
+  },
+  {
+   "report_id": "2406.07524",
+   "type": "并发工作"
+  },
+  {
+   "report_id": "2110.02037",
+   "type": "等价性扩展"
+  }
+ ],
+ "read_full_text": true
+}

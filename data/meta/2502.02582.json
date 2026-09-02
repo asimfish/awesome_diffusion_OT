@@ -1,0 +1,83 @@
+{
+ "report_id": "2502.02582",
+ "arxiv_id": "2502.02582",
+ "title": "Open Materials Generation with Stochastic Interpolants",
+ "tldr_zh": "用 stochastic interpolants 统一扩散与流匹配，按自由度调插值，CSP/DNG 超 FlowMM/DiffCSP/MatterGen",
+ "tldr_en": "Unifies diffusion and flow matching via stochastic interpolants with per-degree-of-freedom tuning, outperforming FlowMM/DiffCSP/MatterGen on CSP and DNG",
+ "tags": [
+  "stochastic interpolants",
+  "crystal generation",
+  "flow matching",
+  "diffusion models",
+  "equivariant GNN",
+  "materials discovery",
+  "discrete flow matching"
+ ],
+ "code_url": "https://github.com/FERMat-ML/OMatG",
+ "key_numbers": [
+  {
+   "number": "83.06%",
+   "context": "OMatG VP SBD (ODE) match rate on perov-5 CSP, vs DiffCSP 53.08% and FlowMM 53.63%",
+   "source": "Table I"
+  },
+  {
+   "number": "69.83%",
+   "context": "OMatG Linear (ODE) w/o γ match rate on MP-20 CSP, vs FlowMM 66.22% and DiffCSP 57.82%",
+   "source": "Table I"
+  },
+  {
+   "number": "72.02%",
+   "context": "OMatG Linear (ODE) w/o γ match rate on Alex-MP-20 CSP, first baseline for this dataset",
+   "source": "Table I"
+  },
+  {
+   "number": "22.48%",
+   "context": "OMatG Linear (SDE) w/ γ S.U.N. rate on MP-20 DNG, vs MatterGen-MP 20.30%",
+   "source": "Table III"
+  },
+  {
+   "number": "60.04%",
+   "context": "OMatG Enc-Dec (ODE) w/ γ stability rate on MP-20 DNG, highest among all models",
+   "source": "Table III"
+  },
+  {
+   "number": "0.1482 eV/atom",
+   "context": "OMatG Enc-Dec (ODE) w/ γ average energy above hull, lowest among all models",
+   "source": "Table III"
+  },
+  {
+   "number": "86.35%",
+   "context": "OMatG Enc-Dec (ODE) w/ γ compositional validity on MP-20 DNG, vs MatterGen-MP 83.89%",
+   "source": "Table II"
+  },
+  {
+   "number": "0.0465",
+   "context": "OMatG Enc-Dec (ODE) w/ γ Wasserstein distance of average coordination number, lowest among all models",
+   "source": "Table II"
+  },
+  {
+   "number": "1.6×",
+   "context": "factor by which OMatG VP SBD and trigonometric interpolants surpass previous match rates on perov-5",
+   "source": "Sec. V.C"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2406.04713",
+   "type": "继承并竞争（FlowMM 的 CFM 实例是 OMatG linear+ODE+γ=0 的特例）"
+  },
+  {
+   "report_id": "2309.03515",
+   "type": "竞争（DiffCSP 的 SBDM 被 VP/VE SBD 插值复现）"
+  },
+  {
+   "report_id": "2312.03687",
+   "type": "竞争（MatterGen-MP 在 DNG 上被超越）"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "方法继承（stochastic interpolants 原始框架）"
+  }
+ ],
+ "read_full_text": true
+}

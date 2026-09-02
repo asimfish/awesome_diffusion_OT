@@ -1,0 +1,80 @@
+{
+ "report_id": "2410.03783",
+ "arxiv_id": "2410.03783",
+ "title": "Improving Neural Optimal Transport via Displacement Interpolation",
+ "tldr_zh": "用 displacement interpolation 全轨迹与 HJB 正则稳定神经 OT max-min 训练，I2I 翻译 FID 改善",
+ "tldr_en": "Stabilizes neural OT max-min via full displacement interpolation trajectory and HJB regularization; improves I2I FID",
+ "tags": [
+  "neural optimal transport",
+  "displacement interpolation",
+  "max-min optimization",
+  "HJB equation",
+  "unpaired image-to-image translation"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "5.27",
+   "context": "Male→Female (64×64) FID, DIOTM",
+   "source": "Table 2"
+  },
+  {
+   "number": "10.72",
+   "context": "Wild→Cat (64×64) FID, DIOTM",
+   "source": "Table 2"
+  },
+  {
+   "number": "7.40",
+   "context": "Male→Female (128×128) FID, DIOTM",
+   "source": "Table 2"
+  },
+  {
+   "number": "6.42",
+   "context": "Male→Female (64×64) FID, OTM (作者复现)",
+   "source": "Table 2"
+  },
+  {
+   "number": "7.55",
+   "context": "Male→Female (128×128) FID, OTM (作者复现)",
+   "source": "Table 2"
+  },
+  {
+   "number": "3.72",
+   "context": "G→8G W2, DIOTM vs OTM 4.93",
+   "source": "Table 1"
+  },
+  {
+   "number": "4.38",
+   "context": "G→8G L2 map 距离, DIOTM vs OTM 6.48",
+   "source": "Table 1"
+  },
+  {
+   "number": "FID>60",
+   "context": "OTM 在 λ∈{50,100} 时发散, DIOTM 保持 FID<10",
+   "source": "Sec. 5.2 末段 / Fig. 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "otm_rout_iclr2022",
+   "type": "继承并改进"
+  },
+  {
+   "report_id": "not_korotin_iclr2023",
+   "type": "同路线竞争"
+  },
+  {
+   "report_id": "dsbm_shi_neurips2024",
+   "type": "实验对比"
+  },
+  {
+   "report_id": "asbm_gushchin_2024",
+   "type": "实验对比"
+  },
+  {
+   "report_id": "uotm_choi_neurips2023",
+   "type": "同作者系列, 稳定性动机相关"
+  }
+ ],
+ "read_full_text": true
+}

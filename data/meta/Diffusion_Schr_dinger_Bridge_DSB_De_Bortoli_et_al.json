@@ -1,0 +1,32 @@
+{
+ "report_id": "Diffusion_Schr_dinger_Bridge_DSB_De_Bortoli_et_al",
+ "arxiv_id": "",
+ "title": "Diffusion Schrödinger Bridge with Applications to Score-Based Generative Modeling",
+ "tldr_zh": "score 网络实现 IPF 半步（学时间反转）求 SB，首次扩展到图像；SGM 是其第一次迭代",
+ "tldr_en": "Implements each IPF half-step as a learned time reversal with score networks; SGM is the first iteration; first SB solver at image scale.",
+ "tags": [
+  "schrodinger-bridge",
+  "ipf",
+  "score-based",
+  "image-generation"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Not read in full; as baseline in DSBM: Gaussian d=50 KL x1e-3 32.8 vs DSBM-IPF 8.75 (DSBM Table 3); moons W2 0.190 vs 0.140 (DSBM Table 2)"
+ ],
+ "relations": [
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Likelihood_Training_of_SB_using_FBSDEs_SB_FBSDE_Ch",
+   "type": "competes"
+  },
+  {
+   "report_id": "2005.10963",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": false
+}

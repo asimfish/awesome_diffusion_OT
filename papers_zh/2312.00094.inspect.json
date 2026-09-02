@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.57pt but the original at this position is 9.96pt (ratio 0.76 vs page median 0.92) at x=148.2, y=182.3: {x_{t}_{n}}^{N}_{n}_{=1} 通过首先抽取，然后利用以下条件求解式（6）得到"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.07pt but the original at this position is 9.96pt (ratio 0.71 vs page median 0.92) at x=309.7, y=522.6: 以相同的方式，我们能够通过预测"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (4 words, 0 CJK chars) at x=336.9, y=478.7: n = {sn, cn} and Φt with Λt"
+    }
+  ]
+}

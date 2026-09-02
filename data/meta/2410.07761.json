@@ -1,0 +1,50 @@
+{
+ "report_id": "2410.07761",
+ "arxiv_id": "2410.07761",
+ "title": "Jump Your Steps: Optimizing Sampling Schedule of Discrete Diffusion Models",
+ "tldr_zh": "JYS 在固定 NFE 下优化离散扩散采样时间表，最小化并行采样复合解码误差上界，无需额外计算",
+ "tldr_en": "JYS optimizes discrete diffusion sampling schedules under fixed NFE by minimizing an upper bound on compounding decoding error",
+ "tags": [
+  "discrete diffusion",
+  "sampling schedule",
+  "tau-leaping",
+  "CTMC",
+  "KL divergence",
+  "compounding decoding error",
+  "few-step sampling"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "所有 NFE（32–256）下 JYS 的 CIFAR-10 FID 均优于 uniform 时间表",
+   "source": "Sec. 4.2, Fig. 6"
+  },
+  {
+   "number": "文本生成 NFE 范围 16–256，JYS 的 gen-PPL 在相同 NFE 下更低",
+   "source": "Sec. 4.4, Fig. 8"
+  },
+  {
+   "number": "音乐生成 NFE 范围 2–64，JYS 样本与 NFE=512 参考的 Hellinger 距离更小",
+   "source": "Sec. 4.3, Fig. 7"
+  },
+  {
+   "number": "Countdown 数据集 256 tokens，token 值 0–31",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "文本实验 1024 样本 × 1024 tokens，GPT-2-large 评估",
+   "source": "Sec. 4.4"
+  },
+  {
+   "number": "CIFAR-10 样本为展平的 3×32×32 图像，token 值 0–255",
+   "source": "Sec. 4.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2410.07761",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": true
+}

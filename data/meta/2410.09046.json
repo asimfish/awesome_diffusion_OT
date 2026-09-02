@@ -1,0 +1,55 @@
+{
+ "report_id": "2410.09046",
+ "arxiv_id": "2410.09046",
+ "title": "Linear Convergence of Diffusion Models Under the Manifold Hypothesis",
+ "tldr_zh": "d 维流形数据上，DDPM 系数（冻结后验均值）反向 SDE 达 KL-ε² 只需 Õ(d/ε²) 步，对内在维数线性且 sharp；指数积分器必付 D 代价",
+ "tldr_en": "On d-dimensional manifold data, the DDPM discretization (freezing E[X0|Xt]) reaches ε²-KL in Õ(d/ε²) steps—linear in intrinsic dimension and sharp—while exponential integrators pay for ambient D.",
+ "tags": [
+  "diffusion-theory",
+  "manifold-hypothesis",
+  "intrinsic-dimension",
+  "kl-divergence",
+  "ddpm",
+  "martingale",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "KL(Ŷ_{T−δ}‖X_δ) ≲ ε_score² + D e^{-2T} + κ + dκ²(K−L)(log δ^{-1}+C) (Thm 10, Eq. 8)",
+  "Iteration complexity K = Õ(d/ε²) via Cor. 11; KL rate O(d/K), TV O(√(d/K)) (Sec. 6)",
+  "Exponential integrator: E||s_{t+γ}(X_{t+γ})−s_t(X_t)||² ≳ Dγ/(t+γ) (Prop. 18)",
+  "E||X0 − E[X0|Xt]||² ≲ min{1, dt(log δ^{-1}+C)} (Lemma 16)",
+  "Prior intrinsic-dimension complexities: d⁴ (Li–Yan 2024), d³ (Azangulov et al. 2024) (Sec. 1)"
+ ],
+ "relations": [
+  {
+   "report_id": "2308.03686",
+   "type": "extends"
+  },
+  {
+   "report_id": "2209.11215",
+   "type": "uses"
+  },
+  {
+   "report_id": "2409.18959",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Denoising_Diffusion_Probabilistic_Models_Are_Optim",
+   "type": "competes"
+  },
+  {
+   "report_id": "2508.16306",
+   "type": "competes"
+  },
+  {
+   "report_id": "2010.02502",
+   "type": "competes"
+  },
+  {
+   "report_id": "TJS_x_Prediction_Is_All_You_Need",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

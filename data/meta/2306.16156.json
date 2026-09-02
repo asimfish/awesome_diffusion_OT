@@ -1,0 +1,58 @@
+{
+ "report_id": "2306.16156",
+ "arxiv_id": "2306.16156",
+ "title": "Recent Advances in Optimal Transport for Machine Learning",
+ "tldr_zh": "2012–2023 OT×ML 应用全景综述，按监督/无监督/迁移/强化四块组织，附计算 OT 五类进展与复杂度对照表",
+ "tldr_en": "TPAMI survey of OT for ML 2012-2023 across supervised, unsupervised, transfer and RL, plus computational OT extensions (sliced, low-rank, neural, minibatch, unbalanced) with a complexity table.",
+ "tags": [
+  "survey",
+  "ot-for-ml",
+  "minibatch-ot",
+  "sliced-wasserstein",
+  "neural-ot",
+  "unbalanced-ot",
+  "generative-modeling",
+  "domain-adaptation"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Table 1: plug-in W_p sample complexity O(n^{-1/d}), time O(n^3 log n); Sinkhorn divergence O(n^{-1/2}(1+eps^{-floor(d/2)})), O(n^2) per iteration; sliced W_p O(n^{-1/2}), O(n log n); MBOT O(n^{-1/2}), O(k m^3 log m) (Sec. 8.1)",
+  "Fig. 15: empirical W_2 between two samples of U([0,1]^d) stays far from 0 at d=100 for n up to 10^3, SW_2 insensitive to d (Sec. 8.1)",
+  "Fig. 5: minibatch OT plans with m=2,10,100 become less sparse as m shrinks (Sec. 3.4)"
+ ],
+ "relations": [
+  {
+   "report_id": "2106.01963",
+   "type": "competes"
+  },
+  {
+   "report_id": "1803.00567",
+   "type": "uses"
+  },
+  {
+   "report_id": "1306.0895",
+   "type": "uses"
+  },
+  {
+   "report_id": "1706.00292",
+   "type": "uses"
+  },
+  {
+   "report_id": "1905.11882",
+   "type": "uses"
+  },
+  {
+   "report_id": "1910.04091",
+   "type": "uses"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2106.03812",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

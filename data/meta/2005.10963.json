@@ -1,0 +1,45 @@
+{
+ "report_id": "2005.10963",
+ "arxiv_id": "2005.10963",
+ "title": "Stochastic control liaisons: Richard Sinkhorn meets Gaspard Monge on a Schroedinger bridge",
+ "tldr_zh": "随机控制视角的 SB/OMT 历史-技术综述：Schrödinger 系统、Problem 4.3 控制形式、广义退化扩散桥、Sinkhorn=离散 Schrödinger 系统",
+ "tldr_en": "SIAM Review survey unifying Sinkhorn/IPF, Fortet iterations, Schrödinger systems and Benamou-Brenier OT through stochastic control; generalized bridges with degenerate diffusion.",
+ "tags": [
+  "schrodinger-bridge",
+  "survey",
+  "stochastic-control",
+  "entropic-ot",
+  "history"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "No experiments (survey); local text truncated at ~p.37 of 67, Chapters 8-10 unseen"
+ ],
+ "relations": [
+  {
+   "report_id": "L_onard_A_Survey_of_the_Schr_dinger_Problem",
+   "type": "competes"
+  },
+  {
+   "report_id": "2603.18992",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Likelihood_Training_of_SB_using_FBSDEs_SB_FBSDE_Ch",
+   "type": "uses"
+  },
+  {
+   "report_id": "Generalized_SB_Matching_GSBM_Liu_et_al",
+   "type": "uses"
+  },
+  {
+   "report_id": "2605.11429",
+   "type": "uses"
+  },
+  {
+   "report_id": "2510.22560",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,26 @@
+{
+ "report_id": "Vision_Language_Model_Guided_Source_Free_Domain_Ad",
+ "arxiv_id": null,
+ "title": "Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport",
+ "tldr_zh": "用 VLM 语义先验引导源原型与目标特征的 OT 对齐，做 source-free DA",
+ "tldr_en": "VLM semantic priors guide OT alignment between source prototypes and target features for source-free DA",
+ "tags": [
+  "source-free domain adaptation",
+  "optimal transport",
+  "vision-language model",
+  "domain adaptation"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "semi_dual_ot_gradual_da_icml2026",
+   "type": "same_branch"
+  },
+  {
+   "report_id": "sfda_ot_cvpr2025",
+   "type": "same_branch"
+  }
+ ],
+ "read_full_text": false
+}

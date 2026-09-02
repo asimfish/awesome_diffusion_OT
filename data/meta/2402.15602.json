@@ -1,0 +1,69 @@
+{
+ "report_id": "2402.15602",
+ "arxiv_id": "2402.15602",
+ "title": "Minimax Optimality of Score-based Diffusion Models: Beyond the Density Lower Bound Assumptions",
+ "tldr_zh": "截断核 score 估计器在仅次高斯假设下达到最优 MSE，去掉密度下界后 β≤2 Sobolev 类扩散模型仍近 minimax",
+ "tldr_en": "Truncated kernel score estimator achieves optimal MSE under sub-Gaussianity; diffusion model is nearly minimax for β≤2 Sobolev class without density lower bound",
+ "tags": [
+  "diffusion models",
+  "score estimation",
+  "minimax optimality",
+  "nonparametric statistics",
+  "total variation",
+  "kernel density estimation",
+  "sub-Gaussian"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "n^{-β/(2β+d)} polylog(n)",
+   "context": "TV 采样误差上界，β≤2 Sobolev 类，t0 = n^{-2/(2β+d)}",
+   "source": "Theorem 3.8, Eq.(19)"
+  },
+  {
+   "number": "n^{-1} t^{-(d+2)/2} (t^{d/2} + σ0^d)",
+   "context": "score 估计 MSE 上界（逐时间点）",
+   "source": "Theorem 3.5, Eq.(16)"
+  },
+  {
+   "number": "n^{-1} t0^{-d/2}",
+   "context": "累积 score 误差上界（仅次高斯假设）",
+   "source": "Corollary 3.7, Eq.(17)"
+  },
+  {
+   "number": "ρ_n = 1/(n t^{d/2})",
+   "context": "截断阈值",
+   "source": "Sec. 4.1, Eq.(20) 前"
+  },
+  {
+   "number": "h = C√(t/log n), ℓ = log n",
+   "context": "KDE 带宽与核阶选择",
+   "source": "Proposition 4.1"
+  },
+  {
+   "number": "β ≤ 2",
+   "context": "Sobolev 光滑阶限制",
+   "source": "Assumption 3.4"
+  },
+  {
+   "number": "D_KL(X_T ‖ N(0, TI_d)) ≲ 1/T",
+   "context": "初始化误差",
+   "source": "Sec. 4.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2302.03025",
+   "type": "被本文改进（去掉密度下界假设）"
+  },
+  {
+   "report_id": "2206.06227",
+   "type": "继承其 Girsanov 归约框架，替换 uniform-in-time score 误差假设"
+  },
+  {
+   "report_id": "2308.03686",
+   "type": "同属 score 误差到采样误差传导线，本文提供统计端"
+  }
+ ],
+ "read_full_text": true
+}

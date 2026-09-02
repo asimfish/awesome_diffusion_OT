@@ -1,0 +1,598 @@
+---
+title: "扩散模型 × 最优传输：问题、理论、经典、前沿与我们能做什么"
+subtitle: "awesome_diffusion_OT 综合报告（446 篇 · 30 课题 · 逐篇深读）"
+author: "Yufeng Li（asimfish） · 知识库与流水线见 github.com/asimfish/awesome_diffusion_OT"
+date: "2026-09-01 · v1.0"
+---
+
+## 0. 导读：五个问题的一句话答案
+
+| 问题 | 一句话答案 |
+|---|---|
+| **问题是什么** | 生成建模 = 把噪声/源分布搬运成数据分布。搬运的路径几何（曲率→NFE）、耦合选择（谁配谁）、跨域语义（保什么改什么）、最优性（扩散≟OT）、计算与统计代价，构成五个可形式化的核心问题 P1–P5（§2） |
+| **别人的理论** | 骨架已收口：扩散 = KL 的 Wasserstein 梯度流；SB = 熵正则 OT 的动态形式（IMF 指数收敛）；FM 统计上与扩散等价。两个流行叙事被反例证伪——「扩散 encoder ≈ OT」「拉直 = OT」——OT 是设计语言而非自动性质；8 月的 c-RF 与 reflow×minibatch-OT 极限点定理给出「加投影约束即到 OT」的修复路径（§3） |
+| **经典工作** | 数学五件套（Brenier 1991 / McCann 1997 / JKO 1998 / Benamou–Brenier 2000 / Otto 2001）+ 计算三件套（Sinkhorn 2013 / Score-SDE 2021 / DSB 2021）+ 范式三线（FM / RF / SI，2022–23 同期）；2024 年完成规模化（SD3、Immiscible、AYS、LightSB-M）（§4） |
+| **最新工作** | 2025–26 的制高点：理论收口（IMF 指数率、FM minimax、O(d/T)、c-RF）、一步生成新范式（MeanFlow、W-Flow、Beckmann 自治流）、基础设施拐点（FlashSinkhorn = attention 同构）、桥模型进医学与复原；八月 62 篇新工作的三条主线是「拉直理论加投影、耦合工程降本、SB 端点/参考过程精细化」（§5、`trends/`） |
+| **我们可以做什么** | 高校比较优势在理论补全型与接口缝合型空位：免训练 batch 级保边缘噪声指派（#1，已立项并完成沙盒：Hungarian B=128 以 1 次评分/输出取得等效 top-1-of-25 的增益且人口边缘零漂移）、OT-aware 调度（#2）、保耦合蒸馏（#3，深读证实桥蒸馏文献零保证）、以剂量学为目标的医学 SB（#7，窗口收窄）（§8） |
+
+**先读什么**：赶时间读 §7（十二条洞察）与 §8.1（Top-10 状态表）；要理论装备读 §3；要文献地图读 §4–§5 与 README 的 30 课题清单；要动手读 §8.2。
+
+**与前序文档的关系**：本报告在 8/14 调研收口报告与 8/25 综合报告之上新增三层——(a) 446 篇逐篇深读的证据（`reports/`，每个数字带 Table/Eq/页码）；(b) 2026 Q3 增量扫描（62 篇，`trends/`）；(c) Top-10 #1 的立项与沙盒结果（`~/Code/mpna`）。凡与 8/25 版结论不同之处均在正文标出。
+
+## 1. 语料与方法：这份报告的证据从哪里来
+
+### 1.1 语料构成
+
+语料来自 2026-08-14 的 30 个并行文献调研 agent（每 agent 一个子课题，统一作业规范 `source/AGENT_BRIEF.md`），经 ARIS 三层审计（数值核对、敌意审稿、no-new-blocker 裁决）与 8/25 触发点复审（SynthRAD2025 官方报告、FlashSinkhorn 版本、ECCV/NeurIPS 日程），再于 2026-09-01 做 Q3 增量扫描。机械聚合得到 477 条引用，按标题与 arXiv id 去重后 **446 篇**，其中 139 篇由调研 agent 标为 ⭐ 核心。
+
+| 维度 | 分布 |
+|---|---|
+| 六大板块 | A 理论 98 · B 流匹配/拉直 90 · C 跨域翻译 88 · D 模态 94 · E OT 变体 52 · F 系统/评测 24 |
+| 证据级 | [P] 正式论文集 345 · [A] 官方接收 24 · [R] 预印本 62 · [B] 教材/综述 15 |
+| 年份 | 2023 前 67 篇（数学经典与接口奠基）· 2023 年 49 · 2024 年 136 · 2025 年 144 · 2026 年 51（截至 8 月） |
+| 主要 venue | NeurIPS 96 · ICLR 80 · ICML 71 · CVPR 29 · AISTATS 10 · ECCV 9 · ICCV 9 · AAAI 8 · TMLR 7；仅 arXiv 64 |
+| arXiv 覆盖 | 345 篇有 arXiv id（含 201 篇由标题检索补全）；许可证：CC-BY 133、arXiv 非独占 169、CC-BY-NC-SA 14、CC-BY-NC-ND 9、CC-BY-SA 6、CC0 2 |
+| 主分类 | cs.LG 146 · cs.CV 96 · stat.ML 35 · math.OC 16 · math.ST 10 |
+
+![语料按年份与板块](figures/corpus_by_year.png)
+
+年份分布说明这是一个 2023 年后才成形的交叉领域：2024–2025 两年贡献了 63% 的文献，其中 B 板块（流匹配/拉直）与 C 板块（跨域翻译）在 2024 年放量，D 板块（模态扩展）在 2025 年跟进；理论板块 A 的产出在 2024 年达到峰值后维持——与 §3 的判断一致：**理论骨架已收口，增量在接缝处**。
+
+![课题×年份热力图](figures/topic_year_heatmap.png)
+
+### 1.2 逐篇深读的方法与纪律
+
+每篇论文由子代理依据 PDF 全文（PyMuPDF 抽取，前 90k 字符；超长者标注「原文截断」）写一份 8 节报告：问题 / 方法 / 理论结果 / 实验与数字 / 在 OT×扩散地图中的位置 / 局限与批评 / 对我们的启发 / 资源。硬约束三条：
+
+1. **数字带出处**：每个数值标注 Table / Eq. / Sec. / 页码；读不到就写读不到，不凭记忆补。
+2. **两层局限**：作者自认的限制与读者读出的限制分开列，后者必须具体到实验设置或定理假设。
+3. **说人话与反防御**：段首先给论断，删渲染词但不删证据（数字与其修饰对象一起保留），限制只写在 §6。
+
+无全文的条目写「简报卡」（顶部标注「⚠ 未读全文，依据摘要」），§3/§4 只允许写摘要中有的内容。所有报告以 arXiv id 命名（`reports/<id>.md`），另附机器可读元数据卡（`data/meta/<id>.json`：TL;DR 中英、关键数字、关系边）。
+
+### 1.3 翻译
+
+原文 PDF 以 arXiv id 命名存于 `papers/`；中文译文由 [SuperTranslate](https://github.com/asimfish/super_translate) 的 native 引擎在原 PDF 上原位替换文本（版面几何逐像素一致，公式/表格/引用标记划入保护区），译后运行对象级 QA（漏翻、保护区改动、重叠、图片丢失）并写入 `papers_zh/<id>.inspect.json`。批处理按 ⭐ 核心优先、教材与超过 25MB 的长文档最后（`scripts/translate_batch.sh`）。译文与原文均作为 GitHub Release 资产分发，git 仓库只保留文本、元数据与 QA 报告。
+
+### 1.4 阅读路线
+
+- 赶时间：§0 五问五答 → §7 十条洞察 → §8.1 Top-10 状态表。
+- 要理论装备：§3（定理骨架与四大张力）→ 对应 `reports/` 深读（§3 每条定理都标了 report id）。
+- 要文献地图：§4 经典年表 → §5 前沿六线 → README 的 30 课题清单。
+- 要动手：§8.2 MPNA 立项与沙盒结果（可复现，`~/Code/mpna`）。
+
+## 2. 问题是什么：五个可形式化的核心问题
+
+### 2.0 元问题
+
+生成建模 = 测度传输：构造映射或过程，把易采样的 $\mu_0$（高斯噪声或源域数据）变成 $\mu_1$（数据分布）。扩散模型用一条 SDE/ODE 实现这次搬运；最优传输问一个规范性问题——这次搬运是不是、应不应该是、能不能是代价最小的？两个领域在 Benamou–Brenier 动态形式处共享同一套语法：
+
+$$W_2^2(\mu_0,\mu_1)=\min_{(\rho_t,v_t)}\int_0^1\mathbb E_{\rho_t}\|v_t\|^2\,dt\quad\text{s.t.}\quad\partial_t\rho_t+\nabla\cdot(\rho_t v_t)=0 .$$
+
+任何生成流的动能 $\ge W_2^2$，缺口就是弯曲程度。由此分解出五个具体问题。
+
+### P1 路径几何（为什么慢）
+
+PF-ODE 采样轨迹的曲率决定离散化误差，进而决定最小可行 NFE。已知：轨迹近似躺在低维子空间、呈与内容无关的「线性–非线性–线性」形状（GITS，[`reports/2405.11326.md`](../reports/2405.11326.md)：Sec. 3 的几何观察 + 5–10 NFE 的调度收益）；高斯数据下逆向 SDE/PF-ODE 有解析解与精确 $W_2$ 误差分解，Heun 格式最优（Pierret–Galerne，[`reports/2405.14250.md`](../reports/2405.14250.md)）。八月新增：曲率的来源可归因到去噪器的雅可比（2609.00198）。未解：曲率—最优调度的第一性定理；免训练求解器的信息论下界。
+
+### P2 耦合选择（谁配谁）
+
+训练/推理默认独立耦合 $q(x_0)q(x_1)$，回归目标互相冲突导致速度场弯曲交叉。已知：batch 内 OT 重配对使路径直线化、梯度方差下降（OT-CFM，[`reports/2302.00482.md`](../reports/2302.00482.md)）；但 minibatch 耦合受维度诅咒支配，n≈10⁶ 的大 Sinkhorn + 低熵正则才见真收益（2506.05526）；条件生成中无条件 OT 耦合反而有害（C²OT）；半离散耦合绕开 minibatch（[`reports/2509.25519.md`](../reports/2509.25519.md)）；八月的 QC-FM 用 O(n) 的分位数耦合替代 Sinkhorn（2608.00978）。**核心张力**：改耦合 vs 保边缘——任何实例级挑选都使有效初始分布偏离 $\mathcal N(0,I)$。这是 §8.2 立项 MPNA 的出发点。
+
+### P3 跨域传输（保什么、改什么）
+
+无配对翻译中「该保留什么」没有先验定义；OT 用传输代价给出规范答案。已知：SB 是最正统框架（DSB → DSBM → UniDB++）；神经 OT map 直译快而结构强但纹理弱；「翻译 = 两段 EOT 串联」有显式证明（DDIB）。**T14 逐篇深读的新发现**（[`reports/2309.16948.md`](../reports/2309.16948.md)、`2405.15885.md`、`2410.22637.md`）：配对桥模型全部回避了耦合学习——I2SB 的 SB 在 Dirac 边界下退化为逐对最小能量桥，DDBM 的 Theorem 2 只保证边际 $q(x_t\mid x_T)$，CDBM 的 Prop. 3.2 只保证 PF-ODE 解映射；没有一篇对终端耦合在蒸馏/加速后是否保持给出陈述。未解：「更接近最优传输是否等于更好翻译」从未被正面回答。
+
+### P4 最优性（扩散 ≟ OT）
+
+PF-ODE 定义的确定性 encoder map 是不是二次代价的 Brenier 最优映射？高斯情形严格成立（Khrulkov，[`reports/2202.07477.md`](../reports/2202.07477.md)）；一般情形不成立——流映射逐时刻是梯度场但复合后一般不是凸函数梯度，障碍是 Hessian 非交换项（Lavenant–Santambrogio）；分布层面 score matching 损失上界控制 $W_2$（Kwon）。未解：次优度的定量上界（原作者明示 open problem）。拉直侧的对应问题在八月被两篇工作大幅推进：c-RF（2608.02487）与 reflow×minibatch-OT 极限点（2608.07042）——见 §3.3。
+
+### P5 计算与统计（多贵、多准）
+
+(a) OT 求解器规模化：FlashSinkhorn 把 Sinkhorn 更新重写为 attention 同构的 online-LSE，O(nd) 显存、端到端最高 161×（ICML 2026 Oral，仍 [A]）；(b) OT map 估计的 minimax 率 $n^{-2\alpha/(2\alpha-2+d)}$ 在像素维度必然失效，必须显式引入低维/结构假设；(c) 扩散迭代复杂度 O(d/T) 且自适应内在维数 O(k/T)；FM almost minimax，最优方差调度 $\sigma_t\asymp\sqrt t$。未解：OT 耦合训练（非独立耦合）的统计率完全空白；「n 样本 × T 步」联合下界无人证。
+
+## 3. 别人的理论：定理骨架与四大张力
+
+### 3.1 数学装备层（拿来即用的定理）
+
+| 定理 | 内容 | 在扩散×OT 中的角色 |
+|---|---|---|
+| Kantorovich 对偶（1942） | OT 的线性规划对偶，位势 $f,g$ | 对偶势梯度 = 天然 guidance 场 |
+| Brenier 定理（1991，[P]） | 二次代价最优映射存在唯一且 $T=\nabla\varphi$，$\varphi$ 凸 | 一切「encoder ≈ OT map」讨论的根基 |
+| McCann 位移插值（1997） | $W_2$ 测地线 $=((1-t)\mathrm{Id}+tT)_\#\mu$ | 「理想直线轨迹」的规范定义 |
+| JKO 格式（1998，[P]） | Fokker–Planck = KL 的 $W_2$ 梯度流 | 扩散的「耗散」变分结构 |
+| Benamou–Brenier（2000，[P]） | $W_2^2$ = 连续性方程约束下最小动能 | 扩散的「测地」变分结构；轨迹直度的账本 |
+| 半离散 OT（KMT 2019，[P]） | 连续源 → 离散目标，Laguerre 胞腔，阻尼牛顿全局线性收敛 | 匹配「先验 → 有限数据集」的工程现实；MPNA 的人口极限（§8.2） |
+| 熵正则 / Sinkhorn（2013，[P]） | ε-正则化 OT，GPU 可并行 | minibatch 耦合与 SB 的计算底座 |
+
+学习路线（T01 深读的结论）：Peyré《OT for Machine Learners》（[`reports/2505.06589.md`](../reports/2505.06589.md)）通读 → Santambrogio 2015 补严格证明 → Mérigot–Thibert 半离散讲义（[`reports/2003.00855.md`](../reports/2003.00855.md)）→ 高斯族 Bures–Wasserstein 闭式解搭沙盒。
+
+### 3.2 辩论线一：「扩散 ≟ OT」（T02）
+
+正方：Khrulkov 等证明多元高斯情形 DDPM encoder 恰为 Monge map 并猜想一般成立（[`reports/2202.07477.md`](../reports/2202.07477.md)）。反方定论：Lavenant–Santambrogio 三页反例——PF-ODE 速度场逐时刻是梯度场，复合后的流映射一般不是凸函数梯度。正面补丁：特定条件下有限时间区间上 PF 确为 Monge map（[`reports/2311.03886.md`](../reports/2311.03886.md)）；分布层 $W_2\le C\sqrt{\text{score matching loss}}$（[`reports/2212.06359.md`](../reports/2212.06359.md)）；Föllmer/扩散型映射有 OT 映射尚无法证明的 Lipschitz 收缩性。建设性方向：把 drift 显式约束回 OT（约束漂移模型、Monge–Ampère 流）。**精确图景**：逐时刻最优 ≠ 全局最优；经验上近乎最优；缺口未被量化。
+
+### 3.3 辩论线二：「拉直 ≠ OT」及其八月修复（T09）
+
+RF 奠基（[`reports/2209.03003.md`](../reports/2209.03003.md)）证明三件事：rectification 保边缘且单调不增一切凸传输代价（Thm 3.3/3.5）；直线度 $\min_{k\le K}S(Z^k)=O(1/K)$（Thm 3.7）；直耦合 ⇔ 插值路径不相交，是 c-最优的必要非充分条件，仅 1D 重合（Thm 3.8–3.10）。深读还确认：$O(1/K)$ 是对 $\min_k$ 的界且假设每步精确求解，网络近似误差不在定理里；一步 FID 4.85 的「SOTA」比较范围是 U-Net 一步模型（Table 1(b) 自列 StyleGAN-XL 1.85）。
+
+反例定论：Hertrich–Chambolle–Delon（NeurIPS 2025）证明迭代 rectification 存在非最优不动点、损失趋零不蕴含最优。实证修正：rfpp 一轮 reflow 即近乎直；Rectified Diffusion 指出本质是「预训练配对 + 重训」。
+
+**八月的两个修复定理**：(i) c-RF（2608.02487）：高斯情形普通 reflow 收敛到 OT 耦合当且仅当源/目标协方差可交换；速度场投影到梯度类后恒收敛到 OT 耦合，有一步收缩、指数率与 d≥3 的 minimax 最优 OT 估计。(ii) reflow×minibatch-OT 极限点（2608.07042）：与固定 batch 的 minibatch OT 交替迭代的极限是 N-循环单调耦合，在梯度场条件下收敛到 OT 映射。两者一致指向：**「直线度」与「最优性」是两个自由度，加一个投影/单调性约束就能把它们重新接上**。
+
+### 3.4 Schrödinger 桥：五代求解器与 Q3 的精细化（T03）
+
+SB：路径测度上 $\min_P KL(P\|Q)$ s.t. 两端边缘约束；静态投影 = 熵正则 OT；$\varepsilon\to0$ 收敛到确定性 OT。五代演进：深度 IPF（DSB，SGM 恰为第一次 IPF 迭代）→ IMF/bridge matching（DSBM，[`reports/2303.16852.md`](../reports/2303.16852.md)：SB 是唯一既 Markov 又属参考桥 reciprocal 类的过程）→ 轻量化（LightSB-M 任意耦合单次 matching 即证恢复 SB）→ 在线/离散/少步/半监督（α-DSBM、CSBM、FSBM）→ 理论收口（IMF 首个非渐近指数率；Sinkhorn bridge 统计；IPMF；Tang 220 页专著）。Q3 新阶段（§5）：参考过程该怎么选（PRISM）、端点约束怎么松（SDDBMs）、混合分布桥的连续性界（2608.13383）、去噪扩散 = 高温 SB（2608.25094）。
+
+### 3.5 梯度流与 Wasserstein proximal（T05）
+
+JKO 神经化：ICNN 凸势 → 逐块 CNF → S-JKO 借 JKO↔UOT 等价把复杂度 O(K²)→O(K)。SGM = Wasserstein proximal 算子（`2503.01998`（深读见 README 对应条目） 一线）：score 模型隐式实现交叉熵的正则化 WPO，MFG 最优性条件 = 前向受控 FP + 后向 HJB，核公式解释记忆化。反问题线 JKOnet*；W-Flow 把 Sinkhorn-WGF 整条演化蒸馏成一步生成器（1-NFE FID 1.29，[R]）。Q3：WGF 成为微调工具——奖励引导一步模型（2608.29647）、CVaR 极端事件（2608.11544）。
+
+### 3.6 收敛与统计理论：审稿人的度量衡（T06）
+
+| 问题 | 当前最好结果 | 出处 |
+|---|---|---|
+| 采样迭代复杂度（给定 score） | TV：O(d/T)，仅需一阶矩 + L² score；KL：Õ(d/ε) | Li–Yan JMLR 2025 [P]；2508.16306 [R] |
+| 内在维数自适应 | 流形数据 KL 步数对 k 线性且 sharp；DDPM 自动近 k-线性 | Potaptchik COLT 2025；Huang–Wei–Chen MOR 2026 |
+| 端到端统计 | 扩散是 Besov 类近 minimax 分布估计器；score 估计率 $\tilde\Theta(n^{-2/(d+4)})$ | Oko ICML 2023；Wibisono COLT 2024 |
+| FM 理论 | almost minimax（1≤p≤2）；$\sigma_t\asymp\sqrt t$ 最优；$W_2$ 误差界 | Fukumizu ICLR 2025；Benton TMLR 2024 |
+| PF-ODE（确定性） | TV 率 O(k/T) 自适应内在维数；端到端近 minimax 需同时控 Jacobian 误差 | Tang–Yan 2025；2503.09583 [R] |
+| OT map 估计 | minimax 率 $n^{-2\alpha/(2\alpha-2+d)}$；plug-in 同最优 + CLT；一般函数空间覆盖神经 map | Hütter–Rigollet；Manole；Divol（均 AoS）|
+| 熵正则侧 | entropic map 估计器兼顾率与可扩展性；率只取决于「简单」一方 | Pooladian–Niles-Weed；Groppe–Hundrieser JMLR 2024 |
+| 函数空间 FM（Q3 新） | 有限系数/点值离散化下速度目标强 L² 收敛 + 端到端 Wasserstein 界 | 2608.04531 [R] |
+
+关键空白（= 我们的机会）：现有 FM 统计理论只覆盖独立耦合——OT-CFM 的端到端收敛率是 diffusion×OT 的天然交叉定理（§8.1 #5）。
+
+### 3.7 随机最优控制统一视角（T02）
+
+Hopf–Cole/HJB 把 ELBO 解释为 verification theorem（[`reports/2211.01364.md`](../reports/2211.01364.md)）；SOC 求解化为回归（SOCM）；reward 微调 = memoryless SOC，须用 $\sigma(t)=\sqrt{2\eta_t}$ 消初值偏差（Adjoint Matching）。对我们的意义：把终端 reward 换成传输代价泛函，即得「把预训练扩散控制到目标耦合」的原理性机制。
+
+### 3.8 四大理论张力（本报告的分析主轴）
+
+1. **耗散 vs 测地**：同一 $\mathcal P_2$ 流形上，扩散走 KL 梯度流（JKO），OT 走测地线（BB）——一切纠葛源于两种变分结构不重合。
+2. **逐时刻最优 vs 全局最优**：PF-ODE 每一瞬是梯度场，复合起来不是（Lavenant 反例的本质）。
+3. **直 vs 最优**：直线化降代价但不动点未必最优（Hertrich）；c-RF 投影与 N-循环单调条件修复最优性（八月）。
+4. **加速 vs 统计精度**：迭代复杂度与统计率各自 sharp，联合前沿无人刻画。
+
+深读新增的第五条工程张力（来自 T14/T12）：**改耦合 vs 保边缘**——实例级噪声/端点选择提高兼容性但改变有效初始分布；文献几乎不报告边缘漂移。这是 §8.2 的立项动机。
+
+## 4. 经典工作：奠基年表（The Canon）
+
+### 4.1 数学经典（1781–2014）
+
+| 年份 | 工作 | 为什么是经典 |
+|---|---|---|
+| 1781 | Monge《论土方的搬运》 | 原始映射形式，非凸且可能无解 |
+| 1942 | Kantorovich 松弛 | 耦合上的 LP + 对偶，OT 成为可分析对象 |
+| 1991 | **Brenier 极分解定理**（CPAM，[P]） | 二次代价最优映射 = 凸势梯度；与 Monge–Ampère、凸分析焊接 |
+| 1997 | McCann 位移插值 | $W_2$ 测地线：分布形变的标准语言 |
+| 1998 | **JKO 格式**（SIAM JMA，[P]） | Fokker–Planck = KL 的 Wasserstein 梯度流 |
+| 2000 | **Benamou–Brenier**（Numer. Math.，[P]） | $W_2^2$ = 最小动能；PF-ODE/FM 分析的通用语法 |
+| 2001 | Otto calculus | $\mathcal P_2$ 的黎曼几何化 |
+| 2013 | **Cuturi Sinkhorn**（NeurIPS，[P]，[`reports/1306.0895.md`](../reports/1306.0895.md)） | 熵正则把 OT 带进 GPU 时代 |
+| 2014 | Léonard SB 综述（[B]） | Schrödinger 1932 问题的现代梳理：路径熵最小化 ⇔ EOT |
+
+### 4.2 生成建模接口经典（2021–2023）
+
+| 年份·会议 | 工作 | 奠基点 | 深读 |
+|---|---|---|---|
+| 2021·ICLR Oral | Score-SDE | VP/VE-SDE + PF-ODE 统一框架，定义了「encoder map」 | `2011.13456`（深读见 README 对应条目） |
+| 2021·ICLR | DDIM | 采样确定化 = PF-ODE 一阶指数离散 | [`reports/2010.02502.md`](../reports/2010.02502.md) |
+| 2021·NeurIPS Spotlight | **DSB** | SB 进生成建模：SGM = 第一次 IPF 迭代 | `2106.01357`（深读见 README 对应条目） |
+| 2021·NeurIPS | W2 benchmark | 神经 OT 求解器首个 ground-truth 评测：「下游好 ≠ map 准」 | [`reports/2106.01954.md`](../reports/2106.01954.md) |
+| 2022·NeurIPS | EDM | 统一训练/采样设计空间，few-NFE 公共基准 | [`reports/2206.00364.md`](../reports/2206.00364.md) |
+| 2022·NeurIPS | DPM-Solver | 半线性结构定制指数积分器，NFE 数百 → 10–20 | [`reports/2206.00927.md`](../reports/2206.00927.md) |
+| 2023·ICLR | **Flow Matching** | conditional path + CFM 目标：simulation-free 训练 CNF | [`reports/2210.02747.md`](../reports/2210.02747.md) |
+| 2023·ICLR | **Rectified Flow** | 线性插值 + reflow：「直线换算力」纲领 | [`reports/2209.03003.md`](../reports/2209.03003.md) |
+| 2023·ICLR / JMLR 2025 | Stochastic Interpolants | 任意两分布插值统一 flows/diffusions/SB | [`reports/2303.08797.md`](../reports/2303.08797.md) |
+| 2023·ICLR | **Khrulkov 猜想** + Lavenant 反例 | 「扩散≟OT」定型：高斯成立、一般证伪、量化开放 | [`reports/2202.07477.md`](../reports/2202.07477.md) |
+| 2023·ICLR | **DDIB** / NOT | 翻译 = 两段 EOT 串联；weak OT 统一 saddle-point 求解器 | [`reports/2203.08382.md`](../reports/2203.08382.md) |
+| 2023·ICML | **I2SB** | 边界对给定时 SB tractable 化，桥模型工业可用性首证 | [`reports/2302.05872.md`](../reports/2302.05872.md) |
+| 2023·ICML / TMLR 2024 | Multisample FM + OT-CFM | batch 级 OT 耦合进入 FM 训练：直线化 + 方差下降 | [`reports/2302.00482.md`](../reports/2302.00482.md) |
+| 2023·NeurIPS | **DSBM/IMF** | Markov × reciprocal 双投影：SB 求解不再累积误差 | [`reports/2303.16852.md`](../reports/2303.16852.md) |
+| 2023·NeurIPS | UOTM | UOT 半对偶生成模型：outlier 稳健 | [`reports/2305.14777.md`](../reports/2305.14777.md) |
+
+### 4.3 规模化与工业化（2024）
+
+SD3 大规模消融确立 RF 公式 + logit-normal 时间采样为工业标准（ICML 2024 Oral）；SiT 在 DiT 骨干上完成 interpolant 四轴消融（ECCV 2024）；DDBM 统一桥设计空间（[`reports/2309.16948.md`](../reports/2309.16948.md)：Theorem 2 只保证边际，见 §2 P3）；Immiscible Diffusion 证明数据管线级噪声指派一行代码加速训练最高 3×（[`reports/2406.12303.md`](../reports/2406.12303.md)）；AYS/GITS 把采样调度原理化；LightSB-M/α-DSBM/ASBM 把 SB 轻量化在线化；UOT-FM 证明 unbalanced map = 重缩放边际的 balanced map；moscot 把 OT 推到 170 万细胞（T24）。
+
+## 5. 最新工作：2025–2026 前沿地图（含 Q3 增量）
+
+### 5.1 理论收口线
+
+| 工作 | 出处·分级 | 一句话 |
+|---|---|---|
+| IMF 指数收敛率 | NeurIPS 2025 [P] | SB 求解迭代的首个非渐近 KL 指数率 |
+| 「reflow≠OT」反例 | Hertrich et al. NeurIPS 2025 [P] | 非最优不动点存在、损失趋零≠最优 |
+| **c-RF 计算统计保证** | 2608.02487 [R] | 高斯情形 reflow→OT iff 协方差可交换；c-RF 恒收敛 + 指数率 + minimax 最优 OT 估计 |
+| **reflow×minibatch-OT 极限点** | 2608.07042 [R]（Q3 新） | 极限 = N-循环单调耦合；梯度场条件下到 OT 映射 |
+| FM almost minimax | Fukumizu ICLR 2025 [P] | 统计上 FM 与扩散等价；$\sigma_t\asymp\sqrt t$ 最优 |
+| O(d/T) / O(k/T) | Li–Yan JMLR 2025；MOR 2026 [P] | 线性维数依赖，自适应内在维数 |
+| SGM = Wasserstein proximal | SIMODS 2026 [P] | MFG（FP+HJB）刻画 score 模型 |
+| Sinkhorn bridge 统计 | 2510.22560 [R] | matching 系估计量统一泛化分析 |
+| Entropy-Controlled FM | 2602.22265 [R] | 熵率预算约束 FM = 带显式熵乘子的 SB；Γ-收敛到 OT |
+| **PRISM / SDDBMs / 混合分布桥** | 2608.06893 / 2608.08594 / 2608.13383 [R]（Q3 新） | SB 的参考过程设计、端点松弛、高斯混合桥的 Wasserstein 连续性界 |
+| **拉格朗日视角 FM** | 2609.00198 [R]（Q3 新） | 去噪器雅可比是轨迹曲率主因 |
+| 条件 W 距离几何 | JMLR 2025 [P]（T18） | joint $W_2$ 不控制 posterior $W_2$ |
+
+### 5.2 一步生成新范式线
+
+MeanFlow（NeurIPS 2025 Oral，ImageNet-256 1-NFE FID 3.43）→ W-Flow（Sinkhorn-WGF 蒸馏，1-NFE FID 1.29，[R]）→ **Beckmann Transport Models**（2608.01692，自治速度场精确映射两分布，统一回收 Poisson Flow 与 Equilibrium Matching）→ PMOT（2608.05666，标量势参数化广义 BB）；Flow Map Matching / Transition Matching 把学习对象从瞬时速度改为两时间流映射；LBM（ICCV 2025 Highlight，[`reports/2503.07535.md`](../reports/2503.07535.md)）把桥蒸馏到 1 NFE；CAF/HRF 放弃常速假设。Q3：MeanFlow 进 SE(3) 抓取与李群约束（2608.03295、2608.26076），平均速度范式成为默认少步方案。
+
+### 5.3 耦合工程线（训练侧）
+
+大规模 Sinkhorn 耦合（2506.05526，Apple：n≈10⁶ 才见真收益）→ 半离散耦合（[`reports/2509.25519.md`](../reports/2509.25519.md)：全数据集预计算对偶势，训练时查表配对）→ LOOM-CFM（跨 batch 交换局部最优配对）→ C²OT（条件生成中无条件 OT 耦合有害）→ 期望 batch plan 理论（2605.12174）→ Designing OT Flows（让恒等耦合本身最优）→ **Q3：QC-FM 单侧分位数耦合 O(n)**（2608.00978）、**Gromov-Monge FM 等变耦合**（2608.26961）。趋势：从「算更大的 OT」到「算更巧的结构化近似」。
+
+### 5.4 推理期对齐线（免训练侧，T12 七环节）
+
+① 数据管线噪声指派（Immiscible）→ ② 初值检索/搜索（NoiseQuery [`reports/2412.05101.md`](../reports/2412.05101.md)；verifier×搜索 `2501.09732`（深读见 README 对应条目））→ ③ 初值连续变换（Golden Noise [`reports/2411.09502.md`](../reports/2411.09502.md)；NoiseRefine）→ ④ OT 桥接 prior（半离散一步桥 + 短程扩散）→ ⑤ 轨迹中段对齐（几乎空白）→ ⑥ 跨帧噪声传输（∫-noise；Go-with-the-Flow）→ ⑦ inversion 侧耦合。**深读发现**：这条线的论文普遍报告质量/对齐指标，**不报告噪声人口边缘的漂移与多样性损失**（T12 深读 §6 一致指出）；Oracle Noise（2604.23540）指出欧氏梯度噪声优化会推离高斯 typical set。§8.2 的 MPNA 正对着这个空位。
+
+### 5.5 桥与翻译线
+
+UniDB++（TPAMI 2026，SOC 统一桥的闭式逆向解 + SDE-Corrector）；DBIM / CDBM（桥的 DDIM / 一致性蒸馏）；FSBM（<8% 配对样本半监督 SB）；CSBM / 3MSBM / Reflected SBM（离散、多边缘动量、有界域）；DIOTM / OTP / ENOT（静态 map 线的稳定化）；LSB（预训练 SD 免训练近似 SB）；Bridge vs FM 统一比较（FM 是 DB 的退化特例）。**Q3 新增 11 篇**（`trends/`）：乳腺 DCE-MRI 潜在桥、MRI 超分桥 10 步、DoseBridge 质子剂量预测（直接以剂量为目标）、EditBridge 4K、ReBridge-Flow 后验桥重耦合、Di²CycleSB、离散扩散桥 DDB（ECCV 2026）、BIT 文本–图像双向桥、UniCycleFlow。T14 深读的经验规律：**随机桥 vs 确定性直线的最优噪声强度由任务条件熵与步数预算决定**（I2SB Table 6/9、DDBM Sec. 5、DBIM Table 4/5、LBM 消融一致）。
+
+### 5.6 系统与评测线
+
+FlashSinkhorn（ICML 2026 Oral，[A]：Sinkhorn = attention 归一化，前向 9–32×、端到端 161×；v0.3.3 后无 release，多 GPU / 非欧 cost 空位仍在）；低秩/层次线 FRLC → HiRef → HALO；端侧 SnapGen / SVDQuant；评测：FID 对少步模型失真；SynthRAD2025 官方证实图像相似度与剂量准确性只有中等相关。Q3：蒸馏被写成 Sinkhorn 散度目标（2608.15215）、FGW 作结构评测（2608.28733）——OT 系评测的外围开始被填充。
+
+### 5.7 顶会趋势
+
+FM 提及级接收量连续两年约 3×（ICLR 7→46→144；ICML 13→56→167；NeurIPS 6→32→88）；OT 平稳上行（ICML 2026 翻倍 43→114）。日程：ECCV 2026 9/8–12（论文集 LNCS 17001–17083 已上线）；NeurIPS 2026 放榜 9/24；ICML 2026 PMLR 卷未出。窗口期判断不变：理论空位约 12–18 个月，应用垂直更长，但 #7 医学桥的窗口在收窄（DoseBridge 已以剂量为目标）。
+
+![venue 分布](figures/venue_mix.png)
+
+## 6. 逐篇深读的跨论文发现（按板块）
+
+本节由 30 个课题的深读综合（`topics/tNN.md`）汇总而成：每条观察至少引用两篇深读报告作证据。
+
+### 6.1 板块 A：理论基础
+
+**T01 OT 数学基础（面向生成模型研究者的最小必要集）** — 本课题解决的是生成模型研究者所需 OT 数学基础的最小必要集问题：哪些定理（Brenier、Kantorovich 对偶、Benamou–Brenier 动态形式、半离散 OT）是理解扩散/流模型与 OT 关系时不可绕过的，以及按什么顺序读。方法谱系呈现清晰的教材演进线：Villani（理论百科）→ Santambrogio（应用数学）→ Peyré–Cuturi（计算）→ Figalli–Glaudo/ABS（课程化）→ Chewi 等（统计化）→ Peyré 2025（ML 化重写）。当前共识是：Brenier 定理（凸势梯度刻画）是「扩散潜码 ≈ OT 映射」命题的理论根基，Benamou–Brenier 动能形式是轨迹直度分析的统一语法，半离散 OT 精确对应「连续先验 → 有限样本」的生成建模设定。分歧在于：exact OT 映射在经验分布上的稳定性（2505.06589 Remark 2.32 与 2407.18163 Prop. 2.1 的 n^{-1/d} 维数灾难）与 minibatch/熵近似（T04/T08）之间的张力，以及半离散 OT 因 Laguerre 剖分依赖计算几何而实际限于低维（d≤3），迫使生成模型文献转向近似方法。
+
+- Brenier 定理的两种证明路线（循环单调→Rockafellar→凸势 vs 对偶势→c-凹→Fenchel）在教材中形成互补，合读可覆盖全部标准证法。 2407.18163 第 1 章走「循环单调 → Rockafellar → 凸势」路线（Thm 1.14 给出最优耦合 ⇔ 凸梯度图 ⇔ 强对偶的三合一），而 2505.06589 与 1803.00567 走「对偶势 → c-凹 → Fenchel」路线（1803.00567 Thm 2.1 给出 T = grad of convex phi = |x|^2/2 - f）。两条路线在 2505.06589 §2.4 与 2407.18163 §1.5.3 分别展开，互不重叠。（证据：2407.18163, 2505.06589, 1803.00567）
+- 半离散 OT 是「连续先验 → 有限样本」设定的精确数学工具，但其计算可行性受维数严格限制。 1603.05579 的阻尼 Newton 法（Thm 1.5 全局线性 + 局部 1+alpha 收敛）给出半离散 OT 的收敛保证，但 2003.00855 指出 Laguerre 剖分依赖计算几何、实际只到 d=3；2505.06589 Remark 2.33 明言不描述 Monge–Ampère 数值方法。这解释了为何生成模型文献转向 minibatch/熵近似（T04/T08）。（证据：1603.05579, 2003.00855, 2505.06589）
+- Benamou–Brenier 动态形式是连接 OT 理论与 probability-flow ODE / flow matching 的统一语法，但各教材对其覆盖深度差异显著。 A_computational_fluid_mechanics_solution_to_the_Mo 是 W_2 动态形式的原始出处，把 OT 改写为连续性方程约束下的最小动能；1803.00567 第 7 章给出其数值入口（交错网格 + proximal 求解）；但 2407.18163 全书无 Benamou–Brenier 定理的独立陈述，动态形式只以 Otto 几何出现（§5.1–5.4），说明统计侧教材对动态形式的覆盖是选择性缺失。（证据：A_computational_fluid_mechanics_solution_to_the_Mo, 1803.00567, 2407.18163）
+- OT 教材的「ML 化」演进在 2025 年达到顶点，但新教材的体量与定位存在内在矛盾。 2505.06589 以 480 页、16 章的体量自称「精简版」，且 v3 仍是 arXiv 预印本、无同行评审、章节编号随版本变动；1803.00567 以 209 页覆盖计算主线但止于 2019 年的算法覆盖；2512.06797 作为 25 页速写完全不谈算法只谈结构。三者构成「教材—计算—结构」的分层，但 2505.06589 的体量与「最小必要集」定位之间的张力未被解决。（证据：2505.06589, 1803.00567, 2512.06797）
+
+**T02 扩散模型与 OT 的理论联系** — 本课题解决的核心问题是：扩散模型（特别是 PF-ODE 的 encoder/flow map）与最优传输（OT）之间到底是什么关系。方法谱系呈现清晰的演进：从 Song et al. 定义 PF-ODE 提供映射对象，到 Khrulkov et al. 提出「encoder = Monge map」猜想并在高斯情形证明，再到 Tanana 与 Lavenant–Santambrogio 用反例证伪一般情形（障碍是 Hessian 非交换），随后 Pierret–Galerne 在高斯情形给出任意有限区间的精确解，P. Zhang et al. 在共线数据上给出有限区间正面结果，Dumont–Lacombe–Vialard 则用约束梯度流构造性地回应反例。当前共识是：逐时刻无穷小最优（梯度场）不蕴含全局最优（凸函数梯度），但数值上差距往往很小；分歧在于「近乎 OT」的量化程度以及何种条件下有限区间 PF 恰为 Monge 映射。同时，分布层的 W2 上界（Kwon–Fan–Lee）与变分层的 SOC/HJB 表述（Berner et al.、SOCM、Adjoint Matching、WPO）为 OT 度量下的训练与微调提供了独立于映射层辩论的理论工具。
+
+- 「PF-ODE encoder 是否为 OT 映射」的辩论经历了猜想—反例—边界刻画的完整闭环，核心障碍被精确化为 Hessian 族的非交换性。 Khrulkov et al. 在高斯情形证明 encoder 等于 Monge 映射（Theorem 3.1），但 Lavenant–Santambrogio 证明一般情形下 D²u 与 D²(log det D²u − |∇u|²/2) 的非交换（Eq. 9）使复合流映射离开凸函数梯度类；Tanana 的 DS∞ 非对称检验（数值反例 0.441 vs 0.467）是更早的前驱，P. Zhang et al. 的共线数据正面结果（Prop. 2/4）则说明可交换性在退化情形下自动成立。（证据：2202.07477, The_flow_map_of_the_Fokker_Planck_equation_does_no, 1709.06464, 2311.03886）
+- 高斯情形是唯一被完全解析的正面边界，但「高斯下 PF-ODE = OT 映射」依赖协方差可交换这一强条件，掩盖了非交换障碍。 Pierret–Galerne 的 Prop. 3 给出任意有限区间 [0,t] 上高斯 PF-ODE 的闭式解并确认其为 OT 映射，但该结论依赖 Σt 均为 Σ 的函数；Tanana 的反例（A=diag(4,1), B=[[2,1],[1,3]]）正说明当 A、B 非交换时热流映射的雅可比非对称，因此高斯正面结果不能外推。（证据：2405.14250, 2202.07477, 1709.06464）
+- 分布层的 W2 保证与映射层的 OT 性质是两条独立的理论线：score matching 损失控制 W2 距离，但不要求 encoder 是 OT 映射。 Kwon–Fan–Lee 证明 W2(p0,q0) ≤ C√J_SM + I(T)W2(pT,qT)（Corollary 1），其中 I(T) 依赖单侧 Lipschitz 常数且可能指数增长；Pierret–Galerne 的高斯精确 W2 值（Heun 0.18 vs EM 0.40, NFE=500）为检验该上界松紧提供了测试床；Mikulincer–Shenfeld 的 Brownian transport map 收缩理论（Theorem 3.1）则从概率论侧给出随机传输映射的维数无关收缩常数。（证据：2212.06359, 2405.14250, 2111.11521）
+- 变分层的 SOC/HJB 表述将扩散训练目标统一为路径空间 KL 最小化，与 OT 的 Benamou–Brenier 测地结构共享动能项但熵项不同。 Berner et al. 证明 ELBO/DSM 是控制论 verification theorem 的特例（running cost ½∫‖u‖² + terminal cost）；B. Zhang et al. 进一步将 SGM 刻画为交叉熵的 Wasserstein 近端算子（步长 h=β²T），与 OT-flow 作为 KL 的 WPO 并列；SOCM 与 Adjoint Matching 则把同一 SOC 问题转化为最小二乘回归，后者用 memoryless 噪声调度 σ(t)=√(2ηt) 消除初值偏差。（证据：2211.01364, 2402.06162, 2312.02027, 2409.08861）
+
+**T03 Schrödinger Bridge 与扩散生成** — T03 课题解决的核心问题是如何高效、可扩展地求解 Schrödinger Bridge（SB），并将其用于生成建模与轨迹推断。方法谱系从第一代深度 IPF（DSB、SB-FBSDE）出发，其痛点（误差累积、轨迹缓存、遗忘先验）催生了第二代 IMF/bridge matching（IDBM、DSBM），通过交替 Markov/reciprocal 投影保持两端边缘。第三代（LightSB-M、[SF]²M、VSDM）以免仿真或轻量参数化为目标，其中 LightSB-M 证明任意耦合一次最优投影即得 SB。第四代（α-DSBM、ASBM、BM²）将 IMF 连续化或离散化，实现在线单网络更新与少步生成。第五代（2510.20871、2510.22560、IPMF）补上非渐近收敛率与统计理论，并将 [SF]²M/LightSB(-M)/DSBM-IMF/BM² 统一为同一估计量的不同优化路径。当前共识是：在 Wiener 参考与精确优化下，多种方法的目标估计量相同；分歧在于迭代 vs 单循环、参数化表达力 vs 免仿真、以及理论保证是否覆盖神经回归近似误差。
+
+- IMF 系方法（IDBM/DSBM/α-DSBM/BM²）共享同一理论核心，但收敛保证长期停留在渐近层面，直到第五代才补上非渐近速率。 DSBM 的 Theorem 8 只给 KL 意义下收敛，无速率；BM² 的 Theorem 2 明确不是收敛定理；2510.20871 首次给出 IMF 非渐近指数收敛率，覆盖对数凹与弱对数凹边缘，但要求 Markov 投影精确执行。（证据：Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et, 2510.20871, 2409.09376）
+- 免仿真路线（LightSB-M、[SF]²M）与迭代路线（DSBM、BM²）在极限估计量上被证明等价，但实践性能差距可达一个量级。 2510.22560 的 Proposition 1–2 证明 [SF]²M/LightSB(-M)/DSBM-IMF/BM² 的极限估计量相同；但 LightSB-M 论文 Table 1 中 cBW2-UVP 在 ε=0.1, D=128 为 1.66，BM² 为 8.28，DSBM 为 35，差距来自优化与参数化而非估计量定义。（证据：Light_and_Optimal_SB_Matching_LightSB_M_Gushchin_e, 2510.22560, 2409.09376）
+- 参考过程从 Wiener 向有界域、退化扩散、相空间等方向一般化，但每次一般化都引入新的理论空白或计算瓶颈。 Reflected SBM 把 α-DSBM 推到单位立方体上的反射 Brownian，训练开销几乎为零但收敛定理未正式化；sub-Riemannian SB 给出 bracket-generating 条件下的适定性，但转移核只在 Heisenberg 群上有闭式；3MSBM 的相空间提升仍依赖仿真式交替优化。（证据：2607.03626, 2605.11429, Momentum_Multi_Marginal_SB_Matching_3MSBM_Theodoro）
+- 多边缘 SB 的 matching 系实现（MMtSBM）在 100 维单细胞基准上优于相空间 DMSB/3MSBM，但其正确性依赖未证猜想。 MMtSBM 在 EB d=100 上 MMD 0.019 vs DMSB 0.032，在留出时刻 t3 上 MMD 0.06 vs 3MSBM 0.14；但算法正确性建立在 Conjecture 3.1（多边缘 Markov + factorized reciprocal + 边缘 ⇒ MMSB）之上，且 Theorem 3.2 与 Proposition 3.9 对极限是否为真 MMSB 表述不一致。（证据：2510.01894, Deep_Momentum_Multi_Marginal_SB_DMSB_Chen_et_al, Momentum_Multi_Marginal_SB_Matching_3MSBM_Theodoro）
+
+**T04 熵正则 OT 与 Sinkhorn 在生成建模中的角色** — 本课题梳理了熵正则最优传输（EOT）与 Sinkhorn 算法在生成建模中角色的演进：从 1306.0895 提出可快速求解的熵正则化 OT 距离开始，1706.00292 将其变为可微训练损失，1810.08278 通过 debiasing 修正熵偏差并证明正定性，1905.11882 与 2006.08172 建立样本复杂度与计算-统计权衡，2109.12004 从对偶势导出 entropic map 估计器，2202.08919 揭示 debiased map 的陷阱，2205.06688 统一隐式微分，再到 2406.05061 将 ε 变为沿 McCann 路径的调度对象、2605.11755 将 Sinkhorn divergence 用作一步生成的 Wasserstein 梯度流能量。方法谱系从'把 Sinkhorn 当损失'演进到'把 Sinkhorn 当映射估计器'再到'把 Sinkhorn 当动力学轨迹'。当前共识是：debiased Sinkhorn divergence 作为分布损失是正定且统计良态的，但 debiased map 作为映射估计器并不总优于 entropic map；ε 的选择是 OT 几何精度与计算稳定性/统计效率之间的核心旋钮。分歧集中在：ε 该多小、是否 debias、以及 Sinkhorn 应作为静态求解器还是连续时间动力学来处理。
+
+- Sinkhorn 从'快速距离计算工具'演变为'可微损失层'再变为'映射估计器与动力学框架'，ε 的角色从固定超参变为调度对象。 1306.0895 给出熵正则耦合的矩阵缩放形式（Eq. 3）和 Sinkhorn-Knopp 算法；1706.00292 将其作为可自动微分的损失层训练生成器；2109.12004 从对偶势导出 barycentric projection T_ε=Id-∇f_ε 作为 Monge 映射估计器；2406.05061 进一步把 ε 沿 McCann 插值路径分段调度（K 段 EOT 子问题），Theorem 3 给出 ε_k~n^{-1/(2d)} 的调度方案。（证据：1306.0895, 1706.00292, 2109.12004, 2406.05061）
+- debiasing 对'距离估计'有益但对'映射估计'不总有益，这是本课题的核心张力。 1810.08278 证明 debiased Sinkhorn divergence S_ε 正定且度量化弱收敛；2006.08172 证明用 S_ε 估计 W_2² 时 ε 可放大到 ε^{1/2} 量级（Theorem 1 偏差界 λ²/4·I_0）；但 2202.08919 的 Theorem 4 构造了 debiased map T^D_ε 可被任意倍劣化的分布族，Gaussian 情形下 T^D_ε 有 O(ε^4) 精度（Theorem 6）而 T_ε 只有 O(ε^2)（Theorem 5），有限样本下 debias 反而更差。（证据：1810.08278, 2006.08172, 2202.08919）
+- Sinkhorn divergence 的样本复杂度在 debiasing 后摆脱指数因子，但高维下多项式前因子随维数急剧增长。 1905.11882 证明 EOT 经验估计对 subgaussian 分布达 O(1/√n) 且无 e^{D²/ε} 指数因子（Corollary 1），但前因子含 σ^{⌈5d/2⌉+6}/ε^{⌈5d/4⌉+3}，维数依赖极强；2006.08172 的 Proposition 4 给出 S_ε 估计 W_2² 的速率 n^{-2/(d'+4)}，弱于 plug-in 的 n^{-2/d}，作者承认这是证明弱点。（证据：1905.11882, 2006.08172）
+- Sinkhorn 层的可微化从 unrolled AD 走向隐式微分，内存从 O(τn²) 降到 O(n²)，但隐式微分假设固定 ε 且依赖矩阵非稀疏性。 1706.00292 用 unrolled L 步 Sinkhorn 反传，内存随 L 线性增长；2205.06688 用隐式函数定理统一 Sinkhorn 层梯度，内存 O(n²) 且梯度误差被前向误差线性控制（Theorem 5），但需解 (m+n-1) 阶线性系统（runtime O(n³)），且当 ε 小、P 接近稀疏时 σ_- 趋于 0 使界空洞。（证据：1706.00292, 2205.06688）
+
+**T05 Wasserstein 梯度流与 JKO 格式生成模型** — 本课题围绕「Fokker–Planck 方程 = KL 散度在 Wasserstein-2 度量下的梯度流」这一理论底座（The_Variational_Formulation_of_the_Fokker_Planck_E），发展 JKO 隐式离散格式的神经化与规模化。方法谱系分三条支线演进：正问题求解器从 ICNN 参数化 Brenier 势（2106.00736、Optimizing_Functionals_on_the_Space_of_Probabiliti）起步，经变分对偶消除 log-det（2112.02424）、残差块显式密度（2212.14424），到 UOT 半对偶 + 重参数化实现 O(K) 训练与一步采样（2402.05443）；反问题从 JKOnet 双层优化（2106.06345）演进到 JKOnet* 一阶最优性条件单层闭式解（2406.12616）；理论深化则包括 Gaussian 子流形上的非渐近收敛（2205.15902）、镜像/预条件几何（2406.08938）、WoW 测度之测度流（2506.07534）与非凸二阶最优性（2509.16974）。当前共识是 JKO 提供 score matching 之外的第二套构造原理，且已获得与扩散模型同量级的生成质量；分歧在于「忠实于真实 WGF 轨迹」与「生成质量」出现分离，以及非测地凸泛函下的一阶/二阶最优性条件仍缺乏可验证的通用判据。
+
+- JKO 步的求解器从「ICNN 凸势 + 精确 log-det」演进为「对偶 min-max + 重参数化」，训练复杂度从 O(K²) 降至 O(K)，但代价是 Brenier 结构丢失。 Mokrov 等（2106.00736）的 ICNN 方案训练时间 ∝ k² 且 log-det 为 O(D³)；Fan 等（2112.02424）用 Nguyen 变分对偶消除密度项但保留 K 个生成器；S-JKO（2402.05443）用 UOT 半对偶 + ΔT_k∘T_{k-1} 重参数化把训练降到 O(K)，CIFAR-10 FID 从 23.1 推到 2.62，但 T_k 不再保证是 OT 映射。（证据：2106.00736, 2112.02424, 2402.05443）
+- 反问题支线从双层优化转向一阶最优性条件拟合，能量类从 potential 扩展到 interaction/internal，但一阶条件是必要非充分。 JKOnet（2106.06345）通过展开 50–100 步 Adam 反传做双层优化，内层只到梯度范数 ≤1 的粗精度；JKOnet*（2406.12616）用一阶条件 ∇V(x_{t+1}) + (x_{t+1}−x_t)/τ = 0 把学习变成单层二次损失，线性参数化有闭式解，scRNA-seq 一步预测 EMD 0.624，但当 J 非测地凸时拟合一阶条件可能学到使观测成为鞍点的能量。（证据：2106.06345, 2406.12616）
+- WGF 生成模型的「生成质量」与「忠实于真实梯度流」出现分离：规模化方法 FID 更好，但逼近真实 WGF 轨迹的精度反而更低。 S-JKO（2402.05443）Table 6–7 显示其对真值 WGF 的 SymKL 逊于 ICNN JKO，但 CIFAR-10 FID 2.62 远优于 JKO-iFlow 的 29.10（2212.14424）；JKO-iFlow 的无穷小极限 f* = s_q − s_p 正是概率流 ODE 速度场，说明「不学 score 直接学 FPE 传输」与 flow matching 是同一 ODE 的不同训练目标。（证据：2402.05443, 2212.14424）
+- 非测地凸泛函下测度空间优化的二阶理论开始建立，但可扩展实现与实验验证仍缺失。 PWGF（2509.16974）沿 Wasserstein Hessian 最小特征方向注入 GP 扰动，给出 tilde{O}(Δ_F(1/ε² + 1/δ⁴)) 的二阶驻点收敛保证，但正文无任何数值实验，GP 核 K_μ 需要 ∇²_μF 的积分；Gaussian VI（2205.15902）在混合 Gaussian 情形 KL 非凸、极小点非唯一（Appendix G），正是 PWGF 处理的具体实例。（证据：2509.16974, 2205.15902）
+
+**T06 扩散/流生成模型的收敛性与统计理论** — T06 课题解决扩散/流生成模型的两类理论问题：给定 score/速度场时的采样收敛性（迭代复杂度），以及从样本估计 score/速度场/OT map 的统计率（样本复杂度）。方法谱系呈现清晰的三阶段演进：2209.11215 确立 Girsanov+KL+Pinsker 范式，2308.03686 用随机局部化把维数依赖从 d² 降到 d，2409.18959 放弃 KL 路线直接做 TV 递推得到 d/T 率，2508.16306 则用 ODE+加噪杂交把 KL 步数改进到 ε⁻¹。统计线由 Diffusion_Models_are_Minimax_Optimal_Distribution 开创的 B-spline 逼近+时间分段框架被 2405.20879 搬到 FM、被 2402.15602 和 2503.09583 用核估计器放宽假设。OT map 估计线（1905.05828、2107.12364、2212.03722）独立发展，为 OT 引导生成提供可学性标尺。当前共识是：随机采样器对 score 误差更稳健（只需 L² 精度），确定性 ODE 采样器需额外 Jacobian 控制；低维结构（流形/内在维数 k）可使迭代复杂度从 d 降到 k。分歧在于：最优度量是 TV 还是 KL、ε⁻¹ 步数是否可达、以及统计率中密度下界假设能否完全去除。
+
+- 采样收敛线从 Girsanov+KL 范式演进到 TV 直接递推，维数依赖从 d² 降到 d 再到 k，步数依赖从 ε⁻² 改进到 ε⁻¹ 2209.11215 确立 Girsanov 路径 KL 范式并给出 Θ̃(L²d/ε²) 步数；2308.03686 用随机局部化把复杂度降到 Õ(d/ε²)；2409.18959 明确以 2209.11215 Theorem 7 的 Ω(d/T) 路径 KL 下界为理由放弃 KL 路线，直接分析 TV 得到 d log³T/T 率；2508.16306 用 PF-ODE 双步+前向加噪单步的杂交把 KL 步数改进到 Õ(d log^{3/2}(1/δ)/ε)。（证据：2209.11215, 2308.03686, 2409.18959, 2508.16306）
+- 统计端到端理论在 SDE 侧和 ODE 侧分别达到近 minimax 最优，但假设条件差异显著 Diffusion_Models_are_Minimax_Optimal_Distribution 在 Besov 类上证明 SDE 采样 TV 率 n^{-s/(2s+d)} 近 minimax，但需紧支撑+密度下界；2402.15602 在 Sobolev β≤2 类上去掉密度下界，仅需次高斯；2405.20879 在 FM 侧用 Alekseev–Gröbner 替代 Girsanov 得到 W_r 几乎 minimax 率 n^{-(s+(2κ)⁻¹-δ)/(2s+d)}；2503.09583 在 PF-ODE 上首次达到 TV 近 minimax，但需 Jacobian 误差控制。（证据：Diffusion_Models_are_Minimax_Optimal_Distribution, 2405.20879, 2503.09583, 2402.15602）
+- 低维结构（流形/内在维数）使迭代复杂度从 d 线性降到 k 线性，且 DDPM 原始系数设计自带低维自适应性 2410.09046 在流形假设下证明 KL 步数 Õ(d/ε²) 对内在维数线性且 sharp，并证明指数积分器在流形数据上必付 D 的代价（Proposition 18）；Denoising_Diffusion_Probabilistic_Models_Are_Optim 在度量熵假设下得到不需知道 k 的 KL 最优 k-线性复杂度；2409.18959 Theorem 2 在 TV 下把率提到 k/T，三者共同说明 DDPM 系数设计的低维自适应性。（证据：2410.09046, Denoising_Diffusion_Probabilistic_Models_Are_Optim, 2409.18959）
+- OT map 估计的 minimax 率与扩散/FM 的分布估计率形式不同，且源测度为高斯的情形直到 2212.03722 才被覆盖 1905.05828 确立 α-光滑 Brenier map 的 minimax 率 n^{-2α/(2α-2+d)}，但要求有界支撑+密度上下界；2107.12364 证明可计算 plug-in 估计器达同一率；2212.03722 用 Poincaré 不等式替代密度上下界，首次覆盖高斯源测度，并给出 Barron 空间率 n^{-(2s+k(1-2/d))/(2s+2k(1-2/d))}。（证据：1905.05828, 2107.12364, 2212.03722）
+
+### 6.2 板块 B：流匹配与轨迹拉直
+
+**T07 Flow Matching 基础谱系** — 本课题解决 Flow Matching 基础谱系的统一与演进问题：从 Lipman et al. 的条件流匹配（CFM）奠基，到 Stochastic Interpolants 的潜变量与可调扩散系数统一，再到 Generator Matching 将原理推广到任意 Markov 生成元。方法谱系沿三条轴展开：路径/调度设计（Cond-OT 线性路径、kinetic optimal、scale-time 变换）、耦合设计（独立耦合、data-dependent、minibatch-OT）、学习对象与采样器（瞬时速度、平均速度、ODE/SDE 切换）。当前共识是：FM 与 diffusion 在 Gaussian 路径下互为重参数化，条件 OT 路径在高维小样本极限下渐近动能最优，但边缘速度场并非 OT 场。分歧集中在：调度设计的收益来源（目标函数不变性 vs 优化方差）、耦合改进的理论依据（保边缘重排的严格证明缺失）、以及一步生成与多步采样的精度-速度权衡。
+
+- FM 与 diffusion 的等价性在多个独立工作中被反复确认，形成「调度、预测目标、采样器三元组取值」的统一视角。 2210.02747 的 Appendix D 证明 Gaussian 路径下条件速度场等于 PF-ODE 速度场；2303.08797 的 Sec. 5.1 将 SBDM 写成重参数化的 one-sided interpolant；2303.00848 的 Appendix D.3 进一步给出 FM-OT 损失在 ε-预测坐标下等价于 w(λ)=e^(-λ/2) 的加权 diffusion 损失，与 v-预测+cosine 调度完全一致。（证据：2210.02747, 2303.08797, 2303.00848）
+- 条件 OT 路径的动能最优性只在渐近极限下成立，且该极限对应「记忆化」而非泛化。 2306.06626 的 Theorem 4.1 给出 ∫|1-λ(s)|ds ≤ 3n/√d，在 ImageNet-32 上该界为 3×50000/55≈2700，完全无信息量；λ→1 意味着后验退化为 delta，即模型只需记住训练集。2210.02747 的 Sec. 4.1 明确否认边缘场为 OT，条件流最优不等于边缘流最优。（证据：2306.06626, 2210.02747）
+- 统一框架的推广在生成元层面成立，但误差传播与训练动力学并不统一。 2410.20587 的 Theorem 1 在正则性假设下给出 R^d 上生成元的完全刻画（flow+diffusion+jump），但作者承认设计空间极大且每类生成元的 KFE 解对学习误差的敏感度未分析；2303.08797 的 Theorem 23 给出 SDE 采样器的 KL 界（1/2ε 与 ε/2 的系数依赖），但 ODE 采样器的似然不受回归损失控制（Lemma 21）。（证据：2410.20587, 2303.08797）
+- 调度设计的收益来源存在理论分歧：目标函数层不变 vs 优化方差层可变。 2303.00848 证明损失值对调度形状不变、只有权重 w(λ) 有意义，调度形状只影响优化方差；2310.19075 的 Theorem 2.3 证明 scale-time 变换族恰好等于全部 Gaussian 路径，采样侧调度只改轨迹参数化；2306.06626 则在 (a_t,m_t) 空间以动能选路径，三者构成「调度理论-实践鸿沟」的两块拼图。（证据：2303.00848, 2310.19075, 2306.06626）
+
+**T08 OT-CFM 与 minibatch OT 耦合** — 本课题围绕 OT-CFM 中 minibatch OT 耦合的统计偏差与计算瓶颈展开。奠基工作（2302.00482、2304.14772）确立 batch 内 OT 配对可拉直流、降低低 NFE 采样误差，但 Fatras 等（1910.04091）早已指出 minibatch OT 的期望 plan 非最优且失去度量性质。后续修正沿五条路线分化：跨 batch 记忆（2603.15279）、扩大 batch（2506.05526）、半离散全局化（2509.25519）、成本函数设计（2503.10636、2405.14780、2306.15030）、离散/任务耦合扩展（2411.00759、2310.03725）。Boïté 等（2605.12174）给出期望 batch plan 的首个定量收敛速率，补上理论空白。当前共识是：OT 耦合的收益集中在低 NFE 区间，高 NFE 下收益消失甚至倒挂；分歧在于收益来源——是路径拉直（OT 最优性）还是噪声-数据分离（immiscibility，2406.12303），以及 batch 有限导致的偏差是否值得用更大计算开销修正。
+
+- OT 耦合的 FID 收益几乎全部集中在低 NFE 区间，高 NFE 下收益消失甚至倒挂。 OT-CFM 在 CIFAR-10 上 1000 Euler NFE 时 FID 3.741 差于 I-CFM 3.643（2302.00482 Table 5）；LOOM-CFM 在 dopri5 下 4.41 差于 OT-CFM 3.57（2603.15279 Table 1）；Zhang 等报告 n=2048 在 Dopri5 下 5.89 差于 I-FM 5.55（2506.05526 Table 1）；Boïté 等 Proposition 4.3 与 Figure 7 明确量化了增大 batch 只改善低 NFE 采样。（证据：2302.00482, 2304.14772, 2603.15279, 2506.05526, 2605.12174）
+- minibatch OT 的期望 batch plan 并非真 OT plan，偏差随 batch 增大以多项式速率消失，但维度诅咒仍然存在。 Fatras 等（1910.04091）首次指出平均 plan 非最优且失去度量性质；Boïté 等（2605.12174）证明半离散情形下成本偏差以 O(k^{-1/2})（紧支撑 O(k^{-1})）消失、plan 以 O(k^{-1/4}) 收敛；BoMb-OT（2102.05912）Theorem 3.4 显示逼近速率 n^{-1/N} 带维度诅咒。（证据：1910.04091, 2605.12174, 2102.05912）
+- 条件生成下无条件 minibatch OT 耦合系统性有害，需在成本矩阵中加入条件项修复。 C²OT（2503.10636）揭示 OT 耦合使训练先验被条件偏斜，8gaussians→moons 上 OT 的 W2² 达 0.462 而 FM 仅 0.059；LOOM-CFM（2603.15279）App. G 独立承认条件路径在 t=0 的边际必须等于 source，朴素加条件会引入采样偏差。（证据：2503.10636, 2603.15279）
+- 成本函数设计是独立于 batch 大小的杠杆：改变成本即可显著改善小 batch 耦合质量。 等变 FM（2306.15030）用群对齐不变成本将 LJ55 path length 从 7.53 降到 3.52；Metric FM（2405.14780）用黎曼度量将 Arch 上 EMD 从 0.6081 降到 0.0813；C²OT（2503.10636）仅改成本矩阵即修复条件偏斜。（证据：2306.15030, 2405.14780, 2503.10636）
+
+**T09 Rectified Flow 与轨迹拉直** — 本课题围绕 Rectified Flow 的「轨迹拉直」机制展开，核心张力是「直」与「最优传输」的关系。2209.03003 提出 reflow 迭代拉直轨迹，但仅证明直是 c-最优的必要条件；2209.14577 试图用梯度场约束补充分性，后被 2505.19712 构造反例指出其定理需连通支撑假设，且损失趋零不蕴含最优。正面理论由 2410.14949 给出：1-RF 在近单峰高斯混合下直且 Monge 最优，并建立 W2 离散误差界 γ_{2,T}/T²。经验线从 2309.06380（InstaFlow）确立「reflow+distill」工业范式，到 2405.20320 论证「一轮即够、瓶颈在训练」，再到 Rectified_Diffusion_Straightness_Is_Not_Your_Need 主张直线度本身非本质、配对重训才是核心。工程支线包括 PeRFlow 分段 reflow、BOSS 最优步长拉直、CAF 常加速度流、HRF 层级速度建模、VRFNO 噪声优化配对。当前共识是：reflow 的价值在于改善耦合的可学习性而非几何直线度；分歧在于耦合最优性是否可达、直线度是否可作为 few-step 质量的代理指标。
+
+- reflow 的「直」与 OT 最优性之间存在不可消除的鸿沟，梯度约束也无法完全弥合。 2209.03003 的 Thm 3.8 仅证明直耦合是 c-最优的必要条件；2209.14577 试图用梯度场约束补充分性，但 2505.19712 构造了支撑不连通的反例，证明非最优不动点存在且损失趋零不蕴含最优（Cor. 17 中 loss<eps 但 E||X1^c-X0^c||²>4-eps）。（证据：2209.03003, 2209.14577, 2505.19712）
+- 经验研究逐步将 reflow 的收益从「直线度」重新归因于「确定性配对与数据复用」。 2405.20320 论证一轮 reflow 即近乎直、瓶颈在训练技巧；2507.10218 的 Sec. 2.2 将 reflow 起效归因为确定性配对与多时刻数据复用；Rectified_Diffusion_Straightness_Is_Not_Your_Need 进一步主张直线度本身非本质。（证据：2405.20320, 2507.10218, Rectified_Diffusion_Straightness_Is_Not_Your_Need）
+- 分段拉直与最优步长调度将「全局拉直」转化为「给定预算下的分段线性化」，与曲率均分原则一致。 BOSS 用动态规划求 K 步 Euler 最优非均匀步长再分段拉直；PeRFlow 均匀切 4 窗做短程 reflow；2410.14949 的 Thm 2 表明 W2 误差由最坏区间的 γ_{2,T} 决定，暗示最优窗界应使各区间曲率相等。（证据：2312.16414, 2405.07510, 2410.14949）
+- 放弃常速均值场假设的支线（CAF、HRF）表明 few-step 质量的瓶颈是耦合可学习性而非几何直线度。 CAF 用常加速度二次曲线+初速度条件化，CIFAR-10 一步 FID 4.81；HRF 在速度空间再学一层 rectified flow 建模多模态速度分布，CIFAR-10 5 NFE FID 30.9 vs RF 36.2。两者均不追求 OT 最优，而是提高耦合的可学习性。（证据：2411.00322, 2502.17436）
+
+**T10 一致性模型与少步蒸馏的 OT 视角** — 本课题解决的核心问题是：少步生成模型（一致性模型、分布匹配蒸馏、对抗蒸馏）的训练目标与噪声-数据耦合选择如何影响其与教师/数据分布之间的 Wasserstein 距离。方法谱系呈现三条演进线：一致性线（CM→iCT→CTM→sCM→Shortcut）从逐点回归走向连续时间与两时间 flow map，FMM 与 Li 等给出 W2/W1 上界与步数下界；分布匹配线（DMD→DMD2→SiD→VDOT）从 KL+回归锚定走向纯 GAN 匹配再到熵正则 OT 距离；对抗线（ADD→ASD）把判别器统一为 IPM/W1 对偶。当前共识是：蒸馏损失可被形式化为分布差异最小化，且耦合选择决定训练目标偏差（Issenhuth 的 R(θ) 公式）。分歧在于：GAN+真数据带来的'超越教师'是忠实蒸馏还是分布漂移（DMD2 FID 1.28 但 recall 下降；CTM recall 0.57 vs CD 0.63），以及 OT 耦合的收益在 batch=4 时是否实质（VDOT 消融中 OTD 边际贡献仅 0.2–3.9 个百分点）。
+
+- 一致性训练的理论分析从逐点 l2 损失转向 Wasserstein 距离最小化，且蒸馏与免蒸馏情形的估计率存在维度依赖差异。 Dou 等把 CM 训练形式化为 W1 最小化，蒸馏情形估计率 n^{-1/(2(d+5))}，免蒸馏情形 n^{-1/d}；Li 等给出免教师 CT 的 W1 步数下界 O(L_f^3 d^{5/2}/ε)，其中 d^{3/2} 来自 T1 项、d^{5/2} 来自 T2 项。（证据：Theory_of_Consistency_Diffusion_Models, 2402.07802）
+- CT 与 CD 的差异在连续时间极限不为零，根源是独立耦合的单样本 score 估计方差，换耦合可同时降低偏差与传输成本。 Issenhuth 证明 R(θ) 由耦合决定，OT 耦合（无碰撞）使其为零；iCT 用 Pseudo-Huber 与对数正态调度压制方差，CIFAR-10 一步 FID 2.51 首次反超 CD 的 3.55。（证据：2406.09570, 2310.14189）
+- GAN+真数据的对抗项是少步蒸馏质量提升的主因，但代价是 recall 下降与耦合漂移，FID 无法区分忠实蒸馏与分布漂移。 DMD2 去掉 ODE 回归后一步 ImageNet-64 FID 1.28 超越教师；CTM 加 GAN 后 FID 1.92 但 recall 从 CD 的 0.63 降至 0.57；ADD 消融中仅对抗项 FID 20.8，加蒸馏项仅改善 0.2。（证据：DMD2_Improved_Distribution_Matching_Distillation, 2310.02279, 2311.17042）
+- OT 距离作为蒸馏目标的边际贡献在极小 batch 下有限，且作用位置（score 空间 vs 数据空间）影响其几何约束效果。 VDOT 在 score 空间算熵正则 OT，batch=4 时 OTD 项消融差距仅 0.2–3.9 个百分点，GAN 项退化幅度更大；DMD 的回归项是唯一耦合锚，但 DMD2 删掉后 FID 反而更好。（证据：2512.06802, 2311.18828）
+
+**T11 免训练采样器与 ODE 求解器** — T11 课题解决的核心问题是：在冻结预训练扩散模型的前提下，如何用极少数 NFE（≤20，目标 5–10）逼近或替代数百步采样。方法谱系经历了三个阶段：2020–2022 年从 DDIM 的一阶确定性化，到 DPM-Solver/DEIS 独立发现半线性结构并用 log-SNR 域指数积分把 NFE 压到 10–20；2022–2023 年 DPM-Solver++/UniPC/DPM-Solver-v3 解决参数化选择与预测-校正格式的稳定性问题；2023 年后出现两条分叉——轨迹几何路线（AMED 发现轨迹近似 2D 子空间，GITS/TORS 刻画回旋镖形与曲率/挠率集中）与调度优化路线（AYS 的 KLUB、LD3 的可微端点误差、DM-NonUniform 的全局离散误差、OSS 的最优子结构 DP、GITS 的截断误差 DP）。当前共识是：低 NFE 下误差主要由轨迹曲率与调度失配主导，而非求解器阶数不足；分歧在于逐点跟踪真 ODE 轨迹是否可行——S4S 论证其原理上不可行，LD3/EPD 用软教师强制或 RL 放弃逐点匹配，而 OSS 仍坚持端点跟踪。免训练与 solver 蒸馏的边界正在模糊：AMED/BNS/LD3/S4S/EPD 均需少量教师轨迹或轻量优化，严格零训练的方法（PFDiff、TORS、F-scheduler）在 guidance 场景或结构感知上有独特优势。
+
+- 低 NFE 下误差主要由轨迹曲率与调度失配主导，而非求解器阶数不足，这一判断在多个独立路线中反复出现。 AMED 发现轨迹近似躺在 2D 子空间（2-PC 投影误差 ≤8%），GITS 进一步刻画回旋镖形轨迹且曲率/挠率峰值集中在采样时间约 4（弧长 7000–8250）；UniPC 的 Table 4 显示盲目提高阶数（123456）使 FID 恶化到 60.99，而 1223334 得 6.29，差距近 10 倍；TORS 用 Frenet–Serret 总旋转等分调度在 Flux 10 步达到 20 步基线 HPSv2。（证据：2312.00094, 2506.10177, 2302.04867, 2603.00763）
+- 调度优化是 2024–2025 年的主战场，五条独立路线从不同泛函出发但收敛到相似结论：跨样本共享调度足够，且调度对求解器高度专属。 AYS 用 Girsanov KL 上界（CIFAR-10 10 NFE FID 5.07→2.98），LD3 用可微端点 LPIPS 误差（iPNDM 4 NFE 35.04→9.31），OSS 用最优子结构 DP（Flux 10 步保留 GenEval 99.4%），DM-NonUniform 用全局离散误差约束优化（CIFAR-10 5 NFE UniPC 12.11 vs 23.22 uniform-λ）。LD3 Table 8 显示调度跨求解器使用 FID 从 13.86 变 42.44 甚至 231.00，说明调度与求解器结构强耦合。（证据：2404.14507, 2405.15506, 2503.21774, 2402.17376）
+- 逐点跟踪真 ODE 轨迹在低 NFE 下原理上不可行，这一论断将 solver 蒸馏与免训练求解器划出清晰边界。 S4S 明确论证低 NFE 下逐点跟踪不可行，只能追求端点/分布层面对齐，5 NFE 达 CIFAR-10 FID 3.73；LD3 的软教师强制在训练时允许初值在 rσ_T 球内移动，本质是承认逐点匹配不可能；EPD 的 Stage 2 明确放弃跟踪教师轨迹改为优化下游奖励，求解器不再逼近任何 PF-ODE 解。（证据：S4S_Solving_for_a_Fast_Diffusion_Model_Solver, 2405.15506, 2512.22796）
+- 严格零训练方法与轻量蒸馏方法的边界正在模糊，但零训练方法在 guidance 场景和结构感知上有不可替代的优势。 PFDiff 零参数零训练，在 guided ImageNet-64 DDIM 4 NFE FID 138.81→16.46，增益随 guidance 增大而增大（CFG 1.5 vs 7.5）；F-scheduler 配合 Free-U 与 β-VAE 噪声容忍，6 步 1024² 采样 FID 超过部分蒸馏模型；TORS 是调度优化五路线中唯一不含任何优化/学习步骤的方法。相比之下 AMED 需 9k 参数 2–8 分钟训练，BNS 需 520 条教师轨迹。（证据：2408.08822, 2510.02390, 2603.00763, 2312.00094）
+
+**T12 推理阶段的 OT 对齐与噪声-样本耦合** — 本课题解决推理阶段「噪声从哪来」的问题：标准扩散采样假设初始噪声独立同分布地取自高斯先验，但大量工作表明通过改变噪声与条件（提示/图像）的耦合、或噪声与噪声的耦合，可以在不重训模型的前提下提升偏好分、FID 或运动一致性。方法谱系沿两条轴演进：一是「改耦合 vs 保边缘」的张力，从 InitNO/ReNO 的逐例梯度优化（承认漂移、单样本 KL 约束），到 NPNet/NoiseRefine 的离线学习一次映射（改边缘但未度量），到 NoiseQuery/Ma et al. 的离散检索/搜索（改边缘最彻底），再到 AOT/Immiscible 的训练侧置换指派（严格保边缘）与 HIWYN/Go-with-the-Flow 的跨帧噪声传输（保空间边缘、改时间耦合）；二是「在线优化 vs 离线预计算」的效率轴，从每图 20–50 s 的 ReNO 到 0.002 s 的 NoiseQuery 检索。当前共识是：噪声初值携带可跨模型复用的语义/结构先验（The Emergence of Reproducibility），且置换指派是唯一在人口层面构造性保持高斯边缘的实例级方法。分歧集中在：边缘漂移是否可忽略（Improved Immiscible 声称可忽略但 KL 估计器本身有偏；NPNet 未度量；ReNO 把「推离零均值」当多样性来源）、以及增益是否来自 verifier 同源循环（NPNet、NoiseRefine、NoiseQuery 均用 CLIP 系指标筛选与评测）。
+
+- 「改耦合 vs 保边缘」的张力在训练侧与推理侧各自内部复现，形成同一二分法的两个镜像。 Improved Immiscible 在训练侧明确区分线性指派（严格保高斯）与 KNN top-1-of-k（不保高斯），并选择后者；AOT 在 Sec. 4.2 用两句话说明置换保持分布、从采样噪声中选会破坏高斯性；NoiseQuery 的共享库 top-1 检索则是推理侧「改边缘最彻底」的实例，同一提示永远得到同一噪声。（证据：2505.18521, 2403.05069, 2412.05101）
+- 学习式连续映射（NPNet/NoiseRefine）与离散检索/搜索（NoiseQuery/Ma et al.）在 verifier 的 g–h 分解上呈两极分化。 NPNet 的位移几乎与提示无关（α=10⁻⁴，去掉文本嵌入只损失 ImageReward 65.01→62.14，随机提示反而训出更好模型），说明主要学到通用分量 g；NoiseRefine 的位移随提示改变布局（Fig. 9、Fig. 26），h 分量强；InitNO 的首步注意力分依赖主体 token 与噪声布局，预期 ‖g‖/‖h‖ 很小。三者构成 g–h 谱系的两端与中间。（证据：2411.09502, 2412.03895, 2404.04650）
+- 边缘漂移的度量在本课题内系统性缺失，唯一例外是 HIWYN 的保边缘构造与 Improved Immiscible 的 KL 估计（但后者估计器本身有偏）。 HIWYN 按构造保证单帧边缘精确为 i.i.d. 高斯（Fig. 3 协方差为单位阵），但 Table 1 显示相关噪声的 FID 从 74.75 升到 92.63，说明保边缘不等于保分布质量；Improved Immiscible 报告真高斯样本的 KL 估计为 48.25（理论应接近 0），48.25→48.60 的差别无法解释为可忽略；ReNO 的 χ_d 正则只固定范数不约束方向，全文无噪声范数/方向统计。（证据：2504.03072, 2505.18521, 2406.04312）
+- 噪声↔样本映射的跨模型一致性使离线预计算的耦合成为可复用资产，但也使漂移跨模型累积。 NoiseQuery 用 SD 2.1 建的噪声库可零样本迁移到 SD 1.x/PixArt-α/SD-Turbo（Table S1）；NPNet 在 SDXL 上采集的噪声对可迁移到 DreamShaper/LCM/PCM，Hunyuan-DiT 仅需 600 对微调；但 NoiseQuery 的跨模型迁移收益很小（PickScore +0.05–0.12），说明一致性在高维 latent T2I 上可能弱于原始研究设置。（证据：The_Emergence_of_Reproducibility_and_Consistency_i, 2412.05101, 2411.09502）
+
+### 6.3 板块 C：跨域生成与翻译
+
+**T13 神经 OT 映射与无配对图像翻译** — 本课题解决神经 OT 映射的学习与无配对图像翻译问题，核心张力在于：如何在无配对数据下学到既保真又多样的映射，同时克服 max-min 训练的不稳定性。方法谱系从 Korotin 系 W2 benchmark（2106.01954）确立「map 精度与生成质量不相关」的实证起点，经 OTM（2110.02999）与 NOT（2201.12220）建立 max-min 骨架，随后分化为三条修复路线：一是改 cost 注入结构（Kernel NOT 2205.15269、General Cost Functionals 2205.15403、Extremal 2301.12874），二是松弛边际约束走 unbalanced 分支（UOTM 2305.14777、UOT-FM 2311.15100、UOTM-SD 2310.02611、CUOTM 2603.06972），三是用正则或替代目标稳定训练（Monge Gap 2302.04953、ENOT 2403.03777、DIOTM 2410.03783、OTP）。当前共识是：max-min 鞍点存在 spurious solution 且训练易发散，FID 不能作为 map 精度的代理指标。分歧在于：unbalanced 化归（UOT-FM）与半对偶调度（UOTM-SD）谁更可扩展，以及确定性 map 与随机 plan 在翻译任务中的适用边界。
+
+- max-min 半对偶框架的 spurious solution 问题被多篇论文独立发现并给出不同修复路径。 NOT 承认鞍点解集含非 OT map（Sec. 6）；Kernel NOT 证明 γ-weak 二次 cost 下所有条件均值正确的函数都是 fake solution（Theorem 1）；OTP 针对强 cost 给出恢复真 map 的充分条件；DIOTM 用 HJB 正则稳定训练。（证据：2201.12220, 2205.15269, Overcoming_Spurious_Solutions_in_Semi_Dual_Neural, 2410.03783）
+- FID 与 map 精度脱节，benchmark 上的 L2-UVP 才是 map 质量的可靠度量。 W2 benchmark 显示 QC 方法 map 完全错（UVP 88.2%）却生成好，W2 方法 map 准却生成差；ENOT 在 W2 benchmark 上报告 L2-UVP 从 0.02 到 0.67（D=2..256）；Monge Gap 提出用 Monge gap 作为免训练诊断工具。（证据：2106.01954, 2403.03777, 2302.04953）
+- unbalanced 分支从半对偶生成模型演进为可即插即用的化归框架，但 τ 敏感性是共同痛点。 UOTM 首次将 UOT 半对偶做成生成模型（CIFAR-10 FID 2.97），但 Fig. 7 显示 τ 过小或过大都崩；UOT-FM 证明 unbalanced map 可化归为重缩放边际的 balanced 问题（Prop. 3.1）；UOTM-SD 用 α 调度缓解 τ 敏感（FID 2.51）；CUOTM 在条件场景下仍报告 τ 高度敏感。（证据：2305.14777, 2311.15100, 2310.02611, 2603.06972）
+- cost 设计是注入任务先验的主要手段，从 weak cost 到 kernel cost 再到 extremal transport 形成谱系。 NOT 用 γ-weak cost 控制一对多多样性；Kernel NOT 改用特征核 cost 后 128px 翻译 FID 从 25.97 降到 15.16；Extremal 把翻译形式化为到 Supp(Q) 的最近邻（incomplete transport 极限）；General Cost Functionals 统一为任意凸泛函 F(π)。（证据：2201.12220, 2205.15269, 2301.12874, 2205.15403）
+
+**T14 扩散桥 / Schrödinger 桥的图像到图像翻译** — T14 课题解决的核心问题是：如何把图像到图像翻译（I2I）建模为给定端点耦合下的扩散桥或 Schrödinger 桥，并在推理速度与翻译质量之间取得平衡。方法谱系从 BBDM（2205.07680）的 latent Brownian bridge 与 I2SB 的 Dirac delta 桥奠基，经 DDBM（2309.16948）用 Doob h-transform 统一 VE/VP 桥并实现 simulation-free 训练，到 UniDB（2505.21528）用随机最优控制（SOC）把 h-transform 解释为终端惩罚 γ→∞ 的特例，形成统一框架。加速线分两支：免训练的 DBIM（2405.15885）与 UniDB++ 给出非马尔可夫 ODE 采样器，训练式的 CDBM（2410.22637）与 LBM（2503.07535）用一致性蒸馏压到 1–2 NFE。非配对线从 DDIB（2203.08382）的 latent 拼接，到 UNSB 与 ASBM 的对抗式 SB 求解。当前共识是：配对桥在保真度上优于条件生成，随机桥优于确定性直线（DDBM Sec. 5、LBM 消融、I2SB Table 6 一致指向熵正则强度是质量旋钮）；分歧在于加速路线（免训练 vs 蒸馏）与终端耦合保持（CDBM Proposition 3.2 只保 PF-ODE 解映射，不保耦合）。
+
+- 随机桥（有限熵正则）在翻译质量上系统性优于确定性直线/ODE 极限，熵正则强度是可调的跨域质量旋钮。 DDBM Sec. 5 指出纯 ODE 输出发糊、Fig. 4 显示注入噪声改善 FID；I2SB Table 6 的 OT-ODE 消融与 BBDM Table 5 的 s 扫描（s=1 时 FID 最低、Diversity 单调升）都表明噪声强度与质量/多样性存在非单调权衡。（证据：2309.16948, I2SB_Image_to_Image_Schr_dinger_Bridge, 2205.07680）
+- 免训练采样加速（DBIM/UniDB++）与训练式蒸馏加速（CDBM/LBM）是两条平行路线，前者受限于预训练桥模型上限，后者引入额外训练代价且不保证终端耦合保持。 DBIM 在 ImageNet 修复 20 NFE 达 FID 4.07 胜 DDBM 500 NFE 的 4.27（25×），但作者承认不能超过预训练桥模型上限；CDBM 的 CBT 2 NFE 达 E→H FID 0.80，但 Proposition 3.2 只保证一致性函数逼近 PF-ODE 解映射，无终端耦合陈述；LBM 摘要无数字，单步蒸馏后是否仍是桥未谈。（证据：2405.15885, 2410.22637, 2503.07535）
+- Doob h-transform 桥（DDBM/GOUB）在 SOC 视角下是终端硬约束的极限情形，有限终端惩罚 γ 提供端点松弛的新设计轴。 UniDB 把 h-transform 解释为 SOC 中 γ→∞ 的特例，有限 γ 时端点不再被精确钉住；DDBM 的 VE/VP 桥与 GOUB 的 OU 型桥都被收为同一机制的不同参考过程选择，但 UniDB 摘要未量化有限 γ 下'改善细节'与'偏离配对目标'的权衡。（证据：2505.21528, GOUB_Generalized_Ornstein_Uhlenbeck_Bridge, 2309.16948）
+- 非配对翻译线（DDIB/UNSB/ASBM/LSB）的耦合学习与最优性验证是共同空白，各方法均未在可算 ground-truth EOT 的基准上量化耦合误差。 UNSB 摘要无定量结果，非配对 SB 学到的耦合与真 EOT 耦合的偏差未量化；ASBM 只在 CelebA 128 一个数据集有报告，D-IMF 的耦合误差未测；LSB 的三预测子分解依赖强假设，免训练近似离 SB 多远无验证。（证据：UNSB_Unpaired_Neural_Schr_dinger_Bridge, ASBM_Adversarial_Schr_dinger_Bridge_Matching, Latent_Schr_dinger_Bridge）
+
+**T15 医学影像模态转换与 OT/SB/扩散** — T15 课题解决的核心问题是：在医学影像模态转换中，如何把解剖/病理/物理约束显式注入 OT/SB/扩散框架，以抑制像素级指标无法暴露的解剖漂移与幻觉。方法谱系呈现三条演进线：一是从 I2SB 配对桥直接落地（DSBM、SelfRDB、HA-DSB），增量在条件化与噪声调度；二是从 UNSB 无配对桥出发加解剖护栏（ACSB、FGSB、TDSB/PASB），增量在架构、损失与先验注入；三是 OT 作为弱监督匹配器或理论骨架（OT-StainNet、OT-cycleGAN、PaBoT），增量在对应关系发现与路径正则。当前共识是：像素指标与任务指标（剂量学、病灶 Dice、下游分割）排序不一致，医学桥必须补任务级验证；配对桥中随机性是净损害，少步或确定性路径几乎无代价。分歧集中在解剖保真的实现层：LMSB 主张改传输成本度量，ACSB 主张改架构与频率损失，FGSB 主张 mask 加权损失，PaBoT 主张路径长度正则，尚无统一理论说明哪种先验注入方式在解剖等价类上最优。
+
+- 像素指标与任务指标在医学 SB/扩散翻译中排序不一致，且像素改善常被任务层持平或反转。 DSBM 的 MAE 降 5 HU 仅换来 gamma 通过率 +0.1 个百分点（N=12，无显著性检验）；FGSB 在 CAVAS 上 PSNR 低于 I2I-Mamba（25.95 vs 26.04）但病灶 Dice 高 0.109（0.421 vs 0.312）；MOTFM 显示 DDPM(50) 合成数据训练的分割器 HD 达 133.18，而真图仅 15.02，FID 差距远小于此。（证据：2404.11741, 2501.14171, 2503.00266）
+- 配对医学桥中随机性是净损害，少步或确定性路径几乎无下游代价。 DSBM 1-step MAE 73.00 HU 已接近 3-step 72.30，50-step 反而退到 73.29；FGSB 的 NFE=5 时 Dice 0.381，NFE=10/20 不升反降；I3SB 通过非马尔可夫重参数化在自然图像上以 25 步达到 100 步 I2SB 的 FID 并加速 4×，但医学只加速 1.4–2×，作者归因于端点假设。（证据：2404.11741, 2501.14171, 2403.06069）
+- 解剖保真的实现层存在四种竞争路线，均缺乏解剖等价类上的形式化保证。 LMSB 学潜度量再训 SB，但潜度量由可逆网络数据驱动学习，无解剖不变性保证；ACSB 靠 AC-ViT 架构与焦点频率损失，但同区增益仅 0.001 SSIM、0.1–0.3 dB 量级；PaBoT 用逐层 Jacobian 路径长度正则，头部骨 Dice 0.84 vs SynDiff 0.81，但骨轮廓生成器的监督来源未交代；FGSB 用病灶 mask 加权损失，病灶 Dice 提升 0.082 但 PSNR 仅 +0.23 dB。（证据：Harmonizing_Optical_Coherence_Tomography_Across_De, Anatomy_Conserving_Unpaired_CBCT_to_CT_Translation, 2505.03114, 2501.14171）
+- 医学桥的排名对数据分布极敏感，同一方法在不同数据集上结论可反转。 HA-DSB 在全身 LAVA→T2 数据上报告 SelfRDB 低于 I2SB（SSIM 84.9 vs 84.6），与 SelfRDB 原文在 IXI/BRATS 上比 I2SB 高 8.93 dB 的结论相反；FGSB 的 MT-Net 基线预训练数据远多于训练集却表现最差，暗示复现或微调问题。（证据：2607.07401, 2405.06789, 2501.14171）
+
+**T16 OT 代价先验引导的跨域语义对应** — 本课题解决的核心问题是：如何用最优传输（OT）的代价与耦合先验，替代或校正跨域语义对应中的局部贪心匹配（softmax attention、最近邻、均值聚合），以缓解 many-to-one 错配、prompt 坍缩与属性串扰。方法谱系呈现三条演进线：线 A（判别式对应）从 SCOT 的显著性边际 balanced OT，经 UNITE 的不平衡 OT 与质量学习、KPG-RL 的 keypoint 可行域约束，演进到 GWOT-SC 与 Shape-of-You 的几何结构代价（GW/FGW/3D）；线 B（attention 即 OT 接口化）从 Sinkformer 的 softmax 即 Sinkhorn 首轮迭代这一理论接口出发，经 PLOT 的 prompt 集合对齐、OTSeg 的多 prompt 双随机 cross-attention，演进到 STORM/ASAG/TP-Blend 在采样期操控 attention 传输结构；线 C（生成式引导）从 ICCC 2022 的可微 OT 引导损失，经 OTCS 的训练期耦合先验，演进到 STORM/ASAG/OTComp/OT-RF-Edit 的 training-free 采样期干预。当前共识是：OT 的全局质量守恒耦合确实能提供 softmax/最近邻所缺失的语义预算分配机制；分歧在于先验应注入何处——判别式对应线主张代价设计（几何/结构/3D），生成式引导线主张采样期 attention 干预，而 OTCS 证明训练期注入在改变生成分布本身时更根本。
+
+- OT 的边际约束是防止 many-to-one 错配与 prompt 坍缩的共同机制，但均匀边际在语义不守恒场景下会强制错配。 OTSeg 的 Table 5(b) 显示 naive cross-attention 比 MPSA 低 3% hIoU，多 prompt 直接堆叠反而有害（77.6 vs 84.3）；PLOT 证明 OT 对齐使多 prompt 各自运输到不同视觉特征，平均 1-shot 精度超 CoOp +3.03%。但 OTSeg 与 PLOT 均用均匀边际（μ=1/M/M, ν=1/N/N），UNITE 指出跨域分布偏差下 balanced OT 有害（SPADE+OT 比 SPADE+COS 差，FID 17.87 vs 16.32），ICCC 2022 的均匀边际 a_i=1/n, b_j=1/m 同样强制每个 prompt 获得等量 patch 分配。（证据：OTSeg, PLOT, UNITE, ICCC_2022）
+- 「attention 即 OT」的理论接口（softmax 是 Sinkhorn 首轮迭代）是线 B 所有工作的共同基础，但后续工作从替换归一化升级为采样期操控传输结构。 Sinkformer 形式化了 softmax attention 与熵正则 OT 的对应关系，OTSeg 的 MPSA 模块将其推广到多模态 cross-attention。STORM 与 ASAG 不再替换归一化，而是在去噪过程中用带空间/对抗代价的 OT 对 attention map 施加梯度引导：STORM 用方向性代价重定位 attention map（VISOR OA 61.01），ASAG 用对抗代价构造劣化分支（SDXL conditional FID 23.30）。（证据：Sinkformer, OTSeg, STORM, ASAG）
+- 代价先验可以替代特征先验：空间平滑性既可由 SD 特征 ensemble 提供，也可由 GW/FGW 结构代价直接编码进匹配算法。 GWOT-SC 用 DINOv2 单模型 + GW 匹配在 TSS 上超过 ToTF Fuse 12.6 个百分点（92.3），证明 SD 特征的核心价值是空间平滑性，该性质可被 GW 结构项吸收。Shape-of-You 进一步把结构项从 2D 特征空间搬到 3D 几何空间，用 FGW 显式融合外观与结构代价，SPair-71k 达 67.9% PCK@0.1，超过 DINOv2+SD 基线 4.4%p。（证据：GWOT-SC, Shape-of-You）
+- OT 先验的注入时机存在训练期与采样期的路线分歧：训练期注入改变生成分布本身，采样期注入是 training-free 的单次编辑干预。 OTCS 的 Theorem 1 证明把 OT 耦合写进条件分数匹配目标等价于从 π̂(·|x) 采样训练，避免了 SCONES 在噪声数据上求 H 梯度失效的问题，但需要重训模型。STORM 与 OT-RF-Edit 走 training-free 路线：STORM 在早期去噪步施加空间约束（Table 4），OT-RF-Edit 用闭式 OT 方向校正 rectified flow 轨迹（LPIPS 0.135→0.001），均不修改模型权重。（证据：OTCS, STORM, OT-RF-Edit）
+
+**T17 风格迁移与域自适应中的 OT×扩散** — 本课题解决的核心问题是：如何用最优传输（OT）度量或映射来改进风格迁移与域自适应中的分布对齐，尤其是当生成机制从优化式迁移转向扩散/流模型时，OT 应放在损失层、采样引导层还是模型迁移层。方法谱系呈现清晰的演进：损失层从 STROTSS 的 relaxed EMD 起步，经 Heitz 等的 sliced Wasserstein 损失，发展到 MS-SWD 的 CIELAB 多尺度感知度量；扩散机制层从 DDIB 的隐式 Schrödinger bridge 出发，OT-ALD 用显式 OT map 修正 latent 接口错配，SW-Guidance 把可微 SW 距离梯度注入采样循环，ModFlows 用 rectified flow 学公共中间分布；模型迁移层则出现半对偶 UOT 构造 GDA 中间域、类级 OT 匹配指导微调、以及 VLM 语义先验引导的 source-free 对齐。当前共识是 OT 作为分布匹配工具在风格/域迁移中有效，且 training-free 的 SW 类度量在感知任务上可匹敌训练过的深度度量。主要分歧在于：OT 应放在像素空间、特征空间还是 latent 空间；应作为损失、引导势函数还是显式传输映射；以及熵正则化对传输稀疏性和可解释性的代价是否可接受。
+
+- OT 从损失层向扩散采样引导层的迁移是课题内最清晰的演进路径，SW 类度量是贯穿这条路径的核心工具。 STROTSS 的 relaxed EMD 只是 EMD 的下界近似（均值 0.60），Heitz 等用 SWD 在 VGG 特征空间获得闭式可微解，MS-SWD 进一步升级为 CIELAB 多尺度度量（非对齐 SPCD 上 PLCC 0.841），SW-Guidance 最终把 SW-1 梯度注入扩散去噪循环（2-Wasserstein 0.0297，为所有基线最低）。（证据：1904.12785, 2006.07229, 2407.10181, 2503.19034）
+- DDIB 的 latent 桥接框架存在有限步数下的接口错配问题，显式 OT 修正与采样期约束注入是两条互补的改进路线。 OT-ALD 在 DDIB 两域 latent 接口处插入显式 OT map，平均提速 20.29%、FID 降 2.6；Scalable Motion Style Transfer 用关键帧流形约束梯度在采样期注入内容约束，FPD 从 0.2904 降至 0.1208；E-SUOT 的半对偶 UOT 则从分布传输角度绕开目标 PDF 估计，在 Portraits 上达 86.4%。（证据：2511.11162, 2312.07311, 2602.01179）
+- OT 在模型迁移层的应用从类级匹配扩展到分布级路径构造，但熵正则化对传输稀疏性的代价被反复提及。 WAT 用类级 OT 匹配指导扩散模型微调，E-SUOT 用半对偶 UOT 构造 GDA 中间域序列（MNIST 60° 上 51.0%，最优），OTA 用原型传输加 geodesic mixup 做 source-free 适配（HTER 平均相对改善 19.17%）。E-SUOT 作者明确承认熵正则可能模糊传输计划的稀疏性，影响可解释性。（证据：Wasserstein_Aware_Transfer_Class_Level_Alignment_f, 2602.01179, 2503.22984）
+- 公共中间分布加双射流的范式在像素空间和 latent 空间均有验证，但风格相似性与内容保真度之间存在一致的权衡。 ModFlows 用 rectified flow 学 RGB 到均匀立方体的双射，风格距离 0.123 高于 DAST d 的 0.112，但 Lipschitz 常数从 91.34 降至 37.26；OT-ALD 在 Cat→Dog 上 SSIM 0.470 低于 CUT 的 0.601；WaSt-3D 的 CLIP 相似度 84.40% 显著高于基线，但显存 16GB 高于所有基线。（证据：2503.19062, 2511.11162, 2409.17917）
+
+**T18 条件生成与 guidance 的 OT 形式化** — 本课题解决条件生成与 guidance 的 OT 形式化问题：一方面把条件耦合/条件 Wasserstein 距离理论化，另一方面用 OT 与控制论工具刻画 CFG 等推理时 guidance 的分布偏移。方法谱系呈现两条主线：训练侧条件耦合（2403.18705、2404.04240、2311.05672、2310.16975、2311.01226）与推理侧 guidance 修正（2409.13074、2403.01639、2408.09000、2503.02819、2409.08861）。训练侧从静态条件 Brenier 映射（2311.05672）演进到动态条件 Benamou-Brenier 表征（2404.04240），并出现条件加权代价的实践修复（2503.10636）；推理侧从证明 CFG 不采样 tilted 分布（2409.13074、2403.01639、2408.09000）演进到用 Feynman-Kac 权重或 memoryless SOC 精确修正（2503.02819、2409.08861）。当前共识是：joint W2 不控制 posterior W2，条件变量不应被传输（2403.18705、2404.04240）；分歧在于修正手段——训练侧约束耦合、推理侧加权修正、还是 W2 正则（2502.06061）各有代价与适用域。
+
+- 条件 OT 理论一致证明 joint W2 对条件分布差异不敏感，条件变量不应被传输。 2403.18705 证明 joint W2 只给出期望后验 W2 的下界，严格不等式在 Y 搬运存在时出现；2404.04240 的 Proposition 2(c) 给出 Gaussian 例子中 ρ≠0 时 joint W2 仍可为零；2311.05672 取 T_Y=Id 明确不传输条件变量。（证据：2403.18705, 2404.04240, 2311.05672）
+- 无条件 minibatch OT 在条件生成中系统性有害，表现为训练先验被条件偏斜。 2503.10636 的 Table A3 显示 OT 配对的类别可预测率在高维仍达 20.1%，C²OT 通过成本矩阵加条件项修复；2403.18705 指出经验测度序列的最优条件计划不保证收敛（Example 1）；2311.05672 的 Π_Y 约束正是保证 Y 边缘不被传输的数学表述。（证据：2503.10636, 2403.18705, 2311.05672）
+- CFG 不采样 tilted 分布，其动力学可分解为条件退火与 Langevin 校正两部分。 2408.09000 的 Theorem 3 给出 CFG 等价于条件 DDIM 预测加 gamma-powered Langevin 校正，γ'=2γ-1；2409.13074 证明样本堆向支撑集边界而非条件似然最大化点；2403.01639 证明 guidance 提升分类置信度但降低微分熵。（证据：2408.09000, 2409.13074, 2403.01639）
+- 推理时精确修正 CFG 偏移需要额外机制，FKC 加权与 memoryless SOC 是两条互补路线。 2503.02819 用 Feynman-Kac 权重精确采样退火/乘积分布，修正 CFG 中间分布失配；2409.08861 证明 memoryless 噪声调度 σ(t)=√(2η_t) 是消除初值 value-function 偏差的充要条件；2409.13074 的 Theorem 3 证明 score 有误差时加大 w 必然逸出支撑集，为修正方法提供动机。（证据：2503.02819, 2409.08861, 2409.13074）
+
+### 6.4 板块 D：模态扩展
+
+**T19 视频生成与时序一致性中的 OT/流** — 本课题解决视频生成中时序一致性与推理效率的张力，方法谱系沿三条主线演进：蒸馏主线（CausVid 的 KL-DMD 4步因果学生、Self-Forcing 的 self-rollout 修正曝光偏差、TDM 的轨迹分布匹配、VDOT 的 OT 距离补充几何约束、T2V-Turbo 的奖励反馈、APT/AAPT 的对抗后训练）、生成公式主线（Pyramidal Flow 的分辨率金字塔分段流、Flowception 的离散帧插入概率路径、FrameBridge 的 data-to-data 桥过程、LTX-Video 的高压缩 VAE+RF）、噪声耦合主线（HIWYN 的 ∫-noise 保边缘传输方程、Go-with-the-Flow 的实时实现）。当前共识是少步蒸馏必然引入运动退化（AAPT 的 Dynamic Degree 从 52.52 降至 42.44；StreamDiT 蒸馏后 Temporal Flickering 下降），且训练-推理分布不一致是根本障碍（Self-Forcing 的核心论点）。分歧在于用什么距离匹配分布：KL-DMD 系（CausVid）面临 zero-forcing 多样性下降，对抗系（APT）保真度提升但结构退化，OT 系（VDOT）试图用 Sinkhorn 几何约束补两者之短，但尚未在视频上完成系统消融。噪声耦合线证明保边缘的帧间相关噪声可降低 warp error（10.00→2.50×10⁻³），但代价是 FID 上升（74.75→92.63），且仅在像素空间模型有效。
+
+- 少步蒸馏在视频上普遍导致运动退化，且退化程度与蒸馏目标选择相关 AAPT 一步生成使 Dynamic Degree 从 52.52 降至 42.44（Table 1）；StreamDiT 蒸馏后 Temporal Flickering 从 0.9671 降至 0.9649、Motion Smoothness 从 0.9861 降至 0.9831（Tab. 2）；LTX-Video 作为未蒸馏的 20 步 RF 基线，其高压缩 latent 空间可能进一步放大蒸馏中的运动信息损失。（证据：2506.09350, 2507.03745, 2501.00103）
+- 训练-推理分布不一致是视频自回归/流式生成的核心障碍，self-rollout 或 student-forcing 是必要修正 Self-Forcing 指出 CausVid 的 DF 训练输出与推理分布不匹配，改用 self-rollout 后 VBench Total 84.31 超过 Wan2.1 的 84.26；AAPT 用 student-forcing 在对抗框架内消除同一 gap，1440 帧 Temporal Quality 达 89.79；CausVid 作者自认残留曝光偏差，其每 chunk 独立从高斯初始化、帧间无噪声耦合。（证据：2506.08009, 2506.09350, 2412.07772）
+- 保边缘的帧间噪声耦合可显著降低 warp error，但以分布质量下降为代价，且仅在像素空间模型上有效 HIWYN 的 ∫-noise 将 appearance transfer warp error 从 10.00 降至 2.50（×10⁻³），但 FID 从 74.75 升至 92.63、Precision 从 0.719 降至 0.661（Table 1）；作者承认在 latent 扩散模型上收益有限，Go-with-the-Flow 需通过微调模型解决。（证据：2504.03072, 2501.08316）
+- 蒸馏目标的选择在视频上产生实质性差异：KL-DMD 多样性下降、对抗保真度提升但结构退化、OT 距离尚未完成系统消融 CausVid 作者自认 DMD 目标导致输出多样性下降（Sec. 6）；APT 一步视频视觉保真度 +10.4% 但结构完整性 -38.5%（Table 4）；TDM 用数据自由的反向 KL 在 CogVideoX-2B 上 4 NFE 达 VBench 81.65 超过教师 80.91，但未报告时序一致性子指标。（证据：2412.07772, 2501.08316, 2503.06674）
+
+**T20 3D/点云/几何生成中的 OT 与流** — 本课题解决 3D/点云/几何生成中 OT 与流的三个核心问题：噪声-数据耦合如何影响轨迹可学性、非结构化 3D 表示如何被规整为可生成形式、以及 OT 度量如何作为训练损失或几何正则器。方法谱系呈现两条主线：生成主干线从 PSF 的 rectified flow 移植，到 NSOT 对 equivariant OT 耦合的系统检验，再到 WFM 将问题搬到 Wasserstein 空间；表示线从 GaussianCube 用线性指派规整 3DGS，到 GHAP 在 Gaussian 混合空间做 OT 约简，再到 OT geometry image 的保面积参数化。当前共识是：exact OT 在大点云上计算不可行，但完全放弃 OT 耦合又损失轨迹拉直收益；分歧在于 OT 应放在哪个环节——预处理（GaussianCube）、训练耦合（NSOT）、还是问题定义本身（WFM）。
+
+- exact OT 耦合在点云生成中面临计算成本与可学性的双重瓶颈，催生了从在线求解到离线预计算再到混合耦合的演进。 NSOT 报告 equivariant OT 在 batch size 1 时单次计算约 2.2 秒、比 independent coupling 慢超过 40 倍，而 PSF 完全避开显式 OT 配对、依赖 reflow 隐式改善配对；GaussianCube 的 exact 线性指派在 32768 点时需 2 分钟/物体，三者共同指向 exact OT 的 scaling 瓶颈。（证据：2502.12456, 2212.01747, 2403.19655）
+- OT 在 3D 生成中的角色从训练损失/耦合扩展到表示规整与几何正则，形成'预处理-训练-后处理'的全管线渗透。 GaussianCube 用 OT 线性指派把无序 Gaussians 规整进 voxel 网格（FID 从 21.41 降至 13.01），GHAP 用 composite transport divergence 做 Gaussian 混合约简（10% 图元保留率下 PSNR 仅降 0.473 dB），OT geometry image 用保面积 OT 参数化做神经压缩（CR=64 时 CD=0.059 vs NCS 0.083），动态 NeRF 用 W 距离约束时变形变一致性。（证据：2403.19655, 2506.09534, 2511.18679, Improving_Dynamic_NeRFs_with_Optimal_Transport）
+- rectified flow 在 3D 生成中成为默认骨干，但其 OT 潜力远未释放——多数工作仅用线性插值，未做显式耦合设计。 TripoSG 的 RF 训练用独立采样配对（Eq.9 中 ε 与 x0 独立），SplatFlow 同样只用直线概率路径、无 minibatch OT 或 reflow，PSF 虽引入 reflow 但未显式求解置换或 minibatch OT；三者均未检验 NSOT 提出的'OT 程度'问题。（证据：2502.06608, 2411.16443, 2212.01747）
+- 度量线（CD/EMD 谱系）与传输线（OT 耦合）在补全任务中合流，度量质量直接决定 OT map 的上限。 UOT-UPC 将 InfoCD 选为 neural OT 的最优 cost（单类别 AVG cd_l1×100 为 7.60），DCD 作为密度感知的折中度量位于该谱系起点，三者构成'修 CD 逼近 OT 性质→被反向消费为传输 cost'的闭环。（证据：2410.02671, InfoCD_A_Contrastive_Chamfer_Distance_Loss_for_Poi, Density_aware_Chamfer_Distance）
+
+**T21 分子与科学计算中的 OT 流生成** — 本课题解决的核心问题是：在分子与科学计算中，如何用流生成模型（flow matching / diffusion）实现高保真、高效率、可条件化的分布传输，以及 OT 耦合在其中扮演什么角色。方法谱系呈现三条演进线：一是从欧氏 rectified flow 到 SE(3) 流形上的 Riemannian FM（FoldFlow-SFM → FoldFlow-2），二是从标准 CFM 到不平衡/条件 FM（FlexDock、FlowDock），三是从简单先验到信息性 base 分布（FlowLLM、ET-Flow 的 harmonic prior）。当前共识是：直路径耦合（OT 或几何对齐）能稳定训练并降低 NFE，但并非无脑增益——OMatG 在 perov-5 上弯曲插值 match rate 是 linear 的 1.6 倍，Transferable Boltzmann Generators 明确给出可区分粒子多时 OT-FM 增益变小的 caveat。分歧集中在：OT 耦合是否以牺牲多样性为代价（FoldFlow-OT 新颖性 0.484 低于 SFM 的 0.544），以及等变架构是否必要（Proteina 用非等变 transformer 达到 99% designability，但等变性仅靠数据增强近似学习）。
+
+- OT 直路径耦合提升 designability 但可能压缩生成分布支撑，多样性-新颖性 trade-off 在多个系统中反复出现。 FoldFlow-OT designability 0.820 但新颖性 0.484，低于 FoldFlow-SFM 的 0.544；FoldFlow-2 通过序列条件化和数据扩展将 novelty 从 RFDiffusion 的 0.116 提升到 0.368，但未分析 OT 耦合本身对 diversity 的影响；FrameFlow 的 motif 扩展显示设计性指标会掩盖 mode collapse，Div. 聚类数才是关键。（证据：2310.02391, 2405.20313, 2401.04082）
+- 信息性 base 分布是流匹配相对扩散的独立加速维度，与 OT 耦合正交。 FlowLLM 用微调 LLM 输出作 base，积分步数从 FlowMM 的 1000 降到 250，稳定率从 4.65% 提升到 17.82%；ET-Flow 用 harmonic prior 替代高斯先验，8.3M 参数 5 步采样保持 SOTA；FlowMM 用 LogNormal 拟合晶格边长，把晶格拟合从复杂变换简化为微调。（证据：2410.23405, 2410.22388, 2406.04713）
+- 等变性与流形约束的工程简化决策在规模化场景中反复出现，形成与理论路线（SE(3) Riemannian OT）的竞争。 Proteina 明确放弃 SE(3) 流形上的 Riemannian OT，回到 Cα 坐标欧氏 rectified flow，理由是旋转流形上的生成过程未被很好理解；FlowMM 在环面上用均值减法处理平移不变性而非显式 OT；FlowDock 在 R^3 上工作，用 RMSD/TM-score 硬过滤替代 minibatch OT。（证据：2503.00710, 2406.04713, 2412.10966）
+- OT-FM 的增益边界条件开始被定量刻画，可区分粒子数、插值几何、数据规模均影响其相对优势。 Transferable Boltzmann Generators 引用 Klein et al. 结论指出可区分粒子多时 OT-FM 增益变小；OMatG 显示 perov-5 上 VP SBD 弯曲路径 match rate 83.06% 远超 linear 直路径的 51.86%；Proteina 用 20.9M 结构训练非等变模型超过等变基线，暗示数据规模可补偿等变归纳偏置的缺失。（证据：2406.14426, 2502.02582, 2503.00710）
+
+**T22 离散数据与文本中的扩散/流与最优传输** — 本课题解决离散数据（文本、DNA、代码）上扩散/流生成模型的核心瓶颈：如何定义前向腐蚀路径、如何选择训练目标、如何降低采样步数，以及 OT 在其中的角色。方法谱系分四阶段演进：D3PM 奠基结构化转移矩阵；SEDD/MDLM/MD4/RADD 把目标函数化简为加权交叉熵或 score entropy，使扩散 LM 首次在困惑度上逼近 AR；DFM/Edit Flows/Fisher-Flow 引入连续化或状态空间几何改造；SDTT/Di4C/DCD/CDLM/d3LLM/JYS 聚焦 few-step 加速与蒸馏。OT 的介入方式分三层：minibatch OT 耦合（2411.00759）、位置/序列级 OT（2506.13579、2412.14528）、以及把 OT 作为分布对齐损失（2402.17110、2402.12030）。当前共识是 masked/absorbing 前向过程在文本上最优，加权交叉熵是有效目标；分歧在于 OT 耦合是否带来超越启发式调度的增益，以及连续化路线（Fisher-Rao、argmax 投影）能否规模化。
+
+- 离散扩散的采样加速从蒸馏路线（SDTT/Di4C/DCD）演进到免训练调度优化（JYS）和解析桥监督（CDLM），但所有方法都受限于逐 token 独立更新的结构瓶颈。 SDTT 用跨时间自蒸馏把步数压到 16–32 步，但一次蒸馏超过 2 步就发散；Di4C 的 Theorem 1 证明 product model 的 TV 误差下界为 Ω(1/N)，说明独立分解的步数瓶颈是结构性的；Duo 的 DCD 通过 argmax 投影构造确定性轨迹实现 128× 加速，但该轨迹是 proxy 而非真实 PF-ODE；2602.15008 的 Theorem 2 进一步给出 τ-leaping 的 Ω(d log S) 算法相关下界。（证据：2410.21035, 2410.08709, 2506.10892, 2602.15008）
+- OT 耦合在离散扩散中的收益高度依赖成本函数设计和 source 分布结构，Hamming 距离在大词表下失效，embedding 成本或 multimask 构造才能释放 OT 的方差降低效果。 2411.00759 报告 Hamming 距离在大词表下效果有限，因为 source 与 target 序列共享匹配位置的概率低；其 multimask flow 通过引入 50257 个 mask token 扩展 source 支撑，使 OT 耦合从平凡变为有意义。2506.13579 的 DDOT 在位置空间用 1D 排序配对实现免训练 OT，OT 消融使 B2 从 15.7 降至 13.2。2402.12030 的 ULD 用均匀成本把 W1 退化为排序 L1，完全丢弃词表语义，被 MultiLevelOT 的 embedding 成本取代。（证据：2411.00759, 2506.13579, 2402.12030）
+- masked/absorbing 扩散的训练目标在 2024 年收敛为加权交叉熵，且与任意序自回归等价，这一等价性为后续 OT 耦合和蒸馏提供了理论接口。 MDLM 把 ELBO 化简为加权 MLM 交叉熵混合，在 LM1B 上达到 ≤27.04 PPL；MD4 独立推导相同结果并发现 cosine schedule 使 FID 从 70 降至 17；RADD 的 Theorem 2 证明 absorbing 扩散与 AO-ARM 严格等价；SEDD 的 score entropy 用 Bregman 散度替代 Fisher divergence，在 1BW 上达到 ≤32.79 PPL。（证据：2406.07524, 2406.04329, 2406.03736, 2310.16834）
+- 连续化路线（Fisher-Rao 嵌入、argmax 投影）试图把连续域 OT 和 PF-ODE 工具搬到离散域，但都面临离散化误差或 proxy 合理性的根本限制。 Fisher-Flow 在 Fisher-Rao 球面正象限上做黎曼 OT，但推理时需映射回单纯形再取最近顶点，离散化误差未分析；Duo 的 DCD 用高斯 PF-ODE 的 argmax 投影作为离散 proxy，作者承认这是「absence of a proper PF-ODE」的替代；CDLM 明确指出离散域没有 PF-ODE，改用精确后验桥做多路径一致性训练。（证据：2405.14664, 2506.10892, 2605.00161）
+
+**T23 语音与音频中的流匹配与 Schrödinger 桥** — T23 课题解决的核心问题是：如何用流匹配（FM）与 Schrödinger 桥（SB）替代扩散模型，在语音/音频生成中实现更少采样步数、更低计算成本，同时保持或提升质量。方法谱系呈现两条主线：一是 OT-CFM 条件路径路线，从 Voicebox 确立「FM + masked infilling」范式，经 Matcha-TTS 轻量化、E2 TTS 极简化、F5-TTS 加 Sway Sampling，再到 CosyVoice 2 的流式化与 MusicFlow 的跨域迁移；二是配对数据可解 SB 路线，从 Bridge-TTS 的 informative prior 出发，延伸至 SB-SE 语音增强、Bridge-SR 超分、A2SB 音乐修复、SBCTM 少步蒸馏。当前共识是：数据到数据过程在少步区间优于噪声到数据过程，OT 直线路径有效降低 NFE。分歧在于：FM 路线从高斯先验出发但规模化成熟，SB 路线利用观测端结构但验证规模小；minibatch-OT 耦合在语音上从未被系统消融，Sway Sampling 类免重训调度缺乏理论依据。
+
+- 配对数据可解 SB 路线在少步采样区间系统性优于从高斯噪声出发的扩散/FM 基线，但验证规模远小于 FM 路线。 Bridge-TTS 在 2 步 MOS 4.04 超过 CoMoSpeech 的 3.87，4 步 MOS 4.10 超过 ResGrad 的 4.02；SB-SE 去噪 WER 4.69% 优于 SGMSE+ 的 9.52%；Bridge-SR 以 1.7M 参数 4 步胜过 8 步条件扩散。但三者均只在单数据集（LJ Speech 24h、WSJ0、VCTK）上验证。（证据：2312.03491, 2407.16074, 2501.07897）
+- OT-CFM 的「独立采样 + 直线条件路径」配方在语音生成中成为事实标准，但 batch 内 OT 耦合从未被系统消融。 F5-TTS 的 Eq.3、Matcha-TTS 的 Eq.4、Voicebox 的训练均采用 x0 与 x1 独立采样，未使用 minibatch OT 耦合。语音 mel 的谐波/共振峰结构可能使耦合显著降低路径交叉，但该空白点在 2023-2025 的 FM 语音系统中持续存在。（证据：F5_TTS_A_Fairytaler_that_Fakes_Fluent_and_Faithful, 2309.03199, 2306.15687）
+- 免重训的推理期时间步重分配（Sway Sampling 类）在多个任务上显示收益，但均为启发式单参数，缺乏理论依据。 F5-TTS 的 Sway Sampling 系数 s 默认取 -1，无理论推导；A2SB 的 t-range partitioning 用微调而非免训练实现时间重分配；SBCTM 的固定 schedule 参数 ρ=7 也是启发式。三者均未给出「给定预训练速度场，最小化离散化误差的最优时间步分布」的推导。（证据：F5_TTS_A_Fairytaler_that_Fakes_Fluent_and_Faithful, 2501.11311, 2507.11925）
+- 「FM + masked infilling」作为跨任务域可迁移配方，从语音 TTS 扩展到音乐生成与语音增强，但级联误差传播未被量化。 MusicFlow 直接复用 Voicebox 的训练目标、span masking、CFG 与 backbone，仅换表示与数据；SpeechFlow 用同样目标做无监督预训练。但 MusicFlow 未报告 Stage 1 采样误差对 Stage 2 的影响，SpeechFlow 的多任务微调在分离任务上 SI-SDRi 从 12.41 退化到 9.73，说明级联/多任务冲突的误差传播机制尚不清楚。（证据：2410.20478, 2306.15687, 2310.16338）
+
+**T24 单细胞与生物轨迹推断中的 OT×流** — 本课题解决单细胞生物轨迹推断中「离散 OT 耦合无法外推」的核心缺陷，方法谱系从静态耦合（Waddington-OT、moscot、DeST-OT）经连续动力学化（TrajectoryNet、MIOFlow、TIGON）演进到 simulation-free 的 flow matching 与 Schrödinger bridge（SF²M、GENOT、DeepRUOT），最终走向 unbalanced/分支/交互/条件全要素动力学（CytoBridge、BranchSBM、MFM、MMFM）。当前共识是：连续神经动力学取代离散耦合矩阵成为可外推的标准范式，unbalanced 质量变化（增殖/凋亡）必须作为第一等公民建模。分歧集中在三条路线：DeepRUOT 的 Fisher 正则免仿真路线、GENOT 的静态熵耦合条件生成路线、以及 BranchSBM 的显式分支参数化路线，三者尚未统一。条件化机制（GNN 群体嵌入 vs. classifier-free guidance vs. 条件编码器）的泛化边界也缺乏理论刻画。
+
+- 静态离散耦合方法（Waddington-OT、moscot、DeST-OT）构成课题起点，其共同局限是输出耦合矩阵而无法外推到新细胞或未观测时间点。 moscot 扩到 170 万细胞×20 时间点但输出离散耦合矩阵；Waddington-OT 从 31.5 万细胞重建谱系但只能连接已观测时间点；DeST-OT 用 semi-relaxed FGW 对齐空间切片但无时间维动力学。三者均被后续连续动力学方法部分取代。（证据：Mapping_Cells_Through_Time_and_Space_with_moscot, Optimal_Transport_Analysis_of_Single_Cell_Gene_Exp, DeST_OT_Alignment_of_Spatiotemporal_Transcriptomic）
+- 连续动力学化阶段（TrajectoryNet→MIOFlow→TIGON）将离散插值升级为 neural ODE 连续流，但训练需仿真 ODE/PDE，维度与规模受限。 TrajectoryNet 用 CNF+动态 OT 罚项开创连续化范式；MIOFlow 将流约束到测地自编码器流形；TIGON 用 WFR 距离同时学速度与增殖率。三者均依赖 ODE 仿真训练，被后续 simulation-free 方法针对。（证据：TrajectoryNet, MIOFlow, TIGON）
+- simulation-free 路线内部存在「Fisher 正则免仿真」与「静态熵耦合条件生成」两条未统一的技术路线，前者以 DeepRUOT 为代表，后者以 GENOT 为代表。 DeepRUOT 用 Fisher 正则把 SDE 约束化为 ODE 约束，在合成数据 t=4 上 W1=0.104 优于 SF²M 的 0.871；GENOT 用条件 FM 学熵 OT 耦合的条件分布，覆盖任意成本与 unbalanced 情形。两者在「免仿真 unbalanced SB 的统一收敛理论」上存在缺口。（证据：2410.00844, 2310.09254）
+- unbalanced 动力学扩展（CytoBridge、BranchSBM）在 DeepRUOT 骨架上加入交互项或分支结构，但实验优势幅度小且理论保证薄弱。 CytoBridge 在造血数据 t=1 的 W1=6.013 对 DeepRUOT 的 6.052，差距仅 0.039；BranchSBM 在胰腺 β 细胞 8 个中间时间点中 4 个 W1 高于 DeepRUOT 和 CytoBridge。BranchSBM 的 Prop. 4.2 仅保证最优增长函数在 L² 中存在，无联合训练收敛性证明。（证据：2505.11197, 2506.09007）
+
+### 6.5 板块 E：OT 变体前沿
+
+**T25 非平衡/部分 OT 在生成建模中的应用** — 本课题解决非平衡/部分 OT 在生成建模中的理论奠基、动态化与 simulation-free 化问题。方法谱系从静态理论（1508.05216 的 WFR 半耦合与动态等价、Optimal_Entropy_Transport 的 HK 距离）出发，经 UDSB 引入 killing/birth 项把 SB 推广到质量不守恒，再到 DeepRUOT/Var-RUOT 用 Fisher 正则或 HJB 变分把 RUOT 做成可训练目标，最终在 WFR-FM 与 VGFM 中收敛为纯 flow matching 的 simulation-free 形式。当前共识是：非平衡性应作为第一等公民显式建模（速度场+增长场联合学习），而非仅靠重加权预处理；分歧在于增长场的几何来源——WFR-FM 基于 Wasserstein–Fisher–Rao 度量，VGFM 基于 semi-relaxed OT 的两段式分解，BranchSBM 则用分支结构显式参数化多模态。底层求解器（Light UOT、半离散 partial/robust OT）与任务特化应用（OTFM 一步 pansharpening）构成外围支撑。
+
+- 非平衡 OT 的动态形式与静态半耦合形式等价，为后续所有 UOT 生成模型提供了双面模板。 1508.05216 证明动态形式（带源连续性方程）与静态半耦合形式等价，并证明 WFR 度量属于此类；Optimal_Entropy_Transport 系统化 KL 松弛边缘的熵-运输问题与 Hellinger–Kantorovich 距离，两者共同构成后续 UOTM、UOT-FM、WFR-FM 的数学基础。（证据：1508.05216, Optimal_Entropy_Transport_Problems_and_a_New_Helli）
+- RUOT 求解器谱系从需要 ODE/SDE 模拟演进到完全 simulation-free，DeepRUOT 是第一个深度求解器，WFR-FM 是终点。 DeepRUOT 用 Fisher 正则把 SDE 约束化成 ODE，免去 SDE 仿真；Var-RUOT 用 HJB 一阶最优性条件压缩参数化，训练更稳（27.60±5.75 epochs vs TIGON 228.40±223.71）；WFR-FM 用 traveling Dirac 闭式解完全免模拟，并在 Simulation Gene 上达到 W1=0.019 的最低值。（证据：2410.00844, 2505.11823, 2601.06810）
+- 增长场的几何来源存在分歧：WFR 度量、semi-relaxed OT 两段式、分支结构三条路线并行。 WFR-FM 基于 Wasserstein–Fisher–Rao 度量，Prop. 4.3 给出 δ→∞ 时退化为 OT-CFM 的极限；VGFM 从 semi-relaxed OT 出发得到先长质量后运输的两段式动态；BranchSBM 把多模态显式建模为 K 条分支（胰腺 β 细胞实验 K=11），但分支数需预指定。（证据：2601.06810, Joint_Velocity_Growth_Flow_Matching, 2506.09007）
+- 非平衡 OT 的数值求解器与任务特化应用构成外围支撑，但理论保证与可扩展性证据参差不齐。 Light UOT 用 Gaussian mixture 参数化对偶变量，CPU 上 02:38 完成 Young→Adult 翻译，但表达能力受限于 Gaussian mixture；Scalable WGF 声称 JKO 步 UOT 半对偶化将复杂度从 O(K^2) 降到 O(K)，但摘要无实验数字；OTFM 用 UOT 对偶实现 1 NFE 的 pansharpening，但理论支撑薄弱且 f=exp 的选择缺乏敏感性分析。（证据：2303.07988, Scalable_Wasserstein_Gradient_Flow_via_Unbalanced, 2503.14975）
+
+**T26 Gromov-Wasserstein 与跨空间生成对齐** — 本课题解决的核心问题是：如何用 Gromov-Wasserstein (GW) 及其融合变体 (FGW) 度量并实现跨空间、跨模态的结构对齐，并将其从静态度量工具发展为可扩展、可微、可嵌入生成模型的训练目标或设计原则。方法谱系呈现三条演进线：计算线从 entropic GW 镜像下降（Peyré et al. 2016）起步，经低秩耦合线性化（Scetbon et al. 2022）实现规模化，再到 CNT 代价分解（2602.06658）与 SDP 松弛认证（2312.14572）分别解决可微性与全局最优性；理论线由 Zhang–Goldfeld 等（2212.12848）补齐对偶理论与样本复杂度，揭示标准 GW 的维度灾难与 entropic GW 的参数率；生成对齐线从 GWAE（2209.07007）将 GW 变为训练目标，经 GENOT 流匹配参数化耦合，演进到 LAST（2606.11221）与 MIRROR（2606.29462）将 GW 视角前置到空间重构或训练正则。当前共识是：entropic 或低秩近似是实际可用的必要妥协，但全局最优性认证与规模扩展仍不可兼得；分歧在于 GW 应作为事后耦合求解、训练目标、还是模型设计原则。
+
+- 标准 GW 在高维下遭受维度灾难，而 entropic GW 达到参数率收敛，这从理论上决定了生成对齐必须使用熵正则化或低秩近似。 2212.12848 的 Theorem 3 给出标准 GW 经验收敛率 n^{-2/max{min(dx,dy),4}}，在高维下退化为 n^{-2/d}；而 Theorem 2 给出 EGW 的 n^{-1/2} 参数率。2106.01128 从计算侧印证：entropic GW 为 O(n³)，低秩耦合将其降至 O(n²) 乃至 O(n)，且 r=n/100 即可达到与 entropic 相似的 GW loss。（证据：2212.12848, 2106.01128）
+- GW 的全局最优性认证与可扩展性之间存在根本张力：SDP 松弛可给出证书但限于极小规模，可扩展求解器只能保证局部最优。 2312.14572 的 SDP 矩阵维度为 mn×mn，n=20 时平均运行 216.36 秒，而 CG-GW 仅 0.0014 秒；2602.06658 的 CNT-GW 虽达 O(N+M) 内存、数十万点分钟级，但作者承认仍是局部优化方法；2503.24129 在 N≤40 可认证全局最优，N=100 时 primal-dual gap 显著，全局最优不可行。（证据：2312.14572, 2602.06658, 2503.24129）
+- GW 视角正从事后耦合求解前移为模型设计原则：通过重构源空间或注入训练正则，使跨空间对齐在训练前或训练中隐式达成。 2606.11221 用 Lie 代数线性化+白化重构动作空间，使 VLA 在 LIBERO 达 95.8% 成功率，但未显式计算任何 GW 距离；2606.29462 将 GW 反问题（固定语言几何与 cross-attention 耦合，优化视觉几何）做成 MLLM 训练正则，GQA 增益 0.34–0.82 个百分点；2209.07007 用生成模型 p_θ(x,z) 替代显式 GW 耦合，避免 QAP 求解。（证据：2606.11221, 2606.29462, 2209.07007）
+- FGW 作为图生成度量与保证工具已形成独立分支，但其训练端应用仍处于开放状态。 1805.09114 定义 FGW 距离与 barycenter，提供图分类与聚类的度量基础；2502.11778 用 FGW 的 Lipschitz 性质推导 DP 合成图的精度上界 O((εn)^{-1/(d+1)})，但两者均未将 FGW 作为生成模型的训练目标。（证据：1805.09114, 2502.11778）
+
+**T27 多边际 OT 与 Wasserstein 重心的生成应用** — 本课题围绕多边际最优传输（MMOT）与 Wasserstein 重心在生成建模中的两类应用展开：多时间边缘生成与模型/分布融合。方法谱系呈现从静态到动态、从精确到可扩展、从训练到免训练的演进。多时间边缘生成线从 TreeDSB 的树结构扩散 Schrödinger Bridge 起步，经 MMFM 的样条插值、3MSBM 的相空间动量桥，到 OTP-FM 用动态 OT 势函数统一软约束框架，逐步解决 simulation-free、全局耦合与平滑轨迹的三角张力。barycenter 计算线则分化为精确解（SGA 的无投影对偶上升）、神经解（Energy-Guided EBM、Neural OT 双层目标）、可扩展梯度流解（WGF 的 mini-batch OT）与鲁棒变体（Wasserstein ball center、Procrustes-WB）。模型融合线以 OTFusion 的逐层 OT 对齐为奠基，向 partial OT 与扩散模型合并延伸。当前共识是：多边际约束的生成价值明确，但「硬约束的指数规模」与「软约束的理论保证」之间的权衡尚未解决；barycenter 在条件空间求解后经生成器映射的交换性误差缺乏理论刻画。
+
+- 多时间边缘生成方法从扩散式 IPF 向 simulation-free 流匹配演进，但全局耦合与计算效率的张力持续存在。 TreeDSB 需要 2|E| 个神经网络且顺序训练，3MSBM 用闭式条件桥消除轨迹缓存使 DMSB 训练时间约为其 2.5 倍，OTP-FM 进一步用势函数软约束在 CFM 框架内实现 simulation-free，但 OTP-FM 的 W2^2 势依赖 O(N^3) OT 预计算，退到 W2^∞ 时 EB 100D MMD 从 0.041 恶化到 0.173。（证据：2305.16557, 2506.10168, 2606.05327）
+- barycenter 求解器在精确性与可扩展性之间形成明确分工，尚无单一方法同时满足两者。 SGA 在 2D/3D 网格上提供精确解且免 c-concave 投影，收敛率 O(T^{-1/2})，但维度受限；WGF 用 mini-batch OT 实现 2–50× 加速且模型复杂度与 K 解耦，但 PL 不等式在一般情形是否成立是开放问题；Energy-Guided EBM 支持一般代价但 MCMC 采样耗时且 Theorem 4.5(a) 的一般 Lipschitz 代价界有维数灾难 O(N^{-1/(D_k+1)})。（证据：2505.13660, 2510.04602, 2310.01105）
+- 在预训练生成模型的条件空间求 barycenter 是免训练融合的通用范式，但生成器映射与 barycenter 的交换性缺乏理论保证。 Wukong 在 flow transformer 条件 token 空间解 free-support barycenter 实现 3D 形变（FID 4.01 vs 3DRM 6.36），但全文无定理且消融显示递归初始化贡献了大部分增益；Neural OT barycenter 的流形约束版本 FID 30.7–31.7 差于 EgBary 8.4–10.2，说明流形先验与求解器贡献难以分离；Energy-Guided 的流形约束通过代价替换 c_{k,G}(x,z)=c_k(x,G(z)) 实现，同样未刻画 G 的非线性对 barycenter 性质的影响。（证据：2511.22425, 2402.03828, 2310.01105）
+- 模型融合线从判别网络的逐层 OT 对齐起步，向 partial OT 与生成模型合并延伸，但「权重 barycenter 是否蕴含输出分布 barycenter」始终未被理论刻画。 OTFusion 确立逐层 OT 对齐 + 平均范式，但同数据训练场景下无微调时无法超过个体模型（VGG11 个体 90.31 vs OT avg. 85.98）；partial OT 放宽完全匹配假设但搬运比例无先验；DMMOT 的 quasi-Monge 解（Eq. 1.32–1.33）提供「共同源测度推到 k 个边缘」的连续时间目标，与逐层 barycenter 融合同构，但状态空间维度 kd 随边缘数线性增长。（证据：1910.05653, Partial_Fusion_of_Neural_Networks_via_Partial_Opti, 2509.22494）
+
+**T28 黎曼流形上的流匹配与 OT** — T28 课题解决的核心问题是：如何在黎曼流形上做 simulation-free 的生成建模，以及如何把最优传输（OT）耦合引入流形流匹配。方法谱系呈现三代演进：第一代（RSGM、RDSB）把扩散搬上流形，依赖热核与时间反演，计算成本高；第二代（RFM、TDM、SFM、WFM）用 premetric、平凡化动量或 Fisher-Rao 度量实现 simulation-free 训练，但耦合层普遍采用独立采样；第三代（RNOT、RCM、DiffeoCFM、MFM）分别从连续 OT 参数化、少步蒸馏、pullback 平坦化、数据依赖度量四个方向补强。当前共识是：流形上的条件向量场闭式构造已基本解决，瓶颈转移到耦合最优性与推理步数。分歧在于：离散 OT 配对（RCPM）在低维流形上仍优于连续神经势（RNOT），而 pullback 平坦化与内蕴几何操作（RCM）在一般流形上的可扩展性各有局限。
+
+- 流形 OT 的离散化与连续参数化之间存在明确的复杂度分界，离散方法在低维占优、连续方法在高维才反超。 RNOT 的 Theorem 3.1 给出离散输出映射的 RMSE 下界 m^{-1/p}，Theorem 5.1 给出连续参数化的多项式上界；但 S² 上 RCPM 的 KL 为 0.0037，优于 RNOT-FPS 的 0.03（Table 1），说明低维场景离散方法仍实用。WFM 在 ShapeNet 上 Car 类 EMD 指标垫底（58.10），也提示 OT 近似的质量在特定几何/数据分布下不稳定。（证据：2602.03566, 2411.00698）
+- simulation-free 是第二代方法的核心目标，但非阿贝尔李群与一般流形上仍存在妥协。 RFM 用 premetric 在简单几何上完全 simulation-free，但谱距离方案需模拟 ODE（Sec. 3.3）；TDM 在非阿贝尔李群上 DSM 不可用，必须退回 ISM 前向模拟（Algorithm 1）；RSGM 的热核依赖在一般高维流形上不可解析，Varadhan 渐近仅在 t 小且 y∉Cut(x) 时有效。（证据：2302.03660, 2405.16381, 2202.02763）
+- 流形生成模型的评估指标与实验规模普遍薄弱，定量比较缺乏统一基准。 RDSB 实验全部为视觉定性评估，无任何定量指标；MFM 的 Proposition 1 为非正式陈述，未给出近似测地线与真实测地线的误差界；DiffeoCFM 在 ADNI 上 α-precision 仅 0.62±0.11，远低于 REAL DATA 的 0.91±0.03，但论文未解释源分布选择对生成质量的影响。（证据：2207.03024, 2405.14780, 2505.18193）
+- OT 耦合层在流形流匹配中仍以独立采样为主，显式引入测地 OT 配对的工作集中在统计流形分支。 RFM 的条件路径是逐样本测地线，边际耦合由独立采样决定，无 OT 配对；SFM 在 Fisher-Rao 度量下显式引入测地成本 OT 配对；MFM 继承 OT-CFM 的耦合选择 π*，但将插值路径改为数据依赖黎曼度量下的近似测地线。（证据：2302.03660, Statistical_Categorical_Flow_Matching_SFM_Cheng_et, 2405.14780）
+
+### 6.6 板块 F：系统、评测与趋势
+
+**T29 高性能 OT 求解器与训练基础设施** — 本课题解决高性能 OT 求解器与训练基础设施的规模化瓶颈，核心张力是 O(n²) 内存墙与迭代收敛慢。方法谱系沿三条线演进：一是 kernel 级 IO 工程（FlashSinkhorn、FastSinkhorn），把 Sinkhorn 更新重写为 attention 同构的 biased-LSE，用 Triton/CUDA 融合流式归约，在平方欧氏 cost 下以 O(n) 内存精确计算；二是二阶/一阶迭代算法（SNS、cuRegOT、PDOT），用稀疏 Newton 或 restarted PDHG 在难例小 ε 或高精度区间替代 Sinkhorn 的线性收敛；三是低秩/层次结构近似（Nyström、LOT、FRLC、HiRef、HALO），从有损核近似演进为层次化精确求解构件。当前共识是：平方欧氏 cost + 中等 ε + 单卡场景下 IO-aware Sinkhorn 已接近实用最优；分歧在于高精度、难例、非欧 cost、可微性四个象限仍无统一方案。与扩散训练管线的接口是 batch 内 OT 配对成本——FlashSinkhorn 的 O(n) 内存可能大幅下修 Boïté 报告的 3–55% 开销，HiRef 的预计算配对方案则把配对移出训练循环。
+
+- IO-aware Sinkhorn 在平方欧氏 cost 下以 O(n) 内存实现精确计算，取代了 Nyström 低秩核近似的有损路线。 FlashSinkhorn 用 FlashAttention 的 tiling/online-softmax 机制把 HBM 读写从 tensorized 的 98 GB 降到 0.08 GB（n=10k, d=64, 10 iters），且不牺牲精度；而 Nyström 路线只对 PSD 核矩阵有效，在平方欧氏 cost 下被精确计算取代。（证据：2602.03067, 1812.05189）
+- 低秩 OT 从有损近似演进为层次化精确求解的构件，HiRef 和 HALO 是这条线的第三代汇流点。 Scetbon 2021 的 LOT 约束耦合非负秩，FRLC 泛化到 GW/非均衡，HiRef 用低秩因子与 Monge map 共聚类递归细化出全秩双射，在 2^20 点上跑通而 Sinkhorn/ProgOT 只能到 16384 点；HALO 则把层次 warm-start 与 cuPDLPx 组合，报告 1024² 图像上 8.9× 加速。（证据：2503.03025, A_Memory_Efficient_Hierarchical_Algorithm_for_Larg, 2103.04737）
+- 二阶和一阶 LP 方法在难例小 ε 或高精度区间对 Sinkhorn 形成互补，但实验对比口径存在偏差。 SNS 在 η=1200 难例上把迭代数从 56199 压到 29（Random case），cuRegOT 在 η=0.001 下快于 Sinkhorn 系，PDOT 在 128×128 下解完全部 450 实例而 Sinkhorn(0.0001) 有 132 例超时；但 PDOT 的终止条件是相对 KKT 误差而 Sinkhorn 是原始可行性，直接比较时间有口径偏差。（证据：2605.08793, 2401.12253, 2407.19689）
+- 可微性是当前所有高性能求解器的共同缺口，阻碍其直接进入需要梯度的训练场景。 FastSinkhorn 明确不支持自动微分，FRLC 的隐式微分未公开实现，HALO 摘要未提及可微性；HiRef 通过输出 Monge map 作为监督信号绕开此问题，但可微性需求本身仍未被覆盖。（证据：2605.00837, 2411.10555, A_Memory_Efficient_Hierarchical_Algorithm_for_Larg）
+
+**T30 端侧部署、benchmark 与顶会趋势（博客落地场景：端侧图像生成）** — 本课题解决端侧文生图部署的完整链路：模型小型化（架构搜索/从头训练）、少步化（蒸馏/对抗微调）、量化（PTQ/QAT）与评测协议。方法谱系从 SnapFusion 的「压缩现有模型」双轴范式，演进到 MobileDiffusion/SDXS 的架构搜索与一步蒸馏，再到 SnapGen/SANA 的「为端侧从头设计」转折，量化线从 MixDQ 的 W4A8 推进到 SVDQuant 的 W4A4。当前共识是：少步化是端侧部署的必要条件，FM/RF 公式因轨迹更直而成为新端侧模型默认训练目标；FID 对少步/压缩模型系统性不公平，需多指标组合。分歧在于：QAT 与 PTQ 路线在极低比特下的质量-成本权衡尚无定论，NPU 对 FM 原生 DiT 模型的适配仍是空白。
+
+- 少步化是端侧部署的必要条件，但少步模型对量化噪声更脆弱，形成「少步×低比特」复合误差。 MobileDiffusion 一步模型 FID 11.67 比 50 步 8.65 退化约 3 点；MixDQ 显示 SDXL-turbo 1 步 W8A8 下 Naive PTQ FID 从 17.15 崩到 103.96，而 LCM-Lora 4 步仅从 25.56 到 23.36；SVDQuant 在 FLUX.1-schnell 4 步上验证 W4A4 仍保持质量，但未做 NFE×位宽交互矩阵。（证据：2311.16567, 2405.17873, 2411.05007）
+- FID 的正态假设与 Inception 特征对少步/压缩模型系统性不公平，社区已转向多指标组合评测。 CMMD 论文证明 COCO 30K Inception 嵌入三种正态性检验 p 值均为 0.0，且人评偏好 92.5% 的模型 FID 反而更差（18.42 vs 21.40）；Stein 等最大规模人评实验显示无指标与人评强相关；BitsFusion 记录 FID 与人评背离（Fig. 7 vs Fig. 6），人评偏好 54.41%。（证据：2401.09603, Exposing_flaws_of_generative_model_evaluation_metr, 2406.04333）
+- 端侧模型从「压缩大模型」转向「从头设计小模型」，FM/RF 公式成为新端侧模型默认训练目标。 SnapFusion 将 SD-v1.5 UNet 从 860M 压到 848M，参数几乎未减；SnapGen 从头训练 379M 模型在 iPhone 16 Pro-Max 上 1024² 约 1.4s，GenEval 0.66 超 SDXL；SANA 用 0.6B 线性 DiT 配 flow matching 实现笔记本 GPU 上 <1s 生成。（证据：SnapGen_Taming_High_Resolution_Text_to_Image_Model, SANA_Efficient_High_Resolution_Text_to_Image_Synth, 2306.00980）
+- 量化方法从 W8A8/W4A8 推进到 W4A4，但硬件评测仍以桌面 GPU 为主，NPU 适配证据薄弱。 MixDQ 只在 RTX 4080 上评测，标题声称面向 mobile 但无 NPU 数据；SVDQuant 的 Nunchaku kernel fusion 针对 NVIDIA GPU 优化，NPU 可移植性存疑；EdgeFusion 是唯一 NPU 实测工作（Exynos 2400 上 738.5ms），但量化评估仅 3 个 prompt 定性对比。（证据：2405.17873, 2411.05007, 2404.11925）
+
+## 7. 十二条核心洞察（Insights）
+
+**I1 · OT 是设计语言，不是扩散模型的自动性质。** 两条辩论线（§3.2/§3.3）都以反例收尾：encoder map 不是 Brenier map，reflow 不动点不是 OT。正确姿势是把 OT 当耦合选择、调度设计、蒸馏正则、跨域先验四种可插拔机制，每处都度量「距 OT 的偏差」而非宣称「实现了 OT」。这决定了 §9 的表述红线。
+
+**I2 · 「OT 用量」是一个精确可研究的变量。** 三组证据构成张力三角：大 batch Sinkhorn（n≈10⁶ + 低 ε）才见真收益；3D 点云上完全 OT 耦合让 t≈0 速度场更难学（NSOT）；条件生成中无条件 OT 耦合系统性有害（C²OT）。Q3 的 QC-FM 与 Gromov-Monge FM 说明社区已经在「算多少 OT」上做工程权衡。「耦合的 OT 程度 × 数据几何 × 条件结构 → 可学性」是全新研究轴。
+
+**I3 · 免重训的价值集中在两个自由度：耦合与调度。** 推理管线七个可插耦合的环节（§5.4）与五条原理化调度路线（AYS/GITS/LD3/OSS/DM-NonUniform）的交点——batch 级保边缘重排与 OT-aware 调度理论——仍是最干净的两个空位。深读进一步发现：推理期噪声选择文献**普遍不报告边缘漂移与多样性损失**，这既是这条线的方法论缺陷，也是 MPNA 的差异化卖点（§8.2）。
+
+**I4 · 直线化与最优性正式解耦，八月的两个定理把它们重新接上。** 「直 ⇒ 少步」是数值分析事实，「直 ⇒ 最优」是伪命题（Hertrich）。c-RF（梯度类投影）与 reflow×minibatch-OT 极限点定理（N-循环单调）给出两条修复路径——「拉直」与「最优」的关系从叙事之争变成投影算子的选择问题。Top-10 #4 因此从「理论空位」降级为「实用化空位」。
+
+**I5 · 理论骨架已收口，论文级空位在接缝处。** SB 有指数收敛率、FM 有 minimax、扩散有 O(d/T)，但定理之间不搭界：OT 耦合下的 FM 统计率、学习误差下的 IMF 收敛、迭代×样本联合下界、跨域引导的端到端 oracle 不等式全部空白。新框架论文的时代结束了，接缝定理的时代开始了。
+
+**I6 · 蒸馏的「保耦合」是零保证地带，深读把它从判断变成了事实。** T14 逐篇核对：I2SB 在 Dirac 边界下退化为逐对最小能量桥、DDBM Theorem 2 只保证边际、CDBM Prop. 3.2 只保证 PF-ODE 解映射；没有一篇对终端耦合在蒸馏/加速后是否漂移给出陈述。医学翻译恰恰最在乎这个。「保 OT 耦合的蒸馏 + 耦合漂移度量」同时是理论空位和医学刚需（#3）。
+
+**I7 · 桥模型的最优随机性由任务决定，不是常数。** T14 四篇独立实验（I2SB Table 6/9、DDBM Sec. 5、DBIM Table 4/5、LBM 消融）一致：低 NFE 取确定性、高 NFE 取随机；去模糊偏好 ODE、修复/JPEG 偏好 SDE。「随机桥 vs 直线」应被建模为条件熵与步数预算的函数——这是一个未被形式化的可发现象。
+
+**I8 · 基础设施拐点已到，空位仍开放。** FlashSinkhorn 看破「Sinkhorn = attention」后，OT 求解器进入 FlashAttention 式工程时代；但 v0.3.3（2026-04）后无 release，多 GPU 分布式与非欧 cost 的 online-LSE 化完全空白，PMLR 卷未出仍为 [A]。谁先做出「分布式 IO-aware Sinkhorn」，谁就拥有数据集级跨域耦合的入场券。
+
+**I9 · 评测存在系统性错位，OT 自己可以当解药，且外围已开始填充。** FID 对少步模型失真；SynthRAD2025 证实图像相似度与剂量准确性只有中等相关。Q3 的《Distributional View of KD》把蒸馏写成 Sinkhorn 散度目标、FGW 被用作结构评测——「DINOv2 特征上的 Sinkhorn divergence 替代 FID」（#10）的窗口不会一直开着。
+
+**I10 · 竞争格局对高校有利的区域是明确的。** 大组占据 FM 基础设施与大规模耦合工程；Vector/Mila 占 SB/CFM 谱系；Skoltech 系占神经 OT。Top-10 的理论补全型（#2/#5/#6）与接口缝合型（#1/#8/#10）都不需要预训练算力——需要证明与精巧实验。时间窗：理论约 12–18 个月。
+
+**I11 · 医学垂直的入场条件已官方验证，窗口正在收窄。** SynthRAD2025：25 队零 SB/OT 方法，FM/扩散系剂量指标逊于 CNN/GAN，榜开放至 2030-03；Q3 的 DoseBridge 已经以剂量为目标做桥模型（尚非 SB、未上榜）。入场必须以剂量学为设计目标，且应在 MICCAI 2027 周期内完成。
+
+**I12 · 逐篇深读改变了两个 8/25 版的判断。** (a) Top-10 #1 的卖点「方差降低」经沙盒核验降级为「与 iid 同分布」——置换不降低人口统计量的方差，它只是不改变它们；(b) Top-10 #4 从「空位仍在（部分）」变为「进一步被占，剩实用化」。证据纪律的价值正在于此：结论跟着证据走，而不是反过来。
+
+![证据级分布](figures/evidence_by_section.png)
+
+## 8. 我们可以做什么：机会地图、Top-10 状态与一个已立项的样例
+
+### 8.1 Top-10 切入点（2026-09-01 状态）
+
+| # | 切入点 | 类型 | 算力 | 9/1 状态（相对 8/25） | 证据 |
+|---|---|---|---|---|---|
+| 1 | 免训练 batch 级保边缘噪声指派（MPNA）：batch 内 (条件,噪声) 一次性 Hungarian/Sinkhorn 指派，每噪声恰用一次、人口边缘严格不变 | 方法+理论 | 低 | **已立项，沙盒完成**（§8.2）；最近邻增多（QC-FM 训练侧） | `~/Code/mpna`；2608.00978 |
+| 2 | OT-aware 采样调度：Benamou–Brenier 动能泛函替代 KLUB | 理论+免训练 | 低 | 空位仍在；曲率来源有新刻画（去噪器雅可比） | 2609.00198 |
+| 3 | 保 OT 耦合的单步桥蒸馏 + 耦合漂移度量 | 方法 | 中 | 空位仍在，**深读证实文献零保证** | [`reports/2309.16948.md`](../reports/2309.16948.md), `2405.15885.md`, `2410.22637.md` |
+| 4 | reflow 正定理 | 理论 | 低 | **进一步被占**：c-RF + 极限点定理；剩 GMM/流形非渐近刻画与大规模投影算子 | 2608.02487, 2608.07042, 2608.13383 |
+| 5 | OT-CFM 端到端统计收敛率 | 理论 | 低 | 空位仍在；函数空间 FM 离散化一致性是可借路线 | 2608.04531 |
+| 6 | PF-ODE 次优度量化 | 理论 | 低 | 空位仍在（工具已齐：高斯精确解 + tensor-train FP） | [`reports/2405.14250.md`](../reports/2405.14250.md) |
+| 7 | 解剖商空间成本 + 3D 耦合 SB 刷 SynthRAD2025 + conformal 幻觉筛查 | 应用 | 中 | **窗口收窄**：DoseBridge 已以剂量为目标（非 SB）；须在 MICCAI 2027 周期内动手 | 2608.10173 |
+| 8 | FGW 语义对应闭环进扩散采样 | 方法 | 中 | 空位仍在；GW 松弛在图生成侧已用 | 2608.26961 |
+| 9 | 视频：时空分解 reflow / 帧间 Sinkhorn 耦合 | 方法 | 中高 | 空位仍在；OT 一致性模块进视频 VAE（ECCV 2026） | 2608.02990 |
+| 10 | OT 系评测指标：DINOv2 特征 Sinkhorn divergence 替代 FID | 评测 | 低 | 外围开始填充（蒸馏的 Sinkhorn 目标、FGW 结构评测） | 2608.15215, 2608.28733 |
+
+组合建议不变：#1+#2 构成「推理期耦合工程」连击；#3+#7 构成「医学桥」主线；#5/#6 是纯理论线；#4 转为实用化。
+
+### 8.2 样例：MPNA 立项与沙盒结果（Top-10 #1）
+
+**问题。** 条件生成的初始噪声默认逐样本 iid。「噪声不是生而平等」工作线（Golden Noise、NoiseQuery、verifier×搜索、NoiseRefine）证明选噪声能提升质量，但所有实例级选择都在改有效初始分布：对每个提示从 k 个候选里挑最好，得到的噪声人口分布 $q_k\ne\mathcal N(0,I)$，后果是人口级分布偏移、跨提示同质化、verifier hacking。深读确认这条线的论文不报告边缘漂移。
+
+**形式化。** 把噪声指派写成 Kantorovich 问题：$\max_\pi\mathbb E_\pi[s(c,z)]$ s.t. $\pi\in\Pi(\mu,\nu)$（噪声边缘严格等于 $\nu$）。top-1-of-k 的 $\pi_k\notin\Pi(\mu,\nu)$；batch 置换指派是经验 Kantorovich（Hungarian，O(B³)，B=512 毫秒级）。
+
+**三条理论结果。** Lemma 1（精确保边缘）：任意数据依赖的置换不改变噪声多重集，人口统计量与 iid 同分布。Prop. 2（g–h 分解）：验证器 $s=f(c)+g(z)+h(c,z)$ 中，置换指派对提示无关的「通用好噪声」分量 $g$ 完全不变、只收获交互项 $h$；top-1-of-k 同时收获 $g$ 与 $h$，其漂移正来自 $g$；线性玩具下 top-1-of-k 的增益 $m_k/\sqrt{1+\lambda^2}$、漂移 $m_k\lambda/\sqrt{1+\lambda^2}$ 有闭式。Prop. 3（人口极限）：B→∞ 时经验指派收敛到半离散 OT，提示条件下的噪声分布是 Laguerre 胞腔，重复提示天然保留多样性；共享库检索把胞腔退化为单点。
+
+**沙盒（2026-09-01，d=64，5 seeds × 4096 输出）。**
+
+![MPNA 沙盒](figures/mpna_sandbox.png)
+
+| 方法（λ=0） | 评分/输出 | 有效增益 | 人口漂移 BW-$W_2^2$ − null | 范数漂移 | 同提示多样性/iid |
+|---|---|---|---|---|---|
+| IID | 1 | −0.001 | 0 | −0.04 | 1.000 |
+| Top-1-of-4 | 4 | 1.021 | −0.003 | +0.41 | 0.996 |
+| Top-1-of-16 | 16 | 1.768 | +0.033 | +2.42 | 0.996 |
+| **Hungarian B=128** | **1** | **1.972** | **0（逐位=IID）** | **−0.04（=IID）** | 0.967 |
+| **Hungarian B=512** | **1** | **2.472** | **0** | **+0.02（=IID）** | 0.949 |
+| 共享库检索（κ=∞） | 1 | 2.586 | +1.375 | +5.54 | **0.000** |
+
+全部数字与闭式理论在 MC 误差内吻合（如 k=4 时 λ=0/0.5/1/2/4 的增益 1.021/0.913/0.720/0.459/0.246 vs 理论 1.029/0.921/0.728/0.460/0.250）。Hungarian B=128 以 1 次评分/输出取得等效 top-1-of-25 的增益，人口边缘逐位等于 IID；共享库检索的同提示多样性归零。
+
+**实用方法。** NoiseQuery 式评分器：B 个噪声各做 1 次无条件单步预测 $\hat x_0(z)$（可离线缓存），CLIP 图像编码 vs 提示文本编码得 B×B 相似度矩阵，Hungarian 得置换；开销 +1 NFE + 1 次 CLIP 编码/输出，与 k 无关。
+
+**Claim-driven 实验计划（≤2 主张、5 核心块、3 基线族、3 seeds）。** C1：GenEval / T2I-CompBench 上 Hungarian(B=128) 提升对齐指标且人口边缘与 iid 统计不可区分；同等增益的 top-1-of-k 产生可测漂移。C2：增益来自验证器的提示特异分量，通用分量（美学分）是漂移源——λ 消融。核心块：B1 SDXL-Turbo pilot → B2 top-1-of-k / NoiseQuery 基线 → B3 漂移套件（范数直方图、BW-$W_2^2$、DINOv2 多样性、FID/KID/P-R、同提示 LPIPS）→ B4 λ 消融 → B5 缩放与松弛（B、κ、Sinkhorn ε）。预注册判据：Hungarian GenEval ≥ iid + 1.5 pt 且 ≥ top-1-of-4 增益的 60%，漂移套件两样本检验 p > 0.1。完整立项书：`~/Code/mpna/PROPOSAL.md`。
+
+### 8.3 全景空位地图（按类型）
+
+**理论补全型**：PF-ODE 次优度地形图；流形数据下 encoder map 的法向坍缩/切向 OT 定性；学习误差下的 IMF/α-IMF 收敛；偏差→曲率→NFE 的端到端传导界；top-1-of-k 的次序统计漂移上界（MPNA Prop. 2 已给线性情形）；免训练 vs 蒸馏的信息论下界；reward 微调 = 熵正则 OT 的 σ→0 极限；平均速度/flow map 的误差传播界；CFG 分布偏移的 $W_2$ 刻画；weak/UOT 半对偶的 duality-gap 证书。
+
+**方法/接口缝合型**：一步 OT map 粗对齐 + 冻结扩散 2–4 步细化；半离散 JKO/UOT 势作免训练 guidance；Monge–Ampère 桥规模化；LOOM 与半离散之间的在线全局耦合；端点可解码性 × Sinkhorn barycentric 解码；语义成本系统消融（CLIP/DINO/GW）；离散/多模态耦合成本；免 reflow 的 Burgers 残差正则；多域翻译的可学习 barycenter 中继；**Q3 新增**：QC-FM 与 Hungarian/半离散指派的统一 Pareto（训练侧与推理侧的耦合降本互为镜像）。
+
+**应用垂直型**：医学桥主线（3D 体积一致 SB 刷 SynthRAD2025，以剂量学为目标）；统一 med-bridge benchmark（四层指标）；视频时空分解 reflow；黎曼 rectified flow；WFR 生灭率作推理期模式再平衡；跨维 Gromov-Schrödinger 桥。
+
+**系统/评测型**：分布式 IO-aware Sinkhorn（ring-attention 式分片归约 + 通信下界）；非欧 cost 的 online-LSE 流式化；OT 配对开销统一 benchmark；新一代 neural OT map 精度 benchmark；直线度作端侧可部署性代理。
+
+### 8.4 十二周行动计划（起点 2026-08-25，本周 W2）
+
+- **W1–2**：装备（Peyré 讲义、BB 精读、BW 沙盒、torchcfm + POT/OTT-JAX）✅；MPNA 立项与沙盒 ✅；本知识库上线 ✅。
+- **W3–4**：MPNA B1 pilot（SDXL-Turbo + GenEval，3 seeds）→ 继续/转向；复现三件套（Immiscible、OT-CFM、AYS）；NeurIPS 2026 放榜（9/24）后重跑趋势扫描。
+- **W5–8**：MPNA B2–B4；#2 理论线（动能泛函调度，以雅可比诱导曲率为变量）；#3 的漂移度量原型（借 T14 深读的四篇桥模型做对照）。
+- **W9–12**：MPNA B5 + 投稿骨架（ICLR 2027）；#7 医学线按 MICCAI 2027 布局数据合规。
+- **持续触发点**：NeurIPS 2026 放榜（9/24）；ICML 2026 PMLR 卷（FlashSinkhorn [A]→[P]）；FlashSinkhorn ≥v0.4 或多 GPU；SynthRAD post-challenge 榜。
+
+## 9. 写作红线与附录
+
+### 9.1 写作红线（从 446 篇的反例与失败案例总结）
+
+1. 不说「我们的方法实现了最优传输」——说「以 OT 为设计目标并度量偏差」（I1）。
+2. 少步比较必须固定 NFE 口径并报告多样性指标（FID 对少步失真；DDBM 的 N=40 实为 NFE 118）。
+3. 会议归属与「已接收」表述必须官方可核验；预印本结论一律 [R] 限定。
+4. 任何实例级耦合修改必须报告边缘漂移/多样性（改耦合 vs 保边缘张力）——本方法（MPNA）的核心卖点恰是这一项为零，要拿数据证明而不是引 Lemma。
+5. 条件生成中的 OT 声明必须过 C²OT 检查；语义对应线须消融证明「耦合结构本身带来增益」而非 attention 重命名。
+6. 桥模型横向比较前先统一评测协议（E→H/DIODE 指标是否在训练集上算、NFE 口径）。
+
+### 9.2 证据底座
+
+- 446 篇（30 课题、6 板块；⭐ 核心 139）；345 篇 arXiv id；原文 PDF 352 份、全文文本 352 份；逐篇深读报告见 `reports/`（文件名 = arXiv id），元数据卡 `data/meta/`。
+- 审计链：`source/audit/ARIS_AUDIT_20260814.md`（三层审计）→ `INCREMENTAL_REVIEW_20260825.md`（触发点复审）→ `trends/TRENDS_2026Q3.md`（Q3 增量，62 篇）。
+- 沙盒：`~/Code/mpna/sandbox/results/results.json`（5 seeds × 4096，与闭式理论逐点吻合）。
+- 翻译 QA：`papers_zh/*.inspect.json`（对象级审计：漏翻、保护区改动、重叠、图片丢失）。
+
+### 9.3 文档谱系与复现
+
+`source/REPORT_DIFFUSION_OT_20260814.md`（调研收口）→ `source/SYNTHESIS_DIFFUSION_OT_20260825.md`（综合 v0）→ **本报告**（综合 v1：+逐篇深读 +Q3 增量 +MPNA）→ `slides/`（HTML PPT 与 Beamer PDF）。
+
+复现整条流水线：
+
+```bash
+python3 scripts/build_corpus.py          # 引用库 → data/papers.jsonl
+python3 scripts/resolve_arxiv.py         # arXiv id / 元数据 / 许可证
+python3 scripts/fetch_papers.py          # 原文 PDF → papers/
+python3 scripts/extract_text.py          # 全文文本 → data/text/
+python3 scripts/build_manifests.py       # 课题清单
+DEEPSEEK_API_KEY=... python3 scripts/gen_reports_llm.py   # 逐篇深读 → reports/, data/meta/
+bash scripts/translate_batch.sh --loop   # 保版式中文译文 → papers_zh/
+python3 scripts/scan_arxiv_recent.py 20260801 20260901 && python3 scripts/classify_candidates.py   # 趋势扫描
+python3 src/generator.py                 # README.md / README_zh.md
+bash scripts/build_pdf.sh                # 本报告 PDF（zh/en）
+```
+
+*报告完。2026-09-01。*

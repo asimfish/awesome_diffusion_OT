@@ -1,0 +1,83 @@
+{
+ "report_id": "2511.11162",
+ "arxiv_id": "2511.11162",
+ "title": "OT-ALD: Aligning Latent Distributions with Optimal Transport for Accelerated Image-to-Image Translation",
+ "tldr_zh": "用显式 OT map 对齐 DDIB 两域 latent 分布后再反向去噪，平均提速 20.29%、FID 降 2.6",
+ "tldr_en": "Aligns DDIB latent distributions via explicit OT map before reverse diffusion, achieving 20.29% speedup and 2.6 lower FID",
+ "tags": [
+  "DDIB",
+  "optimal transport",
+  "image-to-image translation",
+  "latent alignment",
+  "diffusion models",
+  "semi-discrete OT"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "20.29%",
+   "description": "平均采样时间相对效率最优基线 ILVR 的降低幅度",
+   "source": "Table 3 标题"
+  },
+  {
+   "number": "2.6",
+   "description": "四个任务上 FID 相对各任务最优基线的平均降低值",
+   "source": "正文 Conclusion 前一段"
+  },
+  {
+   "number": "44.31",
+   "description": "Cat→Dog 任务 FID，最优",
+   "source": "Table 1"
+  },
+  {
+   "number": "47.65",
+   "description": "Wild→Dog 任务 FID，最优",
+   "source": "Table 1"
+  },
+  {
+   "number": "25.21",
+   "description": "Male→Female 任务 FID，最优",
+   "source": "Table 1"
+  },
+  {
+   "number": "52.87",
+   "description": "Summer→Winter 任务 FID，最优",
+   "source": "Table 1"
+  },
+  {
+   "number": "45.15",
+   "description": "Cat→Dog 翻译时间 s/image，RTX 4090",
+   "source": "Table 3"
+  },
+  {
+   "number": "10.21",
+   "description": "Summer→Winter 翻译时间 s/image，RTX 4090",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.470",
+   "description": "Cat→Dog SSIM，低于 CUT 的 0.601",
+   "source": "Table 1"
+  },
+  {
+   "number": "T=500, η=0.2",
+   "description": "主实验采用的扩散终止时间和噪声缩放因子",
+   "source": "Table 1 说明"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2205.10747",
+   "type": "继承 DDIB 框架"
+  },
+  {
+   "report_id": "2202.11760",
+   "type": "同源 latent OT 分析"
+  },
+  {
+   "report_id": "2108.02938",
+   "type": "效率对比基线 ILVR"
+  }
+ ],
+ "read_full_text": true
+}

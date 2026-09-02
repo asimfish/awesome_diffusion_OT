@@ -1,0 +1,50 @@
+{
+ "report_id": "2402.06162",
+ "arxiv_id": "2402.06162",
+ "title": "Wasserstein proximal operators describe score-based generative models and resolve memorization",
+ "tldr_zh": "SGM 是交叉熵的 Wasserstein 近端算子；核模型匹配 HJB 终端条件可避免记忆化",
+ "tldr_en": "SGMs are Wasserstein proximal operators of cross-entropy; kernel model with HJB terminal condition avoids memorization",
+ "tags": [
+  "score-based generative models",
+  "Wasserstein proximal operator",
+  "mean-field games",
+  "Hamilton-Jacobi-Bellman",
+  "memorization",
+  "kernel methods",
+  "manifold learning"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "N < N_train",
+   "context": "WPO-informed kernel model 使用的核中心数量少于训练样本数",
+   "source": "Sec. 4.2, p.10"
+  },
+  {
+   "number": "γ = β²/2",
+   "context": "entropic regularization 参数的选择，使 regularized WPO 的 MFG 最优性条件与 SGM 的 noising/denoising PDE 系统等价",
+   "source": "Sec. 3.1, p.7"
+  },
+  {
+   "number": "h = β²T",
+   "context": "WPO 步长参数与 SGM 扩散系数 β 和时间范围 T 的关系",
+   "source": "Sec. 3.1, Eq. 15 前, p.7"
+  },
+  {
+   "number": "d(d+1)/2",
+   "context": "Cholesky 因子 L_θ 的下三角元素数量，由前馈神经网络 ψ_θ 输出",
+   "source": "Sec. 4.2, p.13"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2402.06162",
+   "type": "extends"
+  },
+  {
+   "report_id": "2402.06162",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": false
+}

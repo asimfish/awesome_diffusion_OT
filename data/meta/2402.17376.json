@@ -1,0 +1,89 @@
+{
+ "report_id": "2402.17376",
+ "arxiv_id": "2402.17376",
+ "title": "Accelerating Diffusion Sampling with Optimized Time Steps",
+ "tldr_zh": "把时间步选取写成最小化全局离散误差上界的约束优化，与 UniPC 即插即用，5 NFE 下 FID 大幅下降",
+ "tldr_en": "Optimizes time steps by minimizing a global discretization error bound via constrained trust region, plug-and-play with UniPC",
+ "tags": [
+  "diffusion sampling",
+  "time step scheduling",
+  "ODE solver",
+  "training-free",
+  "UniPC",
+  "DPM-Solver++"
+ ],
+ "code_url": "https://github.com/scxue/DM-NonUniform",
+ "key_numbers": [
+  {
+   "number": "12.11",
+   "context": "CIFAR-10 5 NFE UniPC optimized FID, vs 23.22 uniform-λ",
+   "source": "Table 1"
+  },
+  {
+   "number": "10.47",
+   "context": "ImageNet 64×64 5 NFE UniPC optimized FID",
+   "source": "Sec. 6.1"
+  },
+  {
+   "number": "8.66",
+   "context": "ImageNet 256×256 5 NFE UniPC optimized FID, vs 23.48 uniform-t",
+   "source": "Sec. 6.2"
+  },
+  {
+   "number": "11.40",
+   "context": "ImageNet 512×512 5 NFE UniPC optimized FID, vs 20.28 uniform-t",
+   "source": "Sec. 6.2"
+  },
+  {
+   "number": "13.66",
+   "context": "FFHQ 64×64 5 NFE UniPC optimized FID",
+   "source": "Sec. 6.1"
+  },
+  {
+   "number": "12.11",
+   "context": "AFHQv2 64×64 5 NFE UniPC optimized FID",
+   "source": "Sec. 6.1"
+  },
+  {
+   "number": "14.1",
+   "context": "最长优化时间（秒），15 NFE，Intel Xeon Gold 6278C CPU",
+   "source": "Table 2"
+  },
+  {
+   "number": "1.9",
+   "context": "最短优化时间（秒），5 NFE",
+   "source": "Table 2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2206.00927",
+   "type": "继承（DPM-Solver 指数积分思想）"
+  },
+  {
+   "report_id": "2211.01095",
+   "type": "继承（DPM-Solver++ 求解器结构）"
+  },
+  {
+   "report_id": "2302.04867",
+   "type": "继承（UniPC 求解器结构，即插即用对象）"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "竞争（EDM 手工调度作为基线）"
+  },
+  {
+   "report_id": "2403.17233",
+   "type": "竞争（AYS 用 KLUB 上界做调度优化）"
+  },
+  {
+   "report_id": "2410.05274",
+   "type": "竞争（GITS 用截断误差 DP 做调度优化）"
+  },
+  {
+   "report_id": "2410.06611",
+   "type": "竞争（LD3 用可微反传端点误差做调度优化）"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,64 @@
+{
+ "report_id": "2403.06069",
+ "arxiv_id": "2403.06069",
+ "title": "Implicit Image-to-Image Schrodinger Bridge for Image Restoration",
+ "tldr_zh": "把 I2SB 采样改为非马尔可夫、每步注入初始退化图，免重训复用预训练模型，少步数下 FID 与保真度同时改善",
+ "tldr_en": "Non-Markovian I2SB sampling injecting the corrupted image at each step, reusing pretrained models, better FID and fidelity with fewer steps",
+ "tags": [
+  "Schrodinger Bridge",
+  "image restoration",
+  "non-Markovian sampling",
+  "DDIM",
+  "medical imaging",
+  "CT denoising",
+  "super-resolution"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "38%/26%/12%",
+   "context": "sr4x-bicubic 同 NFE 下 I3SB 相比 I2SB 的 FID 降低幅度（NFE=25/50/100）",
+   "source": "Sec. 5.1.1"
+  },
+  {
+   "number": "4×",
+   "context": "自然图像 25 步 I3SB 相比 100 步 I2SB 的计算时间加速",
+   "source": "Sec. 5.1.1"
+  },
+  {
+   "number": "0.5",
+   "context": "sr4x-bicubic 25 步 I3SB 相比 100 步 I2SB 的 PSNR 提升",
+   "source": "Sec. 5.1.1"
+  },
+  {
+   "number": "22%–46%",
+   "context": "人脸实验同 NFE=25 下 I3SB 相比 I2SB 的 FID 降低范围",
+   "source": "Sec. 5.1.2"
+  },
+  {
+   "number": "1.4×–2×",
+   "context": "医学实验 I3SB 相比 I2SB 的加速倍数",
+   "source": "Sec. 5.2"
+  },
+  {
+   "number": "3%–9%",
+   "context": "医学实验同 NFE=25 下 I3SB 相比 I2SB 的 FID 降低范围",
+   "source": "Sec. 5.1.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2302.05872",
+   "type": "继承/改造"
+  },
+  {
+   "report_id": "2010.02502",
+   "type": "方法类比（DDIM 之于 DDPM）"
+  },
+  {
+   "report_id": "2303.08782",
+   "type": "竞争（高阶 ODE 求解器加速 paired SB）"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,37 @@
+{
+ "report_id": "OT_StainNet_Optimal_Transport_Driven_Semantic_Matc",
+ "arxiv_id": null,
+ "title": "OT-StainNet: Optimal Transport Driven Semantic Matching for Weakly Paired H&E-to-IHC Stain Transfer",
+ "tldr_zh": "用特征空间 OT 匹配为弱配对 H&E–IHC 建立语义对应，监督扩散 LoRA 微调",
+ "tldr_en": "Feature-space OT matching builds semantic correspondence for weakly paired H&E-IHC, supervising diffusion LoRA fine-tuning",
+ "tags": [
+  "optimal-transport",
+  "stain-transfer",
+  "weakly-paired",
+  "diffusion",
+  "LoRA",
+  "pathology",
+  "semantic-matching"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "T15_StainSB",
+   "type": "同支线-病理染色"
+  },
+  {
+   "report_id": "T15_USIGAN",
+   "type": "同支线-病理染色-不平衡OT"
+  },
+  {
+   "report_id": "T15_TDSB",
+   "type": "同支线-病理染色-拓扑护栏"
+  },
+  {
+   "report_id": "T15_PASB",
+   "type": "同支线-病理染色-病理语义护栏"
+  }
+ ],
+ "read_full_text": false
+}

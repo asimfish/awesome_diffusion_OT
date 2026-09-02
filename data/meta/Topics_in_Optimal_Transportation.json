@@ -1,0 +1,50 @@
+{
+ "report_id": "Topics_in_Optimal_Transportation",
+ "arxiv_id": "",
+ "title": "Optimal Transport: Old and New",
+ "tldr_zh": "OT 理论百科：30 章覆盖对偶、位移插值、Monge 问题解、正则性、Ricci 曲率与梯度流；查证明时用，不作第一本",
+ "tldr_en": "Villani's 30-chapter treatise: general Kantorovich duality, displacement interpolation, Monge problem, regularity, Ricci curvature and gradient flows; a reference, not a first read.",
+ "tags": [
+  "textbook",
+  "ot-foundations",
+  "kantorovich-duality",
+  "displacement-interpolation",
+  "brenier-mccann",
+  "ricci-curvature",
+  "wasserstein-gradient-flow",
+  "reading-guide"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "30 chapters in 3 parts + 3 introductory chapters (TOC pp. IX-X); local text is the 2006-09-27 preprint (547 pp.)",
+  "Thm 4.1: optimal coupling exists on Polish spaces for lower semicontinuous cost bounded below (Ch. 4)",
+  "Preface: regularity theory 'most poorly represented', numerical simulation 'not addressed at all' (p. 3)"
+ ],
+ "relations": [
+  {
+   "report_id": "Optimal_Transport_for_Applied_Mathematicians",
+   "type": "competes"
+  },
+  {
+   "report_id": "Lectures_on_Optimal_Transport",
+   "type": "competes"
+  },
+  {
+   "report_id": "2505.06589",
+   "type": "uses"
+  },
+  {
+   "report_id": "1803.00567",
+   "type": "uses"
+  },
+  {
+   "report_id": "Polar_factorization_and_monotone_rearrangement_of",
+   "type": "uses"
+  },
+  {
+   "report_id": "The_Variational_Formulation_of_the_Fokker_Planck_E",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

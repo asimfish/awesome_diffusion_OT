@@ -1,0 +1,86 @@
+{
+ "report_id": "2407.15595",
+ "arxiv_id": "2407.15595",
+ "title": "Discrete Flow Matching",
+ "tldr_zh": "离散流匹配：通用概率路径族+后验参数化速度公式，1.7B 模型代码生成 Pass@1 6.7%",
+ "tldr_en": "Discrete flow matching with general probability paths and posterior-parameterized velocities; 1.7B model reaches 6.7% Pass@1 on HumanEval",
+ "tags": [
+  "discrete flow matching",
+  "CTMC",
+  "non-autoregressive generation",
+  "text generation",
+  "code generation",
+  "probability velocity"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "6.7%",
+   "context": "HumanEval Pass@1 for 1.7B FM model trained on Code data",
+   "source": "Table 4"
+  },
+  {
+   "number": "13.4%",
+   "context": "HumanEval Pass@10 for 1.7B FM model trained on Code data",
+   "source": "Table 4"
+  },
+  {
+   "number": "6.7%",
+   "context": "MBPP 1-shot Pass@1 for 1.7B FM model trained on Code data",
+   "source": "Table 4"
+  },
+  {
+   "number": "20.6%",
+   "context": "MBPP 1-shot Pass@10 for 1.7B FM model trained on Code data",
+   "source": "Table 4"
+  },
+  {
+   "number": "9.7",
+   "context": "Llama-3 generative perplexity for 1.7B FM C-coupling at 512 NFE",
+   "source": "Table 3"
+  },
+  {
+   "number": "22.3",
+   "context": "Llama-3 generative perplexity for 1.7B autoregressive baseline at 512 NFE",
+   "source": "Table 3"
+  },
+  {
+   "number": "22.3",
+   "context": "Llama-2 generative perplexity for FM (Eq. 10) at 1024 NFE on unconditional text",
+   "source": "Table 2"
+  },
+  {
+   "number": "3.63",
+   "context": "FID at 1024 NFE on CIFAR10 for FM",
+   "source": "Figure 3a / Sec. 4.2"
+  },
+  {
+   "number": "1.7B",
+   "context": "largest model parameter count trained in this work",
+   "source": "Sec. 4.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2402.04997",
+   "type": "继承/推广"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "连续对应物"
+  },
+  {
+   "report_id": "2310.16834",
+   "type": "竞争基线"
+  },
+  {
+   "report_id": "2304.14772",
+   "type": "耦合思想来源"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "耦合思想来源"
+  }
+ ],
+ "read_full_text": true
+}

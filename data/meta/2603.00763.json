@@ -1,0 +1,55 @@
+{
+ "report_id": "2603.00763",
+ "arxiv_id": "2603.00763",
+ "title": "Analyzing and Improving Fast Sampling of Text-to-Image Diffusion Models",
+ "tldr_zh": "消融 T2I 免训练五组件，外调度最关键；Frenet–Serret 总旋转等分调度，Flux 10 步达 20 步基线",
+ "tldr_en": "Ablates five training-free T2I acceleration components; schedule dominates. TORS equidistributes Frenet-Serret total rotation; Flux.1-Dev 10 steps match 20-step baseline.",
+ "tags": [
+  "schedule-optimization",
+  "trajectory-geometry",
+  "text-to-image",
+  "flow-matching",
+  "training-free",
+  "feature-caching"
+ ],
+ "code_url": "https://github.com/zju-pi/TORS",
+ "key_numbers": [
+  "Flux.1-Dev 10 steps: TORS HPSv2 29.30 vs baseline 27.70 vs GITS 29.13; 20-step baseline 29.30 (Table 1a)",
+  "SD 3.5 medium 10 steps: TORS IR 0.86 vs baseline 0.55 vs UniPC 0.69 (Table 1b)",
+  "GenEval Flux overall: TORS 10 steps 0.67 vs 50-step baseline 0.65 (Table 2)",
+  "Top-3 PCs explain >99% variance of 100 Flux trajectories (Sec. 5.1)",
+  "Qwen-Image 10 steps IR 0.91 -> 1.12 with Flux-derived TORS schedule (Table 3)",
+  "Deeper cache adds 6-14% latency, VRAM 36.32 -> up to 42.78 GB (Sec. 4)"
+ ],
+ "relations": [
+  {
+   "report_id": "2312.00094",
+   "type": "extends"
+  },
+  {
+   "report_id": "2506.10177",
+   "type": "extends"
+  },
+  {
+   "report_id": "2404.14507",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.15506",
+   "type": "competes"
+  },
+  {
+   "report_id": "2503.21774",
+   "type": "competes"
+  },
+  {
+   "report_id": "2402.17376",
+   "type": "competes"
+  },
+  {
+   "report_id": "2302.04867",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

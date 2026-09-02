@@ -1,0 +1,92 @@
+{
+ "report_id": "2501.11311",
+ "arxiv_id": "2501.11311",
+ "title": "A2SB: Audio-to-Audio Schrodinger Bridges",
+ "tldr_zh": "单一 SB 模型统一 44.1kHz 音乐带宽扩展与 inpainting，免声码器端到端，可修复小时级长音频",
+ "tldr_en": "Single SB model for 44.1kHz music bandwidth extension and inpainting, vocoder-free end-to-end, hour-long audio",
+ "tags": [
+  "Schrodinger Bridge",
+  "audio restoration",
+  "bandwidth extension",
+  "inpainting",
+  "music",
+  "MultiDiffusion",
+  "phase orthogonalization"
+ ],
+ "code_url": "https://github.com/NVIDIA/diffusion-audio-restoration",
+ "key_numbers": [
+  {
+   "number": "565M",
+   "context": "网络参数量",
+   "source": "Sec. 3.4"
+  },
+  {
+   "number": "2.3K hours",
+   "context": "预训练数据量",
+   "source": "Sec. 3.5"
+  },
+  {
+   "number": "1.5K hours",
+   "context": "微调数据量",
+   "source": "Sec. 3.5"
+  },
+  {
+   "number": "50 / 200",
+   "context": "带宽扩展 / inpainting 采样步数",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "23.03",
+   "context": "AAM cutoff=4kHz 带宽扩展 SiSpec (A2SB 2-part)",
+   "source": "Table 2"
+  },
+  {
+   "number": "4.18 ± 0.06",
+   "context": "AAM 带宽扩展 MOS (A2SB 4-part) vs GT 4.36 ± 0.04",
+   "source": "Table 10"
+  },
+  {
+   "number": "0.238",
+   "context": "AAM gap=1000ms inpainting LSD (A2SB 4-part)",
+   "source": "Table 6"
+  },
+  {
+   "number": "0.910",
+   "context": "Maestro cutoff=12kHz 带宽扩展 F1 (A2SB 4-part)",
+   "source": "Table 5"
+  },
+  {
+   "number": "32",
+   "context": "训练用 NVIDIA A100 GPU 数量",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "0.491",
+   "context": "带宽扩展 SiSpec 与 MOS 的 Spearman 相关",
+   "source": "Table 12"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2303.05737",
+   "type": "继承框架"
+  },
+  {
+   "report_id": "2302.08106",
+   "type": "继承推理算法"
+  },
+  {
+   "report_id": "2401.14425",
+   "type": "同系列前作"
+  },
+  {
+   "report_id": "2309.06490",
+   "type": "基线"
+  },
+  {
+   "report_id": "2306.10522",
+   "type": "基线"
+  }
+ ],
+ "read_full_text": true
+}

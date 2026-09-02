@@ -1,0 +1,32 @@
+{
+ "report_id": "Riemannian_Flow_Matching_Policy_RFMP_Braun_et_al",
+ "arxiv_id": null,
+ "title": "Riemannian Flow Matching Policy (RFMP), Braun et al.",
+ "tldr_zh": "把黎曼流匹配用作机器人视觉运动策略，作者报告比 Diffusion Policy 更快更平滑",
+ "tldr_en": "Uses Riemannian flow matching as a visuomotor policy; authors report faster inference and smoother trajectories than Diffusion Policy",
+ "tags": [
+  "Riemannian Flow Matching",
+  "visuomotor policy",
+  "robot learning",
+  "SO(3)",
+  "SE(3)",
+  "T28"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Riemannian_Flow_Matching_Chen_Lipman",
+   "type": "继承"
+  },
+  {
+   "report_id": "Diffusion_Policy_Chi_et_al",
+   "type": "竞争"
+  },
+  {
+   "report_id": "Riemannian_Consistency_Models",
+   "type": "可组合"
+  }
+ ],
+ "read_full_text": false
+}

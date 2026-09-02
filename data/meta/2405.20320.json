@@ -1,0 +1,63 @@
+{
+ "report_id": "2405.20320",
+ "arxiv_id": "2405.20320",
+ "title": "Improving the Training of Rectified Flows",
+ "tldr_zh": "一轮 reflow 即近乎直；U 形时间步 + LPIPS-Huber 前度量，CIFAR-10 一步 FID 12.21→3.07，ImageNet-64 一步 4.31 超 CD/PD",
+ "tldr_en": "One reflow round suffices under realistic settings; U-shaped timestep distribution and LPIPS-Huber premetric cut CIFAR-10 one-step FID 12.21->3.07 and beat CD/PD on ImageNet-64.",
+ "tags": [
+  "rectified-flow",
+  "reflow",
+  "training-techniques",
+  "one-step-generation",
+  "timestep-distribution",
+  "perceptual-loss"
+ ],
+ "code_url": "https://github.com/sangyun884/rfpp",
+ "key_numbers": [
+  "CIFAR-10 one-step FID 3.07, two-step 2.40 (Table 3)",
+  "ImageNet 64x64 one-step FID 4.31, two-step 3.64 vs iCT 4.02/3.20, CD 6.20/4.70, PD 15.39/8.95 (Table 4)",
+  "Ablation CIFAR-10 1-NFE: 12.21 (A) -> 7.14 (EDM init + batch 512) -> 5.17 (U-shaped p_t) -> 3.38 (LPIPS-Huber-1/t) -> 3.07 (real data) (Table 1)",
+  "U-shaped timestep p_t(u) ∝ exp(4u)+exp(-4u) (Sec. 4.1)",
+  "Reflow total forward passes 1828.6M vs CD x3.1, CT x1.5 on ImageNet-64 (Table 6)",
+  "Inversion: 2-RF++ with 2 NFE lower reconstruction MSE than EDM with 16 NFE (Fig. 5a)"
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "extends"
+  },
+  {
+   "report_id": "2309.06380",
+   "type": "extends"
+  },
+  {
+   "report_id": "2410.14949",
+   "type": "extends"
+  },
+  {
+   "report_id": "Rectified_Diffusion_Straightness_Is_Not_Your_Need",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2403.03206",
+   "type": "competes"
+  },
+  {
+   "report_id": "2303.01469",
+   "type": "competes"
+  },
+  {
+   "report_id": "2310.14189",
+   "type": "competes"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "uses"
+  },
+  {
+   "report_id": "2507.10218",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

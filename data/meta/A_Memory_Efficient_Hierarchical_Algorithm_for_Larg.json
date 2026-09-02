@@ -1,0 +1,52 @@
+{
+ "report_id": "A_Memory_Efficient_Hierarchical_Algorithm_for_Larg",
+ "arxiv_id": null,
+ "title": "A Memory-Efficient Hierarchical Algorithm for Large-scale OT (HALO)",
+ "tldr_zh": "HALO 组合层次 warm-start、active 剪枝与一阶 LP 求解器，报告 O(n) 内存与 1024² 图像 8.9× 加速、省 70.5% 显存。",
+ "tldr_en": "HALO combines hierarchical warm-start, active support pruning, and a first-order LP solver, reporting O(n) memory with 8.9× speedup and 70.5% memory savings on 1024² images.",
+ "tags": [
+  "OT solver",
+  "memory-efficient",
+  "hierarchical",
+  "first-order LP",
+  "cuPDLPx",
+  "large-scale OT"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "8.9×",
+   "context": "1024² 像素图像加速比",
+   "source": "调研 agent 报告，摘要未见"
+  },
+  {
+   "number": "70.5%",
+   "context": "显存节省",
+   "source": "调研 agent 报告，摘要未见"
+  },
+  {
+   "number": "O(n)",
+   "context": "内存复杂度",
+   "source": "调研 agent 报告，摘要未见"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "HiRef_ICML2025_Oral",
+   "type": "同路线（层次低秩构件）"
+  },
+  {
+   "report_id": "PDOT_2024",
+   "type": "底层一阶 LP 求解器同源"
+  },
+  {
+   "report_id": "FlashSinkhorn_ICML2026_Oral",
+   "type": "竞争（IO-aware Sinkhorn）"
+  },
+  {
+   "report_id": "FastSinkhorn_2026_preprint",
+   "type": "竞争（kernel 级 IO 工程）"
+  }
+ ],
+ "read_full_text": false
+}

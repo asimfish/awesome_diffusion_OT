@@ -1,0 +1,71 @@
+{
+ "report_id": "2410.02671",
+ "arxiv_id": "2410.02671",
+ "title": "Unsupervised Point Cloud Completion through Unbalanced Optimal Transport",
+ "tldr_zh": "把无配对补全形式化为 UOT map 学习，InfoCD 作 cost，类别失衡下更稳",
+ "tldr_en": "Formulates unpaired completion as UOT map learning with InfoCD cost; robust under class imbalance",
+ "tags": [
+  "unbalanced optimal transport",
+  "point cloud completion",
+  "neural OT",
+  "InfoCD",
+  "unpaired learning"
+ ],
+ "code_url": "https://github.com/LEETK99/UOT-UPC",
+ "key_numbers": [
+  {
+   "number": "7.60",
+   "metric": "cd_l1 x100 AVG on USSPA single-category",
+   "source": "Table 3"
+  },
+  {
+   "number": "8.96",
+   "metric": "cd_l1 x100 on USSPA multi-category",
+   "source": "Table 4"
+  },
+  {
+   "number": "7.87",
+   "metric": "cd_l1 x100 AVG on PCN single-category",
+   "source": "Table 5"
+  },
+  {
+   "number": "6.75-6.94",
+   "metric": "cd_l1 x100 range across imbalance ratios r=0.3-1",
+   "source": "Table 6"
+  },
+  {
+   "number": "23.77-29.79",
+   "metric": "cd_l1 x100 range for OT-UPC across same ratios",
+   "source": "Table 6"
+  },
+  {
+   "number": "8.46 vs 23.97",
+   "metric": "InfoCD vs l2 cost nearest-neighbor cd_l1 x100, multi-category AVG",
+   "source": "Table 1a"
+  },
+  {
+   "number": "4.21 / 0.09",
+   "metric": "trash bin / lamp incomplete-complete ratio in USSPA benchmark",
+   "source": "Table 2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "UOTM_Choi2023",
+   "type": "directly inherited from"
+  },
+  {
+   "report_id": "InfoCD_Lin2024",
+   "type": "uses as cost function"
+  },
+  {
+   "report_id": "Eyring2024_unbalanced_monge",
+   "type": "shares motivation (unbalancedness for domain translation)"
+  },
+  {
+   "report_id": "USSPA_Ma2023",
+   "type": "primary baseline and backbone source"
+  }
+ ],
+ "read_full_text": true
+}

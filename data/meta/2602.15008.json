@@ -1,0 +1,76 @@
+{
+ "report_id": "2602.15008",
+ "arxiv_id": "2602.15008",
+ "title": "Efficient Sampling with Discrete Diffusion Models: Sharp and Adaptive Guarantees",
+ "tldr_zh": "τ-leaping 达 O(d/ε) KL 复杂度并匹配下界；masked 由有效总相关自适应控制，可亚线性",
+ "tldr_en": "Sharp O(d/eps) KL bound for tau-leaping with matching lower bound; masking adapts via effective total correlation",
+ "tags": [
+  "discrete diffusion",
+  "tau-leaping",
+  "KL convergence",
+  "CTMC",
+  "sampling complexity",
+  "masking diffusion",
+  "score entropy"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "O(d/eps)",
+   "context": "uniform tau-leaping iteration complexity, improving from O(d^2 S/eps)",
+   "source": "Corollary 1, Eq. (11)"
+  },
+  {
+   "number": "Omega(d log S)",
+   "context": "algorithmic lower bound for tau-leaping on informative distributions",
+   "source": "Theorem 2, Eq. (12)"
+  },
+  {
+   "number": "D/eps",
+   "context": "masking Algorithm 1 complexity, D <= d log S, sublinear for structured data",
+   "source": "Theorem 3, Eq. (17)"
+  },
+  {
+   "number": "d^2 S/eps",
+   "context": "previous best uniform bound (Liang et al. 2025c)",
+   "source": "Table 1"
+  },
+  {
+   "number": "dS/eps",
+   "context": "previous masking bounds (Liang et al. 2025b; Conforti et al. 2025)",
+   "source": "Table 1"
+  },
+  {
+   "number": "S=50257, d=10^2~10^3",
+   "context": "GPT-2 vocabulary size and dimension motivating the analysis",
+   "source": "Sec. 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "campbell2022ctmc",
+   "type": "inherits"
+  },
+  {
+   "report_id": "lou2024sedd",
+   "type": "inherits"
+  },
+  {
+   "report_id": "liang2025uniform",
+   "type": "improves"
+  },
+  {
+   "report_id": "liang2025masking",
+   "type": "improves"
+  },
+  {
+   "report_id": "conforti2025masking",
+   "type": "improves"
+  },
+  {
+   "report_id": "chen2025uniformization",
+   "type": "complements"
+  }
+ ],
+ "read_full_text": true
+}

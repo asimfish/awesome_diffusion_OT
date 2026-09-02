@@ -105,15 +105,17 @@ def main():
     do_license = "--no-license" not in sys.argv
     # 1) title search for unique rows without arxiv id
     retry = "--retry-kb" in sys.argv
+    force = "--force-retry" in sys.argv
     todo = [r for r in rows if not r["arxiv_id"] and not r["dup_of"] and r["evidence"] != "B"
-            and (not r.get("arxiv_searched") or (retry and r.get("kb_title") and r.get("arxiv_searched") != "kb"))]
+            and (force or not r.get("arxiv_searched") or (retry and r.get("kb_title") and r.get("arxiv_searched") != "kb"))]
     log(f"title-search todo={len(todo)}")
     for i, r in enumerate(todo):
-        q = clean_query_title(r["kb_title"] if (retry and r.get("kb_title")) else r["title"])
+        q = clean_query_title(r["kb_title"] if ((retry or force) and r.get("kb_title")) else r["title"])
         if len(q) < 8:
             r["arxiv_searched"] = "skip-short"
             continue
-        words = [w for w in q.split() if len(w) > 2 and w not in {"the", "and", "for", "with", "via", "from", "into", "under"}][:8]
+        words = [w for w in q.split() if len(w) > 2 and w not in {"the", "and", "for", "with", "via", "from", "into", "under"}
+                 and not w.startswith("schr") and not w.startswith("schro")][:8]  # diacritics (Schrödinger) break ti: matching
         if len(words) < 2:
             r["arxiv_searched"] = "skip-short"
             continue

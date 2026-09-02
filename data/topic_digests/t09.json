@@ -1,0 +1,88 @@
+{
+ "digest_zh": "本课题围绕 Rectified Flow 的「轨迹拉直」机制展开，核心张力是「直」与「最优传输」的关系。2209.03003 提出 reflow 迭代拉直轨迹，但仅证明直是 c-最优的必要条件；2209.14577 试图用梯度场约束补充分性，后被 2505.19712 构造反例指出其定理需连通支撑假设，且损失趋零不蕴含最优。正面理论由 2410.14949 给出：1-RF 在近单峰高斯混合下直且 Monge 最优，并建立 W2 离散误差界 γ_{2,T}/T²。经验线从 2309.06380（InstaFlow）确立「reflow+distill」工业范式，到 2405.20320 论证「一轮即够、瓶颈在训练」，再到 Rectified_Diffusion_Straightness_Is_Not_Your_Need 主张直线度本身非本质、配对重训才是核心。工程支线包括 PeRFlow 分段 reflow、BOSS 最优步长拉直、CAF 常加速度流、HRF 层级速度建模、VRFNO 噪声优化配对。当前共识是：reflow 的价值在于改善耦合的可学习性而非几何直线度；分歧在于耦合最优性是否可达、直线度是否可作为 few-step 质量的代理指标。",
+ "observations": [
+  {
+   "claim": "reflow 的「直」与 OT 最优性之间存在不可消除的鸿沟，梯度约束也无法完全弥合。",
+   "evidence": [
+    "2209.03003",
+    "2209.14577",
+    "2505.19712"
+   ],
+   "detail": "2209.03003 的 Thm 3.8 仅证明直耦合是 c-最优的必要条件；2209.14577 试图用梯度场约束补充分性，但 2505.19712 构造了支撑不连通的反例，证明非最优不动点存在且损失趋零不蕴含最优（Cor. 17 中 loss<eps 但 E||X1^c-X0^c||²>4-eps）。"
+  },
+  {
+   "claim": "经验研究逐步将 reflow 的收益从「直线度」重新归因于「确定性配对与数据复用」。",
+   "evidence": [
+    "2405.20320",
+    "2507.10218",
+    "Rectified_Diffusion_Straightness_Is_Not_Your_Need"
+   ],
+   "detail": "2405.20320 论证一轮 reflow 即近乎直、瓶颈在训练技巧；2507.10218 的 Sec. 2.2 将 reflow 起效归因为确定性配对与多时刻数据复用；Rectified_Diffusion_Straightness_Is_Not_Your_Need 进一步主张直线度本身非本质。"
+  },
+  {
+   "claim": "分段拉直与最优步长调度将「全局拉直」转化为「给定预算下的分段线性化」，与曲率均分原则一致。",
+   "evidence": [
+    "2312.16414",
+    "2405.07510",
+    "2410.14949"
+   ],
+   "detail": "BOSS 用动态规划求 K 步 Euler 最优非均匀步长再分段拉直；PeRFlow 均匀切 4 窗做短程 reflow；2410.14949 的 Thm 2 表明 W2 误差由最坏区间的 γ_{2,T} 决定，暗示最优窗界应使各区间曲率相等。"
+  },
+  {
+   "claim": "放弃常速均值场假设的支线（CAF、HRF）表明 few-step 质量的瓶颈是耦合可学习性而非几何直线度。",
+   "evidence": [
+    "2411.00322",
+    "2502.17436"
+   ],
+   "detail": "CAF 用常加速度二次曲线+初速度条件化，CIFAR-10 一步 FID 4.81；HRF 在速度空间再学一层 rectified flow 建模多模态速度分布，CIFAR-10 5 NFE FID 30.9 vs RF 36.2。两者均不追求 OT 最优，而是提高耦合的可学习性。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "reflow 迭代从非最优初始耦合出发会收敛到哪个不动点？",
+   "why_open": "2505.19712 只证明非最优不动点存在，但不知从独立耦合或 minibatch-OT 耦合出发迭代会收敛到哪个不动点，且非 rectifiable 反例依赖对称性，实践中是否出现未知。",
+   "evidence": [
+    "2505.19712"
+   ]
+  },
+  {
+   "problem": "直线度 S(Z) 是否可作为 few-step 采样质量的可靠代理指标？",
+   "why_open": "2410.14949 的 W2 界依赖 γ_{2,T} 而非 S(Z)，且指出 S(Z) 本身不是好的几何量；Rectified_Diffusion_Straightness_Is_Not_Your_Need 主张直线度非本质，但缺乏定量实验支撑。",
+   "evidence": [
+    "2410.14949",
+    "Rectified_Diffusion_Straightness_Is_Not_Your_Need"
+   ]
+  },
+  {
+   "problem": "注噪 c-reflow 是否能在全支撑条件下收敛到 OT？",
+   "why_open": "2505.19712 的 Thm 11 加连通全支撑假设后成立，Thm 18 证明注噪 rectification 损失趋零，但两者未合起来证明注噪 c-reflow 收敛到 OT，仅在数值上观察到趋向最优。",
+   "evidence": [
+    "2505.19712",
+    "2209.14577"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "2209.03003",
+   "why": "课题根节点，定义 reflow 与基本定理"
+  },
+  {
+   "report_id": "2209.14577",
+   "why": "梯度约束 c-RF 的理论尝试"
+  },
+  {
+   "report_id": "2505.19712",
+   "why": "反例修正，定论「直≠最优」"
+  },
+  {
+   "report_id": "2410.14949",
+   "why": "正面充分条件与 W2 误差界"
+  },
+  {
+   "report_id": "2309.06380",
+   "why": "工业转折点，reflow+distill 范式"
+  }
+ ],
+ "n_reports": 15
+}

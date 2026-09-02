@@ -1,0 +1,78 @@
+{
+ "report_id": "2509.25519",
+ "arxiv_id": "2509.25519",
+ "title": "Flow Matching with Semidiscrete Couplings",
+ "tldr_zh": "用全数据集半离散 OT 势函数替代 minibatch OT 配对，训练时 O(N) MIPS 指派噪声，FID 优于 I-FM 且开销远低于 OT-FM。",
+ "tldr_en": "Replaces minibatch OT with dataset-level semidiscrete OT potentials; O(N) MIPS pairing at train time beats I-FM on FID with negligible overhead vs OT-FM.",
+ "tags": [
+  "flow matching",
+  "semidiscrete optimal transport",
+  "OT-FM",
+  "coupling",
+  "MIPS",
+  "Tweedie formula",
+  "guidance"
+ ],
+ "code_url": "https://github.com/ott-jax/ott",
+ "key_numbers": [
+  {
+   "number": "45.62 vs 79.95 (Euler 8, ImageNet-64 unconditional FID, SD-FM ε=0 vs I-FM)",
+   "source": "Table 2"
+  },
+  {
+   "number": "8.42 vs 19.68 (Dopri5, ImageNet-64 unconditional FID, SD-FM ε=0 vs I-FM)",
+   "source": "Table 2"
+  },
+  {
+   "number": "1.26 vs 13.38 (Dopri5, PetFace unconditional FID, SD-FM ε=0 vs I-FM)",
+   "source": "Table 2"
+  },
+  {
+   "number": "O(n^2/ε^2) Sinkhorn precompute cost per n pairs",
+   "source": "Sec. 1, The Semidiscrete Approach"
+  },
+  {
+   "number": "O(N) MIPS pairing cost at train time",
+   "source": "Sec. 1, The Semidiscrete Approach"
+  },
+  {
+   "number": "12 hours SGD convergence on 8×H100 for ImageNet-32 SD-OT potential",
+   "source": "Sec. 5.1, FID vs. Potential Quality"
+  },
+  {
+   "number": ">10 days OT-FM pairing cost at ImageNet-64 full dimension, large n",
+   "source": "Sec. 5.1, Class-conditional ImgN and PetFace"
+  },
+  {
+   "number": "χ² ≈ 0.05 saturation threshold for FID gains",
+   "source": "Sec. 5.1, FID vs. Potential Quality"
+  },
+  {
+   "number": "PSNR 21.41 vs 21.17 (CelebA 4× SR, σ=0.1, SD-FM ε=0.01 vs I-FM)",
+   "source": "Table 3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2310.02794",
+   "type": "被替代/继承"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "被替代/继承"
+  },
+  {
+   "report_id": "2505.13447",
+   "type": "扩展应用"
+  },
+  {
+   "report_id": "2209.14577",
+   "type": "相关方法（Reflow 路线）"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "理论框架基础"
+  }
+ ],
+ "read_full_text": true
+}

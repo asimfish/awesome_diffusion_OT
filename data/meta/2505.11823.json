@@ -1,0 +1,67 @@
+{
+ "report_id": "2505.11823",
+ "arxiv_id": "2505.11823",
+ "title": "Variational Regularized Unbalanced Optimal Transport: Single Network, Least Action",
+ "tldr_zh": "把 RUOT 一阶最优性条件嵌入参数化与损失，单标量场求解，作用量更低、训练更快更稳",
+ "tldr_en": "Embeds RUOT first-order optimality conditions into parameterization and loss; single scalar field solves RUOT with lower action and faster, more stable training",
+ "tags": [
+  "RUOT",
+  "Wasserstein-Fisher-Rao",
+  "trajectory inference",
+  "HJB equation",
+  "single-cell dynamics",
+  "unbalanced optimal transport"
+ ],
+ "code_url": "https://github.com/ZerooVector/VarRUOT",
+ "key_numbers": [
+  {
+   "number": "1.1105 ± 0.0515",
+   "context": "Var-RUOT path action on three-gene simulation, lowest among baselines",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.3544 ± 0.0019",
+   "context": "Var-RUOT path action on EMT dataset, vs TIGON 0.4672, DeepRUOT 0.4857",
+   "source": "Table 2"
+  },
+  {
+   "number": "27.60 ± 5.75 epochs / 33.98 ± 6.37 sec",
+   "context": "Var-RUOT convergence on simulation gene, vs TIGON 228.40 ± 223.71 epochs",
+   "source": "Table 3"
+  },
+  {
+   "number": "5.20 ± 1.26 epochs / 7.37 ± 1.89 sec",
+   "context": "Var-RUOT convergence on EMT, vs RUOT w/o pretraining 228.20 ± 223.88 epochs",
+   "source": "Table 3"
+  },
+  {
+   "number": "3.1491 ± 0.0837",
+   "context": "Var-RUOT path action on mouse blood hematopoiesis with standard WFR metric",
+   "source": "Table 4"
+  },
+  {
+   "number": "0.1200 / 0.1431 (W1 at t=1,2)",
+   "context": "Var-RUOT standard WFR on hematopoiesis, best W1 among baselines",
+   "source": "Table 4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "DeepRUOT",
+   "type": "继承并改进"
+  },
+  {
+   "report_id": "Action Matching",
+   "type": "推广到非平衡+随机并存"
+  },
+  {
+   "report_id": "WFR-FM",
+   "type": "同谱系后续工作，simulation-free 路线"
+  },
+  {
+   "report_id": "UOTCFM",
+   "type": "基线对比，非平衡 flow matching 路线"
+  }
+ ],
+ "read_full_text": true
+}

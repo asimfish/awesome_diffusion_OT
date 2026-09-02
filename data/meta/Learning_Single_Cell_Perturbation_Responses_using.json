@@ -1,0 +1,39 @@
+{
+ "report_id": "Learning_Single_Cell_Perturbation_Responses_using",
+ "arxiv_id": null,
+ "title": "Learning Single-Cell Perturbation Responses using Neural Optimal Transport",
+ "tldr_zh": "用 ICNN 对偶势学 control→perturbed 的 Monge map，预测未见药物与病人的单细胞扰动响应。",
+ "tldr_en": "Learns a Monge map from control to perturbed cells via ICNN dual potentials for unseen drug and patient prediction.",
+ "tags": [
+  "neural optimal transport",
+  "ICNN",
+  "single-cell",
+  "perturbation response",
+  "Monge map"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Monge_Gap",
+   "type": "后续修正"
+  },
+  {
+   "report_id": "UOT_Monge",
+   "type": "后续修正"
+  },
+  {
+   "report_id": "MMFM",
+   "type": "后续FM化"
+  },
+  {
+   "report_id": "MFM",
+   "type": "后续条件化"
+  },
+  {
+   "report_id": "CellFlow",
+   "type": "后续工程化"
+  }
+ ],
+ "read_full_text": false
+}

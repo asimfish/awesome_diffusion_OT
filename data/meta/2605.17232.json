@@ -1,0 +1,85 @@
+{
+ "report_id": "2605.17232",
+ "arxiv_id": "2605.17232",
+ "title": "Dimension-Free Convergence of Discrete Diffusion Models: Adjoint Equations Induce the Right Space",
+ "tldr_zh": "伴随方程框架给出任意 IPM 下不依赖词表大小 S 的离散扩散收敛界，首次同时覆盖 masked 与 uniform 先验",
+ "tldr_en": "Adjoint-equation framework yields S-free convergence bounds in any IPM for discrete diffusion, covering both masked and uniform priors",
+ "tags": [
+  "discrete diffusion",
+  "convergence theory",
+  "integral probability metric",
+  "score entropy",
+  "CTMC",
+  "masked diffusion",
+  "uniform diffusion",
+  "adjoint equation"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "S > 10^5",
+   "context": "现代语言任务词表规模，使 S 依赖界松弛",
+   "source": "Remark 4.1.1, 引用 Nie et al. 2026"
+  },
+  {
+   "number": "sqrt(S) > 300",
+   "context": "Liang et al. (2026d; 2026a) TV 界前因子在 S > 10^5 时的量级",
+   "source": "Remark 4.1.1"
+  },
+  {
+   "number": "d e^{-||beta||_1}",
+   "context": "masked 与 uniform 情形的初始化误差",
+   "source": "Theorem 4.1 Eq. 16-18"
+  },
+  {
+   "number": "sqrt(2d) sqrt(||beta(1-p(m))||_1)",
+   "context": "masked 情形的训练误差系数",
+   "source": "Theorem 4.1 Eq. 16"
+  },
+  {
+   "number": "C_Psi = 1/2",
+   "context": "TV 与 per-position TV 的 IPM 常数",
+   "source": "Table 2"
+  },
+  {
+   "number": "C_Psi = d/2",
+   "context": "Hamming W1 的 IPM 常数",
+   "source": "Table 2"
+  },
+  {
+   "number": "O(d beta_max/beta_min log((beta_max/beta_min)(d C_Psi/epsilon)))",
+   "context": "masked 下 uniformization 期望步数",
+   "source": "Corollary 4.4 Case 1"
+  },
+  {
+   "number": "O(beta_max d (log beta_max + (1/beta_min) log(d C_Psi/epsilon)))",
+   "context": "uniform 下 uniformization 期望步数（附加 score 假设）",
+   "source": "Corollary 4.4 Case 2"
+  },
+  {
+   "number": "L_SE = O(1/S)",
+   "context": "已有 S 依赖工作对训练损失的要求",
+   "source": "Remark 4.5, 引用 Liang et al. 2025; 2026a"
+  },
+  {
+   "number": "L_SE^delta = O(epsilon^2/(d C_Psi^2))",
+   "context": "本文对训练损失的要求，不随 S 收紧",
+   "source": "Corollary 4.4, Remark 4.5"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2602.15008",
+   "type": "竞争/被超越（Dmitriev et al. 2026，uniform 与 surrogate masked 的 KL 界，S 依赖）"
+  },
+  {
+   "report_id": "2602.22505",
+   "type": "竞争/被超越（Liang et al. 2026d，masked 的 TV 界，含 S 依赖系数）"
+  },
+  {
+   "report_id": "chen_ying_2025_uniformization",
+   "type": "互补（uniformization 精确采样 vs 本文近似 score 误差界）"
+  }
+ ],
+ "read_full_text": true
+}

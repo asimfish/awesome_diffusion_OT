@@ -1,0 +1,39 @@
+{
+ "report_id": "2310.01174",
+ "arxiv_id": null,
+ "title": "Light Schrödinger Bridge (LightSB), Korotin et al.",
+ "tldr_zh": "高斯混合参数化 Schrödinger 势，免仿真、CPU 分钟级求解 SB，并证万能逼近性",
+ "tldr_en": "Gaussian mixture parametrization of Schrödinger potentials enables simulation-free, CPU-minute SB solving with universal approximation",
+ "tags": [
+  "Schrödinger Bridge",
+  "Gaussian mixture",
+  "simulation-free",
+  "entropic optimal transport",
+  "generative modeling"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "LightSB_M_ICML2024",
+   "type": "extends"
+  },
+  {
+   "report_id": "DSB_NeurIPS2021",
+   "type": "compared_to"
+  },
+  {
+   "report_id": "SB_FBSDE_ICLR2022",
+   "type": "compared_to"
+  },
+  {
+   "report_id": "IDBM_JMLR2023",
+   "type": "compared_to"
+  },
+  {
+   "report_id": "DSBM_NeurIPS2023",
+   "type": "compared_to"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,48 @@
+{
+ "report_id": "2205.15269",
+ "arxiv_id": "2205.15269",
+ "title": "Kernel Neural Optimal Transport",
+ "tldr_zh": "证明 NOT 在 gamma-weak 二次 cost 下鞍点含大量 fake solution，改用特征核 weak cost 后所有鞍点都是 OT plan；翻译 FID 与稳定性改善",
+ "tldr_en": "NOT with the gamma-weak quadratic cost admits many fake saddle points; characteristic-kernel weak costs make every optimal saddle point a true OT plan and improve I2I FID and stability.",
+ "tags": [
+  "neural-ot",
+  "weak-ot",
+  "kernel-cost",
+  "fake-solutions",
+  "stochastic-plan",
+  "unpaired-translation",
+  "theory"
+ ],
+ "code_url": "https://github.com/iamalexkorotin/KernelNeuralOptimalTransport",
+ "key_numbers": [
+  "Test FID 128px kernel vs weak-quadratic NOT: outdoor->church 15.16 vs 25.97, celeba(f)->anime 21.96 vs 28.21, handbags->shoes 26.7 vs 33.9 (Table 1)",
+  "Test FID 128px vs baselines: outdoor->church 15.16 vs CycleGAN 36.16-43.74, MUNIT 32.14, AugCycleGAN 51.15; texture->shoes 24.84 vs CycleGAN 34.65, MUNIT 43.74 (Table 5)",
+  "Stability (32px, 5 seeds): weak quadratic gamma=2 best/last/max FID 25.36/37.18/67.50 vs kernel gamma=2 16.50/20.19/29.85 on shoes->handbags (Table 3)",
+  "Kernel choice texture->handbags 64px FID: bilinear 18.79, distance 16.13, Gaussian 20.89, Laplacian 20 (Fig. 14)",
+  "Fake saddle points exist iff Proj_{<=Q}((1/gamma) P) != Q; characteristic kernel + gamma in (0,1] makes all optimal saddle points OT plans (Corollary 1, Theorem 2)",
+  "Compute: 3-4 days on 4x V100 for 128px (Appendix I)"
+ ],
+ "relations": [
+  {
+   "report_id": "2201.12220",
+   "type": "extends"
+  },
+  {
+   "report_id": "2205.15403",
+   "type": "competes"
+  },
+  {
+   "report_id": "2301.12874",
+   "type": "competes"
+  },
+  {
+   "report_id": "2106.03812",
+   "type": "uses"
+  },
+  {
+   "report_id": "Overcoming_Spurious_Solutions_in_Semi_Dual_Neural",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,39 @@
+{
+ "report_id": "2403.05069",
+ "arxiv_id": "2403.05069",
+ "title": "Improving Diffusion-Based Generative Models via Approximated Optimal Transport",
+ "tldr_zh": "EDM 训练时 batch 内 Hungarian 图像–噪声指派近似 OT，ODE 曲率下降；CIFAR-10 FID 1.88@27NFE、加 DG 1.68/1.58",
+ "tldr_en": "Hungarian image-noise assignment during EDM training approximates OT, straightens ODE; CIFAR-10 FID 1.88 at 27 NFE, 1.68/1.58 with discriminator guidance.",
+ "tags": [
+  "noise-assignment",
+  "approximated-ot",
+  "edm",
+  "trajectory-straightening",
+  "training-time-coupling",
+  "hungarian"
+ ],
+ "code_url": "https://github.com/large-scale-kim/EDM-AOT",
+ "key_numbers": [
+  "CIFAR-10 unconditional: EDM 1.97 @35 NFE; EDM-AOT 1.95 @35 (rho=7), 1.88 @27 (rho=90, 14 steps) (Table 1)",
+  "CIFAR-10 conditional: EDM 1.79 @35; EDM-AOT 1.79 @35 (rho=7), 1.73 @29 (rho=72) (Table 2)",
+  "With discriminator guidance: 1.68 (uncond) / 1.58 (cond) @29 NFE vs EDM+DG 1.77/1.64 @35 (Table 3)",
+  "8-step (15 NFE) unconditional best: EDM 4.05 vs EDM-AOT 3.06 (Table 4)",
+  "NFE sweep unconditional at 11/15/19 NFE: EDM 11.86/4.05/2.58 vs AOT 7.51/3.06/2.29 (Table 5)",
+  "Assignment pool N=512 (uncond) / 2048 (cond); training cost +2% to +15% (Sec. 5.1, Sec. 7)"
+ ],
+ "relations": [
+  {
+   "report_id": "2505.18521",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2410.13431",
+   "type": "competes"
+  },
+  {
+   "report_id": "The_Emergence_of_Reproducibility_and_Consistency_i",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

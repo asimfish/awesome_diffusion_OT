@@ -1,0 +1,51 @@
+{
+ "report_id": "1803.00567",
+ "arxiv_id": "1803.00567",
+ "title": "Computational Optimal Transport",
+ "tldr_zh": "计算 OT 标准教材，10 章覆盖离散 OT、对偶、Sinkhorn、半离散、动态形式、barycenter，从零到能跑代码",
+ "tldr_en": "Standard computational-OT textbook: discrete OT, duality, Sinkhorn, semi-discrete, Benamou-Brenier dynamics, barycenters, with three-layer exposition and code.",
+ "tags": [
+  "textbook",
+  "ot-foundations",
+  "computational-ot",
+  "sinkhorn",
+  "kantorovich-duality",
+  "brenier",
+  "benamou-brenier",
+  "reading-guide"
+ ],
+ "code_url": "https://optimaltransport.github.io/",
+ "key_numbers": [
+  "10 chapters, 209 pages; FnT ML vol. 11(5-6) pp. 355-607 (2019)",
+  "Thm 2.1 Brenier: unique plan (Id,T)#alpha with T = grad of convex phi = |x|^2/2 - f (Sec. 2.5)",
+  "Eq. (2.41)-(2.42): W_2^2 between Gaussians = ||m_a-m_b||^2 + Bures^2 (Sec. 2.6)",
+  "Prop. 3.4: extremal couplings have at most n+m-1 nonzeros (Sec. 3.4)"
+ ],
+ "relations": [
+  {
+   "report_id": "2505.06589",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2003.00855",
+   "type": "uses"
+  },
+  {
+   "report_id": "1306.0895",
+   "type": "uses"
+  },
+  {
+   "report_id": "A_computational_fluid_mechanics_solution_to_the_Mo",
+   "type": "uses"
+  },
+  {
+   "report_id": "Polar_factorization_and_monotone_rearrangement_of",
+   "type": "uses"
+  },
+  {
+   "report_id": "Optimal_Transport_for_Applied_Mathematicians",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

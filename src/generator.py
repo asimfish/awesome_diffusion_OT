@@ -40,6 +40,7 @@ TOPIC_EN = {
     "t28": "Riemannian Flow Matching", "t29": "High-Performance OT Solvers and Infrastructure",
     "t30": "Edge Deployment, Benchmarks and Venue Trends",
 }
+REL = "https://github.com/asimfish/awesome_diffusion_OT/releases/download"
 EV = {"P": "proceedings", "A": "accepted", "R": "preprint", "B": "book/survey"}
 EV_ZH = {"P": "论文集", "A": "已接收", "R": "预印本", "B": "教材/综述"}
 
@@ -69,9 +70,9 @@ def item_links(r, rid):
         links.append(f"[report](reports/{rid}.md)")
     stem = a.replace("/", "_") if a else None
     if stem and (ROOT / f"papers/{stem}.pdf").exists():
-        links.append(f"[PDF](papers/{stem}.pdf)")
+        links.append(f"[PDF]({REL}/pdf-en-v1/{stem}.pdf)")
     if stem and (ROOT / f"papers_zh/{stem}.zh.pdf").exists():
-        links.append(f"[zh-PDF](papers_zh/{stem}.zh.pdf)")
+        links.append(f"[zh-PDF]({REL}/pdf-zh-v1/{stem}.zh.pdf)")
     return " ".join(links)
 
 
@@ -149,7 +150,8 @@ def render(lang):
             man = manifests[t]
             L += [f'<a id="{t}"></a>', f"### {t.upper()}. {man['topic_name'] if zh else TOPIC_EN[t]}", ""]
             kb = f"source/kb/{Path(man['kb_note']).name}"
-            L += [(f"课题笔记：[`{kb}`]({kb})（背景 / 演进脉络 / 切入点）" if zh else f"Topic note: [`{kb}`]({kb}) (background / lineage / open problems)"), ""]
+            L += [(f"课题综合：[`topics/{t}.md`](topics/{t}.md)（跨论文观察 / 开放问题 / 阅读顺序）· 课题笔记：[`{kb}`]({kb})" if zh
+                   else f"Topic digest: [`topics/{t}.md`](topics/{t}.md) (cross-paper observations / open problems / reading order) · topic note: [`{kb}`]({kb})"), ""]
             trs = sorted([r for r in rows if r["topic"] == t and not r["dup_of"]], key=lambda r: (not r["star"], -(r["year"] or 0), r["title"]))
             for i, r in enumerate(trs, 1):
                 rid = report_id_of(r)
@@ -186,13 +188,13 @@ def render(lang):
         L += [f"- `reports/`：{n_reports} 份逐篇深读（文件名 = arXiv id）；`data/meta/`：每篇的 TL;DR / 关键数字 / 关系卡。",
               f"- `papers/`：{n_pdf} 份原文；`papers_zh/`：{n_zh} 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。",
               "- `report/`：综合分析报告（`AWESOME_DIFFUSION_OT_REPORT_zh.md` / `_en.md` 及 PDF）。",
-              "- `slides/`：HTML PPT（浏览器打开）与 Beamer PDF。",
+              "- `slides/`：[HTML PPT](slides/awesome_diffusion_OT_deck.html)（浏览器打开，方向键翻页）与 [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf)；报告 PDF：[中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf)。",
               "- 复现整条流水线：`scripts/build_corpus.py → resolve_arxiv.py → fetch_papers.py → extract_text.py → translate_batch.sh → src/generator.py`。", ""]
     else:
         L += [f"- `reports/`: {n_reports} per-paper deep dives (file name = arXiv id); `data/meta/`: TL;DR / key numbers / relation cards.",
               f"- `papers/`: {n_pdf} originals; `papers_zh/`: {n_zh} layout-preserving Chinese translations with `*.inspect.json` QA. Missing translations are being filled (`scripts/translate_batch.sh`).",
               "- `report/`: synthesis report (`AWESOME_DIFFUSION_OT_REPORT_zh.md` / `_en.md` and PDFs).",
-              "- `slides/`: HTML deck and Beamer PDF.",
+              "- `slides/`: [HTML deck](slides/awesome_diffusion_OT_deck.html) (open in a browser, arrow keys) and [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf); report PDFs: [中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf).",
               "- Reproduce the pipeline: `scripts/build_corpus.py → resolve_arxiv.py → fetch_papers.py → extract_text.py → translate_batch.sh → src/generator.py`.", ""]
     L += ['<a id="contributing"></a>', f"## I. {'贡献与引用' if zh else 'Contributing and Citation'}", ""]
     if zh:

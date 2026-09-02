@@ -1,0 +1,54 @@
+{
+ "report_id": "2312.00094",
+ "arxiv_id": "2312.00094",
+ "title": "Fast ODE-based Sampling for Diffusion Models in Around 5 Steps",
+ "tldr_zh": "轨迹近似 2D，学 9k 参数预测器给每步平均方向，5 NFE CIFAR-10 FID 6.61",
+ "tldr_en": "Trajectories are nearly 2D; a 9k-parameter predictor learns per-step mean direction, reaching FID 6.61 on CIFAR-10 at 5 NFE.",
+ "tags": [
+  "ode-solver",
+  "trajectory-geometry",
+  "solver-distillation",
+  "few-step-sampling",
+  "training-light"
+ ],
+ "code_url": "https://github.com/zju-pi/diff-sampler",
+ "key_numbers": [
+  "AMED-Plugin(iPNDM) FID 6.61 on CIFAR-10 at 5 NFE (Table 2a)",
+  "AMED-Solver FID 10.74 on ImageNet-64 at 5 NFE (Table 2b)",
+  "AMED-Solver FID 13.20 on LSUN Bedroom-256 at 5 NFE (Table 2d)",
+  "2-PC projection error <= 8% over 1k trajectories (Fig. 4)",
+  "Predictor 9k params, 2-8 min training on CIFAR-10 (Sec. 4.1)",
+  "SD v1.4 FID 18.92 vs 21.33 at 8 NFE (Table 3)"
+ ],
+ "relations": [
+  {
+   "report_id": "2206.00364",
+   "type": "uses"
+  },
+  {
+   "report_id": "2206.00927",
+   "type": "extends"
+  },
+  {
+   "report_id": "2204.13902",
+   "type": "uses"
+  },
+  {
+   "report_id": "2506.10177",
+   "type": "extends"
+  },
+  {
+   "report_id": "2512.22796",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2403.01329",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.15506",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

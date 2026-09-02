@@ -1,0 +1,93 @@
+{
+ "digest_zh": "本课题围绕多边际最优传输（MMOT）与 Wasserstein 重心在生成建模中的两类应用展开：多时间边缘生成与模型/分布融合。方法谱系呈现从静态到动态、从精确到可扩展、从训练到免训练的演进。多时间边缘生成线从 TreeDSB 的树结构扩散 Schrödinger Bridge 起步，经 MMFM 的样条插值、3MSBM 的相空间动量桥，到 OTP-FM 用动态 OT 势函数统一软约束框架，逐步解决 simulation-free、全局耦合与平滑轨迹的三角张力。barycenter 计算线则分化为精确解（SGA 的无投影对偶上升）、神经解（Energy-Guided EBM、Neural OT 双层目标）、可扩展梯度流解（WGF 的 mini-batch OT）与鲁棒变体（Wasserstein ball center、Procrustes-WB）。模型融合线以 OTFusion 的逐层 OT 对齐为奠基，向 partial OT 与扩散模型合并延伸。当前共识是：多边际约束的生成价值明确，但「硬约束的指数规模」与「软约束的理论保证」之间的权衡尚未解决；barycenter 在条件空间求解后经生成器映射的交换性误差缺乏理论刻画。",
+ "observations": [
+  {
+   "claim": "多时间边缘生成方法从扩散式 IPF 向 simulation-free 流匹配演进，但全局耦合与计算效率的张力持续存在。",
+   "evidence": [
+    "2305.16557",
+    "2506.10168",
+    "2606.05327"
+   ],
+   "detail": "TreeDSB 需要 2|E| 个神经网络且顺序训练，3MSBM 用闭式条件桥消除轨迹缓存使 DMSB 训练时间约为其 2.5 倍，OTP-FM 进一步用势函数软约束在 CFM 框架内实现 simulation-free，但 OTP-FM 的 W2^2 势依赖 O(N^3) OT 预计算，退到 W2^∞ 时 EB 100D MMD 从 0.041 恶化到 0.173。"
+  },
+  {
+   "claim": "barycenter 求解器在精确性与可扩展性之间形成明确分工，尚无单一方法同时满足两者。",
+   "evidence": [
+    "2505.13660",
+    "2510.04602",
+    "2310.01105"
+   ],
+   "detail": "SGA 在 2D/3D 网格上提供精确解且免 c-concave 投影，收敛率 O(T^{-1/2})，但维度受限；WGF 用 mini-batch OT 实现 2–50× 加速且模型复杂度与 K 解耦，但 PL 不等式在一般情形是否成立是开放问题；Energy-Guided EBM 支持一般代价但 MCMC 采样耗时且 Theorem 4.5(a) 的一般 Lipschitz 代价界有维数灾难 O(N^{-1/(D_k+1)})。"
+  },
+  {
+   "claim": "在预训练生成模型的条件空间求 barycenter 是免训练融合的通用范式，但生成器映射与 barycenter 的交换性缺乏理论保证。",
+   "evidence": [
+    "2511.22425",
+    "2402.03828",
+    "2310.01105"
+   ],
+   "detail": "Wukong 在 flow transformer 条件 token 空间解 free-support barycenter 实现 3D 形变（FID 4.01 vs 3DRM 6.36），但全文无定理且消融显示递归初始化贡献了大部分增益；Neural OT barycenter 的流形约束版本 FID 30.7–31.7 差于 EgBary 8.4–10.2，说明流形先验与求解器贡献难以分离；Energy-Guided 的流形约束通过代价替换 c_{k,G}(x,z)=c_k(x,G(z)) 实现，同样未刻画 G 的非线性对 barycenter 性质的影响。"
+  },
+  {
+   "claim": "模型融合线从判别网络的逐层 OT 对齐起步，向 partial OT 与生成模型合并延伸，但「权重 barycenter 是否蕴含输出分布 barycenter」始终未被理论刻画。",
+   "evidence": [
+    "1910.05653",
+    "Partial_Fusion_of_Neural_Networks_via_Partial_Opti",
+    "2509.22494"
+   ],
+   "detail": "OTFusion 确立逐层 OT 对齐 + 平均范式，但同数据训练场景下无微调时无法超过个体模型（VGG11 个体 90.31 vs OT avg. 85.98）；partial OT 放宽完全匹配假设但搬运比例无先验；DMMOT 的 quasi-Monge 解（Eq. 1.32–1.33）提供「共同源测度推到 k 个边缘」的连续时间目标，与逐层 barycenter 融合同构，但状态空间维度 kd 随边缘数线性增长。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "生成器映射 Φ 与条件空间 barycenter 的交换性误差界",
+   "why_open": "Wukong 在条件 token 空间求 barycenter 再经 flow transformer 映射，但 Φ 的非线性使 barycenter 的几何平均性质经过映射后是否保持完全未知；Neural OT 和 Energy-Guided 的流形约束版本同样缺乏此刻画。",
+   "evidence": [
+    "2511.22425",
+    "2402.03828",
+    "2310.01105"
+   ]
+  },
+  {
+   "problem": "多边际约束下软约束（势函数）与硬约束（精确耦合）的理论等价性条件",
+   "why_open": "OTP-FM 的 Prop. 4.1 给出势强度 w 与边缘对齐偏差的 O(1/w^2) 界，但仅对 W2^2 型势成立且需「远离奇异构型」的未定义条件；MMD/KLD 势无对应理论保证。",
+   "evidence": [
+    "2606.05327",
+    "2506.10168"
+   ]
+  },
+  {
+   "problem": "barycenter 求解器的维度可扩展性与精确性的联合突破",
+   "why_open": "SGA 限于 2D/3D 规则网格，WGF 的 PL 不等式一般情形未证，Energy-Guided 的一般代价界有维数灾难；DMMOT 的 kd 维状态空间离散化成本未解决。",
+   "evidence": [
+    "2505.13660",
+    "2510.04602",
+    "2310.01105",
+    "2509.22494"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "1910.05653",
+   "why": "模型融合线奠基，确立逐层 OT 对齐范式"
+  },
+  {
+   "report_id": "2305.16557",
+   "why": "多边际扩散求解起点，树结构 mIPF 动态化"
+  },
+  {
+   "report_id": "2506.10168",
+   "why": "相空间桥解决平滑与全局耦合"
+  },
+  {
+   "report_id": "2606.05327",
+   "why": "势函数软约束统一多时间边缘生成"
+  },
+  {
+   "report_id": "2511.22425",
+   "why": "免训练 barycenter 融合的最新应用与理论空白"
+  }
+ ],
+ "n_reports": 13
+}

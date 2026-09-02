@@ -1,0 +1,66 @@
+{
+ "report_id": "2404.04240",
+ "arxiv_id": "2404.04240",
+ "title": "Dynamic Conditional Optimal Transport through Simulation-Free Flows",
+ "tldr_zh": "证明条件 OT 的动态形式（条件版 Benamou-Brenier），用三角 COT 耦合做 simulation-free 条件生成，适用无穷维 Bayesian 逆问题",
+ "tldr_en": "Proves a dynamical conditional OT formulation (conditional Benamou-Brenier) and builds a simulation-free conditional generative model via triangular COT couplings, applicable to infinite-dimensional Bayesian inverse problems",
+ "tags": [
+  "conditional optimal transport",
+  "flow matching",
+  "Benamou-Brenier",
+  "Bayesian inverse problems",
+  "triangular couplings",
+  "infinite-dimensional"
+ ],
+ "code_url": "https://github.com/GavinKerrigan/cot_fm",
+ "key_numbers": [
+  {
+   "number": "4.69±1.00 (W2, 1e-2)",
+   "source": "Table 1, Checkerboard, COT-FM",
+   "context": "COT-FM 在 Checkerboard 上的联合分布 W2 距离，低于 PCP-Map 6.27、COT-Flow 8.20、FM 8.81"
+  },
+  {
+   "number": "4.02±0.06 (W2, 1e-2)",
+   "source": "Table 2, Lotka-Volterra, COT-FM",
+   "context": "COT-FM 与 MCMC 后验样本的 W2 距离，低于 PCP-Map 5.04、COT-Flow 4.86、FM 11.41"
+  },
+  {
+   "number": "5.40±0.08 (MSE, 1e-2)",
+   "source": "Table 3, Darcy Flow, COT-FM",
+   "context": "COT-FM 在 Darcy Flow 逆问题上的 MSE，低于 WaMGAN 6.55、FFM 7.30"
+  },
+  {
+   "number": "2(1 - sqrt(1-ρ²))",
+   "source": "Sec. 4, Gaussian example, Eq. 6",
+   "context": "条件 W2 距离的显式值，当 ρ≠0 时非零，而 joint W2 的 U-边缘距离为 0"
+  },
+  {
+   "number": "5 个测试集",
+   "source": "Table 1, Table 2, Table 3",
+   "context": "所有实验均报告 5 个测试集的平均 ± 标准差"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2311.05672",
+   "type": "继承"
+  },
+  {
+   "report_id": "2403.18705",
+   "type": "并发"
+  },
+  {
+   "report_id": "2403.12887",
+   "type": "并发"
+  },
+  {
+   "report_id": "2304.14772",
+   "type": "继承"
+  },
+  {
+   "report_id": "2402.05666",
+   "type": "继承"
+  }
+ ],
+ "read_full_text": true
+}

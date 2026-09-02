@@ -1,0 +1,86 @@
+{
+ "report_id": "1904.12785",
+ "arxiv_id": "1904.12785",
+ "title": "Style Transfer by Relaxed Optimal Transport and Self-Similarity",
+ "tldr_zh": "用 relaxed EMD 定义风格损失、自相似性定义内容损失，用户研究显示风格化质量优于对比方法",
+ "tldr_en": "Style loss via relaxed EMD and content loss via self-similarity; user study shows better stylization quality than baselines",
+ "tags": [
+  "style transfer",
+  "optimal transport",
+  "relaxed EMD",
+  "self-similarity",
+  "CVPR 2019"
+ ],
+ "code_url": "https://github.com/nkolkin13/STROTSS",
+ "key_numbers": [
+  {
+   "number": "662",
+   "description": "AMT 用户研究工人总数",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "90",
+   "description": "内容/风格配对总数（三 regime 各 30 对）",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "4.98",
+   "description": "每个配对平均投票工人数",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "1580",
+   "description": "每个算法/超参组合平均比较次数",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "0.60",
+   "description": "REMD/EMD 比值均值（标准差 0.04）",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "1024",
+   "description": "风格图与内容图各自采样的特征坐标数",
+   "source": "Sec. 2.5"
+  },
+  {
+   "number": "4",
+   "description": "多分辨率优化尺度数",
+   "source": "Sec. 2.5"
+  },
+  {
+   "number": "200",
+   "description": "每个尺度的 RMSprop 更新次数",
+   "source": "Sec. 2.5"
+  },
+  {
+   "number": "154",
+   "description": "1024×1024 输入时本文方法耗时（秒）",
+   "source": "Table 1"
+  },
+  {
+   "number": "20",
+   "description": "64×64 输入时本文方法耗时（秒）",
+   "source": "Table 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "Gatys_CVPR2016",
+   "type": "被本文作为基线"
+  },
+  {
+   "report_id": "Kusner_ICML2015",
+   "type": "REMD 来源"
+  },
+  {
+   "report_id": "Heitz_CVPR2021",
+   "type": "后续工作（sliced Wasserstein 风格损失）"
+  },
+  {
+   "report_id": "SW-Guidance_NeurIPS2025",
+   "type": "后续工作（扩散采样期 SW 引导）"
+  }
+ ],
+ "read_full_text": true
+}

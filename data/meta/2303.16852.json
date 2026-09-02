@@ -1,0 +1,57 @@
+{
+ "report_id": "2303.16852",
+ "arxiv_id": "2303.16852",
+ "title": "Diffusion Schrödinger Bridge Matching",
+ "tldr_zh": "提出 IMF：交替 Markov/reciprocal 投影求 SB，双向 bridge matching 实现（DSBM），每轮保两端边缘",
+ "tldr_en": "Iterative Markovian Fitting alternates Markovian and reciprocal projections to reach the SB; DSBM implements it with forward/backward bridge matching, preserving both marginals.",
+ "tags": [
+  "schrodinger-bridge",
+  "bridge-matching",
+  "imf",
+  "theory",
+  "unpaired-translation"
+ ],
+ "code_url": "https://github.com/yuyang-shi/dsbm-pytorch",
+ "key_numbers": [
+  "Gaussian d=50 avg KL(P_t|P_t^SB) x1e-3: DSBM-IPF 8.75 vs DSB 32.8, SB-CFM 49.4 (Table 3)",
+  "2D moons W2: DSBM-IMF+ 0.123, DSB 0.190, OT-CFM 0.111 (Table 2)",
+  "moons-8gaussians W2: DSBM-IPF 0.812 vs RF 1.522, CFM 1.285 (Table 2)",
+  "DSBM ~30% less runtime than DSB on MNIST/EMNIST (Sec. 6)",
+  "CIFAR-10: only minor improvement over Bridge/Flow Matching (Sec. 7; numbers truncated)"
+ ],
+ "relations": [
+  {
+   "report_id": "Diffusion_Bridge_Mixture_Transports_IDBM_Peluchett",
+   "type": "competes"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_DSB_De_Bortoli_et_al",
+   "type": "extends"
+  },
+  {
+   "report_id": "Schr_dinger_Bridge_Flow_IMF_DSBM_De_Bortoli_et_al",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2510.20871",
+   "type": "uses"
+  },
+  {
+   "report_id": "Light_and_Optimal_SB_Matching_LightSB_M_Gushchin_e",
+   "type": "competes"
+  },
+  {
+   "report_id": "Simulation_free_Score_Flow_Matching_SF_M_Tong_et_a",
+   "type": "competes"
+  },
+  {
+   "report_id": "2607.03626",
+   "type": "uses"
+  },
+  {
+   "report_id": "2510.01894",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

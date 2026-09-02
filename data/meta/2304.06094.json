@@ -1,0 +1,50 @@
+{
+ "report_id": "2304.06094",
+ "arxiv_id": "2304.06094",
+ "title": "Energy-guided Entropic Neural Optimal Transport",
+ "tldr_zh": "把 EOT 弱对偶写成单势 EBM 目标，条件 plan ∝ exp((f(y)−c(x,y))/ε) 用 Langevin 采样；对偶间隙 = ε·KL(π*‖π^f)，并给 Rademacher 泛化界",
+ "tldr_en": "Recasts the weak dual of entropic OT as an EBM over a single potential; conditional plans are Gibbs measures sampled by Langevin, with dual gap equal to epsilon times KL and Rademacher generalization bounds.",
+ "tags": [
+  "entropic-ot",
+  "energy-based-models",
+  "neural-ot",
+  "image-to-image",
+  "langevin",
+  "theory"
+ ],
+ "code_url": "https://github.com/PetrMokrov/Energy-guided-Entropic-OT",
+ "key_numbers": [
+  "Theorem 2: F* - F(f) = eps * KL(pi* || pi^f) for every dual potential f (Eq. 16)",
+  "Theorem 4: E KL(pi* || pi^{f_hat}) <= eps^{-1}[4 R_N + 4 R_M] + eps^{-1}[approximation gap] (Eq. 19)",
+  "Gaussian->Gaussian BW2-UVP, eps=10, D=2/16/64/128: 0.11/0.09/0.18/0.29 vs Gushchin 2023 0.22/0.15/0.4/0.86; at eps=0.1 Gushchin better (0.08/0.19/0.34 vs 0.2/0.56/0.97) (Table 1)",
+  "AFHQ 512 Cat->Dog FID 56.6 vs EGSDE 51.04, StarGAN v2 54.88, SDEdit 74.17; Wild->Dog 65.8 vs EGSDE 50.43 (Table 2)",
+  "Colored MNIST 2->3 FID 109 vs Gushchin 2023 6.3, Daniels 14.7 (Table 4); LPIPS diversity 0.043/0.063/0.11 for eps=0.01/0.1/1 (Table 3)"
+ ],
+ "relations": [
+  {
+   "report_id": "2403.03777",
+   "type": "competes"
+  },
+  {
+   "report_id": "1810.08278",
+   "type": "uses"
+  },
+  {
+   "report_id": "1306.0895",
+   "type": "extends"
+  },
+  {
+   "report_id": "1905.11882",
+   "type": "competes"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "type": "competes"
+  },
+  {
+   "report_id": "Light_and_Optimal_SB_Matching_LightSB_M_Gushchin_e",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

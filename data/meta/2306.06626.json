@@ -1,0 +1,42 @@
+{
+ "report_id": "2306.06626",
+ "arxiv_id": "2306.06626",
+ "title": "On Kinetic Optimal Probability Paths for Generative Models",
+ "tldr_zh": "Gaussian 路径族动能只经一维数据分离函数依赖数据；n/sqrt(d)->0 时 Cond-OT 线性路径渐近动能最优",
+ "tldr_en": "Kinetic energy of affine Gaussian paths depends on data only via a 1-D separation function; Cond-OT linear path is asymptotically kinetic optimal as n/sqrt(d) -> 0.",
+ "tags": [
+  "flow-matching",
+  "noise-schedule",
+  "kinetic-energy",
+  "optimal-transport",
+  "theory",
+  "probability-path"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "int_0^inf |1 - lambda(s)| ds <= 3n/sqrt(d) for any normalized finite dataset (Theorem 4.1, Eq. 34)",
+  "E_c - 6 M^2 n/sqrt(d) <= E <= E_c: KE converges to conditional KE, so Cond-OT is asymptotically kinetic optimal (Theorem 4.2, Corollary 4.3)",
+  "CIFAR-10 KE: DDPM 2.30, SI 1.30, FM Cond-OT 1.09, FM KO 1.08; FID-Adpt 7.4 / 7.5 / 6.9 / 6.1 (Table 1)",
+  "ImageNet-32 FM KO vs Cond-OT: NLL 3.57 vs 3.60, FID-Adpt 5.1 vs 5.0, NFE-Adpt 129 vs 145 (Table 1)",
+  "ImageNet-64 estimated lambda equals 1 for theta in [0.08, pi/2]; KO path practically identical to Cond-OT (Sec. 6.2, Fig. 1)"
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "extends"
+  },
+  {
+   "report_id": "2209.15571",
+   "type": "competes"
+  },
+  {
+   "report_id": "2210.06662",
+   "type": "uses"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

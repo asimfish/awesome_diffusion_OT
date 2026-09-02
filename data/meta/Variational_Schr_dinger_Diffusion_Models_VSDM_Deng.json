@@ -1,0 +1,39 @@
+{
+ "report_id": "Variational_Schr_dinger_Diffusion_Models_VSDM_Deng",
+ "arxiv_id": null,
+ "title": "Variational Schrödinger Diffusion Models (VSDM), Deng et al.",
+ "tldr_zh": "变分推断线性化 SB 前向 score，免仿真恢复后向 score；随机逼近证明收敛、无需 warm-up",
+ "tldr_en": "Variational inference linearizes SB forward score for simulation-free backward score recovery; stochastic approximation proves convergence without warm-up",
+ "tags": [
+  "Schrödinger Bridge",
+  "variational inference",
+  "simulation-free",
+  "score-based generative model",
+  "stochastic approximation"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "DSB_NeurIPS2021",
+   "type": "继承"
+  },
+  {
+   "report_id": "SB_FBSDE_ICLR2022",
+   "type": "继承"
+  },
+  {
+   "report_id": "LightSB_ICLR2024",
+   "type": "同期竞争"
+  },
+  {
+   "report_id": "LightSB_M_ICML2024",
+   "type": "同期竞争"
+  },
+  {
+   "report_id": "SF2M_AISTATS2024",
+   "type": "同期竞争"
+  }
+ ],
+ "read_full_text": false
+}

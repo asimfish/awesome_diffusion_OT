@@ -1,0 +1,31 @@
+{
+ "report_id": "A_computational_fluid_mechanics_solution_to_the_Mo",
+ "arxiv_id": null,
+ "title": "A computational fluid mechanics solution to the Monge–Kantorovich mass transfer problem",
+ "tldr_zh": "把 W2² 写成连续性方程约束下的最小动能，给出动态流形式的 OT 数值入口。",
+ "tldr_en": "W2² equals minimal kinetic energy under continuity equation, giving a dynamic fluid formulation of OT.",
+ "tags": [
+  "optimal-transport",
+  "Wasserstein",
+  "Benamou-Brenier",
+  "dynamic-OT",
+  "T01"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "T05_Otto_2001",
+   "type": "被继承"
+  },
+  {
+   "report_id": "T01_Brenier_1991",
+   "type": "继承"
+  },
+  {
+   "report_id": "T01_McCann_1997",
+   "type": "继承"
+  }
+ ],
+ "read_full_text": false
+}

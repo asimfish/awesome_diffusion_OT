@@ -1,0 +1,31 @@
+{
+ "report_id": "InfoCD_A_Contrastive_Chamfer_Distance_Loss_for_Poi",
+ "arxiv_id": null,
+ "title": "InfoCD: A Contrastive Chamfer Distance Loss for Point Cloud Completion",
+ "tldr_zh": "对比正则改进 CD，作者报告等价于最大化底层曲面互信息下界，被 UOT-UPC 选为最优 cost。",
+ "tldr_en": "Contrastive regularization improves CD; authors report equivalence to maximizing a lower bound on underlying surface mutual information; selected as optimal cost by UOT-UPC.",
+ "tags": [
+  "point-cloud-completion",
+  "chamfer-distance",
+  "contrastive-learning",
+  "optimal-transport",
+  "mutual-information"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "UOT-UPC",
+   "type": "被引用/被消费"
+  },
+  {
+   "report_id": "DCD_NeurIPS2021",
+   "type": "同谱系前作"
+  },
+  {
+   "report_id": "HyperCD",
+   "type": "同谱系前作"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,121 @@
+{
+ "report_id": "2212.01747",
+ "arxiv_id": "2212.01747",
+ "title": "Fast Point Cloud Generation with Straight Flows",
+ "tldr_zh": "把 rectified flow 的 reflow+蒸馏引入点云扩散，一步生成，采样 0.04s，比 PVD 快 700×",
+ "tldr_en": "Applies rectified flow reflow+distillation to point cloud diffusion, achieving one-step generation at 0.04s, ~700x faster than PVD",
+ "tags": [
+  "point cloud generation",
+  "rectified flow",
+  "distillation",
+  "one-step generation",
+  "3D generative model",
+  "optimal transport"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "0.04s",
+   "context": "PSF 单形状采样时间，RTX 3090, batch size 1, 50 次平均",
+   "source": "Table 1"
+  },
+  {
+   "number": "29.9s",
+   "context": "PVD (N=1000) 采样时间",
+   "source": "Table 1"
+  },
+  {
+   "number": "约 700×",
+   "context": "PSF 相对 PVD 的采样加速比",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "3.15s",
+   "context": "PVD-DDIM (N=100) 采样时间",
+   "source": "Table 1"
+  },
+  {
+   "number": "约 75×",
+   "context": "PSF 相对 PVD-DDIM (N=100) 的采样加速比",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "71.11 / 61.09",
+   "context": "PSF 在 Airplane 上的 1-NNA CD / EMD，优于 PVD 的 73.82 / 64.81",
+   "source": "Table 1"
+  },
+  {
+   "number": "58.92 / 54.45",
+   "context": "PSF 在 Chair 上的 1-NNA CD / EMD，PVD 为 56.26 / 53.32",
+   "source": "Table 1"
+  },
+  {
+   "number": "57.19 / 56.07",
+   "context": "PSF 在 Car 上的 1-NNA CD / EMD，PVD 为 54.55 / 53.83",
+   "source": "Table 1"
+  },
+  {
+   "number": "1.004 vs 1.030",
+   "context": "Airplane 补全 EMD×10²，PSF 优于 PVD",
+   "source": "Table 2"
+  },
+  {
+   "number": "2.937 vs 2.939",
+   "context": "Chair 补全 EMD×10²，PSF 与 PVD 几乎持平",
+   "source": "Table 2"
+  },
+  {
+   "number": "2.194 vs 2.146",
+   "context": "Car 补全 EMD×10²，PSF 略差于 PVD",
+   "source": "Table 2"
+  },
+  {
+   "number": "12s vs 15min",
+   "context": "文本引导生成 100 次迭代耗时，PSF vs PVD",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "0.2s",
+   "context": "nuScenes 上 PSF 完成多辆车 LiDAR 补全耗时",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "200k / 10k / 10k",
+   "context": "三阶段训练步数：速度场 / reflow / 蒸馏",
+   "source": "Sec. 4 General training settings"
+  },
+  {
+   "number": "50k",
+   "context": "reflow 阶段采样的 (X0, X1) 对数量",
+   "source": "Sec. 4 General training settings"
+  },
+  {
+   "number": "N=100",
+   "context": "PVD-DDIM 报告步数，为 1-NNA 退化不超过 10% 的最小步数",
+   "source": "Sec. 4.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2209.03003",
+   "type": "继承 reflow 机制"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "继承 flow matching 直线路径训练"
+  },
+  {
+   "report_id": "2209.14577",
+   "type": "理论来源（rectified flow）"
+  },
+  {
+   "report_id": "2112.03530",
+   "type": "点云补全扩散基线"
+  },
+  {
+   "report_id": "2210.03158",
+   "type": "同期 3D 生成工作"
+  }
+ ],
+ "read_full_text": true
+}

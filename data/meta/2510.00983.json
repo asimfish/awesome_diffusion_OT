@@ -1,0 +1,93 @@
+{
+ "report_id": "2510.00983",
+ "arxiv_id": "2510.00983",
+ "title": "Riemannian Consistency Model",
+ "tldr_zh": "用指数映射+协变导数把一致性模型推广到黎曼流形，2步生成优于RFM-2与欧氏CM",
+ "tldr_en": "Extends consistency models to Riemannian manifolds via exp-map parameterization and covariant derivatives, enabling 2-step generation",
+ "tags": [
+  "Riemannian generative models",
+  "consistency models",
+  "flow matching",
+  "few-step generation",
+  "SO(3)",
+  "sphere",
+  "torus"
+ ],
+ "code_url": "https://github.com/ccr-cheng/riemannian-consistency-model",
+ "key_numbers": [
+  {
+   "number": "2",
+   "description": "推理步数（所有一致性模型统一设置）",
+   "source": "Sec. 4, p.7"
+  },
+  {
+   "number": "0.8",
+   "description": "2步生成的固定中间时间步",
+   "source": "Sec. 4, p.7"
+  },
+  {
+   "number": "1.51 vs 2.13",
+   "description": "Earthquake 数据集 KLD：RFM-100 vs sRCD",
+   "source": "Table 1"
+  },
+  {
+   "number": "35.40 vs 3.36",
+   "description": "Volcano 数据集 KLD：RFM-2 vs sRCD",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.37",
+   "description": "Board 数据集 dRCD 的 MMD（×10⁻²），优于 RFM-100 的 0.47",
+   "source": "Table 2"
+  },
+  {
+   "number": "3.78",
+   "description": "Cone 数据集 RCT 的 MMD（×10⁻²），全表最佳",
+   "source": "Table 3"
+  },
+  {
+   "number": "128",
+   "description": "高维环面消融的最大维度",
+   "source": "Table 4"
+  },
+  {
+   "number": "35.16",
+   "description": "CTnaive 在 128 维环面的 Fréchet 距离，对比 RCT 的 0.62",
+   "source": "Table 4"
+  },
+  {
+   "number": "100k",
+   "description": "Checkerboard/SO(3) 合成数据训练样本数",
+   "source": "Sec. 4.2, 4.3, p.8"
+  },
+  {
+   "number": "166,305",
+   "description": "Protein 数据集样本数",
+   "source": "Sec. 4.2, p.8"
+  },
+  {
+   "number": "9,473",
+   "description": "RNA 数据集样本数",
+   "source": "Sec. 4.2, p.8"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2302.03660",
+   "type": "继承（教师模型与条件流构造）"
+  },
+  {
+   "report_id": "2410.11081",
+   "type": "继承（向量场参数化与连续时间 CM 损失）"
+  },
+  {
+   "report_id": "2405.16441",
+   "type": "同作者相关（统计流形 FM）"
+  },
+  {
+   "report_id": "2206.06360",
+   "type": "同领域基线（黎曼扩散）"
+  }
+ ],
+ "read_full_text": true
+}

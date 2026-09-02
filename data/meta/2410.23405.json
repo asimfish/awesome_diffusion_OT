@@ -1,0 +1,117 @@
+{
+ "report_id": "2410.23405",
+ "arxiv_id": "2410.23405",
+ "title": "FlowLLM: Flow Matching for Material Generation with Large Language Models as Base Distributions",
+ "tldr_zh": "微调 LLM 输出作 RFM 的 base，稳定率 4.65%→17.82%，S.U.N. 率 3.34%→4.92%",
+ "tldr_en": "LLM output as RFM base distribution lifts stability rate from 4.65% to 17.82% on MP-20",
+ "tags": [
+  "flow matching",
+  "Riemannian flow matching",
+  "crystal generation",
+  "large language models",
+  "materials",
+  "base distribution",
+  "MP-20"
+ ],
+ "code_url": "https://github.com/facebookresearch/flowmm",
+ "key_numbers": [
+  {
+   "number": "17.82%",
+   "context": "最佳 FlowLLM (τ=0.7, P=0.9) 稳定率",
+   "source": "Table 1"
+  },
+  {
+   "number": "4.92%",
+   "context": "最佳 FlowLLM S.U.N. 率",
+   "source": "Table 1"
+  },
+  {
+   "number": "5.28%",
+   "context": "最佳基线 CrystalLLM 稳定率",
+   "source": "Table 1"
+  },
+  {
+   "number": "3.34%",
+   "context": "最佳基线 DiffCSP S.U.N. 率",
+   "source": "Table 1"
+  },
+  {
+   "number": "250",
+   "context": "FlowLLM 积分步数",
+   "source": "Table 1"
+  },
+  {
+   "number": "1000",
+   "context": "FlowMM/DiffCSP 积分步数",
+   "source": "Table 1"
+  },
+  {
+   "number": "94.9% vs 74.3%",
+   "context": "FlowLLM vs FlowMM 的 CHGNet Match Rate",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.023 vs 0.096 Å",
+   "context": "FlowLLM vs FlowMM 的 RMSD",
+   "source": "Table 2"
+  },
+  {
+   "number": "37.97 vs 191.98",
+   "context": "FlowLLM vs FlowMM 的 CHGNet 弛豫步数",
+   "source": "Table 2"
+  },
+  {
+   "number": "~0.5%",
+   "context": "LLM 无效样本拒绝率 (τ=0.7)",
+   "source": "Sec. 4.3"
+  },
+  {
+   "number": "45,231",
+   "context": "MP-20 数据集材料数",
+   "source": "Sec. 5.1"
+  },
+  {
+   "number": "10,000",
+   "context": "每模型评估生成结构数",
+   "source": "Sec. 5.3"
+  },
+  {
+   "number": "48%",
+   "context": "稳定结构中 novel 比例",
+   "source": "Sec. 5.3"
+  },
+  {
+   "number": "58%",
+   "context": "剩余结构中 unique 比例",
+   "source": "Sec. 5.3"
+  },
+  {
+   "number": "8.79–8.95%",
+   "context": "FlowLLM-Types 稳定率（消融）",
+   "source": "Table 1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "flowmm_icml2024",
+   "type": "继承"
+  },
+  {
+   "report_id": "crystalllm_arxiv2402",
+   "type": "继承"
+  },
+  {
+   "report_id": "riemannian_fm_iclr2024",
+   "type": "方法基础"
+  },
+  {
+   "report_id": "diffcsp_arxiv2309",
+   "type": "基线"
+  },
+  {
+   "report_id": "cdvae_iclr2021",
+   "type": "基线"
+  }
+ ],
+ "read_full_text": true
+}

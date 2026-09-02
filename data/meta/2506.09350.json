@@ -1,0 +1,79 @@
+{
+ "report_id": "2506.09350",
+ "arxiv_id": "2506.09350",
+ "title": "Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation",
+ "tldr_zh": "对抗后训练把视频扩散模型改成1NFE/帧自回归生成器，单H100达24fps实时流式生成",
+ "tldr_en": "Adversarial post-training turns video diffusion into 1NFE/frame autoregressive generator, 24fps real-time on one H100",
+ "tags": [
+  "video generation",
+  "adversarial training",
+  "autoregressive",
+  "real-time",
+  "distillation",
+  "streaming"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "24.8 fps",
+   "source": "Table 4",
+   "context": "8B model, 1×H100, 736×416, 1NFE, latency 0.16s"
+  },
+  {
+   "number": "24.2 fps",
+   "source": "Table 4",
+   "context": "8B model, 8×H100, 1280×720, 1NFE, latency 0.17s"
+  },
+  {
+   "number": "1440 frames",
+   "source": "Abstract",
+   "context": "60-second continuous generation with KV cache"
+  },
+  {
+   "number": "89.79",
+   "source": "Table 1",
+   "context": "Temporal Quality on 1440-frame VBench-I2V, best among compared methods"
+  },
+  {
+   "number": "66.58",
+   "source": "Table 1",
+   "context": "Frame Quality on 120-frame VBench-I2V, tied best with Wan 2.1"
+  },
+  {
+   "number": "42.44",
+   "source": "Table 1",
+   "context": "Dynamic Degree on 120-frame, down from 52.52 diffusion baseline"
+  },
+  {
+   "number": "2.740",
+   "source": "Table 2",
+   "context": "AKD on pose-conditioned human generation, second only to OmniHuman-1 (2.136)"
+  },
+  {
+   "number": "61.33",
+   "source": "Table 3",
+   "context": "FVD on camera-conditioned world exploration, new SOTA"
+  },
+  {
+   "number": "8 seconds",
+   "source": "Sec. 2.2",
+   "context": "average shot duration in training datasets"
+  },
+  {
+   "number": "N=30",
+   "source": "Sec. 3",
+   "context": "attention window size, 30 latent frames = 5 seconds"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2506.09350",
+   "type": "extends"
+  },
+  {
+   "report_id": "2506.09350",
+   "type": "competes_with"
+  }
+ ],
+ "read_full_text": true
+}

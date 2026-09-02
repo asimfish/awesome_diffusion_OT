@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 1,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 1: block set at 7.77pt but the original at this position is 9.86pt (ratio 0.79 vs page median 0.92) at x=55.9, y=553.1: 生成模型是一类学习训练数据底层分布的深度学习模型。生成建模有多种方法，例如基于能量的模型（Zha"
+    },
+    {
+      "page": 15,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 15: displayed equation at y=318 shifted horizontally by 17pt vs original"
+    }
+  ]
+}

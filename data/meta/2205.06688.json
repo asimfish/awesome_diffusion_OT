@@ -1,0 +1,49 @@
+{
+ "report_id": "2205.06688",
+ "arxiv_id": "2205.06688",
+ "title": "A Unified Framework for Implicit Sinkhorn Differentiation",
+ "tldr_zh": "用隐式函数定理统一 Sinkhorn 层梯度，同时可微 cost 与边缘，内存 O(n²) 且梯度误差有界",
+ "tldr_en": "Unified implicit differentiation for Sinkhorn layers, jointly differentiating cost and marginals with O(n²) memory and bounded gradient error",
+ "tags": [
+  "Sinkhorn",
+  "implicit differentiation",
+  "optimal transport",
+  "differentiable layer",
+  "entropy regularization"
+ ],
+ "code_url": "https://github.com/marvin-eisenberger/implicit-sinkhorn",
+ "key_numbers": [
+  "AD 内存复杂度 O(τn²)，本方法 O(n²)；runtime 分别为 O(τn²) 和 O(n³)（m=n 时）——Sec. 4.4",
+  "本方法在 τ≳40,50,90 次迭代时比 AD 更快（取决于 m,n）——Sec. 5.1",
+  "图像 barycenter：AD 在 τ≥200 时 OOM，本方法可行——Fig. 4",
+  "manifold barycenter：AD 在 τ≥200 时 OOM，本方法在 τ=1000 仍可行——Fig. 5",
+  "number sorting：GS 在 τ>200,100,50（n=200,500,1000）时 OOM——Fig. 6",
+  "点云配准 partial 90%：Rot. MAE RPM-Net 41.1427 vs Ours 4.4955——Tab. 2",
+  "点云配准 noisy σ=0.1：Rot. MAE RPM-Net 43.1884 vs Ours 2.2272——Tab. 2",
+  "点云配准 clean：Rot. MAE RPM-Net 0.0299 vs Ours 0.1371——Tab. 2",
+  "梯度误差界：∇_C 误差 ≤ λ⁻¹σ₊(C₁/σ₋+C₂)‖P*-P^(τ)‖_F——Eq. 13b"
+ ],
+ "relations": [
+  {
+   "report_id": "1805.07405",
+   "type": "继承"
+  },
+  {
+   "report_id": "1706.00292",
+   "type": "竞争（unrolling AD 路线）"
+  },
+  {
+   "report_id": "1810.08278",
+   "type": "同课题（Sinkhorn divergence 损失）"
+  },
+  {
+   "report_id": "2002.03229",
+   "type": "被统一（低秩 cost 隐式梯度特例）"
+  },
+  {
+   "report_id": "2003.13248",
+   "type": "应用基线（RPM-Net）"
+  }
+ ],
+ "read_full_text": true
+}

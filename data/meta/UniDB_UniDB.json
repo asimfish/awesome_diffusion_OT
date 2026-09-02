@@ -1,0 +1,38 @@
+{
+ "report_id": "UniDB_UniDB",
+ "arxiv_id": "2505.21528",
+ "title": "UniDB++（UniDB 期刊版）",
+ "tldr_zh": "UniDB反向SDE闭式解+数据预测+SDE校正器，免训练加速；DBIM为其特例",
+ "tldr_en": "Exact closed-form reverse-SDE solution for UniDB with data prediction and an SDE-Corrector for training-free fast sampling; DBIM claimed as special case.",
+ "tags": [
+  "diffusion-bridge",
+  "stochastic-optimal-control",
+  "fast-sampling",
+  "training-free",
+  "closed-form-solver"
+ ],
+ "code_url": "https://github.com/2769433owo/UniDB-plusplus",
+ "key_numbers": [
+  "Manifest note (unverified): 5-20x training-free speed-up, 5-10 steps keep perceptual quality",
+  "Same arXiv document as report 2505.21528 (journal extension of ICML 2025 UniDB)"
+ ],
+ "relations": [
+  {
+   "report_id": "2505.21528",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.15885",
+   "type": "extends"
+  },
+  {
+   "report_id": "2309.16948",
+   "type": "extends"
+  },
+  {
+   "report_id": "GOUB_Generalized_Ornstein_Uhlenbeck_Bridge",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,56 @@
+{
+ "report_id": "2503.10636",
+ "arxiv_id": "2503.10636",
+ "title": "The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation",
+ "tldr_zh": "无条件 minibatch OT 在条件生成中系统性有害（训练先验被条件偏斜），成本矩阵加条件项即修复。",
+ "tldr_en": "Minibatch OT coupling skews the training prior conditionally and hurts conditional FM; C2OT adds a condition-aware cost term to restore x0-c independence.",
+ "tags": [
+  "flow-matching",
+  "minibatch-ot",
+  "conditional-generation",
+  "coupling",
+  "cost-design",
+  "train-test-gap"
+ ],
+ "code_url": "https://github.com/hkchengrex/C2OT",
+ "key_numbers": [
+  "8gaussians->moons binary-cond W2^2 adaptive: FM 0.059, OT 0.462, C2OT 0.018 (Table 1)",
+  "CIFAR-10 class-cond FID adaptive: FM 2.922, OT 4.144, C2OT 2.904; Euler-5: 21.97 / 18.19 / 17.57 (Table 2)",
+  "ImageNet-32 caption-cond FID adaptive: FM 5.358, OT 6.220, C2OT 5.350 (Table 2)",
+  "ImageNet-256 latent FID Euler-100: FM 3.484, OT 5.360, C2OT 3.320 (Table 2)",
+  "Straightness (25 steps) CIFAR: FM 110.8, OT 73.5, C2OT 85.0 (Table A1)",
+  "Class predictable from coupled noise: OT 29.7% (2x2) -> 20.1% (32x32) vs 10% random for FM/C2OT (Table A3)",
+  "OT batch b=640 (CIFAR) / 6400 (ImageNet), r_tar=0.01, no wall-clock overhead with 8 data workers (Sec. 3.3.4)"
+ ],
+ "relations": [
+  {
+   "report_id": "2302.00482",
+   "type": "extends"
+  },
+  {
+   "report_id": "2304.14772",
+   "type": "extends"
+  },
+  {
+   "report_id": "2603.15279",
+   "type": "competes"
+  },
+  {
+   "report_id": "2509.25519",
+   "type": "competes"
+  },
+  {
+   "report_id": "2306.15030",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.14780",
+   "type": "competes"
+  },
+  {
+   "report_id": "2506.05526",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

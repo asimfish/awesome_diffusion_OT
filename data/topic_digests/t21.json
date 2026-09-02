@@ -1,0 +1,92 @@
+{
+ "digest_zh": "本课题解决的核心问题是：在分子与科学计算中，如何用流生成模型（flow matching / diffusion）实现高保真、高效率、可条件化的分布传输，以及 OT 耦合在其中扮演什么角色。方法谱系呈现三条演进线：一是从欧氏 rectified flow 到 SE(3) 流形上的 Riemannian FM（FoldFlow-SFM → FoldFlow-2），二是从标准 CFM 到不平衡/条件 FM（FlexDock、FlowDock），三是从简单先验到信息性 base 分布（FlowLLM、ET-Flow 的 harmonic prior）。当前共识是：直路径耦合（OT 或几何对齐）能稳定训练并降低 NFE，但并非无脑增益——OMatG 在 perov-5 上弯曲插值 match rate 是 linear 的 1.6 倍，Transferable Boltzmann Generators 明确给出可区分粒子多时 OT-FM 增益变小的 caveat。分歧集中在：OT 耦合是否以牺牲多样性为代价（FoldFlow-OT 新颖性 0.484 低于 SFM 的 0.544），以及等变架构是否必要（Proteina 用非等变 transformer 达到 99% designability，但等变性仅靠数据增强近似学习）。",
+ "observations": [
+  {
+   "claim": "OT 直路径耦合提升 designability 但可能压缩生成分布支撑，多样性-新颖性 trade-off 在多个系统中反复出现。",
+   "evidence": [
+    "2310.02391",
+    "2405.20313",
+    "2401.04082"
+   ],
+   "detail": "FoldFlow-OT designability 0.820 但新颖性 0.484，低于 FoldFlow-SFM 的 0.544；FoldFlow-2 通过序列条件化和数据扩展将 novelty 从 RFDiffusion 的 0.116 提升到 0.368，但未分析 OT 耦合本身对 diversity 的影响；FrameFlow 的 motif 扩展显示设计性指标会掩盖 mode collapse，Div. 聚类数才是关键。"
+  },
+  {
+   "claim": "信息性 base 分布是流匹配相对扩散的独立加速维度，与 OT 耦合正交。",
+   "evidence": [
+    "2410.23405",
+    "2410.22388",
+    "2406.04713"
+   ],
+   "detail": "FlowLLM 用微调 LLM 输出作 base，积分步数从 FlowMM 的 1000 降到 250，稳定率从 4.65% 提升到 17.82%；ET-Flow 用 harmonic prior 替代高斯先验，8.3M 参数 5 步采样保持 SOTA；FlowMM 用 LogNormal 拟合晶格边长，把晶格拟合从复杂变换简化为微调。"
+  },
+  {
+   "claim": "等变性与流形约束的工程简化决策在规模化场景中反复出现，形成与理论路线（SE(3) Riemannian OT）的竞争。",
+   "evidence": [
+    "2503.00710",
+    "2406.04713",
+    "2412.10966"
+   ],
+   "detail": "Proteina 明确放弃 SE(3) 流形上的 Riemannian OT，回到 Cα 坐标欧氏 rectified flow，理由是旋转流形上的生成过程未被很好理解；FlowMM 在环面上用均值减法处理平移不变性而非显式 OT；FlowDock 在 R^3 上工作，用 RMSD/TM-score 硬过滤替代 minibatch OT。"
+  },
+  {
+   "claim": "OT-FM 的增益边界条件开始被定量刻画，可区分粒子数、插值几何、数据规模均影响其相对优势。",
+   "evidence": [
+    "2406.14426",
+    "2502.02582",
+    "2503.00710"
+   ],
+   "detail": "Transferable Boltzmann Generators 引用 Klein et al. 结论指出可区分粒子多时 OT-FM 增益变小；OMatG 显示 perov-5 上 VP SBD 弯曲路径 match rate 83.06% 远超 linear 直路径的 51.86%；Proteina 用 20.9M 结构训练非等变模型超过等变基线，暗示数据规模可补偿等变归纳偏置的缺失。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "OT 耦合强度对 designability–diversity–novelty 的定量刻画缺失，缺乏可调耦合温度的 Pareto 前沿分析。",
+   "why_open": "FoldFlow-OT 与 SFM 的 trade-off 只有单点对比，无连续扫描；Proteina 的 FPSD/fJSD 指标提供了度量工具但未用于耦合强度调参。",
+   "evidence": [
+    "2310.02391",
+    "2503.00710",
+    "2405.20313"
+   ]
+  },
+  {
+   "problem": "周期几何（环面）上的联合 OT 理论未建立，包括平移等价类、晶格参数、离散原子种类的统一耦合。",
+   "why_open": "FlowMM 的均值减法只是平移不变性的工程处理，OMatG 按自由度拆分插值但未触及联合最优性理论，FlowLLM 的 LLM base 分布不满足平移和置换不变性。",
+   "evidence": [
+    "2406.04713",
+    "2502.02582",
+    "2410.23405"
+   ]
+  },
+  {
+   "problem": "不平衡/条件 OT 的松弛强度与传输质量的关系缺乏理论刻画，硬过滤与软松弛的边界不清晰。",
+   "why_open": "FlexDock 的 Unbalanced FM 松弛边缘约束但未报告松弛形式与敏感性；FlowDock 的 RMSD/TM-score 硬过滤阈值（0.7/5Å）是启发式的，无理论依据。",
+   "evidence": [
+    "Composing_Unbalanced_Flows_for_Flexible_Docking_an",
+    "2412.10966"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "2310.02391",
+   "why": "SE(3) OT-FM 起点，建立 designability-novelty trade-off 基线"
+  },
+  {
+   "report_id": "2405.20313",
+   "why": "OT-FM 条件化与规模化扩展，展示数据与条件的作用"
+  },
+  {
+   "report_id": "2503.00710",
+   "why": "非等变规模化路线，挑战等变 OT 的必要性"
+  },
+  {
+   "report_id": "2502.02582",
+   "why": "插值几何可调的反例，打破直路径默认假设"
+  },
+  {
+   "report_id": "2406.14426",
+   "why": "OT-FM 增益边界条件的定量 caveat"
+  }
+ ],
+ "n_reports": 12
+}

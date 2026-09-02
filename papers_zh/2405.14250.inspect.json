@@ -1,0 +1,53 @@
+{
+  "issue_count": 8,
+  "issues": [
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (3 words, 0 CJK chars) at x=55.4, y=615.5: (15)for any y0 is"
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (18 words, 0 CJK chars) at x=55.1, y=88.8: The following proposition shows that our Gaussian assump"
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (5 words, 0 CJK chars) at x=59.9, y=147.3: (ii) ∀t > 0, ∇x log pt(x) is linear w.r.t x."
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (5 words, 0 CJK chars) at x=57.1, y=166.4: (iii) ∃t > 0, ∇x log pt(x) is linear w.r.t x."
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (4 words, 0 CJK chars) at x=228.8, y=191.0: t x, with Σt defined in Proposition 1."
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (16 words, 0 CJK chars) at x=55.4, y=282.0: 1≤i≤d,0≤k≤Nthe covariance matrix of the Gaussian process"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (11 words, 0 CJK chars) at x=245.1, y=313.2: \u001a Iif yT is initialized at N0ΣTif yT is initialized at p"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (2 words, 0 CJK chars) at x=55.1, y=285.9: with λξ,ADSN"
+    }
+  ]
+}

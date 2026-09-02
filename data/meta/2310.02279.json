@@ -1,0 +1,61 @@
+{
+ "report_id": "2310.02279",
+ "arxiv_id": "2310.02279",
+ "title": "Consistency Trajectory Models: Learning Probability Flow ODE Trajectory of Diffusion",
+ "tldr_zh": "学 PF-ODE 任意时刻→任意时刻跳跃并兼得 score，加 DSM+GAN 后一步 FID 1.98/1.73（CIFAR-10）、1.92（ImageNet-64）。",
+ "tldr_en": "CTM learns anytime-to-anytime PF-ODE jumps plus the score in one network; with DSM and GAN losses it reaches one-step FID 1.73 (CIFAR-10 cond.) and 1.92 (ImageNet-64).",
+ "tags": [
+  "consistency-models",
+  "flow-map",
+  "distillation",
+  "adversarial",
+  "gamma-sampling",
+  "theory"
+ ],
+ "code_url": "https://github.com/sony/ctm",
+ "key_numbers": [
+  "CIFAR-10 uncond FID 1.98 (1 NFE) / 1.87 (2 NFE), NLL 2.43 (Table 1)",
+  "CIFAR-10 cond FID 1.73 (1 NFE) / 1.63 (2 NFE) (Table 1)",
+  "ImageNet-64 FID 1.92 (1 NFE) / 1.73 (2 NFE), Rec 0.57 vs CD 0.63 (Table 2)",
+  "CD retrained by authors FID 10.53 vs official 3.55 (Table 1)",
+  "CTM without pretrained DM FID 2.39 (1 NFE) (Table 1)",
+  "Training 100K iters CIFAR-10, 30K iters ImageNet-64 (Sec. 5.1, Table 4)",
+  "Theorem 8: TV error of N-step gamma-sampling O(sum sqrt(t_n - sqrt(1-gamma^2) t_{n+1}))",
+  "Prop. 6: optimal CTM jump is bi-Lipschitz with constants exp(±L_phi (t-s))"
+ ],
+ "relations": [
+  {
+   "report_id": "2303.01469",
+   "type": "extends"
+  },
+  {
+   "report_id": "2310.14189",
+   "type": "competes"
+  },
+  {
+   "report_id": "Flow_Map_Matching",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2311.17042",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "DMD2_Improved_Distribution_Matching_Distillation",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2507.11925",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2410.22637",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

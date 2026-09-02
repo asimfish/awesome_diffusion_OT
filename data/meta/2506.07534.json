@@ -1,0 +1,77 @@
+{
+ "report_id": "2506.07534",
+ "arxiv_id": "2506.07534",
+ "title": "Flowing Datasets with Wasserstein over Wasserstein Gradient Flows",
+ "tldr_zh": "在 WoW 空间上建立梯度流理论，用 MMD-SW 目标流动整个带标签数据集，应用于迁移学习与蒸馏",
+ "tldr_en": "Defines gradient flows on the Wasserstein-over-Wasserstein space to flow entire labeled datasets for transfer learning and distillation",
+ "tags": [
+  "Wasserstein gradient flow",
+  "Wasserstein over Wasserstein",
+  "MMD",
+  "Sliced-Wasserstein",
+  "dataset distillation",
+  "transfer learning",
+  "random measures"
+ ],
+ "code_url": "https://github.com/clbonet/Flowing_Datasets_with_WoW_Gradient_Flows",
+ "key_numbers": [
+  {
+   "number": "100%",
+   "context": "FMNIST→MNIST 与 SVHN→CIFAR10 域适应中分类器准确率在足够迭代后收敛到 100%",
+   "source": "Sec. 5, Domain Adaptation, p.8"
+  },
+  {
+   "number": "97.0±0.2",
+   "context": "MNIST 蒸馏 p=50 时 MMDSW（无嵌入无增强）分类准确率，DM 为 95.9±0.9",
+   "source": "Table 1"
+  },
+  {
+   "number": "84.2±0.1",
+   "context": "FMNIST 蒸馏 p=50 时 MMDSW（无嵌入无增强）分类准确率，DM 为 81.3±0.5",
+   "source": "Table 1"
+  },
+  {
+   "number": "74.7±0.8",
+   "context": "MNIST→FMNIST 迁移学习 k=100 时 MMDSW 准确率，基线 Train on Q 为 71.1±1.5",
+   "source": "Table 2"
+  },
+  {
+   "number": "13.95±1.37 秒",
+   "context": "MNIST→FMNIST k=1 迁移学习 MMDSW 运行时间，OTDD 为 294.53±5.21 秒",
+   "source": "Table 3"
+  },
+  {
+   "number": "O(C²Ln(log n + d))",
+   "context": "MMD with SW kernel 的总复杂度，C 为类数，L 为投影数，n 为每类样本数",
+   "source": "Sec. 5, Complexity, p.10"
+  },
+  {
+   "number": "约 10 分钟 / 30 秒",
+   "context": "Nvidia v100 上数据集蒸馏流动运行时间（带嵌入 / 不带嵌入）",
+   "source": "Sec. 5, Dataset Distillation, p.9"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "alvarez-melis-fusi-2021-otdd",
+   "type": "竞争基线（OTDD 数据集流动）"
+  },
+  {
+   "report_id": "hua-2023-product-kernel-mmd",
+   "type": "竞争基线（product-kernel MMD 数据集流动）"
+  },
+  {
+   "report_id": "hertrich-2024-riesz-mmd-wgf",
+   "type": "继承（Riesz kernel MMD 梯度流）"
+  },
+  {
+   "report_id": "bonet-2025-riemannian-wgd",
+   "type": "继承（前向 Euler 格式的黎曼梯度下降）"
+  },
+  {
+   "report_id": "haviv-2024-wow-flow-matching",
+   "type": "平行工作（WoW 空间上的 Flow Matching 生成建模）"
+  }
+ ],
+ "read_full_text": true
+}

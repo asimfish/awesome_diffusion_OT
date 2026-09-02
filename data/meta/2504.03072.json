@@ -1,0 +1,40 @@
+{
+ "report_id": "2504.03072",
+ "arxiv_id": "2504.03072",
+ "title": "How I Warped Your Noise: a Temporally-Correlated Noise Prior for Diffusion Models",
+ "tldr_zh": "∫-noise 把离散噪声视为白噪声积分，噪声传输方程沿光流保分布 warp，帧间相关且逐帧 i.i.d. 高斯；warp 误差 10.00→2.50，约 1 s/帧",
+ "tldr_en": "Integral-noise reinterprets pixels as white-noise integrals; a noise transport equation warps noise along optical flow preserving per-frame Gaussianity while correlating frames.",
+ "tags": [
+  "noise-warping",
+  "temporal-correlation",
+  "video-diffusion",
+  "distribution-preserving",
+  "white-noise",
+  "noise-noise-coupling",
+  "training-free"
+ ],
+ "code_url": "https://warpyournoise.github.io/",
+ "key_numbers": [
+  "Appearance transfer warp error (x1e-3): Random 10.00, Fixed 4.35, Bilinear 3.15, integral-noise 2.50 (Table 1)",
+  "Appearance transfer FID/Precision: Random 74.75/0.719 vs integral-noise 92.63/0.661 vs Fixed 93.56/0.644 vs Bilinear 143.24/0.201 (Table 1)",
+  "Video SR 4x warp error: Random 8.91, Fixed 7.97, integral-noise 6.49; LPIPS 0.192/0.179/0.196 (Table 1)",
+  "Pose-to-person warp error: Fixed 2.26 < integral-noise 2.92 despite visible texture sticking (Table 1, Table 9)",
+  "Runtime 256x256: integral-noise (k=3,s=4) 629 ms/frame wall vs DDIM inversion 20 steps 853 ms vs bilinear 5.26 ms (Table 3)",
+  "1-D: bilinear interpolation variance alpha^2+(1-alpha)^2 < 1; Brownian-bridge term restores unit variance (Eq. 6)"
+ ],
+ "relations": [
+  {
+   "report_id": "2501.08331",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2505.18521",
+   "type": "uses"
+  },
+  {
+   "report_id": "2412.05101",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

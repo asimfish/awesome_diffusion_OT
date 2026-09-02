@@ -1,0 +1,101 @@
+{
+ "report_id": "2511.22425",
+ "arxiv_id": "2511.22425",
+ "title": "Wukong's 72 Transformations: High-fidelity Textured 3D Morphing via Flow Models",
+ "tldr_zh": "在预训练 3D flow transformer 条件 token 空间解 free-support barycenter，training-free 实现带纹理 3D 形变",
+ "tldr_en": "Training-free textured 3D morphing by solving free-support Wasserstein barycenter in condition token space of a pretrained flow transformer",
+ "tags": [
+  "Wasserstein barycenter",
+  "free-support barycenter",
+  "3D morphing",
+  "flow models",
+  "training-free",
+  "texture morphing"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "4.01",
+   "metric": "FID",
+   "source": "Table 1, Ours"
+  },
+  {
+   "number": "6.36",
+   "metric": "FID",
+   "source": "Table 1, 3DRM"
+  },
+  {
+   "number": "147.70",
+   "metric": "FID",
+   "source": "Table 1, MorphFlow"
+  },
+  {
+   "number": "2.91",
+   "metric": "PPL",
+   "source": "Table 1, Ours"
+  },
+  {
+   "number": "0.90",
+   "metric": "V-CLIP",
+   "source": "Table 1, Ours"
+  },
+  {
+   "number": "14.73",
+   "metric": "FID (Linear ablation)",
+   "source": "Table 2"
+  },
+  {
+   "number": "12.52",
+   "metric": "FID (w/o recursive init)",
+   "source": "Table 2"
+  },
+  {
+   "number": "4.16",
+   "metric": "FID (Ours* on TripoSG)",
+   "source": "Table 2"
+  },
+  {
+   "number": "30",
+   "metric": "seconds per morphed 3D output",
+   "source": "Sec. 4 Implementation details"
+  },
+  {
+   "number": "25",
+   "metric": "sampling steps per flow model",
+   "source": "Sec. 4 Implementation details"
+  },
+  {
+   "number": "100",
+   "metric": "max barycenter optimization iterations",
+   "source": "Sec. 4 Implementation details"
+  },
+  {
+   "number": "6",
+   "metric": "J (interpolation steps minus 1)",
+   "source": "Sec. 4 Implementation details"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2412.01506",
+   "type": "backbone"
+  },
+  {
+   "report_id": "2502.14316",
+   "type": "baseline/competitor"
+  },
+  {
+   "report_id": "2502.06608",
+   "type": "ablation backbone"
+  },
+  {
+   "report_id": "DiffMorpher-CVPR2024",
+   "type": "inspiration (2D morphing)"
+  },
+  {
+   "report_id": "vonLindheim2023",
+   "type": "solver (free-support barycenter)"
+  }
+ ],
+ "read_full_text": true
+}

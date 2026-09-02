@@ -1,0 +1,60 @@
+{
+ "report_id": "2406.09570",
+ "arxiv_id": "2406.09570",
+ "title": "Improving Consistency Models with Generator-Augmented Flows",
+ "tldr_zh": "证明 CT 与 CD 差异在连续时间不消失；用一致性模型预测端点与同一噪声重配对（GC）降低该差异与传输成本，CIFAR-10 FID 7.42→5.95。",
+ "tldr_en": "Proves the CT-CD gap persists in continuous time (regularizer R depends on velocity-estimator misalignment); generator-augmented coupling re-pairs predicted endpoints with the same noise, lowering R and transport cost, FID 7.42 to 5.95 on CIFAR-10.",
+ "tags": [
+  "consistency-training",
+  "coupling",
+  "transport-cost",
+  "theory",
+  "minibatch-ot",
+  "reflow"
+ ],
+ "code_url": "https://github.com/thibautissenhuth/consistency_GC",
+ "key_numbers": [
+  "CIFAR-10 FID: iCT-IC 7.42, iCT-OT 6.75, iCT-GC (mu=0.5) 5.95 (Table 1)",
+  "CelebA-64 FID: 15.82 / 13.63 / 11.74 (Table 1)",
+  "ImageNet-32 FID: 14.89 / 14.13 / 13.99; LSUN Church 10.58 / 9.71 / 9.88 (Table 1)",
+  "ECT CIFAR-10 long training: IC 4.11 vs GC 3.74; ImageNet-64 long: IC 5.84 vs GC 6.39 (Table 2)",
+  "Iso wall-clock iCT-GC 6.38 vs iCT-IC 7.42; ~20% overhead (Table 3, App. C.1)",
+  "Theorem 1: lim N^alpha (L_CT - L_CD) = C T^(alpha-1) R(theta) > 0",
+  "R_tilde: GC < batch-OT (b=512) < IC for all sigma (Fig. 2)"
+ ],
+ "relations": [
+  {
+   "report_id": "2303.01469",
+   "type": "extends"
+  },
+  {
+   "report_id": "2310.14189",
+   "type": "uses"
+  },
+  {
+   "report_id": "Simplifying_Stabilizing_and_Scaling_Continuous_tim",
+   "type": "competes"
+  },
+  {
+   "report_id": "Flow_Map_Matching",
+   "type": "competes"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "competes"
+  },
+  {
+   "report_id": "2304.14772",
+   "type": "competes"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "uses"
+  },
+  {
+   "report_id": "2402.07802",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

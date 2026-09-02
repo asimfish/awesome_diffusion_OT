@@ -1,0 +1,72 @@
+{
+ "report_id": "2601.07568",
+ "arxiv_id": "2601.07568",
+ "title": "d3LLM: Ultra-Fast Diffusion LLM using Pseudo-Trajectory Distillation",
+ "tldr_zh": "伪轨迹蒸馏+熵基多块解码，AUP 指标 9/10 任务最优，H100 上 5× 快于 AR、10× 快于 vanilla dLLM",
+ "tldr_en": "Pseudo-trajectory distillation plus multi-block decoding achieves 5x AR speedup and 10x vanilla dLLM speedup on H100",
+ "tags": [
+  "diffusion LLM",
+  "distillation",
+  "parallel decoding",
+  "AUP metric",
+  "masked diffusion"
+ ],
+ "code_url": "https://github.com/hao-ai-lab/d3LLM",
+ "key_numbers": [
+  {
+   "number": "9.11 TPF / 73.1% Acc / 637.7 AUP on GSM8K-CoT",
+   "source": "Table 1, d3LLM-LLaDA"
+  },
+  {
+   "number": "288.9 TPS on H100 (5.0x vs Qwen-2.5-7B-it), 183.3 TPS on A100 (3.6x)",
+   "source": "Table 3, d3LLM-LLaDA"
+  },
+  {
+   "number": "10.3x speedup over vanilla LLaDA (27.9 TPS on H100)",
+   "source": "Sec. 4.2, computed from Table 3"
+  },
+  {
+   "number": "235.3 TPS on H100 (4.1x vs AR), 8.5x over vanilla Dream",
+   "source": "Table 4, d3LLM-Dream"
+  },
+  {
+   "number": "highest AUP on 9 out of 10 benchmark tasks",
+   "source": "Sec. 5 Conclusion"
+  },
+  {
+   "number": "pseudo-trajectory distillation: +18% TPF; curriculum noise: +12% TPF; curriculum window: +8% TPF",
+   "source": "Sec. 3.1"
+  },
+  {
+   "number": "multi-block decoding: +30% TPF; KV-refresh: +35% TPS in long-context; early stop: +5% TPF",
+   "source": "Sec. 3.2"
+  },
+  {
+   "number": "65M additional tokens for d3LLM-Dream vs 1B for Fast-dLLM-v2",
+   "source": "Sec. 4.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2502.09992",
+   "type": "基础模型（LLaDA）"
+  },
+  {
+   "report_id": "2507.00840",
+   "type": "基础模型（Dream）"
+  },
+  {
+   "report_id": "2509.26488",
+   "type": "主要基线（dParallel）"
+  },
+  {
+   "report_id": "2505.xxxxx",
+   "type": "基线（D2F，原文未给完整 id）"
+  },
+  {
+   "report_id": "2509.xxxxx",
+   "type": "基线（Fast-dLLM-v2，原文未给完整 id）"
+  }
+ ],
+ "read_full_text": true
+}

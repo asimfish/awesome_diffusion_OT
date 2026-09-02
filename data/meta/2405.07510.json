@@ -1,0 +1,59 @@
+{
+ "report_id": "2405.07510",
+ "arxiv_id": "2405.07510",
+ "title": "PeRFlow: Piecewise Rectified Flow as Universal Plug-and-Play Accelerator",
+ "tldr_zh": "4 时间窗内对真实图像加噪做短程 reflow，免整轨迹合成、可在线训练；ΔW 即插即用加速 SD 生态，4 步 FID 优于 LCM-LoRA",
+ "tldr_en": "Piecewise reflow within 4 time windows starting from noised real images avoids full-trajectory synthesis; the weight delta plugs into SD pipelines, beating LCM-LoRA at 4 steps.",
+ "tags": [
+  "rectified-flow",
+  "reflow",
+  "piecewise",
+  "few-step-generation",
+  "stable-diffusion",
+  "plug-and-play",
+  "distillation"
+ ],
+ "code_url": "https://github.com/magic-research/piecewise-rectified-flow",
+ "key_numbers": [
+  "SD-v1.5 4-step FID on LAION-5B: PeRFlow 8.60 vs InstaFlow 14.32 vs LCM-LoRA 15.28 (Table 1a)",
+  "SD-v1.5 FID vs original SD generations 4/8-step: PeRFlow 8.28/5.03 vs LCM-LoRA 15.63/21.19 (Table 1a)",
+  "SDXL 4-step FID on COCO2014: PeRFlow 18.48 vs LCM-LoRA 19.74 vs Lightning 22.86 (Table 1b)",
+  "4 uniform time windows, DDIM 8 steps per window endpoint, 16 A100 (Sec. 3)",
+  "Dynamic CFG 7.5-4.0-4.0-4.0 (sync) or 2.5-1.5-1.5-1.5 (fixed) for 5-step sampling (Sec. 3.3)"
+ ],
+ "relations": [
+  {
+   "report_id": "2309.06380",
+   "type": "extends"
+  },
+  {
+   "report_id": "2209.03003",
+   "type": "extends"
+  },
+  {
+   "report_id": "2312.16414",
+   "type": "competes"
+  },
+  {
+   "report_id": "2410.14949",
+   "type": "uses"
+  },
+  {
+   "report_id": "2507.10218",
+   "type": "competes"
+  },
+  {
+   "report_id": "2311.17042",
+   "type": "competes"
+  },
+  {
+   "report_id": "2303.01469",
+   "type": "competes"
+  },
+  {
+   "report_id": "2010.02502",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

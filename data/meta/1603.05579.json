@@ -1,0 +1,48 @@
+{
+ "report_id": "1603.05579",
+ "arxiv_id": "1603.05579",
+ "title": "Convergence of a Newton algorithm for semi-discrete optimal transport",
+ "tldr_zh": "半离散 OT 阻尼 Newton 法全局线性、局部 1+α 阶收敛，条件为 MTW 型代价 + 源密度加权 Poincaré–Wirtinger",
+ "tldr_en": "Damped Newton for semi-discrete OT converges globally linearly and locally at rate 1+alpha under Loeper/MTW cost condition and a weighted Poincare-Wirtinger inequality on the source.",
+ "tags": [
+  "semi-discrete-ot",
+  "damped-newton",
+  "laguerre-cells",
+  "monge-ampere",
+  "mtw-condition",
+  "convergence-analysis",
+  "theory",
+  "numerical-analysis"
+ ],
+ "code_url": "https://github.com/mrgt/PyMongeAmpere",
+ "key_numbers": [
+  "Thm 1.5: global linear + local rate 1+alpha convergence of damped Newton (Sec. 1.7)",
+  "Thm 5.1: <D^2 Phi(psi) v|v> <= -C eps^3 ||v||^2 on K_eps x E_Y (Sec. 5)",
+  "Prop. 6.1: residual contracts by (1 - tau_k/2), tau_k = min(kappa^{1+1/alpha} eps/(d^{1/alpha} L^{1/alpha} ||G-mu||), 1) (Eq. 6.47)",
+  "Prior coordinate-increment methods need N^3/eps iterations (Sec. 1)",
+  "Numerical example: piecewise-linear density on [0,3]^2 with hole, 30^2 grid target, 25 Newton iterations to machine precision (Sec. 6.3)"
+ ],
+ "relations": [
+  {
+   "report_id": "2003.00855",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "A_Combinatorial_Algorithm_for_Semi_Discrete_Optima",
+   "type": "competes"
+  },
+  {
+   "report_id": "Efficient_Algorithms_for_Robust_and_Partial_Semi_D",
+   "type": "extends"
+  },
+  {
+   "report_id": "Polar_factorization_and_monotone_rearrangement_of",
+   "type": "uses"
+  },
+  {
+   "report_id": "Topics_in_Optimal_Transportation",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

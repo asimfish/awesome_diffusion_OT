@@ -1,0 +1,49 @@
+{
+ "report_id": "2202.07477",
+ "arxiv_id": "2202.07477",
+ "title": "Understanding DDPM Latent Codes Through Optimal Transport",
+ "tldr_zh": "猜想DDPM PF-ODE encoder=到N(0,I)的Monge OT映射；多元高斯证明，TT求解器合成分布代价误差~1e-15",
+ "tldr_en": "Conjectures the DDPM PF-ODE encoder equals the Monge OT map to N(0,I); proven for Gaussians, transport-cost error ~1e-15 on synthetic densities via tensor-train FP solver.",
+ "tags": [
+  "encoder-map",
+  "monge-map",
+  "probability-flow-ode",
+  "theory",
+  "tensor-train",
+  "diffusion-ot",
+  "conjecture"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Max relative transport-cost error over 100 random densities: 5.7e-15 (d=2), 2.2e-15 (d=3), 2.1e-15 (d=7) (Table 1)",
+  "Theorem 3.1: for mu0=N(a,Sigma), encoder map E(x)=Sigma^{-1/2}(x-a) = Monge OT map to N(0,I)",
+  "AFHQ 500 validation images per class: DDIM-code assignment cost matches POT OT cost to machine precision (Sec. 3.5)"
+ ],
+ "relations": [
+  {
+   "report_id": "The_flow_map_of_the_Fokker_Planck_equation_does_no",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "1709.06464",
+   "type": "competes"
+  },
+  {
+   "report_id": "2405.14250",
+   "type": "extends"
+  },
+  {
+   "report_id": "2311.03886",
+   "type": "extends"
+  },
+  {
+   "report_id": "2405.11326",
+   "type": "extends"
+  },
+  {
+   "report_id": "Score_Based_Generative_Modeling_through_SDEs",
+   "type": "uses"
+  }
+ ],
+ "read_full_text": true
+}

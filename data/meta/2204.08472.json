@@ -1,0 +1,58 @@
+{
+ "report_id": "2204.08472",
+ "arxiv_id": "2204.08472",
+ "title": "Simultaneous Multiple-Prompt Guided Generation Using Differentiable Optimal Transport",
+ "tldr_zh": "用可微 Sinkhorn OT 替换多 prompt 引导的均值损失，缓解生成图像向 prompt 均值塌缩",
+ "tldr_en": "Replaces mean-distance loss in multi-prompt VQGAN-CLIP guidance with differentiable Sinkhorn OT to reduce mode collapse",
+ "tags": [
+  "optimal transport",
+  "text-to-image generation",
+  "VQGAN-CLIP",
+  "Sinkhorn",
+  "prompt guidance",
+  "computational creativity"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "36/28 vs 49/15",
+   "context": "64 个 cutouts 中更接近两个 prompt 的数量，OT vs Mean 基线",
+   "source": "Fig. 3(c)(d)"
+  },
+  {
+   "number": "N=64",
+   "context": "随机采样 patch 数量",
+   "source": "Sec. Experiments, p.5"
+  },
+  {
+   "number": "1000",
+   "context": "latent 更新迭代次数",
+   "source": "Sec. Experiments, p.5"
+  },
+  {
+   "number": "m=6",
+   "context": "多 prompt 实验的 prompt 数量",
+   "source": "Sec. Experiments, p.6"
+  },
+  {
+   "number": "a_i=1/n, b_j=1/m",
+   "context": "OT 的均匀边际权重",
+   "source": "Eq. 5, Sec. Methodology"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2202.00773",
+   "type": "同期独立工作，共享 Sinkhorn 可微技术基础"
+  },
+  {
+   "report_id": "2306.17757",
+   "type": "后续工作，在 OT 引导路径上给出理论保证并扩展到扩散模型"
+  },
+  {
+   "report_id": "2201.12324",
+   "type": "方法依赖的 OT 求解工具"
+  }
+ ],
+ "read_full_text": true
+}

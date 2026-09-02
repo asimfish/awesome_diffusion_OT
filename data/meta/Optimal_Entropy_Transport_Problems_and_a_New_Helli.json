@@ -1,0 +1,31 @@
+{
+ "report_id": "Optimal_Entropy_Transport_Problems_and_a_New_Helli",
+ "arxiv_id": null,
+ "title": "Optimal Entropy-Transport Problems and a New Hellinger–Kantorovich Distance",
+ "tldr_zh": "系统化 KL 松弛边缘的熵-运输问题与 conic 提升，定义 Hellinger–Kantorovich 距离。",
+ "tldr_en": "Systematizes entropy-transport with KL-relaxed marginals and conic lifting, defining the Hellinger–Kantorovich distance.",
+ "tags": [
+  "unbalanced-OT",
+  "Hellinger-Kantorovich",
+  "conic-lifting",
+  "KL-relaxation",
+  "static-theory"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "Chizat_2018_WFR",
+   "type": "被动态形式继承"
+  },
+  {
+   "report_id": "UOTM_NeurIPS2023",
+   "type": "被生成建模应用继承"
+  },
+  {
+   "report_id": "UOT-FM_ICLR2024",
+   "type": "被工程接口继承"
+  }
+ ],
+ "read_full_text": false
+}

@@ -1,0 +1,55 @@
+{
+ "report_id": "2206.00364",
+ "arxiv_id": "2206.00364",
+ "title": "Elucidating the Design Space of Diffusion-Based Generative Models",
+ "tldr_zh": "拆解扩散设计空间：σ(t)=t、Heun、ρ=7 调度、预条件；35 NFE CIFAR-10 FID 1.97",
+ "tldr_en": "Separates diffusion design choices (sigma(t)=t, Heun, rho=7 schedule, preconditioning); FID 1.97 on CIFAR-10 at 35 NFE.",
+ "tags": [
+  "design-space",
+  "ode-solver",
+  "schedule",
+  "preconditioning",
+  "stochastic-sampling",
+  "benchmark"
+ ],
+ "code_url": "https://github.com/NVlabs/edm",
+ "key_numbers": [
+  "Uncond CIFAR-10 FID 1.97, cond 1.79 at 35 NFE (Table 2 config F)",
+  "ImageNet-64 FID 2.07 -> 1.55 by sampler only, 1.36 after retraining (Sec. 5, Table 4)",
+  "VE CIFAR-10 NFE 8192 -> 27 for FID within 3% (Table 3)",
+  "VP CIFAR-10 NFE 256 -> 35 (Table 3)",
+  "rho=3 equalizes truncation error but rho in [5,10] gives better FID; rho=7 used (Sec. 3)",
+  "Stochastic sampling harmful on CIFAR-10 with new training, helpful on ImageNet-64 (Fig. 5b/c)"
+ ],
+ "relations": [
+  {
+   "report_id": "2010.02502",
+   "type": "extends"
+  },
+  {
+   "report_id": "2206.00927",
+   "type": "competes"
+  },
+  {
+   "report_id": "2204.13902",
+   "type": "competes"
+  },
+  {
+   "report_id": "2312.00094",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2404.14507",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2405.15506",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2506.10177",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,64 @@
+{
+ "report_id": "2201.12220",
+ "arxiv_id": "2201.12220",
+ "title": "Neural Optimal Transport",
+ "tldr_zh": "weak OT 对偶化为 sup_f inf_T 鞍点，带噪声输入的 T(x,z) 学随机 plan；NN 为 plan 万能逼近器；unpaired 翻译 FID 优于 CycleGAN 系",
+ "tldr_en": "Weak-OT dual becomes a sup_f inf_T saddle problem; a noise-conditioned network T(x,z) learns stochastic plans; NNs universally approximate plans; strong unpaired I2I FID.",
+ "tags": [
+  "neural-ot",
+  "weak-ot",
+  "stochastic-plan",
+  "max-min",
+  "unpaired-translation",
+  "one-to-many",
+  "universal-approximation"
+ ],
+ "code_url": "https://github.com/iamalexkorotin/NeuralOptimalTransport",
+ "key_numbers": [
+  "Test FID handbags->shoes 64px: NOT 13.77 (one-to-one) / 13.44 (one-to-many) vs CycleGAN 16.00, DiscoGAN 22.42, MUNIT 15.76, AugCycleGAN 18.84 (Table 1)",
+  "Test FID celeba male->female 64px: NOT 13.23 / 11.96 vs CycleGAN 17.74, AugCycleGAN 12.94, MUNIT 17.07 (Table 1)",
+  "Test FID outdoor->church 128px: NOT 25.5 / 25.97 vs CycleGAN 46.39, MUNIT 31.42, AugCycleGAN 51.42, DiscoGAN 75.36 (Table 1)",
+  "NOT uses 2 networks (T 9.7M + f 22.9M) and 0-1 objective hyperparameters vs CycleGAN 4 nets/2 hp, MUNIT 4 nets/3 hp (Table 2)",
+  "gamma-weak cost: gamma=0 conditional collapse, 1/3-2/3 diverse and style-preserving, 1 diverse but style lost (Appendix A, Fig. 7, qualitative)",
+  "Training: deterministic maps 1-3 days on 1x V100; stochastic maps on 4x V100 with |Z_x|=4 (Appendix E)"
+ ],
+ "relations": [
+  {
+   "report_id": "2106.01954",
+   "type": "extends"
+  },
+  {
+   "report_id": "2110.02999",
+   "type": "extends"
+  },
+  {
+   "report_id": "2106.03812",
+   "type": "extends"
+  },
+  {
+   "report_id": "2205.15269",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2205.15403",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2301.12874",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2403.03777",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2410.03783",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Overcoming_Spurious_Solutions_in_Semi_Dual_Neural",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

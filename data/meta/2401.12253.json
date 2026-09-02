@@ -1,0 +1,77 @@
+{
+ "report_id": "2401.12253",
+ "arxiv_id": "2401.12253",
+ "title": "Accelerating Sinkhorn Algorithm with Sparse Newton Iterations",
+ "tldr_zh": "Sinkhorn 预热后接 Hessian 稀疏化的 Newton 迭代，每迭代 O(n²)，迭代数大幅减少",
+ "tldr_en": "Sparse Newton stage after Sinkhorn warm-start cuts iterations with O(n²) per-iteration cost",
+ "tags": [
+  "optimal transport",
+  "Sinkhorn",
+  "Newton method",
+  "sparse Hessian",
+  "entropic regularization",
+  "solver"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "29 vs 56,199 iterations",
+   "source": "Table 1, Random case"
+  },
+  {
+   "number": "0.34s vs 233.36s total time",
+   "source": "Table 1, Random case"
+  },
+  {
+   "number": "53 vs 2,041 iterations",
+   "source": "Table 1, MNIST L2"
+  },
+  {
+   "number": "2.33s vs 18.84s total time",
+   "source": "Table 1, MNIST L2"
+  },
+  {
+   "number": "777 vs 5,748 iterations",
+   "source": "Table 1, MNIST L1"
+  },
+  {
+   "number": "12.22s vs 45.75s total time",
+   "source": "Table 1, MNIST L1"
+  },
+  {
+   "number": "η = 1200",
+   "source": "Sec. 6, experimental setting"
+  },
+  {
+   "number": "λ = 2/n (unique), λ = 15/n (non-unique)",
+   "source": "Sec. 6"
+  },
+  {
+   "number": "N₁ = 20 (unique), N₁ = 700 (non-unique)",
+   "source": "Sec. 6"
+  },
+  {
+   "number": "λ* ≤ 2/n for unique solution, λ* = 1/n for uniform marginals",
+   "source": "Theorem 1"
+  },
+  {
+   "number": "τ(F) ≤ (1+o(1))/√n under four-point condition",
+   "source": "Theorem 3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "1710.06635",
+   "type": "predecessor"
+  },
+  {
+   "report_id": "2212.06000",
+   "type": "theoretical_basis"
+  },
+  {
+   "report_id": "2307.08507",
+   "type": "competing_approach"
+  }
+ ],
+ "read_full_text": true
+}

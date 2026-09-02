@@ -1,0 +1,51 @@
+{
+ "report_id": "1905.05828",
+ "arxiv_id": "1905.05828",
+ "title": "Minimax estimation of smooth optimal transport maps",
+ "tldr_zh": "α-光滑强凸势 Brenier map 的 minimax 率 n^{-2α/(2α-2+d)}∨n^{-1}（log 内），半对偶+截断小波估计器达到；首个一般维度结果",
+ "tldr_en": "First general-dimension minimax rate n^{-2α/(2α-2+d)} for smooth Brenier maps, attained by a wavelet-restricted empirical semi-dual estimator via a new semi-dual stability bound.",
+ "tags": [
+  "optimal-transport",
+  "map-estimation",
+  "minimax",
+  "semi-dual",
+  "wavelet",
+  "statistical-ot",
+  "theory"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "Minimax lower bound E||T̂−T0||²_{L²(P)} ≳ n^{-2α/(2α-2+d)} ∨ 1/n (Thm 6, Eq. 3.1)",
+  "Upper bound ≲ n^{-2α/(2α-2+d)} (log n)² ∨ 1/n (Thm 8, Eq. 3.2)",
+  "Stability: (8M)^{-1}||∇f−∇f0||² ≤ S(f)−S(f0) ≤ 2M||∇f−∇f0||² (Prop. 10, Eq. 5.5)",
+  "Experiments d=3 (id): log-log slopes emp −0.693 / wav −0.913 / ker −1.065 (Fig. 2a); d=10: emp −0.250 / ker −0.666 (Fig. 2b)",
+  "Constants scale like M^{c1 d + c2} (Remark 9(v))"
+ ],
+ "relations": [
+  {
+   "report_id": "2107.12364",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2212.03722",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2109.12004",
+   "type": "competes"
+  },
+  {
+   "report_id": "2407.18163",
+   "type": "uses"
+  },
+  {
+   "report_id": "Polar_factorization_and_monotone_rearrangement_of",
+   "type": "uses"
+  },
+  {
+   "report_id": "Diffusion_Models_are_Minimax_Optimal_Distribution",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

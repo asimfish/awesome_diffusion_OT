@@ -1,0 +1,71 @@
+{
+ "report_id": "2501.08316",
+ "arxiv_id": "2501.08316",
+ "title": "Diffusion Adversarial Post-Training for One-Step Video Generation",
+ "tldr_zh": "扩散预训练后对真实数据做对抗后训练，单步生成 2 秒 720p 24fps 视频，视觉保真度超 25 步教师",
+ "tldr_en": "Adversarial post-training on real data after diffusion pre-training enables one-step 720p 24fps video generation with visual fidelity surpassing the 25-step teacher",
+ "tags": [
+  "one-step video generation",
+  "adversarial post-training",
+  "diffusion distillation",
+  "R1 regularization",
+  "text-to-video"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "+37.2%",
+   "description": "APT 一步图像在视觉保真度上相对 25 步扩散模型的用户偏好分数，是唯一正值的模型",
+   "source": "Table 1"
+  },
+  {
+   "number": "+10.4% / -38.5% / -8.3%",
+   "description": "APT 一步视频相对 25 步扩散在视觉保真度/结构完整性/文本对齐的偏好分数",
+   "source": "Table 4"
+  },
+  {
+   "number": "8B",
+   "description": "生成器和判别器骨干各含 36 层 transformer、共 8B 参数",
+   "source": "Sec. 3.1"
+  },
+  {
+   "number": "2 秒",
+   "description": "H100 上单步生成 2 秒 1280×720 24fps 视频 latent 的耗时",
+   "source": "Sec. 1"
+  },
+  {
+   "number": "300 次更新 / batch size 2048",
+   "description": "视频阶段训练设置：1024 个 H100 GPU、梯度累积、学习率 3e-6",
+   "source": "Sec. 3.5"
+  },
+  {
+   "number": "50,328",
+   "description": "用户研究总样本比较次数",
+   "source": "Sec. 4.2"
+  },
+  {
+   "number": "λ=100, σ=0.01(图像)/0.1(视频)",
+   "description": "近似 R1 正则的超参数",
+   "source": "Sec. 3.4"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2402.13929",
+   "type": "继承（SDXL-Lightning 的对抗蒸馏思路，但放弃教师）"
+  },
+  {
+   "report_id": "2403.12706",
+   "type": "继承（AnimateDiff-Lightning 的视频蒸馏，本文扩展到高分辨率一步）"
+  },
+  {
+   "report_id": "VDOT",
+   "type": "竞争（OT 距离蒸馏 vs 纯对抗后训练，同一少步视频问题）"
+  },
+  {
+   "report_id": "SF-V",
+   "type": "同支（对抗系一步视频，SF-V 为 I2V 1024×576 14 帧）"
+  }
+ ],
+ "read_full_text": true
+}

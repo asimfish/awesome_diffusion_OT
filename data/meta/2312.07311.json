@@ -1,0 +1,78 @@
+{
+ "report_id": "2312.07311",
+ "arxiv_id": "2312.07311",
+ "title": "Scalable Motion Style Transfer with Constrained Diffusion Generation",
+ "tldr_zh": "各风格域独立训练扩散模型，DDIB桥接加关键帧流形约束梯度，实现十种舞蹈风格迁移",
+ "tldr_en": "Independently trained diffusion models per style domain, bridged by DDIB with keyframe manifold constraint gradients for 10 dance styles",
+ "tags": [
+  "motion style transfer",
+  "DDIB",
+  "diffusion models",
+  "manifold constraints",
+  "Schrödinger bridge",
+  "dance generation"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "10",
+   "context": "AIST++ 舞蹈风格数量，DDIBs-based 方法模型数",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.1208",
+   "context": "DDIBs-gradient 的 FPD，低于 DDIBs-vanilla 的 0.2904 和 DDIBs-explicit 的 0.1748",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.1214",
+   "context": "DDIBs-gradient 的 FMD，与 DDIBs-vanilla 的 0.1295 接近",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.0192 ± 0.0079",
+   "context": "DDIBs-gradient 在 100STYLE 上的循环一致性 L2 距离",
+   "source": "Table 1"
+  },
+  {
+   "number": "0.0232 ± 0.0032",
+   "context": "DDIBs-gradient 在 AIST++ 上的循环一致性 L2 距离",
+   "source": "Table 1"
+  },
+  {
+   "number": "21",
+   "context": "用户研究参与者数量，24-35 岁，71.4% 男性",
+   "source": "Sec. User Study"
+  },
+  {
+   "number": "0.0000961",
+   "context": "躯干形状保留的 McNemar 检验 p 值，DDIBs-gradient 显著优于 vanilla",
+   "source": "Fig. 9"
+  },
+  {
+   "number": "90",
+   "context": "每个风格用于客观评估的舞蹈序列数量",
+   "source": "Sec. Transfer Performance"
+  },
+  {
+   "number": "122901720",
+   "context": "PowerWash 数据集 11080 风格下 CycleDance 所需模型数",
+   "source": "Table 3"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2203.08382",
+   "type": "继承/直接基础"
+  },
+  {
+   "report_id": "2211.10658",
+   "type": "架构基础"
+  },
+  {
+   "report_id": "2312.07311",
+   "type": "self"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,39 @@
+{
+ "report_id": "Diffusion_Bridge_Mixture_Transports_IDBM_Peluchett",
+ "arxiv_id": null,
+ "title": "Diffusion Bridge Mixture Transports (IDBM), Peluchetti",
+ "tldr_zh": "提出迭代扩散桥混合（IDBM），每步保持两端边缘合法 transport，给出收敛性初步分析。",
+ "tldr_en": "Proposes iterative diffusion bridge mixtures (IDBM) that preserve both marginals per iteration, with preliminary convergence analysis.",
+ "tags": [
+  "Schrödinger Bridge",
+  "diffusion generative models",
+  "iterative method",
+  "reciprocal projection",
+  "Markov projection"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "DSB_NeurIPS_2021",
+   "type": "被本文替代/改进"
+  },
+  {
+   "report_id": "DSBM_Shi_NeurIPS_2023",
+   "type": "独立同期工作"
+  },
+  {
+   "report_id": "alpha_DSBM_NeurIPS_2024",
+   "type": "后续发展"
+  },
+  {
+   "report_id": "ASBM_NeurIPS_2024",
+   "type": "后续发展"
+  },
+  {
+   "report_id": "CSBM_ICML_2025",
+   "type": "后续发展"
+  }
+ ],
+ "read_full_text": false
+}

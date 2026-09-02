@@ -1,0 +1,74 @@
+{
+ "report_id": "2403.11262",
+ "arxiv_id": "2403.11262",
+ "title": "Understanding Diffusion Models by Feynman's Path Integral",
+ "tldr_zh": "路径积分表述扩散模型，WKB 展开计算带噪采样 NLL，量化噪声收益",
+ "tldr_en": "Path integral formulation of diffusion models; WKB expansion computes NLL for noisy sampling",
+ "tags": [
+  "diffusion models",
+  "path integral",
+  "WKB expansion",
+  "probability flow ODE",
+  "stochastic sampling",
+  "negative log-likelihood",
+  "optimal transport"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "h=0 对应概率流 ODE，h=1 对应逆向 SDE",
+   "source": "Eq. (9), Sec. 4.1"
+  },
+  {
+   "number": "Swiss-roll SIMPLE NLL = 1.39 ± 0.05，一阶修正 -0.31 ± 0.21 (tol=1e-3)",
+   "source": "Table 1"
+  },
+  {
+   "number": "25-Gaussian COSINE 一阶修正 -17.57 ± 5.56 (tol=1e-3)",
+   "source": "Table 1"
+  },
+  {
+   "number": "1 维高斯模型：epsilon≠0 时 NLL 随 h 递减",
+   "source": "Fig. 3, Sec. 5.1"
+  },
+  {
+   "number": "2 维实验：W2 在小 h 区域典型下降",
+   "source": "Fig. 4, Sec. 5.2"
+  },
+  {
+   "number": "有限差分步长 Delta x = 0.01",
+   "source": "Table 1, Sec. 5.2"
+  },
+  {
+   "number": "时间区间 [Tmin, Tmax] = [0.01, 1]",
+   "source": "Sec. 5.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2011.13456",
+   "type": "继承"
+  },
+  {
+   "report_id": "2204.13902",
+   "type": "继承"
+  },
+  {
+   "report_id": "2206.00364",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2302.03792",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2211.01324",
+   "type": "平行"
+  },
+  {
+   "report_id": "2106.01357",
+   "type": "扩展方向"
+  }
+ ],
+ "read_full_text": true
+}

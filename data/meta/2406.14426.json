@@ -1,0 +1,78 @@
+{
+ "report_id": "2406.14426",
+ "arxiv_id": "2406.14426",
+ "title": "Transferable Boltzmann Generators",
+ "tldr_zh": "等变 CNF+flow matching 训练首个跨二肽零样本 Boltzmann Generator，拓扑嵌入是关键",
+ "tldr_en": "First transferable Boltzmann Generator via equivariant CNF+FM, zero-shot on dipeptides; topology embeddings key",
+ "tags": [
+  "Boltzmann Generator",
+  "flow matching",
+  "equivariant CNF",
+  "zero-shot transfer",
+  "dipeptides",
+  "importance sampling",
+  "molecular sampling"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "15.29 ± 9.27%",
+   "source": "Table 2",
+   "context": "TBG + full 在 8 个测试二肽上的平均 ESS"
+  },
+  {
+   "number": "98 ± 2%",
+   "source": "Table 2",
+   "context": "TBG + full 的正确构型比例均值"
+  },
+  {
+   "number": "0.48 ± 0.59%",
+   "source": "Table 2",
+   "context": "TBG（仅 5 类原子编码）的平均 ESS"
+  },
+  {
+   "number": "6.03 ± 1.34%",
+   "source": "Table 1",
+   "context": "TBG + full 在经典力场 alanine dipeptide 上的 ESS"
+  },
+  {
+   "number": "−127.06 ± 0.12",
+   "source": "Table 1",
+   "context": "TBG + full 在经典力场 alanine dipeptide 上的 NLL"
+  },
+  {
+   "number": "200",
+   "source": "Sec. 5.2",
+   "context": "二肽训练集肽数量，每个模拟 50ns"
+  },
+  {
+   "number": "54",
+   "source": "Sec. 4.1",
+   "context": "TBG + full 的原子类型 one-hot 类别数"
+  },
+  {
+   "number": "100 倍",
+   "source": "Sec. 7",
+   "context": "Timewarp 训练四肽迁移模型所用参数量相对本文的倍数"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2306.15030",
+   "type": "直接前作/继承"
+  },
+  {
+   "report_id": "2302.01170",
+   "type": "对比方法/竞争"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "训练方法来源"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "训练方法来源"
+  }
+ ],
+ "read_full_text": true
+}

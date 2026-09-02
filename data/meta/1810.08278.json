@@ -1,0 +1,53 @@
+{
+ "report_id": "1810.08278",
+ "arxiv_id": "1810.08278",
+ "title": "Interpolating between Optimal Transport and MMD using Sinkhorn Divergences",
+ "tldr_zh": "证明 debiased Sinkhorn divergence S_ε 对任意 ε>0 正定、凸、度量化弱收敛（ε→0 得 OT，ε→∞ 得 MMD），并给出百万点 GPU 实现",
+ "tldr_en": "Proves the debiased Sinkhorn divergence is positive definite, convex and metrizes weak convergence for every epsilon, with a million-sample GPU implementation.",
+ "tags": [
+  "sinkhorn-divergence",
+  "entropic-ot",
+  "mmd",
+  "theory",
+  "loss-function",
+  "geomloss"
+ ],
+ "code_url": "https://github.com/jeanfeydy/global-divergences",
+ "key_numbers": [
+  "Theorem 1: S_eps >= 0, S_eps(a,b)=0 iff a=b, and S_eps(a_n,a)->0 iff a_n converges weakly, for compact X, Lipschitz C and positive universal Gibbs kernel exp(-C/eps)",
+  "Sinkhorn divergence costs 20-50x an MMD; implicit gradient formula (Eq. 26-27) gives 2-3x speedup over naive autograd (Fig. 3)",
+  "Gradient of a Sinkhorn loss with 100,000 samples per measure computed in seconds on GPU via KeOps (Sec. 3.3)",
+  "Symmetric Sinkhorn update (Eq. 25) for OT_eps(a,a) converges in about 3 iterations; 10-20 iterations suffice for eps >= 0.05 on unit square with C=||x-y|| (Sec. 3.1)"
+ ],
+ "relations": [
+  {
+   "report_id": "1706.00292",
+   "type": "extends"
+  },
+  {
+   "report_id": "1306.0895",
+   "type": "uses"
+  },
+  {
+   "report_id": "1803.05573",
+   "type": "competes"
+  },
+  {
+   "report_id": "2006.08172",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2202.08919",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2205.06688",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2605.11755",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

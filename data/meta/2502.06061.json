@@ -1,0 +1,67 @@
+{
+ "report_id": "2502.06061",
+ "arxiv_id": "2502.06061",
+ "title": "Online Reward-Weighted Fine-Tuning of Flow Matching with Wasserstein Regularization",
+ "tldr_zh": "reward 加权 CFM 在线微调 flow 模型，W2 上界正则防坍缩，给出收敛极限与可控权衡",
+ "tldr_en": "Online reward-weighted CFM fine-tuning with W2 upper-bound regularization prevents policy collapse and enables reward-diversity trade-off",
+ "tags": [
+  "flow matching",
+  "reward fine-tuning",
+  "Wasserstein regularization",
+  "policy collapse",
+  "RLHF",
+  "continuous normalizing flows"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "1",
+   "description": "MNIST target image generation 的最优期望 return（只生成偶数）",
+   "source": "Sec.5.1"
+  },
+  {
+   "number": "e^{2L}",
+   "description": "W2 上界中的指数因子，L 为参考模型速度场的 Lipschitz 常数",
+   "source": "Theorem 3, Eq.(9)"
+  },
+  {
+   "number": "α ∈ {0, 0.3, 0.8}",
+   "description": "MNIST 实验中 W2 正则系数的取值",
+   "source": "Fig.3"
+  },
+  {
+   "number": "τ ∈ {0, 0.01, 10}",
+   "description": "MNIST 实验中熵系数的取值",
+   "source": "Fig.2"
+  },
+  {
+   "number": "α ∈ [0,1]",
+   "description": "CIFAR-10 压缩任务 trade-off 曲线的正则系数范围",
+   "source": "Fig.4(e)(f)"
+  },
+  {
+   "number": "α = 10",
+   "description": "CIFAR-10 压缩任务中展示的强正则生成图",
+   "source": "Fig.4(c)"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2409.08861",
+   "type": "竞争/互补（同为 flow 微调控制论路线，KL vs W2 正则）"
+  },
+  {
+   "report_id": "2305.13301",
+   "type": "继承（DDPO 的 online reward-weighted 思路，去掉 likelihood 依赖）"
+  },
+  {
+   "report_id": "2305.16381",
+   "type": "继承/对比（DPOK 的 KL 正则，本文用 W2 替代）"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "继承（OT-CFM 的 OT-paths 训练范式）"
+  }
+ ],
+ "read_full_text": true
+}

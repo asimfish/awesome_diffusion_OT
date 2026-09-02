@@ -1,0 +1,68 @@
+{
+ "report_id": "2107.12364",
+ "arxiv_id": "2107.12364",
+ "title": "Plugin Estimation of Smooth Optimal Transport Maps",
+ "tldr_zh": "可计算的 plug-in 估计器（经验耦合+平滑/密度估计）达到 OT map 的 minimax 率，并给出 W2² 的 CLT",
+ "tldr_en": "Computable plug-in estimators achieve minimax rates for smooth OT maps, with CLT for squared Wasserstein distance",
+ "tags": [
+  "optimal transport",
+  "minimax estimation",
+  "Brenier map",
+  "Wasserstein distance",
+  "central limit theorem",
+  "semiparametric efficiency"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "n^{-2α/(2(α-1)+d)} ∨ 1/n",
+   "context": "minimax lower bound for α-Hölder OT map estimation",
+   "source": "Eq.(3), Sec. 1"
+  },
+  {
+   "number": "n^{-2α/(2(α-1)+d)} for d≥3",
+   "context": "one-sample wavelet plug-in estimator L²(P) risk",
+   "source": "Eq.(4), Sec. 1"
+  },
+  {
+   "number": "(log n)²/n for d=2, 1/n for d=1",
+   "context": "one-sample wavelet plug-in estimator L²(P) risk",
+   "source": "Eq.(4), Sec. 1"
+  },
+  {
+   "number": "n^{-(1∨2α/(d+2(α-1)))}",
+   "context": "two-sample smooth plug-in minimax rate on torus",
+   "source": "Sec. 1, p.7"
+  },
+  {
+   "number": "n^{-(1/2∨α/(d+2(α-1)))}",
+   "context": "Deb-Ghosal-Sen (2021) suboptimal smooth plug-in rate",
+   "source": "Sec. 1, p.7"
+  },
+  {
+   "number": "2(α+1)>d",
+   "context": "high-smoothness condition for CLT of W₂² plug-in estimator",
+   "source": "Sec. 5.1, Eq.(6)"
+  },
+  {
+   "number": "1/λ ||T̂-T₀||²_{L²(P)} ≤ W₂²(P,Q̂)-W₂²(P,Q)-∫ψ₀d(Q̂-Q) ≤ λW₂²(Q̂,Q)",
+   "context": "stability bound under curvature condition A₁(λ)",
+   "source": "Theorem 6, Eq.(16)"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2109.12004",
+   "type": "被继承"
+  },
+  {
+   "report_id": "hutter_rigollet_2021",
+   "type": "继承"
+  },
+  {
+   "report_id": "deb_ghosal_sen_2021",
+   "type": "竞争"
+  }
+ ],
+ "read_full_text": true
+}

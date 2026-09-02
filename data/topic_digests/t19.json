@@ -1,0 +1,91 @@
+{
+ "digest_zh": "本课题解决视频生成中时序一致性与推理效率的张力，方法谱系沿三条主线演进：蒸馏主线（CausVid 的 KL-DMD 4步因果学生、Self-Forcing 的 self-rollout 修正曝光偏差、TDM 的轨迹分布匹配、VDOT 的 OT 距离补充几何约束、T2V-Turbo 的奖励反馈、APT/AAPT 的对抗后训练）、生成公式主线（Pyramidal Flow 的分辨率金字塔分段流、Flowception 的离散帧插入概率路径、FrameBridge 的 data-to-data 桥过程、LTX-Video 的高压缩 VAE+RF）、噪声耦合主线（HIWYN 的 ∫-noise 保边缘传输方程、Go-with-the-Flow 的实时实现）。当前共识是少步蒸馏必然引入运动退化（AAPT 的 Dynamic Degree 从 52.52 降至 42.44；StreamDiT 蒸馏后 Temporal Flickering 下降），且训练-推理分布不一致是根本障碍（Self-Forcing 的核心论点）。分歧在于用什么距离匹配分布：KL-DMD 系（CausVid）面临 zero-forcing 多样性下降，对抗系（APT）保真度提升但结构退化，OT 系（VDOT）试图用 Sinkhorn 几何约束补两者之短，但尚未在视频上完成系统消融。噪声耦合线证明保边缘的帧间相关噪声可降低 warp error（10.00→2.50×10⁻³），但代价是 FID 上升（74.75→92.63），且仅在像素空间模型有效。",
+ "observations": [
+  {
+   "claim": "少步蒸馏在视频上普遍导致运动退化，且退化程度与蒸馏目标选择相关",
+   "evidence": [
+    "2506.09350",
+    "2507.03745",
+    "2501.00103"
+   ],
+   "detail": "AAPT 一步生成使 Dynamic Degree 从 52.52 降至 42.44（Table 1）；StreamDiT 蒸馏后 Temporal Flickering 从 0.9671 降至 0.9649、Motion Smoothness 从 0.9861 降至 0.9831（Tab. 2）；LTX-Video 作为未蒸馏的 20 步 RF 基线，其高压缩 latent 空间可能进一步放大蒸馏中的运动信息损失。"
+  },
+  {
+   "claim": "训练-推理分布不一致是视频自回归/流式生成的核心障碍，self-rollout 或 student-forcing 是必要修正",
+   "evidence": [
+    "2506.08009",
+    "2506.09350",
+    "2412.07772"
+   ],
+   "detail": "Self-Forcing 指出 CausVid 的 DF 训练输出与推理分布不匹配，改用 self-rollout 后 VBench Total 84.31 超过 Wan2.1 的 84.26；AAPT 用 student-forcing 在对抗框架内消除同一 gap，1440 帧 Temporal Quality 达 89.79；CausVid 作者自认残留曝光偏差，其每 chunk 独立从高斯初始化、帧间无噪声耦合。"
+  },
+  {
+   "claim": "保边缘的帧间噪声耦合可显著降低 warp error，但以分布质量下降为代价，且仅在像素空间模型上有效",
+   "evidence": [
+    "2504.03072",
+    "2501.08316"
+   ],
+   "detail": "HIWYN 的 ∫-noise 将 appearance transfer warp error 从 10.00 降至 2.50（×10⁻³），但 FID 从 74.75 升至 92.63、Precision 从 0.719 降至 0.661（Table 1）；作者承认在 latent 扩散模型上收益有限，Go-with-the-Flow 需通过微调模型解决。"
+  },
+  {
+   "claim": "蒸馏目标的选择在视频上产生实质性差异：KL-DMD 多样性下降、对抗保真度提升但结构退化、OT 距离尚未完成系统消融",
+   "evidence": [
+    "2412.07772",
+    "2501.08316",
+    "2503.06674"
+   ],
+   "detail": "CausVid 作者自认 DMD 目标导致输出多样性下降（Sec. 6）；APT 一步视频视觉保真度 +10.4% 但结构完整性 -38.5%（Table 4）；TDM 用数据自由的反向 KL 在 CogVideoX-2B 上 4 NFE 达 VBench 81.65 超过教师 80.91，但未报告时序一致性子指标。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "OT 距离作为视频少步蒸馏目标是否优于 KL-DMD 和对抗损失，尤其在运动保持维度",
+   "why_open": "VDOT 在图像上展示了 OT 项缓解 zero-forcing 的潜力，但视频上的系统消融缺失；TDM 未报告时序指标，CausVid 自认多样性下降，APT 结构退化严重，三者均未解决运动塌缩。",
+   "evidence": [
+    "2412.07772",
+    "2503.06674",
+    "2501.08316"
+   ]
+  },
+  {
+   "problem": "流式外推的分布漂移能否被形式化为累积传输误差并用在线 OT 距离监测",
+   "why_open": "Self-Forcing 和 AAPT 均承认超出训练时长后质量退化，但均未提供漂移的定量度量；HIWYN 的保边缘传输方程提供了单步噪声耦合的理论工具，但未扩展到滚动 KV 外推场景。",
+   "evidence": [
+    "2506.08009",
+    "2506.09350",
+    "2504.03072"
+   ]
+  },
+  {
+   "problem": "高压缩 latent 空间（如 LTX-Video 的 1:192 VAE）上少步蒸馏的运动退化是否被放大",
+   "why_open": "LTX-Video 证明 20 步 RF 在高压缩 latent 上可行，但其 VAE 解码器只在噪声水平 [0, 0.2] 训练，蒸馏进一步压缩轨迹时运动信息的损失可能被放大；目前无任何工作在该 latent 空间上做 OT-DMD 或一致性蒸馏的对照实验。",
+   "evidence": [
+    "2501.00103",
+    "2507.03745"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "2412.07772",
+   "why": "KL-DMD 视频蒸馏的基线，后续修正的起点"
+  },
+  {
+   "report_id": "2506.08009",
+   "why": "曝光偏差修正，训练-推理 gap 的核心"
+  },
+  {
+   "report_id": "2504.03072",
+   "why": "帧间噪声耦合的理论源头"
+  },
+  {
+   "report_id": "2503.06674",
+   "why": "轨迹分布匹配，OT-DMD 消融的对照"
+  },
+  {
+   "report_id": "2506.09350",
+   "why": "对抗系在视频上的极端一步生成"
+  }
+ ],
+ "n_reports": 13
+}

@@ -1,0 +1,77 @@
+{
+ "report_id": "2306.09341",
+ "arxiv_id": "2306.09341",
+ "title": "Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis",
+ "tldr_zh": "79.8万人类偏好对训练CLIP得HPS v2，偏好预测准确率83.3%，建4风格3200 prompt基准",
+ "tldr_en": "HPS v2 fine-tunes CLIP on 798k human preference pairs, reaching 83.3% accuracy on HPD v2",
+ "tags": [
+  "text-to-image",
+  "human preference",
+  "benchmark",
+  "evaluation metric",
+  "CLIP fine-tuning"
+ ],
+ "code_url": "https://github.com/tgxs002/HPSv2",
+ "key_numbers": [
+  {
+   "number": "798,090",
+   "description": "HPD v2 人类偏好选择总数",
+   "source": "Abstract; Sec. 3; Tab. 5"
+  },
+  {
+   "number": "433,760",
+   "description": "HPD v2 图像对数",
+   "source": "Abstract"
+  },
+  {
+   "number": "83.3%",
+   "description": "HPS v2 在 HPD v2 测试集上的偏好预测准确率",
+   "source": "Tab. 6"
+  },
+  {
+   "number": "65.7%",
+   "description": "HPS v2 在 ImageReward 测试集上的偏好预测准确率",
+   "source": "Tab. 6"
+  },
+  {
+   "number": "57",
+   "description": "标注团队人数（50 标注员 + 7 质检员）",
+   "source": "Sec. 3.3; Tab. 3"
+  },
+  {
+   "number": "3200",
+   "description": "基准评测 prompt 总数（4 风格 × 800）",
+   "source": "Sec. 5"
+  },
+  {
+   "number": "9",
+   "description": "HPD v2 图像来源的 T2I 模型数（加 COCO 真实图像）",
+   "source": "Tab. 2"
+  },
+  {
+   "number": "4,000",
+   "description": "HPS v2 微调步数",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "28.5%",
+   "description": "DiffusionDB 中含 'artstation' 的 prompt 比例",
+   "source": "Sec. 3.1"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2305.01569",
+   "type": "竞争（Pick-a-Pic，偏好数据集与 PickScore 模型）"
+  },
+  {
+   "report_id": "2304.05977",
+   "type": "竞争（ImageReward，偏好数据集与模型）"
+  },
+  {
+   "report_id": "2210.14896",
+   "type": "数据来源（DiffusionDB prompt 清洗）"
+  }
+ ],
+ "read_full_text": true
+}

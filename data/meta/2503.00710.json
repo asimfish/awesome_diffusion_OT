@@ -1,0 +1,103 @@
+{
+ "report_id": "2503.00710",
+ "arxiv_id": "2503.00710",
+ "title": "Proteina: Scaling Flow-based Protein Structure Generative Models",
+ "tldr_zh": "非等变大 transformer + 层级 fold 条件 + autoguidance，蛋白骨架流模型达 800 残基、99% 可设计",
+ "tldr_en": "Scales Cα-coordinate rectified flow with non-equivariant transformer, hierarchical fold conditioning, and autoguidance to 800-residue designable backbones",
+ "tags": [
+  "protein backbone generation",
+  "flow matching",
+  "rectified flow",
+  "non-equivariant transformer",
+  "fold class conditioning",
+  "autoguidance",
+  "distributional metrics",
+  "scaling"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "20,874,485",
+   "source": "Sec. 3.1, D21M dataset size",
+   "context": "D21M 训练结构数，35× DFS"
+  },
+  {
+   "number": "588,318",
+   "source": "Sec. 3.1, DFS dataset size",
+   "context": "DFS 训练结构数，此前最大训练集"
+  },
+  {
+   "number": "400M",
+   "source": "Sec. 3.3",
+   "context": "M21M transformer 参数量，>5× RFDiffusion"
+  },
+  {
+   "number": "99.0%",
+   "source": "Table 1, M21M γ=0.3",
+   "context": "最高 designability（经 noise scaling 调优）"
+  },
+  {
+   "number": "98.2%",
+   "source": "Table 1, MFS γ=0.35",
+   "context": "MFS 最高 designability"
+  },
+  {
+   "number": "93.8%",
+   "source": "Table 1, Mno-tri_FS γ=0.45",
+   "context": "无 triangle 层模型 designability"
+  },
+  {
+   "number": "800",
+   "source": "Fig. 4, Sec. 1",
+   "context": "生成的最长蛋白残基数"
+  },
+  {
+   "number": "19.6%",
+   "source": "Table 3, MFS full distribution",
+   "context": "全分布采样（无 noise scaling）designability"
+  },
+  {
+   "number": "35.4%",
+   "source": "Table 3, M21M full distribution",
+   "context": "M21M 全分布采样 designability"
+  },
+  {
+   "number": "44.2%",
+   "source": "Table 3, MLoRA full distribution",
+   "context": "LoRA 微调模型全分布采样 designability"
+  },
+  {
+   "number": "0.45",
+   "source": "Table 2, Mcond_FS ω=2.0 fJSD vs. PDB",
+   "context": "最强 CFG 下的 fold 分布相似度"
+  },
+  {
+   "number": "13.0%",
+   "source": "Table 1, MLoRA Sec. Struct. % β",
+   "context": "LoRA 微调后 β-sheet 含量，较 MFS 的 5.8% 翻倍"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2410.20354",
+   "type": "继承/竞争",
+   "context": "FoldFlow-2 也规模化到 21M 合成结构，但用 SE(3) Riemannian OT；Proteina 放弃流形约束回到 Cα 欧氏 rectified flow"
+  },
+  {
+   "report_id": "2309.15817",
+   "type": "竞争",
+   "context": "FrameFlow 用 frame 表示 + Riemannian flow matching；Proteina 明确拒绝 frame 表示，理由是旋转流形生成过程理解不足"
+  },
+  {
+   "report_id": "2405.15486",
+   "type": "继承/竞争",
+   "context": "Genie2 是此前最大数据规模（0.6M）的 Cα-only 生成器；Proteina 在相同 DFS 数据上超越其 designability 和 diversity"
+  },
+  {
+   "report_id": "2210.13695",
+   "type": "被超越",
+   "context": "RFDiffusion 是此前最大蛋白骨架生成器（约 80M 参数）；Proteina 参数量 >5× 且 designability 更高"
+  }
+ ],
+ "read_full_text": true
+}

@@ -1,0 +1,69 @@
+{
+ "report_id": "2407.19689",
+ "arxiv_id": "2407.19689",
+ "title": "PDOT: a Practical Primal-Dual Algorithm and a GPU-Based Solver for Optimal Transport",
+ "tldr_zh": "restarted PDHG 做 matrix-free 精确 OT，GPU 上高精度区间作者报告快于 Sinkhorn 且更稳",
+ "tldr_en": "Restarted PDHG with matrix-free OT structure; GPU solver reports high-accuracy wins over Sinkhorn",
+ "tags": [
+  "optimal transport",
+  "PDHG",
+  "GPU solver",
+  "linear programming",
+  "matrix-free",
+  "Sinkhorn alternative"
+ ],
+ "code_url": "https://github.com/jinwen-yang/PDOT.jl",
+ "key_numbers": [
+  {
+   "number": "O(mn(m+n)^1.5 log(1/eps))",
+   "context": "局部 flop 复杂度",
+   "source": "Remark 1"
+  },
+  {
+   "number": "O(mn(m+n)^3.5 Delta + mn(m+n)^1.5 log(1/eps))",
+   "context": "全局 flop 复杂度（有理数据）",
+   "source": "Corollary 1"
+  },
+  {
+   "number": "318/450",
+   "context": "Sinkhorn(0.0001) 在 128×128 下 1 小时内解出的实例数",
+   "source": "Table 3 注"
+  },
+  {
+   "number": "1000 秒",
+   "context": "PDOT 解完全部 450 个 128×128 实例到 1e-4 精度的时间",
+   "source": "Sec. 5.2 观察 1"
+  },
+  {
+   "number": "约 10 倍",
+   "context": "PDOT 相对 Gurobi barrier 的加速",
+   "source": "Sec. 5.2 观察 2"
+  },
+  {
+   "number": "超过 10 倍",
+   "context": "PDOT 相对 Gurobi simplex 在 64×64 的加速",
+   "source": "Sec. 5.2 观察 2"
+  },
+  {
+   "number": "约 100 倍",
+   "context": "Sinkhorn 惩罚 0.01 相对 0.0001 的速度比",
+   "source": "Sec. 5.2 观察 3"
+  },
+  {
+   "number": "2.147GB",
+   "context": "128×128 下 cost 矩阵大小",
+   "source": "Table 2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2407.19689",
+   "type": "extends"
+  },
+  {
+   "report_id": "2407.19689",
+   "type": "competes_with"
+  }
+ ],
+ "read_full_text": true
+}

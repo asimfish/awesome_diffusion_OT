@@ -1,0 +1,76 @@
+{
+ "report_id": "2504.03188",
+ "arxiv_id": "2504.03188",
+ "title": "Pairwise Optimal Transports for Training All-to-All Flow-Based Condition Transfer Model",
+ "tldr_zh": "用双条件惩罚的 minibatch OT 耦合同时学所有条件对之间的 pairwise OT，支持连续条件与非分组数据",
+ "tldr_en": "Learns pairwise OT across all condition pairs via a dual-condition-penalized minibatch OT coupling, supporting continuous conditions and non-grouped data",
+ "tags": [
+  "flow matching",
+  "optimal transport",
+  "condition transfer",
+  "all-to-all",
+  "non-grouped data",
+  "molecule optimization"
+ ],
+ "code_url": "https://github.com/kotatumuri-room/A2A-FM",
+ "key_numbers": [
+  {
+   "number": "97.5%",
+   "description": "QED nearby sampling success rate, A2A-FM",
+   "source": "Table 2"
+  },
+  {
+   "number": "95.6%",
+   "description": "QED success rate, COATI-LDM (best baseline)",
+   "source": "Table 2"
+  },
+  {
+   "number": "0.990",
+   "description": "AUC on LogP-TPSA task, A2A-FM",
+   "source": "Table 3"
+  },
+  {
+   "number": "0.819",
+   "description": "AUC on LogP-TPSA task, OT-CFM (best baseline)",
+   "source": "Table 3"
+  },
+  {
+   "number": "(1.51 ± 0.17) × 10^-2",
+   "description": "MSE from pairwise OT on non-grouped synthetic data, A2A-FM",
+   "source": "Table 1(b)"
+  },
+  {
+   "number": "(5.81 ± 2.22) × 10^-2",
+   "description": "MSE from pairwise OT on grouped synthetic data, A2A-FM coupling",
+   "source": "Table 1(a)"
+  },
+  {
+   "number": "94.6% → 97.5%",
+   "description": "QED success rate improvement from adding antisymmetry constraint",
+   "source": "Sec. 6"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2310.03725",
+   "type": "继承（Stochastic Interpolants 框架）"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "继承（OT-CFM minibatch OT 耦合）"
+  },
+  {
+   "report_id": "2312.15872",
+   "type": "理论工具来源（conditional OT 收敛证明）"
+  },
+  {
+   "report_id": "2402.18839",
+   "type": "竞争（EFM，all-to-all 但需 grouped data）"
+  },
+  {
+   "report_id": "FHqAzWl2wE",
+   "type": "竞争（Multimarginal SI，all-to-all 但需 grouped data）"
+  }
+ ],
+ "read_full_text": true
+}

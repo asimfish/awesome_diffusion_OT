@@ -1,0 +1,55 @@
+{
+ "report_id": "2509.16974",
+ "arxiv_id": "2509.16974",
+ "title": "Hessian-guided Perturbed Wasserstein Gradient Flows for Escaping Saddle Points",
+ "tldr_zh": "PWGF 沿 Wasserstein Hessian 最小特征方向注入 GP 扰动，给出测度空间非凸优化二阶最优性保证",
+ "tldr_en": "PWGF injects Hessian-guided GP perturbations to escape saddle points in Wasserstein space with polynomial-time second-order guarantees",
+ "tags": [
+  "Wasserstein gradient flow",
+  "saddle point",
+  "second-order optimality",
+  "Gaussian process",
+  "nonconvex optimization",
+  "probability measure optimization"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "tilde{O}(Delta_F(1/epsilon^2 + 1/delta^4))",
+   "context": "PWGF 连续时间收敛到 (epsilon,delta)-二阶驻点的时间复杂度",
+   "source": "Theorem 5.2"
+  },
+  {
+   "number": "tilde{O}(Delta_F(1/epsilon^2 + 1/delta^4))",
+   "context": "离散 PWGF 收敛到 (epsilon,delta)-二阶驻点的步数复杂度",
+   "source": "Theorem 5.5"
+  },
+  {
+   "number": "1 - zeta",
+   "context": "PWGF 到达二阶驻点的成功概率",
+   "source": "Theorem 5.2, Theorem 5.5"
+  },
+  {
+   "number": "(L_2 + L_3)epsilon <= delta^2",
+   "context": "定理成立所需的 Hessian Lipschitz 常数与精度参数关系",
+   "source": "Theorem 5.2"
+  },
+  {
+   "number": "eta_p = tilde{O}(delta^{3/2} wedge delta^3/epsilon)",
+   "context": "扰动步长超参数设置",
+   "source": "Algorithm 1, Theorem 5.2"
+  },
+  {
+   "number": "F_thres = tilde{O}(delta^3)",
+   "context": "鞍点检测的目标下降阈值",
+   "source": "Algorithm 1, Theorem 5.2"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2509.16974",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": false
+}

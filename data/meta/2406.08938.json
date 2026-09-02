@@ -1,0 +1,75 @@
+{
+ "report_id": "2406.08938",
+ "arxiv_id": "2406.08938",
+ "title": "Mirror and Preconditioned Gradient Descent in Wasserstein Space",
+ "tldr_zh": "把镜像下降和预条件梯度下降提升到 Wasserstein 空间，给出相对光滑/凸条件下的收敛保证，并在病态目标与单细胞对齐上验证",
+ "tldr_en": "Lifts mirror descent and preconditioned GD to Wasserstein space with convergence guarantees under relative smoothness/convexity, validated on ill-conditioned objectives and single-cell alignment",
+ "tags": [
+  "Wasserstein gradient flow",
+  "mirror descent",
+  "preconditioned gradient descent",
+  "Bregman divergence",
+  "relative smoothness",
+  "single-cell alignment",
+  "optimal transport"
+ ],
+ "code_url": "https://github.com/clbonet/Mirror_and_Preconditioned_Gradient_Descent_in_Wasserstein_Space",
+ "key_numbers": [
+  {
+   "number": "43",
+   "context": "单细胞数据集总数（4i 34 个 treatment + scRNAseq 9 个 treatment）",
+   "source": "Sec. 5, Figure 3 描述"
+  },
+  {
+   "number": "10",
+   "context": "对 Sinkhorn 散度 S_{2,ε}^2，预条件 GD 比 vanilla GD 收敛迭代数减少约 10 倍",
+   "source": "Sec. 5, Figure 3 段落"
+  },
+  {
+   "number": "β = 4",
+   "context": "交互能 W 相对 K_4 核的 Bregman 势为 4-光滑",
+   "source": "Sec. 5, MD on interaction energies"
+  },
+  {
+   "number": "τ ≤ 1/β",
+   "context": "镜像下降下降引理（Proposition 3）和预条件 GD 下降引理（Proposition 5）的步长条件",
+   "source": "Proposition 3, Proposition 5"
+  },
+  {
+   "number": "(1-τα)^k",
+   "context": "镜像下降（Proposition 4）和预条件 GD（Proposition 6）在 α>0 时的线性收敛速率",
+   "source": "Proposition 4, Proposition 6"
+  },
+  {
+   "number": "20",
+   "context": "KL 实验中的高斯目标协方差数量，R^10 上，D 对角 log 空间缩放 1 到 100",
+   "source": "Sec. 5, MD on KL"
+  },
+  {
+   "number": "40%",
+   "context": "单细胞实验评估中未见的测试目标细胞比例",
+   "source": "Sec. 5, Preconditioned GD for single-cells"
+  },
+  {
+   "number": "tol = 10^{-3}",
+   "context": "单细胞实验的收敛相对容差",
+   "source": "Sec. 5, Preconditioned GD for single-cells"
+  },
+  {
+   "number": "a ∈ {1.25, 1.5, 1.75}",
+   "context": "预条件器参数 a 的网格搜索范围",
+   "source": "Sec. 5, Preconditioned GD for single-cells"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2206.02717",
+   "type": "related"
+  },
+  {
+   "report_id": "2010.12609",
+   "type": "related"
+  }
+ ],
+ "read_full_text": true
+}

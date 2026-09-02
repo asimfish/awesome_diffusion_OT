@@ -1,0 +1,89 @@
+{
+ "digest_zh": "本课题解决 3D/点云/几何生成中 OT 与流的三个核心问题：噪声-数据耦合如何影响轨迹可学性、非结构化 3D 表示如何被规整为可生成形式、以及 OT 度量如何作为训练损失或几何正则器。方法谱系呈现两条主线：生成主干线从 PSF 的 rectified flow 移植，到 NSOT 对 equivariant OT 耦合的系统检验，再到 WFM 将问题搬到 Wasserstein 空间；表示线从 GaussianCube 用线性指派规整 3DGS，到 GHAP 在 Gaussian 混合空间做 OT 约简，再到 OT geometry image 的保面积参数化。当前共识是：exact OT 在大点云上计算不可行，但完全放弃 OT 耦合又损失轨迹拉直收益；分歧在于 OT 应放在哪个环节——预处理（GaussianCube）、训练耦合（NSOT）、还是问题定义本身（WFM）。",
+ "observations": [
+  {
+   "claim": "exact OT 耦合在点云生成中面临计算成本与可学性的双重瓶颈，催生了从在线求解到离线预计算再到混合耦合的演进。",
+   "evidence": [
+    "2502.12456",
+    "2212.01747",
+    "2403.19655"
+   ],
+   "detail": "NSOT 报告 equivariant OT 在 batch size 1 时单次计算约 2.2 秒、比 independent coupling 慢超过 40 倍，而 PSF 完全避开显式 OT 配对、依赖 reflow 隐式改善配对；GaussianCube 的 exact 线性指派在 32768 点时需 2 分钟/物体，三者共同指向 exact OT 的 scaling 瓶颈。"
+  },
+  {
+   "claim": "OT 在 3D 生成中的角色从训练损失/耦合扩展到表示规整与几何正则，形成'预处理-训练-后处理'的全管线渗透。",
+   "evidence": [
+    "2403.19655",
+    "2506.09534",
+    "2511.18679",
+    "Improving_Dynamic_NeRFs_with_Optimal_Transport"
+   ],
+   "detail": "GaussianCube 用 OT 线性指派把无序 Gaussians 规整进 voxel 网格（FID 从 21.41 降至 13.01），GHAP 用 composite transport divergence 做 Gaussian 混合约简（10% 图元保留率下 PSNR 仅降 0.473 dB），OT geometry image 用保面积 OT 参数化做神经压缩（CR=64 时 CD=0.059 vs NCS 0.083），动态 NeRF 用 W 距离约束时变形变一致性。"
+  },
+  {
+   "claim": "rectified flow 在 3D 生成中成为默认骨干，但其 OT 潜力远未释放——多数工作仅用线性插值，未做显式耦合设计。",
+   "evidence": [
+    "2502.06608",
+    "2411.16443",
+    "2212.01747"
+   ],
+   "detail": "TripoSG 的 RF 训练用独立采样配对（Eq.9 中 ε 与 x0 独立），SplatFlow 同样只用直线概率路径、无 minibatch OT 或 reflow，PSF 虽引入 reflow 但未显式求解置换或 minibatch OT；三者均未检验 NSOT 提出的'OT 程度'问题。"
+  },
+  {
+   "claim": "度量线（CD/EMD 谱系）与传输线（OT 耦合）在补全任务中合流，度量质量直接决定 OT map 的上限。",
+   "evidence": [
+    "2410.02671",
+    "InfoCD_A_Contrastive_Chamfer_Distance_Loss_for_Poi",
+    "Density_aware_Chamfer_Distance"
+   ],
+   "detail": "UOT-UPC 将 InfoCD 选为 neural OT 的最优 cost（单类别 AVG cd_l1×100 为 7.60），DCD 作为密度感知的折中度量位于该谱系起点，三者构成'修 CD 逼近 OT 性质→被反向消费为传输 cost'的闭环。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "混合耦合中 β 与向量场复杂度之间的定量理论关系未建立",
+   "why_open": "NSOT 只给出 β=0.2 的经验配方，作者明确承认 β 与向量场复杂度的理论联系未建立；需要刻画 β 与轨迹曲率、t≈0 处 Lipschitz 常数的 trade-off 及随 n 的 scaling。",
+   "evidence": [
+    "2502.12456"
+   ]
+  },
+  {
+   "problem": "entropic OT 近似在 WFM 中的偏差传播未分析",
+   "why_open": "WFM 的理论结果基于经典 OT，实际用 entropic OT 近似，两者之间的 gap 对所学向量场的影响未给出；ε 的选择与退火策略在点云规模下的敏感性未知。",
+   "evidence": [
+    "2411.00698"
+   ]
+  },
+  {
+   "problem": "OT 规整后的表示（voxel 网格/geometry image）上尚未系统验证 flow matching 或 latent diffusion 的生成质量上限",
+   "why_open": "GaussianCube 和 OT geometry image 都停在'规整+重建/压缩'阶段，未在规整后的 UV 域或 voxel 域上训练生成模型；OT 规整是否真正降低生成建模难度、还是仅改善重建质量，缺乏对照实验。",
+   "evidence": [
+    "2403.19655",
+    "2511.18679"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "2502.12456",
+   "why": "课题核心，直接检验 OT 耦合在点云上的可学性"
+  },
+  {
+   "report_id": "2212.01747",
+   "why": "rectified flow 在点云域的首次移植，确立基线"
+  },
+  {
+   "report_id": "2411.00698",
+   "why": "换问题到 Wasserstein 空间，提供分叉视角"
+  },
+  {
+   "report_id": "2403.19655",
+   "why": "OT 作为表示规整的范式代表"
+  },
+  {
+   "report_id": "2410.02671",
+   "why": "度量线与传输线合流的关键证据"
+  }
+ ],
+ "n_reports": 14
+}

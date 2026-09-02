@@ -1,0 +1,31 @@
+{
+ "report_id": "Joint_Velocity_Growth_Flow_Matching",
+ "arxiv_id": null,
+ "title": "Joint Velocity-Growth Flow Matching",
+ "tldr_zh": "给静态 semi-relaxed OT 一个两段式动态解释，联合速度与增长的 simulation-free FM",
+ "tldr_en": "A two-stage dynamic view of static semi-relaxed OT, yielding a simulation-free FM for joint velocity and growth",
+ "tags": [
+  "semi-relaxed OT",
+  "flow matching",
+  "unbalanced OT",
+  "simulation-free",
+  "generative modeling"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "UOT_FM_ICLR2024",
+   "type": "继承/对比"
+  },
+  {
+   "report_id": "WFR_FM_ICLR2026",
+   "type": "平行方案"
+  },
+  {
+   "report_id": "UOTM_NeurIPS2023",
+   "type": "上游理论"
+  }
+ ],
+ "read_full_text": false
+}

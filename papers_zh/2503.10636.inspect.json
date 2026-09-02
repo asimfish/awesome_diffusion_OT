@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (20 words, 0 CJK chars) at x=58.2, y=628.7: Table A3. Test-set classification accuracy of predicting"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+ "report_id": "2406.05061",
+ "arxiv_id": "2406.05061",
+ "title": "Progressive Entropic Optimal Transport Solvers",
+ "tldr_zh": "沿 McCann 插值把 Sinkhorn 拆成 K 段并调度 ε_k、α_k，得到对 ε 不敏感、可证一致的 map/耦合估计器 ProgOT",
+ "tldr_en": "ProgOT splits entropic OT into K Sinkhorn steps along a McCann interpolation with scheduled epsilon, giving a consistent, epsilon-robust map and coupling estimator.",
+ "tags": [
+  "entropic-ot",
+  "sinkhorn",
+  "map-estimation",
+  "epsilon-scheduling",
+  "theory",
+  "ott-jax"
+ ],
+ "code_url": "https://github.com/ott-jax/ott",
+ "key_numbers": [
+  "Consistency: E||T_Prog - T_0||^2_{L2(mu)} <~ n^{-1/d} up to Poly(log n, K), with eps_k ~ n^{-1/(2d)}, alpha_k ~ n^{-1/d} (Theorem 3)",
+  "Stability: ||T_eps - T'_eps||^2_{L2(mu)} <= 3 R^2 eps^{-1} W_2^2(mu, mu') (Proposition 4)",
+  "sci-Plex map estimation: ProgOT ranked 1st over 5 drugs, e.g. Hesperadin d=256 Sinkhorn div 23.1 vs EOT 26 vs Debiased EOT 41 (Table 1)",
+  "GMM benchmark MSE d=128/256: ProgOT 0.099/0.12 vs Debiased EOT 0.11/0.128 vs untuned EOT 0.250/0.276 (Table 5)",
+  "CIFAR-10 deblur matching n=60k d=1024, sigma=4: ProgOT Tr 0.9989, KL 0.00219, 1590 iters vs Sinkhorn 0.9954, 0.02724, 2379 iters (Table 2)"
+ ],
+ "relations": [
+  {
+   "report_id": "2109.12004",
+   "type": "extends"
+  },
+  {
+   "report_id": "2202.08919",
+   "type": "competes"
+  },
+  {
+   "report_id": "1810.08278",
+   "type": "uses"
+  },
+  {
+   "report_id": "1905.11882",
+   "type": "uses"
+  },
+  {
+   "report_id": "2403.03777",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

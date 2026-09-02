@@ -1,0 +1,73 @@
+{
+ "report_id": "2310.01105",
+ "arxiv_id": "2310.01105",
+ "title": "Energy-Guided Continuous Entropic Barycenter Estimation for General Costs",
+ "tldr_zh": "弱 OT 对偶+EBM 训练求解连续熵正则 barycenter，支持任意代价，免 min-max，带质量界",
+ "tldr_en": "Weak OT dual + EBM training solves continuous entropic barycenters for general costs, with quality bounds",
+ "tags": [
+  "entropic OT barycenter",
+  "weak OT dual",
+  "energy-based models",
+  "continuous OT",
+  "general costs",
+  "manifold-constrained barycenter"
+ ],
+ "code_url": "https://github.com/justkolesov/EnergyGuidedBarycenters",
+ "key_numbers": [
+  {
+   "number": "8.4 / 8.7 / 10.2",
+   "source": "Table 2",
+   "description": "Ours 在 Ave, celeba! 上三个源分布到 barycenter 的 FID↓（std 0.3/0.3/0.7）"
+  },
+  {
+   "number": "56.7 / 53.2 / 58.8",
+   "source": "Table 2",
+   "description": "SCWB 的 FID↓"
+  },
+  {
+   "number": "49.3 / 46.9 / 61.5",
+   "source": "Table 2",
+   "description": "WIN 的 FID↓"
+  },
+  {
+   "number": "O(N_k^{-1/2})",
+   "source": "Theorem 4.5(b)",
+   "description": "feature-based quadratic cost 下的估计误差收敛率，维度无关"
+  },
+  {
+   "number": "O(N_k^{-1/(D_k+1)})",
+   "source": "Theorem 4.5(a)",
+   "description": "一般 Lipschitz 代价下的估计误差收敛率，有维数灾难"
+  },
+  {
+   "number": "D+4",
+   "source": "Theorem 4.6",
+   "description": "实现近似误差 < δ/ε 所需 MLP 的最大宽度"
+  },
+  {
+   "number": "<12 小时",
+   "source": "§5 开头",
+   "description": "§5.2/§5.3 实验在单张 Tesla V100 上的复现时间"
+  },
+  {
+   "number": "ε = 10^{-2} / 10^{-4}",
+   "source": "§5.1/§5.2/§5.3",
+   "description": "各实验使用的熵正则系数"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2106.01933",
+   "type": "竞争/前作"
+  },
+  {
+   "report_id": "2202.05794",
+   "type": "竞争/前作"
+  },
+  {
+   "report_id": "2402.01986",
+   "type": "后续工作（基于本文思想）"
+  }
+ ],
+ "read_full_text": true
+}

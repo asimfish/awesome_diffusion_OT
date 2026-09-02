@@ -1,0 +1,51 @@
+{
+ "report_id": "2303.08797",
+ "arxiv_id": "2303.08797",
+ "title": "Stochastic Interpolants: A Unifying Framework for Flows and Diffusions",
+ "tldr_zh": "插值加潜变量与可调扩散系数，同一路径可 ODE/SDE 采样；SDE 的 KL 受回归损失控制而 ODE 不行；对插值优化得 SB",
+ "tldr_en": "Interpolants with latent noise and tunable diffusion give ODE/SDE samplers sharing one density path; SDE likelihood is controlled by regression loss, ODE is not; max-min over interpolants yields the Schrodinger bridge.",
+ "tags": [
+  "stochastic-interpolants",
+  "flow-matching",
+  "diffusion",
+  "schrodinger-bridge",
+  "theory",
+  "likelihood-control",
+  "unification"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "KL(rho_1 || hat rho(1)) <= (1/2eps)(L_b excess) + (eps/2)(L_s excess) for SDE samplers (Theorem 23, Eq. 2.45)",
+  "Optimal diffusion coefficient eps* = sqrt(L_b excess / L_s excess) (Remark 24, Eq. 2.49)",
+  "For ODE samplers KL equals integral of (grad log hat rho - grad log rho).(hat b - b) rho: drift error alone is insufficient (Lemma 21, Eq. 2.39)",
+  "Only gamma(t)=sqrt(a t(1-t)) makes endpoint velocity carry the scores of rho_0, rho_1 (Remark 42, Table 2)",
+  "Numerical results (Sec. 7) not visible in local text: truncated at Sec. 4.4"
+ ],
+ "relations": [
+  {
+   "report_id": "2209.15571",
+   "type": "extends"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "competes"
+  },
+  {
+   "report_id": "2310.03725",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2401.08740",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2410.20587",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2303.00848",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}

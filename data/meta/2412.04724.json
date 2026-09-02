@@ -1,0 +1,70 @@
+{
+ "report_id": "2412.04724",
+ "arxiv_id": "2412.04724",
+ "title": "StableVC: Style Controllable Zero-Shot Voice Conversion with Conditional Flow Matching",
+ "tldr_zh": "解耦内容/音色/风格，OT-CFM 重建 mel，音色与风格可独立迁移到不同 unseen 说话人，10 步采样 RTF 0.146",
+ "tldr_en": "Disentangles content/timbre/style and uses OT-CFM to independently transfer timbre and style to different unseen speakers, 10-step sampling RTF 0.146",
+ "tags": [
+  "voice conversion",
+  "flow matching",
+  "optimal transport",
+  "zero-shot",
+  "style transfer",
+  "DiT",
+  "dual attention"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "WER 2.03, SECS 0.67, UTMOS 4.12, nMOS 3.96, sMOS-p 4.04, RTF 0.146, 166M params",
+   "source": "Table 1"
+  },
+  {
+   "number": "RTF 0.146 vs LM-VC 3.891 (≈25.3× speedup claimed), vs DDDM-VC 0.287 (≈1.65× speedup claimed)",
+   "source": "Table 1, Sec. Experimental Results"
+  },
+  {
+   "number": "Style transfer: Corr 0.75, RMSE 12.87, WER 2.12, SECS 0.64",
+   "source": "Table 2"
+  },
+  {
+   "number": "10 Euler steps: UTMOS 4.12, WER 2.03, SECS 0.67; 5 steps: UTMOS 3.82, WER 2.98, SECS 0.61",
+   "source": "Table 3"
+  },
+  {
+   "number": "w/o timbre prior & multi-ref: WER 22.16 (vs 2.12 full); w/o adaptive gate: SECS 0.36 (vs 0.64)",
+   "source": "Table 4"
+  },
+  {
+   "number": "Training: 20k hours LibriLight subset, 8×3090 GPUs, 800K iterations, batch 128, lr 0.0001",
+   "source": "Sec. Experimental Setup"
+  },
+  {
+   "number": "K-means clusters 1024 for WavLM content tokens; GRL loss weight λ=0.1",
+   "source": "Sec. Overview, Eq.(7)"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "继承（FM 基础）"
+  },
+  {
+   "report_id": "2302.00482",
+   "type": "继承（OT-CFM 训练目标）"
+  },
+  {
+   "report_id": "2306.15687",
+   "type": "同代（FM 语音生成，Voicebox）"
+  },
+  {
+   "report_id": "2309.03199",
+   "type": "同代（OT-CFM TTS，Matcha-TTS）"
+  },
+  {
+   "report_id": "2309.05019",
+   "type": "同代（rectified flow TTS，VoiceFlow）"
+  }
+ ],
+ "read_full_text": true
+}

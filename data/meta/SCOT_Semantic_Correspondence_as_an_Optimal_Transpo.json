@@ -1,0 +1,43 @@
+{
+ "report_id": "SCOT_Semantic_Correspondence_as_an_Optimal_Transpo",
+ "arxiv_id": null,
+ "title": "SCOT: Semantic Correspondence as an Optimal Transport Problem",
+ "tldr_zh": "首次把语义对应写成 OT 问题，用显著性做边际、Sinkhorn 求全局 plan，抑制 many-to-one 错配",
+ "tldr_en": "First to formulate semantic correspondence as OT, using saliency marginals and Sinkhorn for a global plan to suppress many-to-one mismatches",
+ "tags": [
+  "semantic correspondence",
+  "optimal transport",
+  "Sinkhorn",
+  "saliency",
+  "many-to-one"
+ ],
+ "code_url": null,
+ "key_numbers": [],
+ "relations": [
+  {
+   "report_id": "UNITE_CVPR2021",
+   "type": "extends"
+  },
+  {
+   "report_id": "GWOT-SC_BMVC2025",
+   "type": "extends"
+  },
+  {
+   "report_id": "Shape-of-You_CVPR2026",
+   "type": "extends"
+  },
+  {
+   "report_id": "Sinkformer_AISTATS2022",
+   "type": "related"
+  },
+  {
+   "report_id": "OTSeg_ECCV2024",
+   "type": "related"
+  },
+  {
+   "report_id": "STORM_CVPR2025",
+   "type": "related"
+  }
+ ],
+ "read_full_text": false
+}

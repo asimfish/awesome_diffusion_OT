@@ -1,0 +1,86 @@
+{
+ "report_id": "2505.13447",
+ "arxiv_id": "2505.13447",
+ "title": "Mean Flows for One-step Generative Modeling",
+ "tldr_zh": "用平均速度场替代瞬时速度，MeanFlow identity 从头训练一步生成，ImageNet-256 1-NFE FID 3.43",
+ "tldr_en": "MeanFlow models average velocity fields via a derived identity, enabling from-scratch 1-NFE generation with ImageNet-256 FID 3.43",
+ "tags": [
+  "flow-matching",
+  "one-step-generation",
+  "average-velocity",
+  "meanflow",
+  "image-generation",
+  "classifier-free-guidance"
+ ],
+ "code_url": null,
+ "key_numbers": [
+  {
+   "number": "3.43",
+   "description": "ImageNet 256×256 1-NFE FID, MeanFlow-XL/2, 676M params, 240 epochs, from scratch",
+   "source": "Tab. 2"
+  },
+  {
+   "number": "2.20",
+   "description": "ImageNet 256×256 2-NFE FID, MeanFlow-XL/2+",
+   "source": "Tab. 2"
+  },
+  {
+   "number": "10.60",
+   "description": "Shortcut-XL/2 1-NFE FID, previous SOTA in 1-NFE class",
+   "source": "Tab. 2"
+  },
+  {
+   "number": "7.77",
+   "description": "IMM-XL/2 one-step FID (1×2 NFE with CFG)",
+   "source": "Tab. 2"
+  },
+  {
+   "number": "328.91",
+   "description": "1-NFE FID when r=t always (reduces to standard Flow Matching)",
+   "source": "Tab. 1a"
+  },
+  {
+   "number": "61.06",
+   "description": "1-NFE FID with 25% r≠t ratio, ViT-B/4, 80 epochs",
+   "source": "Tab. 1a"
+  },
+  {
+   "number": "2.92",
+   "description": "CIFAR-10 unconditional 1-NFE FID, MeanFlow, no preconditioner",
+   "source": "Tab. 3"
+  },
+  {
+   "number": "20%",
+   "description": "JAX implementation overhead of JVP relative to total training time, upper bound",
+   "source": "Sec. 4.1"
+  },
+  {
+   "number": "15.53",
+   "description": "Best 1-NFE FID with CFG scale ω=3.0, ViT-B/4, 80 epochs",
+   "source": "Tab. 1f"
+  }
+ ],
+ "relations": [
+  {
+   "report_id": "2210.02747",
+   "type": "继承"
+  },
+  {
+   "report_id": "2406.07507",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2410.12533",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2303.01469",
+   "type": "竞争"
+  },
+  {
+   "report_id": "2401.08740",
+   "type": "继承"
+  }
+ ],
+ "read_full_text": true
+}

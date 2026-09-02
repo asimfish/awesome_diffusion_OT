@@ -1,0 +1,95 @@
+{
+ "digest_zh": "本课题解决离散数据（文本、DNA、代码）上扩散/流生成模型的核心瓶颈：如何定义前向腐蚀路径、如何选择训练目标、如何降低采样步数，以及 OT 在其中的角色。方法谱系分四阶段演进：D3PM 奠基结构化转移矩阵；SEDD/MDLM/MD4/RADD 把目标函数化简为加权交叉熵或 score entropy，使扩散 LM 首次在困惑度上逼近 AR；DFM/Edit Flows/Fisher-Flow 引入连续化或状态空间几何改造；SDTT/Di4C/DCD/CDLM/d3LLM/JYS 聚焦 few-step 加速与蒸馏。OT 的介入方式分三层：minibatch OT 耦合（2411.00759）、位置/序列级 OT（2506.13579、2412.14528）、以及把 OT 作为分布对齐损失（2402.17110、2402.12030）。当前共识是 masked/absorbing 前向过程在文本上最优，加权交叉熵是有效目标；分歧在于 OT 耦合是否带来超越启发式调度的增益，以及连续化路线（Fisher-Rao、argmax 投影）能否规模化。",
+ "observations": [
+  {
+   "claim": "离散扩散的采样加速从蒸馏路线（SDTT/Di4C/DCD）演进到免训练调度优化（JYS）和解析桥监督（CDLM），但所有方法都受限于逐 token 独立更新的结构瓶颈。",
+   "evidence": [
+    "2410.21035",
+    "2410.08709",
+    "2506.10892",
+    "2602.15008"
+   ],
+   "detail": "SDTT 用跨时间自蒸馏把步数压到 16–32 步，但一次蒸馏超过 2 步就发散；Di4C 的 Theorem 1 证明 product model 的 TV 误差下界为 Ω(1/N)，说明独立分解的步数瓶颈是结构性的；Duo 的 DCD 通过 argmax 投影构造确定性轨迹实现 128× 加速，但该轨迹是 proxy 而非真实 PF-ODE；2602.15008 的 Theorem 2 进一步给出 τ-leaping 的 Ω(d log S) 算法相关下界。"
+  },
+  {
+   "claim": "OT 耦合在离散扩散中的收益高度依赖成本函数设计和 source 分布结构，Hamming 距离在大词表下失效，embedding 成本或 multimask 构造才能释放 OT 的方差降低效果。",
+   "evidence": [
+    "2411.00759",
+    "2506.13579",
+    "2402.12030"
+   ],
+   "detail": "2411.00759 报告 Hamming 距离在大词表下效果有限，因为 source 与 target 序列共享匹配位置的概率低；其 multimask flow 通过引入 50257 个 mask token 扩展 source 支撑，使 OT 耦合从平凡变为有意义。2506.13579 的 DDOT 在位置空间用 1D 排序配对实现免训练 OT，OT 消融使 B2 从 15.7 降至 13.2。2402.12030 的 ULD 用均匀成本把 W1 退化为排序 L1，完全丢弃词表语义，被 MultiLevelOT 的 embedding 成本取代。"
+  },
+  {
+   "claim": "masked/absorbing 扩散的训练目标在 2024 年收敛为加权交叉熵，且与任意序自回归等价，这一等价性为后续 OT 耦合和蒸馏提供了理论接口。",
+   "evidence": [
+    "2406.07524",
+    "2406.04329",
+    "2406.03736",
+    "2310.16834"
+   ],
+   "detail": "MDLM 把 ELBO 化简为加权 MLM 交叉熵混合，在 LM1B 上达到 ≤27.04 PPL；MD4 独立推导相同结果并发现 cosine schedule 使 FID 从 70 降至 17；RADD 的 Theorem 2 证明 absorbing 扩散与 AO-ARM 严格等价；SEDD 的 score entropy 用 Bregman 散度替代 Fisher divergence，在 1BW 上达到 ≤32.79 PPL。"
+  },
+  {
+   "claim": "连续化路线（Fisher-Rao 嵌入、argmax 投影）试图把连续域 OT 和 PF-ODE 工具搬到离散域，但都面临离散化误差或 proxy 合理性的根本限制。",
+   "evidence": [
+    "2405.14664",
+    "2506.10892",
+    "2605.00161"
+   ],
+   "detail": "Fisher-Flow 在 Fisher-Rao 球面正象限上做黎曼 OT，但推理时需映射回单纯形再取最近顶点，离散化误差未分析；Duo 的 DCD 用高斯 PF-ODE 的 argmax 投影作为离散 proxy，作者承认这是「absence of a proper PF-ODE」的替代；CDLM 明确指出离散域没有 PF-ODE，改用精确后验桥做多路径一致性训练。"
+  }
+ ],
+ "open_problems": [
+  {
+   "problem": "离散 kinetic-optimal 路径的存在性与构造",
+   "why_open": "Edit Flows 观察到模型偏好最少编辑次数，类比连续 FM 的 kinetic energy 最小化，但无理论保证；masking 前向过程在 MDLM 的 schedule 不变性下无法通过调 schedule 优化路径。",
+   "evidence": [
+    "2506.09018",
+    "2406.07524",
+    "2411.00759"
+   ]
+  },
+  {
+   "problem": "OT 耦合在离散扩散中的成本函数设计空间",
+   "why_open": "2411.00759 只用 Hamming 和 embedding 平方欧氏距离两种成本，编辑距离、Gromov-Wasserstein 型结构成本未探索；ULD 的均匀成本丢弃全部语义，MultiLevelOT 的 embedding 成本依赖 token 级排序正确性。",
+   "evidence": [
+    "2411.00759",
+    "2402.12030",
+    "2412.14528"
+   ]
+  },
+  {
+   "problem": "W1 而非 KL/TV 的离散扩散收敛理论",
+   "why_open": "2605.17232 给出 IPM 界但 Hamming W1 的 C_Ψ=d/2 使界含 d^{3/2} 因子；Di4C 的 Theorem 1 用 TV 度量 product model 步数瓶颈，未触及 OT 意义上的传输成本。",
+   "evidence": [
+    "2605.17232",
+    "2410.08709",
+    "2602.15008"
+   ]
+  }
+ ],
+ "reading_order": [
+  {
+   "report_id": "2107.03006",
+   "why": "离散扩散奠基，转移矩阵设计空间"
+  },
+  {
+   "report_id": "2310.16834",
+   "why": "score entropy 目标函数奠基"
+  },
+  {
+   "report_id": "2406.07524",
+   "why": "加权交叉熵化简，masked 扩散基线"
+  },
+  {
+   "report_id": "2411.00759",
+   "why": "minibatch OT 耦合进入离散流匹配"
+  },
+  {
+   "report_id": "2506.13579",
+   "why": "位置级 OT 耦合与变长填充"
+  }
+ ],
+ "n_reports": 27
+}

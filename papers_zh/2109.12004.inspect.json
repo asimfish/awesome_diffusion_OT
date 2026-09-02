@@ -1,0 +1,59 @@
+{
+  "issue_count": 9,
+  "issues": [
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.37pt but the original at this position is 9.96pt (ratio 0.74 vs page median 0.92) at x=90.8, y=369.8: 注1。显而易见，式(6) 与式(4) 实际上存在显式联系：若"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 7.95pt but the original at this position is 9.96pt (ratio 0.80 vs page median 0.92) at x=90.8, y=240.0: ，其中对0 对所有情况均成立。在下文中，所有常数可能依赖于维度、集合Ω、"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (2 words, 0 CJK chars) at x=90.0, y=194.7: with ¯α = α ∧3. Choosing ε ≍n−d"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=342.8, y=658.0: to"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=206.9, y=669.2: to"
+    },
+    {
+      "page": 9,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 9: displayed equation at y=163 shifted horizontally by 33pt vs original"
+    },
+    {
+      "page": 22,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 22: block set at 6.42pt but the original at this position is 9.96pt (ratio 0.64 vs page median 0.92) at x=190.7, y=576.3: τ的定义中足够大，我们可以使这一项小于"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (6 words, 0 CJK chars) at x=90.0, y=646.5: Proposition 6. For any x ∈supp(P), if a ∈[Lε, 1], then"
+    },
+    {
+      "page": 28,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 28: paragraph still in English (6 words, 0 CJK chars) at x=90.0, y=108.8: Lemma 5. If a ≥Lε, then for any v ∈Rd,"
+    }
+  ]
+}

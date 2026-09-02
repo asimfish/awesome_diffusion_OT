@@ -1,0 +1,41 @@
+{
+ "report_id": "2310.03725",
+ "arxiv_id": "2310.03725",
+ "title": "Stochastic interpolants with data-dependent couplings",
+ "tldr_zh": "把 base 写成目标的退化观测 x0=m(x1)+σζ，同一平方回归学速度场；ImageNet 补全 FID 1.13 vs 独立耦合 1.35，64→256 超分 FID 2.05",
+ "tldr_en": "Base samples are degraded observations of the target, x0=m(x1)+sigma*zeta; same square-loss training; ImageNet inpainting FID 1.13 vs 1.35 independent, 64->256 SR FID 2.05.",
+ "tags": [
+  "stochastic-interpolants",
+  "coupling",
+  "conditional-generation",
+  "super-resolution",
+  "inpainting",
+  "flow-matching"
+ ],
+ "code_url": "https://github.com/interpolants/couplings",
+ "key_numbers": [
+  "ImageNet inpainting FID-50k: dependent coupling 1.13 vs uncoupled interpolant baseline 1.35 (Table 2)",
+  "ImageNet 64->256 super-resolution FID train/valid: 2.13/2.05 vs I2SB -/2.70, Cascaded Diffusion 4.88/4.63, SR3 11.30/5.20 (Table 3)",
+  "Transport cost bound E|X_1(x0)-x0|^2 <= int_0^1 E|dot I_t|^2 dt (Proposition 3.1, Eq. 15)",
+  "With m(x1)=x1, linear interpolant: coupled E|dot I_t|^2 = d sigma^2 vs independent 2E|x1|^2 + d sigma^2 (Sec. 3.3, Eq. 21)"
+ ],
+ "relations": [
+  {
+   "report_id": "2303.08797",
+   "type": "extends"
+  },
+  {
+   "report_id": "2209.15571",
+   "type": "extends"
+  },
+  {
+   "report_id": "2210.02747",
+   "type": "competes"
+  },
+  {
+   "report_id": "2401.08740",
+   "type": "competes"
+  }
+ ],
+ "read_full_text": true
+}
