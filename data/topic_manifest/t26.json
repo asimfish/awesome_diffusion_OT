@@ -1,0 +1,338 @@
+{
+ "topic": "t26",
+ "topic_name": "Gromov-Wasserstein 与跨空间生成对齐",
+ "section": "E",
+ "section_name": "OT Variants Frontier",
+ "kb_note": "source/kb/t26_gromov_wasserstein_gen.md",
+ "papers": [
+  {
+   "key": "t26__2602.06658",
+   "report_id": "2602.06658",
+   "title": "Gromov-Wasserstein at Scale, Beyond Squared Norms",
+   "authors": [
+    "Guillaume Houry",
+    "Jean Feydy",
+    "François-Xavier Vialard"
+   ],
+   "year": 2026,
+   "venue": "ICML（种子库 [A]）",
+   "evidence": "A",
+   "star": true,
+   "arxiv_id": "2602.06658",
+   "published": "2026-02-06",
+   "abstract": "A fundamental challenge in data science is to match disparate point sets with each other. While optimal transport efficiently minimizes point displacements under a bijectivity constraint, it is inherently sensitive to rotations. Conversely, minimizing distortions via the Gromov-Wasserstein (GW) framework addresses this limitation but introduces a non-convex, computationally demanding optimization problem. In this work, we identify a broad class of distortion penalties that reduce to a simple alignment problem within a lifted feature space. Leveraging this insight, we introduce an iterative GW solver with a linear memory footprint and quadratic (rather than cubic) time complexity. Our method is differentiable, comes with strong theoretical guarantees, and scales to hundreds of thousands of points in minutes. This efficiency unlocks a wide range of geometric applications and enables the exploration of the GW energy landscape, whose local minima encode the symmetries of the matching problem.",
+   "contribution_zh": "识别出条件负定型（CNT）畸变代价大类，使 GW 化为 lifted 特征空间线性对齐 + 标准平方欧氏 OT：线性内存、二次（而非三次）时间、可微、可探索能量景观的 EGW solver，数十万点分钟级",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2602.06658"
+   },
+   "pdf": "papers/2602.06658.pdf",
+   "text": "data/text/2602.06658.txt",
+   "text_chars": 90000,
+   "pages": 37
+  },
+  {
+   "key": "t26__last_bridging_vision_language_and_action_manifolds_via_gromo",
+   "report_id": "2606.11221",
+   "title": "LAST: Bridging Vision-Language and Action Manifolds via Gromov-Wasserstein Alignment",
+   "authors": [
+    "Huaihai Lyu",
+    "Chaofan Chen",
+    "Yuheng Ji",
+    "Xiansheng Chen",
+    "Pengwei Wang",
+    "Shanghang Zhang",
+    "Changsheng Xu"
+   ],
+   "year": 2026,
+   "venue": "ICML",
+   "evidence": "A",
+   "star": true,
+   "arxiv_id": "2606.11221",
+   "published": "2026-05-27",
+   "abstract": "We take a Gromov-Wasserstein perspective on Vision-Language-Action (VLA) learning, where the goal is to make the relational geometry of action representations compatible with the semantic geometry of VL embeddings. However, this alignment is non-trivial due to the mathematical heterogeneity between the domains: the semantic space of vision-language is topologically linear and isotropic, whereas the physical manifold of robotic action is non-Euclidean and anisotropic. Their disjoint metric structures render direct regression ill-posed. To resolve this incompatibility, we introduce LAST (Lie-algebraic Action Space Tokenizer), which reconstructs the action space to establish local metric compatibility with the VL modality via a two-stage transformation: (1) Global Topological Linearization: linearizing the action manifold via Lie-algebraic mapping, converting trajectories into a fixed-length, physically additive representation. (2) Local Metric Discretization: hierarchically discretizing the representation into schemas and whitened residuals, yielding approximately isotropic local charts that are statistically aligned with the semantic metric. By resolving the structural mismatch at both global and local levels, LAST enables VLA models with superior convergence and generalizability.",
+   "contribution_zh": "把 VLA 学习表述为 GW 对齐问题：Lie 代数 tokenizer 全局线性化动作流形 + 白化局部度量离散化，使动作空间的关系几何与 VL 语义嵌入统计兼容",
+   "links": {
+    "ICML 官方页": "https://icml.cc/virtual/2026/poster/62473"
+   },
+   "pdf": "papers/2606.11221.pdf",
+   "text": "data/text/2606.11221.txt",
+   "text_chars": 78244,
+   "pages": 21
+  },
+  {
+   "key": "t26__it_s_a_match_towards_vision_language_correspondence_without_",
+   "report_id": "2503.24129",
+   "title": "It's a (Blind) Match! Towards Vision-Language Correspondence without Parallel Data",
+   "authors": [
+    "Dominik Schnaus",
+    "Nikita Araslanov",
+    "Daniel Cremers"
+   ],
+   "year": 2025,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2503.24129",
+   "published": "2025-03-31",
+   "abstract": "The platonic representation hypothesis suggests that vision and language embeddings become more homogeneous as model and dataset sizes increase. In particular, pairwise distances within each modality become more similar. This suggests that as foundation models mature, it may become possible to match vision and language embeddings in a fully unsupervised fashion, i.e. without parallel data. We present the first feasibility study, and investigate conformity of existing vision and language foundation models in the context of unsupervised, or \"blind\", matching. First, we formulate unsupervised matching as a quadratic assignment problem and introduce a novel heuristic that outperforms previous solvers. We also develop a technique to find optimal matching problems, for which a non-trivial match is very likely. Second, we conduct an extensive study deploying a range of vision and language models on four datasets. Our analysis reveals that for many problem instances, vision and language representations can be indeed matched without supervision. This finding opens up the exciting possibility of embedding semantic knowledge into other modalities virtually annotation-free. As a proof of concept, we showcase an unsupervised classifier, which achieves non-trivial classification accuracy without any image-text annotation.",
+   "contribution_zh": "把「无任何平行数据的视觉-语言匹配」形式化为 GW 型 QAP，改进 Hahn-Grant 对偶求解器，实证 platonic representation hypothesis 下基础模型嵌入可被无监督结构对齐",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2025/papers/Schnaus_Its_a_Blind_Match_Towards_Vision-Language_Correspondence_without_Parallel_Data_CVPR_2025_paper.pdf"
+   },
+   "pdf": "papers/2503.24129.pdf",
+   "text": "data/text/2503.24129.txt",
+   "text_chars": 90000,
+   "pages": 22
+  },
+  {
+   "key": "t26__gromov_wasserstein_distances_entropic_regularization_duality",
+   "report_id": "2212.12848",
+   "title": "Gromov-Wasserstein Distances: Entropic Regularization, Duality, and Sample Complexity",
+   "authors": [
+    "Zhengxin Zhang",
+    "Ziv Goldfeld",
+    "Youssef Mroueh",
+    "Bharath K. Sriperumbudur"
+   ],
+   "year": 2024,
+   "venue": "Annals of Statistics 52(4)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2212.12848",
+   "published": "2022-12-25",
+   "abstract": "The Gromov-Wasserstein (GW) distance, rooted in optimal transport (OT) theory, quantifies dissimilarity between metric measure spaces and provides a framework for aligning heterogeneous datasets. While computational aspects of the GW problem have been widely studied, a duality theory and fundamental statistical questions concerning empirical convergence rates remained obscure. This work closes these gaps for the quadratic GW distance over Euclidean spaces of different dimensions $d_x$ and $d_y$. We treat both the standard and the entropically regularized GW distance, and derive dual forms that represent them in terms of the well-understood OT and entropic OT (EOT) problems, respectively. This enables employing proof techniques from statistical OT based on regularity analysis of dual potentials and empirical process theory, using which we establish the first GW empirical convergence rates. The derived two-sample rates are $n^{-2/\\max\\{\\min\\{d_x,d_y\\},4\\}}$ (up to a log factor when $\\min\\{d_x,d_y\\}=4$) for standard GW and $n^{-1/2}$ for EGW, which matches the corresponding rates for standard and entropic OT. The parametric rate for EGW is evidently optimal, while for standard GW we provide matching lower bounds, which establish sharpness of the derived rates. We also study stability of EGW in the entropic regularization parameter and prove approximation and continuity results for the cost and optimal couplings. Lastly, the duality is leveraged to shed new light on the open problem of the one-dimensional GW distance between uniform distributions on $n$ points, illuminating why the identity and anti-identity permutations may not be optimal. Our results serve as a first step towards a comprehensive statistical theory as well as computational advancements for GW distances, based on the discovered dual formulations.",
+   "contribution_zh": "通过辅助矩阵变量把二次 GW 线性化为 OT/EOT 族的下确界，建立首个对偶理论与尖锐经验收敛率：GW 为 n^{−2/max{min(dx,dy),4}}，EGW 达参数率 n^{−1/2}",
+   "links": {
+    "Project Euclid": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-4/GromovWasserstein-distances-Entropic-regularization-duality-and-sample-complexity/10.1214/24-AOS2406.full"
+   },
+   "pdf": "papers/2212.12848.pdf",
+   "text": "data/text/2212.12848.txt",
+   "text_chars": 90000,
+   "pages": 47
+  },
+  {
+   "key": "t26__shape_of_you_fused_gromov_wasserstein_optimal_transport_for_",
+   "report_id": "2603.11618",
+   "title": "Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild",
+   "authors": [
+    "Jiin Im",
+    "Sisung Liu",
+    "Je Hyeong Hong"
+   ],
+   "year": 2026,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2603.11618",
+   "published": "2026-03-12",
+   "abstract": "Semantic correspondence is essential for handling diverse in-the-wild images lacking explicit correspondence annotations. While recent 2D foundation models offer powerful features, adapting them for unsupervised learning via nearest-neighbor pseudo-labels has key limitations: it operates locally, ignoring structural relationships, and consequently its reliance on 2D appearance fails to resolve geometric ambiguities arising from symmetries or repetitive features. In this work, we address this by reformulating pseudo-label generation as a Fused Gromov-Wasserstein (FGW) problem, which jointly optimizes inter-feature similarity and intra-structural consistency. Our framework, Shape-of-You (SoY), leverages a 3D foundation model to define this intra-structure in the geometric space, resolving abovementioned ambiguity. However, since FGW is a computationally prohibitive quadratic problem, we approximate it through anchor-based linearization. The resulting probabilistic transport plan provides a structurally consistent but noisy supervisory signal. Thus, we introduce a soft-target loss dynamically blending guidance from this plan with network predictions to build a learning framework robust to this noise. SoY achieves state-of-the-art performance on SPair-71k and AP-10k datasets, establishing a new benchmark in semantic correspondence without explicit geometric annotations. Code is available at Shape-of-You.",
+   "contribution_zh": "用 3D 结构先验 + anchor 线性化缓解 FGW 计算成本，做野外语义对应；展示 FGW 在视觉对应任务的工程化路径",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2026/html/Im_Shape-of-You_Fused_Gromov-Wasserstein_Optimal_Transport_for_Semantic_Correspondence_in-the-Wild_CVPR_2026_paper.html"
+   },
+   "pdf": "papers/2603.11618.pdf",
+   "text": "data/text/2603.11618.txt",
+   "text_chars": 74418,
+   "pages": 18
+  },
+  {
+   "key": "t26__private_synthetic_graph_generation_and_fused_gromov_wasserst",
+   "report_id": "2502.11778",
+   "title": "Private Synthetic Graph Generation and Fused Gromov-Wasserstein Distance",
+   "authors": [
+    "Leoni Carla Wirth",
+    "Gholamali Aminian",
+    "Gesine Reinert"
+   ],
+   "year": 2026,
+   "venue": "AISTATS",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": "2502.11778",
+   "published": "2025-02-17",
+   "abstract": "Networks are popular for representing complex data. In particular, differentially private synthetic networks are much in demand for method and algorithm development. The network generator should be easy to implement and should come with theoretical guarantees. Here we start with complex data as input and jointly provide a network representation as well as a synthetic network generator. Using a random connection model, we devise an effective algorithmic approach for generating attributed synthetic graphs which is $ε$-differentially private at the vertex level, while preserving utility under an appropriate notion of distance which we develop. We provide theoretical guarantees for the accuracy of the private synthetic graphs using the fused Gromov-Wasserstein distance, which extends the Wasserstein metric to structured data. Our method draws inspiration from the PSMM method of \\citet{he2023}.",
+   "contribution_zh": "顶点级 ε-DP 属性图生成器，并用 FGW 距离给出生成分布与真实分布的精度理论保证——FGW 作为图生成「度量+证明工具」",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=g5QpPIwSst"
+   },
+   "pdf": "papers/2502.11778.pdf",
+   "text": "data/text/2502.11778.txt",
+   "text_chars": 63499,
+   "pages": 24
+  },
+  {
+   "key": "t26__2606.29462",
+   "report_id": "2606.29462",
+   "title": "MIRROR: Aligning Semantic Relations from Language to Image via Gromov--Wasserstein",
+   "authors": [
+    "Hong-Han Wang",
+    "Yuntao Wang",
+    "Hu Ding"
+   ],
+   "year": 2026,
+   "venue": "arXiv（自称 ECCV 2026 接收，待论文集核验）",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2606.29462",
+   "published": "2026-06-28",
+   "abstract": "Multimodal Large Language Models (MLLMs) inherit rich relational priors from their language backbones, yet often fail when asked to apply these relationships in visual contexts. We trace this failure to a structural blind spot: projection-based alignment trains each visual token to carry the right semantics, but never asks whether the relationships between concepts survive the crossing from language to vision. To address this, we propose MIRROR (Mapping Inter-concept Relations from language to visual Representation via Optimal-transport-based Regularization), a geometric regularization framework that transfers relational priors from language to vision by exploiting the rich relational structure encoded in language representations. Specifically, we derive a surrogate loss from the proposed Semi-Inverse Gromov-Wasserstein (SI-GW) problem, an inverse geometric problem that aligns visual representations with language-derived relational priors. We show that this formulation admits a unique closed-form solution that prescribes the ideal visual relational structure implied by language geometry and cross-modal coupling. The structure of the formulation also enables efficient computation, making it applicable to long token sequences. Applying SI-GW inside decoder-only Transformers requires careful design. We introduce targeted strategies at the layer, head, and token levels to ensure stable extraction without additional parameters or inference cost. MIRROR improves relational consistency while preserving performance on general vision-language tasks.",
+   "contribution_zh": "用 GW 型正则强制「概念间关系结构」在语言→视觉投影中保持，修复 MLLM 的关系推理盲区",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2606.29462"
+   },
+   "pdf": "papers/2606.29462.pdf",
+   "text": "data/text/2606.29462.txt",
+   "text_chars": 50934,
+   "pages": 18
+  },
+  {
+   "key": "t26__semidefinite_relaxations_of_the_gromov_wasserstein_distance",
+   "report_id": "2312.14572",
+   "title": "Semidefinite Relaxations of the Gromov-Wasserstein Distance",
+   "authors": [
+    "Junyu Chen",
+    "Binh T. Nguyen",
+    "Shang Hui Koh",
+    "Yong Sheng Soh"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2312.14572",
+   "published": "2023-12-22",
+   "abstract": "The Gromov-Wasserstein (GW) distance is an extension of the optimal transport problem that allows one to match objects between incomparable spaces. At its core, the GW distance is specified as the solution of a non-convex quadratic program and is not known to be tractable to solve. In particular, existing solvers for the GW distance are only able to find locally optimal solutions. In this work, we propose a semi-definite programming (SDP) relaxation of the GW distance. The relaxation can be viewed as the Lagrangian dual of the GW distance augmented with constraints that relate to the linear and quadratic terms of transportation plans. In particular, our relaxation provides a tractable (polynomial-time) algorithm to compute globally optimal transportation plans (in some instances) together with an accompanying proof of global optimality. Our numerical experiments suggest that the proposed relaxation is strong in that it frequently computes the globally optimal solution. Our Python implementation is available at https://github.com/tbng/gwsdp.",
+   "contribution_zh": "GW 的 SDP 松弛给出可认证的全局下界与最优性证书，是非凸 GW「可认证计算」路线的代表",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/8189d86a5d8dea0694d43bb90e01c14d-Abstract-Conference.html"
+   },
+   "pdf": "papers/2312.14572.pdf",
+   "text": "data/text/2312.14572.txt",
+   "text_chars": 73962,
+   "pages": 26
+  },
+  {
+   "key": "t26__gromov_wasserstein_autoencoders",
+   "report_id": "2209.07007",
+   "title": "Gromov-Wasserstein Autoencoders",
+   "authors": [
+    "Nao Nakagawa",
+    "Ren Togo",
+    "Takahiro Ogawa",
+    "Miki Haseyama"
+   ],
+   "year": 2023,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2209.07007",
+   "published": "2022-09-15",
+   "abstract": "Variational Autoencoder (VAE)-based generative models offer flexible representation learning by incorporating meta-priors, general premises considered beneficial for downstream tasks. However, the incorporated meta-priors often involve ad-hoc model deviations from the original likelihood architecture, causing undesirable changes in their training. In this paper, we propose a novel representation learning method, Gromov-Wasserstein Autoencoders (GWAE), which directly matches the latent and data distributions using the variational autoencoding scheme. Instead of likelihood-based objectives, GWAE models minimize the Gromov-Wasserstein (GW) metric between the trainable prior and given data distributions. The GW metric measures the distance structure-oriented discrepancy between distributions even with different dimensionalities, which provides a direct measure between the latent and data spaces. By restricting the prior family, we can introduce meta-priors into the latent space without changing their objective. The empirical comparisons with VAE-based models show that GWAE models work in two prominent meta-priors, disentanglement and clustering, with their GW objective unchanged.",
+   "contribution_zh": "抛弃似然目标，直接用 GW 度量匹配（不同维度的）latent 与 data 分布，把 meta-prior 表征学习变成跨空间结构匹配",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=sbS10BCtc7"
+   },
+   "pdf": "papers/2209.07007.pdf",
+   "text": "data/text/2209.07007.txt",
+   "text_chars": 90000,
+   "pages": 38
+  },
+  {
+   "key": "t26__linear_time_gromov_wasserstein_distances_using_low_rank_coup",
+   "report_id": "2106.01128",
+   "title": "Linear-Time Gromov Wasserstein Distances using Low Rank Couplings and Costs",
+   "authors": [
+    "Meyer Scetbon",
+    "Gabriel Peyré",
+    "Marco Cuturi"
+   ],
+   "year": 2022,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2106.01128",
+   "published": "2021-06-02",
+   "abstract": "The ability to align points across two related yet incomparable point clouds (e.g. living in different spaces) plays an important role in machine learning. The Gromov-Wasserstein (GW) framework provides an increasingly popular answer to such problems, by seeking a low-distortion, geometry-preserving assignment between these points. As a non-convex, quadratic generalization of optimal transport (OT), GW is NP-hard. While practitioners often resort to solving GW approximately as a nested sequence of entropy-regularized OT problems, the cubic complexity (in the number $n$ of samples) of that approach is a roadblock. We show in this work how a recent variant of the OT problem that restricts the set of admissible couplings to those having a low-rank factorization is remarkably well suited to the resolution of GW: when applied to GW, we show that this approach is not only able to compute a stationary point of the GW problem in time $O(n^2)$, but also uniquely positioned to benefit from the knowledge that the initial cost matrices are low-rank, to yield a linear time $O(n)$ GW approximation. Our approach yields similar results, yet orders of magnitude faster computation than the SoTA entropic GW approaches, on both simulated and real data.",
+   "contribution_zh": "低秩耦合 + 低秩代价分解把 GW 降至线性时间，是 moscot/OTT-JAX 规模化 GW 的算法基石",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v162/scetbon22b.html"
+   },
+   "pdf": "papers/2106.01128.pdf",
+   "text": "data/text/2106.01128.txt",
+   "text_chars": 62853,
+   "pages": 19
+  },
+  {
+   "key": "t26__optimal_transport_for_structured_data_with_application_on_gr",
+   "report_id": "1805.09114",
+   "title": "Optimal Transport for structured data with application on graphs",
+   "authors": [
+    "Titouan Vayer",
+    "Laetitia Chapel",
+    "Rémi Flamary",
+    "Romain Tavenard",
+    "Nicolas Courty"
+   ],
+   "year": 2019,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1805.09114",
+   "published": "2018-05-23",
+   "abstract": "This work considers the problem of computing distances between structured objects such as undirected graphs, seen as probability distributions in a specific metric space. We consider a new transportation distance (i.e. that minimizes a total cost of transporting probability masses) that unveils the geometric nature of the structured objects space. Unlike Wasserstein or Gromov-Wasserstein metrics that focus solely and respectively on features (by considering a metric in the feature space) or structure (by seeing structure as a metric space), our new distance exploits jointly both information, and is consequently called Fused Gromov-Wasserstein (FGW). After discussing its properties and computational aspects, we show results on a graph classification task, where our method outperforms both graph kernels and deep graph convolutional networks. Exploiting further on the metric properties of FGW, interesting geometric objects such as Fréchet means or barycenters of graphs are illustrated and discussed in a clustering context.",
+   "contribution_zh": "FGW：特征项（Wasserstein）与结构项（GW）凸组合的联合传输，图比较、barycenter 与结构化生成的标准工具",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v97/titouan19a.html"
+   },
+   "pdf": "papers/1805.09114.pdf",
+   "text": "data/text/1805.09114.txt",
+   "text_chars": 58705,
+   "pages": 16
+  },
+  {
+   "key": "t26__gromov_wasserstein_alignment_of_word_embedding_spaces",
+   "report_id": "1809.00013",
+   "title": "Gromov-Wasserstein Alignment of Word Embedding Spaces",
+   "authors": [
+    "David Alvarez-Melis",
+    "Tommi S. Jaakkola"
+   ],
+   "year": 2018,
+   "venue": "EMNLP",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1809.00013",
+   "published": "2018-08-31",
+   "abstract": "Cross-lingual or cross-domain correspondences play key roles in tasks ranging from machine translation to transfer learning. Recently, purely unsupervised methods operating on monolingual embeddings have become effective alignment tools. Current state-of-the-art methods, however, involve multiple steps, including heuristic post-hoc refinement strategies. In this paper, we cast the correspondence problem directly as an optimal transport (OT) problem, building on the idea that word embeddings arise from metric recovery algorithms. Indeed, we exploit the Gromov-Wasserstein distance that measures how similarities between pairs of words relate across languages. We show that our OT objective can be estimated efficiently, requires little or no tuning, and results in performance comparable with the state-of-the-art in various unsupervised word translation tasks.",
+   "contribution_zh": "无平行语料的跨语言词嵌入 GW 对齐，「嵌入空间结构对齐」整条线的奠基",
+   "links": {
+    "ACL Anthology": "https://aclanthology.org/D18-1214/"
+   },
+   "pdf": "papers/1809.00013.pdf",
+   "text": "data/text/1809.00013.txt",
+   "text_chars": 41278,
+   "pages": 10
+  },
+  {
+   "key": "t26__gromov_wasserstein_averaging_of_kernel_and_distance_matrices",
+   "report_id": "Gromov_Wasserstein_Averaging_of_Kernel_and_Distanc",
+   "title": "Gromov-Wasserstein Averaging of Kernel and Distance Matrices",
+   "authors": "Peyré, Cuturi, Solomon",
+   "year": 2016,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "entropic GW 的投影镜像下降求解器与 GW barycenter，现代计算 GW 的起点",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v48/peyre16.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "report_id": "Light_and_Optimal_SB_Matching_LightSB_M_Gushchin_e",
+ "arxiv_id": "",
+ "title": "Light and Optimal Schrödinger Bridge Matching",
+ "tldr_zh": "证明任意耦合一次最优投影即得 SB；高斯混合势参数化实现 CPU 分钟级免迭代求解",
+ "tldr_en": "Single 'optimal projection' bridge-matching step recovers the SB from any coupling; Gaussian-mixture potential gives a CPU-minutes solver (LightSB-M).",
+ "tags": [
+  "schrodinger-bridge",
+  "bridge-matching",
+  "light-solver",
+  "theory",
+  "entropic-ot"
+ ],
+ "code_url": "https://github.com/SKholkin/LightSB-Matching",
+ "key_numbers": [
+  "cBW2-UVP 0.04/0.18/0.77/1.66 % at eps=0.1, D=2/16/64/128 vs DSBM 5.2/16.8/37.3/35 (Table 1)",
+  "MSCI energy distance 2.347/2.174/1.35 at DIM 50/100/1000 in 58/60/147 s on 4 CPU cores (Table 2)",
+  "Dynamic KL(T*||S)=0.0093 vs DSBM 0.2950, SF2M 0.6422 (Table 5)",
+  "FID 0.852 (ID) vs DSBM 0.859, SF2M-Sink 0.8613 on FFHQ man->woman in ALAE latent (Table 8)",
+  "Direct plan sampling 0.00058 s vs Euler-Maruyama 1000 steps 12.61 s (Table 6)"
+ ],
+ "relations": [
+  {
+   "report_id": "Light_Schr_dinger_Bridge_LightSB_Korotin_et_al",
+   "type": "extends"
+  },
+  {
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "type": "competes"
+  },
+  {
+   "report_id": "Simulation_free_Score_Flow_Matching_SF_M_Tong_et_a",
+   "type": "competes"
+  },
+  {
+   "report_id": "2510.22560",
+   "type": "uses"
+  },
+  {
+   "report_id": "2409.09376",
+   "type": "competes"
+  },
+  {
+   "report_id": "Adversarial_SB_Matching_ASBM_Gushchin_et_al",
+   "type": "extends"
+  }
+ ],
+ "read_full_text": true
+}

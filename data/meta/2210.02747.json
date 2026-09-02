@@ -1,0 +1,43 @@
+{
+ "report_id": "2210.02747",
+ "arxiv_id": "2210.02747",
+ "title": "Flow Matching for Generative Modeling",
+ "tldr_zh": "CFM 目标 simulation-free 训练 CNF，Cond-OT 直线路径在 ImageNet 上似然/FID/NFE 全面优于 diffusion 路径",
+ "tldr_en": "Conditional Flow Matching trains CNFs simulation-free; conditional-OT straight paths beat diffusion paths on ImageNet in NLL, FID and NFE.",
+ "tags": [
+  "flow-matching",
+  "foundations",
+  "conditional-ot-path",
+  "cnf",
+  "theory",
+  "image-generation"
+ ],
+ "code_url": "",
+ "key_numbers": [
+  "CIFAR-10 FM w/ OT: NLL 2.99 BPD, FID 6.35, NFE 142 vs DDPM 3.12/7.48/274 (Table 1)",
+  "ImageNet-32 FM w/ OT: NLL 3.53, FID 5.02, NFE 122 vs FM w/ Diffusion 3.54/6.37/193 (Table 1)",
+  "ImageNet-64 FM w/ OT: NLL 3.31, FID 14.45, NFE 138 vs ScoreFlow 3.36/24.95/601 (Table 1)",
+  "ImageNet-128 unconditional FM w/ OT: NLL 2.90, FID 20.9 vs PGMGAN 21.7 (Table 1 right)",
+  "FM-OT needs roughly 60% of the NFE of diffusion models to reach the same numerical error, ImageNet-32 (Sec. 6.2, Fig. 7)",
+  "ImageNet 64->256 super-resolution: FM w/ OT FID 3.4, IS 200.8, PSNR 24.7, SSIM 0.747 vs SR3 5.2/180.1/26.4/0.762 (Table 2)"
+ ],
+ "relations": [
+  {
+   "report_id": "2209.15571",
+   "type": "competes"
+  },
+  {
+   "report_id": "2303.08797",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2410.20587",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2412.06264",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

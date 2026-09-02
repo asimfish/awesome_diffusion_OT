@@ -1,0 +1,436 @@
+{
+ "topic": "t23",
+ "topic_name": "语音与音频中的流匹配与 Schrödinger 桥",
+ "section": "D",
+ "section_name": "Modalities",
+ "kb_note": "source/kb/t23_speech_audio.md",
+ "papers": [
+  {
+   "key": "t23__f5_tts_a_fairytaler_that_fakes_fluent_and_faithful_speech_wi",
+   "report_id": "F5_TTS_A_Fairytaler_that_Fakes_Fluent_and_Faithful",
+   "title": "F5-TTS: A Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching",
+   "authors": "Chen et al.",
+   "year": 2025,
+   "venue": "ACL",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "E2 配方的可训练化：ConvNeXt 精炼文本表示 + 推理期 Sway Sampling（免重训的流步重分配，可移植到任意 FM 模型），RTF 0.15，10 万小时全开源",
+   "links": {
+    "ACL": "https://aclanthology.org/2025.acl-long.313/"
+   },
+   "pdf": "papers/t23_2025_Chen_F5_TTS.pdf",
+   "text": "data/text/t23_2025_Chen_F5_TTS.txt",
+   "text_chars": 67046,
+   "pages": 17
+  },
+  {
+   "key": "t23__matcha_tts_a_fast_tts_architecture_with_conditional_flow_mat",
+   "report_id": "2309.03199",
+   "title": "Matcha-TTS: A fast TTS architecture with conditional flow matching",
+   "authors": [
+    "Shivam Mehta",
+    "Ruibo Tu",
+    "Jonas Beskow",
+    "Éva Székely",
+    "Gustav Eje Henter"
+   ],
+   "year": 2024,
+   "venue": "ICASSP",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2309.03199",
+   "published": "2023-09-06",
+   "abstract": "We introduce Matcha-TTS, a new encoder-decoder architecture for speedy TTS acoustic modelling, trained using optimal-transport conditional flow matching (OT-CFM). This yields an ODE-based decoder capable of high output quality in fewer synthesis steps than models trained using score matching. Careful design choices additionally ensure each synthesis step is fast to run. The method is probabilistic, non-autoregressive, and learns to speak from scratch without external alignments. Compared to strong pre-trained baseline models, the Matcha-TTS system has the smallest memory footprint, rivals the speed of the fastest models on long utterances, and attains the highest mean opinion score in a listening test. Please see https://shivammehta25.github.io/Matcha-TTS/ for audio examples, code, and pre-trained models.",
+   "contribution_zh": "轻量开源标杆：OT-CFM 训练的 ODE 解码器 + 联合学发音与对齐（无外部对齐器），2-10 步合成、最小内存占用",
+   "links": {
+    "IEEE": "https://doi.org/10.1109/ICASSP48485.2024.10448291"
+   },
+   "pdf": "papers/2309.03199.pdf",
+   "text": "data/text/2309.03199.txt",
+   "text_chars": 31453,
+   "pages": 5
+  },
+  {
+   "key": "t23__schro_dinger_bridge_for_generative_speech_enhancement",
+   "report_id": "Schr_dinger_Bridge_for_Generative_Speech_Enhanceme",
+   "title": "Schrödinger Bridge for Generative Speech Enhancement",
+   "authors": "Jukić et al., NVIDIA",
+   "year": 2024,
+   "venue": "Interspeech",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "SB 增强开山：clean-noisy 配对 SB + 数据预测损失 + 时域辅助损失，去噪/去混响相对 WER 降 20%/6%，已入 NeMo",
+   "links": {
+    "ISCA": "https://www.isca-archive.org/interspeech_2024/jukic24_interspeech.html"
+   },
+   "pdf": "papers/t23_2024_Jukic_SB_Speech_Enhancement.pdf",
+   "text": "data/text/t23_2024_Jukic_SB_Speech_Enhancement.txt",
+   "text_chars": 30665,
+   "pages": 5
+  },
+  {
+   "key": "t23__voicebox_text_guided_multilingual_universal_speech_generatio",
+   "report_id": "2306.15687",
+   "title": "Voicebox: Text-Guided Multilingual Universal Speech Generation at Scale",
+   "authors": [
+    "Matthew Le",
+    "Apoorv Vyas",
+    "Bowen Shi",
+    "Brian Karrer",
+    "Leda Sari",
+    "Rashel Moritz",
+    "Mary Williamson",
+    "Vimal Manohar",
+    "Yossi Adi",
+    "Jay Mahadeokar",
+    "Wei-Ning Hsu"
+   ],
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2306.15687",
+   "published": "2023-06-23",
+   "abstract": "Large-scale generative models such as GPT and DALL-E have revolutionized the research community. These models not only generate high fidelity outputs, but are also generalists which can solve tasks not explicitly taught. In contrast, speech generative models are still primitive in terms of scale and task generalization. In this paper, we present Voicebox, the most versatile text-guided generative model for speech at scale. Voicebox is a non-autoregressive flow-matching model trained to infill speech, given audio context and text, trained on over 50K hours of speech that are not filtered or enhanced. Similar to GPT, Voicebox can perform many different tasks through in-context learning, but is more flexible as it can also condition on future context. Voicebox can be used for mono or cross-lingual zero-shot text-to-speech synthesis, noise removal, content editing, style conversion, and diverse sample generation. In particular, Voicebox outperforms the state-of-the-art zero-shot TTS model VALL-E on both intelligibility (5.9% vs 1.9% word error rates) and audio similarity (0.580 vs 0.681) while being up to 20 times faster. Audio samples can be found in \\url{https://voicebox.metademolab.com}.",
+   "contribution_zh": "FM 进语音的奠基：5 万小时文本引导语音 infilling 预训练，零样本 TTS/编辑/去噪一模型通吃，比 VALL-E 准且快 20 倍",
+   "links": {
+    "NeurIPS": "https://papers.neurips.cc/paper_files/paper/2023/hash/2d8911db9ecedf866015091b28946e15-Abstract-Conference.html"
+   },
+   "pdf": "papers/2306.15687.pdf",
+   "text": "data/text/2306.15687.txt",
+   "text_chars": 90000,
+   "pages": 36
+  },
+  {
+   "key": "t23__2312.03491",
+   "report_id": "2312.03491",
+   "title": "Schrodinger Bridges Beat Diffusion Models on Text-to-Speech Synthesis",
+   "authors": [
+    "Zehua Chen",
+    "Guande He",
+    "Kaiwen Zheng",
+    "Xu Tan",
+    "Jun Zhu"
+   ],
+   "year": 2023,
+   "venue": "arXiv 2312.03491（ICLR 2024 撤稿）",
+   "evidence": "R",
+   "star": true,
+   "arxiv_id": "2312.03491",
+   "published": "2023-12-06",
+   "abstract": "In text-to-speech (TTS) synthesis, diffusion models have achieved promising generation quality. However, because of the pre-defined data-to-noise diffusion process, their prior distribution is restricted to a noisy representation, which provides little information of the generation target. In this work, we present a novel TTS system, Bridge-TTS, making the first attempt to substitute the noisy Gaussian prior in established diffusion-based TTS methods with a clean and deterministic one, which provides strong structural information of the target. Specifically, we leverage the latent representation obtained from text input as our prior, and build a fully tractable Schrodinger bridge between it and the ground-truth mel-spectrogram, leading to a data-to-data process. Moreover, the tractability and flexibility of our formulation allow us to empirically study the design spaces such as noise schedules, as well as to develop stochastic and deterministic samplers. Experimental results on the LJ-Speech dataset illustrate the effectiveness of our method in terms of both synthesis quality and sampling efficiency, significantly outperforming our diffusion counterpart Grad-TTS in 50-step/1000-step synthesis and strong fast TTS models in few-step scenarios. Project page: https://bridge-tts.github.io/",
+   "contribution_zh": "用文本潜变量替换高斯先验：配对数据间完全可解 SB + bridge SDE/ODE 采样器与指数积分器，2-4 步即超 Grad-TTS 与快速 TTS 基线",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2312.03491"
+   },
+   "pdf": "papers/2312.03491.pdf",
+   "text": "data/text/2312.03491.txt",
+   "text_chars": 78779,
+   "pages": 30
+  },
+  {
+   "key": "t23__2507.11925",
+   "report_id": "2507.11925",
+   "title": "Schrödinger Bridge Consistency Trajectory Models for Speech Enhancement",
+   "authors": [
+    "Shuichiro Nishigori",
+    "Koichi Saito",
+    "Naoki Murata",
+    "Masato Hirano",
+    "Shusuke Takahashi",
+    "Yuki Mitsufuji"
+   ],
+   "year": 2025,
+   "venue": "arXiv 2507.11925（GitHub 称 WASPAA 2025 接收，未见官方页）",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2507.11925",
+   "published": "2025-07-16",
+   "abstract": "Speech enhancement (SE) utilizing diffusion models is a promising technology that improves speech quality in noisy speech data. Furthermore, the Schrödinger bridge (SB) has recently been used in diffusion-based SE to improve speech quality by resolving a mismatch between the endpoint of the forward process and the starting point of the reverse process. However, the SB still exhibits slow inference owing to the necessity of a large number of function evaluations (NFE) for inference to obtain high-quality results. While Consistency Models (CMs) address this issue by employing consistency training that uses distillation from pretrained models in the field of image generation, it does not improve generation quality when the number of steps increases. As a solution to this problem, Consistency Trajectory Models (CTMs) not only accelerate inference speed but also maintain a favorable trade-off between quality and speed. Furthermore, SoundCTM demonstrates the applicability of CTM techniques to the field of sound generation. In this paper, we present Schrödinger bridge Consistency Trajectory Models (SBCTM) by applying the CTM's technique to the Schrödinger bridge for SE. Additionally, we introduce a novel auxiliary loss, including a perceptual loss, into the original CTM's training framework. As a result, SBCTM achieves an approximately 16x improvement in the real-time factor (RTF) compared to the conventional Schrödinger bridge for SE. Furthermore, the favorable trade-off between quality and speed in SBCTM allows for time-efficient inference by limiting multi-step refinement to cases where 1-step inference is insufficient. Our code, pretrained models, and audio samples are available at https://github.com/sony/sbctm/.",
+   "contribution_zh": "把一致性轨迹模型（CTM）嫁接到 SB 增强：一步推理 RTF 提升约 16×，一步不够再多步细化",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2507.11925"
+   },
+   "pdf": "papers/2507.11925.pdf",
+   "text": "data/text/2507.11925.txt",
+   "text_chars": 30752,
+   "pages": 6
+  },
+  {
+   "key": "t23__bridge_sr_schro_dinger_bridge_for_efficient_sr",
+   "report_id": "Bridge_SR_Schr_dinger_Bridge_for_Efficient_SR",
+   "title": "Bridge-SR: Schrödinger Bridge for Efficient SR",
+   "authors": "Li et al., 清华",
+   "year": 2025,
+   "venue": "ICASSP",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "波形域 any-to-48kHz 语音超分：低分辨率波形作先验的可解 SB，1.7M 参数骨干 4 步胜 8 步条件扩散",
+   "links": {
+    "IEEE": "https://doi.org/10.1109/ICASSP49660.2025.10890104"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t23__2501.11311",
+   "report_id": "2501.11311",
+   "title": "A2SB: Audio-to-Audio Schrodinger Bridges",
+   "authors": [
+    "Zhifeng Kong",
+    "Kevin J Shih",
+    "Weili Nie",
+    "Arash Vahdat",
+    "Sang-gil Lee",
+    "Joao Felipe Santos",
+    "Ante Jukic",
+    "Rafael Valle",
+    "Bryan Catanzaro"
+   ],
+   "year": 2025,
+   "venue": "arXiv 2501.11311",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2501.11311",
+   "published": "2025-01-20",
+   "abstract": "Real-world audio is often degraded by numerous factors. This work presents an audio restoration model tailored for high-res music at 44.1kHz. Our model, Audio-to-Audio Schrödinger Bridges (A2SB), is capable of both bandwidth extension (predicting high-frequency components) and inpainting (re-generating missing segments). Critically, A2SB is end-to-end requiring no vocoder to predict waveform outputs, able to restore hour-long audio inputs, and trained on permissively licensed music data. A2SB is capable of achieving state-of-the-art band-width extension and inpainting quality on several out-of-distribution music test sets.",
+   "contribution_zh": "44.1kHz 高保真音乐修复：单一 SB 模型统一带宽扩展+inpainting，幅度/相位分解表示免声码器端到端，MultiDiffusion 拼接修复小时级长音频",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2501.11311"
+   },
+   "pdf": "papers/2501.11311.pdf",
+   "text": "data/text/2501.11311.txt",
+   "text_chars": 79897,
+   "pages": 27
+  },
+  {
+   "key": "t23__flowse_efficient_and_high_quality_speech_enhancement_via_flo",
+   "report_id": "2505.19476",
+   "title": "FlowSE: Efficient and High-Quality Speech Enhancement via Flow Matching",
+   "authors": [
+    "Ziqian Wang",
+    "Zikai Liu",
+    "Xinfa Zhu",
+    "Yike Zhu",
+    "Mingshuai Liu",
+    "Jun Chen",
+    "Longshuai Xiao",
+    "Chao Weng",
+    "Lei Xie"
+   ],
+   "year": 2025,
+   "venue": "Interspeech",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2505.19476",
+   "published": "2025-05-26",
+   "abstract": "Generative models have excelled in audio tasks using approaches such as language models, diffusion, and flow matching. However, existing generative approaches for speech enhancement (SE) face notable challenges: language model-based methods suffer from quantization loss, leading to compromised speaker similarity and intelligibility, while diffusion models require complex training and high inference latency. To address these challenges, we propose FlowSE, a flow-matching-based model for SE. Flow matching learns a continuous transformation between noisy and clean speech distributions in a single pass, significantly reducing inference latency while maintaining high-quality reconstruction. Specifically, FlowSE trains on noisy mel spectrograms and optional character sequences, optimizing a conditional flow matching loss with ground-truth mel spectrograms as supervision. It implicitly learns speech's temporal-spectral structure and text-speech alignment. During inference, FlowSE can operate with or without textual information, achieving impressive results in both scenarios, with further improvements when transcripts are available. Extensive experiments demonstrate that FlowSE significantly outperforms state-of-the-art generative methods, establishing a new paradigm for generative-based SE and demonstrating the potential of flow matching to advance the field. Our code, pre-trained checkpoints, and audio samples are available.",
+   "contribution_zh": "FM 语音增强：noisy mel（+可选文本）条件下单程连续变换，延迟远低于扩散 SE 且质量更高",
+   "links": {
+    "ISCA": "https://www.isca-archive.org/interspeech_2025/wang25s_interspeech.html"
+   },
+   "pdf": "papers/2505.19476.pdf",
+   "text": "data/text/2505.19476.txt",
+   "text_chars": 30139,
+   "pages": 5
+  },
+  {
+   "key": "t23__stablevc_style_controllable_zero_shot_voice_conversion_with_",
+   "report_id": "2412.04724",
+   "title": "StableVC: Style Controllable Zero-Shot Voice Conversion with Conditional Flow Matching",
+   "authors": [
+    "Jixun Yao",
+    "Yuguang Yang",
+    "Yu Pan",
+    "Ziqian Ning",
+    "Jiaohao Ye",
+    "Hongbin Zhou",
+    "Lei Xie"
+   ],
+   "year": 2025,
+   "venue": "AAAI",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2412.04724",
+   "published": "2024-12-06",
+   "abstract": "Zero-shot voice conversion (VC) aims to transfer the timbre from the source speaker to an arbitrary unseen speaker while preserving the original linguistic content. Despite recent advancements in zero-shot VC using language model-based or diffusion-based approaches, several challenges remain: 1) current approaches primarily focus on adapting timbre from unseen speakers and are unable to transfer style and timbre to different unseen speakers independently; 2) these approaches often suffer from slower inference speeds due to the autoregressive modeling methods or the need for numerous sampling steps; 3) the quality and similarity of the converted samples are still not fully satisfactory. To address these challenges, we propose a style controllable zero-shot VC approach named StableVC, which aims to transfer timbre and style from source speech to different unseen target speakers. Specifically, we decompose speech into linguistic content, timbre, and style, and then employ a conditional flow matching module to reconstruct the high-quality mel-spectrogram based on these decomposed features. To effectively capture timbre and style in a zero-shot manner, we introduce a novel dual attention mechanism with an adaptive gate, rather than using conventional feature concatenation. With this non-autoregressive design, StableVC can efficiently capture the intricate timbre and style from different unseen speakers and generate high-quality speech significantly faster than real-time. Experiments demonstrate that our proposed StableVC outperforms state-of-the-art baseline systems in zero-shot VC and achieves flexible control over timbre and style from different unseen speakers. Moreover, StableVC offers approximately 25x and 1.65x faster sampling compared to autoregressive and diffusion-based baselines.",
+   "contribution_zh": "内容/音色/风格三解耦 + 双注意力自适应门控 CFM 重建：音色与风格可独立迁移到不同 unseen 说话人，比扩散 VC 快 1.65×",
+   "links": {
+    "AAAI": "https://ojs.aaai.org/index.php/AAAI/article/view/34758"
+   },
+   "pdf": "papers/2412.04724.pdf",
+   "text": "data/text/2412.04724.txt",
+   "text_chars": 46118,
+   "pages": 9
+  },
+  {
+   "key": "t23__e2_tts_embarrassingly_easy_fully_non_autoregressive_zero_sho",
+   "report_id": "2406.18009",
+   "title": "E2 TTS: Embarrassingly Easy Fully Non-Autoregressive Zero-Shot TTS",
+   "authors": [
+    "Sefik Emre Eskimez",
+    "Xiaofei Wang",
+    "Manthan Thakker",
+    "Canrun Li",
+    "Chung-Hsien Tsai",
+    "Zhen Xiao",
+    "Hemin Yang",
+    "Zirun Zhu",
+    "Min Tang",
+    "Xu Tan",
+    "Yanqing Liu",
+    "Sheng Zhao",
+    "Naoyuki Kanda"
+   ],
+   "year": 2024,
+   "venue": "IEEE SLT",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2406.18009",
+   "published": "2024-06-26",
+   "abstract": "This paper introduces Embarrassingly Easy Text-to-Speech (E2 TTS), a fully non-autoregressive zero-shot text-to-speech system that offers human-level naturalness and state-of-the-art speaker similarity and intelligibility. In the E2 TTS framework, the text input is converted into a character sequence with filler tokens. The flow-matching-based mel spectrogram generator is then trained based on the audio infilling task. Unlike many previous works, it does not require additional components (e.g., duration model, grapheme-to-phoneme) or complex techniques (e.g., monotonic alignment search). Despite its simplicity, E2 TTS achieves state-of-the-art zero-shot TTS capabilities that are comparable to or surpass previous works, including Voicebox and NaturalSpeech 3. The simplicity of E2 TTS also allows for flexibility in the input representation. We propose several variants of E2 TTS to improve usability during inference. See https://aka.ms/e2tts/ for demo samples.",
+   "contribution_zh": "极简范式：字符序列补 filler token 到 mel 长度 + FM infilling，砍掉时长模型/G2P/单调对齐，仍达人类级自然度",
+   "links": {
+    "IEEE": "https://doi.org/10.1109/SLT61566.2024.10832320"
+   },
+   "pdf": "papers/2406.18009.pdf",
+   "text": "data/text/2406.18009.txt",
+   "text_chars": 40425,
+   "pages": 8
+  },
+  {
+   "key": "t23__speechflow_generative_pre_training_for_speech_with_flow_matc",
+   "report_id": "2310.16338",
+   "title": "Generative Pre-training for Speech with Flow Matching",
+   "authors": [
+    "Alexander H. Liu",
+    "Matt Le",
+    "Apoorv Vyas",
+    "Bowen Shi",
+    "Andros Tjandra",
+    "Wei-Ning Hsu"
+   ],
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2310.16338",
+   "published": "2023-10-25",
+   "abstract": "Generative models have gained more and more attention in recent years for their remarkable success in tasks that required estimating and sampling data distribution to generate high-fidelity synthetic data. In speech, text-to-speech synthesis and neural vocoder are good examples where generative models have shined. While generative models have been applied to different applications in speech, there exists no general-purpose generative model that models speech directly. In this work, we take a step toward this direction by showing a single pre-trained generative model can be adapted to different downstream tasks with strong performance. Specifically, we pre-trained a generative model, named SpeechFlow, on 60k hours of untranscribed speech with Flow Matching and masked conditions. Experiment results show the pre-trained generative model can be fine-tuned with task-specific data to match or surpass existing expert models on speech enhancement, separation, and synthesis. Our work suggested a foundational model for generation tasks in speech can be built with generative pre-training.",
+   "contribution_zh": "FM + masked 条件在 6 万小时无标注语音上预训练的「语音生成基础模型」，微调即匹配增强/分离/合成专家模型",
+   "links": {
+    "ICLR": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/27c546ab1e4f1d7d638e6a8dfbad9a07-Abstract-Conference.html"
+   },
+   "pdf": "papers/2310.16338.pdf",
+   "text": "data/text/2310.16338.txt",
+   "text_chars": 70769,
+   "pages": 20
+  },
+  {
+   "key": "t23__2412.10117",
+   "report_id": "2412.10117",
+   "title": "CosyVoice 2: Scalable Streaming Speech Synthesis with Large Language Models",
+   "authors": [
+    "Zhihao Du",
+    "Yuxuan Wang",
+    "Qian Chen",
+    "Xian Shi",
+    "Xiang Lv",
+    "Tianyu Zhao",
+    "Zhifu Gao",
+    "Yexin Yang",
+    "Changfeng Gao",
+    "Hui Wang",
+    "Fan Yu",
+    "Huadai Liu",
+    "Zhengyan Sheng",
+    "Yue Gu",
+    "Chong Deng",
+    "Wen Wang",
+    "Shiliang Zhang",
+    "Zhijie Yan",
+    "Jingren Zhou"
+   ],
+   "year": 2024,
+   "venue": "arXiv 2412.10117",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2412.10117",
+   "published": "2024-12-13",
+   "abstract": "In our previous work, we introduced CosyVoice, a multilingual speech synthesis model based on supervised discrete speech tokens. By employing progressive semantic decoding with two popular generative models, language models (LMs) and Flow Matching, CosyVoice demonstrated high prosody naturalness, content consistency, and speaker similarity in speech in-context learning. Recently, significant progress has been made in multi-modal large language models (LLMs), where the response latency and real-time factor of speech synthesis play a crucial role in the interactive experience. Therefore, in this report, we present an improved streaming speech synthesis model, CosyVoice 2, which incorporates comprehensive and systematic optimizations. Specifically, we introduce finite-scalar quantization to improve the codebook utilization of speech tokens. For the text-speech LM, we streamline the model architecture to allow direct use of a pre-trained LLM as the backbone. In addition, we develop a chunk-aware causal flow matching model to support various synthesis scenarios, enabling both streaming and non-streaming synthesis within a single model. By training on a large-scale multilingual dataset, CosyVoice 2 achieves human-parity naturalness, minimal response latency, and virtually lossless synthesis quality in the streaming mode. We invite readers to listen to the demos at https://funaudiollm.github.io/cosyvoice2.",
+   "contribution_zh": "工业界标准栈：LLM 出语义 token、chunk-aware 因果 FM 出 mel，单模型统一流式/非流式，流式质量近乎无损",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2412.10117"
+   },
+   "pdf": "papers/2412.10117.pdf",
+   "text": "data/text/2412.10117.txt",
+   "text_chars": 63567,
+   "pages": 19
+  },
+  {
+   "key": "t23__musicflow_cascaded_flow_matching_for_text_guided_music_gener",
+   "report_id": "2410.20478",
+   "title": "MusicFlow: Cascaded Flow Matching for Text Guided Music Generation",
+   "authors": [
+    "K R Prajwal",
+    "Bowen Shi",
+    "Matthew Lee",
+    "Apoorv Vyas",
+    "Andros Tjandra",
+    "Mahi Luthra",
+    "Baishan Guo",
+    "Huiyu Wang",
+    "Triantafyllos Afouras",
+    "David Kant",
+    "Wei-Ning Hsu"
+   ],
+   "year": 2024,
+   "venue": "ICML (PMLR 235)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2410.20478",
+   "published": "2024-10-27",
+   "abstract": "We introduce MusicFlow, a cascaded text-to-music generation model based on flow matching. Based on self-supervised representations to bridge between text descriptions and music audios, we construct two flow matching networks to model the conditional distribution of semantic and acoustic features. Additionally, we leverage masked prediction as the training objective, enabling the model to generalize to other tasks such as music infilling and continuation in a zero-shot manner. Experiments on MusicCaps reveal that the music generated by MusicFlow exhibits superior quality and text coherence despite being over $2\\sim5$ times smaller and requiring $5$ times fewer iterative steps. Simultaneously, the model can perform other music generation tasks and achieves competitive performance in music infilling and continuation. Our code and model will be publicly available.",
+   "contribution_zh": "级联双 FM（文本→语义→声学）+ masked 预测目标，参数小 2-5 倍、步数少 5 倍，零样本 infilling/续写",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/prajwal24a.html"
+   },
+   "pdf": "papers/2410.20478.pdf",
+   "text": "data/text/2410.20478.txt",
+   "text_chars": 49840,
+   "pages": 12
+  },
+  {
+   "key": "t23__p_flow_a_fast_and_data_efficient_zero_shot_tts_through_speec",
+   "report_id": "P_Flow_A_Fast_and_Data_Efficient_Zero_Shot_TTS_thr",
+   "title": "P-Flow: A Fast and Data-Efficient Zero-Shot TTS through Speech Prompting",
+   "authors": "Kim et al., NVIDIA",
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "speech prompt 文本编码器 + FM 解码器：用比 VALL-E 少两个数量级的数据达到同级说话人相似度、采样快 20 倍",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=zNA7u7wtIN"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  }
+ ]
+}

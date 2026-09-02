@@ -1,0 +1,374 @@
+{
+ "topic": "t18",
+ "topic_name": "条件生成与 guidance 的 OT 形式化",
+ "section": "C",
+ "section_name": "Cross-Domain Generation & Translation",
+ "kb_note": "source/kb/t18_conditional_ot_guidance.md",
+ "papers": [
+  {
+   "key": "t18__conditional_wasserstein_distances_with_applications_in_bayes",
+   "report_id": "2403.18705",
+   "title": "Conditional Wasserstein Distances with Applications in Bayesian OT Flow Matching",
+   "authors": [
+    "Jannis Chemseddine",
+    "Paul Hagemann",
+    "Gabriele Steidl",
+    "Christian Wald"
+   ],
+   "year": 2025,
+   "venue": "JMLR 26(141)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2403.18705",
+   "published": "2024-03-27",
+   "abstract": "In inverse problems, many conditional generative models approximate the posterior measure by minimizing a distance between the joint measure and its learned approximation. While this approach also controls the distance between the posterior measures in the case of the Kullback--Leibler divergence, this is in general not hold true for the Wasserstein distance. In this paper, we introduce a conditional Wasserstein distance via a set of restricted couplings that equals the expected Wasserstein distance of the posteriors. Interestingly, the dual formulation of the conditional Wasserstein-1 flow resembles losses in the conditional Wasserstein GAN literature in a quite natural way. We derive theoretical properties of the conditional Wasserstein distance, characterize the corresponding geodesics and velocity fields as well as the flow ODEs. Subsequently, we propose to approximate the velocity fields by relaxing the conditional Wasserstein distance. Based on this, we propose an extension of OT Flow Matching for solving Bayesian inverse problems and demonstrate its numerical advantages on an inverse problem and class-conditional image generation.",
+   "contribution_zh": "用受限耦合定义条件 Wasserstein 距离 = posterior W2 的期望；刻画测地线/速度场（Y 分量为零）并给出 Bayesian OT-FM",
+   "links": {
+    "JMLR": "https://www.jmlr.org/papers/v26/24-0586.html"
+   },
+   "pdf": "papers/2403.18705.pdf",
+   "text": "data/text/2403.18705.txt",
+   "text_chars": 90000,
+   "pages": 47
+  },
+  {
+   "key": "t18__the_curse_of_conditions_analyzing_and_improving_ot_for_condi",
+   "report_id": "2503.10636",
+   "title": "The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation",
+   "authors": [
+    "Ho Kei Cheng",
+    "Alexander Schwing"
+   ],
+   "year": 2025,
+   "venue": "ICCV",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2503.10636",
+   "published": "2025-03-13",
+   "abstract": "Minibatch optimal transport coupling straightens paths in unconditional flow matching. This leads to computationally less demanding inference as fewer integration steps and less complex numerical solvers can be employed when numerically solving an ordinary differential equation at test time. However, in the conditional setting, minibatch optimal transport falls short. This is because the default optimal transport mapping disregards conditions, resulting in a conditionally skewed prior distribution during training. In contrast, at test time, we have no access to the skewed prior, and instead sample from the full, unbiased prior distribution. This gap between training and testing leads to a subpar performance. To bridge this gap, we propose conditional optimal transport C^2OT that adds a conditional weighting term in the cost matrix when computing the optimal transport assignment. Experiments demonstrate that this simple fix works with both discrete and continuous conditions in 8gaussians-to-moons, CIFAR-10, ImageNet-32x32, and ImageNet-256x256. Our method performs better overall compared to the existing baselines across different function evaluation budgets. Code is available at https://hkchengrex.github.io/C2OT",
+   "contribution_zh": "揭示无条件 minibatch OT 在条件 FM 中造成\"条件偏斜先验\"的 train-test gap，在 OT 代价矩阵加条件加权项修复",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/ICCV2025/html/Cheng_The_Curse_of_Conditions_Analyzing_and_Improving_Optimal_Transport_for_ICCV_2025_paper.html"
+   },
+   "pdf": "papers/2503.10636.pdf",
+   "text": "data/text/2503.10636.txt",
+   "text_chars": 65264,
+   "pages": 22
+  },
+  {
+   "key": "t18__adjoint_matching_fine_tuning_flow_and_diffusion_generative_m",
+   "report_id": "2409.08861",
+   "title": "Adjoint Matching: Fine-tuning Flow and Diffusion Generative Models with Memoryless Stochastic Optimal Control",
+   "authors": [
+    "Carles Domingo-Enrich",
+    "Michal Drozdzal",
+    "Brian Karrer",
+    "Ricky T. Q. Chen"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2409.08861",
+   "published": "2024-09-13",
+   "abstract": "Dynamical generative models that produce samples through an iterative process, such as Flow Matching and denoising diffusion models, have seen widespread use, but there have not been many theoretically-sound methods for improving these models with reward fine-tuning. In this work, we cast reward fine-tuning as stochastic optimal control (SOC). Critically, we prove that a very specific memoryless noise schedule must be enforced during fine-tuning, in order to account for the dependency between the noise variable and the generated samples. We also propose a new algorithm named Adjoint Matching which outperforms existing SOC algorithms, by casting SOC problems as a regression problem. We find that our approach significantly improves over existing methods for reward fine-tuning, achieving better consistency, realism, and generalization to unseen human preference reward models, while retaining sample diversity.",
+   "contribution_zh": "把 reward fine-tune 严格写成 SOC；证明必须用 memoryless 噪声调度才收敛到 KL-tilted 分布；SOC 化为回归（adjoint matching）",
+   "links": {
+    "proceedings": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/852f50969a9e523ec41d26f2f68bd456-Abstract-Conference.html"
+   },
+   "pdf": "papers/2409.08861.pdf",
+   "text": "data/text/2409.08861.txt",
+   "text_chars": 90000,
+   "pages": 55
+  },
+  {
+   "key": "t18__feynman_kac_correctors_in_diffusion_annealing_guidance_and_p",
+   "report_id": "2503.02819",
+   "title": "Feynman-Kac Correctors in Diffusion: Annealing, Guidance, and Product of Experts",
+   "authors": [
+    "Marta Skreta",
+    "Tara Akhound-Sadegh",
+    "Viktor Ohanesian",
+    "Roberto Bondesan",
+    "Alán Aspuru-Guzik",
+    "Arnaud Doucet",
+    "Rob Brekelmans",
+    "Alexander Tong",
+    "Kirill Neklyudov"
+   ],
+   "year": 2025,
+   "venue": "ICML (PMLR 267, spotlight)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2503.02819",
+   "published": "2025-03-04",
+   "abstract": "While score-based generative models are the model of choice across diverse domains, there are limited tools available for controlling inference-time behavior in a principled manner, e.g. for composing multiple pretrained models. Existing classifier-free guidance methods use a simple heuristic to mix conditional and unconditional scores to approximately sample from conditional distributions. However, such methods do not approximate the intermediate distributions, necessitating additional `corrector' steps. In this work, we provide an efficient and principled method for sampling from a sequence of annealed, geometric-averaged, or product distributions derived from pretrained score-based models. We derive a weighted simulation scheme which we call Feynman-Kac Correctors (FKCs) based on the celebrated Feynman-Kac formula by carefully accounting for terms in the appropriate partial differential equations (PDEs). To simulate these PDEs, we propose Sequential Monte Carlo (SMC) resampling algorithms that leverage inference-time scaling to improve sampling quality. We empirically demonstrate the utility of our methods by proposing amortized sampling via inference-time temperature annealing, improving multi-objective molecule generation using pretrained models, and improving classifier-free guidance for text-to-image generation. Our code is available at https://github.com/martaskrt/fkc-diffusion.",
+   "contribution_zh": "用 Feynman-Kac 公式+SMC 加权模拟，从退火/几何平均/乘积分布精确采样，修正 CFG 的中间分布失配",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v267/skreta25a.html"
+   },
+   "pdf": "papers/2503.02819.pdf",
+   "text": "data/text/2503.02819.txt",
+   "text_chars": 90000,
+   "pages": 44
+  },
+  {
+   "key": "t18__dynamic_conditional_optimal_transport_through_simulation_fre",
+   "report_id": "2404.04240",
+   "title": "Dynamic Conditional Optimal Transport through Simulation-Free Flows",
+   "authors": [
+    "Gavin Kerrigan",
+    "Giosue Migliorini",
+    "Padhraic Smyth"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2404.04240",
+   "published": "2024-04-05",
+   "abstract": "We study the geometry of conditional optimal transport (COT) and prove a dynamical formulation which generalizes the Benamou-Brenier Theorem. Equipped with these tools, we propose a simulation-free flow-based method for conditional generative modeling. Our method couples an arbitrary source distribution to a specified target distribution through a triangular COT plan, and a conditional generative model is obtained by approximating the geodesic path of measures induced by this COT plan. Our theory and methods are applicable in infinite-dimensional settings, making them well suited for a wide class of Bayesian inverse problems. Empirically, we demonstrate that our method is competitive on several challenging conditional generation tasks, including an infinite-dimensional inverse problem.",
+   "contribution_zh": "证明条件 OT 的动态形式（条件版 Benamou-Brenier），用三角 COT 耦合做 simulation-free 条件生成，适用无穷维 Bayesian 逆问题",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/aa1d8cf866c4a684ef2e066dd200f8e4-Abstract-Conference.html"
+   },
+   "pdf": "papers/2404.04240.pdf",
+   "text": "data/text/2404.04240.txt",
+   "text_chars": 89144,
+   "pages": 34
+  },
+  {
+   "key": "t18__hyperparameter_trajectory_modeling_via_conditional_lagrangia",
+   "report_id": "Hyperparameter_Trajectory_Modeling_via_Conditional",
+   "title": "Hyperparameter Trajectory Modeling via Conditional Lagrangian Optimal Transport",
+   "authors": "",
+   "year": 2026,
+   "venue": "ICLR (Oral)",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "把条件 Lagrangian OT 用于建模训练轨迹，是条件 OT 走向新应用域的前沿样本",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=P5B97gZwRb"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t18__conditional_optimal_transport_on_function_spaces",
+   "report_id": "2311.05672",
+   "title": "Conditional Optimal Transport on Function Spaces",
+   "authors": [
+    "Bamdad Hosseini",
+    "Alexander W. Hsu",
+    "Amirhossein Taghvaei"
+   ],
+   "year": 2025,
+   "venue": "SIAM/ASA JUQ 13(1)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2311.05672",
+   "published": "2023-11-09",
+   "abstract": "We present a systematic study of conditional triangular transport maps in function spaces from the perspective of optimal transportation and with a view towards amortized Bayesian inference. More specifically, we develop a theory of constrained optimal transport problems that describe block-triangular Monge maps that characterize conditional measures along with their Kantorovich relaxations. This generalizes the theory of optimal triangular transport to separable infinite-dimensional function spaces with general cost functions. We further tailor our results to the case of Bayesian inference problems and obtain regularity estimates on the conditioning maps from the prior to the posterior. Finally, we present numerical experiments that demonstrate the computational applicability of our theoretical results for amortized and likelihood-free inference of functional parameters.",
+   "contribution_zh": "无穷维函数空间上 block-triangular Monge 映射与 Kantorovich 松弛的系统理论，给 amortized Bayesian 推断正则性估计",
+   "links": {
+    "SIAM": "https://epubs.siam.org/doi/10.1137/23M1618922"
+   },
+   "pdf": "papers/2311.05672.pdf",
+   "text": "data/text/2311.05672.txt",
+   "text_chars": 90000,
+   "pages": 33
+  },
+  {
+   "key": "t18__online_reward_weighted_fine_tuning_of_flow_matching_with_was",
+   "report_id": "2502.06061",
+   "title": "Online Reward-Weighted Fine-Tuning of Flow Matching with Wasserstein Regularization",
+   "authors": [
+    "Jiajun Fan",
+    "Shuaike Shen",
+    "Chaoran Cheng",
+    "Yuxin Chen",
+    "Chumeng Liang",
+    "Ge Liu"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": "2502.06061",
+   "published": "2025-02-09",
+   "abstract": "Recent advancements in reinforcement learning (RL) have achieved great success in fine-tuning diffusion-based generative models. However, fine-tuning continuous flow-based generative models to align with arbitrary user-defined reward functions remains challenging, particularly due to issues such as policy collapse from overoptimization and the prohibitively high computational cost of likelihoods in continuous-time flows. In this paper, we propose an easy-to-use and theoretically sound RL fine-tuning method, which we term Online Reward-Weighted Conditional Flow Matching with Wasserstein-2 Regularization (ORW-CFM-W2). Our method integrates RL into the flow matching framework to fine-tune generative models with arbitrary reward functions, without relying on gradients of rewards or filtered datasets. By introducing an online reward-weighting mechanism, our approach guides the model to prioritize high-reward regions in the data manifold. To prevent policy collapse and maintain diversity, we incorporate Wasserstein-2 (W2) distance regularization into our method and derive a tractable upper bound for it in flow matching, effectively balancing exploration and exploitation of policy optimization. We provide theoretical analyses to demonstrate the convergence properties and induced data distributions of our method, establishing connections with traditional RL algorithms featuring Kullback-Leibler (KL) regularization and offering a more comprehensive understanding of the underlying mechanisms and learning behavior of our approach. Extensive experiments on tasks including target image generation, image compression, and text-image alignment demonstrate the effectiveness of our method, where our method achieves optimal policy convergence while allowing controllable trade-offs between reward maximization and diversity preservation.",
+   "contribution_zh": "RLHF 式在线 fine-tune FM，用可计算的 W2 上界正则防 policy collapse，给出 reward-多样性可控权衡",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=2IoFFexvuw"
+   },
+   "pdf": "papers/2502.06061.pdf",
+   "text": "data/text/2502.06061.txt",
+   "text_chars": 90000,
+   "pages": 61
+  },
+  {
+   "key": "t18__what_does_guidance_do_a_fine_grained_analysis_in_a_simple_se",
+   "report_id": "2409.13074",
+   "title": "What does guidance do? A fine-grained analysis in a simple setting",
+   "authors": [
+    "Muthu Chidambaram",
+    "Khashayar Gatmiry",
+    "Sitan Chen",
+    "Holden Lee",
+    "Jianfeng Lu"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2409.13074",
+   "published": "2024-09-19",
+   "abstract": "The use of guidance in diffusion models was originally motivated by the premise that the guidance-modified score is that of the data distribution tilted by a conditional likelihood raised to some power. In this work we clarify this misconception by rigorously proving that guidance fails to sample from the intended tilted distribution. Our main result is to give a fine-grained characterization of the dynamics of guidance in two cases, (1) mixtures of compactly supported distributions and (2) mixtures of Gaussians, which reflect salient properties of guidance that manifest on real-world data. In both cases, we prove that as the guidance parameter increases, the guided model samples more heavily from the boundary of the support of the conditional distribution. We also prove that for any nonzero level of score estimation error, sufficiently large guidance will result in sampling away from the support, theoretically justifying the empirical finding that large guidance results in distorted generations. In addition to verifying these results empirically in synthetic settings, we also show how our theoretical insights can offer useful prescriptions for practical deployment.",
+   "contribution_zh": "严格证明 guidance 不采样 tilted 分布；w 增大时样本堆向条件支撑集边界，有 score 误差时甚至逸出支撑集",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=AdS3H8SaPi"
+   },
+   "pdf": "papers/2409.13074.pdf",
+   "text": "data/text/2409.13074.txt",
+   "text_chars": 84269,
+   "pages": 40
+  },
+  {
+   "key": "t18__theoretical_insights_for_diffusion_guidance_a_case_study_for",
+   "report_id": "2403.01639",
+   "title": "Theoretical Insights for Diffusion Guidance: A Case Study for Gaussian Mixture Models",
+   "authors": [
+    "Yuchen Wu",
+    "Minshuo Chen",
+    "Zihao Li",
+    "Mengdi Wang",
+    "Yuting Wei"
+   ],
+   "year": 2024,
+   "venue": "ICML (PMLR 235)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2403.01639",
+   "published": "2024-03-03",
+   "abstract": "Diffusion models benefit from instillation of task-specific information into the score function to steer the sample generation towards desired properties. Such information is coined as guidance. For example, in text-to-image synthesis, text input is encoded as guidance to generate semantically aligned images. Proper guidance inputs are closely tied to the performance of diffusion models. A common observation is that strong guidance promotes a tight alignment to the task-specific information, while reducing the diversity of the generated samples. In this paper, we provide the first theoretical study towards understanding the influence of guidance on diffusion models in the context of Gaussian mixture models. Under mild conditions, we prove that incorporating diffusion guidance not only boosts classification confidence but also diminishes distribution diversity, leading to a reduction in the differential entropy of the output distribution. Our analysis covers the widely adopted sampling schemes including DDPM and DDIM, and leverages comparison inequalities for differential equations as well as the Fokker-Planck equation that characterizes the evolution of probability density function, which may be of independent theoretical interest.",
+   "contribution_zh": "GMM 下证明 guidance 提升分类置信度同时降低微分熵（多样性），覆盖 DDPM/DDIM",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/wu24b.html"
+   },
+   "pdf": "papers/2403.01639.pdf",
+   "text": "data/text/2403.01639.txt",
+   "text_chars": 90000,
+   "pages": 41
+  },
+  {
+   "key": "t18__2408.09000",
+   "report_id": "2408.09000",
+   "title": "Classifier-Free Guidance is a Predictor-Corrector",
+   "authors": [
+    "Arwen Bradley",
+    "Preetum Nakkiran"
+   ],
+   "year": 2024,
+   "venue": "arXiv（NeurIPS 2024 M3L workshop）",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2408.09000",
+   "published": "2024-08-16",
+   "abstract": "We investigate the theoretical foundations of classifier-free guidance (CFG). CFG is the dominant method of conditional sampling for text-to-image diffusion models, yet unlike other aspects of diffusion, it remains on shaky theoretical footing. In this paper, we disprove common misconceptions, by showing that CFG interacts differently with DDPM (Ho et al., 2020) and DDIM (Song et al., 2021), and neither sampler with CFG generates the gamma-powered distribution $p(x|c)^γp(x)^{1-γ}$. Then, we clarify the behavior of CFG by showing that it is a kind of predictor-corrector method (Song et al., 2020) that alternates between denoising and sharpening, which we call predictor-corrector guidance (PCG). We prove that in the SDE limit, CFG is actually equivalent to combining a DDIM predictor for the conditional distribution together with a Langevin dynamics corrector for a gamma-powered distribution (with a carefully chosen gamma). Our work thus provides a lens to theoretically understand CFG by embedding it in a broader design space of principled sampling methods.",
+   "contribution_zh": "证明 CFG≠gamma-powered 分布采样；SDE 极限下等价于\"条件 DDIM 预测 + gamma-powered Langevin 校正\"",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2408.09000"
+   },
+   "pdf": "papers/2408.09000.pdf",
+   "text": "data/text/2408.09000.txt",
+   "text_chars": 47562,
+   "pages": 21
+  },
+  {
+   "key": "t18__2310.16975",
+   "report_id": "2310.16975",
+   "title": "Efficient Neural Network Approaches for Conditional Optimal Transport with Applications in Bayesian Inference",
+   "authors": [
+    "Zheyu Oliver Wang",
+    "Ricardo Baptista",
+    "Youssef Marzouk",
+    "Lars Ruthotto",
+    "Deepanshu Verma"
+   ],
+   "year": 2023,
+   "venue": "arXiv（SISC 刊出信息未直接核验）",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2310.16975",
+   "published": "2023-10-25",
+   "abstract": "We present two neural network approaches that approximate the solutions of static and dynamic $\\unicode{x1D450}\\unicode{x1D45C}\\unicode{x1D45B}\\unicode{x1D451}\\unicode{x1D456}\\unicode{x1D461}\\unicode{x1D456}\\unicode{x1D45C}\\unicode{x1D45B}\\unicode{x1D44E}\\unicode{x1D459}\\unicode{x0020}\\unicode{x1D45C}\\unicode{x1D45D}\\unicode{x1D461}\\unicode{x1D456}\\unicode{x1D45A}\\unicode{x1D44E}\\unicode{x1D459}\\unicode{x0020}\\unicode{x1D461}\\unicode{x1D45F}\\unicode{x1D44E}\\unicode{x1D45B}\\unicode{x1D460}\\unicode{x1D45D}\\unicode{x1D45C}\\unicode{x1D45F}\\unicode{x1D461}$ (COT) problems. Both approaches enable conditional sampling and conditional density estimation, which are core tasks in Bayesian inference$\\unicode{x2013}$particularly in the simulation-based ($\\unicode{x201C}$likelihood-free$\\unicode{x201D}$) setting. Our methods represent the target conditional distribution as a transformation of a tractable reference distribution. Obtaining such a transformation, chosen here to be an approximation of the COT map, is computationally challenging even in moderate dimensions. To improve scalability, our numerical algorithms use neural networks to parameterize candidate maps and further exploit the structure of the COT problem. Our static approach approximates the map as the gradient of a partially input-convex neural network. It uses a novel numerical implementation to increase computational efficiency compared to state-of-the-art alternatives. Our dynamic approach approximates the conditional optimal transport via the flow map of a regularized neural ODE; compared to the static approach, it is slower to train but offers more modeling choices and can lead to faster sampling. We demonstrate both algorithms numerically, comparing them with competing state-of-the-art approaches, using benchmark datasets and simulation-based Bayesian inverse problems.",
+   "contribution_zh": "静态（部分输入凸网络梯度）与动态（正则化 neural ODE）两种神经条件 OT 求解器，likelihood-free 推断基线",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2310.16975"
+   },
+   "pdf": "papers/2310.16975.pdf",
+   "text": "data/text/2310.16975.txt",
+   "text_chars": 85008,
+   "pages": 26
+  },
+  {
+   "key": "t18__contrastive_energy_prediction_for_exact_energy_guided_diffus",
+   "report_id": "2304.12824",
+   "title": "Contrastive Energy Prediction for Exact Energy-Guided Diffusion Sampling in Offline Reinforcement Learning",
+   "authors": [
+    "Cheng Lu",
+    "Huayu Chen",
+    "Jianfei Chen",
+    "Hang Su",
+    "Chongxuan Li",
+    "Jun Zhu"
+   ],
+   "year": 2023,
+   "venue": "ICML (PMLR 202)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2304.12824",
+   "published": "2023-04-25",
+   "abstract": "Guided sampling is a vital approach for applying diffusion models in real-world tasks that embeds human-defined guidance during the sampling procedure. This paper considers a general setting where the guidance is defined by an (unnormalized) energy function. The main challenge for this setting is that the intermediate guidance during the diffusion sampling procedure, which is jointly defined by the sampling distribution and the energy function, is unknown and is hard to estimate. To address this challenge, we propose an exact formulation of the intermediate guidance as well as a novel training objective named contrastive energy prediction (CEP) to learn the exact guidance. Our method is guaranteed to converge to the exact guidance under unlimited model capacity and data samples, while previous methods can not. We demonstrate the effectiveness of our method by applying it to offline reinforcement learning (RL). Extensive experiments on D4RL benchmarks demonstrate that our method outperforms existing state-of-the-art algorithms. We also provide some examples of applying CEP for image synthesis to demonstrate the scalability of CEP on high-dimensional data.",
+   "contribution_zh": "给出中间时刻能量 guidance 的精确形式与对比学习目标，是 energy guidance 精确化的奠基工作",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v202/lu23d.html"
+   },
+   "pdf": "papers/2304.12824.pdf",
+   "text": "data/text/2304.12824.txt",
+   "text_chars": 90000,
+   "pages": 31
+  },
+  {
+   "key": "t18__optimal_transport_guided_conditional_score_based_diffusion_m",
+   "report_id": "2311.01226",
+   "title": "Optimal Transport-Guided Conditional Score-Based Diffusion Models",
+   "authors": [
+    "Xiang Gu",
+    "Liwei Yang",
+    "Jian Sun",
+    "Zongben Xu"
+   ],
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2311.01226",
+   "published": "2023-11-02",
+   "abstract": "Conditional score-based diffusion model (SBDM) is for conditional generation of target data with paired data as condition, and has achieved great success in image translation. However, it requires the paired data as condition, and there would be insufficient paired data provided in real-world applications. To tackle the applications with partially paired or even unpaired dataset, we propose a novel Optimal Transport-guided Conditional Score-based diffusion model (OTCS) in this paper. We build the coupling relationship for the unpaired or partially paired dataset based on $L_2$-regularized unsupervised or semi-supervised optimal transport, respectively. Based on the coupling relationship, we develop the objective for training the conditional score-based model for unpaired or partially paired settings, which is based on a reformulation and generalization of the conditional SBDM for paired setting. With the estimated coupling relationship, we effectively train the conditional score-based model by designing a ``resampling-by-compatibility'' strategy to choose the sampled data with high compatibility as guidance. Extensive experiments on unpaired super-resolution and semi-paired image-to-image translation demonstrated the effectiveness of the proposed OTCS model. From the viewpoint of optimal transport, OTCS provides an approach to transport data across distributions, which is a challenge for OT on large-scale datasets. We theoretically prove that OTCS realizes the data transport in OT with a theoretical bound. Code is available at \\url{https://github.com/XJTU-XGU/OTCS}.",
+   "contribution_zh": "用 L2 正则 OT 耦合为无配对/半配对数据构造条件 score 模型，证明其以理论界实现 OT 数据传输",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/72c12e48c6135762f56bf188cd2479d2-Abstract-Conference.html"
+   },
+   "pdf": "papers/2311.01226.pdf",
+   "text": "data/text/2311.01226.txt",
+   "text_chars": 79629,
+   "pages": 33
+  }
+ ]
+}

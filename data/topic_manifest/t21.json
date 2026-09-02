@@ -1,0 +1,362 @@
+{
+ "topic": "t21",
+ "topic_name": "分子与科学计算中的 OT 流生成",
+ "section": "D",
+ "section_name": "Modalities",
+ "kb_note": "source/kb/t21_molecules_science.md",
+ "papers": [
+  {
+   "key": "t21__2503.00710",
+   "report_id": "2503.00710",
+   "title": "Proteina: Scaling Flow-based Protein Structure Generative Models",
+   "authors": [
+    "Tomas Geffner",
+    "Kieran Didi",
+    "Zuobai Zhang",
+    "Danny Reidenbach",
+    "Zhonglin Cao",
+    "Jason Yim",
+    "Mario Geiger",
+    "Christian Dallago",
+    "Emine Kucukbenli",
+    "Arash Vahdat",
+    "Karsten Kreis"
+   ],
+   "year": 2025,
+   "venue": "ICLR (Oral)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2503.00710",
+   "published": "2025-03-02",
+   "abstract": "Recently, diffusion- and flow-based generative models of protein structures have emerged as a powerful tool for de novo protein design. Here, we develop Proteina, a new large-scale flow-based protein backbone generator that utilizes hierarchical fold class labels for conditioning and relies on a tailored scalable transformer architecture with up to 5x as many parameters as previous models. To meaningfully quantify performance, we introduce a new set of metrics that directly measure the distributional similarity of generated proteins with reference sets, complementing existing metrics. We further explore scaling training data to millions of synthetic protein structures and explore improved training and sampling recipes adapted to protein backbone generation. This includes fine-tuning strategies like LoRA for protein backbones, new guidance methods like classifier-free guidance and autoguidance for protein backbones, and new adjusted training objectives. Proteina achieves state-of-the-art performance on de novo protein backbone design and produces diverse and designable proteins at unprecedented length, up to 800 residues. The hierarchical conditioning offers novel control, enabling high-level secondary-structure guidance as well as low-level fold-specific generation.",
+   "contribution_zh": "把蛋白骨架 FM 规模化：非等变大 transformer（~400M）+ 层级 fold 条件 + autoguidance，800 残基仍可设计，并引入分布相似度指标",
+   "links": {
+    "ICLR": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/f4e9121ad30cd4e5528042fbfd835b3f-Abstract-Conference.html",
+    "arXiv": "https://arxiv.org/abs/2503.00710"
+   },
+   "pdf": "papers/2503.00710.pdf",
+   "text": "data/text/2503.00710.txt",
+   "text_chars": 90000,
+   "pages": 49
+  },
+  {
+   "key": "t21__composing_unbalanced_flows_for_flexible_docking_and_relaxati",
+   "report_id": "Composing_Unbalanced_Flows_for_Flexible_Docking_an",
+   "title": "Composing Unbalanced Flows for Flexible Docking and Relaxation / FlexDock (ICLR 2025)",
+   "authors": "Corso, Somnath et al.",
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "提出 **Unbalanced Flow Matching**（松弛边缘约束→更易学耦合），链式 apo→holo 流形对接 + 全原子松弛，PoseBusters 合格率 30%→73%",
+   "links": {
+    "ICLR": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/451dbb8f4fca0327ac4e6782786673bf-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t21__foldflow_se_stochastic_flow_matching_for_protein_backbone_ge",
+   "report_id": "2310.02391",
+   "title": "SE(3)-Stochastic Flow Matching for Protein Backbone Generation",
+   "authors": [
+    "Avishek Joey Bose",
+    "Tara Akhound-Sadegh",
+    "Guillaume Huguet",
+    "Kilian Fatras",
+    "Jarrid Rector-Brooks",
+    "Cheng-Hao Liu",
+    "Andrei Cristian Nica",
+    "Maksym Korablyov",
+    "Michael Bronstein",
+    "Alexander Tong"
+   ],
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2310.02391",
+   "published": "2023-10-03",
+   "abstract": "The computational design of novel protein structures has the potential to impact numerous scientific disciplines greatly. Toward this goal, we introduce FoldFlow, a series of novel generative models of increasing modeling power based on the flow-matching paradigm over $3\\mathrm{D}$ rigid motions -- i.e. the group $\\text{SE}(3)$ -- enabling accurate modeling of protein backbones. We first introduce FoldFlow-Base, a simulation-free approach to learning deterministic continuous-time dynamics and matching invariant target distributions on $\\text{SE}(3)$. We next accelerate training by incorporating Riemannian optimal transport to create FoldFlow-OT, leading to the construction of both more simple and stable flows. Finally, we design FoldFlow-SFM, coupling both Riemannian OT and simulation-free training to learn stochastic continuous-time dynamics over $\\text{SE}(3)$. Our family of FoldFlow, generative models offers several key advantages over previous approaches to the generative modeling of proteins: they are more stable and faster to train than diffusion-based approaches, and our models enjoy the ability to map any invariant source distribution to any invariant target distribution over $\\text{SE}(3)$. Empirically, we validate FoldFlow, on protein backbone generation of up to $300$ amino acids leading to high-quality designable, diverse, and novel samples.",
+   "contribution_zh": "蛋白 OT-flow 范式：证明 SE(3)^N 上 Monge map 存在，构造 FoldFlow-OT（更直更稳）与 FoldFlow-SFM（SE(3) 随机桥），可任意 invariant source→target",
+   "links": {
+    "ICLR": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/618c95f4557c15b253fb0e6f548ea0c0-Abstract-Conference.html"
+   },
+   "pdf": "papers/2310.02391.pdf",
+   "text": "data/text/2310.02391.txt",
+   "text_chars": 90000,
+   "pages": 32
+  },
+  {
+   "key": "t21__2410.22388",
+   "report_id": "2410.22388",
+   "title": "ET-Flow: Equivariant Flow-Matching for Molecular Conformer Generation",
+   "authors": [
+    "Majdi Hassan",
+    "Nikhil Shenoy",
+    "Jungyoon Lee",
+    "Hannes Stark",
+    "Stephan Thaler",
+    "Dominique Beaini"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2410.22388",
+   "published": "2024-10-29",
+   "abstract": "Predicting low-energy molecular conformations given a molecular graph is an important but challenging task in computational drug discovery. Existing state-of-the-art approaches either resort to large scale transformer-based models that diffuse over conformer fields, or use computationally expensive methods to generate initial structures and diffuse over torsion angles. In this work, we introduce Equivariant Transformer Flow (ET-Flow). We showcase that a well-designed flow matching approach with equivariance and harmonic prior alleviates the need for complex internal geometry calculations and large architectures, contrary to the prevailing methods in the field. Our approach results in a straightforward and scalable method that directly operates on all-atom coordinates with minimal assumptions. With the advantages of equivariance and flow matching, ET-Flow significantly increases the precision and physical validity of the generated conformers, while being a lighter model and faster at inference. Code is available https://github.com/shenoynikhil/ETFlow.",
+   "contribution_zh": "等变 FM + harmonic prior + Kabsch 对齐直接在全原子坐标上做构象生成，轻量、少 NFE，GEOM 上刷新精度/物理有效性",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/e8bd617e7dd0394ceadf37b4a7773179-Abstract-Conference.html",
+    "arXiv": "https://arxiv.org/abs/2410.22388"
+   },
+   "pdf": "papers/2410.22388.pdf",
+   "text": "data/text/2410.22388.txt",
+   "text_chars": 60648,
+   "pages": 21
+  },
+  {
+   "key": "t21__flowmm_generating_materials_with_riemannian_flow_matching",
+   "report_id": "2406.04713",
+   "title": "FlowMM: Generating Materials with Riemannian Flow Matching",
+   "authors": [
+    "Benjamin Kurt Miller",
+    "Ricky T. Q. Chen",
+    "Anuroop Sriram",
+    "Brandon M Wood"
+   ],
+   "year": 2024,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2406.04713",
+   "published": "2024-06-07",
+   "abstract": "Crystalline materials are a fundamental component in next-generation technologies, yet modeling their distribution presents unique computational challenges. Of the plausible arrangements of atoms in a periodic lattice only a vanishingly small percentage are thermodynamically stable, which is a key indicator of the materials that can be experimentally realized. Two fundamental tasks in this area are to (a) predict the stable crystal structure of a known composition of elements and (b) propose novel compositions along with their stable structures. We present FlowMM, a pair of generative models that achieve state-of-the-art performance on both tasks while being more efficient and more flexible than competing methods. We generalize Riemannian Flow Matching to suit the symmetries inherent to crystals: translation, rotation, permutation, and periodic boundary conditions. Our framework enables the freedom to choose the flow base distributions, drastically simplifying the problem of learning crystal structures compared with diffusion models. In addition to standard benchmarks, we validate FlowMM's generated structures with quantum chemistry calculations, demonstrating that it is about 3x more efficient, in terms of integration steps, at finding stable materials compared to previous open methods.",
+   "contribution_zh": "晶体黎曼 FM：在分数坐标环面 + 晶格 + 原子种类的联合流形上做几何约束生成（CSP/DNG）",
+   "links": {
+    "PMLR v235": "https://proceedings.mlr.press/v235/miller24a.html"
+   },
+   "pdf": "papers/2406.04713.pdf",
+   "text": "data/text/2406.04713.txt",
+   "text_chars": 90000,
+   "pages": 23
+  },
+  {
+   "key": "t21__2502.02582",
+   "report_id": "2502.02582",
+   "title": "Open Materials Generation with Stochastic Interpolants",
+   "authors": [
+    "Philipp Hoellmer",
+    "Thomas Egg",
+    "Maya M. Martirossyan",
+    "Eric Fuemmeler",
+    "Zeren Shui",
+    "Amit Gupta",
+    "Pawan Prakash",
+    "Adrian Roitberg",
+    "Mingjie Liu",
+    "George Karypis",
+    "Mark Transtrum",
+    "Richard G. Hennig",
+    "Ellad B. Tadmor",
+    "Stefano Martiniani"
+   ],
+   "year": 2025,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2502.02582",
+   "published": "2025-02-04",
+   "abstract": "The discovery of new materials is essential for enabling technological advancements. Computational approaches for predicting novel materials must effectively learn the manifold of stable crystal structures within an infinite design space. We introduce Open Materials Generation (OMatG), a unifying framework for the generative design and discovery of inorganic crystalline materials. OMatG employs stochastic interpolants (SI) to bridge an arbitrary base distribution to the target distribution of inorganic crystals via a broad class of tunable stochastic processes, encompassing both diffusion models and flow matching as special cases. In this work, we adapt the SI framework by integrating an equivariant graph representation of crystal structures and extending it to account for periodic boundary conditions in unit cell representations. Additionally, we couple the SI flow over spatial coordinates and lattice vectors with discrete flow matching for atomic species. We benchmark OMatG's performance on two tasks: Crystal Structure Prediction (CSP) for specified compositions, and 'de novo' generation (DNG) aimed at discovering stable, novel, and unique structures. In our ground-up implementation of OMatG, we refine and extend both CSP and DNG metrics compared to previous works. OMatG establishes a new state of the art in generative modeling for materials discovery, outperforming purely flow-based and diffusion-based implementations. These results underscore the importance of designing flexible deep learning frameworks to accelerate progress in materials science. The OMatG code is available at https://github.com/FERMat-ML/OMatG.",
+   "contribution_zh": "用 stochastic interpolants 统一 diffusion/FM，对晶格/坐标各自调插值 + 种类用 discrete FM，CSP/DNG 超 FlowMM/DiffCSP/MatterGen",
+   "links": {
+    "PMLR v267": "https://proceedings.mlr.press/v267/hollmer25a.html",
+    "arXiv": "https://arxiv.org/abs/2502.02582"
+   },
+   "pdf": "papers/2502.02582.pdf",
+   "text": "data/text/2502.02582.txt",
+   "text_chars": 90000,
+   "pages": 31
+  },
+  {
+   "key": "t21__2412.10966",
+   "report_id": "2412.10966",
+   "title": "FlowDock: Geometric Flow Matching for Generative Protein-Ligand Docking and Affinity Prediction",
+   "authors": [
+    "Alex Morehead",
+    "Jianlin Cheng"
+   ],
+   "year": 2025,
+   "venue": "Bioinformatics",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2412.10966",
+   "published": "2024-12-14",
+   "abstract": "Powerful generative AI models of protein-ligand structure have recently been proposed, but few of these methods support both flexible protein-ligand docking and affinity estimation. Of those that do, none can directly model multiple binding ligands concurrently or have been rigorously benchmarked on pharmacologically relevant drug targets, hindering their widespread adoption in drug discovery efforts. In this work, we propose FlowDock, the first deep geometric generative model based on conditional flow matching that learns to directly map unbound (apo) structures to their bound (holo) counterparts for an arbitrary number of binding ligands. Furthermore, FlowDock provides predicted structural confidence scores and binding affinity values with each of its generated protein-ligand complex structures, enabling fast virtual screening of new (multi-ligand) drug targets. For the well-known PoseBusters Benchmark dataset, FlowDock outperforms single-sequence AlphaFold 3 with a 51% blind docking success rate using unbound (apo) protein input structures and without any information derived from multiple sequence alignments, and for the challenging new DockGen-E dataset, FlowDock outperforms single-sequence AlphaFold 3 and matches single-sequence Chai-1 for binding pocket generalization. Additionally, in the ligand category of the 16th community-wide Critical Assessment of Techniques for Structure Prediction (CASP16), FlowDock ranked among the top-5 methods for pharmacological binding affinity estimation across 140 protein-ligand complexes, demonstrating the efficacy of its learned representations in virtual screening. Source code, data, and pre-trained models are available at https://github.com/BioinfoMachineLearning/FlowDock.",
+   "contribution_zh": "CFM 直接把 apo 映到 holo（多配体）并预测亲和力；耦合用 apo–holo 结构过滤定义 + harmonic ligand prior，盲对接超单序列 AF3",
+   "links": {
+    "DOI": "https://doi.org/10.1093/bioinformatics/btaf187",
+    "arXiv": "https://arxiv.org/abs/2412.10966"
+   },
+   "pdf": "papers/2412.10966.pdf",
+   "text": "data/text/2412.10966.txt",
+   "text_chars": 48202,
+   "pages": 15
+  },
+  {
+   "key": "t21__2405.20313",
+   "report_id": "2405.20313",
+   "title": "Sequence-Augmented SE(3)-Flow Matching For Conditional Protein Backbone Generation",
+   "authors": [
+    "Guillaume Huguet",
+    "James Vuckovic",
+    "Kilian Fatras",
+    "Eric Thibodeau-Laufer",
+    "Pablo Lemos",
+    "Riashat Islam",
+    "Cheng-Hao Liu",
+    "Jarrid Rector-Brooks",
+    "Tara Akhound-Sadegh",
+    "Michael Bronstein",
+    "Alexander Tong",
+    "Avishek Joey Bose"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2405.20313",
+   "published": "2024-05-30",
+   "abstract": "Proteins are essential for almost all biological processes and derive their diverse functions from complex 3D structures, which are in turn determined by their amino acid sequences. In this paper, we exploit the rich biological inductive bias of amino acid sequences and introduce FoldFlow-2, a novel sequence-conditioned SE(3)-equivariant flow matching model for protein structure generation. FoldFlow-2 presents substantial new architectural features over the previous FoldFlow family of models including a protein large language model to encode sequence, a new multi-modal fusion trunk that combines structure and sequence representations, and a geometric transformer based decoder. To increase diversity and novelty of generated samples -- crucial for de-novo drug design -- we train FoldFlow-2 at scale on a new dataset that is an order of magnitude larger than PDB datasets of prior works, containing both known proteins in PDB and high-quality synthetic structures achieved through filtering. We further demonstrate the ability to align FoldFlow-2 to arbitrary rewards, e.g. increasing secondary structures diversity, by introducing a Reinforced Finetuning (ReFT) objective. We empirically observe that FoldFlow-2 outperforms previous state-of-the-art protein structure-based generative models, improving over RFDiffusion in terms of unconditional generation across all metrics including designability, diversity, and novelty across all protein lengths, as well as exhibiting generalization on the task of equilibrium conformation sampling. Finally, we demonstrate that a fine-tuned FoldFlow-2 makes progress on challenging conditional design tasks such as designing scaffolds for the VHH nanobody.",
+   "contribution_zh": "序列条件化 SE(3)-FM：pLM 编码序列 + minibatch Riemannian OT 耦合 + ReFT 强化微调，规模化到 ~21M 合成结构，超 RFdiffusion",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/39ca8893ea38905a9d2ffe786e85af0f-Abstract-Conference.html",
+    "arXiv": "https://arxiv.org/abs/2405.20313"
+   },
+   "pdf": "papers/2405.20313.pdf",
+   "text": "data/text/2405.20313.txt",
+   "text_chars": 90000,
+   "pages": 28
+  },
+  {
+   "key": "t21__improved_motif_scaffolding_with_se_flow_matching",
+   "report_id": "2401.04082",
+   "title": "Improved motif-scaffolding with SE(3) flow matching",
+   "authors": [
+    "Jason Yim",
+    "Andrew Campbell",
+    "Emile Mathieu",
+    "Andrew Y. K. Foong",
+    "Michael Gastegger",
+    "José Jiménez-Luna",
+    "Sarah Lewis",
+    "Victor Garcia Satorras",
+    "Bastiaan S. Veeling",
+    "Frank Noé",
+    "Regina Barzilay",
+    "Tommi S. Jaakkola"
+   ],
+   "year": 2024,
+   "venue": "TMLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2401.04082",
+   "published": "2024-01-08",
+   "abstract": "Protein design often begins with the knowledge of a desired function from a motif which motif-scaffolding aims to construct a functional protein around. Recently, generative models have achieved breakthrough success in designing scaffolds for a range of motifs. However, generated scaffolds tend to lack structural diversity, which can hinder success in wet-lab validation. In this work, we extend FrameFlow, an SE(3) flow matching model for protein backbone generation, to perform motif-scaffolding with two complementary approaches. The first is motif amortization, in which FrameFlow is trained with the motif as input using a data augmentation strategy. The second is motif guidance, which performs scaffolding using an estimate of the conditional score from FrameFlow without additional training. On a benchmark of 24 biologically meaningful motifs, we show our method achieves 2.5 times more designable and unique motif-scaffolds compared to state-of-the-art. Code: https://github.com/microsoft/protein-frame-flow",
+   "contribution_zh": "FrameFlow（SE(3)-FM，采样步数少 5×）的 scaffolding 扩展：motif amortization 与**无须重训**的 motif guidance，可设计性/多样性大幅提升",
+   "links": {
+    "OpenReview/TMLR": "https://openreview.net/forum?id=fa1ne8xDGn"
+   },
+   "pdf": "papers/2401.04082.pdf",
+   "text": "data/text/2401.04082.txt",
+   "text_chars": 65252,
+   "pages": 22
+  },
+  {
+   "key": "t21__2406.14426",
+   "report_id": "2406.14426",
+   "title": "Transferable Boltzmann Generators",
+   "authors": [
+    "Leon Klein",
+    "Frank Noé"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2406.14426",
+   "published": "2024-06-20",
+   "abstract": "The generation of equilibrium samples of molecular systems has been a long-standing problem in statistical physics. Boltzmann Generators are a generative machine learning method that addresses this issue by learning a transformation via a normalizing flow from a simple prior distribution to the target Boltzmann distribution of interest. Recently, flow matching has been employed to train Boltzmann Generators for small molecular systems in Cartesian coordinates. We extend this work and propose a first framework for Boltzmann Generators that are transferable across chemical space, such that they predict zero-shot Boltzmann distributions for test molecules without being retrained for these systems. These transferable Boltzmann Generators allow approximate sampling from the target distribution of unseen systems, as well as efficient reweighting to the target Boltzmann distribution. The transferability of the proposed framework is evaluated on dipeptides, where we show that it generalizes efficiently to unseen systems. Furthermore, we demonstrate that our proposed architecture enhances the efficiency of Boltzmann Generators trained on single molecular systems.",
+   "contribution_zh": "等变 CNF+FM 做跨化学空间零样本平衡采样（二肽），并实证：可区分粒子多时 OT-FM 相对普通 FM 增益变小（重要 caveat）",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/5035a409f5798e188079e236f437e522-Abstract.html",
+    "arXiv": "https://arxiv.org/abs/2406.14426"
+   },
+   "pdf": "papers/2406.14426.pdf",
+   "text": "data/text/2406.14426.txt",
+   "text_chars": 75820,
+   "pages": 27
+  },
+  {
+   "key": "t21__2402.04997",
+   "report_id": "2402.04997",
+   "title": "Generative Flows on Discrete State-Spaces: Enabling Multimodal Flows with Applications to Protein Co-Design",
+   "authors": [
+    "Andrew Campbell",
+    "Jason Yim",
+    "Regina Barzilay",
+    "Tom Rainforth",
+    "Tommi Jaakkola"
+   ],
+   "year": 2024,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2402.04997",
+   "published": "2024-02-07",
+   "abstract": "Combining discrete and continuous data is an important capability for generative models. We present Discrete Flow Models (DFMs), a new flow-based model of discrete data that provides the missing link in enabling flow-based generative models to be applied to multimodal continuous and discrete data problems. Our key insight is that the discrete equivalent of continuous space flow matching can be realized using Continuous Time Markov Chains. DFMs benefit from a simple derivation that includes discrete diffusion models as a specific instance while allowing improved performance over existing diffusion-based approaches. We utilize our DFMs method to build a multimodal flow-based modeling framework. We apply this capability to the task of protein co-design, wherein we learn a model for jointly generating protein structure and sequence. Our approach achieves state-of-the-art co-design performance while allowing the same multimodal model to be used for flexible generation of the sequence or structure.",
+   "contribution_zh": "用 CTMC 实现离散 FM，并与 FrameFlow 连续结构流组合成 序列-结构 co-design（离散部分见 T22）",
+   "links": {
+    "PMLR v235": "https://proceedings.mlr.press/v235/campbell24a.html",
+    "arXiv": "https://arxiv.org/abs/2402.04997"
+   },
+   "pdf": "papers/2402.04997.pdf",
+   "text": "data/text/2402.04997.txt",
+   "text_chars": 90000,
+   "pages": 60
+  },
+  {
+   "key": "t21__2410.23405",
+   "report_id": "2410.23405",
+   "title": "FlowLLM: Flow Matching for Material Generation with Large Language Models as Base Distributions",
+   "authors": [
+    "Anuroop Sriram",
+    "Benjamin Kurt Miller",
+    "Ricky T. Q. Chen",
+    "Brandon M. Wood"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2410.23405",
+   "published": "2024-10-30",
+   "abstract": "Material discovery is a critical area of research with the potential to revolutionize various fields, including carbon capture, renewable energy, and electronics. However, the immense scale of the chemical space makes it challenging to explore all possible materials experimentally. In this paper, we introduce FlowLLM, a novel generative model that combines large language models (LLMs) and Riemannian flow matching (RFM) to design novel crystalline materials. FlowLLM first fine-tunes an LLM to learn an effective base distribution of meta-stable crystals in a text representation. After converting to a graph representation, the RFM model takes samples from the LLM and iteratively refines the coordinates and lattice parameters. Our approach significantly outperforms state-of-the-art methods, increasing the generation rate of stable materials by over three times and increasing the rate for stable, unique, and novel crystals by $\\sim50\\%$ - a huge improvement on a difficult problem. Additionally, the crystals generated by FlowLLM are much closer to their relaxed state when compared with another leading model, significantly reducing post-hoc computational cost.",
+   "contribution_zh": "把微调 LLM 的分布当作 RFM 的 base，实现「文本晶体分布→图数据分布」跨域传输，稳定率×3、S.U.N.×~1.5",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/51d317df78eded9eb3c9d3fb1091c279-Abstract-Conference.html",
+    "arXiv": "https://arxiv.org/abs/2410.23405"
+   },
+   "pdf": "papers/2410.23405.pdf",
+   "text": "data/text/2410.23405.txt",
+   "text_chars": 52596,
+   "pages": 16
+  }
+ ]
+}

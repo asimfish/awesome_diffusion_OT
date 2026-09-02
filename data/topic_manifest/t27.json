@@ -1,0 +1,326 @@
+{
+ "topic": "t27",
+ "topic_name": "多边际 OT 与 Wasserstein 重心的生成应用",
+ "section": "E",
+ "section_name": "OT Variants Frontier",
+ "kb_note": "source/kb/t27_multimarginal_barycenter_gen.md",
+ "papers": [
+  {
+   "key": "t27__2606.05327",
+   "report_id": "2606.05327",
+   "title": "Multimarginal flow matching with optimal transport potentials",
+   "authors": [
+    "Raghav Kansal",
+    "David Crair",
+    "Nghia Nguyen",
+    "Scott Pope",
+    "Bradley Parry"
+   ],
+   "year": 2026,
+   "venue": "ICML",
+   "evidence": "A",
+   "star": true,
+   "arxiv_id": "2606.05327",
+   "published": "2026-06-03",
+   "abstract": "Flow matching (FM) has emerged as a powerful framework for learning dynamic transport maps between two empirical distributions. However, less explored is the setting with intermediate observed marginals that can help constrain the flows between the endpoints. This \"multimarginal\" regime is central to modeling temporal evolution in dynamical systems in many scientific domains that can sample sequential distributions. We tackle this problem with a novel approach that leverages the connection between FM and dynamic optimal transport (OT), softly steering the flow towards the intermediate marginals through potential terms in the dynamic OT action. By extending the conditional FM learning target to incorporate these potentials, we derive an efficient, simulation-free algorithm for multimarginal FM that offers considerable flexibility in the spatiotemporal dynamics of the learned flows. We demonstrate state-of-the-art performance and training efficiency of OT-potential FM (OTP-FM) on diverse single-cell RNA sequencing, oceanographic, and meteorological datasets. Our code is available at https://github.com/Bexorg-Inc/OTP-FM.",
+   "contribution_zh": "把逐段 CFM 重写为带硬约束的动态 OT，再把中间边缘约束松弛为动态 OT 作用量中的**势能项**，得到 simulation-free 的多边缘 FM，并给出势强度—Wasserstein 偏差界；单细胞/海洋/气象 SOTA",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2606.05327",
+    "ICML页": "https://icml.cc/virtual/2026/poster/62108"
+   },
+   "pdf": "papers/2606.05327.pdf",
+   "text": "data/text/2606.05327.txt",
+   "text_chars": 90000,
+   "pages": 41
+  },
+  {
+   "key": "t27__sobolev_gradient_ascent_for_optimal_transport_barycenter_opt",
+   "report_id": "2505.13660",
+   "title": "Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis",
+   "authors": [
+    "Kaheon Kim",
+    "Bohan Zhou",
+    "Changbo Zhu",
+    "Xiaohui Chen"
+   ],
+   "year": 2026,
+   "venue": "ICLR",
+   "evidence": "A",
+   "star": true,
+   "arxiv_id": "2505.13660",
+   "published": "2025-05-19",
+   "abstract": "This paper introduces a new constraint-free concave dual formulation for the Wasserstein barycenter. Tailoring the vanilla dual gradient ascent algorithm to the Sobolev geometry, we derive a scalable Sobolev gradient ascent (SGA) algorithm to compute the barycenter for input distributions discretized over a regular grid. Despite the algorithmic simplicity, we provide a global convergence analysis that achieves the same rate as the classical subgradient descent methods for minimizing nonsmooth convex functions in the Euclidean space. A central feature of our SGA algorithm is that the computationally expensive $c$-concavity projection operator enforced on the Kantorovich dual potentials is unnecessary to guarantee convergence, leading to significant algorithmic and theoretical simplifications over all existing primal and dual methods for computing the exact barycenter. Our numerical experiments demonstrate the superior empirical performance of SGA over the existing optimal transport barycenter solvers.",
+   "contribution_zh": "精确（非熵正则）barycenter 的无约束凹对偶 + \\(\\dot H^1\\) Sobolev 几何梯度上升；证明可去掉昂贵的 c-concave 投影仍有全局 \\(O(T^{-1/2})\\) 收敛率，每步 \\(O(mn\\log n)\\)",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=IjL1xEoxXi"
+   },
+   "pdf": "papers/2505.13660.pdf",
+   "text": "data/text/2505.13660.txt",
+   "text_chars": 59699,
+   "pages": 22
+  },
+  {
+   "key": "t27__momentum_multi_marginal_schro_dinger_bridge_matching",
+   "report_id": "Momentum_Multi_Marginal_Schr_dinger_Bridge_Matchin",
+   "title": "Momentum Multi-Marginal Schrödinger Bridge Matching",
+   "authors": "",
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "相空间提升+多点条件化随机桥，学习满足多个位置约束的测度值样条；matching 迭代中保持中间边缘不变，解决两两插值丢失长程时序依赖的问题",
+   "links": {
+    "官方": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/7c3875b86bd2b0639ab1e858c678af40-Abstract-Conference.html"
+   },
+   "pdf": "papers/t27_2025_Theodoropoulos_3MSBM_momentum_mmsb_matching.pdf",
+   "text": "data/text/t27_2025_Theodoropoulos_3MSBM_momentum_mmsb_matching.txt",
+   "text_chars": 90000,
+   "pages": 31
+  },
+  {
+   "key": "t27__estimating_barycenters_of_distributions_with_neural_ot",
+   "report_id": "2402.03828",
+   "title": "Estimating Barycenters of Distributions with Neural Optimal Transport",
+   "authors": [
+    "Alexander Kolesov",
+    "Petr Mokrov",
+    "Igor Udovichenko",
+    "Milena Gazdieva",
+    "Gudmund Pammer",
+    "Evgeny Burnaev",
+    "Alexander Korotin"
+   ],
+   "year": 2024,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2402.03828",
+   "published": "2024-02-06",
+   "abstract": "Given a collection of probability measures, a practitioner sometimes needs to find an \"average\" distribution which adequately aggregates reference distributions. A theoretically appealing notion of such an average is the Wasserstein barycenter, which is the primal focus of our work. By building upon the dual formulation of Optimal Transport (OT), we propose a new scalable approach for solving the Wasserstein barycenter problem. Our methodology is based on the recent Neural OT solver: it has bi-level adversarial learning objective and works for general cost functions. These are key advantages of our method since the typical adversarial algorithms leveraging barycenter tasks utilize tri-level optimization and focus mostly on quadratic cost. We also establish theoretical error bounds for our proposed approach and showcase its applicability and effectiveness in illustrative scenarios and image data setups. Our source code is available at https://github.com/justkolesov/NOTBarycenters.",
+   "contribution_zh": "基于 Neural OT 对偶的双层对抗目标求连续 barycenter，支持一般代价（对比既有三层 min-max 且限于二次代价），含误差界；实验含 StyleGAN 潜空间",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/kolesov24a.html"
+   },
+   "pdf": "papers/2402.03828.pdf",
+   "text": "data/text/2402.03828.txt",
+   "text_chars": 85963,
+   "pages": 26
+  },
+  {
+   "key": "t27__wasserstein_gradient_flows_for_scalable_and_regularized_bary",
+   "report_id": "2510.04602",
+   "title": "Wasserstein Gradient Flows for Scalable and Regularized Barycenter Computation",
+   "authors": [
+    "Eduardo Fernandes Montesuma",
+    "Yassir Bendou",
+    "Mike Gartrell"
+   ],
+   "year": 2026,
+   "venue": "UAI (PMLR 337)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2510.04602",
+   "published": "2025-10-06",
+   "abstract": "Wasserstein barycenters provide a principled approach for aggregating probability measures, while preserving the geometry of their ambient space. Existing discrete methods are not because as they assume access to the complete set of samples from the input measures. Meanwhile, neural network approaches do scale well, but rely on complex optimization problems and cannot easily incorporate label information. We address these limitations through gradient flows in the space of probability measures. Through time discretization, we achieve a scalable algorithm that i) relies on mini-batch optimal transport, ii) accepts modular regularization through task-aware functions, and iii) seamlessly integrates supervised information into the ground-cost. We empirically validate our approach on domain adaptation benchmarks that span computer vision, neuroscience, and chemical engineering. Our method establishes a new state-of-the-art Wasserstein barycenter solver, with labeled barycenters consistently outperforming unlabeled ones. Our code at https://github.com/SigmaNova/barycentric-gradient-flows",
+   "contribution_zh": "把 barycenter 问题重写为 Wasserstein 空间中的梯度流：mini-batch OT 实现可扩展、支持模块化正则泛函（内能/势能/交互能）与监督化 ground cost，PL 条件下收敛保证；注：任务书中记为\"NeurIPS 2025\"，官方归属实为 UAI 2026",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v337/fernandes-montesuma26a.html"
+   },
+   "pdf": "papers/2510.04602.pdf",
+   "text": "data/text/2510.04602.txt",
+   "text_chars": 90000,
+   "pages": 34
+  },
+  {
+   "key": "t27__partial_fusion_of_neural_networks_via_partial_optimal_transp",
+   "report_id": "Partial_Fusion_of_Neural_Networks_via_Partial_Opti",
+   "title": "Partial Fusion of Neural Networks via Partial Optimal Transport",
+   "authors": "",
+   "year": 2026,
+   "venue": "ICML",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "用 partial OT 处理不同模型间神经元只有部分对应的情形，放松 OTFusion 的完全匹配假设",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=lvRLG6C0zZ"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t27__finding_the_center_of_a_wasserstein_ball",
+   "report_id": "Finding_the_Center_of_a_Wasserstein_Ball",
+   "title": "Finding the Center of a Wasserstein Ball",
+   "authors": "",
+   "year": 2025,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "Wasserstein ball 中心=一种 min-max 鲁棒聚合，与 barycenter 互补的\"最坏情况平均\"视角",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v267/wang25be.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t27__the_procrustes_wasserstein_barycenter_problem",
+   "report_id": "The_Procrustes_Wasserstein_Barycenter_Problem",
+   "title": "The Procrustes-Wasserstein Barycenter Problem",
+   "authors": "",
+   "year": 2025,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "barycenter 与正交/刚体对齐联合优化，解决输入分布姿态不对齐时平均失真的问题",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v267/adamo25a.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t27__2511.22425",
+   "report_id": "2511.22425",
+   "title": "Wukong's 72 Transformations: High-fidelity Textured 3D Morphing via Flow Models",
+   "authors": [
+    "Minghao Yin",
+    "Yukang Cao",
+    "Kai Han"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2511.22425",
+   "published": "2025-11-27",
+   "abstract": "We present WUKONG, a novel training-free framework for high-fidelity textured 3D morphing that takes a pair of source and target prompts (image or text) as input. Unlike conventional methods -- which rely on manual correspondence matching and deformation trajectory estimation (limiting generalization and requiring costly preprocessing) -- WUKONG leverages the generative prior of flow-based transformers to produce high-fidelity 3D transitions with rich texture details. To ensure smooth shape transitions, we exploit the inherent continuity of flow-based generative processes and formulate morphing as an optimal transport barycenter problem. We further introduce a sequential initialization strategy to prevent abrupt geometric distortions and preserve identity coherence. For faithful texture preservation, we propose a similarity-guided semantic consistency mechanism that selectively retains high-frequency details and enables precise control over blending dynamics. This empowers WUKONG to support both global texture transitions and identity-preserving texture morphing, catering to diverse generation needs. Extensive quantitative and qualitative evaluations demonstrate that WUKONG significantly outperforms state-of-the-art methods, achieving superior results across diverse geometry and texture variations.",
+   "contribution_zh": "在预训练 3D flow transformer 的**条件 token 空间**解 free-support barycenter 得到插值条件，实现 training-free 高保真 3D 形变+纹理渐变——barycenter×预训练流模型的代表性应用",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2511.22425"
+   },
+   "pdf": "papers/2511.22425.pdf",
+   "text": "data/text/2511.22425.txt",
+   "text_chars": 60024,
+   "pages": 22
+  },
+  {
+   "key": "t27__2509.22494",
+   "report_id": "2509.22494",
+   "title": "A dynamical formulation of multi-marginal optimal transport",
+   "authors": [
+    "Brendan Pass",
+    "Yair Shenfeld"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2509.22494",
+   "published": "2025-09-26",
+   "abstract": "We present a primal-dual dynamical formulation of the multi-marginal optimal transport problem for (semi-)convex cost functions. Even in the two-marginal setting, this formulation applies to cost functions not covered by the classical dynamical approach of Benamou-Brenier. Our dynamical formulation yields a convex optimization problem, enabling the use of convex optimization tools to find quasi-Monge solutions of the static multi-marginal problem for translation-invariant costs. We illustrate our results numerically with proximal splitting methods.",
+   "contribution_zh": "首个一般 (semi-)convex 代价的 MMOT 原-对偶**动力学**形式（耦合流而非边缘流），凸优化可解并给出 quasi-Monge 解；为\"多边缘 Benamou-Brenier\"补上缺失的一块",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2509.22494"
+   },
+   "pdf": "papers/2509.22494.pdf",
+   "text": "data/text/2509.22494.txt",
+   "text_chars": 78809,
+   "pages": 30
+  },
+  {
+   "key": "t27__energy_guided_continuous_entropic_barycenter_estimation_for_",
+   "report_id": "2310.01105",
+   "title": "Energy-Guided Continuous Entropic Barycenter Estimation for General Costs",
+   "authors": [
+    "Alexander Kolesov",
+    "Petr Mokrov",
+    "Igor Udovichenko",
+    "Milena Gazdieva",
+    "Gudmund Pammer",
+    "Anastasis Kratsios",
+    "Evgeny Burnaev",
+    "Alexander Korotin"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS Spotlight",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2310.01105",
+   "published": "2023-10-02",
+   "abstract": "Optimal transport (OT) barycenters are a mathematically grounded way of averaging probability distributions while capturing their geometric properties. In short, the barycenter task is to take the average of a collection of probability distributions w.r.t. given OT discrepancies. We propose a novel algorithm for approximating the continuous Entropic OT (EOT) barycenter for arbitrary OT cost functions. Our approach is built upon the dual reformulation of the EOT problem based on weak OT, which has recently gained the attention of the ML community. Beyond its novelty, our method enjoys several advantageous properties: (i) we establish quality bounds for the recovered solution; (ii) this approach seamlessly interconnects with the Energy-Based Models (EBMs) learning procedure enabling the use of well-tuned algorithms for the problem of interest; (iii) it provides an intuitive optimization scheme avoiding min-max, reinforce and other intricate technical tricks. For validation, we consider several low-dimensional scenarios and image-space setups, including non-Euclidean cost functions. Furthermore, we investigate the practical task of learning the barycenter on an image manifold generated by a pretrained generative model, opening up new directions for real-world applications. Our code is available at https://github.com/justkolesov/EnergyGuidedBarycenters.",
+   "contribution_zh": "弱 OT 对偶+EBM 学连续熵正则 barycenter，免 min-max，带质量界；直接在预训练生成模型的图像流形上学 barycenter",
+   "links": {
+    "官方": "https://papers.nips.cc/paper_files/paper/2024/hash/c2bd9242609219deb380f161682f4568-Abstract-Conference.html"
+   },
+   "pdf": "papers/2310.01105.pdf",
+   "text": "data/text/2310.01105.txt",
+   "text_chars": 90000,
+   "pages": 34
+  },
+  {
+   "key": "t27__tree_based_diffusion_schro_dinger_bridge",
+   "report_id": "Tree_Based_Diffusion_Schr_dinger_Bridge",
+   "title": "Tree-Based Diffusion Schrödinger Bridge with Applications to Wasserstein Barycenters",
+   "authors": "TreeDSB",
+   "year": 2023,
+   "venue": "NeurIPS Spotlight",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "树结构代价的熵正则 MMOT 的动态连续版本（多边缘 Sinkhorn 的 DSB 对应物）；星形树即 barycenter，可在高维做图像插值与贝叶斯融合——「用扩散模型算 barycenter」的奠基工作",
+   "links": {
+    "官方": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/ad08767706825033b99122332293033d-Abstract.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t27__1910.05653",
+   "report_id": "1910.05653",
+   "title": "Model Fusion via Optimal Transport",
+   "authors": [
+    "Sidak Pal Singh",
+    "Martin Jaggi"
+   ],
+   "year": 2020,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1910.05653",
+   "published": "2019-10-12",
+   "abstract": "Combining different models is a widely used paradigm in machine learning applications. While the most common approach is to form an ensemble of models and average their individual predictions, this approach is often rendered infeasible by given resource constraints in terms of memory and computation, which grow linearly with the number of models. We present a layer-wise model fusion algorithm for neural networks that utilizes optimal transport to (soft-) align neurons across the models before averaging their associated parameters. We show that this can successfully yield \"one-shot\" knowledge transfer (i.e, without requiring any retraining) between neural networks trained on heterogeneous non-i.i.d. data. In both i.i.d. and non-i.i.d. settings , we illustrate that our approach significantly outperforms vanilla averaging, as well as how it can serve as an efficient replacement for the ensemble with moderate fine-tuning, for standard convolutional networks (like VGG11), residual networks (like ResNet18), and multi-layer perceptrons on CIFAR10, CIFAR100, and MNIST. Finally, our approach also provides a principled way to combine the parameters of neural networks with different widths, and we explore its application for model compression. The code is available at the following link, https://github.com/sidak/otfusion.",
+   "contribution_zh": "逐层用 OT 对齐神经元再平均，显式解释为逐层 Wasserstein barycenter；一次性(one-shot)、无需训练数据的模型融合奠基",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/1910.05653",
+    "官方": "https://proceedings.neurips.cc/paper/2020/hash/fb2697869f56484404c8ceee2985b01d-Abstract.html"
+   },
+   "pdf": "papers/1910.05653.pdf",
+   "text": "data/text/1910.05653.txt",
+   "text_chars": 90000,
+   "pages": 36
+  }
+ ]
+}

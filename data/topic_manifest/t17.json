@@ -1,0 +1,405 @@
+{
+ "topic": "t17",
+ "topic_name": "风格迁移与域自适应中的 OT×扩散",
+ "section": "C",
+ "section_name": "Cross-Domain Generation & Translation",
+ "kb_note": "source/kb/t17_style_domain_adaptation.md",
+ "papers": [
+  {
+   "key": "t17__ot_ald_aligning_latent_distributions_with_optimal_transport_",
+   "report_id": "2511.11162",
+   "title": "OT-ALD: Aligning Latent Distributions with Optimal Transport for Accelerated Image-to-Image Translation",
+   "authors": [
+    "Zhanpeng Wang",
+    "Shuting Cao",
+    "Yuhang Lu",
+    "Yuhan Li",
+    "Na Lei",
+    "Zhongxuan Luo"
+   ],
+   "year": 2026,
+   "venue": "AAAI",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2511.11162",
+   "published": "2025-11-14",
+   "abstract": "The Dual Diffusion Implicit Bridge (DDIB) is an emerging image-to-image (I2I) translation method that preserves cycle consistency while achieving strong flexibility. It links two independently trained diffusion models (DMs) in the source and target domains by first adding noise to a source image to obtain a latent code, then denoising it in the target domain to generate the translated image. However, this method faces two key challenges: (1) low translation efficiency, and (2) translation trajectory deviations caused by mismatched latent distributions. To address these issues, we propose a novel I2I translation framework, OT-ALD, grounded in optimal transport (OT) theory, which retains the strengths of DDIB-based approach. Specifically, we compute an OT map from the latent distribution of the source domain to that of the target domain, and use the mapped distribution as the starting point for the reverse diffusion process in the target domain. Our error analysis confirms that OT-ALD eliminates latent distribution mismatches. Moreover, OT-ALD effectively balances faster image translation with improved image quality. Experiments on four translation tasks across three high-resolution datasets show that OT-ALD improves sampling efficiency by 20.29% and reduces the FID score by 2.6 on average compared to the top-performing baseline models.",
+   "contribution_zh": "证明 DDIB 在有限 T 下两域 latent 分布错配必然导致翻译轨迹偏差，用显式 OT map 对齐 latent 后再反向去噪，平均提速 20.3%、FID 降 2.6",
+   "links": {
+    "AAAI OJS": "https://ojs.aaai.org/index.php/AAAI/article/view/39886"
+   },
+   "pdf": "papers/2511.11162.pdf",
+   "text": "data/text/2511.11162.txt",
+   "text_chars": 72473,
+   "pages": 19
+  },
+  {
+   "key": "t17__wasserstein_aware_transfer_class_level_alignment_for_robust_",
+   "report_id": "Wasserstein_Aware_Transfer_Class_Level_Alignment_f",
+   "title": "Wasserstein-Aware Transfer: Class-Level Alignment for Robust Diffusion Model Adaptation",
+   "authors": "WAT",
+   "year": 2026,
+   "venue": "AAAI",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "分析扩散轨迹间 W 距离随 t 递减的规律，据此做源↔目标类级 OT 匹配指导扩散模型微调，并线性组合预训练/微调条件分支保知识",
+   "links": {
+    "AAAI OJS": "https://ojs.aaai.org/index.php/AAAI/article/view/39365"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t17__color_conditional_generation_with_sliced_wasserstein_guidanc",
+   "report_id": "2503.19034",
+   "title": "Color Conditional Generation with Sliced Wasserstein Guidance",
+   "authors": [
+    "Alexander Lobashev",
+    "Maria Larchenko",
+    "Dmitry Guskov"
+   ],
+   "year": 2025,
+   "venue": "NeurIPS (spotlight)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2503.19034",
+   "published": "2025-03-24",
+   "abstract": "We propose SW-Guidance, a training-free approach for image generation conditioned on the color distribution of a reference image. While it is possible to generate an image with fixed colors by first creating an image from a text prompt and then applying a color style transfer method, this approach often results in semantically meaningless colors in the generated image. Our method solves this problem by modifying the sampling process of a diffusion model to incorporate the differentiable Sliced 1-Wasserstein distance between the color distribution of the generated image and the reference palette. Our method outperforms state-of-the-art techniques for color-conditional generation in terms of color similarity to the reference, producing images that not only match the reference colors but also maintain semantic coherence with the original text prompt. Our source code is available at https://github.com/alobashev/sw-guidance/.",
+   "contribution_zh": "把可微 Sliced-1-Wasserstein 色彩距离塞进扩散采样循环做 training-free 颜色条件生成，胜过「先生成再色彩迁移」流水线",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=r1Bx58M6It"
+   },
+   "pdf": "papers/2503.19034.pdf",
+   "text": "data/text/2503.19034.txt",
+   "text_chars": 66512,
+   "pages": 30
+  },
+  {
+   "key": "t17__stochastic_interpolants_for_revealing_stylistic_flows_across",
+   "report_id": "Stochastic_Interpolants_for_Revealing_Stylistic_Fl",
+   "title": "Stochastic Interpolants for Revealing Stylistic Flows across the History of Art",
+   "authors": "Art-FM",
+   "year": 2025,
+   "venue": "ICCV",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "把艺术风格的历史演化建模为风格空间中的 OT 分布匹配，用 stochastic interpolants+DDIB 无配对对齐跨世纪艺术分布，并发布 65 万艺术品数据集",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ma_Stochastic_Interpolants_for_Revealing_Stylistic_Flows_across_the_History_of_ICCV_2025_paper.pdf"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t17__multiscale_sliced_wasserstein_distances_as_perceptual_color_",
+   "report_id": "2407.10181",
+   "title": "Multiscale Sliced Wasserstein Distances as Perceptual Color Difference Measures",
+   "authors": [
+    "Jiaqi He",
+    "Zhihua Wang",
+    "Leon Wang",
+    "Tsein-I Liu",
+    "Yuming Fang",
+    "Qilin Sun",
+    "Kede Ma"
+   ],
+   "year": 2024,
+   "venue": "ECCV",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2407.10181",
+   "published": "2024-07-14",
+   "abstract": "Contemporary color difference (CD) measures for photographic images typically operate by comparing co-located pixels, patches in a ``perceptually uniform'' color space, or features in a learned latent space. Consequently, these measures inadequately capture the human color perception of misaligned image pairs, which are prevalent in digital photography (e.g., the same scene captured by different smartphones). In this paper, we describe a perceptual CD measure based on the multiscale sliced Wasserstein distance, which facilitates efficient comparisons between non-local patches of similar color and structure. This aligns with the modern understanding of color perception, where color and structure are inextricably interdependent as a unitary process of perceptual organization. Meanwhile, our method is easy to implement and training-free. Experimental results indicate that our CD measure performs favorably in assessing CDs in photographic images, and consistently surpasses competing models in the presence of image misalignment. Additionally, we empirically verify that our measure functions as a metric in the mathematical sense, and show its promise as a loss function for image and video color transfer tasks. The code is available at https://github.com/real-hjq/MS-SWD.",
+   "contribution_zh": "多尺度 SW 距离做 training-free 感知色差度量，对非对齐图像对稳健，实证满足度量公理，可直接当图像/视频颜色迁移损失",
+   "links": {
+    "ECVA": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/7025_ECCV_2024_paper.php"
+   },
+   "pdf": "papers/2407.10181.pdf",
+   "text": "data/text/2407.10181.txt",
+   "text_chars": 44431,
+   "pages": 18
+  },
+  {
+   "key": "t17__rethinking_flow_based_gradual_domain_adaptation_via_semi_dua",
+   "report_id": "2602.01179",
+   "title": "Rethinking the Flow-Based Gradual Domain Adaptation: A Semi-Dual Optimal Transport Perspective",
+   "authors": [
+    "Zhichao Chen",
+    "Zhan Zhuang",
+    "Yunfei Teng",
+    "Hao Wang",
+    "Fangyikang Wang",
+    "Zhengnan Li",
+    "Tianqiao Liu",
+    "Haoxuan Li",
+    "Zhouchen Lin"
+   ],
+   "year": 2026,
+   "venue": "ICML",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": "2602.01179",
+   "published": "2026-02-01",
+   "abstract": "Gradual domain adaptation (GDA) aims to mitigate domain shift by progressively adapting models from the source domain to the target domain via intermediate domains. However, real intermediate domains are often unavailable or ineffective, necessitating the synthesis of intermediate samples. Flow-based models have recently been used for this purpose by interpolating between source and target distributions. Notably, their training typically relies on sample-based log-likelihood estimation, which can discard useful information and thus degrade GDA performance. The key to addressing this limitation is constructing the intermediate domains via samples directly. To this end, we propose an Entropy-regularized Semi-dual Unbalanced Optimal Transport (E-SUOT) framework to construct intermediate domains. Specifically, we reformulate flow-based GDA as a Lagrangian dual problem and derive an equivalent semi-dual objective that circumvents the need for likelihood estimation. However, the dual problem leads to an unstable min-max training procedure. To alleviate this issue, we further introduce the entropy regularization to convert it into a more stable sequential optimization procedure. Based on this, we propose a novel GDA training framework and provide theoretical analysis in terms of stability and generalization. Finally, extensive experiments are conducted to demonstrate the efficacy of the E-SUOT framework.",
+   "contribution_zh": "用 semi-dual OT 重构 flow-based 逐步域自适应的中间域生成路径",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=iqXzDUd36x"
+   },
+   "pdf": "papers/2602.01179.pdf",
+   "text": "data/text/2602.01179.txt",
+   "text_chars": 90000,
+   "pages": 45
+  },
+  {
+   "key": "t17__vision_language_model_guided_source_free_domain_adaptation_v",
+   "report_id": "Vision_Language_Model_Guided_Source_Free_Domain_Ad",
+   "title": "Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport",
+   "authors": "",
+   "year": 2026,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "用 VLM 语义先验引导源原型与目标特征的 OT 对齐，source-free DA 新范式",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2026/html/Han_Vision-Language_Model_Guided_Source-Free_Domain_Adaptation_via_Optimal_Transport_CVPR_2026_paper.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t17__color_transfer_with_modulated_flows",
+   "report_id": "2503.19062",
+   "title": "Color Transfer with Modulated Flows",
+   "authors": [
+    "Maria Larchenko",
+    "Alexander Lobashev",
+    "Dmitry Guskov",
+    "Vladimir Vladimirovich Palyulin"
+   ],
+   "year": 2025,
+   "venue": "AAAI",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2503.19062",
+   "published": "2025-03-24",
+   "abstract": "In this work, we introduce Modulated Flows (ModFlows), a novel approach for color transfer between images based on rectified flows. The primary goal of the color transfer is to adjust the colors of a target image to match the color distribution of a reference image. Our technique is based on optimal transport and executes color transfer as an invertible transformation within the RGB color space. The ModFlows utilizes the bijective property of flows, enabling us to introduce a common intermediate color distribution and build a dataset of rectified flows. We train an encoder on this dataset to predict the weights of a rectified model for new images. After training on a set of optimal transport plans, our approach can generate plans for new pairs of distributions without additional fine-tuning. We additionally show that the trained encoder provides an image embedding, associated only with its color style. The presented method is capable of processing 4K images and achieves the state-of-the-art performance in terms of content and style similarity. Our source code is available at https://github.com/maria-larchenko/modflows",
+   "contribution_zh": "基于 rectified flow 的可逆 RGB 颜色迁移：在 OT plan 数据集上训练流+编码器预测流权重，新图像对零微调泛化，可处理 4K",
+   "links": {
+    "AAAI OJS": "https://ojs.aaai.org/index.php/AAAI/article/view/32470"
+   },
+   "pdf": "papers/2503.19062.pdf",
+   "text": "data/text/2503.19062.txt",
+   "text_chars": 34158,
+   "pages": 9
+  },
+  {
+   "key": "t17__optimal_transport_guided_source_free_adaptation_for_face_ant",
+   "report_id": "2503.22984",
+   "title": "Optimal Transport-Guided Source-Free Adaptation for Face Anti-Spoofing",
+   "authors": [
+    "Zhuowei Li",
+    "Tianchen Zhao",
+    "Xiang Xu",
+    "Zheng Zhang",
+    "Zhihua Li",
+    "Xuanbai Chen",
+    "Qin Zhang",
+    "Alessandro Bergamo",
+    "Anil K. Jain",
+    "Yifan Xing"
+   ],
+   "year": 2025,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2503.22984",
+   "published": "2025-03-29",
+   "abstract": "Developing a face anti-spoofing model that meets the security requirements of clients worldwide is challenging due to the domain gap between training datasets and diverse end-user test data. Moreover, for security and privacy reasons, it is undesirable for clients to share a large amount of their face data with service providers. In this work, we introduce a novel method in which the face anti-spoofing model can be adapted by the client itself to a target domain at test time using only a small sample of data while keeping model parameters and training data inaccessible to the client. Specifically, we develop a prototype-based base model and an optimal transport-guided adaptor that enables adaptation in either a lightweight training or training-free fashion, without updating base model's parameters. Furthermore, we propose geodesic mixup, an optimal transport-based synthesis method that generates augmented training data along the geodesic path between source prototypes and target data distribution. This allows training a lightweight classifier to effectively adapt to target-specific characteristics while retaining essential knowledge learned from the source domain. In cross-domain and cross-attack settings, compared with recent methods, our method achieves average relative improvements of 19.17% in HTER and 8.58% in AUC, respectively.",
+   "contribution_zh": "source-free 约束下用 OT 引导原型/特征传输，客户端自适应活体检测",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_Optimal_Transport-Guided_Source-Free_Adaptation_for_Face_Anti-Spoofing_CVPR_2025_paper.html"
+   },
+   "pdf": "papers/2503.22984.pdf",
+   "text": "data/text/2503.22984.txt",
+   "text_chars": 72606,
+   "pages": 15
+  },
+  {
+   "key": "t17__2504.03188",
+   "report_id": "2504.03188",
+   "title": "Pairwise Optimal Transports for Training All-to-All Flow-Based Condition Transfer Model",
+   "authors": [
+    "Kotaro Ikeda",
+    "Masanori Koyama",
+    "Jinzhe Zhang",
+    "Kohei Hayashi",
+    "Kenji Fukumizu"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2504.03188",
+   "published": "2025-04-04",
+   "abstract": "In this paper, we propose a flow-based method for learning all-to-all transfer maps among conditional distributions that approximates pairwise optimal transport. The proposed method addresses the challenge of handling the case of continuous conditions, which often involve a large set of conditions with sparse empirical observations per condition. We introduce a novel cost function that enables simultaneous learning of optimal transports for all pairs of conditional distributions. Our method is supported by a theoretical guarantee that, in the limit, it converges to the pairwise optimal transports among infinite pairs of conditional distributions. The learned transport maps are subsequently used to couple data points in conditional flow matching. We demonstrate the effectiveness of this method on synthetic and benchmark datasets, as well as on chemical datasets in which continuous physical properties are defined as conditions. The code for this project can be found at https://github.com/kotatumuri-room/A2A-FM",
+   "contribution_zh": "设计一个成本函数同时学所有条件分布对之间的 pairwise OT，支持连续条件的 all-to-all 风格/属性迁移，有无限样本极限收敛保证",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2504.03188"
+   },
+   "pdf": "papers/2504.03188.pdf",
+   "text": "data/text/2504.03188.txt",
+   "text_chars": 84683,
+   "pages": 32
+  },
+  {
+   "key": "t17__wast_3d_wasserstein_2_distance_for_scene_to_scene_stylizatio",
+   "report_id": "2409.17917",
+   "title": "WaSt-3D: Wasserstein-2 Distance for Scene-to-Scene Stylization on 3D Gaussians",
+   "authors": [
+    "Dmytro Kotovenko",
+    "Olga Grebenkova",
+    "Nikolaos Sarafianos",
+    "Avinash Paliwal",
+    "Pingchuan Ma",
+    "Omid Poursaeed",
+    "Sreyas Mohan",
+    "Yuchen Fan",
+    "Yilei Li",
+    "Rakesh Ranjan",
+    "Björn Ommer"
+   ],
+   "year": 2024,
+   "venue": "ECCV",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2409.17917",
+   "published": "2024-09-26",
+   "abstract": "While style transfer techniques have been well-developed for 2D image stylization, the extension of these methods to 3D scenes remains relatively unexplored. Existing approaches demonstrate proficiency in transferring colors and textures but often struggle with replicating the geometry of the scenes. In our work, we leverage an explicit Gaussian Splatting (GS) representation and directly match the distributions of Gaussians between style and content scenes using the Earth Mover's Distance (EMD). By employing the entropy-regularized Wasserstein-2 distance, we ensure that the transformation maintains spatial smoothness. Additionally, we decompose the scene stylization problem into smaller chunks to enhance efficiency. This paradigm shift reframes stylization from a pure generative process driven by latent space losses to an explicit matching of distributions between two Gaussian representations. Our method achieves high-resolution 3D stylization by faithfully transferring details from 3D style scenes onto the content scene. Furthermore, WaSt-3D consistently delivers results across diverse content and style scenes without necessitating any training, as it relies solely on optimization-based techniques. See our project page for additional results and source code: $\\href{https://compvis.github.io/wast3d/}{https://compvis.github.io/wast3d/}$.",
+   "contribution_zh": "用熵正则 W2/EMD 直接匹配风格与内容场景的 3D 高斯分布，training-free 场景级 3DGS 风格迁移，把风格化从生成问题改写为显式分布匹配",
+   "links": {
+    "ECVA": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/3174_ECCV_2024_paper.php"
+   },
+   "pdf": "papers/2409.17917.pdf",
+   "text": "data/text/2409.17917.txt",
+   "text_chars": 43943,
+   "pages": 18
+  },
+  {
+   "key": "t17__2412.02214",
+   "report_id": "2412.02214",
+   "title": "GIST: Towards Photorealistic Style Transfer via Multiscale Geometric Representations",
+   "authors": [
+    "Renan A. Rojas-Gomez",
+    "Minh N. Do"
+   ],
+   "year": 2024,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2412.02214",
+   "published": "2024-12-03",
+   "abstract": "State-of-the-art Style Transfer methods often leverage pre-trained encoders optimized for discriminative tasks, which may not be ideal for image synthesis. This can result in significant artifacts and loss of photorealism. Motivated by the ability of multiscale geometric image representations to capture fine-grained details and global structure, we propose GIST: Geometric-based Image Style Transfer, a novel Style Transfer technique that exploits the geometric properties of content and style images. GIST replaces the standard Neural Style Transfer autoencoding framework with a multiscale image expansion, preserving scene details without the need for post-processing or training. Our method matches multiresolution and multidirectional representations such as Wavelets and Contourlets by solving an optimal transport problem, leading to an efficient texture transferring. Experiments show that GIST is on-par or outperforms recent photorealistic Style Transfer approaches while significantly reducing the processing time with no model training.",
+   "contribution_zh": "在小波/Contourlet 子带上用高斯假设下的闭式 W2 匹配做 training-free 照片级风格迁移，替代神经自编码框架",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2412.02214"
+   },
+   "pdf": "papers/2412.02214.pdf",
+   "text": "data/text/2412.02214.txt",
+   "text_chars": 51517,
+   "pages": 10
+  },
+  {
+   "key": "t17__scalable_motion_style_transfer_with_constrained_diffusion_ge",
+   "report_id": "2312.07311",
+   "title": "Scalable Motion Style Transfer with Constrained Diffusion Generation",
+   "authors": [
+    "Wenjie Yin",
+    "Yi Yu",
+    "Hang Yin",
+    "Danica Kragic",
+    "Mårten Björkman"
+   ],
+   "year": 2024,
+   "venue": "AAAI",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2312.07311",
+   "published": "2023-12-12",
+   "abstract": "Current training of motion style transfer systems relies on consistency losses across style domains to preserve contents, hindering its scalable application to a large number of domains and private data. Recent image transfer works show the potential of independent training on each domain by leveraging implicit bridging between diffusion models, with the content preservation, however, limited to simple data patterns. We address this by imposing biased sampling in backward diffusion while maintaining the domain independence in the training stage. We construct the bias from the source domain keyframes and apply them as the gradient of content constraints, yielding a framework with keyframe manifold constraint gradients (KMCGs). Our validation demonstrates the success of training separate models to transfer between as many as ten dance motion styles. Comprehensive experiments find a significant improvement in preserving motion contents in comparison to baseline and ablative diffusion-based style transfer models. In addition, we perform a human study for a subjective assessment of the quality of generated dance motions. The results validate the competitiveness of KMCGs.",
+   "contribution_zh": "各风格域独立训练扩散模型，借 DDIB（熵正则 OT/SB 解释）桥接+关键帧流形约束梯度，可扩展到十种舞蹈动作风格",
+   "links": {
+    "AAAI OJS": "https://ojs.aaai.org/index.php/AAAI/article/view/28889"
+   },
+   "pdf": "papers/2312.07311.pdf",
+   "text": "data/text/2312.07311.txt",
+   "text_chars": 42711,
+   "pages": 9
+  },
+  {
+   "key": "t17__a_sliced_wasserstein_loss_for_neural_texture_synthesis",
+   "report_id": "2006.07229",
+   "title": "A Sliced Wasserstein Loss for Neural Texture Synthesis",
+   "authors": [
+    "Eric Heitz",
+    "Kenneth Vanhoey",
+    "Thomas Chambon",
+    "Laurent Belcour"
+   ],
+   "year": 2021,
+   "venue": "CVPR（奠基）",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2006.07229",
+   "published": "2020-06-12",
+   "abstract": "We address the problem of computing a textural loss based on the statistics extracted from the feature activations of a convolutional neural network optimized for object recognition (e.g. VGG-19). The underlying mathematical problem is the measure of the distance between two distributions in feature space. The Gram-matrix loss is the ubiquitous approximation for this problem but it is subject to several shortcomings. Our goal is to promote the Sliced Wasserstein Distance as a replacement for it. It is theoretically proven,practical, simple to implement, and achieves results that are visually superior for texture synthesis by optimization or training generative neural networks.",
+   "contribution_zh": "用 SWD（1D 投影排序闭式解）替代 Gram 矩阵作纹理损失，捕获完整特征分布而非二阶统计量",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2021/html/Heitz_A_Sliced_Wasserstein_Loss_for_Neural_Texture_Synthesis_CVPR_2021_paper.html"
+   },
+   "pdf": "papers/2006.07229.pdf",
+   "text": "data/text/2006.07229.txt",
+   "text_chars": 34251,
+   "pages": 9
+  },
+  {
+   "key": "t17__style_transfer_by_relaxed_optimal_transport_and_self_similar",
+   "report_id": "1904.12785",
+   "title": "Style Transfer by Relaxed Optimal Transport and Self-Similarity",
+   "authors": [
+    "Nicholas Kolkin",
+    "Jason Salavon",
+    "Greg Shakhnarovich"
+   ],
+   "year": 2019,
+   "venue": "CVPR（奠基）",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1904.12785",
+   "published": "2019-04-29",
+   "abstract": "Style transfer algorithms strive to render the content of one image using the style of another. We propose Style Transfer by Relaxed Optimal Transport and Self-Similarity (STROTSS), a new optimization-based style transfer algorithm. We extend our method to allow user-specified point-to-point or region-to-region control over visual similarity between the style image and the output. Such guidance can be used to either achieve a particular visual effect or correct errors made by unconstrained style transfer. In order to quantitatively compare our method to prior work, we conduct a large-scale user study designed to assess the style-content tradeoff across settings in style transfer algorithms. Our results indicate that for any desired level of content preservation, our method provides higher quality stylization than prior work. Code is available at https://github.com/nkolkin13/STROTSS",
+   "contribution_zh": "用 relaxed EMD 定义风格损失+自相似保内容，OT 风格迁移的开山之作",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content_CVPR_2019/html/Kolkin_Style_Transfer_by_Relaxed_Optimal_Transport_and_Self-Similarity_CVPR_2019_paper.html"
+   },
+   "pdf": "papers/1904.12785.pdf",
+   "text": "data/text/1904.12785.txt",
+   "text_chars": 34964,
+   "pages": 12
+  }
+ ]
+}

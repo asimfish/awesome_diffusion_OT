@@ -1,0 +1,20 @@
+# bulk binaries live in GitHub Releases (pdf-en-v1 / pdf-zh-v1); see scripts/publish_release.sh
+papers/*.pdf
+papers_zh/*.pdf
+papers_zh/*.translation-cache.jsonl
+data/text/
+logs/
+__pycache__/
+*.pyc
+.DS_Store
+report/pdf/*.aux
+report/pdf/*.log
+report/pdf/*.out
+report/pdf/*.toc
+slides/beamer/*.aux
+slides/beamer/*.log
+slides/beamer/*.nav
+slides/beamer/*.snm
+slides/beamer/*.out
+slides/beamer/*.toc
+slides/beamer/*.vrb

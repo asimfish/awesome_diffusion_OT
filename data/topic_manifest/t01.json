@@ -1,0 +1,357 @@
+{
+ "topic": "t01",
+ "topic_name": "OT 数学基础（面向生成模型研究者的最小必要集）",
+ "section": "A",
+ "section_name": "Theory Foundations",
+ "kb_note": "source/kb/t01_ot_foundations.md",
+ "papers": [
+  {
+   "key": "t01__2505.06589",
+   "report_id": "2505.06589",
+   "title": "Optimal Transport for Machine Learners",
+   "authors": [
+    "Gabriel Peyré"
+   ],
+   "year": 2025,
+   "venue": "arXiv 课程讲义",
+   "evidence": "B",
+   "star": true,
+   "arxiv_id": "2505.06589",
+   "published": "2025-05-10",
+   "abstract": "Modern machine learning repeatedly manipulates probability measures: empirical datasets, generated samples, latent distributions, class-conditional laws, particle systems, weights of wide networks and attention patterns. Optimal transport is useful in this setting because it compares such objects by asking how mass should move. It therefore combines a statistically meaningful notion of discrepancy with a geometry of interpolation, dual certificates and variational dynamics. This makes OT a common language for losses, generative modeling, domain adaptation, robust learning, barycenters, gradient flows and mean-field descriptions of learning algorithms. This book presents the main OT techniques with these machine-learning uses in mind. It starts from finite assignment and the Monge map viewpoint, passes to Kantorovich couplings and dual potentials, and then explains the algorithmic ideas that make transport usable: linear programming, semi-discrete cells, Sinkhorn scaling and low-dimensional projections. The same objects are then reused as a geometry of measures, giving Wasserstein distances, barycenters, gradient flows, dynamic formulations and Gaussian/Bures formulas. The final chapters emphasize the variants most relevant to modern ML: divergences and adversarial losses, entropic and unbalanced relaxations, robust or spectral ground geometries, Gromov and quantum extensions, and transport-based views of generative models, mean-field networks and attention dynamics. The goal is to keep the mathematics explicit while exposing the computational and geometric intuitions needed to turn OT into a working toolbox for machine learners.",
+   "contribution_zh": "面向 ML 的现代精简版：Monge/Kantorovich、Brenier、对偶、动态形式、Bures 度量、梯度流，并直连 GAN/扩散/transformer，配可运行 notebook",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2505.06589",
+    "网站": "https://www.gpeyre.com/ot4ml/"
+   },
+   "pdf": "papers/2505.06589.pdf",
+   "text": "data/text/2505.06589.txt",
+   "text_chars": 90000,
+   "pages": 480
+  },
+  {
+   "key": "t01__1803.00567",
+   "report_id": "1803.00567",
+   "title": "Computational Optimal Transport",
+   "authors": [
+    "Gabriel Peyré",
+    "Marco Cuturi"
+   ],
+   "year": 2019,
+   "venue": "Foundations and Trends in ML",
+   "evidence": "B",
+   "star": true,
+   "arxiv_id": "1803.00567",
+   "published": "2018-03-01",
+   "abstract": "Optimal transport (OT) theory can be informally described using the words of the French mathematician Gaspard Monge (1746-1818): A worker with a shovel in hand has to move a large pile of sand lying on a construction site. The goal of the worker is to erect with all that sand a target pile with a prescribed shape (for example, that of a giant sand castle). Naturally, the worker wishes to minimize her total effort, quantified for instance as the total distance or time spent carrying shovelfuls of sand. Mathematicians interested in OT cast that problem as that of comparing two probability distributions, two different piles of sand of the same volume. They consider all of the many possible ways to morph, transport or reshape the first pile into the second, and associate a \"global\" cost to every such transport, using the \"local\" consideration of how much it costs to move a grain of sand from one place to another. Recent years have witnessed the spread of OT in several fields, thanks to the emergence of approximate solvers that can scale to sizes and dimensions that are relevant to data sciences. Thanks to this newfound scalability, OT is being increasingly used to unlock various problems in imaging sciences (such as color or texture processing), computer vision and graphics (for shape manipulation) or machine learning (for regression, classification and density fitting). This short book reviews OT with a bias toward numerical methods and their applications in data sciences, and sheds lights on the theoretical properties of OT that make it particularly useful for some of these applications.",
+   "contribution_zh": "计算 OT 标准教材：离散 OT、对偶、动态形式、barycenter 全覆盖，\"从零到能跑代码\"的主线读物",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/1803.00567",
+    "官方站+PDF": "https://optimaltransport.github.io/"
+   },
+   "pdf": "papers/1803.00567.pdf",
+   "text": "data/text/1803.00567.txt",
+   "text_chars": 90000,
+   "pages": 209
+  },
+  {
+   "key": "t01__optimal_transport_for_applied_mathematicians",
+   "report_id": "Optimal_Transport_for_Applied_Mathematicians",
+   "title": "Optimal Transport for Applied Mathematicians",
+   "authors": "Santambrogio",
+   "year": 2015,
+   "venue": "Birkhäuser",
+   "evidence": "B",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "应用数学侧标准参考：Kantorovich 对偶、Brenier、Benamou–Brenier、W 空间几何的严格但可读证明",
+   "links": {
+    "作者稿 PDF": "https://math.univ-lyon1.fr/~santambrogio/OTAM-cvgmt.pdf"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t01__a_computational_fluid_mechanics_solution_to_the_monge_kantor",
+   "report_id": "A_computational_fluid_mechanics_solution_to_the_Mo",
+   "title": "A computational fluid mechanics solution to the Monge–Kantorovich mass transfer problem",
+   "authors": "Benamou & Brenier",
+   "year": 2000,
+   "venue": "Numerische Mathematik 84",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "\\(W_2^2\\) = 连续性方程约束下的最小动能；扩散/流匹配轨迹分析的通用语言与数值入口",
+   "links": {
+    "DOI": "https://doi.org/10.1007/s002110050002"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t01__polar_factorization_and_monotone_rearrangement_of_vector_val",
+   "report_id": "Polar_factorization_and_monotone_rearrangement_of",
+   "title": "Polar factorization and monotone rearrangement of vector-valued functions",
+   "authors": "Brenier",
+   "year": 1991,
+   "venue": "Comm. Pure Appl. Math. 44(4)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "二次代价下最优映射存在唯一且 = 凸势梯度；一切\"扩散潜码 ≈ OT 映射\"讨论的理论根基",
+   "links": {
+    "DOI": "https://doi.org/10.1002/cpa.3160440402"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t01__2512.06797",
+   "report_id": "2512.06797",
+   "title": "Optimal and Diffusion Transports in Machine Learning",
+   "authors": [
+    "Gabriel Peyré"
+   ],
+   "year": 2025,
+   "venue": "arXiv 综述",
+   "evidence": "B",
+   "star": false,
+   "arxiv_id": "2512.06797",
+   "published": "2025-12-07",
+   "abstract": "Several problems in machine learning are naturally expressed as the design and analysis of time-evolving probability distributions. This includes sampling via diffusion methods, optimizing the weights of neural networks, and analyzing the evolution of token distributions across layers of large language models. While the targeted applications differ (samples, weights, tokens), their mathematical descriptions share a common structure. A key idea is to switch from the Eulerian representation of densities to their Lagrangian counterpart through vector fields that advect particles. This dual view introduces challenges, notably the non-uniqueness of Lagrangian vector fields, but also opportunities to craft density evolutions and flows with favorable properties in terms of regularity, stability, and computational tractability. This survey presents an overview of these methods, with emphasis on two complementary approaches: diffusion methods, which rely on stochastic interpolation processes and underpin modern generative AI, and optimal transport, which defines interpolation by minimizing displacement cost. We illustrate how both approaches appear in applications ranging from sampling, neural network optimization, to modeling the dynamics of transformers for large language models.",
+   "contribution_zh": "直接把扩散与 OT 两条主线串成统一框架（Eulerian/Lagrangian、BB、梯度流、transformer token 流）；本项目的桥梁综述",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2512.06797"
+   },
+   "pdf": "papers/2512.06797.pdf",
+   "text": "data/text/2512.06797.txt",
+   "text_chars": 73704,
+   "pages": 25
+  },
+  {
+   "key": "t01__2306.16156",
+   "report_id": "2306.16156",
+   "title": "Recent Advances in Optimal Transport for Machine Learning",
+   "authors": [
+    "Eduardo Fernandes Montesuma",
+    "Fred Ngolè Mboula",
+    "Antoine Souloumiac"
+   ],
+   "year": 2025,
+   "venue": "IEEE TPAMI 47(2)",
+   "evidence": "B",
+   "star": false,
+   "arxiv_id": "2306.16156",
+   "published": "2023-06-28",
+   "abstract": "Recently, Optimal Transport has been proposed as a probabilistic framework in Machine Learning for comparing and manipulating probability distributions. This is rooted in its rich history and theory, and has offered new solutions to different problems in machine learning, such as generative modeling and transfer learning. In this survey we explore contributions of Optimal Transport for Machine Learning over the period 2012 -- 2023, focusing on four sub-fields of Machine Learning: supervised, unsupervised, transfer and reinforcement learning. We further highlight the recent development in computational Optimal Transport and its extensions, such as partial, unbalanced, Gromov and Neural Optimal Transport, and its interplay with Machine Learning practice.",
+   "contribution_zh": "2012–2023 OT×ML 全景应用综述（生成、迁移、RL 与计算 OT 扩展）；查应用先查它",
+   "links": {
+    "DOI": "https://doi.org/10.1109/tpami.2024.3489030",
+    "arXiv": "https://arxiv.org/abs/2306.16156"
+   },
+   "pdf": "papers/2306.16156.pdf",
+   "text": "data/text/2306.16156.txt",
+   "text_chars": 90000,
+   "pages": 20
+  },
+  {
+   "key": "t01__2106.01963",
+   "report_id": "2106.01963",
+   "title": "A Survey on Optimal Transport for Machine Learning: Theory and Applications",
+   "authors": [
+    "Luis Caicedo Torres",
+    "Luiz Manella Pereira",
+    "M. Hadi Amini"
+   ],
+   "year": 2025,
+   "venue": "IEEE Access 13",
+   "evidence": "B",
+   "star": false,
+   "arxiv_id": "2106.01963",
+   "published": "2021-06-03",
+   "abstract": "Optimal Transport (OT) theory has seen an increasing amount of attention from the computer science community due to its potency and relevance in modeling and machine learning. It introduces means that serve as powerful ways to compare probability distributions with each other, as well as producing optimal mappings to minimize cost functions. In this survey, we present a brief introduction and history, a survey of previous work and propose directions of future study. We will begin by looking at the history of optimal transport and introducing the founders of this field. We then give a brief glance into the algorithms related to OT. Then, we will follow up with a mathematical formulation and the prerequisites to understand OT. These include Kantorovich duality, entropic regularization, KL Divergence, and Wassertein barycenters. Since OT is a computationally expensive problem, we then introduce the entropy-regularized version of computing optimal mappings, which allowed OT problems to become applicable in a wide range of machine learning problems. In fact, the methods generated from OT theory are competitive with the current state-of-the-art methods. We follow this up by breaking down research papers that focus on image processing, graph learning, neural architecture search, document representation, and domain adaptation. We close the paper with a small section on future research. Of the recommendations presented, three main problems are fundamental to allow OT to become widely applicable but rely strongly on its mathematical formulation and thus are hardest to answer. Since OT is a novel method, there is plenty of space for new research, and with more and more competitive methods (either on an accuracy level or computational speed level) being created, the future of applied optimal transport is bright as it has become pervasive in machine learning.",
+   "contribution_zh": "入门友好的 2025 应用综述，含历史脉络与对偶/熵正则数学预备",
+   "links": {
+    "DOI": "https://doi.org/10.1109/ACCESS.2025.3539926",
+    "arXiv": "https://arxiv.org/abs/2106.01963"
+   },
+   "pdf": "papers/2106.01963.pdf",
+   "text": "data/text/2106.01963.txt",
+   "text_chars": 51047,
+   "pages": 15
+  },
+  {
+   "key": "t01__lectures_on_optimal_transport",
+   "report_id": "Lectures_on_Optimal_Transport",
+   "title": "Lectures on Optimal Transport",
+   "authors": "Ambrosio, Brué & Semola",
+   "year": 2024,
+   "venue": "Springer UNITEXT 169",
+   "evidence": "B",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "SNS 二十年课程沉淀；给出两种自包含的 Kantorovich 对偶证明，通向几何/泛函不等式与 PDE",
+   "links": {
+    "Springer": "https://link.springer.com/book/10.1007/978-3-031-76834-7"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t01__2407.18163",
+   "report_id": "2407.18163",
+   "title": "Statistical optimal transport",
+   "authors": [
+    "Sinho Chewi",
+    "Jonathan Niles-Weed",
+    "Philippe Rigollet"
+   ],
+   "year": 2024,
+   "venue": "arXiv 讲义（Saint-Flour）",
+   "evidence": "B",
+   "star": false,
+   "arxiv_id": "2407.18163",
+   "published": "2024-07-25",
+   "abstract": "We present an introduction to the field of statistical optimal transport, based on lectures given at École d'Été de Probabilités de Saint-Flour XLIX.",
+   "contribution_zh": "统计侧系统讲义（经验测度收敛、估计率）；T01 只需其数学预备章，深入归 T06",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2407.18163"
+   },
+   "pdf": "papers/2407.18163.pdf",
+   "text": "data/text/2407.18163.txt",
+   "text_chars": 90000,
+   "pages": 290
+  },
+  {
+   "key": "t01__a_combinatorial_algorithm_for_semi_discrete_optimal_transpor",
+   "report_id": "A_Combinatorial_Algorithm_for_Semi_Discrete_Optima",
+   "title": "A Combinatorial Algorithm for Semi-Discrete Optimal Transport",
+   "authors": "",
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "与主流 smooth dual/Newton 不同的组合算法路径，半离散 OT 的最新进展",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/2d950a2cfd8a75124c178a89545b97fd-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t01__an_invitation_to_optimal_transport_wasserstein_distances_and",
+   "report_id": "An_Invitation_to_Optimal_Transport_Wasserstein_Dis",
+   "title": "An Invitation to Optimal Transport, Wasserstein Distances, and Gradient Flows",
+   "authors": "Figalli & Glaudo",
+   "year": 2023,
+   "venue": "EMS Textbooks",
+   "evidence": "B",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "146 页最短严格入门：对偶、Brenier、W 距离、JKO/Otto 微积分，含带解答习题，一学期课体量",
+   "links": {
+    "EMS": "https://ems.press/books/etb/258",
+    "同作者免费 ETH 讲义": "https://people.math.ethz.ch/~afigalli/lecture-notes-pdf/An-introduction-to-optimal-transport-and-Wasserstein-gradient-flows.pdf"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t01__2003.00855",
+   "report_id": "2003.00855",
+   "title": "Optimal transport: discretization and algorithms",
+   "authors": [
+    "Quentin Merigot",
+    "Boris Thibert"
+   ],
+   "year": 2021,
+   "venue": "Handbook of Numerical Analysis 22",
+   "evidence": "B",
+   "star": false,
+   "arxiv_id": "2003.00855",
+   "published": "2020-03-02",
+   "abstract": "This chapter describes techniques for the numerical resolution of optimal transport problems. We will consider several discretizations of these problems, and we will put a strong focus on the mathematical analysis of the algorithms to solve the discretized problems. We will describe in detail the following discretizations and corresponding algorithms: the assignment problem and Bertsekas auction's algorithm; the entropic regularization and Sinkhorn-Knopp's algorithm; semi-discrete optimal transport and Oliker-Prussner or damped Newton's algorithm, and finally semi-discrete entropic regularization. Our presentation highlights the similarity between these algorithms and their connection with the theory of Kantorovich duality.",
+   "contribution_zh": "半离散 OT 最佳系统讲义：Laguerre cell、damped Newton、离散化误差分析",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2003.00855"
+   },
+   "pdf": "papers/2003.00855.pdf",
+   "text": "data/text/2003.00855.txt",
+   "text_chars": 90000,
+   "pages": 68
+  },
+  {
+   "key": "t01__1603.05579",
+   "report_id": "1603.05579",
+   "title": "Convergence of a Newton algorithm for semi-discrete optimal transport",
+   "authors": [
+    "Jun Kitagawa",
+    "Quentin Mérigot",
+    "Boris Thibert"
+   ],
+   "year": 2019,
+   "venue": "J. Eur. Math. Soc. 21(9)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1603.05579",
+   "published": "2016-03-17",
+   "abstract": "Many problems in geometric optics or convex geometry can be recast as optimal transport problems: this includes the far-field reflector problem, Alexandrov's curvature prescription problem, etc. A popular way to solve these problems numerically is to assume that the source probability measure is absolutely continuous while the target measure is finitely supported. We refer to this setting as semi-discrete optimal transport. Among the several algorithms proposed to solve semi-discrete optimal transport problems, one currently needs to choose between algorithms that are slow but come with a convergence speed analysis (e.g. Oliker-Prussner) or algorithms that are much faster in practice but which come with no convergence guarantees Algorithms of the first kind rely on coordinate-wise increments and the number of iterations required to reach the solution up to an error of $ε$ is of order $N^3/ε$, where $N$ is the number of Dirac masses in the target measure. On the other hand, algorithms of the second kind typically rely on the formulation of the semi-discrete optimal transport problem as an unconstrained convex optimization problem which is solved using a Newton or quasi-Newton method. The purpose of this article is to bridge this gap between theory and practice by introducing a damped Newton's algorithm which is experimentally efficient and by proving the global convergence of this algorithm with optimal rates. The main assumptions is that the cost function satisfies a condition that appears in the regularity theory for optimal transport (the Ma-Trudinger-Wang condition) and that the support of the source density is connected in a quantitative way (it must satisfy a weighted Poincaré-Wirtinger inequality).",
+   "contribution_zh": "半离散 OT 阻尼牛顿法的全局线性收敛，半离散数值求解的理论支柱",
+   "links": {
+    "DOI": "https://doi.org/10.4171/jems/889",
+    "arXiv": "https://arxiv.org/abs/1603.05579"
+   },
+   "pdf": "papers/1603.05579.pdf",
+   "text": "data/text/1603.05579.txt",
+   "text_chars": 90000,
+   "pages": 45
+  },
+  {
+   "key": "t01__topics_in_optimal_transportation",
+   "report_id": "Topics_in_Optimal_Transportation",
+   "title": "Optimal Transport: Old and New",
+   "authors": "Villani",
+   "year": 2009,
+   "venue": "Springer Grundlehren 338",
+   "evidence": "B",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "理论百科全书：正则性、几何（Ricci 曲率）方向的终极参考；不建议作为第一本，查证明时用",
+   "links": {
+    "Springer": "https://link.springer.com/book/10.1007/978-3-540-71050-9",
+    "作者免费预印": "https://www.ceremade.dauphine.fr/~mischler/articles/VBook-O&N.pdf"
+   },
+   "pdf": "papers/t01_2009_Villani_OT_Old_and_New_preprint.pdf",
+   "text": "data/text/t01_2009_Villani_OT_Old_and_New_preprint.txt",
+   "text_chars": 90000,
+   "pages": 547
+  }
+ ]
+}

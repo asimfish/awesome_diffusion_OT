@@ -1,0 +1,15 @@
+{
+  "rows": 477,
+  "unique": 446,
+  "with_arxiv": 326,
+  "local_pdf": 207,
+  "starred": 139,
+  "evidence": {
+    "P": 345,
+    "A": 24,
+    "R": 62,
+    "B": 15
+  },
+  "kb_pdf_rows": 236,
+  "kb_pdf_unmatched": 5
+}

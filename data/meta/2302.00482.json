@@ -1,0 +1,69 @@
+{
+ "report_id": "2302.00482",
+ "arxiv_id": "2302.00482",
+ "title": "Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport",
+ "tldr_zh": "提出 CFM 统一框架与 OT-CFM，batch 内 OT 重配对使流更直、训练更快、2D 上逼近动态 OT。",
+ "tldr_en": "Generalized conditional flow matching with minibatch OT couplings: straighter flows, faster training, approximates dynamic OT and Schrödinger bridges.",
+ "tags": [
+  "flow-matching",
+  "minibatch-ot",
+  "coupling",
+  "schrodinger-bridge",
+  "single-cell",
+  "theory"
+ ],
+ "code_url": "https://github.com/atong01/conditional-flow-matching",
+ "key_numbers": [
+  "NPE 0.018 (OT-CFM) vs 0.222 (I-CFM) on N->8gaussians (Table 2)",
+  "NPE 0.053 (OT-CFM) vs 2.738 (I-CFM) on moons->8gaussians (Table 2)",
+  "CIFAR-10 FID 4.443 @100 Euler NFE, 3.577 @133.94 adaptive NFE, OT-CFM (Table 5)",
+  "CIFAR-10 FID 1000 Euler NFE: OT-CFM 3.741 vs I-CFM 3.643 (Table 5)",
+  "Single-cell EMD Cite/EB/Multi 0.882/0.790/0.937 for OT-CFM vs 0.965/0.872/1.085 I-CFM (Table 4)",
+  "SB-CFM 0.454 vs DSB 1.440 W2 error on N->8gaussians (Table 3)",
+  "CelebA latent MMD 2.81e-3 (OT-CFM) vs 4.85e-3 (I-CFM), sigma=0.1 (Table 6)",
+  "OT-CFM training overhead <1% (Sec. 5.3)"
+ ],
+ "relations": [
+  {
+   "report_id": "2304.14772",
+   "type": "competes"
+  },
+  {
+   "report_id": "1910.04091",
+   "type": "uses"
+  },
+  {
+   "report_id": "2603.15279",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2503.10636",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2506.05526",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2509.25519",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2605.12174",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "Simulation_Free_Schr_dinger_Bridges_via_Score_and",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2405.14780",
+   "type": "superseded_by"
+  },
+  {
+   "report_id": "2306.15030",
+   "type": "superseded_by"
+  }
+ ],
+ "read_full_text": true
+}

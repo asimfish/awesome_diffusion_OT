@@ -1,0 +1,421 @@
+{
+ "topic": "t09",
+ "topic_name": "Rectified Flow 与轨迹拉直",
+ "section": "B",
+ "section_name": "Flow Matching & Trajectory Straightening",
+ "kb_note": "source/kb/t09_rectified_flow.md",
+ "papers": [
+  {
+   "key": "t09__2505.19712",
+   "report_id": "2505.19712",
+   "title": "On the Relation between Rectified Flows and Optimal Transport",
+   "authors": [
+    "Johannes Hertrich",
+    "Antonin Chambolle",
+    "Julie Delon"
+   ],
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2505.19712",
+   "published": "2025-05-26",
+   "abstract": "This paper investigates the connections between rectified flows, flow matching, and optimal transport. Flow matching is a recent approach to learning generative models by estimating velocity fields that guide transformations from a source to a target distribution. Rectified flow matching aims to straighten the learned transport paths, yielding more direct flows between distributions. Our first contribution is a set of invariance properties of rectified flows and explicit velocity fields. In addition, we also provide explicit constructions and analysis in the Gaussian (not necessarily independent) and Gaussian mixture settings and study the relation to optimal transport. Our second contribution addresses recent claims suggesting that rectified flows, when constrained such that the learned velocity field is a gradient, can yield (asymptotically) solutions to optimal transport problems. We study the existence of solutions for this problem and demonstrate that they only relate to optimal transport under assumptions that are significantly stronger than those previously acknowledged. In particular, we present several counterexamples that invalidate earlier equivalence results in the literature, and we argue that enforcing a gradient constraint on rectified flows is, in general, not a reliable method for computing optimal transport maps.",
+   "contribution_zh": "反例定论：迭代 rectification 存在**非最优不动点**、损失趋零不蕴含最优、梯度约束版等价定理（Liu22 Thm 5.6）需强得多的假设——reflow 不是可靠的 OT 求解器",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2505.19712"
+   },
+   "pdf": "papers/2505.19712.pdf",
+   "text": "data/text/2505.19712.txt",
+   "text_chars": 74934,
+   "pages": 26
+  },
+  {
+   "key": "t09__instaflow_one_step_is_enough_for_high_quality_diffusion_base",
+   "report_id": "2309.06380",
+   "title": "InstaFlow: One Step is Enough for High-Quality Diffusion-Based Text-to-Image Generation",
+   "authors": [
+    "Xingchao Liu",
+    "Xiwen Zhang",
+    "Jianzhu Ma",
+    "Jian Peng",
+    "Qiang Liu"
+   ],
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2309.06380",
+   "published": "2023-09-12",
+   "abstract": "Diffusion models have revolutionized text-to-image generation with its exceptional quality and creativity. However, its multi-step sampling process is known to be slow, often requiring tens of inference steps to obtain satisfactory results. Previous attempts to improve its sampling speed and reduce computational costs through distillation have been unsuccessful in achieving a functional one-step model. In this paper, we explore a recent method called Rectified Flow, which, thus far, has only been applied to small datasets. The core of Rectified Flow lies in its \\emph{reflow} procedure, which straightens the trajectories of probability flows, refines the coupling between noises and images, and facilitates the distillation process with student models. We propose a novel text-conditioned pipeline to turn Stable Diffusion (SD) into an ultra-fast one-step model, in which we find reflow plays a critical role in improving the assignment between noise and images. Leveraging our new pipeline, we create, to the best of our knowledge, the first one-step diffusion-based text-to-image generator with SD-level image quality, achieving an FID (Frechet Inception Distance) of $23.3$ on MS COCO 2017-5k, surpassing the previous state-of-the-art technique, progressive distillation, by a significant margin ($37.2$ $\\rightarrow$ $23.3$ in FID). By utilizing an expanded network with 1.7B parameters, we further improve the FID to $22.4$. We call our one-step models \\emph{InstaFlow}. On MS COCO 2014-30k, InstaFlow yields an FID of $13.1$ in just $0.09$ second, the best in $\\leq 0.1$ second regime, outperforming the recent StyleGAN-T ($13.9$ in $0.1$ second). Notably, the training of InstaFlow only costs 199 A100 GPU days. Codes and pre-trained models are available at \\url{github.com/gnobitab/InstaFlow}.",
+   "contribution_zh": "首个 SD 级一步文生图：文本条件 reflow 改善噪声-图像耦合后蒸馏，COCO-5k FID 23.3（199 A100 天）",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=1k4yZbbDqX"
+   },
+   "pdf": "papers/t09_2023_Liu_InstaFlow_One_Step_T2I.pdf",
+   "text": "data/text/t09_2023_Liu_InstaFlow_One_Step_T2I.txt",
+   "text_chars": 78184,
+   "pages": 30
+  },
+  {
+   "key": "t09__scaling_rectified_flow_transformers_for_high_resolution_imag",
+   "report_id": "2403.03206",
+   "title": "Scaling Rectified Flow Transformers for High-Resolution Image Synthesis",
+   "authors": [
+    "Patrick Esser",
+    "Sumith Kulal",
+    "Andreas Blattmann",
+    "Rahim Entezari",
+    "Jonas Müller",
+    "Harry Saini",
+    "Yam Levi",
+    "Dominik Lorenz",
+    "Axel Sauer",
+    "Frederic Boesel",
+    "Dustin Podell",
+    "Tim Dockhorn",
+    "Zion English",
+    "Kyle Lacey",
+    "Alex Goodwin",
+    "Yannik Marek",
+    "Robin Rombach"
+   ],
+   "year": 2024,
+   "venue": "ICML Oral, PMLR 235",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2403.03206",
+   "published": "2024-03-05",
+   "abstract": "Diffusion models create data from noise by inverting the forward paths of data towards noise and have emerged as a powerful generative modeling technique for high-dimensional, perceptual data such as images and videos. Rectified flow is a recent generative model formulation that connects data and noise in a straight line. Despite its better theoretical properties and conceptual simplicity, it is not yet decisively established as standard practice. In this work, we improve existing noise sampling techniques for training rectified flow models by biasing them towards perceptually relevant scales. Through a large-scale study, we demonstrate the superior performance of this approach compared to established diffusion formulations for high-resolution text-to-image synthesis. Additionally, we present a novel transformer-based architecture for text-to-image generation that uses separate weights for the two modalities and enables a bidirectional flow of information between image and text tokens, improving text comprehension, typography, and human preference ratings. We demonstrate that this architecture follows predictable scaling trends and correlates lower validation loss to improved text-to-image synthesis as measured by various metrics and human evaluations. Our largest models outperform state-of-the-art models, and we will make our experimental data, code, and model weights publicly available.",
+   "contribution_zh": "大规模对照研究证明 RF+logit-normal 时间步采样优于既有扩散公式；MMDiT 架构；RF 由此进入工业主流",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/esser24a.html"
+   },
+   "pdf": "papers/2403.03206.pdf",
+   "text": "data/text/2403.03206.txt",
+   "text_chars": 90000,
+   "pages": 28
+  },
+  {
+   "key": "t09__improving_the_training_of_rectified_flows",
+   "report_id": "2405.20320",
+   "title": "Improving the Training of Rectified Flows",
+   "authors": [
+    "Sangyun Lee",
+    "Zinan Lin",
+    "Giulia Fanti"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2405.20320",
+   "published": "2024-05-30",
+   "abstract": "Diffusion models have shown great promise for image and video generation, but sampling from state-of-the-art models requires expensive numerical integration of a generative ODE. One approach for tackling this problem is rectified flows, which iteratively learn smooth ODE paths that are less susceptible to truncation error. However, rectified flows still require a relatively large number of function evaluations (NFEs). In this work, we propose improved techniques for training rectified flows, allowing them to compete with \\emph{knowledge distillation} methods even in the low NFE setting. Our main insight is that under realistic settings, a single iteration of the Reflow algorithm for training rectified flows is sufficient to learn nearly straight trajectories; hence, the current practice of using multiple Reflow iterations is unnecessary. We thus propose techniques to improve one-round training of rectified flows, including a U-shaped timestep distribution and LPIPS-Huber premetric. With these techniques, we improve the FID of the previous 2-rectified flow by up to 75\\% in the 1 NFE setting on CIFAR-10. On ImageNet 64$\\times$64, our improved rectified flow outperforms the state-of-the-art distillation methods such as consistency distillation and progressive distillation in both one-step and two-step settings and rivals the performance of improved consistency training (iCT) in FID. Code is available at https://github.com/sangyun884/rfpp.",
+   "contribution_zh": "实证现实设置下**一轮 reflow 即近乎直**；U 形时间步分布+LPIPS-Huber 前度量，1-NFE FID 最高改善 75%，ImageNet64 上超 CD/PD",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=mSHs6C7Nfa"
+   },
+   "pdf": "papers/2405.20320.pdf",
+   "text": "data/text/2405.20320.txt",
+   "text_chars": 65343,
+   "pages": 28
+  },
+  {
+   "key": "t09__2209.03003",
+   "report_id": "2209.03003",
+   "title": "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow",
+   "authors": [
+    "Xingchao Liu",
+    "Chengyue Gong",
+    "Qiang Liu"
+   ],
+   "year": 2023,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2209.03003",
+   "published": "2022-09-07",
+   "abstract": "We present rectified flow, a surprisingly simple approach to learning (neural) ordinary differential equation (ODE) models to transport between two empirically observed distributions π_0 and π_1, hence providing a unified solution to generative modeling and domain transfer, among various other tasks involving distribution transport. The idea of rectified flow is to learn the ODE to follow the straight paths connecting the points drawn from π_0 and π_1 as much as possible. This is achieved by solving a straightforward nonlinear least squares optimization problem, which can be easily scaled to large models without introducing extra parameters beyond standard supervised learning. The straight paths are special and preferred because they are the shortest paths between two points, and can be simulated exactly without time discretization and hence yield computationally efficient models. We show that the procedure of learning a rectified flow from data, called rectification, turns an arbitrary coupling of π_0 and π_1 to a new deterministic coupling with provably non-increasing convex transport costs. In addition, recursively applying rectification allows us to obtain a sequence of flows with increasingly straight paths, which can be simulated accurately with coarse time discretization in the inference phase. In empirical studies, we show that rectified flow performs superbly on image generation, image-to-image translation, and domain adaptation. In particular, on image generation and translation, our method yields nearly straight flows that give high quality results even with a single Euler discretization step.",
+   "contribution_zh": "奠基作：线性插值+因果化定义 RF，reflow 迭代拉直；证明凸代价单调不增、直线度以 O(1/K) 速率下降",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2209.03003"
+   },
+   "pdf": "papers/2209.03003.pdf",
+   "text": "data/text/2209.03003.txt",
+   "text_chars": 90000,
+   "pages": 41
+  },
+  {
+   "key": "t09__rectified_diffusion_straightness_is_not_your_need_in_rectifi",
+   "report_id": "Rectified_Diffusion_Straightness_Is_Not_Your_Need",
+   "title": "Rectified Diffusion: Straightness Is Not Your Need in Rectified Flow",
+   "authors": "Wang et al.",
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "论证 rectification 的本质是\"预训练模型配对+重训\"而非直线度/流匹配形式/v-预测；推广为一般扩散的一阶 ODE 目标",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=nEDToD1R8M"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t09__towards_hierarchical_rectified_flow",
+   "report_id": "2502.17436",
+   "title": "Towards Hierarchical Rectified Flow",
+   "authors": [
+    "Yichi Zhang",
+    "Yici Yan",
+    "Alex Schwing",
+    "Zhizhen Zhao"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2502.17436",
+   "published": "2025-02-24",
+   "abstract": "We formulate a hierarchical rectified flow to model data distributions. It hierarchically couples multiple ordinary differential equations (ODEs) and defines a time-differentiable stochastic process that generates a data distribution from a known source distribution. Each ODE resembles the ODE that is solved in a classic rectified flow, but differs in its domain, i.e., location, velocity, acceleration, etc. Unlike the classic rectified flow formulation, which formulates a single ODE in the location domain and only captures the expected velocity field (sufficient to capture a multi-modal data distribution), the hierarchical rectified flow formulation models the multi-modal random velocity field, acceleration field, etc., in their entirety. This more faithful modeling of the random velocity field enables integration paths to intersect when the underlying ODE is solved during data generation. Intersecting paths in turn lead to integration trajectories that are more straight than those obtained in the classic rectified flow formulation, where integration paths cannot intersect. This leads to modeling of data distributions with fewer neural function evaluations. We empirically verify this on synthetic 1D and 2D data as well as MNIST, CIFAR-10, and ImageNet-32 data. Our code is available at: https://riccizz.github.io/HRF/.",
+   "contribution_zh": "层级耦合位置/速度/加速度多条 ODE，建模多模态随机速度场，允许积分路径相交从而更直、更少 NFE",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=6F6qwdycgJ"
+   },
+   "pdf": "papers/2502.17436.pdf",
+   "text": "data/text/2502.17436.txt",
+   "text_chars": 73280,
+   "pages": 22
+  },
+  {
+   "key": "t09__straighten_viscous_rectified_flow_via_noise_optimization",
+   "report_id": "2507.10218",
+   "title": "Straighten Viscous Rectified Flow via Noise Optimization",
+   "authors": [
+    "Jimin Dai",
+    "Jiexi Yan",
+    "Jian Yang",
+    "Lei Luo"
+   ],
+   "year": 2025,
+   "venue": "ICCV",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2507.10218",
+   "published": "2025-07-14",
+   "abstract": "The Reflow operation aims to straighten the inference trajectories of the rectified flow during training by constructing deterministic couplings between noises and images, thereby improving the quality of generated images in single-step or few-step generation. However, we identify critical limitations in Reflow, particularly its inability to rapidly generate high-quality images due to a distribution gap between images in its constructed deterministic couplings and real images. To address these shortcomings, we propose a novel alternative called Straighten Viscous Rectified Flow via Noise Optimization (VRFNO), which is a joint training framework integrating an encoder and a neural velocity field. VRFNO introduces two key innovations: (1) a historical velocity term that enhances trajectory distinction, enabling the model to more accurately predict the velocity of the current trajectory, and (2) the noise optimization through reparameterization to form optimized couplings with real images which are then utilized for training, effectively mitigating errors caused by Reflow's limitations. Comprehensive experiments on synthetic data and real datasets with varying resolutions show that VRFNO significantly mitigates the limitations of Reflow, achieving state-of-the-art performance in both one-step and few-step generation tasks.",
+   "contribution_zh": "指出 reflow 合成耦合与真实图像存在分布差距；历史速度项+噪声再参数化优化，直接与**真实图像**构造耦合来拉直",
+   "links": {
+    "IEEE DOI": "https://doi.org/10.1109/ICCV51701.2025.01392"
+   },
+   "pdf": "papers/2507.10218.pdf",
+   "text": "data/text/2507.10218.txt",
+   "text_chars": 43057,
+   "pages": 10
+  },
+  {
+   "key": "t09__2506.15742",
+   "report_id": "2506.15742",
+   "title": "FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space",
+   "authors": [
+    "Black Forest Labs",
+    "Stephen Batifol",
+    "Andreas Blattmann",
+    "Frederic Boesel",
+    "Saksham Consul",
+    "Cyril Diagne",
+    "Tim Dockhorn",
+    "Jack English",
+    "Zion English",
+    "Patrick Esser",
+    "Sumith Kulal",
+    "Kyle Lacey",
+    "Yam Levi",
+    "Cheng Li",
+    "Dominik Lorenz",
+    "Jonas Müller",
+    "Dustin Podell",
+    "Robin Rombach",
+    "Harry Saini",
+    "Axel Sauer",
+    "Luke Smith"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2506.15742",
+   "published": "2025-06-17",
+   "abstract": "We present evaluation results for FLUX.1 Kontext, a generative flow matching model that unifies image generation and editing. The model generates novel output views by incorporating semantic context from text and image inputs. Using a simple sequence concatenation approach, FLUX.1 Kontext handles both local editing and generative in-context tasks within a single unified architecture. Compared to current editing models that exhibit degradation in character consistency and stability across multiple turns, we observe that FLUX.1 Kontext improved preservation of objects and characters, leading to greater robustness in iterative workflows. The model achieves competitive performance with current state-of-the-art systems while delivering significantly faster generation times, enabling interactive applications and rapid prototyping workflows. To validate these improvements, we introduce KontextBench, a comprehensive benchmark with 1026 image-prompt pairs covering five task categories: local editing, global editing, character reference, style reference and text editing. Detailed evaluations show the superior performance of FLUX.1 Kontext in terms of both single-turn quality and multi-turn consistency, setting new standards for unified image processing models.",
+   "contribution_zh": "12B rectified flow transformer 的工业实践：logit-normal shift 调度（μ 随分辨率调整）、双流/单流混合 DiT、少步化走 LADD 对抗蒸馏而非 reflow",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2506.15742"
+   },
+   "pdf": "papers/2506.15742.pdf",
+   "text": "data/text/2506.15742.txt",
+   "text_chars": 48248,
+   "pages": 19
+  },
+  {
+   "key": "t09__bellman_optimal_stepsize_straightening_of_flow_matching_mode",
+   "report_id": "2312.16414",
+   "title": "Bellman Optimal Stepsize Straightening of Flow-Matching Models",
+   "authors": [
+    "Bao Nguyen",
+    "Binh Nguyen",
+    "Viet Anh Nguyen"
+   ],
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2312.16414",
+   "published": "2023-12-27",
+   "abstract": "Flow matching is a powerful framework for generating high-quality samples in various applications, especially image synthesis. However, the intensive computational demands of these models, especially during the finetuning process and sampling processes, pose significant challenges for low-resource scenarios. This paper introduces Bellman Optimal Stepsize Straightening (BOSS) technique for distilling flow-matching generative models: it aims specifically for a few-step efficient image sampling while adhering to a computational budget constraint. First, this technique involves a dynamic programming algorithm that optimizes the stepsizes of the pretrained network. Then, it refines the velocity network to match the optimal step sizes, aiming to straighten the generation paths. Extensive experimental evaluations across image generation tasks demonstrate the efficacy of BOSS in terms of both resource utilization and image quality. Our results reveal that BOSS achieves substantial gains in efficiency while maintaining competitive sample quality, effectively bridging the gap between low-resource constraints and the demanding requirements of flow-matching generative models. Our paper also fortifies the responsible development of artificial intelligence, offering a more sustainable generative model that reduces computational costs and environmental footprints. Our code can be found at https://github.com/nguyenngocbaocmt02/BOSS.",
+   "contribution_zh": "BOSS：动态规划求最优步长序列再按其重训速度场，低资源（可仅 LoRA 2% 参数）下优于标准 reflow",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=Iyve2ycvGZ"
+   },
+   "pdf": "papers/2312.16414.pdf",
+   "text": "data/text/2312.16414.txt",
+   "text_chars": 49328,
+   "pages": 21
+  },
+  {
+   "key": "t09__perflow_piecewise_rectified_flow_as_universal_plug_and_play_",
+   "report_id": "2405.07510",
+   "title": "PeRFlow: Piecewise Rectified Flow as Universal Plug-and-Play Accelerator",
+   "authors": [
+    "Hanshu Yan",
+    "Xingchao Liu",
+    "Jiachun Pan",
+    "Jun Hao Liew",
+    "Qiang Liu",
+    "Jiashi Feng"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2405.07510",
+   "published": "2024-05-13",
+   "abstract": "We present Piecewise Rectified Flow (PeRFlow), a flow-based method for accelerating diffusion models. PeRFlow divides the sampling process of generative flows into several time windows and straightens the trajectories in each interval via the reflow operation, thereby approaching piecewise linear flows. PeRFlow achieves superior performance in a few-step generation. Moreover, through dedicated parameterizations, the PeRFlow models inherit knowledge from the pretrained diffusion models. Thus, the training converges fast and the obtained models show advantageous transfer ability, serving as universal plug-and-play accelerators that are compatible with various workflows based on the pre-trained diffusion models. Codes for training and inference are publicly released. https://github.com/magic-research/piecewise-rectified-flow",
+   "contribution_zh": "分时间窗做分段 reflow，免去整条 ODE 轨迹仿真、可在线训练；ΔW 即插即用加速整个 SD 生态",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=qrlguvKu7a"
+   },
+   "pdf": "papers/2405.07510.pdf",
+   "text": "data/text/2405.07510.txt",
+   "text_chars": 40787,
+   "pages": 16
+  },
+  {
+   "key": "t09__constant_acceleration_flow",
+   "report_id": "2411.00322",
+   "title": "Constant Acceleration Flow",
+   "authors": [
+    "Dogyun Park",
+    "Sojin Lee",
+    "Sihyeon Kim",
+    "Taehoon Lee",
+    "Youngjoon Hong",
+    "Hyunwoo J. Kim"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2411.00322",
+   "published": "2024-11-01",
+   "abstract": "Rectified flow and reflow procedures have significantly advanced fast generation by progressively straightening ordinary differential equation (ODE) flows. They operate under the assumption that image and noise pairs, known as couplings, can be approximated by straight trajectories with constant velocity. However, we observe that modeling with constant velocity and using reflow procedures have limitations in accurately learning straight trajectories between pairs, resulting in suboptimal performance in few-step generation. To address these limitations, we introduce Constant Acceleration Flow (CAF), a novel framework based on a simple constant acceleration equation. CAF introduces acceleration as an additional learnable variable, allowing for more expressive and accurate estimation of the ODE flow. Moreover, we propose two techniques to further improve estimation accuracy: initial velocity conditioning for the acceleration model and a reflow process for the initial velocity. Our comprehensive studies on toy datasets, CIFAR-10, and ImageNet 64x64 demonstrate that CAF outperforms state-of-the-art baselines for one-step generation. We also show that CAF dramatically improves few-step coupling preservation and inversion over Rectified flow. Code is available at \\href{https://github.com/mlvlab/CAF}{https://github.com/mlvlab/CAF}.",
+   "contribution_zh": "放弃常速假设改学常加速度方程（初速度条件化+初速度 reflow），一步生成与耦合保持/反演精度双改进",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/a3f0196243c0c96e03733253ef29b34a-Abstract-Conference.html"
+   },
+   "pdf": "papers/2411.00322.pdf",
+   "text": "data/text/2411.00322.txt",
+   "text_chars": 61339,
+   "pages": 25
+  },
+  {
+   "key": "t09__slimflow_training_smaller_one_step_diffusion_models_with_rec",
+   "report_id": "2407.12718",
+   "title": "SlimFlow: Training Smaller One-Step Diffusion Models with Rectified Flow",
+   "authors": [
+    "Yuanzhi Zhu",
+    "Xingchao Liu",
+    "Qiang Liu"
+   ],
+   "year": 2024,
+   "venue": "ECCV",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2407.12718",
+   "published": "2024-07-17",
+   "abstract": "Diffusion models excel in high-quality generation but suffer from slow inference due to iterative sampling. While recent methods have successfully transformed diffusion models into one-step generators, they neglect model size reduction, limiting their applicability in compute-constrained scenarios. This paper aims to develop small, efficient one-step diffusion models based on the powerful rectified flow framework, by exploring joint compression of inference steps and model size. The rectified flow framework trains one-step generative models using two operations, reflow and distillation. Compared with the original framework, squeezing the model size brings two new challenges: (1) the initialization mismatch between large teachers and small students during reflow; (2) the underperformance of naive distillation on small student models. To overcome these issues, we propose Annealing Reflow and Flow-Guided Distillation, which together comprise our SlimFlow framework. With our novel framework, we train a one-step diffusion model with an FID of 5.02 and 15.7M parameters, outperforming the previous state-of-the-art one-step diffusion model (FID=6.47, 19.4M parameters) on CIFAR10. On ImageNet 64$\\times$64 and FFHQ 64$\\times$64, our method yields small one-step diffusion models that are comparable to larger models, showcasing the effectiveness of our method in creating compact, efficient one-step diffusion models.",
+   "contribution_zh": "Annealing Reflow 解决大师小徒初始化失配 + Flow-Guided Distillation，15.7M 参数一步 FID 5.02（CIFAR-10）",
+   "links": {
+    "ECVA": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/10822.pdf"
+   },
+   "pdf": "papers/2407.12718.pdf",
+   "text": "data/text/2407.12718.txt",
+   "text_chars": 54325,
+   "pages": 24
+  },
+  {
+   "key": "t09__2410.14949",
+   "report_id": "2410.14949",
+   "title": "On the Convergence and Straightness of Rectified Flow",
+   "authors": [
+    "Vansh Bansal",
+    "Saptarshi Roy",
+    "Alessandro Rinaldo",
+    "Purnamrita Sarkar"
+   ],
+   "year": 2024,
+   "venue": "2024–26 · arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2410.14949",
+   "published": "2024-10-19",
+   "abstract": "Flow Matching has become a cornerstone of modern generative models like Stable Diffusion 3, largely due to the efficiency of its Rectified Flow (RF) variant. The success of RF hinges on iteratively learning straight trajectories, pushing generation towards fewer sampling steps. However, the theoretical link between path geometry and sampling efficiency has been underexplored. This paper fills this gap by introducing a novel \\textit{Piecewise Straightness} parameter, $γ_{2,T}$. We establish the first Wasserstein convergence bound that explicitly links the discretization error of \\textit{any} general flow-model to $γ_{2,T}$, proving that minimizing curvature is the key to achieving high-fidelity, one-step sampling. Building on this theory, we establish the first theoretical framework to analyze the straightness of RF. We begin by offering intuitive geometric arguments for simple cases before identifying sufficient conditions under which a single rectification step (1-RF) yields a perfectly straight or even a Monge optimal coupling. While whether these sufficient conditions are met depends on the problem geometry, they enable the first concrete proofs in this area. Critically, fulfilling these conditions makes the subsequent flow (2-RF) perfectly straight ($γ_{2,T}=0$). This eliminates the discretization error in our bound and makes flawless, single-step sampling possible.",
+   "contribution_zh": "正面理论：W2² 误差界由（分段）直线度参数+离散步数刻画，给出 1-RF 唯一且直的充分条件；1D 高斯出发时 RF 即 Monge 映射",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2410.14949"
+   },
+   "pdf": "papers/2410.14949.pdf",
+   "text": "data/text/2410.14949.txt",
+   "text_chars": 90000,
+   "pages": 37
+  },
+  {
+   "key": "t09__2209.14577",
+   "report_id": "2209.14577",
+   "title": "Rectified Flow: A Marginal Preserving Approach to Optimal Transport",
+   "authors": [
+    "Qiang Liu"
+   ],
+   "year": 2022,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2209.14577",
+   "published": "2022-09-29",
+   "abstract": "We present a flow-based approach to the optimal transport (OT) problem between two continuous distributions $π_0,π_1$ on $\\mathbb{R}^d$, of minimizing a transport cost $\\mathbb{E}[c(X_1-X_0)]$ in the set of couplings $(X_0,X_1)$ whose marginal distributions on $X_0,X_1$ equals $π_0,π_1$, respectively, where $c$ is a cost function. Our method iteratively constructs a sequence of neural ordinary differentiable equations (ODE), each learned by solving a simple unconstrained regression problem, which monotonically reduce the transport cost while automatically preserving the marginal constraints. This yields a monotonic interior approach that traverses inside the set of valid couplings to decrease the transport cost, which distinguishes itself from most existing approaches that enforce the coupling constraints from the outside. The main idea of the method draws from rectified flow, a recent approach that simultaneously decreases the whole family of transport costs induced by convex functions $c$ (and is hence multi-objective in nature), but is not tailored to minimize a specific transport cost. Our method is a single-object variant of rectified flow that guarantees to solve the OT problem for a fixed, user-specified convex cost function $c$.",
+   "contribution_zh": "理论姊妹篇：rectification 同时降低一切凸代价；提出 c-rectified flow 声称可逼近特定代价 OT（后被 Hertrich 等指出需更强假设）",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2209.14577"
+   },
+   "pdf": "papers/2209.14577.pdf",
+   "text": "data/text/2209.14577.txt",
+   "text_chars": 58839,
+   "pages": 24
+  }
+ ]
+}

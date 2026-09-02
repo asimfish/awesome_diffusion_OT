@@ -1,0 +1,383 @@
+{
+ "topic": "t20",
+ "topic_name": "3D/点云/几何生成中的 OT 与流",
+ "section": "D",
+ "section_name": "Modalities",
+ "kb_note": "source/kb/t20_3d_pointcloud_generation.md",
+ "papers": [
+  {
+   "key": "t20__2502.12456",
+   "report_id": "2502.12456",
+   "title": "Not-So-Optimal Transport Flows for 3D Point Cloud Generation",
+   "authors": [
+    "Ka-Hei Hui",
+    "Chao Liu",
+    "Xiaohui Zeng",
+    "Chi-Wing Fu",
+    "Arash Vahdat"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2502.12456",
+   "published": "2025-02-18",
+   "abstract": "Learning generative models of 3D point clouds is one of the fundamental problems in 3D generative learning. One of the key properties of point clouds is their permutation invariance, i.e., changing the order of points in a point cloud does not change the shape they represent. In this paper, we analyze the recently proposed equivariant OT flows that learn permutation invariant generative models for point-based molecular data and we show that these models scale poorly on large point clouds. Also, we observe learning (equivariant) OT flows is generally challenging since straightening flow trajectories makes the learned flow model complex at the beginning of the trajectory. To remedy these, we propose not-so-optimal transport flow models that obtain an approximate OT by an offline OT precomputation, enabling an efficient construction of OT pairs for training. During training, we can additionally construct a hybrid coupling by combining our approximate OT and independent coupling to make the target flow models easier to learn. In an extensive empirical study, we show that our proposed model outperforms prior diffusion- and flow-based approaches on a wide range of unconditional generation and shape completion on the ShapeNet benchmark.",
+   "contribution_zh": "证明 equivariant/在线 OT 耦合在大点云上失效且完全拉直反而让 t≈0 处的场更难学，提出离线 superset OT 预计算 + 与独立耦合混合的 hybrid coupling，ShapeNet 无条件生成与补全双 SOTA",
+   "links": {
+    "proceedings": "https://proceedings.iclr.cc/paper_files/paper/2025/file/f4dcb743e41af10d860562367a564bcd-Paper-Conference.pdf",
+    "arXiv": "https://arxiv.org/abs/2502.12456"
+   },
+   "pdf": "papers/2502.12456.pdf",
+   "text": "data/text/2502.12456.txt",
+   "text_chars": 68305,
+   "pages": 24
+  },
+  {
+   "key": "t20__wasserstein_flow_matching_generative_modeling_over_families_",
+   "report_id": "2411.00698",
+   "title": "Wasserstein Flow Matching: Generative modeling over families of distributions",
+   "authors": [
+    "Doron Haviv",
+    "Aram-Alexandre Pooladian",
+    "Dana Pe'er",
+    "Brandon Amos"
+   ],
+   "year": 2025,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2411.00698",
+   "published": "2024-11-01",
+   "abstract": "Generative modeling typically concerns transporting a single source distribution to a target distribution via simple probability flows. However, in fields like computer graphics and single-cell genomics, samples themselves can be viewed as distributions, where standard flow matching ignores their inherent geometry. We propose Wasserstein flow matching (WFM), which lifts flow matching onto families of distributions using the Wasserstein geometry. Notably, WFM is the first algorithm capable of generating distributions in high dimensions, whether represented analytically (as Gaussians) or empirically (as point-clouds). Our theoretical analysis establishes that Wasserstein geodesics constitute proper conditional flows over the space of distributions, making for a valid FM objective. Our algorithm leverages optimal transport theory and the attention mechanism, demonstrating versatility across computational regimes: exploiting closed-form optimal transport paths for Gaussian families, while using entropic estimates on point-clouds for general distributions. WFM successfully generates both 2D & 3D shapes and high-dimensional cellular microenvironments from spatial transcriptomics data. Code is available at https://github.com/DoronHav/WassersteinFlowMatching .",
+   "contribution_zh": "把 FM 提升到测度空间：每个样本本身是一个分布（点云/Gaussian），沿 Wasserstein 测地线定义条件流，Gaussian 族用闭式 Bures-W 路径、点云用 entropic OT 估计；首个高维「分布的分布」生成器",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v267/haviv25a.html"
+   },
+   "pdf": "papers/2411.00698.pdf",
+   "text": "data/text/2411.00698.txt",
+   "text_chars": 79441,
+   "pages": 21
+  },
+  {
+   "key": "t20__2410.02671",
+   "report_id": "2410.02671",
+   "title": "Unsupervised Point Cloud Completion through Unbalanced Optimal Transport",
+   "authors": [
+    "Taekyung Lee",
+    "Jaemoo Choi",
+    "Jaewoong Choi",
+    "Myungjoo Kang"
+   ],
+   "year": 2025,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2410.02671",
+   "published": "2024-10-03",
+   "abstract": "Unpaired point cloud completion is crucial for real-world applications, where ground-truth data for complete point clouds are often unavailable. By learning a completion map from unpaired incomplete and complete point cloud data, this task avoids the reliance on paired datasets. In this paper, we propose the \\textit{Unbalanced Optimal Transport Map for Unpaired Point Cloud Completion (\\textbf{UOT-UPC})} model, which formulates the unpaired completion task as the (Unbalanced) Optimal Transport (OT) problem. Our method employs a Neural OT model learning the UOT map using neural networks. Our model is the first attempt to leverage UOT for unpaired point cloud completion, achieving competitive or superior performance on both single-category and multi-category benchmarks. In particular, our approach is especially robust under the class imbalance problem, which is frequently encountered in real-world unpaired point cloud completion scenarios. The code is available at https://github.com/LEETK99/UOT-UPC.",
+   "contribution_zh": "把无配对补全形式化为 UOT map 学习，marginal 松弛天然吸收类别不平衡；系统分析 cost 选择并论证 InfoCD 最适配",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v267/lee25e.html",
+    "arXiv": "https://arxiv.org/abs/2410.02671"
+   },
+   "pdf": "papers/2410.02671.pdf",
+   "text": "data/text/2410.02671.txt",
+   "text_chars": 57379,
+   "pages": 22
+  },
+  {
+   "key": "t20__splatflow_multi_view_rectified_flow_model_for_3d_gaussian_sp",
+   "report_id": "2411.16443",
+   "title": "SplatFlow: Multi-View Rectified Flow Model for 3D Gaussian Splatting Synthesis",
+   "authors": [
+    "Hyojun Go",
+    "Byeongjun Park",
+    "Jiho Jang",
+    "Jin-Young Kim",
+    "Soonwoo Kwon",
+    "Changick Kim"
+   ],
+   "year": 2025,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2411.16443",
+   "published": "2024-11-25",
+   "abstract": "Text-based generation and editing of 3D scenes hold significant potential for streamlining content creation through intuitive user interactions. While recent advances leverage 3D Gaussian Splatting (3DGS) for high-fidelity and real-time rendering, existing methods are often specialized and task-focused, lacking a unified framework for both generation and editing. In this paper, we introduce SplatFlow, a comprehensive framework that addresses this gap by enabling direct 3DGS generation and editing. SplatFlow comprises two main components: a multi-view rectified flow (RF) model and a Gaussian Splatting Decoder (GSDecoder). The multi-view RF model operates in latent space, generating multi-view images, depths, and camera poses simultaneously, conditioned on text prompts, thus addressing challenges like diverse scene scales and complex camera trajectories in real-world settings. Then, the GSDecoder efficiently translates these latent outputs into 3DGS representations through a feed-forward 3DGS method. Leveraging training-free inversion and inpainting techniques, SplatFlow enables seamless 3DGS editing and supports a broad range of 3D tasks-including object editing, novel view synthesis, and camera pose estimation-within a unified framework without requiring additional complex pipelines. We validate SplatFlow's capabilities on the MVImgNet and DL3DV-7K datasets, demonstrating its versatility and effectiveness in various 3D generation, editing, and inpainting-based tasks.",
+   "contribution_zh": "多视角 rectified flow 在 latent 空间联合生成图像/深度/相机位姿，经前馈 GSDecoder 输出 3DGS；training-free 反演/补绘统一生成与编辑",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2025/html/Go_SplatFlow_Multi-View_Rectified_Flow_Model_for_3D_Gaussian_Splatting_Synthesis_CVPR_2025_paper.html"
+   },
+   "pdf": "papers/2411.16443.pdf",
+   "text": "data/text/2411.16443.txt",
+   "text_chars": 90000,
+   "pages": 22
+  },
+  {
+   "key": "t20__2403.19655",
+   "report_id": "2403.19655",
+   "title": "GaussianCube: A Structured and Explicit Radiance Representation for 3D Generative Modeling",
+   "authors": [
+    "Bowen Zhang",
+    "Yiji Cheng",
+    "Jiaolong Yang",
+    "Chunyu Wang",
+    "Feng Zhao",
+    "Yansong Tang",
+    "Dong Chen",
+    "Baining Guo"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2403.19655",
+   "published": "2024-03-28",
+   "abstract": "We introduce a radiance representation that is both structured and fully explicit and thus greatly facilitates 3D generative modeling. Existing radiance representations either require an implicit feature decoder, which significantly degrades the modeling power of the representation, or are spatially unstructured, making them difficult to integrate with mainstream 3D diffusion methods. We derive GaussianCube by first using a novel densification-constrained Gaussian fitting algorithm, which yields high-accuracy fitting using a fixed number of free Gaussians, and then rearranging these Gaussians into a predefined voxel grid via Optimal Transport. Since GaussianCube is a structured grid representation, it allows us to use standard 3D U-Net as our backbone in diffusion modeling without elaborate designs. More importantly, the high-accuracy fitting of the Gaussians allows us to achieve a high-quality representation with orders of magnitude fewer parameters than previous structured representations for comparable quality, ranging from one to two orders of magnitude. The compactness of GaussianCube greatly eases the difficulty of 3D generative modeling. Extensive experiments conducted on unconditional and class-conditioned object generation, digital avatar creation, and text-to-3D synthesis all show that our model achieves state-of-the-art generation results both qualitatively and quantitatively, underscoring the potential of GaussianCube as a highly accurate and versatile radiance representation for 3D generative modeling. Project page: https://gaussiancube.github.io/.",
+   "contribution_zh": "定数化拟合 3DGS 后用 Jonker-Volgenant 线性指派（OT）把 Gaussians 摆进 N³ voxel 网格，使标准 3D U-Net 扩散直接可用；OT 在此充当「表示结构化」角色",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2024/file/b0b750c4189f19d0cd71375e9e17f83f-Paper-Conference.pdf",
+    "arXiv": "https://arxiv.org/abs/2403.19655"
+   },
+   "pdf": "papers/2403.19655.pdf",
+   "text": "data/text/2403.19655.txt",
+   "text_chars": 64345,
+   "pages": 24
+  },
+  {
+   "key": "t20__gaussian_herding_across_pens_an_optimal_transport_perspectiv",
+   "report_id": "2506.09534",
+   "title": "Gaussian Herding across Pens: An Optimal Transport Perspective on Global Gaussian Reduction for 3DGS",
+   "authors": [
+    "Tao Wang",
+    "Mengyu Li",
+    "Geduo Zeng",
+    "Cheng Meng",
+    "Qiong Zhang"
+   ],
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2506.09534",
+   "published": "2025-06-11",
+   "abstract": "3D Gaussian Splatting (3DGS) has emerged as a powerful technique for radiance field rendering, but it typically requires millions of redundant Gaussian primitives, overwhelming memory and rendering budgets. Existing compaction approaches address this by pruning Gaussians based on heuristic importance scores, without global fidelity guarantee. To bridge this gap, we propose a novel optimal transport perspective that casts 3DGS compaction as global Gaussian mixture reduction. Specifically, we first minimize the composite transport divergence over a KD-tree partition to produce a compact geometric representation, and then decouple appearance from geometry by fine-tuning color and opacity attributes with far fewer Gaussian primitives. Experiments on benchmark datasets show that our method (i) yields negligible loss in rendering quality (PSNR, SSIM, LPIPS) compared to vanilla 3DGS with only 10% Gaussians; and (ii) consistently outperforms state-of-the-art 3DGS compaction techniques. Notably, our method is applicable to any stage of vanilla or accelerated 3DGS pipelines, providing an efficient and agnostic pathway to lightweight neural rendering. The code is publicly available at https://github.com/DrunkenPoet/GHAP",
+   "contribution_zh": "把 3DGS 压缩视为全局 Gaussian 混合约简，最小化 composite transport divergence，10% 图元几乎无损渲染",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2025/file/e79574cc3355e831cc276c845605ed72-Paper-Conference.pdf"
+   },
+   "pdf": "papers/2506.09534.pdf",
+   "text": "data/text/2506.09534.txt",
+   "text_chars": 82419,
+   "pages": 26
+  },
+  {
+   "key": "t20__2502.06608",
+   "report_id": "2502.06608",
+   "title": "TripoSG: High-Fidelity 3D Shape Synthesis using Large-Scale Rectified Flow Models",
+   "authors": [
+    "Yangguang Li",
+    "Zi-Xin Zou",
+    "Zexiang Liu",
+    "Dehu Wang",
+    "Yuan Liang",
+    "Zhipeng Yu",
+    "Xingchao Liu",
+    "Yuan-Chen Guo",
+    "Ding Liang",
+    "Wanli Ouyang",
+    "Yan-Pei Cao"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2502.06608",
+   "published": "2025-02-10",
+   "abstract": "Recent advancements in diffusion techniques have propelled image and video generation to unprecedented levels of quality, significantly accelerating the deployment and application of generative AI. However, 3D shape generation technology has so far lagged behind, constrained by limitations in 3D data scale, complexity of 3D data processing, and insufficient exploration of advanced techniques in the 3D domain. Current approaches to 3D shape generation face substantial challenges in terms of output quality, generalization capability, and alignment with input conditions. We present TripoSG, a new streamlined shape diffusion paradigm capable of generating high-fidelity 3D meshes with precise correspondence to input images. Specifically, we propose: 1) A large-scale rectified flow transformer for 3D shape generation, achieving state-of-the-art fidelity through training on extensive, high-quality data. 2) A hybrid supervised training strategy combining SDF, normal, and eikonal losses for 3D VAE, achieving high-quality 3D reconstruction performance. 3) A data processing pipeline to generate 2 million high-quality 3D samples, highlighting the crucial rules for data quality and quantity in training 3D generative models. Through comprehensive experiments, we have validated the effectiveness of each component in our new framework. The seamless integration of these parts has enabled TripoSG to achieve state-of-the-art performance in 3D shape generation. The resulting 3D shapes exhibit enhanced detail due to high-resolution capabilities and demonstrate exceptional fidelity to input images. Moreover, TripoSG demonstrates improved versatility in generating 3D models from diverse image styles and contents, showcasing strong generalization capabilities. To foster progress and innovation in the field of 3D generation, we will make our model publicly available.",
+   "contribution_zh": "1.5B rectified flow transformer + SDF-VAE 的图生 3D 基础模型，2M 高质量样本；RF 线性轨迹成为 3D 资产工业界主干的代表",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2502.06608"
+   },
+   "pdf": "papers/2502.06608.pdf",
+   "text": "data/text/2502.06608.txt",
+   "text_chars": 86577,
+   "pages": 22
+  },
+  {
+   "key": "t20__2511.18679",
+   "report_id": "2511.18679",
+   "title": "Neural Geometry Image-Based Representations with Optimal Transport (OT)",
+   "authors": [
+    "Xiang Gao",
+    "Yuanpeng Liu",
+    "Xinmu Wang",
+    "Jiazhi Li",
+    "Minghao Guo",
+    "Yu Guo",
+    "Xiyun Song",
+    "Heather Yu",
+    "Zhiqiang Lao",
+    "Xianfeng David Gu"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2511.18679",
+   "published": "2025-11-24",
+   "abstract": "Neural representations for 3D meshes are emerging as an effective solution for compact storage and efficient processing. Existing methods often rely on neural overfitting, where a coarse mesh is stored and progressively refined through multiple decoder networks. While this can restore high-quality surfaces, it is computationally expensive due to successive decoding passes and the irregular structure of mesh data. In contrast, images have a regular structure that enables powerful super-resolution and restoration frameworks, but applying these advantages to meshes is difficult because their irregular connectivity demands complex encoder-decoder architectures. Our key insight is that a geometry image-based representation transforms irregular meshes into a regular image grid, making efficient image-based neural processing directly applicable. Building on this idea, we introduce our neural geometry image-based representation, which is decoder-free, storage-efficient, and naturally suited for neural processing. It stores a low-resolution geometry-image mipmap of the surface, from which high-quality meshes are restored in a single forward pass. To construct geometry images, we leverage Optimal Transport (OT), which resolves oversampling in flat regions and undersampling in feature-rich regions, and enables continuous levels of detail (LoD) through geometry-image mipmapping. Experimental results demonstrate state-of-the-art storage efficiency and restoration accuracy, measured by compression ratio (CR), Chamfer distance (CD), and Hausdorff distance (HD).",
+   "contribution_zh": "Ricci flow 共形参数化后用 OT 校正面积畸变，得到保面积 geometry image（UV 域均匀采样），支持单趟重建与连续 LoD",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2511.18679"
+   },
+   "pdf": "papers/2511.18679.pdf",
+   "text": "data/text/2511.18679.txt",
+   "text_chars": 43890,
+   "pages": 12
+  },
+  {
+   "key": "t20__integrating_efficient_optimal_transport_and_functional_maps_",
+   "report_id": "2403.01781",
+   "title": "Integrating Efficient Optimal Transport and Functional Maps For Unsupervised Shape Correspondence Learning",
+   "authors": [
+    "Tung Le",
+    "Khai Nguyen",
+    "Shanlin Sun",
+    "Nhat Ho",
+    "Xiaohui Xie"
+   ],
+   "year": 2024,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2403.01781",
+   "published": "2024-03-04",
+   "abstract": "In the realm of computer vision and graphics, accurately establishing correspondences between geometric 3D shapes is pivotal for applications like object tracking, registration, texture transfer, and statistical shape analysis. Moving beyond traditional hand-crafted and data-driven feature learning methods, we incorporate spectral methods with deep learning, focusing on functional maps (FMs) and optimal transport (OT). Traditional OT-based approaches, often reliant on entropy regularization OT in learning-based framework, face computational challenges due to their quadratic cost. Our key contribution is to employ the sliced Wasserstein distance (SWD) for OT, which is a valid fast optimal transport metric in an unsupervised shape matching framework. This unsupervised framework integrates functional map regularizers with a novel OT-based loss derived from SWD, enhancing feature alignment between shapes treated as discrete probability measures. We also introduce an adaptive refinement process utilizing entropy regularized OT, further refining feature alignments for accurate point-to-point correspondences. Our method demonstrates superior performance in non-rigid shape matching, including near-isometric and non-isometric scenarios, and excels in downstream tasks like segmentation transfer. The empirical results on diverse datasets highlight our framework's effectiveness and generalization capabilities, setting new standards in non-rigid shape matching with efficient OT metrics and an adaptive refinement module.",
+   "contribution_zh": "sliced Wasserstein 与 functional map 结合做无监督形状对应，为几何生成提供跨形状 OT 对齐 anchor",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2024/html/Le_Integrating_Efficient_Optimal_Transport_and_Functional_Maps_For_Unsupervised_Shape_CVPR_2024_paper.html"
+   },
+   "pdf": "papers/2403.01781.pdf",
+   "text": "data/text/2403.01781.txt",
+   "text_chars": 55368,
+   "pages": 17
+  },
+  {
+   "key": "t20__improving_dynamic_nerfs_with_optimal_transport",
+   "report_id": "Improving_Dynamic_NeRFs_with_Optimal_Transport",
+   "title": "Improving Dynamic NeRFs with Optimal Transport",
+   "authors": "",
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "用 OT 约束时变隐式场（dynamic NeRF）的形变一致性，是 W 距离进入隐式表示优化的代表",
+   "links": {
+    "proceedings": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/568b6cc71889ea0b2aa74152ef9c28db-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t20__fast_point_cloud_generation_with_straight_flows",
+   "report_id": "2212.01747",
+   "title": "Fast Point Cloud Generation with Straight Flows",
+   "authors": [
+    "Lemeng Wu",
+    "Dilin Wang",
+    "Chengyue Gong",
+    "Xingchao Liu",
+    "Yunyang Xiong",
+    "Rakesh Ranjan",
+    "Raghuraman Krishnamoorthi",
+    "Vikas Chandra",
+    "Qiang Liu"
+   ],
+   "year": 2023,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2212.01747",
+   "published": "2022-12-04",
+   "abstract": "Diffusion models have emerged as a powerful tool for point cloud generation. A key component that drives the impressive performance for generating high-quality samples from noise is iteratively denoise for thousands of steps. While beneficial, the complexity of learning steps has limited its applications to many 3D real-world. To address this limitation, we propose Point Straight Flow (PSF), a model that exhibits impressive performance using one step. Our idea is based on the reformulation of the standard diffusion model, which optimizes the curvy learning trajectory into a straight path. Further, we develop a distillation strategy to shorten the straight path into one step without a performance loss, enabling applications to 3D real-world with latency constraints. We perform evaluations on multiple 3D tasks and find that our PSF performs comparably to the standard diffusion model, outperforming other efficient 3D point cloud generation methods. On real-world applications such as point cloud completion and training-free text-guided generation in a low-latency setup, PSF performs favorably.",
+   "contribution_zh": "把 rectified flow 的 reflow+蒸馏引入点云扩散，实现一步生成；3D 域「轨迹拉直」的开山之作",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2023/html/Wu_Fast_Point_Cloud_Generation_With_Straight_Flows_CVPR_2023_paper.html"
+   },
+   "pdf": "papers/2212.01747.pdf",
+   "text": "data/text/2212.01747.txt",
+   "text_chars": 45477,
+   "pages": 14
+  },
+  {
+   "key": "t20__infocd_a_contrastive_chamfer_distance_loss_for_point_cloud_c",
+   "report_id": "InfoCD_A_Contrastive_Chamfer_Distance_Loss_for_Poi",
+   "title": "InfoCD: A Contrastive Chamfer Distance Loss for Point Cloud Completion",
+   "authors": "Lin et al.",
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "对比学习正则化 CD，等价于最大化底层曲面互信息下界；后被 UOT-UPC 选为最优 cost",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/f2ea1943896474b7cd9796b93e526f6f-Abstract.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t20__density_aware_chamfer_distance",
+   "report_id": "Density_aware_Chamfer_Distance",
+   "title": "Density-aware Chamfer Distance",
+   "authors": "DCD, Wu et al.",
+   "year": 2021,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "指出 CD 密度盲区与 EMD 全局主导的双重缺陷，提出有界、密度敏感的折中度量并可作训练损失",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2021/file/f3bd5ad57c8389a8a1a541a76be463bf-Paper.pdf"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t20__texture_mapping_via_optimal_mass_transport",
+   "report_id": "Texture_Mapping_via_Optimal_Mass_Transport",
+   "title": "Texture Mapping via Optimal Mass Transport",
+   "authors": "Dominitz & Tannenbaum",
+   "year": 2010,
+   "venue": "IEEE TVCG",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "纹理/UV×OT 的奠基工作：共形初始化后经 OT 梯度流得到保面积贴图，最小化质量意义下的角度畸变",
+   "links": {
+    "PMC": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2886313/"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  }
+ ]
+}

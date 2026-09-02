@@ -1,0 +1,752 @@
+{
+ "topic": "t22",
+ "topic_name": "离散数据与文本中的扩散/流与最优传输",
+ "section": "D",
+ "section_name": "Modalities",
+ "kb_note": "source/kb/t22_discrete_text.md",
+ "papers": [
+  {
+   "key": "t22__2411.00759",
+   "report_id": "2411.00759",
+   "title": "Minibatch Optimal Transport and Perplexity Bound Estimation in Discrete Flow Matching",
+   "authors": [
+    "Etrit Haxholli",
+    "Yeti Z. Gurbuz",
+    "Ogul Can",
+    "Eli Waxman"
+   ],
+   "year": 2026,
+   "venue": "ICML",
+   "evidence": "A",
+   "star": true,
+   "arxiv_id": "2411.00759",
+   "published": "2024-11-01",
+   "abstract": "Discrete flow matching, a recent framework for modeling categorical data, has shown competitive performance with autoregressive models. However, unlike continuous flow matching, the rectification strategy cannot be applied due to the stochasticity of discrete paths, necessitating alternative methods to minimize state transitions. We propose a dynamic-optimal-transport-like minimization objective and derive its Kantorovich formulation for discrete flows with convex interpolants, where transport cost depends solely on inter-state dissimilarity and can be optimized via minibatch strategies. We show that such methods can reduce the number of transitions up to 32 times (1024 to 32) to reach the same generative perplexity without compromising diversity. Additionally, path nondeterminism in discrete flows precludes an instantaneous change-of-variables analogue, preventing precise probability estimation available to continuous flows. We therefore propose two upper bounds on perplexity, enabling principled training, evaluation and model comparison. Finally, we introduce Multimask Flows which outperform masked flows in generative perplexity without compromising diversity, particularly when utilizing minibatch Optimal Transport.",
+   "contribution_zh": "首个离散流的动态 OT 式目标及其 Kantorovich 形式（成本=状态间相异度），minibatch-OT 耦合把达到同等生成困惑度的转移次数降至 1/32；另给出离散流困惑度上界",
+   "links": {
+    "icml.cc": "https://icml.cc/virtual/2026/poster/65787",
+    "arXiv": "https://arxiv.org/abs/2411.00759"
+   },
+   "pdf": "papers/2411.00759.pdf",
+   "text": "data/text/2411.00759.txt",
+   "text_chars": 90000,
+   "pages": 48
+  },
+  {
+   "key": "t22__flexible_length_text_infilling_for_discrete_diffusion_models",
+   "report_id": "2506.13579",
+   "title": "Flexible-length Text Infilling for Discrete Diffusion Models",
+   "authors": [
+    "Andrew Zhang",
+    "Anushka Sivakumar",
+    "Chiawei Tang",
+    "Chris Thomas"
+   ],
+   "year": 2025,
+   "venue": "EMNLP main",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2506.13579",
+   "published": "2025-06-16",
+   "abstract": "Discrete diffusion models are a new class of text generators that offer advantages such as bidirectional context use, parallelizable generation, and flexible prompting compared to autoregressive models. However, a critical limitation of discrete diffusion models is their inability to perform flexible-length or flexible-position text infilling without access to ground-truth positional data. We introduce \\textbf{DDOT} (\\textbf{D}iscrete \\textbf{D}iffusion with \\textbf{O}ptimal \\textbf{T}ransport Position Coupling), the first discrete diffusion model to overcome this challenge. DDOT jointly denoises token values and token positions, employing a novel sample-level Optimal Transport (OT) coupling. This coupling preserves relative token ordering while dynamically adjusting the positions and length of infilled segments, a capability previously missing in text diffusion. Our method is orthogonal to existing discrete text diffusion methods and is compatible with various pretrained text denoisers. Extensive experiments on text infilling benchmarks such as One-Billion-Word and Yelp demonstrate that DDOT outperforms naive diffusion baselines. Furthermore, DDOT achieves performance on par with state-of-the-art non-autoregressive models and enables significant improvements in training efficiency and flexibility.",
+   "contribution_zh": "首个灵活长度/位置文本填充的离散扩散：联合去噪 token 值与位置，用 sample-level OT 耦合保持相对语序、动态调整填充段位置与长度",
+   "links": {
+    "ACL Anthology": "https://aclanthology.org/2025.emnlp-main.1597/"
+   },
+   "pdf": "papers/2506.13579.pdf",
+   "text": "data/text/2506.13579.txt",
+   "text_chars": 51423,
+   "pages": 16
+  },
+  {
+   "key": "t22__discrete_diffusion_modeling_by_estimating_the_ratios_of_the_",
+   "report_id": "2310.16834",
+   "title": "Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution",
+   "authors": [
+    "Aaron Lou",
+    "Chenlin Meng",
+    "Stefano Ermon"
+   ],
+   "year": 2024,
+   "venue": "ICML (Best Paper)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2310.16834",
+   "published": "2023-10-25",
+   "abstract": "Despite their groundbreaking performance for many generative modeling tasks, diffusion models have fallen short on discrete data domains such as natural language. Crucially, standard diffusion models rely on the well-established theory of score matching, but efforts to generalize this to discrete structures have not yielded the same empirical gains. In this work, we bridge this gap by proposing score entropy, a novel loss that naturally extends score matching to discrete spaces, integrates seamlessly to build discrete diffusion models, and significantly boosts performance. Experimentally, we test our Score Entropy Discrete Diffusion models (SEDD) on standard language modeling tasks. For comparable model sizes, SEDD beats existing language diffusion paradigms (reducing perplexity by $25$-$75$\\%) and is competitive with autoregressive models, in particular outperforming GPT-2. Furthermore, compared to autoregressive mdoels, SEDD generates faithful text without requiring distribution annealing techniques like temperature scaling (around $6$-$8\\times$ better generative perplexity than un-annealed GPT-2), can trade compute and quality (similar quality with $32\\times$ fewer network evaluations), and enables controllable infilling (matching nucleus sampling quality while enabling other strategies besides left to right prompting).",
+   "contribution_zh": "提出 score entropy 把 score matching 推广到离散空间（学概率比值），扩散 LM 首次在困惑度上压过 GPT-2，并可 32× 减少 NFE",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/lou24a.html"
+   },
+   "pdf": "papers/2310.16834.pdf",
+   "text": "data/text/2310.16834.txt",
+   "text_chars": 90000,
+   "pages": 30
+  },
+  {
+   "key": "t22__2407.15595",
+   "report_id": "2407.15595",
+   "title": "Discrete Flow Matching",
+   "authors": [
+    "Itai Gat",
+    "Tal Remez",
+    "Neta Shaul",
+    "Felix Kreuk",
+    "Ricky T. Q. Chen",
+    "Gabriel Synnaeve",
+    "Yossi Adi",
+    "Yaron Lipman"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2407.15595",
+   "published": "2024-07-22",
+   "abstract": "Despite Flow Matching and diffusion models having emerged as powerful generative paradigms for continuous variables such as images and videos, their application to high-dimensional discrete data, such as language, is still limited. In this work, we present Discrete Flow Matching, a novel discrete flow paradigm designed specifically for generating discrete data. Discrete Flow Matching offers several key contributions:(i) it works with a general family of probability paths interpolating between source and target distributions; (ii) it allows for a generic formula for sampling from these probability paths using learned posteriors such as the probability denoiser ($x$-prediction) and noise-prediction ($ε$-prediction); (iii) practically, focusing on specific probability paths defined with different schedulers improves generative perplexity compared to previous discrete diffusion and flow models; and (iv) by scaling Discrete Flow Matching models up to 1.7B parameters, we reach 6.7% Pass@1 and 13.4% Pass@10 on HumanEval and 6.7% Pass@1 and 20.6% Pass@10 on 1-shot MBPP coding benchmarks. Our approach is capable of generating high-quality discrete data in a non-autoregressive fashion, significantly closing the gap between autoregressive models and discrete flow models.",
+   "contribution_zh": "通用离散概率路径族 + 后验参数化的生成速度公式 + corrector 采样，1.7B 模型显著缩小与 AR 的代码/文本生成差距",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2407.15595"
+   },
+   "pdf": "papers/2407.15595.pdf",
+   "text": "data/text/2407.15595.txt",
+   "text_chars": 90000,
+   "pages": 38
+  },
+  {
+   "key": "t22__2405.14664",
+   "report_id": "2405.14664",
+   "title": "Fisher Flow Matching for Generative Modeling over Discrete Data",
+   "authors": [
+    "Oscar Davis",
+    "Samuel Kessler",
+    "Mircea Petrache",
+    "İsmail İlkan Ceylan",
+    "Michael Bronstein",
+    "Avishek Joey Bose"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2405.14664",
+   "published": "2024-05-23",
+   "abstract": "Generative modeling over discrete data has recently seen numerous success stories, with applications spanning language modeling, biological sequence design, and graph-structured molecular data. The predominant generative modeling paradigm for discrete data is still autoregressive, with more recent alternatives based on diffusion or flow-matching falling short of their impressive performance in continuous data settings, such as image or video generation. In this work, we introduce Fisher-Flow, a novel flow-matching model for discrete data. Fisher-Flow takes a manifestly geometric perspective by considering categorical distributions over discrete data as points residing on a statistical manifold equipped with its natural Riemannian metric: the $\\textit{Fisher-Rao metric}$. As a result, we demonstrate discrete data itself can be continuously reparameterised to points on the positive orthant of the $d$-hypersphere $\\mathbb{S}^d_+$, which allows us to define flows that map any source distribution to target in a principled manner by transporting mass along (closed-form) geodesics of $\\mathbb{S}^d_+$. Furthermore, the learned flows in Fisher-Flow can be further bootstrapped by leveraging Riemannian optimal transport leading to improved training dynamics. We prove that the gradient flow induced by Fisher-Flow is optimal in reducing the forward KL divergence. We evaluate Fisher-Flow on an array of synthetic and diverse real-world benchmarks, including designing DNA Promoter, and DNA Enhancer sequences. Empirically, we find that Fisher-Flow improves over prior diffusion and flow-matching models on these benchmarks.",
+   "contribution_zh": "把类别分布放到 Fisher-Rao 统计流形（球面正象限）上做连续 FM，用黎曼 OT 重耦合改善训练动力学，并证其梯度流最优降低前向 KL",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2405.14664"
+   },
+   "pdf": "papers/2405.14664.pdf",
+   "text": "data/text/2405.14664.txt",
+   "text_chars": 90000,
+   "pages": 32
+  },
+  {
+   "key": "t22__efficient_sampling_with_discrete_diffusion_models_sharp_and_",
+   "report_id": "2602.15008",
+   "title": "Efficient Sampling with Discrete Diffusion Models: Sharp and Adaptive Guarantees",
+   "authors": [
+    "Daniil Dmitriev",
+    "Zhihan Huang",
+    "Yuting Wei"
+   ],
+   "year": 2026,
+   "venue": "COLT (PMLR 336)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2602.15008",
+   "published": "2026-02-16",
+   "abstract": "Diffusion models over discrete spaces have recently shown striking empirical success, yet their theoretical foundations remain incomplete. In this paper, we study the sampling efficiency of score-based discrete diffusion models under a continuous-time Markov chain (CTMC) formulation, with a focus on $τ$-leaping-based samplers. We establish sharp convergence guarantees for attaining $\\varepsilon$ accuracy in Kullback-Leibler (KL) divergence for both uniform and masking noising processes. For uniform discrete diffusion, we show that the $τ$-leaping algorithm achieves an iteration complexity of order $\\tilde O(d/\\varepsilon)$, with $d$ the ambient dimension of the target distribution, eliminating linear dependence on the vocabulary size $S$ and improving existing bounds by a factor of $d$; moreover, we establish a matching algorithmic lower bound showing that linear dependence on the ambient dimension is unavoidable in general. For masking discrete diffusion, we introduce a modified $τ$-leaping sampler whose convergence rate is governed by an intrinsic information-theoretic quantity, termed the effective total correlation, which is bounded by $d \\log S$ but can be sublinear or even constant for structured data. As a consequence, the sampler provably adapts to low-dimensional structure without prior knowledge or algorithmic modification, yielding sublinear convergence rates for various practical examples (such as hidden Markov models, image data, and random graphs). Our analysis requires no boundedness or smoothness assumptions on the score estimator beyond control of the score entropy loss.",
+   "contribution_zh": "τ-leaping 达 \\(\\tilde O(d/\\varepsilon)\\) KL 复杂度（消去词表 S 依赖）+匹配下界；masked 情形由「有效总相关」自适应控制，可对结构化数据亚线性",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v336/dmitriev26a.html"
+   },
+   "pdf": "papers/2602.15008.pdf",
+   "text": "data/text/2602.15008.txt",
+   "text_chars": 90000,
+   "pages": 59
+  },
+  {
+   "key": "t22__2605.17232",
+   "report_id": "2605.17232",
+   "title": "Dimension-Free Convergence of Discrete Diffusion Models: Adjoint Equations Induce the Right Space",
+   "authors": [
+    "Kelvin Kan",
+    "Xingjian Li",
+    "Benjamin J. Zhang",
+    "Tuhin Sahai",
+    "Stanley Osher",
+    "Markos A. Katsoulakis"
+   ],
+   "year": 2026,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2605.17232",
+   "published": "2026-05-17",
+   "abstract": "Discrete diffusion has become a leading framework for generative modeling in various applications including language, vision, and biology. Existing convergence theory, however, exhibits fundamental limitations. KL-based analyses diverge under singular priors such as the masked distribution, while bounds in total variation (TV) depend on the state space size $S$ and become vacuous for modern language tasks, where vocabularies contain hundreds of thousands of tokens. We develop a unified adjoint-equation-based framework that establishes dimension-free convergence guarantees in any integral probability metric (IPM). To the best of our knowledge, our bounds are the first to be entirely free of $S$ and applicable to both masked and uniform priors. Importantly, our results can extend existing step complexity guarantees to any IPM. In addition, our theory relies only on a single standard rate-matrix regularity assumption and applies to general priors. Five novel techniques drive our improvements: 1. working in the space of observables via adjoint equations rather than directly with probability measures; 2. a regularity analysis that yields bounds on any IPM; 3. a coupling argument that removes $S$-dependence under uniform transitions; and 4. score-marginal cancellation and 5. exit-routing techniques that remove $S$-dependence under masked transitions. Our framework thus sharply departs from prior analyses and avoids the shortcomings of pathspace-KL and existing TV-based approaches. Beyond convergence bounds, our framework provides a versatile toolkit for further theoretical study of discrete diffusion models, including principled choices of loss functions and dimension-free step complexity.",
+   "contribution_zh": "伴随方程框架给出任意 IPM 下完全不依赖词表大小 S 的收敛界，首次同时覆盖 masked（奇异先验）与 uniform",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2605.17232"
+   },
+   "pdf": "papers/2605.17232.pdf",
+   "text": "data/text/2605.17232.txt",
+   "text_chars": 90000,
+   "pages": 47
+  },
+  {
+   "key": "t22__2605.00161",
+   "report_id": "2605.00161",
+   "title": "Consistent Diffusion Language Models",
+   "authors": [
+    "Hasan Amin",
+    "Yuan Gao",
+    "Yaser Souri",
+    "Subhojit Som",
+    "Ming Yin",
+    "Rajiv Khanna",
+    "Xia Song"
+   ],
+   "year": 2026,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2605.00161",
+   "published": "2026-04-30",
+   "abstract": "Diffusion language models (DLMs) are an attractive alternative to autoregressive models because they promise sublinear-time, parallel generation, yet practical gains remain elusive as high-quality samples still demand hundreds of refinement steps. In continuous domains, consistency training along the probability-flow ODE is a popular recipe to accelerate diffusion. For discrete diffusion, no analogous sample-space ODE exists, making direct adaptation ill-defined. We argue that the right discrete substitute is the exact posterior bridge, the closed-form conditional law linking any two noise levels, which is available for broad corruptions including masked and uniform diffusion. Building on this observation, we introduce Multi-Path Discrete Consistency (MPDC), a new principle that trains a denoiser to be path-invariant in expectation across these stochastic bridges, and instantiate it as the Consistent Diffusion Language Model (CDLM), a single-stage training framework that does not require an already trained teacher model. Our CDLM objective recovers masked diffusion, continuous consistency models, and progressive or discrete distillation as analytic limits or empirical approximations of one common view. Empirically, CDLM establishes a new state of the art on both conditional and unconditional text-generation, consistently outperforming strong base discrete diffusion models and often even multi-stage distilled baselines across sampling budgets, with the largest gains in the few-step regime. Together, these results position CDLM as a principled and scalable foundation for the next generation of fast, high-fidelity discrete generative modeling.",
+   "contribution_zh": "离散域没有 PF-ODE，提出以精确后验桥为「轨迹」的多路径离散一致性训练（teacher-free），统一 masked diffusion/连续一致性/渐进蒸馏为解析极限",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2605.00161"
+   },
+   "pdf": "papers/2605.00161.pdf",
+   "text": "data/text/2605.00161.txt",
+   "text_chars": 90000,
+   "pages": 24
+  },
+  {
+   "key": "t22__an_optimal_transport_view_of_activation_steering_in_masked_d",
+   "report_id": "An_Optimal_Transport_View_of_Activation_Steering_i",
+   "title": "An Optimal Transport View of Activation Steering in Masked Diffusion Models",
+   "authors": "",
+   "year": 2026,
+   "venue": "ICLR Workshop (TTU)",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "把 dLLM 激活转向统一为仿射 OT map（矩匹配估计），推理时零开销提升 LLaDA/Dream 指令遵循 +6.5~11.9 分",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=3JM0DTKxgE"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t22__2601.07568",
+   "report_id": "2601.07568",
+   "title": "d3LLM: Ultra-Fast Diffusion LLM using Pseudo-Trajectory Distillation",
+   "authors": [
+    "Yu-Yang Qian",
+    "Junda Su",
+    "Lanxiang Hu",
+    "Peiyuan Zhang",
+    "Zhijie Deng",
+    "Peng Zhao",
+    "Hao Zhang"
+   ],
+   "year": 2026,
+   "venue": "arXiv（repo 自称 ICML 2026，未经官方页核验）",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2601.07568",
+   "published": "2026-01-12",
+   "abstract": "Diffusion large language models (dLLMs) offer capabilities beyond those of autoregressive (AR) LLMs, such as parallel decoding and random-order generation. However, realizing these benefits in practice is non-trivial, as dLLMs inherently face an accuracy-parallelism trade-off. Despite increasing interest, existing methods typically focus on only one-side of the coin, targeting either efficiency or accuracy. To address this limitation, we propose d3LLM (Pseudo-Distilled Diffusion Large Language Model), striking a balance between accuracy and parallelism: (i) during training, we introduce pseudo-trajectory distillation to teach the model which tokens can be decoded confidently at early steps, thereby improving parallelism; (ii) during inference, we employ entropy-based multi-block decoding with a KV-cache refresh mechanism to achieve high parallelism while maintaining accuracy. To better evaluate dLLMs, we also introduce AUP (Accuracy Under Parallelism), a new metric that jointly measures accuracy and parallelism. Experiments demonstrate that our d3LLM achieves up to 10$\\times$ speedup over vanilla LLaDA/Dream, and 5$\\times$ speedup over AR models without much accuracy drop. Our code is available at https://github.com/hao-ai-lab/d3LLM.",
+   "contribution_zh": "伪轨迹蒸馏使 LLaDA/Dream 级 dLLM 接近每步多 token 的极限吞吐",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2601.07568"
+   },
+   "pdf": "papers/2601.07568.pdf",
+   "text": "data/text/2601.07568.txt",
+   "text_chars": 89173,
+   "pages": 21
+  },
+  {
+   "key": "t22__large_language_diffusion_models",
+   "report_id": "2502.09992",
+   "title": "Large Language Diffusion Models",
+   "authors": [
+    "Shen Nie",
+    "Fengqi Zhu",
+    "Zebin You",
+    "Xiaolu Zhang",
+    "Jingyang Ou",
+    "Jun Hu",
+    "Jun Zhou",
+    "Yankai Lin",
+    "Ji-Rong Wen",
+    "Chongxuan Li"
+   ],
+   "year": 2025,
+   "venue": "NeurIPS (Oral)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2502.09992",
+   "published": "2025-02-14",
+   "abstract": "The capabilities of large language models (LLMs) are widely regarded as relying on autoregressive models (ARMs). We challenge this notion by introducing LLaDA, a diffusion model trained from scratch under the pre-training and supervised fine-tuning (SFT) paradigm. LLaDA employs a forward data masking process and a reverse generation process, parameterized by a Transformer to predict masked tokens. It provides a principled generative approach for probabilistic inference by optimizing a likelihood lower bound. Across extensive benchmarks on general tasks, math, code, and so on, LLaDA demonstrates strong scalability and performs comparably to our self-constructed ARM baselines. Remarkably, LLaDA 8B is competitive with strong LLMs like LLaMA3 8B in in-context learning and, after SFT, exhibits impressive instruction-following abilities in case studies such as multi-turn dialogue. Moreover, LLaDA addresses the reversal curse, surpassing GPT-4o in a reversal poem completion task. Our findings show the promise of diffusion models for language modeling at scale and challenge the common assumption that core LLM capabilities discussed above inherently depend on ARMs. Project page and codes: https://ml-gsai.github.io/LLaDA-demo/.",
+   "contribution_zh": "8B 从零预训练+SFT 的 masked 扩散 LM，多基准比肩 LLaMA3-8B，证明扩散范式可规模化并破解 reversal curse",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/48b383b24230e0e6e649d9c98dae4d8c-Abstract-Conference.html"
+   },
+   "pdf": "papers/2502.09992.pdf",
+   "text": "data/text/2502.09992.txt",
+   "text_chars": 90000,
+   "pages": 33
+  },
+  {
+   "key": "t22__2503.09573",
+   "report_id": "2503.09573",
+   "title": "Block Diffusion: Interpolating Between Autoregressive and Diffusion Language Models",
+   "authors": [
+    "Marianne Arriola",
+    "Aaron Gokaslan",
+    "Justin T. Chiu",
+    "Zhihan Yang",
+    "Zhixuan Qi",
+    "Jiaqi Han",
+    "Subham Sekhar Sahoo",
+    "Volodymyr Kuleshov"
+   ],
+   "year": 2025,
+   "venue": "ICLR (Oral)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2503.09573",
+   "published": "2025-03-12",
+   "abstract": "Diffusion language models offer unique benefits over autoregressive models due to their potential for parallelized generation and controllability, yet they lag in likelihood modeling and are limited to fixed-length generation. In this work, we introduce a class of block diffusion language models that interpolate between discrete denoising diffusion and autoregressive models. Block diffusion overcomes key limitations of both approaches by supporting flexible-length generation and improving inference efficiency with KV caching and parallel token sampling. We propose a recipe for building effective block diffusion models that includes an efficient training algorithm, estimators of gradient variance, and data-driven noise schedules to minimize the variance. Block diffusion sets a new state-of-the-art performance among diffusion models on language modeling benchmarks and enables generation of arbitrary-length sequences. We provide the code, along with the model weights and blog post on the project page: https://m-arriola.com/bd3lms",
+   "contribution_zh": "块间自回归+块内扩散的插值族，支持 KV cache、任意长度生成与并行采样，扩散 LM 似然新 SOTA",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2503.09573"
+   },
+   "pdf": "papers/2503.09573.pdf",
+   "text": "data/text/2503.09573.txt",
+   "text_chars": 90000,
+   "pages": 28
+  },
+  {
+   "key": "t22__2506.09018",
+   "report_id": "2506.09018",
+   "title": "Edit Flows: Flow Matching with Edit Operations",
+   "authors": [
+    "Marton Havasi",
+    "Brian Karrer",
+    "Itai Gat",
+    "Ricky T. Q. Chen"
+   ],
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2506.09018",
+   "published": "2025-06-10",
+   "abstract": "Autoregressive generative models naturally generate variable-length sequences, while non-autoregressive models struggle, often imposing rigid, token-wise structures. We propose Edit Flows, a non-autoregressive model that overcomes these limitations by defining a discrete flow over sequences through edit operations$\\unicode{x2013}$insertions, deletions, and substitutions. By modeling these operations within a Continuous-time Markov Chain over the sequence space, Edit Flows enable flexible, position-relative generation that aligns more closely with the structure of sequence data. Our training method leverages an expanded state space with auxiliary variables, making the learning process efficient and tractable. Empirical results show that Edit Flows outperforms both autoregressive and mask models on image captioning and significantly outperforms the mask construction in text and code generation.",
+   "contribution_zh": "在整条序列空间上定义 CTMC，转移=插入/删除/替换编辑操作（编辑距离几何），经辅助对齐过程+Bregman 散度损失可训练，原生支持变长生成",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2506.09018"
+   },
+   "pdf": "papers/2506.09018.pdf",
+   "text": "data/text/2506.09018.txt",
+   "text_chars": 87723,
+   "pages": 28
+  },
+  {
+   "key": "t22__2506.10892",
+   "report_id": "2506.10892",
+   "title": "The Diffusion Duality",
+   "authors": [
+    "Subham Sekhar Sahoo",
+    "Justin Deschenaux",
+    "Aaron Gokaslan",
+    "Guanghan Wang",
+    "Justin Chiu",
+    "Volodymyr Kuleshov"
+   ],
+   "year": 2025,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2506.10892",
+   "published": "2025-06-12",
+   "abstract": "Uniform-state discrete diffusion models hold the promise of fast text generation due to their inherent ability to self-correct. However, they are typically outperformed by autoregressive models and masked diffusion models. In this work, we narrow this performance gap by leveraging a key insight: Uniform-state diffusion processes naturally emerge from an underlying Gaussian diffusion. Our method, Duo, transfers powerful techniques from Gaussian diffusion to improve both training and sampling. First, we introduce a curriculum learning strategy guided by the Gaussian process, doubling training speed by reducing variance. Models trained with curriculum learning surpass autoregressive models in zero-shot perplexity on 3 of 7 benchmarks. Second, we present Discrete Consistency Distillation, which adapts consistency distillation from the continuous to the discrete setting. This algorithm unlocks few-step generation in diffusion language models by accelerating sampling by two orders of magnitude. We provide the code, model checkpoints, and video tutorials on the project page: http://s-sahoo.github.io/duo",
+   "contribution_zh": "证明 uniform-state 离散扩散 = 底层高斯扩散经 argmax 投影而来；借对偶把课程学习与一致性蒸馏搬到离散域（DCD），采样加速两个数量级",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2506.10892"
+   },
+   "pdf": "papers/2506.10892.pdf",
+   "text": "data/text/2506.10892.txt",
+   "text_chars": 90000,
+   "pages": 40
+  },
+  {
+   "key": "t22__distillation_of_discrete_diffusion_through_dimensional_corre",
+   "report_id": "2410.08709",
+   "title": "Distillation of Discrete Diffusion through Dimensional Correlations",
+   "authors": [
+    "Satoshi Hayakawa",
+    "Yuhta Takida",
+    "Masaaki Imaizumi",
+    "Hiromi Wakaki",
+    "Yuki Mitsufuji"
+   ],
+   "year": 2025,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2410.08709",
+   "published": "2024-10-11",
+   "abstract": "Diffusion models have demonstrated exceptional performances in various fields of generative modeling, but suffer from slow sampling speed due to their iterative nature. While this issue is being addressed in continuous domains, discrete diffusion models face unique challenges, particularly in capturing dependencies between elements (e.g., pixel relationships in image, sequential dependencies in language) mainly due to the computational cost of processing high-dimensional joint distributions. In this paper, (i) we propose \"mixture\" models for discrete diffusion that are capable of treating dimensional correlations while remaining scalable, and (ii) we provide a set of loss functions for distilling the iterations of existing models. Two primary theoretical insights underpin our approach: First, conventional models with element-wise independence can well approximate the data distribution, but essentially require {\\it many sampling steps}. Second, our loss functions enable the mixture models to distill such many-step conventional models into just a few steps by learning the dimensional correlations. Our experimental results show the effectiveness of the proposed method in distilling pretrained discrete diffusion models across image and language domains. The code used in the paper is available at https://github.com/sony/di4c .",
+   "contribution_zh": "用混合模型显式学习维度间相关性，把多步独立分解的教师蒸馏成 few-step 学生，并给出学生-教师分布距离上界",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=jCEl0aJpF6"
+   },
+   "pdf": "papers/2410.08709.pdf",
+   "text": "data/text/2410.08709.txt",
+   "text_chars": 90000,
+   "pages": 39
+  },
+  {
+   "key": "t22__multi_level_optimal_transport_for_universal_cross_tokenizer_",
+   "report_id": "2412.14528",
+   "title": "Multi-Level Optimal Transport for Universal Cross-Tokenizer Knowledge Distillation on Language Models",
+   "authors": [
+    "Xiao Cui",
+    "Mo Zhu",
+    "Yulei Qin",
+    "Liang Xie",
+    "Wengang Zhou",
+    "Houqiang Li"
+   ],
+   "year": 2025,
+   "venue": "AAAI (Oral)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2412.14528",
+   "published": "2024-12-19",
+   "abstract": "Knowledge distillation (KD) has become a prevalent technique for compressing large language models (LLMs). Existing KD methods are constrained by the need for identical tokenizers (i.e., vocabularies) between teacher and student models, limiting their versatility in handling LLMs of different architecture families. In this paper, we introduce the Multi-Level Optimal Transport (MultiLevelOT), a novel approach that advances the optimal transport for universal cross-tokenizer knowledge distillation. Our method aligns the logit distributions of the teacher and the student at both token and sequence levels using diverse cost matrices, eliminating the need for dimensional or token-by-token correspondence. At the token level, MultiLevelOT integrates both global and local information by jointly optimizing all tokens within a sequence to enhance robustness. At the sequence level, we efficiently capture complex distribution structures of logits via the Sinkhorn distance, which approximates the Wasserstein distance for divergence measures. Extensive experiments on tasks such as extractive QA, generative QA, and summarization demonstrate that the MultiLevelOT outperforms state-of-the-art cross-tokenizer KD methods under various settings. Our approach is robust to different student and teacher models across model families, architectures, and parameter sizes. Codes and models are available at https://github.com/2018cx/Multi-Level-OT.",
+   "contribution_zh": "token 级+序列级双层 OT（Sinkhorn）对齐不同词表的 logit 分布，实现任意教师→学生的跨 tokenizer LLM 蒸馏",
+   "links": {
+    "AAAI OJS": "https://ojs.aaai.org/index.php/AAAI/article/view/34543"
+   },
+   "pdf": "papers/2412.14528.pdf",
+   "text": "data/text/2412.14528.txt",
+   "text_chars": 43685,
+   "pages": 9
+  },
+  {
+   "key": "t22__2410.21035",
+   "report_id": "2410.21035",
+   "title": "Beyond Autoregression: Fast LLMs via Self-Distillation Through Time",
+   "authors": [
+    "Justin Deschenaux",
+    "Caglar Gulcehre"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": "2410.21035",
+   "published": "2024-10-28",
+   "abstract": "Autoregressive (AR) Large Language Models (LLMs) have demonstrated significant success across numerous tasks. However, the AR modeling paradigm presents certain limitations; for instance, contemporary autoregressive LLMs are trained to generate one token at a time, which can result in noticeable latency. Recent advances have indicated that search and repeated sampling can enhance performance in various applications, such as theorem proving, code generation, and alignment, by utilizing greater computational resources during inference. In this study, we demonstrate that diffusion language models are capable of generating at least 32 tokens simultaneously, while exceeding the performance of AR models in text quality and on the LAMBADA natural language understanding benchmark. This outcome is achieved through a novel distillation method for discrete diffusion models, which reduces the number of inference steps by a factor of 32-64. Practically, at the 1.3B parameters scale, diffusion models, even without caching, can generate tokens at a rate that is up to 8 times faster than AR models employing KV-caching, and we anticipate further improvements with the inclusion of caching. Moreover, we demonstrate the efficacy of our approach for diffusion language models with up to 860M parameters.",
+   "contribution_zh": "跨时间自蒸馏 masked 扩散 LM，32-64 token/步并行解码仍优于 GPT-2 级 AR（多篇 proceedings 交叉引用确认 ICLR 2025）",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2410.21035"
+   },
+   "pdf": "papers/2410.21035.pdf",
+   "text": "data/text/2410.21035.txt",
+   "text_chars": 90000,
+   "pages": 39
+  },
+  {
+   "key": "t22__2410.07761",
+   "report_id": "2410.07761",
+   "title": "$\\textit{Jump Your Steps}$: Optimizing Sampling Schedule of Discrete Diffusion Models",
+   "authors": [
+    "Yong-Hyun Park",
+    "Chieh-Hsin Lai",
+    "Satoshi Hayakawa",
+    "Yuhta Takida",
+    "Yuki Mitsufuji"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": "2410.07761",
+   "published": "2024-10-10",
+   "abstract": "Diffusion models have seen notable success in continuous domains, leading to the development of discrete diffusion models (DDMs) for discrete variables. Despite recent advances, DDMs face the challenge of slow sampling speeds. While parallel sampling methods like $τ$-leaping accelerate this process, they introduce $\\textit{Compounding Decoding Error}$ (CDE), where discrepancies arise between the true distribution and the approximation from parallel token generation, leading to degraded sample quality. In this work, we present $\\textit{Jump Your Steps}$ (JYS), a novel approach that optimizes the allocation of discrete sampling timesteps by minimizing CDE without extra computational cost. More precisely, we derive a practical upper bound on CDE and propose an efficient algorithm for searching for the optimal sampling schedule. Extensive experiments across image, music, and text generation show that JYS significantly improves sampling quality, establishing it as a versatile framework for enhancing DDM performance for fast sampling.",
+   "contribution_zh": "无额外计算下优化离散扩散采样时间表，最小化复合解码误差（Di4C 官方引用确认 ICLR 2025）",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2410.07761"
+   },
+   "pdf": "papers/2410.07761.pdf",
+   "text": "data/text/2410.07761.txt",
+   "text_chars": 73068,
+   "pages": 23
+  },
+  {
+   "key": "t22__2406.03736",
+   "report_id": "2406.03736",
+   "title": "Your Absorbing Discrete Diffusion Secretly Models the Conditional Distributions of Clean Data",
+   "authors": [
+    "Jingyang Ou",
+    "Shen Nie",
+    "Kaiwen Xue",
+    "Fengqi Zhu",
+    "Jiacheng Sun",
+    "Zhenguo Li",
+    "Chongxuan Li"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": "2406.03736",
+   "published": "2024-06-06",
+   "abstract": "Discrete diffusion models with absorbing processes have shown promise in language modeling. The key quantities to be estimated are the ratios between the marginal probabilities of two transitive states at all timesteps, called the concrete score. In this paper, we reveal that the concrete score in absorbing diffusion can be expressed as conditional probabilities of clean data, multiplied by a time-dependent scalar in an analytic form. Motivated by this finding, we propose reparameterized absorbing discrete diffusion (RADD), a dedicated diffusion model without time-condition that characterizes the time-independent conditional probabilities. Besides its simplicity, RADD can reduce the number of function evaluations (NFEs) by caching the output of the time-independent network when the noisy sample remains unchanged in a sampling interval, which enables sampling acceleration. Built upon the new perspective of conditional distributions, we further unify absorbing discrete diffusion and any-order autoregressive models (AO-ARMs), showing that the upper bound on the negative log-likelihood for the diffusion model can be interpreted as an expected negative log-likelihood for AO-ARMs. Further, our RADD models achieve SOTA performance among diffusion models on 5 zero-shot language modeling benchmarks (measured by perplexity) at the GPT-2 scale. Our code is available at https://github.com/ML-GSAI/RADD.",
+   "contribution_zh": "证明 absorbing 扩散的 concrete score 可分解为条件分布×时间标量，与任意序 AR 等价，支持缓存加速",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2406.03736"
+   },
+   "pdf": "papers/2406.03736.pdf",
+   "text": "data/text/2406.03736.txt",
+   "text_chars": 90000,
+   "pages": 38
+  },
+  {
+   "key": "t22__optimal_transport_based_token_weighting_for_preference_optim",
+   "report_id": "2505.18720",
+   "title": "Optimal Transport-Based Token Weighting scheme for Enhanced Preference Optimization",
+   "authors": [
+    "Meng Li",
+    "Guangda Huzhang",
+    "Haibo Zhang",
+    "Xiting Wang",
+    "Anxiang Zeng"
+   ],
+   "year": 2025,
+   "venue": "ACL main",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2505.18720",
+   "published": "2025-05-24",
+   "abstract": "Direct Preference Optimization (DPO) has emerged as a promising framework for aligning Large Language Models (LLMs) with human preferences by directly optimizing the log-likelihood difference between chosen and rejected responses. However, existing methods assign equal importance to all tokens in the response, while humans focus on more meaningful parts. This leads to suboptimal preference optimization, as irrelevant or noisy tokens disproportionately influence DPO loss. To address this limitation, we propose \\textbf{O}ptimal \\textbf{T}ransport-based token weighting scheme for enhancing direct \\textbf{P}reference \\textbf{O}ptimization (OTPO). By emphasizing semantically meaningful token pairs and de-emphasizing less relevant ones, our method introduces a context-aware token weighting scheme that yields a more contrastive reward difference estimate. This adaptive weighting enhances reward stability, improves interpretability, and ensures that preference optimization focuses on meaningful differences between responses. Extensive experiments have validated OTPO's effectiveness in improving instruction-following ability across various settings\\footnote{Code is available at https://github.com/Mimasss2/OTPO.}.",
+   "contribution_zh": "用 unbalanced OT 在 chosen/rejected 回复间算语义对齐权重，重加权 DPO 的 token 级损失，统一 SimPO/SamPO 等为特例",
+   "links": {
+    "ACL Anthology": "https://aclanthology.org/2025.acl-long.1035/"
+   },
+   "pdf": "papers/2505.18720.pdf",
+   "text": "data/text/2505.18720.txt",
+   "text_chars": 89094,
+   "pages": 24
+  },
+  {
+   "key": "t22__convergence_analysis_of_discrete_diffusion_model_exact_imple",
+   "report_id": "2402.08095",
+   "title": "Convergence Analysis of Discrete Diffusion Model: Exact Implementation through Uniformization",
+   "authors": [
+    "Hongrui Chen",
+    "Lexing Ying"
+   ],
+   "year": 2025,
+   "venue": "J. Mach. Learn. 4(2)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2402.08095",
+   "published": "2024-02-12",
+   "abstract": "Diffusion models have achieved huge empirical success in data generation tasks. Recently, some efforts have been made to adapt the framework of diffusion models to discrete state space, providing a more natural approach for modeling intrinsically discrete data, such as language and graphs. This is achieved by formulating both the forward noising process and the corresponding reversed process as Continuous Time Markov Chains (CTMCs). In this paper, we investigate the theoretical properties of the discrete diffusion model. Specifically, we introduce an algorithm leveraging the uniformization of continuous Markov chains, implementing transitions on random time points. Under reasonable assumptions on the learning of the discrete score function, we derive Total Variation distance and KL divergence guarantees for sampling from any distribution on a hypercube. Our results align with state-of-the-art achievements for diffusion models in $\\mathbb{R}^d$ and further underscore the advantages of discrete diffusion models in comparison to the $\\mathbb{R}^d$ setting.",
+   "contribution_zh": "用 CTMC uniformization 精确模拟反向链，给出超立方体上 TV/KL 收敛保证，对齐连续扩散最优结果",
+   "links": {
+    "DOI": "https://doi.org/10.4208/jml.240812"
+   },
+   "pdf": "papers/2402.08095.pdf",
+   "text": "data/text/2402.08095.txt",
+   "text_chars": 46380,
+   "pages": 19
+  },
+  {
+   "key": "t22__2508.15487",
+   "report_id": "2508.15487",
+   "title": "Dream 7B: Diffusion Large Language Models",
+   "authors": [
+    "Jiacheng Ye",
+    "Zhihui Xie",
+    "Lin Zheng",
+    "Jiahui Gao",
+    "Zirui Wu",
+    "Xin Jiang",
+    "Zhenguo Li",
+    "Lingpeng Kong"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2508.15487",
+   "published": "2025-08-21",
+   "abstract": "We introduce Dream 7B, the most powerful open diffusion large language model to date. Unlike autoregressive (AR) models that generate tokens sequentially, Dream 7B employs discrete diffusion modeling to refine sequences in parallel through iterative denoising. Our model consistently outperforms existing diffusion language models on general, mathematical, and coding tasks. Dream 7B demonstrates superior planning abilities and inference flexibility, including arbitrary-order generation, infilling capabilities, and tunable quality-speed trade-offs. These results are achieved through simple yet effective training techniques, including AR-based LLM initialization and context-adaptive token-level noise rescheduling. We release both Dream-Base and Dream-Instruct to facilitate further research in diffusion-based language modeling.",
+   "contribution_zh": "AR 初始化+上下文自适应 token 级噪声重调度训练的 7B 扩散 LM，规划类任务显著优于同规模 AR",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2508.15487"
+   },
+   "pdf": "papers/2508.15487.pdf",
+   "text": "data/text/2508.15487.txt",
+   "text_chars": 62918,
+   "pages": 17
+  },
+  {
+   "key": "t22__2406.07524",
+   "report_id": "2406.07524",
+   "title": "Simple and Effective Masked Diffusion Language Models",
+   "authors": [
+    "Subham Sekhar Sahoo",
+    "Marianne Arriola",
+    "Yair Schiff",
+    "Aaron Gokaslan",
+    "Edgar Marroquin",
+    "Justin T Chiu",
+    "Alexander Rush",
+    "Volodymyr Kuleshov"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2406.07524",
+   "published": "2024-06-11",
+   "abstract": "While diffusion models excel at generating high-quality images, prior work reports a significant performance gap between diffusion and autoregressive (AR) methods in language modeling. In this work, we show that simple masked discrete diffusion is more performant than previously thought. We apply an effective training recipe that improves the performance of masked diffusion models and derive a simplified, Rao-Blackwellized objective that results in additional improvements. Our objective has a simple form -- it is a mixture of classical masked language modeling losses -- and can be used to train encoder-only language models that admit efficient samplers, including ones that can generate arbitrary lengths of text semi-autoregressively like a traditional language model. On language modeling benchmarks, a range of masked diffusion models trained with modern engineering practices achieves a new state-of-the-art among diffusion models, and approaches AR perplexity. We provide the code, along with a blog post and video tutorial on the project page: https://s-sahoo.com/mdlm",
+   "contribution_zh": "Rao-Blackwell 化的连续时间 ELBO 证明 masked diffusion 目标 = 加权 MLM 交叉熵混合，给 BERT 式编码器赋予有原则的生成能力",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2406.07524"
+   },
+   "pdf": "papers/2406.07524.pdf",
+   "text": "data/text/2406.07524.txt",
+   "text_chars": 90000,
+   "pages": 49
+  },
+  {
+   "key": "t22__2406.04329",
+   "report_id": "2406.04329",
+   "title": "Simplified and Generalized Masked Diffusion for Discrete Data",
+   "authors": [
+    "Jiaxin Shi",
+    "Kehang Han",
+    "Zhe Wang",
+    "Arnaud Doucet",
+    "Michalis K. Titsias"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2406.04329",
+   "published": "2024-06-06",
+   "abstract": "Masked (or absorbing) diffusion is actively explored as an alternative to autoregressive models for generative modeling of discrete data. However, existing work in this area has been hindered by unnecessarily complex model formulations and unclear relationships between different perspectives, leading to suboptimal parameterization, training objectives, and ad hoc adjustments to counteract these issues. In this work, we aim to provide a simple and general framework that unlocks the full potential of masked diffusion models. We show that the continuous-time variational objective of masked diffusion models is a simple weighted integral of cross-entropy losses. Our framework also enables training generalized masked diffusion models with state-dependent masking schedules. When evaluated by perplexity, our models trained on OpenWebText surpass prior diffusion language models at GPT-2 scale and demonstrate superior performance on 4 out of 5 zero-shot language modeling tasks. Furthermore, our models vastly outperform previous discrete diffusion models on pixel-level image modeling, achieving 2.75 (CIFAR-10) and 3.40 (ImageNet 64x64) bits per dimension that are better than autoregressive models of similar sizes. Our code is available at https://github.com/google-deepmind/md4.",
+   "contribution_zh": "统一简化 masked diffusion 框架，支持状态依赖的 masking schedule；像素级离散建模超过同规模 AR",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2406.04329"
+   },
+   "pdf": "papers/2406.04329.pdf",
+   "text": "data/text/2406.04329.txt",
+   "text_chars": 90000,
+   "pages": 32
+  },
+  {
+   "key": "t22__2402.17110",
+   "report_id": "2402.17110",
+   "title": "Sinkhorn Distance Minimization for Knowledge Distillation",
+   "authors": [
+    "Xiao Cui",
+    "Yulei Qin",
+    "Yuting Gao",
+    "Enwei Zhang",
+    "Zihan Xu",
+    "Tong Wu",
+    "Ke Li",
+    "Xing Sun",
+    "Wengang Zhou",
+    "Houqiang Li"
+   ],
+   "year": 2024,
+   "venue": "LREC-COLING; 2025·IEEE TNNLS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2402.17110",
+   "published": "2024-02-27",
+   "abstract": "Knowledge distillation (KD) has been widely adopted to compress large language models (LLMs). Existing KD methods investigate various divergence measures including the Kullback-Leibler (KL), reverse Kullback-Leibler (RKL), and Jensen-Shannon (JS) divergences. However, due to limitations inherent in their assumptions and definitions, these measures fail to deliver effective supervision when few distribution overlap exists between the teacher and the student. In this paper, we show that the aforementioned KL, RKL, and JS divergences respectively suffer from issues of mode-averaging, mode-collapsing, and mode-underestimation, which deteriorates logits-based KD for diverse NLP tasks. We propose the Sinkhorn Knowledge Distillation (SinKD) that exploits the Sinkhorn distance to ensure a nuanced and precise assessment of the disparity between teacher and student distributions. Besides, profit by properties of the Sinkhorn metric, we can get rid of sample-wise KD that restricts the perception of divergence in each teacher-student sample pair. Instead, we propose a batch-wise reformulation to capture geometric intricacies of distributions across samples in the high-dimensional space. Comprehensive evaluation on GLUE and SuperGLUE, in terms of comparability, validity, and generalizability, highlights our superiority over state-of-the-art methods on all kinds of LLMs with encoder-only, encoder-decoder, and decoder-only architectures.",
+   "contribution_zh": "用 Sinkhorn 距离替代 KL/RKL/JS 做 LLM logit 蒸馏，批级重构感知分布几何，规避 mode-averaging/collapsing",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2402.17110",
+    "DOI": "https://doi.org/10.1109/TNNLS.2024.3501335"
+   },
+   "pdf": "papers/2402.17110.pdf",
+   "text": "data/text/2402.17110.txt",
+   "text_chars": 52837,
+   "pages": 13
+  },
+  {
+   "key": "t22__2402.12030",
+   "report_id": "2402.12030",
+   "title": "Towards Cross-Tokenizer Distillation: the Universal Logit Distillation Loss for LLMs",
+   "authors": [
+    "Nicolas Boizard",
+    "Kevin El Haddad",
+    "Céline Hudelot",
+    "Pierre Colombo"
+   ],
+   "year": 2024,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2402.12030",
+   "published": "2024-02-19",
+   "abstract": "Deploying large language models (LLMs) of several billion parameters can be impractical in most industrial use cases due to constraints such as cost, latency limitations, and hardware accessibility. Knowledge distillation (KD) offers a solution by compressing knowledge from resource-intensive large models to smaller ones. Various strategies exist, some relying on the text generated by the teacher model and optionally utilizing his logits to enhance learning. However, these methods based on logits often require both teacher and student models to share the same tokenizer, limiting their applicability across different LLM families. In this paper, we introduce Universal Logit Distillation (ULD) loss, grounded in optimal transport, to address this limitation. Our experimental results demonstrate the effectiveness of ULD loss in enabling distillation across models with different architectures and tokenizers, paving the way to a more widespread use of distillation techniques.",
+   "contribution_zh": "最早用 Wasserstein 距离做跨词表 logit 蒸馏的损失（MultiLevelOT 的直接前驱）",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2402.12030"
+   },
+   "pdf": "papers/2402.12030.pdf",
+   "text": "data/text/2402.12030.txt",
+   "text_chars": 89275,
+   "pages": 30
+  },
+  {
+   "key": "t22__2107.03006",
+   "report_id": "2107.03006",
+   "title": "Structured Denoising Diffusion Models in Discrete State-Spaces",
+   "authors": [
+    "Jacob Austin",
+    "Daniel D. Johnson",
+    "Jonathan Ho",
+    "Daniel Tarlow",
+    "Rianne van den Berg"
+   ],
+   "year": 2021,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2107.03006",
+   "published": "2021-07-07",
+   "abstract": "Denoising diffusion probabilistic models (DDPMs) (Ho et al. 2020) have shown impressive results on image and waveform generation in continuous state spaces. Here, we introduce Discrete Denoising Diffusion Probabilistic Models (D3PMs), diffusion-like generative models for discrete data that generalize the multinomial diffusion model of Hoogeboom et al. 2021, by going beyond corruption processes with uniform transition probabilities. This includes corruption with transition matrices that mimic Gaussian kernels in continuous space, matrices based on nearest neighbors in embedding space, and matrices that introduce absorbing states. The third allows us to draw a connection between diffusion models and autoregressive and mask-based generative models. We show that the choice of transition matrix is an important design decision that leads to improved results in image and text domains. We also introduce a new loss function that combines the variational lower bound with an auxiliary cross entropy loss. For text, this model class achieves strong results on character-level text generation while scaling to large vocabularies on LM1B. On the image dataset CIFAR-10, our models approach the sample quality and exceed the log-likelihood of the continuous-space DDPM model.",
+   "contribution_zh": "离散扩散奠基：结构化转移矩阵（uniform/absorbing/离散化高斯）统一离散前向过程设计空间",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2107.03006"
+   },
+   "pdf": "papers/2107.03006.pdf",
+   "text": "data/text/2107.03006.txt",
+   "text_chars": 90000,
+   "pages": 33
+  }
+ ]
+}

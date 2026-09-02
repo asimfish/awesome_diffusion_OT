@@ -1,0 +1,388 @@
+{
+ "topic": "t16",
+ "topic_name": "OT 代价先验引导的跨域语义对应",
+ "section": "C",
+ "section_name": "Cross-Domain Generation & Translation",
+ "kb_note": "source/kb/t16_ot_guided_semantic_correspondence.md",
+ "papers": [
+  {
+   "key": "t16__2511.07499",
+   "report_id": "2511.07499",
+   "title": "Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance",
+   "authors": [
+    "Kwanyoung Kim"
+   ],
+   "year": 2026,
+   "venue": "AAAI",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2511.07499",
+   "published": "2025-11-10",
+   "abstract": "Diffusion models have demonstrated strong generative performance when using guidance methods such as classifier-free guidance (CFG), which enhance output quality by modifying the sampling trajectory. These methods typically improve a target output by intentionally degrading another, often the unconditional output, using heuristic perturbation functions such as identity mixing or blurred conditions. However, these approaches lack a principled foundation and rely on manually designed distortions. In this work, we propose Adversarial Sinkhorn Attention Guidance (ASAG), a novel method that reinterprets attention scores in diffusion models through the lens of optimal transport and intentionally disrupt the transport cost via Sinkhorn algorithm. Instead of naively corrupting the attention mechanism, ASAG injects an adversarial cost within self-attention layers to reduce pixel-wise similarity between queries and keys. This deliberate degradation weakens misleading attention alignments and leads to improved conditional and unconditional sample quality. ASAG shows consistent improvements in text-to-image diffusion, and enhances controllability and fidelity in downstream applications such as IP-Adapter and ControlNet. The method is lightweight, plug-and-play, and improves reliability without requiring any model retraining.",
+   "contribution_zh": "把 self-attention 重释为 OT，用 Sinkhorn 注入对抗代价构造\"劣化分支\"做 guidance，即插即用提升 T2I/IP-Adapter/ControlNet 保真度",
+   "links": {
+    "AAAI OJS": "https://ojs.aaai.org/index.php/AAAI/article/view/37488",
+    "arXiv": "https://arxiv.org/abs/2511.07499"
+   },
+   "pdf": "papers/2511.07499.pdf",
+   "text": "data/text/2511.07499.txt",
+   "text_chars": 43121,
+   "pages": 17
+  },
+  {
+   "key": "t16__shape_of_you_fused_gromov_wasserstein_ot_for_semantic_corres",
+   "report_id": "2603.11618",
+   "title": "Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild",
+   "authors": [
+    "Jiin Im",
+    "Sisung Liu",
+    "Je Hyeong Hong"
+   ],
+   "year": 2026,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2603.11618",
+   "published": "2026-03-12",
+   "abstract": "Semantic correspondence is essential for handling diverse in-the-wild images lacking explicit correspondence annotations. While recent 2D foundation models offer powerful features, adapting them for unsupervised learning via nearest-neighbor pseudo-labels has key limitations: it operates locally, ignoring structural relationships, and consequently its reliance on 2D appearance fails to resolve geometric ambiguities arising from symmetries or repetitive features. In this work, we address this by reformulating pseudo-label generation as a Fused Gromov-Wasserstein (FGW) problem, which jointly optimizes inter-feature similarity and intra-structural consistency. Our framework, Shape-of-You (SoY), leverages a 3D foundation model to define this intra-structure in the geometric space, resolving abovementioned ambiguity. However, since FGW is a computationally prohibitive quadratic problem, we approximate it through anchor-based linearization. The resulting probabilistic transport plan provides a structurally consistent but noisy supervisory signal. Thus, we introduce a soft-target loss dynamically blending guidance from this plan with network predictions to build a learning framework robust to this noise. SoY achieves state-of-the-art performance on SPair-71k and AP-10k datasets, establishing a new benchmark in semantic correspondence without explicit geometric annotations. Code is available at Shape-of-You.",
+   "contribution_zh": "FGW 融合外观代价（W）与结构代价（GW），用 3D 结构先验 + anchor 线性化压低 FGW 计算成本，做 in-the-wild 语义对应",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2026/html/Im_Shape-of-You_Fused_Gromov-Wasserstein_Optimal_Transport_for_Semantic_Correspondence_in-the-Wild_CVPR_2026_paper.html"
+   },
+   "pdf": "papers/2603.11618.pdf",
+   "text": "data/text/2603.11618.txt",
+   "text_chars": 74418,
+   "pages": 18
+  },
+  {
+   "key": "t16__storm_spatial_transport_optimization_by_repositioning_attent",
+   "report_id": "2503.22168",
+   "title": "Spatial Transport Optimization by Repositioning Attention Map for Training-Free Text-to-Image Synthesis",
+   "authors": [
+    "Woojung Han",
+    "Yeonkyung Lee",
+    "Chanyoung Kim",
+    "Kwanghyun Park",
+    "Seong Jae Hwang"
+   ],
+   "year": 2025,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2503.22168",
+   "published": "2025-03-28",
+   "abstract": "Diffusion-based text-to-image (T2I) models have recently excelled in high-quality image generation, particularly in a training-free manner, enabling cost-effective adaptability and generalization across diverse tasks. However, while the existing methods have been continuously focusing on several challenges, such as \"missing objects\" and \"mismatched attributes,\" another critical issue of \"mislocated objects\" remains where generated spatial positions fail to align with text prompts. Surprisingly, ensuring such seemingly basic functionality remains challenging in popular T2I models due to the inherent difficulty of imposing explicit spatial guidance via text forms. To address this, we propose STORM (Spatial Transport Optimization by Repositioning Attention Map), a novel training-free approach for spatially coherent T2I synthesis. STORM employs Spatial Transport Optimization (STO), rooted in optimal transport theory, to dynamically adjust object attention maps for precise spatial adherence, supported by a Spatial Transport (ST) Cost function that enhances spatial understanding. Our analysis shows that integrating spatial awareness is most effective in the early denoising stages, while later phases refine details. Extensive experiments demonstrate that STORM surpasses existing methods, effectively mitigating mislocated objects while improving missing and mismatched attributes, setting a new benchmark for spatial alignment in T2I synthesis.",
+   "contribution_zh": "training-free：定制空间传输代价的 OT 在早期去噪阶段重定位物体 cross-attention map，同时缓解物体错位/缺失/属性错配",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2025/html/Han_Spatial_Transport_Optimization_by_Repositioning_Attention_Map_for_Training-Free_Text-to-Image_CVPR_2025_paper.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t16__otseg_multi_prompt_sinkhorn_attention_for_zero_shot_semantic",
+   "report_id": "2403.14183",
+   "title": "OTSeg: Multi-prompt Sinkhorn Attention for Zero-Shot Semantic Segmentation",
+   "authors": [
+    "Kwanyoung Kim",
+    "Yujin Oh",
+    "Jong Chul Ye"
+   ],
+   "year": 2024,
+   "venue": "ECCV",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2403.14183",
+   "published": "2024-03-21",
+   "abstract": "The recent success of CLIP has demonstrated promising results in zero-shot semantic segmentation by transferring muiltimodal knowledge to pixel-level classification. However, leveraging pre-trained CLIP knowledge to closely align text embeddings with pixel embeddings still has limitations in existing approaches. To address this issue, we propose OTSeg, a novel multimodal attention mechanism aimed at enhancing the potential of multiple text prompts for matching associated pixel embeddings. We first propose Multi-Prompts Sinkhorn (MPS) based on the Optimal Transport (OT) algorithm, which leads multiple text prompts to selectively focus on various semantic features within image pixels. Moreover, inspired by the success of Sinkformers in unimodal settings, we introduce the extension of MPS, called Multi-Prompts Sinkhorn Attention (MPSA) , which effectively replaces cross-attention mechanisms within Transformer framework in multimodal settings. Through extensive experiments, we demonstrate that OTSeg achieves state-of-the-art (SOTA) performance with significant gains on Zero-Shot Semantic Segmentation (ZS3) tasks across three benchmark datasets.",
+   "contribution_zh": "MPSA 用 Sinkhorn 替换 Transformer 解码器 cross-attention 归一化，多文本 prompt 选择性对齐像素语义，ZS3 三个基准 SOTA",
+   "links": {
+    "ECVA PDF": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/09900.pdf"
+   },
+   "pdf": "papers/2403.14183.pdf",
+   "text": "data/text/2403.14183.txt",
+   "text_chars": 52411,
+   "pages": 23
+  },
+  {
+   "key": "t16__otcs_optimal_transport_guided_conditional_score_based_diffus",
+   "report_id": "2311.01226",
+   "title": "Optimal Transport-Guided Conditional Score-Based Diffusion Models",
+   "authors": [
+    "Xiang Gu",
+    "Liwei Yang",
+    "Jian Sun",
+    "Zongben Xu"
+   ],
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2311.01226",
+   "published": "2023-11-02",
+   "abstract": "Conditional score-based diffusion model (SBDM) is for conditional generation of target data with paired data as condition, and has achieved great success in image translation. However, it requires the paired data as condition, and there would be insufficient paired data provided in real-world applications. To tackle the applications with partially paired or even unpaired dataset, we propose a novel Optimal Transport-guided Conditional Score-based diffusion model (OTCS) in this paper. We build the coupling relationship for the unpaired or partially paired dataset based on $L_2$-regularized unsupervised or semi-supervised optimal transport, respectively. Based on the coupling relationship, we develop the objective for training the conditional score-based model for unpaired or partially paired settings, which is based on a reformulation and generalization of the conditional SBDM for paired setting. With the estimated coupling relationship, we effectively train the conditional score-based model by designing a ``resampling-by-compatibility'' strategy to choose the sampled data with high compatibility as guidance. Extensive experiments on unpaired super-resolution and semi-paired image-to-image translation demonstrated the effectiveness of the proposed OTCS model. From the viewpoint of optimal transport, OTCS provides an approach to transport data across distributions, which is a challenge for OT on large-scale datasets. We theoretically prove that OTCS realizes the data transport in OT with a theoretical bound. Code is available at \\url{https://github.com/XJTU-XGU/OTCS}.",
+   "contribution_zh": "本方向奠基：L2 正则 OT 在非配对/半配对数据上建耦合，\"按相容性重采样\"引导条件分数模型训练，理论证明其实现 OT 数据传输",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/72c12e48c6135762f56bf188cd2479d2-Abstract-Conference.html"
+   },
+   "pdf": "papers/2311.01226.pdf",
+   "text": "data/text/2311.01226.txt",
+   "text_chars": 79629,
+   "pages": 33
+  },
+  {
+   "key": "t16__otcomp_dual_optimal_transport_for_multi_concept_composition",
+   "report_id": "OTComp_Dual_Optimal_Transport_for_Multi_Concept_Co",
+   "title": "OTComp: Dual Optimal Transport for Multi-Concept Composition",
+   "authors": "",
+   "year": 2026,
+   "venue": "ICML",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "双 OT training-free 引导：质量守恒 OT 做结构草图对齐 + 几何引导 OT 做高频纹理残差传输，多概念组合无属性串扰",
+   "links": {
+    "ICML": "https://icml.cc/virtual/2026/poster/63327",
+    "代码": "https://github.com/fuhao7i/OTComp"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t16__2601.08011",
+   "report_id": "2601.08011",
+   "title": "TP-Blend: Textual-Prompt Attention Pairing for Precise Object-Style Blending in Diffusion Models",
+   "authors": [
+    "Xin Jin",
+    "Yichuan Zhong",
+    "Yapeng Tian"
+   ],
+   "year": 2026,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2601.08011",
+   "published": "2026-01-12",
+   "abstract": "Current text-conditioned diffusion editors handle single object replacement well but struggle when a new object and a new style must be introduced simultaneously. We present Twin-Prompt Attention Blend (TP-Blend), a lightweight training-free framework that receives two separate textual prompts, one specifying a blend object and the other defining a target style, and injects both into a single denoising trajectory. TP-Blend is driven by two complementary attention processors. Cross-Attention Object Fusion (CAOF) first averages head-wise attention to locate spatial tokens that respond strongly to either prompt, then solves an entropy-regularised optimal transport problem that reassigns complete multi-head feature vectors to those positions. CAOF updates feature vectors at the full combined dimensionality of all heads (e.g., 640 dimensions in SD-XL), preserving rich cross-head correlations while keeping memory low. Self-Attention Style Fusion (SASF) injects style at every self-attention layer through Detail-Sensitive Instance Normalization. A lightweight one-dimensional Gaussian filter separates low- and high-frequency components; only the high-frequency residual is blended back, imprinting brush-stroke-level texture without disrupting global geometry. SASF further swaps the Key and Value matrices with those derived from the style prompt, enforcing context-aware texture modulation that remains independent of object fusion. Extensive experiments show that TP-Blend produces high-resolution, photo-realistic edits with precise control over both content and appearance, surpassing recent baselines in quantitative fidelity, perceptual quality, and inference speed.",
+   "contribution_zh": "CAOF 用熵正则 OT 在 cross-attention 中按完整多头维度重分配特征向量，实现对象与风格双 prompt 的精确融合（风格部分归 T17）",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2601.08011"
+   },
+   "pdf": "papers/2601.08011.pdf",
+   "text": "data/text/2601.08011.txt",
+   "text_chars": 90000,
+   "pages": 31
+  },
+  {
+   "key": "t16__2602.03105",
+   "report_id": "2602.03105",
+   "title": "Gromov Wasserstein Optimal Transport for Semantic Correspondences",
+   "authors": [
+    "Francis Snelgar",
+    "Stephen Gould",
+    "Ming Xu",
+    "Liang Zheng",
+    "Akshay Asthana"
+   ],
+   "year": 2025,
+   "venue": "BMVC",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2602.03105",
+   "published": "2026-02-03",
+   "abstract": "Establishing correspondences between image pairs is a long studied problem in computer vision. With recent large-scale foundation models showing strong zero-shot performance on downstream tasks including classification and segmentation, there has been interest in using the internal feature maps of these models for the semantic correspondence task. Recent works observe that features from DINOv2 and Stable Diffusion (SD) are complementary, the former producing accurate but sparse correspondences, while the latter produces spatially consistent correspondences. As a result, current state-of-the-art methods for semantic correspondence involve combining features from both models in an ensemble. While the performance of these methods is impressive, they are computationally expensive, requiring evaluating feature maps from large-scale foundation models. In this work we take a different approach, instead replacing SD features with a superior matching algorithm which is imbued with the desirable spatial consistency property. Specifically, we replace the standard nearest neighbours matching with an optimal transport algorithm that includes a Gromov Wasserstein spatial smoothness prior. We show that we can significantly boost the performance of the DINOv2 baseline, and be competitive and sometimes surpassing state-of-the-art methods using Stable Diffusion features, while being 5--10x more efficient. We make code available at https://github.com/fsnelgar/semantic_matching_gwot .",
+   "contribution_zh": "用 GW 空间平滑先验的 OT 匹配替代最近邻，DINOv2 单模型即可竞争 SD 特征 ensemble，效率高 5–10 倍",
+   "links": {
+    "BMVC": "https://bmvc2025.bmva.org/proceedings/721/",
+    "arXiv": "https://arxiv.org/abs/2602.03105"
+   },
+   "pdf": "papers/2602.03105.pdf",
+   "text": "data/text/2602.03105.txt",
+   "text_chars": 42318,
+   "pages": 18
+  },
+  {
+   "key": "t16__2508.02363",
+   "report_id": "2508.02363",
+   "title": "Optimal Transport for Rectified Flow Image Editing: Unifying Inversion-Based and Direct Methods",
+   "authors": [
+    "Marian Lupascu",
+    "Mihai-Sorin Stupariu"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2508.02363",
+   "published": "2025-08-04",
+   "abstract": "Image editing in rectified flow models remains challenging due to the fundamental trade-off between reconstruction fidelity and editing flexibility. While inversion-based methods suffer from trajectory deviation, recent inversion-free approaches like FlowEdit offer direct editing pathways but can benefit from additional guidance to improve structure preservation. In this work, we demonstrate that optimal transport theory provides a unified framework for improving both paradigms in rectified flow editing. We introduce a zero-shot transport-guided inversion framework that leverages optimal transport during the reverse diffusion process, and extend optimal transport principles to enhance inversion-free methods through transport-optimized velocity field corrections. Incorporating transport-based guidance can effectively balance reconstruction accuracy and editing controllability across different rectified flow editing approaches. For inversion-based editing, our method achieves high-fidelity reconstruction with LPIPS scores of 0.001 and SSIM of 0.992 on face editing benchmarks, observing 7.8% to 12.9% improvements over RF-Inversion on LSUN datasets. For inversion-free editing with FlowEdit on FLUX and Stable Diffusion 3, we demonstrate consistent improvements in semantic consistency and structure preservation across diverse editing scenarios. Our semantic face editing experiments show an 11.2% improvement in identity preservation and enhanced perceptual quality. The unified optimal transport framework produces visually compelling edits with superior detail preservation across both inversion-based and direct editing paradigms. Code is available for RF-Inversion and FlowEdit at: https://github.com/marianlupascu/OT-RF",
+   "contribution_zh": "用传输论轨迹校正统一 inversion-based 与 direct 编辑，training-free 大幅提升 FLUX 等模型编辑的重建/一致性",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2508.02363"
+   },
+   "pdf": "papers/2508.02363.pdf",
+   "text": "data/text/2508.02363.txt",
+   "text_chars": 74994,
+   "pages": 27
+  },
+  {
+   "key": "t16__plot_prompt_learning_with_optimal_transport_for_vision_langu",
+   "report_id": "2210.01253",
+   "title": "PLOT: Prompt Learning with Optimal Transport for Vision-Language Models",
+   "authors": [
+    "Guangyi Chen",
+    "Weiran Yao",
+    "Xiangchen Song",
+    "Xinyue Li",
+    "Yongming Rao",
+    "Kun Zhang"
+   ],
+   "year": 2023,
+   "venue": "ICLR (top-25%)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2210.01253",
+   "published": "2022-10-03",
+   "abstract": "With the increasing attention to large vision-language models such as CLIP, there has been a significant amount of effort dedicated to building efficient prompts. Unlike conventional methods of only learning one single prompt, we propose to learn multiple comprehensive prompts to describe diverse characteristics of categories such as intrinsic attributes or extrinsic contexts. However, directly matching each prompt to the same visual feature is problematic, as it pushes the prompts to converge to one point. To solve this problem, we propose to apply optimal transport to match the vision and text modalities. Specifically, we first model images and the categories with visual and textual feature sets. Then, we apply a two-stage optimization strategy to learn the prompts. In the inner loop, we optimize the optimal transport distance to align visual features and prompts by the Sinkhorn algorithm, while in the outer loop, we learn the prompts by this distance from the supervised data. Extensive experiments are conducted on the few-shot recognition task and the improvement demonstrates the superiority of our method. The code is available at https://github.com/CHENGY12/PLOT.",
+   "contribution_zh": "prompt/token 级 OT 对齐范式：多 prompt 与局部视觉特征集合做 Sinkhorn 内层对齐、外层学 prompt，防止 prompt 坍缩",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=zqwryBoXYnh"
+   },
+   "pdf": "papers/2210.01253.pdf",
+   "text": "data/text/2210.01253.txt",
+   "text_chars": 69488,
+   "pages": 21
+  },
+  {
+   "key": "t16__sinkformers_transformers_with_doubly_stochastic_attention",
+   "report_id": "2110.11773",
+   "title": "Sinkformers: Transformers with Doubly Stochastic Attention",
+   "authors": [
+    "Michael E. Sander",
+    "Pierre Ablin",
+    "Mathieu Blondel",
+    "Gabriel Peyré"
+   ],
+   "year": 2022,
+   "venue": "AISTATS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2110.11773",
+   "published": "2021-10-22",
+   "abstract": "Attention based models such as Transformers involve pairwise interactions between data points, modeled with a learnable attention matrix. Importantly, this attention matrix is normalized with the SoftMax operator, which makes it row-wise stochastic. In this paper, we propose instead to use Sinkhorn's algorithm to make attention matrices doubly stochastic. We call the resulting model a Sinkformer. We show that the row-wise stochastic attention matrices in classical Transformers get close to doubly stochastic matrices as the number of epochs increases, justifying the use of Sinkhorn normalization as an informative prior. On the theoretical side, we show that, unlike the SoftMax operation, this normalization makes it possible to understand the iterations of self-attention modules as a discretized gradient-flow for the Wasserstein metric. We also show in the infinite number of samples limit that, when rescaling both attention matrices and depth, Sinkformers operate a heat diffusion. On the experimental side, we show that Sinkformers enhance model accuracy in vision and natural language processing tasks. In particular, on 3D shapes classification, Sinkformers lead to a significant improvement.",
+   "contribution_zh": "理论接口：softmax attention → Sinkhorn 双随机化，形式化\"attention ≈ 熵正则 OT\"，是后续所有 attention-OT 工作的依据",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v151/sander22a.html"
+   },
+   "pdf": "papers/2110.11773.pdf",
+   "text": "data/text/2110.11773.txt",
+   "text_chars": 58024,
+   "pages": 16
+  },
+  {
+   "key": "t16__keypoint_guided_optimal_transport",
+   "report_id": "Keypoint_Guided_Optimal_Transport",
+   "title": "Keypoint-Guided Optimal Transport",
+   "authors": "KPG-RL",
+   "year": 2022,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "用 mask 约束 plan + 关系保持把少量标注 keypoint 语义先验注入 OT，支持异构空间与 partial 设定",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/6091c5644d73637e3cccdcab52a7031f-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t16__simultaneous_multiple_prompt_guided_generation_using_differe",
+   "report_id": "2204.08472",
+   "title": "Simultaneous Multiple-Prompt Guided Generation Using Differentiable Optimal Transport",
+   "authors": [
+    "Yingtao Tian",
+    "Marco Cuturi",
+    "David Ha"
+   ],
+   "year": 2022,
+   "venue": "ICCC",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2204.08472",
+   "published": "2022-04-18",
+   "abstract": "Recent advances in deep learning, such as powerful generative models and joint text-image embeddings, have provided the computational creativity community with new tools, opening new perspectives for artistic pursuits. Text-to-image synthesis approaches that operate by generating images from text cues provide a case in point. These images are generated with a latent vector that is progressively refined to agree with text cues. To do so, patches are sampled within the generated image, and compared with the text prompts in the common text-image embedding space; The latent vector is then updated, using gradient descent, to reduce the mean (average) distance between these patches and text cues. While this approach provides artists with ample freedom to customize the overall appearance of images, through their choice in generative models, the reliance on a simple criterion (mean of distances) often causes mode collapse: The entire image is drawn to the average of all text cues, thereby losing their diversity. To address this issue, we propose using matching techniques found in the optimal transport (OT) literature, resulting in images that are able to reflect faithfully a wide diversity of prompts. We provide numerous illustrations showing that OT avoids some of the pitfalls arising from estimating vectors with mean distances, and demonstrate the capacity of our proposed method to perform better in experiments, qualitatively and quantitatively.",
+   "contribution_zh": "早期先驱：图像 patch ↔ 多 prompt 的可微 OT 距离直接作为生成引导损失（VQGAN-CLIP 时代）",
+   "links": {
+    "ICCC PDF": "https://computationalcreativity.net/iccc22/wp-content/uploads/2022/06/ICCC-2022_22L_Tian-et-al..pdf"
+   },
+   "pdf": "papers/2204.08472.pdf",
+   "text": "data/text/2204.08472.txt",
+   "text_chars": 34465,
+   "pages": 9
+  },
+  {
+   "key": "t16__unite_unbalanced_feature_transport_for_exemplar_based_image_",
+   "report_id": "2106.10482",
+   "title": "Unbalanced Feature Transport for Exemplar-based Image Translation",
+   "authors": [
+    "Fangneng Zhan",
+    "Yingchen Yu",
+    "Kaiwen Cui",
+    "Gongjie Zhang",
+    "Shijian Lu",
+    "Jianxiong Pan",
+    "Changgong Zhang",
+    "Feiying Ma",
+    "Xuansong Xie",
+    "Chunyan Miao"
+   ],
+   "year": 2021,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2106.10482",
+   "published": "2021-06-19",
+   "abstract": "Despite the great success of GANs in images translation with different conditioned inputs such as semantic segmentation and edge maps, generating high-fidelity realistic images with reference styles remains a grand challenge in conditional image-to-image translation. This paper presents a general image translation framework that incorporates optimal transport for feature alignment between conditional inputs and style exemplars in image translation. The introduction of optimal transport mitigates the constraint of many-to-one feature matching significantly while building up accurate semantic correspondences between conditional inputs and exemplars. We design a novel unbalanced optimal transport to address the transport between features with deviational distributions which exists widely between conditional inputs and exemplars. In addition, we design a semantic-activation normalization scheme that injects style features of exemplars into the image translation process successfully. Extensive experiments over multiple image translation tasks show that our method achieves superior image translation qualitatively and quantitatively as compared with the state-of-the-art.",
+   "contribution_zh": "用不平衡 OT + 自适应质量学习对齐条件输入与 exemplar 特征，解决跨域分布偏差下的稠密对应（完整 I2I 框架部分归 T13/T14）",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2021/html/Zhan_Unbalanced_Feature_Transport_for_Exemplar-Based_Image_Translation_CVPR_2021_paper.html"
+   },
+   "pdf": "papers/2106.10482.pdf",
+   "text": "data/text/2106.10482.txt",
+   "text_chars": 49268,
+   "pages": 11
+  },
+  {
+   "key": "t16__scot_semantic_correspondence_as_an_optimal_transport_problem",
+   "report_id": "SCOT_Semantic_Correspondence_as_an_Optimal_Transpo",
+   "title": "SCOT: Semantic Correspondence as an Optimal Transport Problem",
+   "authors": "",
+   "year": 2020,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "奠基：首次把语义对应表述为 OT 问题，用显著性做边际、Sinkhorn 求全局 plan，抑制最近邻的 many-to-one 错配",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content_CVPR_2020/html/Liu_Semantic_Correspondence_as_an_Optimal_Transport_Problem_CVPR_2020_paper.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  }
+ ]
+}

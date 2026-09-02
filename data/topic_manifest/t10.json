@@ -1,0 +1,384 @@
+{
+ "topic": "t10",
+ "topic_name": "一致性模型与少步蒸馏的 OT 视角",
+ "section": "B",
+ "section_name": "Flow Matching & Trajectory Straightening",
+ "kb_note": "source/kb/t10_consistency_distillation_ot.md",
+ "papers": [
+  {
+   "key": "t10__vdot_efficient_unified_video_creation_via_optimal_transport_",
+   "report_id": "2512.06802",
+   "title": "VDOT: Efficient Unified Video Creation via Optimal Transport Distillation",
+   "authors": [
+    "Yutong Wang",
+    "Haiyu Zhang",
+    "Tianfan Xue",
+    "Yu Qiao",
+    "Yaohui Wang",
+    "Chang Xu",
+    "Xinyuan Chen"
+   ],
+   "year": 2026,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2512.06802",
+   "published": "2025-12-07",
+   "abstract": "The rapid development of generative models has significantly advanced image and video applications. Among these, video creation, aimed at generating videos under various conditions, has gained substantial attention. However, existing video creation models either focus solely on a few specific conditions or suffer from excessively long generation times due to complex model inference, making them impractical for real-world applications. To mitigate these issues, we propose an efficient unified video creation model, named VDOT. Concretely, we model the training process with the distribution matching distillation (DMD) paradigm. Instead of using the Kullback-Leibler (KL) minimization, we additionally employ a novel computational optimal transport (OT) technique to optimize the discrepancy between the real and fake score distributions. The OT distance inherently imposes geometric constraints, mitigating potential zero-forcing or gradient collapse issues that may arise during KL-based distillation within the few-step generation scenario, and thus, enhances the efficiency and stability of the distillation process. Further, we integrate a discriminator to enable the model to perceive real video data, thereby enhancing the quality of generated videos. To support training unified video creation models, we propose a fully automated pipeline for video data annotation and filtering that accommodates multiple video creation tasks. Meanwhile, we curate a unified testing benchmark, UVCBench, to standardize evaluation. Experiments demonstrate that our 4-step VDOT outperforms or matches other baselines with 100 denoising steps.",
+   "contribution_zh": "首次把熵正则 OT 距离引入 DMD（替代/增强 KL）：OT plan 给分布匹配加几何约束，缓解 few-step 场景的 zero-forcing 与梯度崩塌；4 步统一视频生成匹敌 50-100 步教师，并发布 UVCBench",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_VDOT_Efficient_Unified_Video_Creation_via_Optimal_Transport_Distillation_CVPR_2026_paper.html"
+   },
+   "pdf": "papers/2512.06802.pdf",
+   "text": "data/text/2512.06802.txt",
+   "text_chars": 62999,
+   "pages": 18
+  },
+  {
+   "key": "t10__flow_map_matching",
+   "report_id": "Flow_Map_Matching",
+   "title": "Flow Map Matching",
+   "authors": "FMM",
+   "year": 2025,
+   "venue": "TMLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "两时间 flow map 统一框架：证明 Lagrangian/Eulerian 蒸馏损失上界控制教师-学生 W2 距离，且 Eulerian 损失是一致性蒸馏的连续时间极限，统一 CM/CTM/渐进蒸馏",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=cqDH0e6ak2"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t10__improving_consistency_models_with_generator_augmented_flows",
+   "report_id": "2406.09570",
+   "title": "Improving Consistency Models with Generator-Augmented Flows",
+   "authors": [
+    "Thibaut Issenhuth",
+    "Sangchul Lee",
+    "Ludovic Dos Santos",
+    "Jean-Yves Franceschi",
+    "Chansoo Kim",
+    "Alain Rakotomamonjy"
+   ],
+   "year": 2025,
+   "venue": "ICML (PMLR v267)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2406.09570",
+   "published": "2024-06-13",
+   "abstract": "Consistency models imitate the multi-step sampling of score-based diffusion in a single forward pass of a neural network. They can be learned in two ways: consistency distillation and consistency training. The former relies on the true velocity field of the corresponding differential equation, approximated by a pre-trained neural network. In contrast, the latter uses a single-sample Monte Carlo estimate of this velocity field. The related estimation error induces a discrepancy between consistency distillation and training that, we show, still holds in the continuous-time limit. To alleviate this issue, we propose a novel flow that transports noisy data towards their corresponding outputs derived from a consistency model. We prove that this flow reduces the previously identified discrepancy and the noise-data transport cost. Consequently, our method not only accelerates consistency training convergence but also enhances its overall performance. The code is available at: https://github.com/thibautissenhuth/consistency_GC.",
+   "contribution_zh": "证明一致性训练与蒸馏的差异在连续时间极限仍不消失；用 generator 诱导的流/耦合同时降低该差异与噪声-数据传输成本，加速收敛并提升质量",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v267/issenhuth25a.html"
+   },
+   "pdf": "papers/2406.09570.pdf",
+   "text": "data/text/2406.09570.txt",
+   "text_chars": 76378,
+   "pages": 25
+  },
+  {
+   "key": "t10__one_step_diffusion_with_distribution_matching_distillation",
+   "report_id": "2311.18828",
+   "title": "One-step Diffusion with Distribution Matching Distillation",
+   "authors": [
+    "Tianwei Yin",
+    "Michaël Gharbi",
+    "Richard Zhang",
+    "Eli Shechtman",
+    "Fredo Durand",
+    "William T. Freeman",
+    "Taesung Park"
+   ],
+   "year": 2024,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2311.18828",
+   "published": "2023-11-30",
+   "abstract": "Diffusion models generate high-quality images but require dozens of forward passes. We introduce Distribution Matching Distillation (DMD), a procedure to transform a diffusion model into a one-step image generator with minimal impact on image quality. We enforce the one-step image generator match the diffusion model at distribution level, by minimizing an approximate KL divergence whose gradient can be expressed as the difference between 2 score functions, one of the target distribution and the other of the synthetic distribution being produced by our one-step generator. The score functions are parameterized as two diffusion models trained separately on each distribution. Combined with a simple regression loss matching the large-scale structure of the multi-step diffusion outputs, our method outperforms all published few-step diffusion approaches, reaching 2.62 FID on ImageNet 64x64 and 11.49 FID on zero-shot COCO-30k, comparable to Stable Diffusion but orders of magnitude faster. Utilizing FP16 inference, our model generates images at 20 FPS on modern hardware.",
+   "contribution_zh": "反向 KL 梯度 = 真/假 score 之差；用教师 ODE 噪声-图像对的回归损失（确定性耦合锚定）防模式坍缩",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2024/html/Yin_One-step_Diffusion_with_Distribution_Matching_Distillation_CVPR_2024_paper.html"
+   },
+   "pdf": "papers/2311.18828.pdf",
+   "text": "data/text/2311.18828.txt",
+   "text_chars": 68275,
+   "pages": 22
+  },
+  {
+   "key": "t10__consistency_models",
+   "report_id": "2303.01469",
+   "title": "Consistency Models",
+   "authors": [
+    "Yang Song",
+    "Prafulla Dhariwal",
+    "Mark Chen",
+    "Ilya Sutskever"
+   ],
+   "year": 2023,
+   "venue": "ICML (PMLR v202)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2303.01469",
+   "published": "2023-03-02",
+   "abstract": "Diffusion models have significantly advanced the fields of image, audio, and video generation, but they depend on an iterative sampling process that causes slow generation. To overcome this limitation, we propose consistency models, a new family of models that generate high quality samples by directly mapping noise to data. They support fast one-step generation by design, while still allowing multistep sampling to trade compute for sample quality. They also support zero-shot data editing, such as image inpainting, colorization, and super-resolution, without requiring explicit training on these tasks. Consistency models can be trained either by distilling pre-trained diffusion models, or as standalone generative models altogether. Through extensive experiments, we demonstrate that they outperform existing distillation techniques for diffusion models in one- and few-step sampling, achieving the new state-of-the-art FID of 3.55 on CIFAR-10 and 6.20 on ImageNet 64x64 for one-step generation. When trained in isolation, consistency models become a new family of generative models that can outperform existing one-step, non-adversarial generative models on standard benchmarks such as CIFAR-10, ImageNet 64x64 and LSUN 256x256.",
+   "contribution_zh": "奠基：学习 PF-ODE 的自一致映射（任意轨迹点→端点），CD 蒸馏 CIFAR-10 一步 FID 3.55、两步 2.93",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v202/song23a.html"
+   },
+   "pdf": "papers/2303.01469.pdf",
+   "text": "data/text/2303.01469.txt",
+   "text_chars": 90000,
+   "pages": 42
+  },
+  {
+   "key": "t10__towards_a_mathematical_theory_for_consistency_training",
+   "report_id": "2402.07802",
+   "title": "Towards a mathematical theory for consistency training in diffusion models",
+   "authors": [
+    "Gen Li",
+    "Zhihan Huang",
+    "Yuting Wei"
+   ],
+   "year": 2025,
+   "venue": "AISTATS (PMLR v258)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2402.07802",
+   "published": "2024-02-12",
+   "abstract": "Consistency models, which were proposed to mitigate the high computational overhead during the sampling phase of diffusion models, facilitate single-step sampling while attaining state-of-the-art empirical performance. When integrated into the training phase, consistency models attempt to train a sequence of consistency functions capable of mapping any point at any time step of the diffusion process to its starting point. Despite the empirical success, a comprehensive theoretical understanding of consistency training remains elusive. This paper takes a first step towards establishing theoretical underpinnings for consistency models. We demonstrate that, in order to generate samples within $\\varepsilon$ proximity to the target in distribution (measured by some Wasserstein metric), it suffices for the number of steps in consistency learning to exceed the order of $d^{5/2}/\\varepsilon$, with $d$ the data dimension. Our theory offers rigorous insights into the validity and efficacy of consistency models, illuminating their utility in downstream inference tasks.",
+   "contribution_zh": "证明一致性训练步数超过 O(d^{5/2}/ε) 即可生成 Wasserstein 意义下 ε-接近目标的样本，给出离散化-精度定量关系",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v258/li25c.html"
+   },
+   "pdf": "papers/2402.07802.pdf",
+   "text": "data/text/2402.07802.txt",
+   "text_chars": 71997,
+   "pages": 30
+  },
+  {
+   "key": "t10__simplifying_stabilizing_and_scaling_continuous_time_cms",
+   "report_id": "Simplifying_Stabilizing_and_Scaling_Continuous_tim",
+   "title": "Simplifying, Stabilizing and Scaling Continuous-time CMs (sCM)",
+   "authors": "",
+   "year": 2025,
+   "venue": "ICLR (Oral)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "TrigFlow 统一参数化 + 连续时间训练稳定化，1.5B 参数两步 FID：CIFAR-10 2.06 / ImageNet-64 1.48 / ImageNet-512 1.88",
+   "links": {
+    "ICLR": "https://iclr.cc/virtual/2025/oral/31868"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t10__one_step_diffusion_via_shortcut_models",
+   "report_id": "2410.12557",
+   "title": "One Step Diffusion via Shortcut Models",
+   "authors": [
+    "Kevin Frans",
+    "Danijar Hafner",
+    "Sergey Levine",
+    "Pieter Abbeel"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2410.12557",
+   "published": "2024-10-16",
+   "abstract": "Diffusion models and flow-matching models have enabled generating diverse and realistic images by learning to transfer noise to data. However, sampling from these models involves iterative denoising over many neural network passes, making generation slow and expensive. Previous approaches for speeding up sampling require complex training regimes, such as multiple training phases, multiple networks, or fragile scheduling. We introduce shortcut models, a family of generative models that use a single network and training phase to produce high-quality samples in a single or multiple sampling steps. Shortcut models condition the network not only on the current noise level but also on the desired step size, allowing the model to skip ahead in the generation process. Across a wide range of sampling step budgets, shortcut models consistently produce higher quality samples than previous approaches, such as consistency models and reflow. Compared to distillation, shortcut models reduce complexity to a single network and training phase and additionally allow varying step budgets at inference time.",
+   "contribution_zh": "把步长 d 作为网络条件输入，自蒸馏只需 log2(T) 次 bootstrap；单网络单阶段支持任意步数预算（ImageNet-256 DiT-XL：1 步 10.6 / 4 步 7.8 / 128 步 3.8）",
+   "links": {
+    "ICLR": "https://iclr.cc/virtual/2025/poster/29802"
+   },
+   "pdf": "papers/2410.12557.pdf",
+   "text": "data/text/2410.12557.txt",
+   "text_chars": 51643,
+   "pages": 17
+  },
+  {
+   "key": "t10__improved_techniques_for_training_consistency_models",
+   "report_id": "2310.14189",
+   "title": "Improved Techniques for Training Consistency Models",
+   "authors": [
+    "Yang Song",
+    "Prafulla Dhariwal"
+   ],
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2310.14189",
+   "published": "2023-10-22",
+   "abstract": "Consistency models are a nascent family of generative models that can sample high quality data in one step without the need for adversarial training. Current consistency models achieve optimal sample quality by distilling from pre-trained diffusion models and employing learned metrics such as LPIPS. However, distillation limits the quality of consistency models to that of the pre-trained diffusion model, and LPIPS causes undesirable bias in evaluation. To tackle these challenges, we present improved techniques for consistency training, where consistency models learn directly from data without distillation. We delve into the theory behind consistency training and identify a previously overlooked flaw, which we address by eliminating Exponential Moving Average from the teacher consistency model. To replace learned metrics like LPIPS, we adopt Pseudo-Huber losses from robust statistics. Additionally, we introduce a lognormal noise schedule for the consistency training objective, and propose to double total discretization steps every set number of training iterations. Combined with better hyperparameter tuning, these modifications enable consistency models to achieve FID scores of 2.51 and 3.25 on CIFAR-10 and ImageNet $64\\times 64$ respectively in a single sampling step. These scores mark a 3.5$\\times$ and 4$\\times$ improvement compared to prior consistency training approaches. Through two-step sampling, we further reduce FID scores to 2.24 and 2.77 on these two datasets, surpassing those obtained via distillation in both one-step and two-step settings, while narrowing the gap between consistency models and other state-of-the-art generative models.",
+   "contribution_zh": "去 EMA teacher + Pseudo-Huber 损失，免蒸馏一致性训练一步 FID 2.51 (CIFAR-10)，首次反超蒸馏",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=WNzy9bRDvG"
+   },
+   "pdf": "papers/2310.14189.pdf",
+   "text": "data/text/2310.14189.txt",
+   "text_chars": 55992,
+   "pages": 20
+  },
+  {
+   "key": "t10__consistency_trajectory_models",
+   "report_id": "2310.02279",
+   "title": "Consistency Trajectory Models: Learning Probability Flow ODE Trajectory of Diffusion",
+   "authors": [
+    "Dongjun Kim",
+    "Chieh-Hsin Lai",
+    "Wei-Hsiang Liao",
+    "Naoki Murata",
+    "Yuhta Takida",
+    "Toshimitsu Uesaka",
+    "Yutong He",
+    "Yuki Mitsufuji",
+    "Stefano Ermon"
+   ],
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2310.02279",
+   "published": "2023-10-01",
+   "abstract": "Consistency Models (CM) (Song et al., 2023) accelerate score-based diffusion model sampling at the cost of sample quality but lack a natural way to trade-off quality for speed. To address this limitation, we propose Consistency Trajectory Model (CTM), a generalization encompassing CM and score-based models as special cases. CTM trains a single neural network that can -- in a single forward pass -- output scores (i.e., gradients of log-density) and enables unrestricted traversal between any initial and final time along the Probability Flow Ordinary Differential Equation (ODE) in a diffusion process. CTM enables the efficient combination of adversarial training and denoising score matching loss to enhance performance and achieves new state-of-the-art FIDs for single-step diffusion model sampling on CIFAR-10 (FID 1.73) and ImageNet at 64x64 resolution (FID 1.92). CTM also enables a new family of sampling schemes, both deterministic and stochastic, involving long jumps along the ODE solution trajectories. It consistently improves sample quality as computational budgets increase, avoiding the degradation seen in CM. Furthermore, unlike CM, CTM's access to the score function can streamline the adoption of established controllable/conditional generation methods from the diffusion community. This access also enables the computation of likelihood. The code is available at https://github.com/sony/ctm.",
+   "contribution_zh": "推广为任意时刻→任意时刻的两时间轨迹映射，可同时输出 score；GAN 辅助下一步 FID 1.73 (CIFAR-10)/1.92 (ImageNet-64)，γ-sampling 提供质量-步数连续旋钮",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=ymjI8feDTD"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t10__dmd2_improved_distribution_matching_distillation",
+   "report_id": "DMD2_Improved_Distribution_Matching_Distillation",
+   "title": "DMD2: Improved Distribution Matching Distillation",
+   "authors": "",
+   "year": 2024,
+   "venue": "NeurIPS (Oral)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "去掉 ODE 对回归，TTUR + GAN（真数据）稳定纯分布匹配；一步 ImageNet-64 FID 1.28 超越教师",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/54dcf25318f9de5a7a01f0a4125c541e-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t10__adversarial_diffusion_distillation",
+   "report_id": "2311.17042",
+   "title": "Adversarial Diffusion Distillation",
+   "authors": [
+    "Axel Sauer",
+    "Dominik Lorenz",
+    "Andreas Blattmann",
+    "Robin Rombach"
+   ],
+   "year": 2024,
+   "venue": "ECCV (Oral)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2311.17042",
+   "published": "2023-11-28",
+   "abstract": "We introduce Adversarial Diffusion Distillation (ADD), a novel training approach that efficiently samples large-scale foundational image diffusion models in just 1-4 steps while maintaining high image quality. We use score distillation to leverage large-scale off-the-shelf image diffusion models as a teacher signal in combination with an adversarial loss to ensure high image fidelity even in the low-step regime of one or two sampling steps. Our analyses show that our model clearly outperforms existing few-step methods (GANs, Latent Consistency Models) in a single step and reaches the performance of state-of-the-art diffusion models (SDXL) in only four steps. ADD is the first method to unlock single-step, real-time image synthesis with foundation models. Code and weights available under https://github.com/Stability-AI/generative-models and https://huggingface.co/stabilityai/ .",
+   "contribution_zh": "score distillation + hinge-GAN 判别器，SDXL-Turbo 的基础，1-4 步实时生成、单步胜过 LCM",
+   "links": {
+    "ECVA": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/11557_ECCV_2024_paper.php"
+   },
+   "pdf": "papers/2311.17042.pdf",
+   "text": "data/text/2311.17042.txt",
+   "text_chars": 51689,
+   "pages": 16
+  },
+  {
+   "key": "t10__score_identity_distillation",
+   "report_id": "Score_identity_Distillation",
+   "title": "Score identity Distillation",
+   "authors": "SiD",
+   "year": 2024,
+   "venue": "ICML (PMLR v235)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "三个 score 恒等式构造 data-free 蒸馏损失，FID 指数速率下降、逼近甚至超过教师",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/zhou24x.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t10__adversarial_score_distillation",
+   "report_id": "2312.00739",
+   "title": "Adversarial Score Distillation: When score distillation meets GAN",
+   "authors": [
+    "Min Wei",
+    "Jingkai Zhou",
+    "Junyao Sun",
+    "Xuesong Zhang"
+   ],
+   "year": 2024,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2312.00739",
+   "published": "2023-12-01",
+   "abstract": "Existing score distillation methods are sensitive to classifier-free guidance (CFG) scale: manifested as over-smoothness or instability at small CFG scales, while over-saturation at large ones. To explain and analyze these issues, we revisit the derivation of Score Distillation Sampling (SDS) and decipher existing score distillation with the Wasserstein Generative Adversarial Network (WGAN) paradigm. With the WGAN paradigm, we find that existing score distillation either employs a fixed sub-optimal discriminator or conducts incomplete discriminator optimization, resulting in the scale-sensitive issue. We propose the Adversarial Score Distillation (ASD), which maintains an optimizable discriminator and updates it using the complete optimization objective. Experiments show that the proposed ASD performs favorably in 2D distillation and text-to-3D tasks against existing methods. Furthermore, to explore the generalization ability of our WGAN paradigm, we extend ASD to the image editing task, which achieves competitive results. The project page and code are at https://github.com/2y7c3/ASD.",
+   "contribution_zh": "用 WGAN 范式重推 SDS/VSD：SDS=固定次优判别器、VSD=不完整判别器优化；补全 W1 对偶判别器训练解决 CFG 尺度敏感",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2024/html/Wei_Adversarial_Score_Distillation_When_score_distillation_meets_GAN_CVPR_2024_paper.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t10__theory_of_consistency_diffusion_models",
+   "report_id": "Theory_of_Consistency_Diffusion_Models",
+   "title": "Theory of Consistency Diffusion Models: Distribution Estimation Meets Fast Sampling",
+   "authors": "",
+   "year": 2024,
+   "venue": "ICML (PMLR v235)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "首个 CM 统计理论：把训练形式化为分布差异最小化，给出 Wasserstein 距离下的估计率（与原扩散模型同阶），同时覆盖蒸馏与免蒸馏两种训练",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/dou24a.html"
+   },
+   "pdf": "papers/t10_2024_Dou_Theory_Consistency_Diffusion_Models.pdf",
+   "text": "data/text/t10_2024_Dou_Theory_Consistency_Diffusion_Models.txt",
+   "text_chars": 72839,
+   "pages": 21
+  }
+ ]
+}

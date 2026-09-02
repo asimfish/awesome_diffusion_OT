@@ -1,0 +1,393 @@
+{
+ "topic": "t02",
+ "topic_name": "扩散模型与 OT 的理论联系",
+ "section": "A",
+ "section_name": "Theory Foundations",
+ "kb_note": "source/kb/t02_diffusion_ot_theory.md",
+ "papers": [
+  {
+   "key": "t02__2405.14250",
+   "report_id": "2405.14250",
+   "title": "Diffusion models for Gaussian distributions: Exact solutions and Wasserstein errors",
+   "authors": [
+    "Emile Pierret",
+    "Bruno Galerne"
+   ],
+   "year": 2025,
+   "venue": "ICML, PMLR 267:49355",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2405.14250",
+   "published": "2024-05-23",
+   "abstract": "Diffusion or score-based models recently showed high performance in image generation. They rely on a forward and a backward stochastic differential equations (SDE). The sampling of a data distribution is achieved by numerically solving the backward SDE or its associated flow ODE. Studying the convergence of these models necessitates to control four different types of error: the initialization error, the truncation error, the discretization error and the score approximation. In this paper, we theoretically study the behavior of diffusion models and their numerical implementation when the data distribution is Gaussian. Our first contribution is to derive the analytical solutions of the backward SDE and the probability flow ODE and to prove that these solutions and their discretizations are all Gaussian processes. Our second contribution is to compute the exact Wasserstein errors between the target and the numerically sampled distributions for any numerical scheme. This allows us to monitor convergence directly in the data space, while experimental works limit their empirical analysis to Inception features. An implementation of our code is available online.",
+   "contribution_zh": "高斯数据下逆向 SDE 与 PF-ODE 的解析解；对任意数值格式给出初始化/截断/离散化误差的**精确** W2 表达；证实 Heun 格式最优、SDE 采样器对误差更鲁棒",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v267/pierret25a.html",
+    "arXiv": "https://arxiv.org/abs/2405.14250"
+   },
+   "pdf": "papers/2405.14250.pdf",
+   "text": "data/text/2405.14250.txt",
+   "text_chars": 72171,
+   "pages": 27
+  },
+  {
+   "key": "t02__2405.11326",
+   "report_id": "2405.11326",
+   "title": "On the Trajectory Regularity of ODE-based Diffusion Sampling",
+   "authors": [
+    "Defang Chen",
+    "Zhenyu Zhou",
+    "Can Wang",
+    "Chunhua Shen",
+    "Siwei Lyu"
+   ],
+   "year": 2024,
+   "venue": "ICML, PMLR 235:7905",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2405.11326",
+   "published": "2024-05-18",
+   "abstract": "Diffusion-based generative models use stochastic differential equations (SDEs) and their equivalent ordinary differential equations (ODEs) to establish a smooth connection between a complex data distribution and a tractable prior distribution. In this paper, we identify several intriguing trajectory properties in the ODE-based sampling process of diffusion models. We characterize an implicit denoising trajectory and discuss its vital role in forming the coupled sampling trajectory with a strong shape regularity, regardless of the generated content. We also describe a dynamic programming-based scheme to make the time schedule in sampling better fit the underlying trajectory structure. This simple strategy requires minimal modification to any given ODE-based numerical solvers and incurs negligible computational cost, while delivering superior performance in image generation, especially in $5\\sim 10$ function evaluations.",
+   "contribution_zh": "发现 PF-ODE 采样轨迹与内容无关的\"线性–非线性–线性\"强形状正则性（近似落在低维平面），据此提出 GITS 时间表，5–10 NFE 显著提效",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/chen24bm.html",
+    "arXiv": "https://arxiv.org/abs/2405.11326"
+   },
+   "pdf": "papers/2405.11326.pdf",
+   "text": "data/text/2405.11326.txt",
+   "text_chars": 90000,
+   "pages": 30
+  },
+  {
+   "key": "t02__2211.01364",
+   "report_id": "2211.01364",
+   "title": "An optimal control perspective on diffusion-based generative modeling",
+   "authors": [
+    "Julius Berner",
+    "Lorenz Richter",
+    "Karen Ullrich"
+   ],
+   "year": 2024,
+   "venue": "TMLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2211.01364",
+   "published": "2022-11-02",
+   "abstract": "We establish a connection between stochastic optimal control and generative models based on stochastic differential equations (SDEs), such as recently developed diffusion probabilistic models. In particular, we derive a Hamilton-Jacobi-Bellman equation that governs the evolution of the log-densities of the underlying SDE marginals. This perspective allows to transfer methods from optimal control theory to generative modeling. First, we show that the evidence lower bound is a direct consequence of the well-known verification theorem from control theory. Further, we can formulate diffusion-based generative modeling as a minimization of the Kullback-Leibler divergence between suitable measures in path space. Finally, we develop a novel diffusion-based method for sampling from unnormalized densities -- a problem frequently occurring in statistics and computational sciences. We demonstrate that our time-reversed diffusion sampler (DIS) can outperform other diffusion-based sampling approaches on multiple numerical examples.",
+   "contribution_zh": "Hopf–Cole 变换导出时间反转 log 密度的 HJB 方程；ELBO = 控制论 verification theorem 的直接推论；给出路径空间 KL 表述与 DIS 采样器",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=oYIjw37pTP",
+    "arXiv": "https://arxiv.org/abs/2211.01364"
+   },
+   "pdf": "papers/2211.01364.pdf",
+   "text": "data/text/2211.01364.txt",
+   "text_chars": 90000,
+   "pages": 42
+  },
+  {
+   "key": "t02__2202.07477",
+   "report_id": "2202.07477",
+   "title": "Understanding DDPM Latent Codes Through Optimal Transport",
+   "authors": [
+    "Valentin Khrulkov",
+    "Gleb Ryzhakov",
+    "Andrei Chertkov",
+    "Ivan Oseledets"
+   ],
+   "year": 2023,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2202.07477",
+   "published": "2022-02-14",
+   "abstract": "Diffusion models have recently outperformed alternative approaches to model the distribution of natural images, such as GANs. Such diffusion models allow for deterministic sampling via the probability flow ODE, giving rise to a latent space and an encoder map. While having important practical applications, such as estimation of the likelihood, the theoretical properties of this map are not yet fully understood. In the present work, we partially address this question for the popular case of the VP SDE (DDPM) approach. We show that, perhaps surprisingly, the DDPM encoder map coincides with the optimal transport map for common distributions; we support this claim theoretically and by extensive numerical experiments.",
+   "contribution_zh": "猜想 DDPM encoder map = Monge OT map；证明多元高斯情形，并用 tensor-train Fokker–Planck 数值求解器支持一般情形",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=6PIrhAx1j4i",
+    "arXiv": "https://arxiv.org/abs/2202.07477"
+   },
+   "pdf": "papers/2202.07477.pdf",
+   "text": "data/text/2202.07477.txt",
+   "text_chars": 46665,
+   "pages": 15
+  },
+  {
+   "key": "t02__the_flow_map_of_the_fokker_planck_equation_does_not_provide_",
+   "report_id": "The_flow_map_of_the_Fokker_Planck_equation_does_no",
+   "title": "The flow map of the Fokker–Planck equation does not provide optimal transport",
+   "authors": "Lavenant & Santambrogio",
+   "year": 2022,
+   "venue": "Appl. Math. Lett. 133:108225",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "反例证伪上述猜想：流映射一般不是凸函数梯度，障碍是一个 Hessian 非交换项；同时指出数值上\"近乎最优\"、量化次优度是开放问题",
+   "links": {
+    "ScienceDirect": "https://www.sciencedirect.com/science/article/abs/pii/S089396592200180X",
+    "cvgmt": "https://cvgmt.sns.it/paper/5469/"
+   },
+   "pdf": "papers/t02_2022_Lavenant_flow_map_fokker_planck_not_ot.pdf",
+   "text": "data/text/t02_2022_Lavenant_flow_map_fokker_planck_not_ot.txt",
+   "text_chars": 18785,
+   "pages": 6
+  },
+  {
+   "key": "t02__2603.25182",
+   "report_id": "2603.25182",
+   "title": "Learning Monge maps with constrained drifting models",
+   "authors": [
+    "Théo Dumont",
+    "Théo Lacombe",
+    "François-Xavier Vialard"
+   ],
+   "year": 2026,
+   "venue": "arXiv 2603.25182",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2603.25182",
+   "published": "2026-03-26",
+   "abstract": "We study the estimation of optimal transport (OT) maps between an arbitrary source probability measure and a log-concave target probability measure. Our contributions are twofold. First, we propose a new evolution equation in the set of transport maps. It can be seen as the gradient flow of a lift of some user-chosen divergence (e.g., the KL divergence, or relative entropy) to the space of transport maps, constrained to the convex set of optimal transport maps. We prove the existence of long-time solutions to this flow as well as its convergence toward the OT map as time goes to infinity, under standard convexity conditions on the divergence. Second, we study the practical implementation of this constrained gradient flow. We propose two time-discrete computational schemes-one explicit, one implicit-, and we prove the convergence of the latter to the OT map as time goes to infinity. We then parameterize the OT maps with convexity-constrained neural networks and train them with these discretizations of the constrained gradient flow. We show that this is equivalent to performing a natural gradient descent of the lift of the chosen divergence in the neural networks' parameter space, similarly to drifting generative models. Empirically, our scheme outperforms the standard Euclidean gradient descent methods used to train convexity-constrained neural networks in terms of approximation results for the OT map and convergence stability, and it still yields better results than the same approach combined with the widely used Adam optimizer.",
+   "contribution_zh": "辩论线最新延续：在\"传输映射空间\"内做约束梯度流（约束到 OT 映射凸集），证明长时存在性并收敛到 Monge map——把 drift 型生成动力学\"修正\"为真 OT",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2603.25182"
+   },
+   "pdf": "papers/2603.25182.pdf",
+   "text": "data/text/2603.25182.txt",
+   "text_chars": 90000,
+   "pages": 35
+  },
+  {
+   "key": "t02__2409.08861",
+   "report_id": "2409.08861",
+   "title": "Adjoint Matching: Fine-tuning Flow and Diffusion Generative Models with Memoryless Stochastic Optimal Control",
+   "authors": [
+    "Carles Domingo-Enrich",
+    "Michal Drozdzal",
+    "Brian Karrer",
+    "Ricky T. Q. Chen"
+   ],
+   "year": 2025,
+   "venue": "ICLR (Spotlight)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2409.08861",
+   "published": "2024-09-13",
+   "abstract": "Dynamical generative models that produce samples through an iterative process, such as Flow Matching and denoising diffusion models, have seen widespread use, but there have not been many theoretically-sound methods for improving these models with reward fine-tuning. In this work, we cast reward fine-tuning as stochastic optimal control (SOC). Critically, we prove that a very specific memoryless noise schedule must be enforced during fine-tuning, in order to account for the dependency between the noise variable and the generated samples. We also propose a new algorithm named Adjoint Matching which outperforms existing SOC algorithms, by casting SOC problems as a regression problem. We find that our approach significantly improves over existing methods for reward fine-tuning, achieving better consistency, realism, and generalization to unseen human preference reward models, while retaining sample diversity.",
+   "contribution_zh": "把 reward 微调严格表述为 SOC 问题；证明必须用 memoryless 噪声调度 σ(t)=√(2η_t) 消除初值-value-function 偏差；lean adjoint 回归算法",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=xQBRrtQM8u",
+    "arXiv": "https://arxiv.org/abs/2409.08861"
+   },
+   "pdf": "papers/2409.08861.pdf",
+   "text": "data/text/2409.08861.txt",
+   "text_chars": 90000,
+   "pages": 55
+  },
+  {
+   "key": "t02__2312.02027",
+   "report_id": "2312.02027",
+   "title": "Stochastic Optimal Control Matching",
+   "authors": [
+    "Carles Domingo-Enrich",
+    "Jiequn Han",
+    "Brandon Amos",
+    "Joan Bruna",
+    "Ricky T. Q. Chen"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2312.02027",
+   "published": "2023-12-04",
+   "abstract": "Stochastic optimal control, which has the goal of driving the behavior of noisy systems, is broadly applicable in science, engineering and artificial intelligence. Our work introduces Stochastic Optimal Control Matching (SOCM), a novel Iterative Diffusion Optimization (IDO) technique for stochastic optimal control that stems from the same philosophy as the conditional score matching loss for diffusion models. That is, the control is learned via a least squares problem by trying to fit a matching vector field. The training loss, which is closely connected to the cross-entropy loss, is optimized with respect to both the control function and a family of reparameterization matrices which appear in the matching vector field. The optimization with respect to the reparameterization matrices aims at minimizing the variance of the matching vector field. Experimentally, our algorithm achieves lower error than all the existing IDO techniques for stochastic optimal control for three out of four control problems, in some cases by an order of magnitude. The key idea underlying SOCM is the path-wise reparameterization trick, a novel technique that may be of independent interest. Code at https://github.com/facebookresearch/SOC-matching",
+   "contribution_zh": "把 SOC 求解转化为最小二乘回归（借鉴条件 score matching 哲学），path-wise reparameterization trick 降方差",
+   "links": {
+    "NeurIPS": "https://neurips.cc/virtual/2024/poster/93135",
+    "arXiv": "https://arxiv.org/abs/2312.02027"
+   },
+   "pdf": "papers/2312.02027.pdf",
+   "text": "data/text/2312.02027.txt",
+   "text_chars": 90000,
+   "pages": 42
+  },
+  {
+   "key": "t02__2403.11262",
+   "report_id": "2403.11262",
+   "title": "Understanding Diffusion Models by Feynman's Path Integral",
+   "authors": [
+    "Yuji Hirono",
+    "Akinori Tanaka",
+    "Kenji Fukushima"
+   ],
+   "year": 2024,
+   "venue": "ICML, PMLR 235:18324",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2403.11262",
+   "published": "2024-03-17",
+   "abstract": "Score-based diffusion models have proven effective in image generation and have gained widespread usage; however, the underlying factors contributing to the performance disparity between stochastic and deterministic (i.e., the probability flow ODEs) sampling schemes remain unclear. We introduce a novel formulation of diffusion models using Feynman's path integral, which is a formulation originally developed for quantum physics. We find this formulation providing comprehensive descriptions of score-based generative models, and demonstrate the derivation of backward stochastic differential equations and loss functions.The formulation accommodates an interpolating parameter connecting stochastic and deterministic sampling schemes, and we identify this parameter as a counterpart of Planck's constant in quantum physics. This analogy enables us to apply the Wentzel-Kramers-Brillouin (WKB) expansion, a well-established technique in quantum physics, for evaluating the negative log-likelihood to assess the performance disparity between stochastic and deterministic sampling schemes.",
+   "contribution_zh": "路径积分（Onsager–Machlup 作用量）表述扩散模型；ODE↔SDE 插值参数 h 类比普朗克常数，用 WKB 展开计算 NLL 并以 W2 度量评估随机性收益",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/hirono24a.html",
+    "arXiv": "https://arxiv.org/abs/2403.11262"
+   },
+   "pdf": "papers/2403.11262.pdf",
+   "text": "data/text/2403.11262.txt",
+   "text_chars": 79357,
+   "pages": 27
+  },
+  {
+   "key": "t02__2402.06162",
+   "report_id": "2402.06162",
+   "title": "Wasserstein proximal operators describe score-based generative models and resolve memorization",
+   "authors": [
+    "Benjamin J. Zhang",
+    "Siting Liu",
+    "Wuchen Li",
+    "Markos A. Katsoulakis",
+    "Stanley J. Osher"
+   ],
+   "year": 2024,
+   "venue": "arXiv 2402.06162",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2402.06162",
+   "published": "2024-02-09",
+   "abstract": "We focus on the fundamental mathematical structure of score-based generative models (SGMs). We first formulate SGMs in terms of the Wasserstein proximal operator (WPO) and demonstrate that, via mean-field games (MFGs), the WPO formulation reveals mathematical structure that describes the inductive bias of diffusion and score-based models. In particular, MFGs yield optimality conditions in the form of a pair of coupled partial differential equations: a forward-controlled Fokker-Planck (FP) equation, and a backward Hamilton-Jacobi-Bellman (HJB) equation. Via a Cole-Hopf transformation and taking advantage of the fact that the cross-entropy can be related to a linear functional of the density, we show that the HJB equation is an uncontrolled FP equation. Second, with the mathematical structure at hand, we present an interpretable kernel-based model for the score function which dramatically improves the performance of SGMs in terms of training samples and training time. In addition, the WPO-informed kernel model is explicitly constructed to avoid the recently studied memorization effects of score-based generative models. The mathematical form of the new kernel-based models in combination with the use of the terminal condition of the MFG reveals new explanations for the manifold learning and generalization properties of SGMs, and provides a resolution to their memorization effects. Finally, our mathematically informed, interpretable kernel-based model suggests new scalable bespoke neural network architectures for high-dimensional applications.",
+   "contribution_zh": "SGM = 交叉熵的（正则化）Wasserstein proximal 算子；MFG 最优性条件 = 前向受控 FP + 后向 HJB；核公式解释流形学习与记忆化",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2402.06162"
+   },
+   "pdf": "papers/2402.06162.pdf",
+   "text": "data/text/2402.06162.txt",
+   "text_chars": 71424,
+   "pages": 21
+  },
+  {
+   "key": "t02__2111.11521",
+   "report_id": "2111.11521",
+   "title": "The Brownian transport map",
+   "authors": [
+    "Dan Mikulincer",
+    "Yair Shenfeld"
+   ],
+   "year": 2024,
+   "venue": "Probab. Theory Relat. Fields",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2111.11521",
+   "published": "2021-11-22",
+   "abstract": "Contraction properties of transport maps between probability measures play an important role in the theory of functional inequalities. The actual construction of such maps, however, is a non-trivial task and, so far, relies mostly on the theory of optimal transport. In this work, we take advantage of the infinite-dimensional nature of the Gaussian measure and construct a new transport map, based on the Föllmer process, which pushes forward the Wiener measure onto probability measures on Euclidean spaces. Utilizing the tools of the Malliavin and stochastic calculus in Wiener space, we show that this Brownian transport map is a contraction in various settings where the analogous questions for optimal transport maps are open. The contraction properties of the Brownian transport map enable us to prove functional inequalities in Euclidean spaces, which are either completely new or improve on current results. Further and related applications of our contraction results are the existence of Stein kernels with desirable properties (which lead to new central limit theorems), as well as new insights into the Kannan--Lovász--Simonovits conjecture. We go beyond the Euclidean setting and address the problem of contractions on the Wiener space itself. We show that optimal transport maps and causal optimal transport maps (which are related to Brownian transport maps) between the Wiener measure and other target measures on Wiener space exhibit very different behaviors.",
+   "contribution_zh": "用 Föllmer 过程（即扩散去噪漂移 ∇log P_{1−t}f）构造 Wiener 测度→目标测度的传输映射，在 OT 尚属开放的情形证明 Lipschitz 收缩，导出新泛函不等式",
+   "links": {
+    "Springer": "https://link.springer.com/article/10.1007/s00440-024-01286-0",
+    "arXiv": "https://arxiv.org/abs/2111.11521"
+   },
+   "pdf": "papers/2111.11521.pdf",
+   "text": "data/text/2111.11521.txt",
+   "text_chars": 90000,
+   "pages": 49
+  },
+  {
+   "key": "t02__2311.03886",
+   "report_id": "2311.03886",
+   "title": "Formulating Discrete Probability Flow Through Optimal Transport",
+   "authors": [
+    "Pengze Zhang",
+    "Hubery Yin",
+    "Chen Li",
+    "Xiaohua Xie"
+   ],
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2311.03886",
+   "published": "2023-11-07",
+   "abstract": "Continuous diffusion models are commonly acknowledged to display a deterministic probability flow, whereas discrete diffusion models do not. In this paper, we aim to establish the fundamental theory for the probability flow of discrete diffusion models. Specifically, we first prove that the continuous probability flow is the Monge optimal transport map under certain conditions, and also present an equivalent evidence for discrete cases. In view of these findings, we are then able to define the discrete probability flow in line with the principles of optimal transport. Finally, drawing upon our newly established definitions, we propose a novel sampling method that surpasses previous discrete diffusion models in its ability to generate more certain outcomes. Extensive experiments on the synthetic toy dataset and the CIFAR-10 dataset have validated the effectiveness of our proposed discrete probability flow. Code is released at: https://github.com/PangzeCheung/Discrete-Probability-Flow.",
+   "contribution_zh": "给出连续 PF 在特定条件下于任意有限时间区间上是 Monge OT map 的证明，并据此定义离散扩散的 probability flow，提升采样确定性",
+   "links": {
+    "NeurIPS": "https://neurips.cc/virtual/2023/poster/72137",
+    "arXiv": "https://arxiv.org/abs/2311.03886"
+   },
+   "pdf": "papers/2311.03886.pdf",
+   "text": "data/text/2311.03886.txt",
+   "text_chars": 84346,
+   "pages": 31
+  },
+  {
+   "key": "t02__2212.06359",
+   "report_id": "2212.06359",
+   "title": "Score-based Generative Modeling Secretly Minimizes the Wasserstein Distance",
+   "authors": [
+    "Dohyun Kwon",
+    "Ying Fan",
+    "Kangwook Lee"
+   ],
+   "year": 2022,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2212.06359",
+   "published": "2022-12-13",
+   "abstract": "Score-based generative models are shown to achieve remarkable empirical performances in various applications such as image generation and audio synthesis. However, a theoretical understanding of score-based diffusion models is still incomplete. Recently, Song et al. showed that the training objective of score-based generative models is equivalent to minimizing the Kullback-Leibler divergence of the generated distribution from the data distribution. In this work, we show that score-based models also minimize the Wasserstein distance between them under suitable assumptions on the model. Specifically, we prove that the Wasserstein distance is upper bounded by the square root of the objective function up to multiplicative constants and a fixed constant offset. Our proof is based on a novel application of the theory of optimal transport, which can be of independent interest to the society. Our numerical experiments support our findings. By analyzing our upper bounds, we provide a few techniques to obtain tighter upper bounds.",
+   "contribution_zh": "分布层结论：W2(数据,生成) ≤ √(score matching 损失)×常数+偏移，证明用连续性方程估计 W2 的时间导数",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=oPzICxVFqVM",
+    "arXiv": "https://arxiv.org/abs/2212.06359"
+   },
+   "pdf": "papers/2212.06359.pdf",
+   "text": "data/text/2212.06359.txt",
+   "text_chars": 52936,
+   "pages": 21
+  },
+  {
+   "key": "t02__score_based_generative_modeling_through_sdes",
+   "report_id": "Score_Based_Generative_Modeling_through_SDEs",
+   "title": "Score-Based Generative Modeling through SDEs",
+   "authors": "Song et al.",
+   "year": 2021,
+   "venue": "ICLR (Oral)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "提出 VP/VE-SDE 与 PF-ODE 统一框架，定义了本课题讨论的 encoder/flow map 对象",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=PxTIG12RRHS"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t02__1709.06464",
+   "report_id": "1709.06464",
+   "title": "Comparison of transport map generated by heat flow interpolation and the optimal transport Brenier map",
+   "authors": [
+    "Anastasiya Tanana"
+   ],
+   "year": 2021,
+   "venue": "Comm. Contemp. Math. 23(6)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1709.06464",
+   "published": "2017-09-19",
+   "abstract": "This note shows that the non-expansive transport map constructed by Y.-H. Kim and E. Milman using heat flow interpolation is in general different from the optimal transport Brenier map.",
+   "contribution_zh": "更早的反例前驱：Kim–Milman 热流插值映射对高斯测度（drift −Ax）一般 ≠ Brenier map；一维或径向对称时二者重合",
+   "links": {
+    "DOI": "https://doi.org/10.1142/S021919972050025X",
+    "arXiv": "https://arxiv.org/abs/1709.06464"
+   },
+   "pdf": "papers/1709.06464.pdf",
+   "text": "data/text/1709.06464.txt",
+   "text_chars": 11393,
+   "pages": 5
+  }
+ ]
+}

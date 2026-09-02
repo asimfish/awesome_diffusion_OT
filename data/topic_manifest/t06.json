@@ -1,0 +1,380 @@
+{
+ "topic": "t06",
+ "topic_name": "扩散/流生成模型的收敛性与统计理论",
+ "section": "A",
+ "section_name": "Theory Foundations",
+ "kb_note": "source/kb/t06_convergence_statistics.md",
+ "papers": [
+  {
+   "key": "t06__o_convergence_theory_for_diffusion_probabilistic_models_unde",
+   "report_id": "2409.18959",
+   "title": "O(d/T) Convergence Theory for Diffusion Probabilistic Models under Minimal Assumptions",
+   "authors": [
+    "Gen Li",
+    "Yuling Yan"
+   ],
+   "year": 2025,
+   "venue": "ICLR；扩展版 JMLR 26(292)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2409.18959",
+   "published": "2024-09-27",
+   "abstract": "Score-based diffusion models, which generate new data by learning to reverse a diffusion process that perturbs data from the target distribution into noise, have achieved remarkable success across various generative tasks. Despite their superior empirical performance, existing theoretical guarantees are often constrained by stringent assumptions or suboptimal convergence rates. In this paper, we establish a fast convergence theory for the denoising diffusion probabilistic model (DDPM), a widely used SDE-based sampler, under minimal assumptions. Our analysis shows that, provided $\\ell_{2}$-accurate estimates of the score functions, the total variation distance between the target and generated distributions is upper bounded by $O(d/T)$ (ignoring logarithmic factors), where $d$ is the data dimensionality and $T$ is the number of steps. This result holds for any target distribution with finite first-order moment. Moreover, we show that with careful coefficient design, the convergence rate improves to $O(k/T)$, where $k$ is the intrinsic dimension of the target data distribution. This highlights the ability of DDPM to automatically adapt to unknown low-dimensional structures, a common feature of natural image distributions. These results are achieved through a novel set of analytical tools that provides a fine-grained characterization of how the error propagates at each step of the reverse process.",
+   "contribution_zh": "仅需一阶矩有限 + L² score：DDPM 的 TV 收敛率 O(d/T)；系数设计得当可改进为 O(k/T)（k=内在维数）",
+   "links": {
+    "JMLR": "https://jmlr.org/papers/v26/25-0272.html"
+   },
+   "pdf": "papers/2409.18959.pdf",
+   "text": "data/text/2409.18959.txt",
+   "text_chars": 90000,
+   "pages": 42
+  },
+  {
+   "key": "t06__flow_matching_achieves_almost_minimax_optimal_convergence",
+   "report_id": "2405.20879",
+   "title": "Flow matching achieves almost minimax optimal convergence",
+   "authors": [
+    "Kenji Fukumizu",
+    "Taiji Suzuki",
+    "Noboru Isobe",
+    "Kazusato Oko",
+    "Masanori Koyama"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2405.20879",
+   "published": "2024-05-31",
+   "abstract": "Flow matching (FM) has gained significant attention as a simulation-free generative model. Unlike diffusion models, which are based on stochastic differential equations, FM employs a simpler approach by solving an ordinary differential equation with an initial condition from a normal distribution, thus streamlining the sample generation process. This paper discusses the convergence properties of FM for large sample size under the $p$-Wasserstein distance, a measure of distributional discrepancy. We establish that FM can achieve an almost minimax optimal convergence rate for $1 \\leq p \\leq 2$, presenting the first theoretical evidence that FM can reach convergence rates comparable to those of diffusion models. Our analysis extends existing frameworks by examining a broader class of mean and variance functions for the vector fields and identifies specific conditions necessary to attain almost optimal rates.",
+   "contribution_zh": "FM 在 p-Wasserstein (1≤p≤2) 下几乎 minimax，统计上与扩散等价；σ_t≍√t 的方差衰减是达到最优率的关键",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=2OMyAFjiJJ"
+   },
+   "pdf": "papers/2405.20879.pdf",
+   "text": "data/text/2405.20879.txt",
+   "text_chars": 83019,
+   "pages": 45
+  },
+  {
+   "key": "t06__sampling_is_as_easy_as_learning_the_score",
+   "report_id": "2209.11215",
+   "title": "Sampling is as easy as learning the score: theory for diffusion models with minimal data assumptions",
+   "authors": [
+    "Sitan Chen",
+    "Sinho Chewi",
+    "Jerry Li",
+    "Yuanzhi Li",
+    "Adil Salim",
+    "Anru R. Zhang"
+   ],
+   "year": 2023,
+   "venue": "ICLR oral",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2209.11215",
+   "published": "2022-09-22",
+   "abstract": "We provide theoretical convergence guarantees for score-based generative models (SGMs) such as denoising diffusion probabilistic models (DDPMs), which constitute the backbone of large-scale real-world generative models such as DALL$\\cdot$E 2. Our main result is that, assuming accurate score estimates, such SGMs can efficiently sample from essentially any realistic data distribution. In contrast to prior works, our results (1) hold for an $L^2$-accurate score estimate (rather than $L^\\infty$-accurate); (2) do not require restrictive functional inequality conditions that preclude substantial non-log-concavity; (3) scale polynomially in all relevant problem parameters; and (4) match state-of-the-art complexity guarantees for discretization of the Langevin diffusion, provided that the score error is sufficiently small. We view this as strong theoretical justification for the empirical success of SGMs. We also examine SGMs based on the critically damped Langevin diffusion (CLD). Contrary to conventional wisdom, we provide evidence that the use of the CLD does not reduce the complexity of SGMs.",
+   "contribution_zh": "首个在 L² score 误差 + 任意非 log-concave 数据下的多项式收敛保证，奠定 Girsanov 分析范式",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=zyLVMgsZ0U_"
+   },
+   "pdf": "papers/t06_2023_Chen_sampling_easy_as_learning_score.pdf",
+   "text": "data/text/t06_2023_Chen_sampling_easy_as_learning_score.txt",
+   "text_chars": 77969,
+   "pages": 29
+  },
+  {
+   "key": "t06__diffusion_models_are_minimax_optimal_distribution_estimators",
+   "report_id": "Diffusion_Models_are_Minimax_Optimal_Distribution",
+   "title": "Diffusion Models are Minimax Optimal Distribution Estimators",
+   "authors": "Oko, Akiyama, Suzuki",
+   "year": 2023,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "Besov 密度 + 经验 score matching：TV/W1 下近 minimax 最优，端到端统计理论开山之作",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v202/oko23a.html"
+   },
+   "pdf": "papers/t06_2023_Oko_diffusion_minimax_optimal_estimators.pdf",
+   "text": "data/text/t06_2023_Oko_diffusion_minimax_optimal_estimators.txt",
+   "text_chars": 90000,
+   "pages": 65
+  },
+  {
+   "key": "t06__minimax_estimation_of_smooth_optimal_transport_maps",
+   "report_id": "1905.05828",
+   "title": "Minimax estimation of smooth optimal transport maps",
+   "authors": [
+    "Jan-Christian Hütter",
+    "Philippe Rigollet"
+   ],
+   "year": 2021,
+   "venue": "Ann. Statist. 49(2)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "1905.05828",
+   "published": "2019-05-14",
+   "abstract": "Brenier's theorem is a cornerstone of optimal transport that guarantees the existence of an optimal transport map $T$ between two probability distributions $P$ and $Q$ over $\\mathbb{R}^d$ under certain regularity conditions. The main goal of this work is to establish the minimax estimation rates for such a transport map from data sampled from $P$ and $Q$ under additional smoothness assumptions on $T$. To achieve this goal, we develop an estimator based on the minimization of an empirical version of the semi-dual optimal transport problem, restricted to truncated wavelet expansions. This estimator is shown to achieve near minimax optimality using new stability arguments for the semi-dual and a complementary minimax lower bound. Furthermore, we provide numerical experiments on synthetic data supporting our theoretical findings and highlighting the practical benefits of smoothness regularization. These are the first minimax estimation rates for transport maps in general dimension.",
+   "contribution_zh": "首个一般维度 OT map 的 minimax 率 n^{-2α/(2α-2+d)}（log 因子内），半对偶+小波估计器",
+   "links": {
+    "Project Euclid": "https://projecteuclid.org/journals/annals-of-statistics/volume-49/issue-2/Minimax-estimation-of-smooth-optimal-transport-maps/10.1214/20-AOS1997.full"
+   },
+   "pdf": "papers/1905.05828.pdf",
+   "text": "data/text/1905.05828.txt",
+   "text_chars": 90000,
+   "pages": 53
+  },
+  {
+   "key": "t06__denoising_diffusion_probabilistic_models_are_optimally_adapt",
+   "report_id": "Denoising_Diffusion_Probabilistic_Models_Are_Optim",
+   "title": "Denoising Diffusion Probabilistic Models Are Optimally Adaptive to Unknown Low Dimensionality",
+   "authors": "Huang, Wei, Chen",
+   "year": 2026,
+   "venue": "Math. Oper. Res.",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "DDPM 无需知道 k 即自动以近 k-线性迭代复杂度收敛，且 KL 度量下最优",
+   "links": {
+    "DOI": "https://doi.org/10.1287/moor.2024.0769"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t06__2508.16306",
+   "report_id": "2508.16306",
+   "title": "A Sharp KL-Convergence Analysis for Diffusion Models under Minimal Assumptions",
+   "authors": [
+    "Nishant Jain",
+    "Tong Zhang"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2508.16306",
+   "published": "2025-08-22",
+   "abstract": "Diffusion-based generative models have emerged as highly effective methods for synthesizing high-quality samples. Recent works have focused on analyzing the convergence of their generation process with minimal assumptions, either through reverse SDEs or Probability Flow ODEs. The best known guarantees, without any smoothness assumptions, for the KL divergence so far achieve a linear dependence on the data dimension $d$ and an inverse quadratic dependence on $\\varepsilon$. In this work, we present a refined analysis that improves the dependence on $\\varepsilon$. We model the generation process as a composition of two steps: a reverse ODE step, followed by a smaller noising step along the forward process. This design leverages the fact that the ODE step enables control in Wasserstein-type error, which can then be converted into a KL divergence bound via noise addition, leading to a better dependence on the discretization step size. We further provide a novel analysis to achieve the linear $d$-dependence for the error due to discretizing this Probability Flow ODE in absence of any smoothness assumptions. We show that $\\tilde{O}\\left(\\tfrac{d\\log^{3/2}(\\frac{1}δ)}{\\varepsilon}\\right)$ steps suffice to approximate the target distribution corrupted with Gaussian noise of variance $δ$ within $O(\\varepsilon^2)$ in KL divergence, improving upon the previous best result, requiring $\\tilde{O}\\left(\\tfrac{d\\log^2(\\frac{1}δ)}{\\varepsilon^2}\\right)$ steps.",
+   "contribution_zh": "「ODE 步+小加噪步」复合分析把 KL 迭代复杂度提到 Õ(d/ε)，无光滑假设下当前最优",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2508.16306"
+   },
+   "pdf": "papers/2508.16306.pdf",
+   "text": "data/text/2508.16306.txt",
+   "text_chars": 73340,
+   "pages": 30
+  },
+  {
+   "key": "t06__linear_convergence_of_diffusion_models_under_the_manifold_hy",
+   "report_id": "2410.09046",
+   "title": "Linear Convergence of Diffusion Models Under the Manifold Hypothesis",
+   "authors": [
+    "Peter Potaptchik",
+    "Iskander Azangulov",
+    "George Deligiannidis"
+   ],
+   "year": 2025,
+   "venue": "COLT",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2410.09046",
+   "published": "2024-10-11",
+   "abstract": "Score-matching generative models have proven successful at sampling from complex high-dimensional data distributions. In many applications, this distribution is believed to concentrate on a much lower $d$-dimensional manifold embedded into $D$-dimensional space; this is known as the manifold hypothesis. The current best-known convergence guarantees are either linear in $D$ or polynomial (superlinear) in $d$. The latter exploits a novel integration scheme for the backward SDE. We take the best of both worlds and show that the number of steps diffusion models require in order to converge in Kullback-Leibler~(KL) divergence is linear (up to logarithmic terms) in the intrinsic dimension $d$. Moreover, we show that this linear dependency is sharp.",
+   "contribution_zh": "流形支撑数据下 KL 收敛步数对内在维数线性（log 因子内），且证明线性依赖 sharp",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v291/potaptchik25a.html"
+   },
+   "pdf": "papers/2410.09046.pdf",
+   "text": "data/text/2410.09046.txt",
+   "text_chars": 38393,
+   "pages": 15
+  },
+  {
+   "key": "t06__2503.09583",
+   "report_id": "2503.09583",
+   "title": "Minimax Optimality of the Probability Flow ODE for Diffusion Models",
+   "authors": [
+    "Changxiao Cai",
+    "Gen Li"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2503.09583",
+   "published": "2025-03-12",
+   "abstract": "Score-based diffusion models have become a foundational paradigm for modern generative modeling, demonstrating exceptional capability in generating samples from complex high-dimensional distributions. Despite the dominant adoption of probability flow ODE-based samplers in practice due to their superior sampling efficiency and precision, rigorous statistical guarantees for these methods have remained elusive in the literature. This work develops the first end-to-end theoretical framework for deterministic ODE-based samplers that establishes near-minimax optimal guarantees under mild assumptions on target data distributions. Specifically, focusing on subgaussian distributions with $β$-Hölder smooth densities for $β\\leq 2$, we propose a smooth regularized score estimator that simultaneously controls both the $L^2$ score error and the associated mean Jacobian error. Leveraging this estimator within a refined convergence analysis of the ODE-based sampling process, we demonstrate that the resulting sampler achieves the minimax rate in total variation distance, modulo logarithmic factors. Notably, our theory comprehensively accounts for all sources of error in the sampling process and does not require strong structural conditions such as density lower bounds or Lipschitz/smooth scores on target distributions, thereby covering a broad range of practical data distributions.",
+   "contribution_zh": "首个确定性 ODE 采样器的端到端近 minimax 框架：光滑正则化 score 估计器同时控 L² 误差与 Jacobian 误差，绕开 Girsanov",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2503.09583"
+   },
+   "pdf": "papers/2503.09583.pdf",
+   "text": "data/text/2503.09583.txt",
+   "text_chars": 90000,
+   "pages": 51
+  },
+  {
+   "key": "t06__optimal_transport_map_estimation_in_general_function_spaces",
+   "report_id": "2212.03722",
+   "title": "Optimal transport map estimation in general function spaces",
+   "authors": [
+    "Vincent Divol",
+    "Jonathan Niles-Weed",
+    "Aram-Alexandre Pooladian"
+   ],
+   "year": 2025,
+   "venue": "Ann. Statist. 53(3)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2212.03722",
+   "published": "2022-12-07",
+   "abstract": "We study the problem of estimating a function $T$ given independent samples from a distribution $P$ and from the pushforward distribution $T_\\sharp P$. This setting is motivated by applications in the sciences, where $T$ represents the evolution of a physical system over time, and in machine learning, where, for example, $T$ may represent a transformation learned by a deep neural network trained for a generative modeling task. To ensure identifiability, we assume that $T = \\nabla \\varphi_0$ is the gradient of a convex function, in which case $T$ is known as an \\emph{optimal transport map}. Prior work has studied the estimation of $T$ under the assumption that it lies in a Hölder class, but general theory is lacking. We present a unified methodology for obtaining rates of estimation of optimal transport maps in general function spaces. Our assumptions are significantly weaker than those appearing in the literature: we require only that the source measure $P$ satisfy a Poincaré inequality and that the optimal map be the gradient of a smooth convex function that lies in a space whose metric entropy can be controlled. As a special case, we recover known estimation rates for Hölder transport maps, but also obtain nearly sharp results in many settings not covered by prior work. For example, we provide the first statistical rates of estimation when $P$ is the normal distribution and the transport map is given by an infinite-width shallow neural network.",
+   "contribution_zh": "Poincaré 不等式+度量熵的统一估计框架，覆盖无限宽浅层网络 map 的首个统计率",
+   "links": {
+    "Project Euclid": "https://projecteuclid.org/journals/annals-of-statistics/volume-53/issue-3/Optimal-transport-map-estimation-in-general-function-spaces/10.1214/24-AOS2482.full"
+   },
+   "pdf": "papers/2212.03722.pdf",
+   "text": "data/text/2212.03722.txt",
+   "text_chars": 90000,
+   "pages": 68
+  },
+  {
+   "key": "t06__nearly_d_linear_convergence_bounds_for_diffusion_models_via_",
+   "report_id": "2308.03686",
+   "title": "Nearly $d$-Linear Convergence Bounds for Diffusion Models via Stochastic Localization",
+   "authors": [
+    "Joe Benton",
+    "Valentin De Bortoli",
+    "Arnaud Doucet",
+    "George Deligiannidis"
+   ],
+   "year": 2024,
+   "venue": "ICLR spotlight",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2308.03686",
+   "published": "2023-08-07",
+   "abstract": "Denoising diffusions are a powerful method to generate approximate samples from high-dimensional data distributions. Recent results provide polynomial bounds on their convergence rate, assuming $L^2$-accurate scores. Until now, the tightest bounds were either superlinear in the data dimension or required strong smoothness assumptions. We provide the first convergence bounds which are linear in the data dimension (up to logarithmic factors) assuming only finite second moments of the data distribution. We show that diffusion models require at most $\\tilde O(\\frac{d \\log^2(1/δ)}{\\varepsilon^2})$ steps to approximate an arbitrary distribution on $\\mathbb{R}^d$ corrupted with Gaussian noise of variance $δ$ to within $\\varepsilon^2$ in KL divergence. Our proof extends the Girsanov-based methods of previous works. We introduce a refined treatment of the error from discretizing the reverse SDE inspired by stochastic localization.",
+   "contribution_zh": "用随机局部化技巧把 KL 迭代复杂度降至 Õ(d/ε²)，仅需数据二阶矩有限",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=r5njV3BsuD"
+   },
+   "pdf": "papers/2308.03686.pdf",
+   "text": "data/text/2308.03686.txt",
+   "text_chars": 63798,
+   "pages": 21
+  },
+  {
+   "key": "t06__minimax_optimality_of_score_based_diffusion_models_beyond_th",
+   "report_id": "2402.15602",
+   "title": "Minimax Optimality of Score-based Diffusion Models: Beyond the Density Lower Bound Assumptions",
+   "authors": [
+    "Kaihong Zhang",
+    "Caitlyn H. Yin",
+    "Feng Liang",
+    "Jingbo Liu"
+   ],
+   "year": 2024,
+   "venue": "ICML spotlight",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2402.15602",
+   "published": "2024-02-23",
+   "abstract": "We study the asymptotic error of score-based diffusion model sampling in large-sample scenarios from a non-parametric statistics perspective. We show that a kernel-based score estimator achieves an optimal mean square error of $\\widetilde{O}\\left(n^{-1} t^{-\\frac{d+2}{2}}(t^{\\frac{d}{2}} \\vee 1)\\right)$ for the score function of $p_0*\\mathcal{N}(0,t\\boldsymbol{I}_d)$, where $n$ and $d$ represent the sample size and the dimension, $t$ is bounded above and below by polynomials of $n$, and $p_0$ is an arbitrary sub-Gaussian distribution. As a consequence, this yields an $\\widetilde{O}\\left(n^{-1/2} t^{-\\frac{d}{4}}\\right)$ upper bound for the total variation error of the distribution of the sample generated by the diffusion model under a mere sub-Gaussian assumption. If in addition, $p_0$ belongs to the nonparametric family of the $β$-Sobolev space with $β\\le 2$, by adopting an early stopping strategy, we obtain that the diffusion model is nearly (up to log factors) minimax optimal. This removes the crucial lower bound assumption on $p_0$ in previous proofs of the minimax optimality of the diffusion model for nonparametric families.",
+   "contribution_zh": "截断核 score 估计器达最优 MSE，去掉密度下界假设后 β≤2 Sobolev 类仍 minimax",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/zhang24bv.html"
+   },
+   "pdf": "papers/2402.15602.pdf",
+   "text": "data/text/2402.15602.txt",
+   "text_chars": 90000,
+   "pages": 45
+  },
+  {
+   "key": "t06__optimal_score_estimation_via_empirical_bayes_smoothing",
+   "report_id": "2402.07747",
+   "title": "Optimal score estimation via empirical Bayes smoothing",
+   "authors": [
+    "Andre Wibisono",
+    "Yihong Wu",
+    "Kaylee Yingxi Yang"
+   ],
+   "year": 2024,
+   "venue": "COLT",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2402.07747",
+   "published": "2024-02-12",
+   "abstract": "We study the problem of estimating the score function of an unknown probability distribution $ρ^*$ from $n$ independent and identically distributed observations in $d$ dimensions. Assuming that $ρ^*$ is subgaussian and has a Lipschitz-continuous score function $s^*$, we establish the optimal rate of $\\tilde Θ(n^{-\\frac{2}{d+4}})$ for this estimation problem under the loss function $\\|\\hat s - s^*\\|^2_{L^2(ρ^*)}$ that is commonly used in the score matching literature, highlighting the curse of dimensionality where sample complexity for accurate score estimation grows exponentially with the dimension $d$. Leveraging key insights in empirical Bayes theory as well as a new convergence rate of smoothed empirical distribution in Hellinger distance, we show that a regularized score estimator based on a Gaussian kernel attains this rate, shown optimal by a matching minimax lower bound. We also discuss extensions to estimating $β$-Hölder continuous scores with $β\\leq 1$, as well as the implication of our theory on the sample complexity of score-based generative models.",
+   "contribution_zh": "确立 score 估计本身的 minimax 率 Θ̃(n^{-2/(d+4)})，正式坐实 score 学习的维数灾难",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v247/wibisono24a.html"
+   },
+   "pdf": "papers/2402.07747.pdf",
+   "text": "data/text/2402.07747.txt",
+   "text_chars": 74675,
+   "pages": 32
+  },
+  {
+   "key": "t06__error_bounds_for_flow_matching_methods",
+   "report_id": "2305.16860",
+   "title": "Error Bounds for Flow Matching Methods",
+   "authors": [
+    "Joe Benton",
+    "George Deligiannidis",
+    "Arnaud Doucet"
+   ],
+   "year": 2024,
+   "venue": "TMLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2305.16860",
+   "published": "2023-05-26",
+   "abstract": "Score-based generative models are a popular class of generative modelling techniques relying on stochastic differential equations (SDE). From their inception, it was realized that it was also possible to perform generation using ordinary differential equations (ODE) rather than SDE. This led to the introduction of the probability flow ODE approach and denoising diffusion implicit models. Flow matching methods have recently further extended these ODE-based approaches and approximate a flow between two arbitrary probability distributions. Previous work derived bounds on the approximation error of diffusion models under the stochastic sampling regime, given assumptions on the $L^2$ loss. We present error bounds for the flow matching procedure using fully deterministic sampling, assuming an $L^2$ bound on the approximation error and a certain regularity condition on the data distributions.",
+   "contribution_zh": "首批 FM 的 W2 误差界：L² 速度场误差 + 流的正则性假设（连续时间、不含离散化）",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=uqQPyWFDhY"
+   },
+   "pdf": "papers/2305.16860.pdf",
+   "text": "data/text/2305.16860.txt",
+   "text_chars": 53692,
+   "pages": 17
+  },
+  {
+   "key": "t06__plugin_estimation_of_smooth_optimal_transport_maps",
+   "report_id": "2107.12364",
+   "title": "Plugin Estimation of Smooth Optimal Transport Maps",
+   "authors": [
+    "Tudor Manole",
+    "Sivaraman Balakrishnan",
+    "Jonathan Niles-Weed",
+    "Larry Wasserman"
+   ],
+   "year": 2024,
+   "venue": "Ann. Statist. 52(3)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2107.12364",
+   "published": "2021-07-26",
+   "abstract": "We analyze a number of natural estimators for the optimal transport map between two distributions and show that they are minimax optimal. We adopt the plugin approach: our estimators are simply optimal couplings between measures derived from our observations, appropriately extended so that they define functions on $\\mathbb{R}^d$. When the underlying map is assumed to be Lipschitz, we show that computing the optimal coupling between the empirical measures, and extending it using linear smoothers, already gives a minimax optimal estimator. When the underlying map enjoys higher regularity, we show that the optimal coupling between appropriate nonparametric density estimates yields faster rates. Our work also provides new bounds on the risk of corresponding plugin estimators for the quadratic Wasserstein distance, and we show how this problem relates to that of estimating optimal transport maps using stability arguments for smooth and strongly convex Brenier potentials. As an application of our results, we derive central limit theorems for plugin estimators of the squared Wasserstein distance, which are centered at their population counterpart when the underlying distributions have sufficiently smooth densities. In contrast to known central limit theorems for empirical estimators, this result easily lends itself to statistical inference for the quadratic Wasserstein distance.",
+   "contribution_zh": "可计算的 plug-in 估计器（经验耦合+线性平滑/密度估计）同样 minimax 最优，并给出 W2² 的 CLT 推断",
+   "links": {
+    "Project Euclid": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-3/Plugin-estimation-of-smooth-optimal-transport-maps/10.1214/24-AOS2379.full"
+   },
+   "pdf": "papers/2107.12364.pdf",
+   "text": "data/text/2107.12364.txt",
+   "text_chars": 90000,
+   "pages": 99
+  }
+ ]
+}

@@ -1,0 +1,335 @@
+{
+ "topic": "t05",
+ "topic_name": "Wasserstein 梯度流与 JKO 格式生成模型",
+ "section": "A",
+ "section_name": "Theory Foundations",
+ "kb_note": "source/kb/t05_wasserstein_gradient_flow.md",
+ "papers": [
+  {
+   "key": "t05__hessian_guided_perturbed_wasserstein_gradient_flows_for_esca",
+   "report_id": "2509.16974",
+   "title": "Hessian-guided Perturbed Wasserstein Gradient Flows for Escaping Saddle Points",
+   "authors": [
+    "Naoya Yamamoto",
+    "Juno Kim",
+    "Taiji Suzuki"
+   ],
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2509.16974",
+   "published": "2025-09-21",
+   "abstract": "Wasserstein gradient flow (WGF) is a common method to perform optimization over the space of probability measures. While WGF is guaranteed to converge to a first-order stationary point, for nonconvex functionals the converged solution does not necessarily satisfy the second-order optimality condition; i.e., it could converge to a saddle point. In this work, we propose a new algorithm for probability measure optimization, perturbed Wasserstein gradient flow (PWGF), that achieves second-order optimality for general nonconvex objectives. PWGF enhances WGF by injecting noisy perturbations near saddle points via a Gaussian process-based scheme. By pushing the measure forward along a random vector field generated from a Gaussian process, PWGF helps the solution escape saddle points efficiently by perturbing the solution towards the smallest eigenvalue direction of the Wasserstein Hessian. We theoretically derive the computational complexity for PWGF to achieve a second-order stationary point. Furthermore, we prove that PWGF converges to a global optimum in polynomial time for strictly benign objectives.",
+   "contribution_zh": "PWGF：沿 Wasserstein Hessian 最小特征方向注入 GP 扰动逃离鞍点，测度空间非凸优化首个二阶最优性+多项式时间保证",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/3dca8a6a5422c2d5d22c6e9a26469d7e-Abstract-Conference.html"
+   },
+   "pdf": "papers/2509.16974.pdf",
+   "text": "data/text/2509.16974.txt",
+   "text_chars": 90000,
+   "pages": 45
+  },
+  {
+   "key": "t05__scalable_wasserstein_gradient_flow_for_generative_modeling_t",
+   "report_id": "2402.05443",
+   "title": "Scalable Wasserstein Gradient Flow for Generative Modeling through Unbalanced Optimal Transport",
+   "authors": [
+    "Jaemoo Choi",
+    "Jaewoong Choi",
+    "Myungjoo Kang"
+   ],
+   "year": 2024,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2402.05443",
+   "published": "2024-02-08",
+   "abstract": "Wasserstein Gradient Flow (WGF) describes the gradient dynamics of probability density within the Wasserstein space. WGF provides a promising approach for conducting optimization over the probability distributions. Numerically approximating the continuous WGF requires the time discretization method. The most well-known method for this is the JKO scheme. In this regard, previous WGF models employ the JKO scheme and parametrize transport map for each JKO step. However, this approach results in quadratic training complexity $O(K^2)$ with the number of JKO step $K$. This severely limits the scalability of WGF models. In this paper, we introduce a scalable WGF-based generative model, called Semi-dual JKO (S-JKO). Our model is based on the semi-dual form of the JKO step, derived from the equivalence between the JKO step and the Unbalanced Optimal Transport. Our approach reduces the training complexity to $O(K)$. We demonstrate that our model significantly outperforms existing WGF-based generative models, achieving FID scores of 2.62 on CIFAR-10 and 5.46 on CelebA-HQ-256, which are comparable to state-of-the-art image generative models.",
+   "contribution_zh": "S-JKO：JKO 步 ↔ UOT 等价 → 半对偶形式把训练复杂度 \\(O(K^2)\\to O(K)\\)，CIFAR-10 FID 2.62，WGF 生成模型首次逼近 SOTA",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/choi24a.html"
+   },
+   "pdf": "papers/2402.05443.pdf",
+   "text": "data/text/2402.05443.txt",
+   "text_chars": 64777,
+   "pages": 22
+  },
+  {
+   "key": "t05__normalizing_flow_neural_networks_by_jko_scheme",
+   "report_id": "2212.14424",
+   "title": "Normalizing flow neural networks by JKO scheme",
+   "authors": [
+    "Chen Xu",
+    "Xiuyuan Cheng",
+    "Yao Xie"
+   ],
+   "year": 2023,
+   "venue": "NeurIPS (Spotlight)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2212.14424",
+   "published": "2022-12-29",
+   "abstract": "Normalizing flow is a class of deep generative models for efficient sampling and likelihood estimation, which achieves attractive performance, particularly in high dimensions. The flow is often implemented using a sequence of invertible residual blocks. Existing works adopt special network architectures and regularization of flow trajectories. In this paper, we develop a neural ODE flow network called JKO-iFlow, inspired by the Jordan-Kinderleherer-Otto (JKO) scheme, which unfolds the discrete-time dynamic of the Wasserstein gradient flow. The proposed method stacks residual blocks one after another, allowing efficient block-wise training of the residual blocks, avoiding sampling SDE trajectories and score matching or variational learning, thus reducing the memory load and difficulty in end-to-end training. We also develop adaptive time reparameterization of the flow network with a progressive refinement of the induced trajectory in probability space to improve the model accuracy further. Experiments with synthetic and real data show that the proposed JKO-iFlow network achieves competitive performance compared with existing flow and diffusion models at a significantly reduced computational and memory cost.",
+   "contribution_zh": "JKO-iFlow：每个残差块=一个 JKO 步，逐块训练 CNF，免 score matching / 端到端反传，省显存",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=ZQMlfNijY5"
+   },
+   "pdf": "papers/2212.14424.pdf",
+   "text": "data/text/2212.14424.txt",
+   "text_chars": 90000,
+   "pages": 30
+  },
+  {
+   "key": "t05__large_scale_wasserstein_gradient_flows",
+   "report_id": "2106.00736",
+   "title": "Large-Scale Wasserstein Gradient Flows",
+   "authors": [
+    "Petr Mokrov",
+    "Alexander Korotin",
+    "Lingxiao Li",
+    "Aude Genevay",
+    "Justin Solomon",
+    "Evgeny Burnaev"
+   ],
+   "year": 2021,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2106.00736",
+   "published": "2021-06-01",
+   "abstract": "Wasserstein gradient flows provide a powerful means of understanding and solving many diffusion equations. Specifically, Fokker-Planck equations, which model the diffusion of probability measures, can be understood as gradient descent over entropy functionals in Wasserstein space. This equivalence, introduced by Jordan, Kinderlehrer and Otto, inspired the so-called JKO scheme to approximate these diffusion processes via an implicit discretization of the gradient flow in Wasserstein space. Solving the optimization problem associated to each JKO step, however, presents serious computational challenges. We introduce a scalable method to approximate Wasserstein gradient flows, targeted to machine learning applications. Our approach relies on input-convex neural networks (ICNNs) to discretize the JKO steps, which can be optimized by stochastic gradient descent. Unlike previous work, our method does not require domain discretization or particle simulation. As a result, we can sample from the measure at each time step of the diffusion and compute its probability density. We demonstrate our algorithm's performance by computing diffusions following the Fokker-Planck equation and apply it to unnormalized density sampling as well as nonlinear filtering.",
+   "contribution_zh": "神经化 JKO 开山：Brenier 定理 + ICNN 参数化每个 JKO 步的凸势，SGD 免网格/免粒子求解",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper/2021/hash/810dfbbebb17302018ae903e9cb7a483-Abstract.html"
+   },
+   "pdf": "papers/2106.00736.pdf",
+   "text": "data/text/2106.00736.txt",
+   "text_chars": 56723,
+   "pages": 18
+  },
+  {
+   "key": "t05__importance_corrected_neural_jko_sampling",
+   "report_id": "2407.20444",
+   "title": "Importance Corrected Neural JKO Sampling",
+   "authors": [
+    "Johannes Hertrich",
+    "Robert Gruhlke"
+   ],
+   "year": 2025,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2407.20444",
+   "published": "2024-07-29",
+   "abstract": "In order to sample from an unnormalized probability density function, we propose to combine continuous normalizing flows (CNFs) with rejection-resampling steps based on importance weights. We relate the iterative training of CNFs with regularized velocity fields to a JKO scheme and prove convergence of the involved velocity fields to the velocity field of the Wasserstein gradient flow (WGF). The alternation of local flow steps and non-local rejection-resampling steps allows to overcome local minima or slow convergence of the WGF for multimodal distributions. Since the proposal of the rejection step is generated by the model itself, they do not suffer from common drawbacks of classical rejection schemes. The arising model can be trained iteratively, reduces the reverse Kullback-Leibler (KL) loss function in each step, allows to generate iid samples and moreover allows for evaluations of the generated underlying density. Numerical examples show that our method yields accurate results on various test distributions including high-dimensional multimodal targets and outperforms the state of the art in almost all cases significantly.",
+   "contribution_zh": "CNF 实现的 JKO 局部步 + 重要性拒绝重采样非局部步，克服 WGF 采样的多峰质量错配，可产 iid 样本并评估密度",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v267/hertrich25a.html"
+   },
+   "pdf": "papers/2407.20444.pdf",
+   "text": "data/text/2407.20444.txt",
+   "text_chars": 90000,
+   "pages": 37
+  },
+  {
+   "key": "t05__flowing_datasets_with_wasserstein_over_wasserstein_gradient_",
+   "report_id": "2506.07534",
+   "title": "Flowing Datasets with Wasserstein over Wasserstein Gradient Flows",
+   "authors": [
+    "Clément Bonet",
+    "Christophe Vauthier",
+    "Anna Korba"
+   ],
+   "year": 2025,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2506.07534",
+   "published": "2025-06-09",
+   "abstract": "Many applications in machine learning involve data represented as probability distributions. The emergence of such data requires radically novel techniques to design tractable gradient flows on probability distributions over this type of (infinite-dimensional) objects. For instance, being able to flow labeled datasets is a core task for applications ranging from domain adaptation to transfer learning or dataset distillation. In this setting, we propose to represent each class by the associated conditional distribution of features, and to model the dataset as a mixture distribution supported on these classes (which are themselves probability distributions), meaning that labeled datasets can be seen as probability distributions over probability distributions. We endow this space with a metric structure from optimal transport, namely the Wasserstein over Wasserstein (WoW) distance, derive a differential structure on this space, and define WoW gradient flows. The latter enables to design dynamics over this space that decrease a given objective functional. We apply our framework to transfer learning and dataset distillation tasks, leveraging our gradient flow construction as well as novel tractable functionals that take the form of Maximum Mean Discrepancies with Sliced-Wasserstein based kernels between probability distributions.",
+   "contribution_zh": "把梯度流升到\"测度的测度\"（WoW）空间，对整个带标签数据集做流动（数据集级迁移/蒸馏）",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v267/bonet25a.html"
+   },
+   "pdf": "papers/2506.07534.pdf",
+   "text": "data/text/2506.07534.txt",
+   "text_chars": 90000,
+   "pages": 57
+  },
+  {
+   "key": "t05__learning_diffusion_at_lightspeed",
+   "report_id": "2406.12616",
+   "title": "Learning diffusion at lightspeed",
+   "authors": [
+    "Antonio Terpin",
+    "Nicolas Lanzetti",
+    "Martin Gadea",
+    "Florian Dörfler"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS (Oral)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2406.12616",
+   "published": "2024-06-18",
+   "abstract": "Diffusion regulates numerous natural processes and the dynamics of many successful generative models. Existing models to learn the diffusion terms from observational data rely on complex bilevel optimization problems and model only the drift of the system. We propose a new simple model, JKOnet*, which bypasses the complexity of existing architectures while presenting significantly enhanced representational capabilities: JKOnet* recovers the potential, interaction, and internal energy components of the underlying diffusion process. JKOnet* minimizes a simple quadratic loss and outperforms other baselines in terms of sample efficiency, computational complexity, and accuracy. Additionally, JKOnet* provides a closed-form optimal solution for linearly parametrized functionals, and, when applied to predict the evolution of cellular processes from real-world data, it achieves state-of-the-art accuracy at a fraction of the computational cost of all existing methods. Our methodology is based on the interpretation of diffusion processes as energy-minimizing trajectories in the probability space via the so-called JKO scheme, which we study via its first-order optimality conditions.",
+   "contribution_zh": "JKOnet*：用 JKO 步的一阶最优性条件替代双层优化，二次损失学 potential/interaction/internal 三种能量，线性参数化有闭式解",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/0ce1eb87dbb03fdfa872a93d15cfe333-Abstract.html"
+   },
+   "pdf": "papers/2406.12616.pdf",
+   "text": "data/text/2406.12616.txt",
+   "text_chars": 80707,
+   "pages": 28
+  },
+  {
+   "key": "t05__mirror_and_preconditioned_gradient_descent_in_wasserstein_sp",
+   "report_id": "2406.08938",
+   "title": "Mirror and Preconditioned Gradient Descent in Wasserstein Space",
+   "authors": [
+    "Clément Bonet",
+    "Théo Uscidda",
+    "Adam David",
+    "Pierre-Cyril Aubin-Frankowski",
+    "Anna Korba"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS (Spotlight)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2406.08938",
+   "published": "2024-06-13",
+   "abstract": "As the problem of minimizing functionals on the Wasserstein space encompasses many applications in machine learning, different optimization algorithms on $\\mathbb{R}^d$ have received their counterpart analog on the Wasserstein space. We focus here on lifting two explicit algorithms: mirror descent and preconditioned gradient descent. These algorithms have been introduced to better capture the geometry of the function to minimize and are provably convergent under appropriate (namely relative) smoothness and convexity conditions. Adapting these notions to the Wasserstein space, we prove guarantees of convergence of some Wasserstein-gradient-based discrete-time schemes for new pairings of objective functionals and regularizers. The difficulty here is to carefully select along which curves the functionals should be smooth and convex. We illustrate the advantages of adapting the geometry induced by the regularizer on ill-conditioned optimization tasks, and showcase the improvement of choosing different discrepancies and geometries in a computational biology task of aligning single-cells.",
+   "contribution_zh": "把镜像下降/预条件梯度下降提升到 \\(\\mathcal{P}_2\\)：相对光滑/凸下的收敛保证，病态目标与单细胞对齐实验",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/2cf153951b5e9b39564fc4a0ef6adc1a-Abstract-Conference.html"
+   },
+   "pdf": "papers/2406.08938.pdf",
+   "text": "data/text/2406.08938.txt",
+   "text_chars": 90000,
+   "pages": 57
+  },
+  {
+   "key": "t05__optimizing_functionals_on_the_space_of_probabilities_with_ic",
+   "report_id": "Optimizing_Functionals_on_the_Space_of_Probabiliti",
+   "title": "Optimizing Functionals on the Space of Probabilities with ICNNs",
+   "authors": "Alvarez-Melis, Schiff, Mroueh",
+   "year": 2022,
+   "venue": "TMLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "JKO-ICNN 框架：ICNN 逼近凸函数空间做 JKO，含收敛保证的泛函设计与分子受控生成",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=dpOYN7o8Jm"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t05__variational_wasserstein_gradient_flow",
+   "report_id": "2112.02424",
+   "title": "Variational Wasserstein gradient flow",
+   "authors": [
+    "Jiaojiao Fan",
+    "Qinsheng Zhang",
+    "Amirhossein Taghvaei",
+    "Yongxin Chen"
+   ],
+   "year": 2022,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2112.02424",
+   "published": "2021-12-04",
+   "abstract": "Wasserstein gradient flow has emerged as a promising approach to solve optimization problems over the space of probability distributions. A recent trend is to use the well-known JKO scheme in combination with input convex neural networks to numerically implement the proximal step. The most challenging step, in this setup, is to evaluate functions involving density explicitly, such as entropy, in terms of samples. This paper builds on the recent works with a slight but crucial difference: we propose to utilize a variational formulation of the objective function formulated as maximization over a parametric class of functions. Theoretically, the proposed variational formulation allows the construction of gradient flows directly for empirical distributions with a well-defined and meaningful objective function. Computationally, this approach replaces the computationally expensive step in existing methods, to handle objective functions involving density, with inner loop updates that only require a small batch of samples and scale well with the dimension. The performance and scalability of the proposed method are illustrated with the aid of several numerical experiments involving high-dimensional synthetic and real datasets.",
+   "contribution_zh": "用 f-divergence 的变分（对偶）形式替代显式密度项，primal-dual 求 JKO 步，可扩展到高维",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v162/fan22d.html"
+   },
+   "pdf": "papers/2112.02424.pdf",
+   "text": "data/text/2112.02424.txt",
+   "text_chars": 89406,
+   "pages": 44
+  },
+  {
+   "key": "t05__proximal_optimal_transport_modeling_of_population_dynamics",
+   "report_id": "2106.06345",
+   "title": "Proximal Optimal Transport Modeling of Population Dynamics",
+   "authors": [
+    "Charlotte Bunne",
+    "Laetitia Meng-Papaxanthos",
+    "Andreas Krause",
+    "Marco Cuturi"
+   ],
+   "year": 2022,
+   "venue": "AISTATS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2106.06345",
+   "published": "2021-06-11",
+   "abstract": "We propose a new approach to model the collective dynamics of a population of particles evolving with time. As is often the case in challenging scientific applications, notably single-cell genomics, measuring features for these particles requires destroying them. As a result, the population can only be monitored with periodic snapshots, obtained by sampling a few particles that are sacrificed in exchange for measurements. Given only access to these snapshots, can we reconstruct likely individual trajectories for all other particles? We propose to model these trajectories as collective realizations of a causal Jordan-Kinderlehrer-Otto (JKO) flow of measures: The JKO scheme posits that the new configuration taken by a population at time $t+1$ is one that trades off an improvement, in the sense that it decreases an energy, while remaining close (in Wasserstein distance) to the previous configuration observed at $t$. In order to learn such an energy using only snapshots, we propose JKOnet, a neural architecture that computes (in end-to-end differentiable fashion) the JKO flow given a parametric energy and initial configuration of points. We demonstrate the good performance and robustness of the JKOnet fitting procedure, compared to a more direct forward method.",
+   "contribution_zh": "JKOnet：反问题视角——从时序快照端到端学习驱动种群演化的能量泛函（单细胞应用）",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v151/bunne22a.html"
+   },
+   "pdf": "papers/2106.06345.pdf",
+   "text": "data/text/2106.06345.txt",
+   "text_chars": 64792,
+   "pages": 18
+  },
+  {
+   "key": "t05__variational_inference_via_wasserstein_gradient_flows",
+   "report_id": "2205.15902",
+   "title": "Variational inference via Wasserstein gradient flows",
+   "authors": [
+    "Marc Lambert",
+    "Sinho Chewi",
+    "Francis Bach",
+    "Silvère Bonnabel",
+    "Philippe Rigollet"
+   ],
+   "year": 2022,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2205.15902",
+   "published": "2022-05-31",
+   "abstract": "Along with Markov chain Monte Carlo (MCMC) methods, variational inference (VI) has emerged as a central computational approach to large-scale Bayesian inference. Rather than sampling from the true posterior $π$, VI aims at producing a simple but effective approximation $\\hat π$ to $π$ for which summary statistics are easy to compute. However, unlike the well-studied MCMC methodology, algorithmic guarantees for VI are still relatively less well-understood. In this work, we propose principled methods for VI, in which $\\hat π$ is taken to be a Gaussian or a mixture of Gaussians, which rest upon the theory of gradient flows on the Bures--Wasserstein space of Gaussian measures. Akin to MCMC, it comes with strong theoretical guarantees when $π$ is log-concave.",
+   "contribution_zh": "把 VI 写成 Bures–Wasserstein 子流形上的 WGF/JKO（Gaussian 与混合 Gaussian），log-concave 下有保证",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=K2PTuvVTF1L"
+   },
+   "pdf": "papers/2205.15902.pdf",
+   "text": "data/text/2205.15902.txt",
+   "text_chars": 90000,
+   "pages": 52
+  },
+  {
+   "key": "t05__the_variational_formulation_of_the_fokker_planck_equation",
+   "report_id": "The_Variational_Formulation_of_the_Fokker_Planck_E",
+   "title": "The Variational Formulation of the Fokker–Planck Equation",
+   "authors": "Jordan, Kinderlehrer, Otto",
+   "year": 1998,
+   "venue": "SIAM J. Math. Anal.",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "奠基：FPE = KL 的 \\(W_2\\) 梯度流，提出 JKO（minimizing movement）格式",
+   "links": {
+    "DOI": "https://doi.org/10.1137/S0036141096303359"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  }
+ ]
+}

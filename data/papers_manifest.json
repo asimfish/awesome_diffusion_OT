@@ -1,0 +1,2114 @@
+{
+ "1803.00567.pdf": {
+  "sha256": "5292a1fc53631ac28fdbcccecc060de8e072b3008fb8d36c22d963a8f6a06bac",
+  "bytes": 42429657,
+  "source": "https://arxiv.org/pdf/1803.00567",
+  "key": "t01__1803.00567"
+ },
+ "2505.06589.pdf": {
+  "sha256": "320267f2368fbf8e0adf85c709be4fa178b9174cda426f4435938cde2e385e47",
+  "bytes": 27786429,
+  "source": "https://arxiv.org/pdf/2505.06589",
+  "key": "t01__2505.06589"
+ },
+ "2202.07477.pdf": {
+  "sha256": "17e8ea091a80e72d11b23731b262847438fb5a20779398776a5b7a665e6bea82",
+  "bytes": 10379664,
+  "source": "https://arxiv.org/pdf/2202.07477",
+  "key": "t02__2202.07477"
+ },
+ "t02_2022_Lavenant_flow_map_fokker_planck_not_ot.pdf": {
+  "sha256": "bec15f069082113d35d1bc020d0d6fe5af4681c250816620bc4c45e12694edb3",
+  "bytes": 327181,
+  "source": "survey:t02/2022_Lavenant_flow_map_fokker_planck_not_ot.pdf",
+  "key": "t02__the_flow_map_of_the_fokker_planck_equation_does_not_provide_"
+ },
+ "2405.11326.pdf": {
+  "sha256": "06782caf4389d59550bab173f2d3160ac78c24b68198494ca2d2a363bd930009",
+  "bytes": 25314136,
+  "source": "https://arxiv.org/pdf/2405.11326",
+  "key": "t02__2405.11326"
+ },
+ "2405.14250.pdf": {
+  "sha256": "298caa5855a730eae019eb688542d7b89ff606c407151e5dca98a13c16f9f211",
+  "bytes": 2313493,
+  "source": "https://arxiv.org/pdf/2405.14250",
+  "key": "t02__2405.14250"
+ },
+ "2211.01364.pdf": {
+  "sha256": "acc14bcda73d11c0a46913696e81622d5add9b147b042754a6b5c1486949e5ba",
+  "bytes": 4965779,
+  "source": "https://arxiv.org/pdf/2211.01364",
+  "key": "t02__2211.01364"
+ },
+ "t03_2022_Chen_Likelihood_Training_SB_FBSDE.pdf": {
+  "sha256": "50a83995d1423c76b554da01fb3102711249952ed5bc634a784adb8cc9c77947",
+  "bytes": 6752177,
+  "source": "survey:t03/2022_Chen_Likelihood_Training_SB_FBSDE.pdf",
+  "key": "t03__likelihood_training_of_sb_using_fbsdes_chen_liu_theodorou"
+ },
+ "t03_2023_Shi_Diffusion_Schrodinger_Bridge_Matching.pdf": {
+  "sha256": "fc6ccc41bbfd488bd4f466843d062e0c26290989f55c2820ff448482b752e50d",
+  "bytes": 19927420,
+  "source": "survey:t03/2023_Shi_Diffusion_Schrodinger_Bridge_Matching.pdf",
+  "key": "t03__diffusion_schro_dinger_bridge_matching_shi_et_al"
+ },
+ "t03_2024_Gushchin_Light_and_Optimal_SB_Matching.pdf": {
+  "sha256": "694a902caf79172b55969f3069f27e177c2a1ce50b42c0fce097223c60df225a",
+  "bytes": 2365174,
+  "source": "survey:t03/2024_Gushchin_Light_and_Optimal_SB_Matching.pdf",
+  "key": "t03__light_and_optimal_sb_matching_gushchin_et_al"
+ },
+ "1306.0895.pdf": {
+  "sha256": "f666b9bce6bbe0111fbaa49d550c7c58a53da11f5e62bdb547b422b83414f20f",
+  "bytes": 1004298,
+  "source": "https://arxiv.org/pdf/1306.0895",
+  "key": "t04__sinkhorn_distances_lightspeed_computation_of_optimal_transpo"
+ },
+ "1706.00292.pdf": {
+  "sha256": "ff7dab4f6e094c9898d3a202f6b8cc41a78e18ce589f65329b09b2f98c194247",
+  "bytes": 2960657,
+  "source": "https://arxiv.org/pdf/1706.00292",
+  "key": "t04__learning_generative_models_with_sinkhorn_divergences"
+ },
+ "1810.08278.pdf": {
+  "sha256": "5098d7b70fc13657fc8cc1a8fd0bf25e7f1d564bf66ba9b1fc647a0832272a81",
+  "bytes": 1557270,
+  "source": "https://arxiv.org/pdf/1810.08278",
+  "key": "t04__interpolating_between_optimal_transport_and_mmd_using_sinkho"
+ },
+ "2109.12004.pdf": {
+  "sha256": "45214b3dff1d6b4c004e5a51e6d2cba49a7bb5dc866494e5a206f5f1d5baf839",
+  "bytes": 845866,
+  "source": "https://arxiv.org/pdf/2109.12004",
+  "key": "t04__2109.12004"
+ },
+ "2406.05061.pdf": {
+  "sha256": "f1e6f95adff80a4d6aa573776d74034256b8c1a2060a1d9124e0a1f0fae2a12f",
+  "bytes": 1561892,
+  "source": "https://arxiv.org/pdf/2406.05061",
+  "key": "t04__progressive_entropic_optimal_transport_solvers"
+ },
+ "2106.00736.pdf": {
+  "sha256": "164222aaeb15fc59c04e1b1934597ec9aea7b3bc1fbf3440a30432e5fbf8e45d",
+  "bytes": 1124368,
+  "source": "https://arxiv.org/pdf/2106.00736",
+  "key": "t05__large_scale_wasserstein_gradient_flows"
+ },
+ "2212.14424.pdf": {
+  "sha256": "578e4815e628b4abbf8eaef509f7c79fe2f84bd0e31787969f8b5a7771211552",
+  "bytes": 6798497,
+  "source": "https://arxiv.org/pdf/2212.14424",
+  "key": "t05__normalizing_flow_neural_networks_by_jko_scheme"
+ },
+ "2402.05443.pdf": {
+  "sha256": "9a14f79257719eee62f6be1e1b560ed62c410e4b394adf195ea3afcb6e72c65c",
+  "bytes": 9571307,
+  "source": "https://arxiv.org/pdf/2402.05443",
+  "key": "t05__scalable_wasserstein_gradient_flow_for_generative_modeling_t"
+ },
+ "2509.16974.pdf": {
+  "sha256": "9b410d612ec4c204354cf6088f2784a9bcfc7efad3edd19b24155cfd552b29c0",
+  "bytes": 780451,
+  "source": "https://arxiv.org/pdf/2509.16974",
+  "key": "t05__hessian_guided_perturbed_wasserstein_gradient_flows_for_esca"
+ },
+ "t06_2023_Chen_sampling_easy_as_learning_score.pdf": {
+  "sha256": "03f7c302ef183407843dee3bbe90b7f10afcb3b7cde8c6ac8171caa6e9784111",
+  "bytes": 445635,
+  "source": "survey:t06/2023_Chen_sampling_easy_as_learning_score.pdf",
+  "key": "t06__sampling_is_as_easy_as_learning_the_score"
+ },
+ "2409.18959.pdf": {
+  "sha256": "aafe1cfdf454c5b5ff6f9a61d81f1fcd69f5f746d2e7c6a6cd78281c9fd89f7d",
+  "bytes": 615799,
+  "source": "https://arxiv.org/pdf/2409.18959",
+  "key": "t06__o_convergence_theory_for_diffusion_probabilistic_models_unde"
+ },
+ "t06_2023_Oko_diffusion_minimax_optimal_estimators.pdf": {
+  "sha256": "6fa5eb8d161cf77183c3166668a8e4257fe146f1e4ddb3073e7e67e6e909fc34",
+  "bytes": 920674,
+  "source": "survey:t06/2023_Oko_diffusion_minimax_optimal_estimators.pdf",
+  "key": "t06__diffusion_models_are_minimax_optimal_distribution_estimators"
+ },
+ "2405.20879.pdf": {
+  "sha256": "30d13f7e6a480ed22839060bde35b034eefd332ec254a18067d0f184e5e95c90",
+  "bytes": 1009818,
+  "source": "https://arxiv.org/pdf/2405.20879",
+  "key": "t06__flow_matching_achieves_almost_minimax_optimal_convergence"
+ },
+ "1905.05828.pdf": {
+  "sha256": "a0d1fb101276f2b1b9202bee57761af68a44e638a67f110a5d8d12a4a9b13413",
+  "bytes": 1513385,
+  "source": "https://arxiv.org/pdf/1905.05828",
+  "key": "t06__minimax_estimation_of_smooth_optimal_transport_maps"
+ },
+ "2210.02747.pdf": {
+  "sha256": "5eeb39ba516396924aba4787452f9d0abdee88467a4d0c264d9f66cad0c5ee14",
+  "bytes": 25147129,
+  "source": "https://arxiv.org/pdf/2210.02747",
+  "key": "t07__flow_matching_for_generative_modeling"
+ },
+ "2303.08797.pdf": {
+  "sha256": "729e445e5498c97a87a925ff08f084f741eef2cd4e018e83b898fdea7f19bdef",
+  "bytes": 14140000,
+  "source": "https://arxiv.org/pdf/2303.08797",
+  "key": "t07__stochastic_interpolants_a_unifying_framework_for_flows_and_d"
+ },
+ "2410.20587.pdf": {
+  "sha256": "58211310b930bedfe81d8ccaf1ee53f815d88e535de550857881bfd3fcc3b086",
+  "bytes": 7130504,
+  "source": "https://arxiv.org/pdf/2410.20587",
+  "key": "t07__generator_matching_generative_modeling_with_arbitrary_markov"
+ },
+ "2505.13447.pdf": {
+  "sha256": "322ba9244ad2c72382038e421fe0ffa92510c51d4f9c740bd7282b36bfc25206",
+  "bytes": 6192153,
+  "source": "https://arxiv.org/pdf/2505.13447",
+  "key": "t07__mean_flows_for_one_step_generative_modeling"
+ },
+ "2412.06264.pdf": {
+  "sha256": "520d9cd0f62856033b5f61c6920b3447c4f33ba349eae718113abb3c5b6d096d",
+  "bytes": 18573090,
+  "source": "https://arxiv.org/pdf/2412.06264",
+  "key": "t07__2412.06264"
+ },
+ "2302.00482.pdf": {
+  "sha256": "c98a4834abffe8a5c4e27c13c36a10d83d38e8780c98c3891150c4e028094d0a",
+  "bytes": 9677988,
+  "source": "https://arxiv.org/pdf/2302.00482",
+  "key": "t08__2302.00482"
+ },
+ "2304.14772.pdf": {
+  "sha256": "dd7b47857205b6e5f26ac9650ba1647e2152e34d450534249ede3258ffb220a3",
+  "bytes": 7415780,
+  "source": "https://arxiv.org/pdf/2304.14772",
+  "key": "t08__multisample_flow_matching_straightening_flows_with_minibatch"
+ },
+ "2603.15279.pdf": {
+  "sha256": "d41ce4cb5cbee6bd798b17ad7a72a3550b3ec60342cf7f3e8652ebbfab2d4cbe",
+  "bytes": 18127096,
+  "source": "https://arxiv.org/pdf/2603.15279",
+  "key": "t08__faster_inference_of_flow_based_generative_models_via_improve"
+ },
+ "2503.10636.pdf": {
+  "sha256": "23cfbe228842d3d9dd3d74c33697f8b2011367a7b03d97d3c75d7c4a3063e65b",
+  "bytes": 16953920,
+  "source": "https://arxiv.org/pdf/2503.10636",
+  "key": "t08__the_curse_of_conditions_analyzing_and_improving_optimal_tran"
+ },
+ "2506.05526.pdf": {
+  "sha256": "f5d23e3b6194efa2b60e1ff7fd1c10e4323b0f8146b9421a6809c3330361306c",
+  "bytes": 4406596,
+  "source": "https://arxiv.org/pdf/2506.05526",
+  "key": "t08__2506.05526"
+ },
+ "2209.03003.pdf": {
+  "sha256": "d81790cb6988ef480002adcc84000d4f44855b11fb868001fd53aad133bc3a74",
+  "bytes": 18024983,
+  "source": "https://arxiv.org/pdf/2209.03003",
+  "key": "t09__2209.03003"
+ },
+ "t09_2023_Liu_InstaFlow_One_Step_T2I.pdf": {
+  "sha256": "a3dcea6ded67aac088bdbf1d80c84ba4f388825f1fb7ba69bedefdcb460b41ca",
+  "bytes": 50270246,
+  "source": "survey:t09/2023_Liu_InstaFlow_One_Step_T2I.pdf",
+  "key": "t09__instaflow_one_step_is_enough_for_high_quality_diffusion_base"
+ },
+ "2403.03206.pdf": {
+  "sha256": "7ba352b6ded12859cda4d47df203d5fe38ee884c45f3b67ff227549d82db1487",
+  "bytes": 33973124,
+  "source": "https://arxiv.org/pdf/2403.03206",
+  "key": "t09__scaling_rectified_flow_transformers_for_high_resolution_imag"
+ },
+ "2405.20320.pdf": {
+  "sha256": "455b0f2e01add04232883d279f5e2c10942394746e6b2f0b26a8f00c787c5341",
+  "bytes": 24729944,
+  "source": "https://arxiv.org/pdf/2405.20320",
+  "key": "t09__improving_the_training_of_rectified_flows"
+ },
+ "2505.19712.pdf": {
+  "sha256": "8aca06c9392765e6f4a196ca011576b126a9dd01eee6f7a586fbf296facad6c3",
+  "bytes": 4473554,
+  "source": "https://arxiv.org/pdf/2505.19712",
+  "key": "t09__2505.19712"
+ },
+ "2303.01469.pdf": {
+  "sha256": "b36df36eb96abcad5ad67173952258c34f2ba0624c15acaaf38bebf855074043",
+  "bytes": 31529980,
+  "source": "https://arxiv.org/pdf/2303.01469",
+  "key": "t10__consistency_models"
+ },
+ "2311.18828.pdf": {
+  "sha256": "26e98e02828d719dea419456b0946c730f8f4cff9d6c30170ce4bc63bb8441f1",
+  "bytes": 12914839,
+  "source": "https://arxiv.org/pdf/2311.18828",
+  "key": "t10__one_step_diffusion_with_distribution_matching_distillation"
+ },
+ "2406.09570.pdf": {
+  "sha256": "d2fbc67cbcc50ef51c4e4de0c063769957513e9ddf441170d9bf8c357001cd98",
+  "bytes": 3937903,
+  "source": "https://arxiv.org/pdf/2406.09570",
+  "key": "t10__improving_consistency_models_with_generator_augmented_flows"
+ },
+ "2512.06802.pdf": {
+  "sha256": "c3e710da9c960d6296ad71703979e2cbde994c849d344d8a5901d49662f78fdc",
+  "bytes": 43749623,
+  "source": "https://arxiv.org/pdf/2512.06802",
+  "key": "t10__vdot_efficient_unified_video_creation_via_optimal_transport_"
+ },
+ "2206.00364.pdf": {
+  "sha256": "0cf53de9ac234366fdba08d472afa236d46edd8202fda340f579aa2db866087a",
+  "bytes": 19211841,
+  "source": "https://arxiv.org/pdf/2206.00364",
+  "key": "t11__2206.00364"
+ },
+ "2206.00927.pdf": {
+  "sha256": "4a14cb652bb4996c6bfdd717b0bf71d6a5c92cf9e09abdc3173106213f4fd671",
+  "bytes": 15918595,
+  "source": "https://arxiv.org/pdf/2206.00927",
+  "key": "t11__2206.00927"
+ },
+ "2312.00094.pdf": {
+  "sha256": "c7fe45578c8c2e6b24f43d7f7f591777e1c56fe14aa0cb54149f049a43af332b",
+  "bytes": 18092500,
+  "source": "https://arxiv.org/pdf/2312.00094",
+  "key": "t11__2312.00094"
+ },
+ "2404.14507.pdf": {
+  "sha256": "2be3128e8a8738007f69eb2f19be30256ac42c55ef50a054ade85dee990940b1",
+  "bytes": 10079865,
+  "source": "https://arxiv.org/pdf/2404.14507",
+  "key": "t11__2404.14507"
+ },
+ "2410.13431.pdf": {
+  "sha256": "c142b3ea4832a87bb45182b662230f2412603715bd9ec3a1f0c72a94a195f1ec",
+  "bytes": 3821334,
+  "source": "https://arxiv.org/pdf/2410.13431",
+  "key": "t12__2410.13431"
+ },
+ "2411.09502.pdf": {
+  "sha256": "e005f2648779531f7d70b4344d8969f9644e42f5d47ca9c3b599bfeac2dbddc1",
+  "bytes": 52420101,
+  "source": "https://arxiv.org/pdf/2411.09502",
+  "key": "t12__golden_noise_for_diffusion_models_a_learning_framework"
+ },
+ "2106.01954.pdf": {
+  "sha256": "33e076eef5e1d81f4a305ca9bdb7f9c996ae0343bfc0c29a4c3bdc29371699ba",
+  "bytes": 6498560,
+  "source": "https://arxiv.org/pdf/2106.01954",
+  "key": "t13__do_neural_optimal_transport_solvers_work_a_continuous_wasser"
+ },
+ "2110.02999.pdf": {
+  "sha256": "000cbd2adf59446c010f58d9f4b4ec1abed4684fb6cf76f63d59d24c3c0bbe32",
+  "bytes": 20409630,
+  "source": "https://arxiv.org/pdf/2110.02999",
+  "key": "t13__generative_modeling_with_optimal_transport_maps"
+ },
+ "2201.12220.pdf": {
+  "sha256": "82d0907313c5abf39aa469aa8caae4e57dcc31c9a4ed063fbaf826ab957355af",
+  "bytes": 32817914,
+  "source": "https://arxiv.org/pdf/2201.12220",
+  "key": "t13__neural_optimal_transport"
+ },
+ "2305.14777.pdf": {
+  "sha256": "10da29819c9cf66fb4a8538a6dc194e87f1bb202b8e5db042a30d856773348b1",
+  "bytes": 9494205,
+  "source": "https://arxiv.org/pdf/2305.14777",
+  "key": "t13__generative_modeling_through_the_semi_dual_formulation_of_unb"
+ },
+ "2403.03777.pdf": {
+  "sha256": "ef54f14ff404428bff4c019c0850fa215274f3d89b0a4325308444956e3105d5",
+  "bytes": 19510192,
+  "source": "https://arxiv.org/pdf/2403.03777",
+  "key": "t13__enot_expectile_regularization_for_fast_and_accurate_training"
+ },
+ "t14_2023_Liu_i2sb_image_to_image_schrodinger_bridge.pdf": {
+  "sha256": "039dac8b98cdb6c2d8853d40efa045b669c1c94f404dfea53335877fb1b1863a",
+  "bytes": 25991995,
+  "source": "survey:t14/2023_Liu_i2sb_image_to_image_schrodinger_bridge.pdf",
+  "key": "t14__i2sb_image_to_image_schro_dinger_bridge"
+ },
+ "t14_2024_Zhou_ddbm_denoising_diffusion_bridge_models.pdf": {
+  "sha256": "95094f29a79b01977ad3c232e46016cd89e0eb8754ce5b36cb53e60e7798aefa",
+  "bytes": 31644905,
+  "source": "survey:t14/2024_Zhou_ddbm_denoising_diffusion_bridge_models.pdf",
+  "key": "t14__denoising_diffusion_bridge_models"
+ },
+ "2405.15885.pdf": {
+  "sha256": "e384351b29b79b1b427ea5929d805ef70a7b2f5774c09a025aa78a515abf8c97",
+  "bytes": 9884857,
+  "source": "https://arxiv.org/pdf/2405.15885",
+  "key": "t14__dbim_diffusion_bridge_implicit_models"
+ },
+ "t15_2025_Shi_ACSB_CBCT_to_CT.pdf": {
+  "sha256": "48e926655dca6c9fc8e1b812e1a0942275093316435774d34bf527bdcd3cd518",
+  "bytes": 1269251,
+  "source": "survey:t15/2025_Shi_ACSB_CBCT_to_CT.pdf",
+  "key": "t15__anatomy_conserving_unpaired_cbct_to_ct_translation_via_schro"
+ },
+ "2405.06789.pdf": {
+  "sha256": "6bce1f87890a806ad6aa067416734c785cd72553c1f789dcdf3a28165ee127b8",
+  "bytes": 3016733,
+  "source": "https://arxiv.org/pdf/2405.06789",
+  "key": "t15__2405.06789"
+ },
+ "2404.11741.pdf": {
+  "sha256": "e85ab7da4afeae0dc5b0b31dd63080932aa6fa990654798078681461251e9e17",
+  "bytes": 934882,
+  "source": "https://arxiv.org/pdf/2404.11741",
+  "key": "t15__2404.11741"
+ },
+ "2311.01226.pdf": {
+  "sha256": "64955789ba6db3876e85316433c3458c295945b63044f7ce4b87d072e276f9b5",
+  "bytes": 49718612,
+  "source": "https://arxiv.org/pdf/2311.01226",
+  "key": "t16__otcs_optimal_transport_guided_conditional_score_based_diffus"
+ },
+ "2403.14183.pdf": {
+  "sha256": "1d2c78347e36a16fe8349ed0aec6f9288bb9a9cfd138004a774a672833d3b126",
+  "bytes": 26340700,
+  "source": "https://arxiv.org/pdf/2403.14183",
+  "key": "t16__otseg_multi_prompt_sinkhorn_attention_for_zero_shot_semantic"
+ },
+ "2511.07499.pdf": {
+  "sha256": "3cc2a76264036ca9b419c6fa580f0bbdcb201867058b5bae750c59dceff78d33",
+  "bytes": 9013888,
+  "source": "https://arxiv.org/pdf/2511.07499",
+  "key": "t16__2511.07499"
+ },
+ "2603.11618.pdf": {
+  "sha256": "fe49595ea4b4facc0a9812fcade75bf10042814b2c0d7f10c4c12f5e4c7d9ae6",
+  "bytes": 14846486,
+  "source": "https://arxiv.org/pdf/2603.11618",
+  "key": "t16__shape_of_you_fused_gromov_wasserstein_ot_for_semantic_corres"
+ },
+ "2407.10181.pdf": {
+  "sha256": "e8a1463913f3a69f07411c1876787c3941ebb36997f8e8dc905382dd155fac0d",
+  "bytes": 10579458,
+  "source": "https://arxiv.org/pdf/2407.10181",
+  "key": "t17__multiscale_sliced_wasserstein_distances_as_perceptual_color_"
+ },
+ "2503.19034.pdf": {
+  "sha256": "4fb5d4ad2170a3d0ff5eea25186e3813dcdb008cf0d3dcbad5fe08407b13f952",
+  "bytes": 46572863,
+  "source": "https://arxiv.org/pdf/2503.19034",
+  "key": "t17__color_conditional_generation_with_sliced_wasserstein_guidanc"
+ },
+ "2511.11162.pdf": {
+  "sha256": "973f54d8ddae804c2ff6e3ac080b620f6ba99816dc0a302ac620c10e079243aa",
+  "bytes": 18248028,
+  "source": "https://arxiv.org/pdf/2511.11162",
+  "key": "t17__ot_ald_aligning_latent_distributions_with_optimal_transport_"
+ },
+ "2404.04240.pdf": {
+  "sha256": "df4ad3fa50833b17753aa5290ead1c5d5060fefce91d71a1de90645e35bd8edc",
+  "bytes": 1986573,
+  "source": "https://arxiv.org/pdf/2404.04240",
+  "key": "t18__dynamic_conditional_optimal_transport_through_simulation_fre"
+ },
+ "2403.18705.pdf": {
+  "sha256": "d5bef62dea648b9b50641ca72cd54d425e7a755bf0ae48d5db8376d8fa283f0a",
+  "bytes": 5790288,
+  "source": "https://arxiv.org/pdf/2403.18705",
+  "key": "t18__conditional_wasserstein_distances_with_applications_in_bayes"
+ },
+ "2409.08861.pdf": {
+  "sha256": "e59e529f1d26d8ff9260837e61d53d1c29b5aef69d080a599ba3a33ed9889f8c",
+  "bytes": 11921609,
+  "source": "https://arxiv.org/pdf/2409.08861",
+  "key": "t18__adjoint_matching_fine_tuning_flow_and_diffusion_generative_m"
+ },
+ "2503.02819.pdf": {
+  "sha256": "e380d06d2780abb2b8b8f9933764da144813d51f58595e30fb66c748bf89adfe",
+  "bytes": 14218318,
+  "source": "https://arxiv.org/pdf/2503.02819",
+  "key": "t18__feynman_kac_correctors_in_diffusion_annealing_guidance_and_p"
+ },
+ "2412.07772.pdf": {
+  "sha256": "fa5612e3a49e7f481e00592471b9345fbc09bf8c30aa852c8cb119ae1053c155",
+  "bytes": 14649120,
+  "source": "https://arxiv.org/pdf/2412.07772",
+  "key": "t19__from_slow_bidirectional_to_fast_autoregressive_video_diffusi"
+ },
+ "2506.08009.pdf": {
+  "sha256": "4374996e5afedccea389065da9371662f7ba04ec8e635aa4eacb3e1781043169",
+  "bytes": 3902279,
+  "source": "https://arxiv.org/pdf/2506.08009",
+  "key": "t19__self_forcing_bridging_the_train_test_gap_in_autoregressive_v"
+ },
+ "2410.05954.pdf": {
+  "sha256": "6893963ea0a9b1c6f669212a179098c91c1603c60f01b0b4379a9cb9ceaa5699",
+  "bytes": 9920487,
+  "source": "https://arxiv.org/pdf/2410.05954",
+  "key": "t19__pyramidal_flow_matching_for_efficient_video_generative_model"
+ },
+ "2504.03072.pdf": {
+  "sha256": "7cc9c5fde1bae569ffca2a35268a29efe8b5836bb2e937154a6b21d847bef152",
+  "bytes": 46147272,
+  "source": "https://arxiv.org/pdf/2504.03072",
+  "key": "t19__2504.03072"
+ },
+ "2502.12456.pdf": {
+  "sha256": "cf140548d5dd031ce492e741f7090d135228e8af0b79b5cb60be72da9581034a",
+  "bytes": 38502186,
+  "source": "https://arxiv.org/pdf/2502.12456",
+  "key": "t20__2502.12456"
+ },
+ "2411.00698.pdf": {
+  "sha256": "6f44a4c799b9ed73f7d6cfb6549e875aa17e46bcf4e5cae5640a33d95996e610",
+  "bytes": 6819870,
+  "source": "https://arxiv.org/pdf/2411.00698",
+  "key": "t20__wasserstein_flow_matching_generative_modeling_over_families_"
+ },
+ "2410.02671.pdf": {
+  "sha256": "bc6243aa0b0fc05d76a4f623083ed77909cc9c7ed7f37caf6524aeb5fb714eff",
+  "bytes": 6550847,
+  "source": "https://arxiv.org/pdf/2410.02671",
+  "key": "t20__2410.02671"
+ },
+ "2403.19655.pdf": {
+  "sha256": "b12bee2836669225da47371f785327bfe03c56bf7149c15343e86b39ca4d7f63",
+  "bytes": 36408320,
+  "source": "https://arxiv.org/pdf/2403.19655",
+  "key": "t20__2403.19655"
+ },
+ "2411.16443.pdf": {
+  "sha256": "b7523a2a285d4e571ed731184e3c5e09314c70be9caa2f12f826c4bb950a61ba",
+  "bytes": 33924838,
+  "source": "https://arxiv.org/pdf/2411.16443",
+  "key": "t20__splatflow_multi_view_rectified_flow_model_for_3d_gaussian_sp"
+ },
+ "2310.02391.pdf": {
+  "sha256": "a36b75d06810d886e8336739fa83b63090399af2240b742bc8e8bf552572c02f",
+  "bytes": 39919902,
+  "source": "https://arxiv.org/pdf/2310.02391",
+  "key": "t21__foldflow_se_stochastic_flow_matching_for_protein_backbone_ge"
+ },
+ "2503.00710.pdf": {
+  "sha256": "0d4c693a75141917c057d22c5d9b5b27d2463caa2362cbfa59a54ef0a068ad98",
+  "bytes": 9683096,
+  "source": "https://arxiv.org/pdf/2503.00710",
+  "key": "t21__2503.00710"
+ },
+ "2410.22388.pdf": {
+  "sha256": "8dbc7fd5f9f2157add1aecbfda5ec7840a4b8d86a585e98ad97862f74609fac9",
+  "bytes": 2400428,
+  "source": "https://arxiv.org/pdf/2410.22388",
+  "key": "t21__2410.22388"
+ },
+ "2406.04713.pdf": {
+  "sha256": "2a996abbf587278c64d248dfad00b65f4c3403fbf8466e5e3803ed5fe554f821",
+  "bytes": 745159,
+  "source": "https://arxiv.org/pdf/2406.04713",
+  "key": "t21__flowmm_generating_materials_with_riemannian_flow_matching"
+ },
+ "2310.16834.pdf": {
+  "sha256": "1f3a135a52346270ef4b0872d52f17954af7ea0fa53d0a0b31a9183599ec976e",
+  "bytes": 1069705,
+  "source": "https://arxiv.org/pdf/2310.16834",
+  "key": "t22__discrete_diffusion_modeling_by_estimating_the_ratios_of_the_"
+ },
+ "2407.15595.pdf": {
+  "sha256": "5ff582a1ccb3e6584b23450a8f4ff05b3829d4fa29a9d240e5d31d15b0e140bd",
+  "bytes": 2682314,
+  "source": "https://arxiv.org/pdf/2407.15595",
+  "key": "t22__2407.15595"
+ },
+ "2405.14664.pdf": {
+  "sha256": "5f3ad8abbb185ab1e7be18364ff1584f84fa79b12f4d5dd4210170368e6eaab7",
+  "bytes": 3798931,
+  "source": "https://arxiv.org/pdf/2405.14664",
+  "key": "t22__2405.14664"
+ },
+ "2411.00759.pdf": {
+  "sha256": "8bce4e431c3ae2686ea91857fa21c55fd039a719c64952c99476f405889bd09b",
+  "bytes": 699873,
+  "source": "https://arxiv.org/pdf/2411.00759",
+  "key": "t22__2411.00759"
+ },
+ "2506.13579.pdf": {
+  "sha256": "cce73b7594aeb9d339f4e4175fd873dc52bddef7227443a0de34391bbb774df3",
+  "bytes": 2349576,
+  "source": "https://arxiv.org/pdf/2506.13579",
+  "key": "t22__flexible_length_text_infilling_for_discrete_diffusion_models"
+ },
+ "2306.15687.pdf": {
+  "sha256": "53fb0eb4b581b51325da2ec62f72629be15ebe22eb55563a7c5da555c2176779",
+  "bytes": 2010914,
+  "source": "https://arxiv.org/pdf/2306.15687",
+  "key": "t23__voicebox_text_guided_multilingual_universal_speech_generatio"
+ },
+ "2309.03199.pdf": {
+  "sha256": "0c207c59253cdda26771d5b58fa13f25976950b808de3a0697063cba28732717",
+  "bytes": 769601,
+  "source": "https://arxiv.org/pdf/2309.03199",
+  "key": "t23__matcha_tts_a_fast_tts_architecture_with_conditional_flow_mat"
+ },
+ "t23_2025_Chen_F5_TTS.pdf": {
+  "sha256": "ee2aa766bd6ad9395967dfdaed70f948713cba9859d6fcbb6283908714b899f3",
+  "bytes": 7782451,
+  "source": "survey:t23/2025_Chen_F5_TTS.pdf",
+  "key": "t23__f5_tts_a_fairytaler_that_fakes_fluent_and_faithful_speech_wi"
+ },
+ "2312.03491.pdf": {
+  "sha256": "27157f267a25b45b47fadd846835d8b72502488b8bcf6c3ce5c854be8024fe47",
+  "bytes": 3456566,
+  "source": "https://arxiv.org/pdf/2312.03491",
+  "key": "t23__2312.03491"
+ },
+ "t23_2024_Jukic_SB_Speech_Enhancement.pdf": {
+  "sha256": "11788abe5dbec407fd4e6273e1167aa5034e5b8433c3392d31d16acac238b735",
+  "bytes": 164403,
+  "source": "survey:t23/2024_Jukic_SB_Speech_Enhancement.pdf",
+  "key": "t23__schro_dinger_bridge_for_generative_speech_enhancement"
+ },
+ "2310.09254.pdf": {
+  "sha256": "ec7102becffc989c52ea5310e27e34c9030bcf0f8892f89501ecbcc7e8cee764",
+  "bytes": 19918834,
+  "source": "https://arxiv.org/pdf/2310.09254",
+  "key": "t24__genot_entropic_wasserstein_flow_matching_with_applications_t"
+ },
+ "2410.00844.pdf": {
+  "sha256": "7d285fec5571d60ec93ed038628dec52fe98355bd8a01fc237e96a922e394b4f",
+  "bytes": 17780247,
+  "source": "https://arxiv.org/pdf/2410.00844",
+  "key": "t25__learning_stochastic_dynamics_from_snapshots_through_regulari"
+ },
+ "2505.11823.pdf": {
+  "sha256": "a5afc33b693d3c98800c8e20e3a1375078eb13dcb715048d29c3e397282a1fed",
+  "bytes": 7626222,
+  "source": "https://arxiv.org/pdf/2505.11823",
+  "key": "t25__variational_regularized_unbalanced_optimal_transport_single_"
+ },
+ "2601.06810.pdf": {
+  "sha256": "6ddf819484202c6c15b4e272f07437454b3858a8a95564e938b279520c5d8e31",
+  "bytes": 6497636,
+  "source": "https://arxiv.org/pdf/2601.06810",
+  "key": "t25__wfr_fm_simulation_free_dynamic_unbalanced_optimal_transport"
+ },
+ "2602.06658.pdf": {
+  "sha256": "f2cc53a179634be0cfa90e6322abd61ee01ab0da1fa799e6bc9320415890d107",
+  "bytes": 11038790,
+  "source": "https://arxiv.org/pdf/2602.06658",
+  "key": "t26__2602.06658"
+ },
+ "2212.12848.pdf": {
+  "sha256": "731c61d7acc3441626d44ba8cd53359493441b91be5e30774b595f93aafe42fb",
+  "bytes": 984378,
+  "source": "https://arxiv.org/pdf/2212.12848",
+  "key": "t26__gromov_wasserstein_distances_entropic_regularization_duality"
+ },
+ "2503.24129.pdf": {
+  "sha256": "83dbf39eab458c81ea558e5a5fd40e7efb89b259c50ea0b3e016bc4b3c9f4240",
+  "bytes": 1256603,
+  "source": "https://arxiv.org/pdf/2503.24129",
+  "key": "t26__it_s_a_match_towards_vision_language_correspondence_without_"
+ },
+ "2606.11221.pdf": {
+  "sha256": "01e34c8010795400f1069af07a9c64b0246cfb2a2f68e003375aa2ee9f3b1ca0",
+  "bytes": 5103232,
+  "source": "https://arxiv.org/pdf/2606.11221",
+  "key": "t26__last_bridging_vision_language_and_action_manifolds_via_gromo"
+ },
+ "2606.05327.pdf": {
+  "sha256": "6fc3fcc51a01ce7a787a9073fc6090a1ad887e097ae0ec6c02725c49da992713",
+  "bytes": 11400184,
+  "source": "https://arxiv.org/pdf/2606.05327",
+  "key": "t27__2606.05327"
+ },
+ "t27_2025_Theodoropoulos_3MSBM_momentum_mmsb_matching.pdf": {
+  "sha256": "71311bbf4ee01f98379b638ba3734f99059f6ae07a23245d26ecb9e1c7acea16",
+  "bytes": 8373614,
+  "source": "survey:t27/2025_Theodoropoulos_3MSBM_momentum_mmsb_matching.pdf",
+  "key": "t27__momentum_multi_marginal_schro_dinger_bridge_matching"
+ },
+ "2402.03828.pdf": {
+  "sha256": "591326e67c06f56016d64bfbcc5aefc32aa12a586633ff2c39022da57a2da4fc",
+  "bytes": 19179201,
+  "source": "https://arxiv.org/pdf/2402.03828",
+  "key": "t27__estimating_barycenters_of_distributions_with_neural_ot"
+ },
+ "2505.13660.pdf": {
+  "sha256": "d97d1a17eb7a3cd26c7888e3e09fb5a143b244a35abc0ceef34b7ae25d119eeb",
+  "bytes": 5538778,
+  "source": "https://arxiv.org/pdf/2505.13660",
+  "key": "t27__sobolev_gradient_ascent_for_optimal_transport_barycenter_opt"
+ },
+ "t28_2024_Chen_riemannian_flow_matching.pdf": {
+  "sha256": "5860a6f32978550acdbca99d82a1e4af6020ae76220e62951d92f8b43ac880ab",
+  "bytes": 11382050,
+  "source": "survey:t28/2024_Chen_riemannian_flow_matching.pdf",
+  "key": "t28__flow_matching_on_general_geometries_chen_lipman"
+ },
+ "t28_2024_Kapusniak_metric_flow_matching.pdf": {
+  "sha256": "905f10e5acadf2d55cdea9bb8f76fdef364f473650c7021de181ebb1acab936d",
+  "bytes": 20757802,
+  "source": "survey:t28/2024_Kapusniak_metric_flow_matching.pdf",
+  "key": "t28__metric_flow_matching_kapusniak_et_al"
+ },
+ "2602.03566.pdf": {
+  "sha256": "8c20933bd94b2206977743266a8b887e8de444269c90830667b661f61d7505cf",
+  "bytes": 3362193,
+  "source": "https://arxiv.org/pdf/2602.03566",
+  "key": "t28__2602.03566"
+ },
+ "2602.03067.pdf": {
+  "sha256": "d8d23c6888a38db6ea9c832ce2d97d0207e83ed17bd6e44626fb3222754eb0b9",
+  "bytes": 1175039,
+  "source": "https://arxiv.org/pdf/2602.03067",
+  "key": "t29__2602.03067"
+ },
+ "2503.03025.pdf": {
+  "sha256": "afe8bc5687a8adb8b0dfd25812236a7c512834cdfe468565477945a683549671",
+  "bytes": 3146961,
+  "source": "https://arxiv.org/pdf/2503.03025",
+  "key": "t29__2503.03025"
+ },
+ "2306.00980.pdf": {
+  "sha256": "a33335a68f27d2cb2a6cf0812c07290b59c35b067c2662e07bf2bf5d6ca6a216",
+  "bytes": 24890452,
+  "source": "https://arxiv.org/pdf/2306.00980",
+  "key": "t30__snapfusion_text_to_image_diffusion_model_on_mobile_devices_w"
+ },
+ "2311.16567.pdf": {
+  "sha256": "79671b08babf62205764441855cedbc8e5508fd052d06841f98f1b71979df5d0",
+  "bytes": 9618785,
+  "source": "https://arxiv.org/pdf/2311.16567",
+  "key": "t30__mobilediffusion_instant_text_to_image_generation_on_mobile_d"
+ },
+ "2411.05007.pdf": {
+  "sha256": "548a48319d6bef7f5f7bbebd6573dc922247cde471f9e670dc1e8bc09653e2dc",
+  "bytes": 38304986,
+  "source": "https://arxiv.org/pdf/2411.05007",
+  "key": "t30__svdquant_absorbing_outliers_by_low_rank_component_for_4_bit_"
+ },
+ "t01_2009_Villani_OT_Old_and_New_preprint.pdf": {
+  "sha256": "80d725bfa2da93f5517d35fab4e35b90a726973559444f6886a8ce9beef63c80",
+  "bytes": 11012935,
+  "source": "survey:t01/2009_Villani_OT_Old_and_New_preprint.pdf",
+  "key": "t01__topics_in_optimal_transportation"
+ },
+ "2003.00855.pdf": {
+  "sha256": "20e9828b86503b75c7e957496d52a558450d1e658103c587c02625fe8d069938",
+  "bytes": 834025,
+  "source": "https://arxiv.org/pdf/2003.00855",
+  "key": "t01__2003.00855"
+ },
+ "2407.18163.pdf": {
+  "sha256": "0e9bf58ea45b1ba4758f88e77e17edfb62ee03930dbab4f9151825759c8a4c3e",
+  "bytes": 2588974,
+  "source": "https://arxiv.org/pdf/2407.18163",
+  "key": "t01__2407.18163"
+ },
+ "1603.05579.pdf": {
+  "sha256": "f9d4d8a861a0b7597176161d88cda06bf36a6c32319e6c48742516b616a79735",
+  "bytes": 1165213,
+  "source": "https://arxiv.org/pdf/1603.05579",
+  "key": "t01__1603.05579"
+ },
+ "2512.06797.pdf": {
+  "sha256": "6ff9139fc691d5369f6350a609d88aa034cb0a114efb3b0d1f7a899392550b01",
+  "bytes": 518294,
+  "source": "https://arxiv.org/pdf/2512.06797",
+  "key": "t01__2512.06797"
+ },
+ "2306.16156.pdf": {
+  "sha256": "a1a531a77e654647d8cb4b3f87de3e1d23e27a57afec68f41e4c4ac82b6c4bf1",
+  "bytes": 4263229,
+  "source": "https://arxiv.org/pdf/2306.16156",
+  "key": "t01__2306.16156"
+ },
+ "2106.01963.pdf": {
+  "sha256": "e959f4d0ea527879cef07f61f8bace194ff6cb06324dd027f8bdeb669491bd95",
+  "bytes": 243930,
+  "source": "https://arxiv.org/pdf/2106.01963",
+  "key": "t01__2106.01963"
+ },
+ "1709.06464.pdf": {
+  "sha256": "eaacc7430d5380fb1ac96873c0d6a98af09647d9e11839f1cf4762c75e281768",
+  "bytes": 103788,
+  "source": "https://arxiv.org/pdf/1709.06464",
+  "key": "t02__1709.06464"
+ },
+ "2311.03886.pdf": {
+  "sha256": "49bab495f1a3d553c378e717c1296425ecc64d4213054e084849420f621f2ee8",
+  "bytes": 9273802,
+  "source": "https://arxiv.org/pdf/2311.03886",
+  "key": "t02__2311.03886"
+ },
+ "2212.06359.pdf": {
+  "sha256": "a51029439f861c666c428acd8c56204abceefad83b957f73c777b7c03626894b",
+  "bytes": 7845464,
+  "source": "https://arxiv.org/pdf/2212.06359",
+  "key": "t02__2212.06359"
+ },
+ "2312.02027.pdf": {
+  "sha256": "a8b2a268e2a8728847738c1d2533c157adf9f604d8a10808e16a1b7df0fa41c3",
+  "bytes": 7816707,
+  "source": "https://arxiv.org/pdf/2312.02027",
+  "key": "t02__2312.02027"
+ },
+ "2403.11262.pdf": {
+  "sha256": "319e47168831877e46e21443719cc7dddcc5876126b6150631882b6b52d2c2ab",
+  "bytes": 2492438,
+  "source": "https://arxiv.org/pdf/2403.11262",
+  "key": "t02__2403.11262"
+ },
+ "2402.06162.pdf": {
+  "sha256": "f67928a244ce41ffa231d040cb32bbc140326f281cce1205ce4bb858ae7a1995",
+  "bytes": 4090246,
+  "source": "https://arxiv.org/pdf/2402.06162",
+  "key": "t02__2402.06162"
+ },
+ "2111.11521.pdf": {
+  "sha256": "1bf313067f12cc1fba2d14dd938b4a4a5c167e2481139c6785dca1b75486e222",
+  "bytes": 651177,
+  "source": "https://arxiv.org/pdf/2111.11521",
+  "key": "t02__2111.11521"
+ },
+ "2603.25182.pdf": {
+  "sha256": "e09c6cd4c7c8db15e72008199979a4a2119a409b53b68ae690c43927296c2f9d",
+  "bytes": 1206828,
+  "source": "https://arxiv.org/pdf/2603.25182",
+  "key": "t02__2603.25182"
+ },
+ "2005.10963.pdf": {
+  "sha256": "ee39a8e0d28e42e71229a1a69372e8c93e0b72eac7d274a316a88faf582c0913",
+  "bytes": 1482709,
+  "source": "https://arxiv.org/pdf/2005.10963",
+  "key": "t03__2005.10963"
+ },
+ "2409.09376.pdf": {
+  "sha256": "7f6a06cea93fd92e402b84d765664671bd2c72f1892ef66d268f8708a8b5e003",
+  "bytes": 866958,
+  "source": "https://arxiv.org/pdf/2409.09376",
+  "key": "t03__2409.09376"
+ },
+ "2510.22560.pdf": {
+  "sha256": "45272a27a4ba8057675fe73daa390e9a82c165db68cc612dc1c5b5cea5128f42",
+  "bytes": 3871395,
+  "source": "https://arxiv.org/pdf/2510.22560",
+  "key": "t03__2510.22560"
+ },
+ "2510.01894.pdf": {
+  "sha256": "818d9e0fbb5936fab2568652d57cf81175593edafc4a947080fbd5bd5e713f3d",
+  "bytes": 7974456,
+  "source": "https://arxiv.org/pdf/2510.01894",
+  "key": "t03__2510.01894"
+ },
+ "2607.03626.pdf": {
+  "sha256": "da2715ae9f7a48dfc9125ce03d904c3ae6530478b1787ddd1901e95ffbd77300",
+  "bytes": 4317531,
+  "source": "https://arxiv.org/pdf/2607.03626",
+  "key": "t03__2607.03626"
+ },
+ "2605.11429.pdf": {
+  "sha256": "5a2abe96007802d3686a5322eb7593985be7382f3eacbc51f160ab09d346d550",
+  "bytes": 1576505,
+  "source": "https://arxiv.org/pdf/2605.11429",
+  "key": "t03__2605.11429"
+ },
+ "2603.18992.pdf": {
+  "sha256": "5e707a69bd7ba57d90625e84bb3b3ffb54da5df485f6dd3a6503d7225f08ffd1",
+  "bytes": 48154507,
+  "source": "https://arxiv.org/pdf/2603.18992",
+  "key": "t03__2603.18992"
+ },
+ "1803.05573.pdf": {
+  "sha256": "ee744062ef5c2b4c9d06e68760f29761bf2017d72516227132cfaa7ebe6e9a0b",
+  "bytes": 3698008,
+  "source": "https://arxiv.org/pdf/1803.05573",
+  "key": "t04__improving_gans_using_optimal_transport"
+ },
+ "1905.11882.pdf": {
+  "sha256": "249376a4f00db89cf29c565cfe895b86d0a48111c2e4115d69248c32614b2c5c",
+  "bytes": 543888,
+  "source": "https://arxiv.org/pdf/1905.11882",
+  "key": "t04__statistical_bounds_for_entropic_optimal_transport_sample_com"
+ },
+ "1810.01118.pdf": {
+  "sha256": "43199948fc8ef6773f5640d7d6440e1e482ff710aeff7af8a5c0ded68dd44575",
+  "bytes": 6251519,
+  "source": "https://arxiv.org/pdf/1810.01118",
+  "key": "t04__sinkhorn_autoencoders"
+ },
+ "2006.08172.pdf": {
+  "sha256": "4cfea7569374f9c0b94eb64abd482badc29c6d9cb5b5b64d7b874f9d48e51c13",
+  "bytes": 1202583,
+  "source": "https://arxiv.org/pdf/2006.08172",
+  "key": "t04__faster_wasserstein_distance_estimation_with_the_sinkhorn_div"
+ },
+ "2202.08919.pdf": {
+  "sha256": "f818237914951fb860c5ef867aecc620776e5542b50538a6b4d5b9ffe0fe608e",
+  "bytes": 819532,
+  "source": "https://arxiv.org/pdf/2202.08919",
+  "key": "t04__debiaser_beware_pitfalls_of_centering_regularized_transport_"
+ },
+ "2205.06688.pdf": {
+  "sha256": "f24da4dd6af5994d0e60e4cfdc4b6da353935f29f481de4fdad6cc1babdce81f",
+  "bytes": 37440550,
+  "source": "https://arxiv.org/pdf/2205.06688",
+  "key": "t04__a_unified_framework_for_implicit_sinkhorn_differentiation"
+ },
+ "2304.06094.pdf": {
+  "sha256": "adcc4a032d3b10b2ae855bc79a60f34a9be5ebee3b2097c41c8222f9448a33bf",
+  "bytes": 32519284,
+  "source": "https://arxiv.org/pdf/2304.06094",
+  "key": "t04__energy_guided_entropic_neural_optimal_transport"
+ },
+ "2605.11755.pdf": {
+  "sha256": "27c13e76a262909df90d2c70b0eb2c1ed16ccb0450911a18f57cf3eb0d784b3a",
+  "bytes": 41309611,
+  "source": "https://arxiv.org/pdf/2605.11755",
+  "key": "t04__2605.11755"
+ },
+ "2112.02424.pdf": {
+  "sha256": "0a7ceebf637c87edf1a09a64aabe0b3cd918d4813fc1a40c460789d5ec3bcac9",
+  "bytes": 14404920,
+  "source": "https://arxiv.org/pdf/2112.02424",
+  "key": "t05__variational_wasserstein_gradient_flow"
+ },
+ "2106.06345.pdf": {
+  "sha256": "9993085c558991b79338cae0f4e3d4d33cfe96efabae440922baf173f044626b",
+  "bytes": 6467939,
+  "source": "https://arxiv.org/pdf/2106.06345",
+  "key": "t05__proximal_optimal_transport_modeling_of_population_dynamics"
+ },
+ "2205.15902.pdf": {
+  "sha256": "c09f4ca16065f3aa0c15a2f9948f6f01ea1f02e0674e3ce620b18f1ba63366f7",
+  "bytes": 2322012,
+  "source": "https://arxiv.org/pdf/2205.15902",
+  "key": "t05__variational_inference_via_wasserstein_gradient_flows"
+ },
+ "2406.12616.pdf": {
+  "sha256": "d127d679ac3200866352d391e5739f5ac6fa234a6c0685bedad44b4d95bc71b1",
+  "bytes": 5453452,
+  "source": "https://arxiv.org/pdf/2406.12616",
+  "key": "t05__learning_diffusion_at_lightspeed"
+ },
+ "2406.08938.pdf": {
+  "sha256": "8462692bc21ebd61e7698c8133a6c21fb4dae5c2fac390ecb20fd06cf6acc446",
+  "bytes": 4114357,
+  "source": "https://arxiv.org/pdf/2406.08938",
+  "key": "t05__mirror_and_preconditioned_gradient_descent_in_wasserstein_sp"
+ },
+ "2407.20444.pdf": {
+  "sha256": "40ae9e29cf98f10ed31325c8094a9810b3753ec36aa50be62740ca80688ed16a",
+  "bytes": 18362781,
+  "source": "https://arxiv.org/pdf/2407.20444",
+  "key": "t05__importance_corrected_neural_jko_sampling"
+ },
+ "2506.07534.pdf": {
+  "sha256": "1798d586f1ae1c415be1c003486986029f59fe85f660750afa49fe6e4d791ab3",
+  "bytes": 12692877,
+  "source": "https://arxiv.org/pdf/2506.07534",
+  "key": "t05__flowing_datasets_with_wasserstein_over_wasserstein_gradient_"
+ },
+ "2308.03686.pdf": {
+  "sha256": "3b32d391e4ae116ced17ac45ba09899e64593ee22342501dbbd69bada2dca961",
+  "bytes": 604709,
+  "source": "https://arxiv.org/pdf/2308.03686",
+  "key": "t06__nearly_d_linear_convergence_bounds_for_diffusion_models_via_"
+ },
+ "2508.16306.pdf": {
+  "sha256": "29e278b3f92a15e84e12aafde49803eb87c109095f222af443ca493b2fcbf35d",
+  "bytes": 872464,
+  "source": "https://arxiv.org/pdf/2508.16306",
+  "key": "t06__2508.16306"
+ },
+ "2410.09046.pdf": {
+  "sha256": "4f4962b23c692e6ce28141764db6383e11342a860ee1c2e8d666ec1ed77bc545",
+  "bytes": 888029,
+  "source": "https://arxiv.org/pdf/2410.09046",
+  "key": "t06__linear_convergence_of_diffusion_models_under_the_manifold_hy"
+ },
+ "2402.15602.pdf": {
+  "sha256": "76fa192bedb199c5ddf0166cd7db66d3cdbc7faac145ad989e8e435d84fdcc32",
+  "bytes": 784619,
+  "source": "https://arxiv.org/pdf/2402.15602",
+  "key": "t06__minimax_optimality_of_score_based_diffusion_models_beyond_th"
+ },
+ "2402.07747.pdf": {
+  "sha256": "77c959c057c280a2e753530824352ebbbea11a4ca18617553703beb34e6aa5b0",
+  "bytes": 415473,
+  "source": "https://arxiv.org/pdf/2402.07747",
+  "key": "t06__optimal_score_estimation_via_empirical_bayes_smoothing"
+ },
+ "2503.09583.pdf": {
+  "sha256": "fccacf7a8b0b95a0063b055362cf15974290b4c2dcedf3b11a6558217fbb933f",
+  "bytes": 739735,
+  "source": "https://arxiv.org/pdf/2503.09583",
+  "key": "t06__2503.09583"
+ },
+ "2305.16860.pdf": {
+  "sha256": "507c441bc918b1a556b4b2a9bbb3634d14ee4dddda4aff868ec37c2016dc14ea",
+  "bytes": 298267,
+  "source": "https://arxiv.org/pdf/2305.16860",
+  "key": "t06__error_bounds_for_flow_matching_methods"
+ },
+ "2107.12364.pdf": {
+  "sha256": "11f0c422e0febff18c7311b89972258221a7e0e371c3b4bf7bb9de285cc9b6aa",
+  "bytes": 1318076,
+  "source": "https://arxiv.org/pdf/2107.12364",
+  "key": "t06__plugin_estimation_of_smooth_optimal_transport_maps"
+ },
+ "2212.03722.pdf": {
+  "sha256": "a89633916f5e8b850b318e8f2bdb0a86776d9bc7720b7acc1ca356daa18a3162",
+  "bytes": 801358,
+  "source": "https://arxiv.org/pdf/2212.03722",
+  "key": "t06__optimal_transport_map_estimation_in_general_function_spaces"
+ },
+ "2209.15571.pdf": {
+  "sha256": "73875aac701bc4ab7c0250afc898ef75dd21ee1b97d9a838cc8b48d8fbc42124",
+  "bytes": 4965097,
+  "source": "https://arxiv.org/pdf/2209.15571",
+  "key": "t07__building_normalizing_flows_with_stochastic_interpolants"
+ },
+ "2210.06662.pdf": {
+  "sha256": "cf1f1dbd28230e1ba45e6a645783a53cc2655ef104e0d49ddef893c50d45785c",
+  "bytes": 5376499,
+  "source": "https://arxiv.org/pdf/2210.06662",
+  "key": "t07__action_matching_learning_stochastic_dynamics_from_samples"
+ },
+ "2306.06626.pdf": {
+  "sha256": "17fd9af01b1068c8ff11ba2b5cb6731a20cbf2c21a6118c68310baea5d097e67",
+  "bytes": 5187267,
+  "source": "https://arxiv.org/pdf/2306.06626",
+  "key": "t07__on_kinetic_optimal_probability_paths_for_generative_models"
+ },
+ "2303.00848.pdf": {
+  "sha256": "df10cd18152cc3c1b0705e73a98be761d80ea93414f096924de9b96975779381",
+  "bytes": 4542975,
+  "source": "https://arxiv.org/pdf/2303.00848",
+  "key": "t07__understanding_diffusion_objectives_as_the_elbo_with_simple_d"
+ },
+ "2310.19075.pdf": {
+  "sha256": "a3a11bd84aaf250ffb2287ea2194bb729fdf317c8710c1c0e0424ae2bdea06be",
+  "bytes": 19484170,
+  "source": "https://arxiv.org/pdf/2310.19075",
+  "key": "t07__bespoke_solvers_for_generative_flow_models"
+ },
+ "2310.03725.pdf": {
+  "sha256": "2668e6bc29b43a4677238d95ed447661184664859e12f1da9786e2af3814fc33",
+  "bytes": 28330545,
+  "source": "https://arxiv.org/pdf/2310.03725",
+  "key": "t07__stochastic_interpolants_with_data_dependent_couplings"
+ },
+ "2401.08740.pdf": {
+  "sha256": "9207ad5e0793761417ea4bb02bee888a5ac565bd7877c4652ed8dc93784a5c46",
+  "bytes": 18937524,
+  "source": "https://arxiv.org/pdf/2401.08740",
+  "key": "t07__sit_exploring_flow_and_diffusion_based_generative_models_wit"
+ },
+ "2502.02150.pdf": {
+  "sha256": "5a76dc211737c3e160a748d44b0c1f5c9efc6b1057e34595300cbdcb9cc39e79",
+  "bytes": 4951862,
+  "source": "https://arxiv.org/pdf/2502.02150",
+  "key": "t07__on_the_guidance_of_flow_matching"
+ },
+ "1910.04091.pdf": {
+  "sha256": "f46ab4caf6a16873fbd3d1a6161427039195a7fd9070d7308e0aabd94fea35a5",
+  "bytes": 8812474,
+  "source": "https://arxiv.org/pdf/1910.04091",
+  "key": "t08__learning_with_minibatch_wasserstein_asymptotic_and_gradient_"
+ },
+ "2102.05912.pdf": {
+  "sha256": "e0fded06efc312d8e13697b8636170132f193070cd1d18f93e167ad51156c773",
+  "bytes": 30723752,
+  "source": "https://arxiv.org/pdf/2102.05912",
+  "key": "t08__on_transportation_of_mini_batches_a_hierarchical_approach"
+ },
+ "2306.15030.pdf": {
+  "sha256": "a13d9d1649a3e2d084c52d4bc275c8a9f60ee218f69c54b6bdafa3cdb8e287b7",
+  "bytes": 4353045,
+  "source": "https://arxiv.org/pdf/2306.15030",
+  "key": "t08__equivariant_flow_matching"
+ },
+ "2405.14780.pdf": {
+  "sha256": "905f10e5acadf2d55cdea9bb8f76fdef364f473650c7021de181ebb1acab936d",
+  "bytes": 20757802,
+  "source": "https://arxiv.org/pdf/2405.14780",
+  "key": "t08__metric_flow_matching_for_smooth_interpolations_on_the_data_m"
+ },
+ "2406.12303.pdf": {
+  "sha256": "3bea50f91c782915337522746fa3ecce6b6dfce9e98daad1c2f97cc2f347e999",
+  "bytes": 27604457,
+  "source": "https://arxiv.org/pdf/2406.12303",
+  "key": "t08__immiscible_diffusion_accelerating_diffusion_training_with_no"
+ },
+ "2509.25519.pdf": {
+  "sha256": "cc39aa7e226a53ed0a1e738093dec0a249ae17a5a0eeaa7c201edb741de7d505",
+  "bytes": 6264047,
+  "source": "https://arxiv.org/pdf/2509.25519",
+  "key": "t08__2509.25519"
+ },
+ "2605.12174.pdf": {
+  "sha256": "e43fef018eb77226be127555f88a4d0a2d2f2d06ab0a364a83b5899a6fad9c3a",
+  "bytes": 4220040,
+  "source": "https://arxiv.org/pdf/2605.12174",
+  "key": "t08__2605.12174"
+ },
+ "2209.14577.pdf": {
+  "sha256": "e9b91e565bafc5394682f8903905b3924654731021689ab4fb4449a11fffc2ec",
+  "bytes": 284967,
+  "source": "https://arxiv.org/pdf/2209.14577",
+  "key": "t09__2209.14577"
+ },
+ "2312.16414.pdf": {
+  "sha256": "1b9eb9f940dc535786764914b82707ccd85c0cb929d53b944d5e9371fbde4cac",
+  "bytes": 16125002,
+  "source": "https://arxiv.org/pdf/2312.16414",
+  "key": "t09__bellman_optimal_stepsize_straightening_of_flow_matching_mode"
+ },
+ "2405.07510.pdf": {
+  "sha256": "afbf24fa1ad3610a85af7281f333929794a7c5e4029bb6463cb436f91e789656",
+  "bytes": 20482166,
+  "source": "https://arxiv.org/pdf/2405.07510",
+  "key": "t09__perflow_piecewise_rectified_flow_as_universal_plug_and_play_"
+ },
+ "2411.00322.pdf": {
+  "sha256": "2db5eeddd49aa6304c987265d2e17c7936267f3461caa68d432361b74ca405ca",
+  "bytes": 13172141,
+  "source": "https://arxiv.org/pdf/2411.00322",
+  "key": "t09__constant_acceleration_flow"
+ },
+ "2407.12718.pdf": {
+  "sha256": "551db90898144ca20c6b207a05010504d57a2827b3554b20107f6a53fd64bf6a",
+  "bytes": 10557291,
+  "source": "https://arxiv.org/pdf/2407.12718",
+  "key": "t09__slimflow_training_smaller_one_step_diffusion_models_with_rec"
+ },
+ "2502.17436.pdf": {
+  "sha256": "6e5539d61c86a3f23e922752864687595c0a9d62c5928a6617d4a6486c5d9480",
+  "bytes": 3764681,
+  "source": "https://arxiv.org/pdf/2502.17436",
+  "key": "t09__towards_hierarchical_rectified_flow"
+ },
+ "2410.14949.pdf": {
+  "sha256": "cf8e2772e51e8628dce6c0a4c900622931466ee5e0b61504ab54d84c99480844",
+  "bytes": 1594809,
+  "source": "https://arxiv.org/pdf/2410.14949",
+  "key": "t09__2410.14949"
+ },
+ "2507.10218.pdf": {
+  "sha256": "986444d2fe7050f2afa9a86efa2abaa6f52047f1d2389c6e76c79d5ffaec7a04",
+  "bytes": 7563999,
+  "source": "https://arxiv.org/pdf/2507.10218",
+  "key": "t09__straighten_viscous_rectified_flow_via_noise_optimization"
+ },
+ "2506.15742.pdf": {
+  "sha256": "86c8acc1ca714fa463f02315d849a81b5d746c4da4ecb50743b9d672311f916b",
+  "bytes": 16533584,
+  "source": "https://arxiv.org/pdf/2506.15742",
+  "key": "t09__2506.15742"
+ },
+ "2310.14189.pdf": {
+  "sha256": "2c77b5ae689be478b2afe9f3a8149b4e4755a357c67be0a0c96fa06ac0d45b31",
+  "bytes": 20443727,
+  "source": "https://arxiv.org/pdf/2310.14189",
+  "key": "t10__improved_techniques_for_training_consistency_models"
+ },
+ "2311.17042.pdf": {
+  "sha256": "28015be15dcde164f79264c4a45bf0052fd31552e3f982bdf40eaaab97f148d9",
+  "bytes": 24239957,
+  "source": "https://arxiv.org/pdf/2311.17042",
+  "key": "t10__adversarial_diffusion_distillation"
+ },
+ "t10_2024_Dou_Theory_Consistency_Diffusion_Models.pdf": {
+  "sha256": "e6409dfb6ddce105eb1709bd5d67a2af9d1f461c8f3852f4aa2a420ef1c5fedf",
+  "bytes": 1038583,
+  "source": "survey:t10/2024_Dou_Theory_Consistency_Diffusion_Models.pdf",
+  "key": "t10__theory_of_consistency_diffusion_models"
+ },
+ "2402.07802.pdf": {
+  "sha256": "a1c85af6ab18d0049690364b4a3d3d71ab7a66e39ea44ccc8d418a7ff5a02a0e",
+  "bytes": 467465,
+  "source": "https://arxiv.org/pdf/2402.07802",
+  "key": "t10__towards_a_mathematical_theory_for_consistency_training"
+ },
+ "2410.12557.pdf": {
+  "sha256": "70ab8146e470dd92d136b2e956a70e9fa1e7b12a0bedd07c45a3b4444201b4ca",
+  "bytes": 11422475,
+  "source": "https://arxiv.org/pdf/2410.12557",
+  "key": "t10__one_step_diffusion_via_shortcut_models"
+ },
+ "2010.02502.pdf": {
+  "sha256": "07cb8796d7c100bf7c02bc575f16aab72c32630a8f85abd54ad45dc4f63e80fb",
+  "bytes": 10857218,
+  "source": "https://arxiv.org/pdf/2010.02502",
+  "key": "t11__2010.02502"
+ },
+ "2211.01095.pdf": {
+  "sha256": "3c1c0e8b69029eff529207633e9f8d76868d32891bdba21cac3bed4bfc222fe5",
+  "bytes": 10227857,
+  "source": "https://arxiv.org/pdf/2211.01095",
+  "key": "t11__2211.01095"
+ },
+ "2204.13902.pdf": {
+  "sha256": "f076c969b41c89db864bacf45918e57277b2085096f812dd1ed2fb91795434f2",
+  "bytes": 13817748,
+  "source": "https://arxiv.org/pdf/2204.13902",
+  "key": "t11__2204.13902"
+ },
+ "2302.04867.pdf": {
+  "sha256": "d62e2d34273c09e23947095ca6e942739799d22fbe7cef22035a2a19664c577a",
+  "bytes": 15308059,
+  "source": "https://arxiv.org/pdf/2302.04867",
+  "key": "t11__2302.04867"
+ },
+ "2310.13268.pdf": {
+  "sha256": "f290a6aa0f20da8fbb80d13b7897d2b28805f528f032fce565d5d3be6e5613c5",
+  "bytes": 8426050,
+  "source": "https://arxiv.org/pdf/2310.13268",
+  "key": "t11__2310.13268"
+ },
+ "2402.17376.pdf": {
+  "sha256": "c2b02ed0bea7f09c7ccec0d98371f552b663ca809ed577d39ebd4ebfd7be447b",
+  "bytes": 4454450,
+  "source": "https://arxiv.org/pdf/2402.17376",
+  "key": "t11__2402.17376"
+ },
+ "2403.01329.pdf": {
+  "sha256": "1e5658055384e03f5a90404e5d68fe3d0f878f15828806efdbc4f92bde29323b",
+  "bytes": 24677497,
+  "source": "https://arxiv.org/pdf/2403.01329",
+  "key": "t11__2403.01329"
+ },
+ "2405.15506.pdf": {
+  "sha256": "3130561ea8344bfbe2653b14764ff10d77a2721cc57bd02101c113f3125ab0c8",
+  "bytes": 20380823,
+  "source": "https://arxiv.org/pdf/2405.15506",
+  "key": "t11__2405.15506"
+ },
+ "2408.08822.pdf": {
+  "sha256": "2fb87c21830e19f02cf6eca193ffa6c4195558def206b6a52a3a27038027a41c",
+  "bytes": 5094526,
+  "source": "https://arxiv.org/pdf/2408.08822",
+  "key": "t11__2408.08822"
+ },
+ "2503.21774.pdf": {
+  "sha256": "8a12073bb4259e365492c9e24b905ff1a576d3110aa56a239fa3194e09ca5a28",
+  "bytes": 44046883,
+  "source": "https://arxiv.org/pdf/2503.21774",
+  "key": "t11__2503.21774"
+ },
+ "2512.22796.pdf": {
+  "sha256": "2c3b8f8d91a99d1ec16ce4d24dc294f5a123046c8f048393a0b4c1c28c910d6b",
+  "bytes": 11253683,
+  "source": "https://arxiv.org/pdf/2512.22796",
+  "key": "t11__2512.22796"
+ },
+ "2506.10177.pdf": {
+  "sha256": "e3525d0a07fcadf62eed5afa6d42f3ceff96956387c9bc5356ddfcef37d6a507",
+  "bytes": 31431979,
+  "source": "https://arxiv.org/pdf/2506.10177",
+  "key": "t11__2506.10177"
+ },
+ "2510.02390.pdf": {
+  "sha256": "b636b80e5804ffa8c502f0ef93e12f695d158be46e7785169cd6d6179b4c8303",
+  "bytes": 8712830,
+  "source": "https://arxiv.org/pdf/2510.02390",
+  "key": "t11__2510.02390"
+ },
+ "2603.00763.pdf": {
+  "sha256": "1097263149b1a1765c54a84956b9f23d38a6b905b546e466b6d534db9e51cfba",
+  "bytes": 12422588,
+  "source": "https://arxiv.org/pdf/2603.00763",
+  "key": "t11__2603.00763"
+ },
+ "2505.18521.pdf": {
+  "sha256": "bad77c4f1403941d27225d6391f6b32eb419cc873710953027353def1714398e",
+  "bytes": 6792296,
+  "source": "https://arxiv.org/pdf/2505.18521",
+  "key": "t12__2505.18521"
+ },
+ "2403.05069.pdf": {
+  "sha256": "4df9339388c730ca1af4fad687e5a04d3b046c874fb1efe8adf047585b52058c",
+  "bytes": 3708578,
+  "source": "https://arxiv.org/pdf/2403.05069",
+  "key": "t12__2403.05069"
+ },
+ "2404.04650.pdf": {
+  "sha256": "6de8cbc3d8adb7de87cb8bada46e22459f3c53ff0945041660a14855d646fca5",
+  "bytes": 7972547,
+  "source": "https://arxiv.org/pdf/2404.04650",
+  "key": "t12__2404.04650"
+ },
+ "2406.04312.pdf": {
+  "sha256": "dfe2912dfaba37b7c84f1793522c0982f686379e8189bb98b3db1a72b07e15ce",
+  "bytes": 17726434,
+  "source": "https://arxiv.org/pdf/2406.04312",
+  "key": "t12__reno_enhancing_one_step_text_to_image_models_through_reward_"
+ },
+ "2412.03895.pdf": {
+  "sha256": "5a189ee1e19b51fe16ee05bdf7f0960c7292a89f8f07b06e5f33c3cbfdc108ef",
+  "bytes": 41922586,
+  "source": "https://arxiv.org/pdf/2412.03895",
+  "key": "t12__2412.03895"
+ },
+ "2412.05101.pdf": {
+  "sha256": "a5f36331b6650258ec2c117e82802f33c5592310e2785da7f5997fb198f08408",
+  "bytes": 18127380,
+  "source": "https://arxiv.org/pdf/2412.05101",
+  "key": "t12__the_silent_assistant_noisequery_as_implicit_guidance_for_goa"
+ },
+ "2501.08331.pdf": {
+  "sha256": "fc18aff26cc2ac3a79219f3a3f1d313bf1870c820767cd8bd69a5a19c5e0980b",
+  "bytes": 53747853,
+  "source": "https://arxiv.org/pdf/2501.08331",
+  "key": "t12__go_with_the_flow_motion_controllable_video_diffusion_models_"
+ },
+ "2205.15269.pdf": {
+  "sha256": "e6ffb2abfc8e338f31974cdb9ecc62d46a9e778d942faf9486816c3135d86d22",
+  "bytes": 28658909,
+  "source": "https://arxiv.org/pdf/2205.15269",
+  "key": "t13__kernel_neural_optimal_transport"
+ },
+ "2106.03812.pdf": {
+  "sha256": "1433a642436035744b8533da3a463a9555309ea9ee18a59ed3a474dae4ef96cd",
+  "bytes": 16830943,
+  "source": "https://arxiv.org/pdf/2106.03812",
+  "key": "t13__neural_monge_map_estimation_and_its_applications"
+ },
+ "2302.04953.pdf": {
+  "sha256": "7cb25bae600195fbfd9d69bccffd48e29d507aed2b36b30e0da5de4ac7833c36",
+  "bytes": 2641693,
+  "source": "https://arxiv.org/pdf/2302.04953",
+  "key": "t13__the_monge_gap_a_regularizer_to_learn_all_transport_maps"
+ },
+ "2301.12874.pdf": {
+  "sha256": "c83b8d46ad804897634e602393c8e8a421813f077da5497e138ba20d374dddea",
+  "bytes": 27810192,
+  "source": "https://arxiv.org/pdf/2301.12874",
+  "key": "t13__extremal_domain_translation_with_neural_optimal_transport"
+ },
+ "2310.02611.pdf": {
+  "sha256": "9b9fe688f1909ee55460edfd9b318395f07e15742dc5f2bc238f141e6331831e",
+  "bytes": 40845384,
+  "source": "https://arxiv.org/pdf/2310.02611",
+  "key": "t13__analyzing_and_improving_optimal_transport_based_adversarial_"
+ },
+ "2311.15100.pdf": {
+  "sha256": "a658f430199dd3e65ad821e3b687d81cdab416df54a7173f5f4af6075e005c74",
+  "bytes": 10758962,
+  "source": "https://arxiv.org/pdf/2311.15100",
+  "key": "t13__unbalancedness_in_neural_monge_maps_improves_unpaired_domain"
+ },
+ "2205.15403.pdf": {
+  "sha256": "1c37aadcc61bfca31224855c6cba2bd64fc0c0d16c2bb6a76e06ecdc0b968d10",
+  "bytes": 27814162,
+  "source": "https://arxiv.org/pdf/2205.15403",
+  "key": "t13__neural_optimal_transport_with_general_cost_functionals"
+ },
+ "2410.03783.pdf": {
+  "sha256": "62cd39c49856e64446eed6907ca5ce51768bc1b0fcb6052d61e2dec0fb46c95e",
+  "bytes": 12862890,
+  "source": "https://arxiv.org/pdf/2410.03783",
+  "key": "t13__improving_neural_optimal_transport_via_displacement_interpol"
+ },
+ "2603.06972.pdf": {
+  "sha256": "ebd4b939d54ba4214ddc2e910c6105a702c7037b7411d4d827e5a173a701b28c",
+  "bytes": 14219958,
+  "source": "https://arxiv.org/pdf/2603.06972",
+  "key": "t13__2603.06972"
+ },
+ "t14_2023_Li_bbdm_brownian_bridge_diffusion.pdf": {
+  "sha256": "0fc26fa07609808e356914e523e58796efe8659df4ec7d5be43ee16bfa62f211",
+  "bytes": 23294703,
+  "source": "survey:t14/2023_Li_bbdm_brownian_bridge_diffusion.pdf",
+  "key": "t14__bbdm_brownian_bridge_diffusion_models"
+ },
+ "2410.22637.pdf": {
+  "sha256": "7643c133b94df28a18b05c9a2878e14b2702c31113e5d4e8018deef81aff47b4",
+  "bytes": 29088055,
+  "source": "https://arxiv.org/pdf/2410.22637",
+  "key": "t14__cdbm_consistency_diffusion_bridge_models"
+ },
+ "1909.12116.pdf": {
+  "sha256": "99870da0923ccfdc8f84f2ea31ee049149d49395a1cedc157c3fc0ae544e7bba",
+  "bytes": 5503157,
+  "source": "https://arxiv.org/pdf/1909.12116",
+  "key": "t15__1909.12116"
+ },
+ "2403.06069.pdf": {
+  "sha256": "0a38ee63bfb20496f81bab8b4c8225166caebfde9b25f24fc403f0ff5f45d638",
+  "bytes": 40441379,
+  "source": "https://arxiv.org/pdf/2403.06069",
+  "key": "t15__2403.06069"
+ },
+ "2501.14171.pdf": {
+  "sha256": "98e5c4e19bc2e597b3087ddcee0ff82c1a26026b84a90040d788ba6ae8281680",
+  "bytes": 7002000,
+  "source": "https://arxiv.org/pdf/2501.14171",
+  "key": "t15__2501.14171"
+ },
+ "2607.07401.pdf": {
+  "sha256": "734aba85eb0d1c4f0f924b359f7b4b12f850b8c1287f96945ccc2e6e1f051b54",
+  "bytes": 27418629,
+  "source": "https://arxiv.org/pdf/2607.07401",
+  "key": "t15__2607.07401"
+ },
+ "2503.00266.pdf": {
+  "sha256": "0b0d6a82910ce4c7553f3b8b8c8e95dbc5d233435e3e1a529638ef6378519b9d",
+  "bytes": 11882384,
+  "source": "https://arxiv.org/pdf/2503.00266",
+  "key": "t15__2503.00266"
+ },
+ "2505.03114.pdf": {
+  "sha256": "7b66484bd47bab711f9b34b95800a78b34bd57eb4001ccb7dbbe086045b93d3f",
+  "bytes": 9469512,
+  "source": "https://arxiv.org/pdf/2505.03114",
+  "key": "t15__path_and_bone_contour_regularized_unpaired_mri_to_ct_transla"
+ },
+ "2106.10482.pdf": {
+  "sha256": "63f213365f80b7c468cda2e1386955dbf14e66d00e7d471704d0365ab4245b7c",
+  "bytes": 2665370,
+  "source": "https://arxiv.org/pdf/2106.10482",
+  "key": "t16__unite_unbalanced_feature_transport_for_exemplar_based_image_"
+ },
+ "2110.11773.pdf": {
+  "sha256": "6b129d1de267b89b3fd09352d19bd6ac5fb5345379ca08600484de851a40a9de",
+  "bytes": 1117187,
+  "source": "https://arxiv.org/pdf/2110.11773",
+  "key": "t16__sinkformers_transformers_with_doubly_stochastic_attention"
+ },
+ "2204.08472.pdf": {
+  "sha256": "45c136dad04701b01cfd7a2f342716aa92e51a892ea5431242aeacf90336dfde",
+  "bytes": 6484651,
+  "source": "https://arxiv.org/pdf/2204.08472",
+  "key": "t16__simultaneous_multiple_prompt_guided_generation_using_differe"
+ },
+ "2210.01253.pdf": {
+  "sha256": "7d414c07d486b4705736fc6287d863618ef9fad67f6bc8eaad6419807cf136d2",
+  "bytes": 2260251,
+  "source": "https://arxiv.org/pdf/2210.01253",
+  "key": "t16__plot_prompt_learning_with_optimal_transport_for_vision_langu"
+ },
+ "2602.03105.pdf": {
+  "sha256": "6b83463295cf214cf0c1347fb6cfc025cd49f27dd5bf6a73543f0795b50cddd0",
+  "bytes": 3285637,
+  "source": "https://arxiv.org/pdf/2602.03105",
+  "key": "t16__2602.03105"
+ },
+ "2601.08011.pdf": {
+  "sha256": "5b6b401888cda9b92ea9d4fa6bf1170f83b8a90743768ac85ead04d6984a6f17",
+  "bytes": 4454128,
+  "source": "https://arxiv.org/pdf/2601.08011",
+  "key": "t16__2601.08011"
+ },
+ "2508.02363.pdf": {
+  "sha256": "90970862023d80f9b2f02983105fcb2e5543a87755c9223c0ad707aa6ae149ac",
+  "bytes": 35681082,
+  "source": "https://arxiv.org/pdf/2508.02363",
+  "key": "t16__2508.02363"
+ },
+ "2503.19062.pdf": {
+  "sha256": "c9228e04127fa91dd33fade33bad78ce7a28cc2ddea2edd544dd270c54a67449",
+  "bytes": 16940197,
+  "source": "https://arxiv.org/pdf/2503.19062",
+  "key": "t17__color_transfer_with_modulated_flows"
+ },
+ "2409.17917.pdf": {
+  "sha256": "11aa456cd28c5a0e237715654b58de9bf571f61f705a0ab65b5b86f77a2b5dfe",
+  "bytes": 8976699,
+  "source": "https://arxiv.org/pdf/2409.17917",
+  "key": "t17__wast_3d_wasserstein_2_distance_for_scene_to_scene_stylizatio"
+ },
+ "2412.02214.pdf": {
+  "sha256": "1b5c3763344a8cbf97393951e9ed1232f8af7ca5d54dd444bbbaec5c777ff08c",
+  "bytes": 6883523,
+  "source": "https://arxiv.org/pdf/2412.02214",
+  "key": "t17__2412.02214"
+ },
+ "2312.07311.pdf": {
+  "sha256": "d77434ba2fb958dbba0a6e3f628efe35f036effe09235bd0b85257b5319f1750",
+  "bytes": 8891197,
+  "source": "https://arxiv.org/pdf/2312.07311",
+  "key": "t17__scalable_motion_style_transfer_with_constrained_diffusion_ge"
+ },
+ "2006.07229.pdf": {
+  "sha256": "10323a1434a5260108ccad9420ddfa695631ae5e9b41fbd7c1af2197b6b9c08a",
+  "bytes": 6425367,
+  "source": "https://arxiv.org/pdf/2006.07229",
+  "key": "t17__a_sliced_wasserstein_loss_for_neural_texture_synthesis"
+ },
+ "1904.12785.pdf": {
+  "sha256": "900fd31d2a8463c55942c54bcda63c14b7dd2cce27f82b379c70ce60dddbb1b4",
+  "bytes": 9358970,
+  "source": "https://arxiv.org/pdf/1904.12785",
+  "key": "t17__style_transfer_by_relaxed_optimal_transport_and_self_similar"
+ },
+ "2602.01179.pdf": {
+  "sha256": "aefc05550856c96bb7e78ab702be984ea36e097b84700693ae5840313766d195",
+  "bytes": 3558468,
+  "source": "https://arxiv.org/pdf/2602.01179",
+  "key": "t17__rethinking_flow_based_gradual_domain_adaptation_via_semi_dua"
+ },
+ "2503.22984.pdf": {
+  "sha256": "dc698077094a6034481e7c2a692722da38cdcfd88389f3d605a16bda6e541c51",
+  "bytes": 1424277,
+  "source": "https://arxiv.org/pdf/2503.22984",
+  "key": "t17__optimal_transport_guided_source_free_adaptation_for_face_ant"
+ },
+ "2504.03188.pdf": {
+  "sha256": "5f3068de545c1e55b5ec3ac8b5c32a8b7ac441187335a305ce9b4c0c019b3193",
+  "bytes": 15942698,
+  "source": "https://arxiv.org/pdf/2504.03188",
+  "key": "t17__2504.03188"
+ },
+ "2311.05672.pdf": {
+  "sha256": "870ae0faefdc7627c50e64b1af4217c145cc64db3c97202ba3a2aba21b8d712c",
+  "bytes": 2879272,
+  "source": "https://arxiv.org/pdf/2311.05672",
+  "key": "t18__conditional_optimal_transport_on_function_spaces"
+ },
+ "2310.16975.pdf": {
+  "sha256": "ad8f14ea0d5bfc019ac86becde53b3b52a4889787f63597c38caf6e87e0e20e1",
+  "bytes": 13980980,
+  "source": "https://arxiv.org/pdf/2310.16975",
+  "key": "t18__2310.16975"
+ },
+ "2502.06061.pdf": {
+  "sha256": "b3efb0d10c07db17a2cc64c91c704d4b61d3a3e41a25799cc858f867f6a9e57c",
+  "bytes": 39819696,
+  "source": "https://arxiv.org/pdf/2502.06061",
+  "key": "t18__online_reward_weighted_fine_tuning_of_flow_matching_with_was"
+ },
+ "2409.13074.pdf": {
+  "sha256": "9e87c549007eaf48090858db1b56bc0a57cb10aecf6db6efd75afec5c40b9c3e",
+  "bytes": 3434009,
+  "source": "https://arxiv.org/pdf/2409.13074",
+  "key": "t18__what_does_guidance_do_a_fine_grained_analysis_in_a_simple_se"
+ },
+ "2403.01639.pdf": {
+  "sha256": "3d5806c5666329c0c188b7f97157ece11ff3cd78e8fa45ff5d68f0e5933f2954",
+  "bytes": 12111190,
+  "source": "https://arxiv.org/pdf/2403.01639",
+  "key": "t18__theoretical_insights_for_diffusion_guidance_a_case_study_for"
+ },
+ "2408.09000.pdf": {
+  "sha256": "4996614b6340c439307bd691b2fa7b2366e7459c72611fbfee67827bee4d1629",
+  "bytes": 26231135,
+  "source": "https://arxiv.org/pdf/2408.09000",
+  "key": "t18__2408.09000"
+ },
+ "2304.12824.pdf": {
+  "sha256": "f3f9baf6e195f630095c633ddc586c0b9852473da48e1ff0e8c4e3df51ac39a2",
+  "bytes": 5718141,
+  "source": "https://arxiv.org/pdf/2304.12824",
+  "key": "t18__contrastive_energy_prediction_for_exact_energy_guided_diffus"
+ },
+ "2512.11438.pdf": {
+  "sha256": "41723ff66c622f7332a3a590ce7f0e26c0faddc89e1fdf2b85d579e63d37c0dc",
+  "bytes": 37879761,
+  "source": "https://arxiv.org/pdf/2512.11438",
+  "key": "t19__flowception_temporally_expansive_flow_matching_for_video_gen"
+ },
+ "2410.15371.pdf": {
+  "sha256": "813e4abadec8aa5db561b145e23b95a3a7aaa3e95e89501048b391ceaa36d072",
+  "bytes": 1577290,
+  "source": "https://arxiv.org/pdf/2410.15371",
+  "key": "t19__framebridge_improving_image_to_video_generation_with_bridge_"
+ },
+ "2501.08316.pdf": {
+  "sha256": "0f466f153647f4c9bb27a5bf88e79c83f3f0ebca5456d6edb1a1e1b7813f3b46",
+  "bytes": 10178481,
+  "source": "https://arxiv.org/pdf/2501.08316",
+  "key": "t19__2501.08316"
+ },
+ "2506.09350.pdf": {
+  "sha256": "c42233c8161b4255fb13239cade2a986417df30b239dfe3914dca0c73eacdb9e",
+  "bytes": 8840694,
+  "source": "https://arxiv.org/pdf/2506.09350",
+  "key": "t19__2506.09350"
+ },
+ "2507.03745.pdf": {
+  "sha256": "73a14d98a0c49c73883ae695deeb2d40d60ab52dc111cdee3ecaa6f1d0a73849",
+  "bytes": 30257172,
+  "source": "https://arxiv.org/pdf/2507.03745",
+  "key": "t19__streamdit_real_time_streaming_text_to_video_generation"
+ },
+ "2503.06674.pdf": {
+  "sha256": "3f461aefc29b5e2c76903004d01f68da4f7bc738bea4521e9fe2a74437903c22",
+  "bytes": 8836293,
+  "source": "https://arxiv.org/pdf/2503.06674",
+  "key": "t19__2503.06674"
+ },
+ "2405.18750.pdf": {
+  "sha256": "528beed586d772a893418383d2a7197a28181bde3cc075287d8a33159db325a4",
+  "bytes": 19316011,
+  "source": "https://arxiv.org/pdf/2405.18750",
+  "key": "t19__2405.18750"
+ },
+ "2411.04746.pdf": {
+  "sha256": "1a601921def416b7ad86e3f5f71bc019f18d6b2ce57a464af77479fbb3b1a20a",
+  "bytes": 11644690,
+  "source": "https://arxiv.org/pdf/2411.04746",
+  "key": "t19__2411.04746"
+ },
+ "2501.00103.pdf": {
+  "sha256": "8fe05881bca97f0303e56a7ad0c293d1502df6b95d71c2f5d202a90bd5a58cc9",
+  "bytes": 13109286,
+  "source": "https://arxiv.org/pdf/2501.00103",
+  "key": "t19__2501.00103"
+ },
+ "2506.09534.pdf": {
+  "sha256": "ee710832f1073f0d59b9a887daadd7f2564e1b7ee00f9ef199bb69f99bc179ac",
+  "bytes": 15634506,
+  "source": "https://arxiv.org/pdf/2506.09534",
+  "key": "t20__gaussian_herding_across_pens_an_optimal_transport_perspectiv"
+ },
+ "2212.01747.pdf": {
+  "sha256": "613f63def12753828f7c69425930c75ce7e7a38cf022ca93d03ed8ffce77fd32",
+  "bytes": 23044366,
+  "source": "https://arxiv.org/pdf/2212.01747",
+  "key": "t20__fast_point_cloud_generation_with_straight_flows"
+ },
+ "2502.06608.pdf": {
+  "sha256": "8592c8405bc47aa722d324b8a8f9e3b084c8442faec13684201ceda3186d55bc",
+  "bytes": 48217408,
+  "source": "https://arxiv.org/pdf/2502.06608",
+  "key": "t20__2502.06608"
+ },
+ "2511.18679.pdf": {
+  "sha256": "e3af60ffdda15301140c9b9dbacd99ce8fd36e1549c30a93f23334d2d93f636c",
+  "bytes": 26786552,
+  "source": "https://arxiv.org/pdf/2511.18679",
+  "key": "t20__2511.18679"
+ },
+ "2403.01781.pdf": {
+  "sha256": "f1dabc47cb4272cb25c035e150f25e6c091207de8a14a424263018587b2d4e92",
+  "bytes": 8997977,
+  "source": "https://arxiv.org/pdf/2403.01781",
+  "key": "t20__integrating_efficient_optimal_transport_and_functional_maps_"
+ },
+ "2405.20313.pdf": {
+  "sha256": "1967ec7ad1c3d6e79ecb4ab786e6e96252323bd067445a8409dbf7d8723618ba",
+  "bytes": 13809641,
+  "source": "https://arxiv.org/pdf/2405.20313",
+  "key": "t21__2405.20313"
+ },
+ "2401.04082.pdf": {
+  "sha256": "ac7625f9d7ef046ff60042ea22eb792f6851a0a10c55699658114b222fb16e4a",
+  "bytes": 8866057,
+  "source": "https://arxiv.org/pdf/2401.04082",
+  "key": "t21__improved_motif_scaffolding_with_se_flow_matching"
+ },
+ "2406.14426.pdf": {
+  "sha256": "eb76899edb45c448c2bd0e56dbc0cecdb502b13d0ab390e33c822b1749feaeab",
+  "bytes": 6597146,
+  "source": "https://arxiv.org/pdf/2406.14426",
+  "key": "t21__2406.14426"
+ },
+ "2402.04997.pdf": {
+  "sha256": "182ddfb2871ce2d07e40b83f507b6ae356634af1961e049cc6d2fa67f5bed374",
+  "bytes": 8488381,
+  "source": "https://arxiv.org/pdf/2402.04997",
+  "key": "t21__2402.04997"
+ },
+ "2410.23405.pdf": {
+  "sha256": "ed872d7b3e30d5891e75eda89dfa5741493c9a8b0aaec4ac93321565714c45dd",
+  "bytes": 798347,
+  "source": "https://arxiv.org/pdf/2410.23405",
+  "key": "t21__2410.23405"
+ },
+ "2502.02582.pdf": {
+  "sha256": "0d71a5aefbc9ad6bf12dfee0af966208352e68eaf7122221ee205c164d4431e5",
+  "bytes": 9822679,
+  "source": "https://arxiv.org/pdf/2502.02582",
+  "key": "t21__2502.02582"
+ },
+ "2412.10966.pdf": {
+  "sha256": "27c4a4608d804ce230572214d775de11940cab8a9eef8b2d3be4e3683e527145",
+  "bytes": 11972353,
+  "source": "https://arxiv.org/pdf/2412.10966",
+  "key": "t21__2412.10966"
+ },
+ "2107.03006.pdf": {
+  "sha256": "80406c2c520bac1e202013aca713f0ed7d90d85ea5057165361f02ef4727d14b",
+  "bytes": 4561360,
+  "source": "https://arxiv.org/pdf/2107.03006",
+  "key": "t22__2107.03006"
+ },
+ "2406.07524.pdf": {
+  "sha256": "d3f6e01211777db2145d55fb51826eff0f9c1bfe315b142540973f35b626be35",
+  "bytes": 1034628,
+  "source": "https://arxiv.org/pdf/2406.07524",
+  "key": "t22__2406.07524"
+ },
+ "2406.04329.pdf": {
+  "sha256": "0f189ad10105962d056f0d841effec76e7e3d2bc993f3242d047ac29b3e21a06",
+  "bytes": 1965340,
+  "source": "https://arxiv.org/pdf/2406.04329",
+  "key": "t22__2406.04329"
+ },
+ "2502.09992.pdf": {
+  "sha256": "18942f14544d696bef711acd43c84017e51b8428b15edc74130761218e66f73b",
+  "bytes": 2497382,
+  "source": "https://arxiv.org/pdf/2502.09992",
+  "key": "t22__large_language_diffusion_models"
+ },
+ "2503.09573.pdf": {
+  "sha256": "d57ae21f556a9c1d5d5a95b2067d3232933be2d421b484bea7cc2b39b980ce92",
+  "bytes": 862037,
+  "source": "https://arxiv.org/pdf/2503.09573",
+  "key": "t22__2503.09573"
+ },
+ "2506.09018.pdf": {
+  "sha256": "04c05af1be364b290b23cde533a9c8579a92a77a1bf3c0d8505ac9d0fe26927a",
+  "bytes": 1317528,
+  "source": "https://arxiv.org/pdf/2506.09018",
+  "key": "t22__2506.09018"
+ },
+ "2506.10892.pdf": {
+  "sha256": "73ee4dec13a3ae18ee755374619cce1a064234c5636a3e8fe8d9da64f6a71da9",
+  "bytes": 1346170,
+  "source": "https://arxiv.org/pdf/2506.10892",
+  "key": "t22__2506.10892"
+ },
+ "2410.08709.pdf": {
+  "sha256": "257e4bafcce658a7af82081b48d8f88324b1b0cdf5982cad027e4b4bbf4c2461",
+  "bytes": 3286737,
+  "source": "https://arxiv.org/pdf/2410.08709",
+  "key": "t22__distillation_of_discrete_diffusion_through_dimensional_corre"
+ },
+ "2412.14528.pdf": {
+  "sha256": "91f7dd9316456b9fb8130572f359143d4acace8f88a3aa4509b61640be39faf1",
+  "bytes": 1535349,
+  "source": "https://arxiv.org/pdf/2412.14528",
+  "key": "t22__multi_level_optimal_transport_for_universal_cross_tokenizer_"
+ },
+ "2410.21035.pdf": {
+  "sha256": "44968521e74427ff9f06db874cd6f7012eaffc3c3e79ffcdbc66d292462c28f4",
+  "bytes": 1918107,
+  "source": "https://arxiv.org/pdf/2410.21035",
+  "key": "t22__2410.21035"
+ },
+ "2410.07761.pdf": {
+  "sha256": "d693cddcd117c316261a9a97f2a76c0b040999327fab812f1aef2066e614b44f",
+  "bytes": 2274271,
+  "source": "https://arxiv.org/pdf/2410.07761",
+  "key": "t22__2410.07761"
+ },
+ "2406.03736.pdf": {
+  "sha256": "cb57a2826955f5ed65f30f80d545768ac1c0d237547dcf78effa2486a99aeef6",
+  "bytes": 943316,
+  "source": "https://arxiv.org/pdf/2406.03736",
+  "key": "t22__2406.03736"
+ },
+ "2402.17110.pdf": {
+  "sha256": "5908c1a1d26c5cda4016567b3ec894e68dbbf8f7815ee5ede7b342e07497f18d",
+  "bytes": 1068195,
+  "source": "https://arxiv.org/pdf/2402.17110",
+  "key": "t22__2402.17110"
+ },
+ "2402.12030.pdf": {
+  "sha256": "ed26679bdc6710c3d94bd095af3e70481506590373a9ce165f184e15295cee80",
+  "bytes": 1408953,
+  "source": "https://arxiv.org/pdf/2402.12030",
+  "key": "t22__2402.12030"
+ },
+ "2505.18720.pdf": {
+  "sha256": "14df14b919a706bfe52fcab751ee6a59ea5aac0465e5328fc20290c33def6d7e",
+  "bytes": 2150303,
+  "source": "https://arxiv.org/pdf/2505.18720",
+  "key": "t22__optimal_transport_based_token_weighting_for_preference_optim"
+ },
+ "2402.08095.pdf": {
+  "sha256": "93882493cddf709a532a640135e0e4730d86d224fa822c3af97cfaaabcad04db",
+  "bytes": 249078,
+  "source": "https://arxiv.org/pdf/2402.08095",
+  "key": "t22__convergence_analysis_of_discrete_diffusion_model_exact_imple"
+ },
+ "2602.15008.pdf": {
+  "sha256": "cde708ff38bc8a6400d042b0d56c2504cfd2fdc2fcbfd053f969c91974cf566c",
+  "bytes": 1153148,
+  "source": "https://arxiv.org/pdf/2602.15008",
+  "key": "t22__efficient_sampling_with_discrete_diffusion_models_sharp_and_"
+ },
+ "2605.17232.pdf": {
+  "sha256": "4f15c21933bdbde680d4734aee58d1b3b4e6f1244b977d4e506d619d536e99a4",
+  "bytes": 625446,
+  "source": "https://arxiv.org/pdf/2605.17232",
+  "key": "t22__2605.17232"
+ },
+ "2605.00161.pdf": {
+  "sha256": "f4db928e1cc2da5b10854b83d3843b8657f9e9de34bd4ac1ae5b8133f53ddc5b",
+  "bytes": 780589,
+  "source": "https://arxiv.org/pdf/2605.00161",
+  "key": "t22__2605.00161"
+ },
+ "2508.15487.pdf": {
+  "sha256": "461f5ac618e86dd398af3662958178c3c243ee97b7e5ee9c20f5ed6399107a0d",
+  "bytes": 1264507,
+  "source": "https://arxiv.org/pdf/2508.15487",
+  "key": "t22__2508.15487"
+ },
+ "2601.07568.pdf": {
+  "sha256": "754de0601a9c01123dfbd9905dfed749ddbb6d7d87cb884f9d292826505067bb",
+  "bytes": 1263855,
+  "source": "https://arxiv.org/pdf/2601.07568",
+  "key": "t22__2601.07568"
+ },
+ "2406.18009.pdf": {
+  "sha256": "5d6da9f9bdef42d090c05ae43628c1e87364b02f0f29a76a5ef11e92740c6fdc",
+  "bytes": 726065,
+  "source": "https://arxiv.org/pdf/2406.18009",
+  "key": "t23__e2_tts_embarrassingly_easy_fully_non_autoregressive_zero_sho"
+ },
+ "2310.16338.pdf": {
+  "sha256": "c23e7a2926abb75fab76cf9c812a0fec133bd557096ab9c8f7c3a94adfd1771c",
+  "bytes": 1131727,
+  "source": "https://arxiv.org/pdf/2310.16338",
+  "key": "t23__speechflow_generative_pre_training_for_speech_with_flow_matc"
+ },
+ "2412.10117.pdf": {
+  "sha256": "b407f3e132f6ca73adb44f94b8d14963e005d6d61e80b47bc79615b7dddc3e74",
+  "bytes": 3475199,
+  "source": "https://arxiv.org/pdf/2412.10117",
+  "key": "t23__2412.10117"
+ },
+ "2507.11925.pdf": {
+  "sha256": "d2426ec40f463ca0e5b169e8fca8d78e74ee0515d306b4ae38e313b8b65ec65f",
+  "bytes": 473707,
+  "source": "https://arxiv.org/pdf/2507.11925",
+  "key": "t23__2507.11925"
+ },
+ "2501.11311.pdf": {
+  "sha256": "4e3d9994f6af2bae56fd96679ae6ffa19fe066c6b9ef8948f5c3374f225f7d10",
+  "bytes": 20961230,
+  "source": "https://arxiv.org/pdf/2501.11311",
+  "key": "t23__2501.11311"
+ },
+ "2505.19476.pdf": {
+  "sha256": "930cd99c9fb1564362343af7d8aaf053d695b500bb413e7088dca1dd8b5509e1",
+  "bytes": 650180,
+  "source": "https://arxiv.org/pdf/2505.19476",
+  "key": "t23__flowse_efficient_and_high_quality_speech_enhancement_via_flo"
+ },
+ "2410.20478.pdf": {
+  "sha256": "ebb8a8d78b014db13f481fdba823d2f797c527f81a481bced9ccb1b799ea69b1",
+  "bytes": 979659,
+  "source": "https://arxiv.org/pdf/2410.20478",
+  "key": "t23__musicflow_cascaded_flow_matching_for_text_guided_music_gener"
+ },
+ "2412.04724.pdf": {
+  "sha256": "be76e98139278814dacdfdc1230c26b38b03d9c9e85f7bb620956dd975a2548b",
+  "bytes": 3916564,
+  "source": "https://arxiv.org/pdf/2412.04724",
+  "key": "t23__stablevc_style_controllable_zero_shot_voice_conversion_with_"
+ },
+ "2408.14608.pdf": {
+  "sha256": "57ced1acf1668a6811ead34c19fcfd6fa38ee3e3d3850ce68aefe5c28b39f8e7",
+  "bytes": 5645519,
+  "source": "https://arxiv.org/pdf/2408.14608",
+  "key": "t24__meta_flow_matching_integrating_vector_fields_on_the_wasserst"
+ },
+ "1508.05216.pdf": {
+  "sha256": "2012895a71272af8f4a1607d2097f9735fbdc7d6a339d705554f38ffe59b5541",
+  "bytes": 653335,
+  "source": "https://arxiv.org/pdf/1508.05216",
+  "key": "t25__unbalanced_optimal_transport_dynamic_and_kantorovich_formula"
+ },
+ "2303.07988.pdf": {
+  "sha256": "6b69a1c0a73835d842f0453448cc8a6c968aeaad18628e36397af89fd60c1f9f",
+  "bytes": 18099656,
+  "source": "https://arxiv.org/pdf/2303.07988",
+  "key": "t25__light_unbalanced_optimal_transport"
+ },
+ "2306.09099.pdf": {
+  "sha256": "d8fde9d1cd771571eeeb0979f23effe167742d03ea6a71329c0f9ef5b28d49a4",
+  "bytes": 5695499,
+  "source": "https://arxiv.org/pdf/2306.09099",
+  "key": "t25__2306.09099"
+ },
+ "2506.09007.pdf": {
+  "sha256": "356636912b02109cf4c7244f861e52f6af3ec7623ee7d30623e31995a3f7f2d2",
+  "bytes": 24469143,
+  "source": "https://arxiv.org/pdf/2506.09007",
+  "key": "t25__2506.09007"
+ },
+ "2503.14975.pdf": {
+  "sha256": "ba83c2e9e6ea5d98466797c3d6ef50acc763d978bc86e43f686b468345e55050",
+  "bytes": 1829979,
+  "source": "https://arxiv.org/pdf/2503.14975",
+  "key": "t25__taming_flow_matching_with_unbalanced_ot_into_fast_pansharpen"
+ },
+ "2312.14572.pdf": {
+  "sha256": "75f7327ef2ccc83f3aee158a77fdbcec945538c76f08fc4446a0f82a153e7a6d",
+  "bytes": 890159,
+  "source": "https://arxiv.org/pdf/2312.14572",
+  "key": "t26__semidefinite_relaxations_of_the_gromov_wasserstein_distance"
+ },
+ "2106.01128.pdf": {
+  "sha256": "52f2ad16007f80665d0ed85d1e8f978e17967fca1ba74f60a6364a6b413bf5ea",
+  "bytes": 5989112,
+  "source": "https://arxiv.org/pdf/2106.01128",
+  "key": "t26__linear_time_gromov_wasserstein_distances_using_low_rank_coup"
+ },
+ "1805.09114.pdf": {
+  "sha256": "6eaaaaeed7d8f437e71b9f9064ae8b5a33c992345fbf4f19eb36b2dc3fc0dd31",
+  "bytes": 1348130,
+  "source": "https://arxiv.org/pdf/1805.09114",
+  "key": "t26__optimal_transport_for_structured_data_with_application_on_gr"
+ },
+ "2209.07007.pdf": {
+  "sha256": "3d9a2dbaf36ae42c63a8f9f36b5d4b07b1c699092fb98abeda95426cbfb1954b",
+  "bytes": 11706397,
+  "source": "https://arxiv.org/pdf/2209.07007",
+  "key": "t26__gromov_wasserstein_autoencoders"
+ },
+ "1809.00013.pdf": {
+  "sha256": "8fa1fe59c389dd233a64b21e17bdd913a0ccb31009d1456c44c2ebb601486af9",
+  "bytes": 7329423,
+  "source": "https://arxiv.org/pdf/1809.00013",
+  "key": "t26__gromov_wasserstein_alignment_of_word_embedding_spaces"
+ },
+ "2502.11778.pdf": {
+  "sha256": "65d23213bdb0c752402af484098228ca8e711a176d8ab25ed3b072afbe4a6f6b",
+  "bytes": 3956156,
+  "source": "https://arxiv.org/pdf/2502.11778",
+  "key": "t26__private_synthetic_graph_generation_and_fused_gromov_wasserst"
+ },
+ "2606.29462.pdf": {
+  "sha256": "61784dc15ebaec1439c82f4aa7ad58ed08395af4480e4613c8265d399bc96821",
+  "bytes": 3390430,
+  "source": "https://arxiv.org/pdf/2606.29462",
+  "key": "t26__2606.29462"
+ },
+ "2310.01105.pdf": {
+  "sha256": "6b6e19adc203dc1d7db10fe16489fec750e01323b686dbb6d81ddc28ad57c748",
+  "bytes": 15014237,
+  "source": "https://arxiv.org/pdf/2310.01105",
+  "key": "t27__energy_guided_continuous_entropic_barycenter_estimation_for_"
+ },
+ "2510.04602.pdf": {
+  "sha256": "54f0434fa3f9e3e279fea982254d94fbb51f78972a4199685103a661be57e8bc",
+  "bytes": 10672598,
+  "source": "https://arxiv.org/pdf/2510.04602",
+  "key": "t27__wasserstein_gradient_flows_for_scalable_and_regularized_bary"
+ },
+ "2511.22425.pdf": {
+  "sha256": "56679b3422b2ff299ea2c3e5ddf9856a62455326bbe6a97ddb97a8c4079e2194",
+  "bytes": 17396825,
+  "source": "https://arxiv.org/pdf/2511.22425",
+  "key": "t27__2511.22425"
+ },
+ "1910.05653.pdf": {
+  "sha256": "6f90ea284d7acbdbc522f42baf7610b1d19bd86b0c0a78bb85ca8dc8925dae4f",
+  "bytes": 3175877,
+  "source": "https://arxiv.org/pdf/1910.05653",
+  "key": "t27__1910.05653"
+ },
+ "2509.22494.pdf": {
+  "sha256": "7087a8a763615b375df6d3c846cc94377f7436da6eca4842280d0733cd014734",
+  "bytes": 861513,
+  "source": "https://arxiv.org/pdf/2509.22494",
+  "key": "t27__2509.22494"
+ },
+ "2207.03024.pdf": {
+  "sha256": "fe17242afb14c3ce46b2ebe36b8a681a14b067b62e9b23c7c7d2ce24c691b09f",
+  "bytes": 11754170,
+  "source": "https://arxiv.org/pdf/2207.03024",
+  "key": "t28__2207.03024"
+ },
+ "2410.02490.pdf": {
+  "sha256": "73be3a5738eacb0a1413534cf027ce577ef64495a7ace8b4b22613577859d365",
+  "bytes": 1749983,
+  "source": "https://arxiv.org/pdf/2410.02490",
+  "key": "t28__stochastic_variance_reduced_vi_on_the_bures_wasserstein_mani"
+ },
+ "2510.00983.pdf": {
+  "sha256": "6aa7796e57a03277fe286fe48914b42dc699ee1ec89d01f28912bb73e1a29f7b",
+  "bytes": 11731338,
+  "source": "https://arxiv.org/pdf/2510.00983",
+  "key": "t28__riemannian_consistency_model_cheng_et_al"
+ },
+ "2401.12253.pdf": {
+  "sha256": "73e2434126fe7e4892f537148485a99f48dcce0182aca040bb7152adaaf221d1",
+  "bytes": 840960,
+  "source": "https://arxiv.org/pdf/2401.12253",
+  "key": "t29__accelerating_sinkhorn_algorithm_with_sparse_newton_iteration"
+ },
+ "2605.08793.pdf": {
+  "sha256": "7a6b6e3f03012957a6f31f59d8dd6fa282779184b1fb601b979f2ff3b731881e",
+  "bytes": 2930280,
+  "source": "https://arxiv.org/pdf/2605.08793",
+  "key": "t29__2605.08793"
+ },
+ "2605.00837.pdf": {
+  "sha256": "09f7cc4bc69c9196080bc1842e940bf59a5405360b6f5896fd3d8e2abd5ff7b3",
+  "bytes": 1059774,
+  "source": "https://arxiv.org/pdf/2605.00837",
+  "key": "t29__2605.00837"
+ },
+ "2407.19689.pdf": {
+  "sha256": "1ffdd1321aece71a10f7128bff8229686253d4216903caee173a663cd87d597e",
+  "bytes": 2538352,
+  "source": "https://arxiv.org/pdf/2407.19689",
+  "key": "t29__2407.19689"
+ },
+ "2411.10555.pdf": {
+  "sha256": "2155efc08488339ade1380e46d020de3170ac36eee69f79526386080f7b221e5",
+  "bytes": 7556073,
+  "source": "https://arxiv.org/pdf/2411.10555",
+  "key": "t29__low_rank_optimal_transport_through_factor_relaxation_with_la"
+ },
+ "1812.05189.pdf": {
+  "sha256": "6c52bb91bb72e8d2c1f54e2f5afec2aa01064a74b31619c3833e6fea95aa0be1",
+  "bytes": 831472,
+  "source": "https://arxiv.org/pdf/1812.05189",
+  "key": "t29__1812.05189"
+ },
+ "2103.04737.pdf": {
+  "sha256": "40e54bcbda4af7534c7d3b0b82de57f79b71fa89eef23fac51ee528c1bfcd716",
+  "bytes": 1529245,
+  "source": "https://arxiv.org/pdf/2103.04737",
+  "key": "t29__2103.04737"
+ },
+ "2309.11713.pdf": {
+  "sha256": "7bf6c5b9b05fb3e17d4210b29c869c5b31a87c82ef3d5284404459ed0a893036",
+  "bytes": 10709707,
+  "source": "https://arxiv.org/pdf/2309.11713",
+  "key": "t29__quasi_monte_carlo_for_3d_sliced_wasserstein"
+ },
+ "2404.11925.pdf": {
+  "sha256": "59b1dd3eb4191c1fac40dcd63b4e1a17ec94ee50705e700e1a42e272155be21a",
+  "bytes": 5091668,
+  "source": "https://arxiv.org/pdf/2404.11925",
+  "key": "t30__2404.11925"
+ },
+ "2403.16627.pdf": {
+  "sha256": "9167d3007c6f7ab176dd4446de4d9db9967e07e218047aa24ec986c824564efa",
+  "bytes": 7101432,
+  "source": "https://arxiv.org/pdf/2403.16627",
+  "key": "t30__2403.16627"
+ },
+ "t30_2024_Zhao_MixDQ_fewstep_mixed_precision_quant.pdf": {
+  "sha256": "8750beace17dd874ee391b1cc21c092da8d355bf6538e268a43596cbaa7378f7",
+  "bytes": 16880329,
+  "source": "survey:t30/2024_Zhao_MixDQ_fewstep_mixed_precision_quant.pdf",
+  "key": "t30__mixdq_memory_efficient_few_step_text_to_image_diffusion_mode"
+ },
+ "2406.04333.pdf": {
+  "sha256": "729010e784b278c2ea460d41530041c3bc82159ea4d7137a0cd48e6073508f53",
+  "bytes": 14417434,
+  "source": "https://arxiv.org/pdf/2406.04333",
+  "key": "t30__bitsfusion_1_99_bits_weight_quantization_of_diffusion_model"
+ },
+ "2401.09603.pdf": {
+  "sha256": "cfd5d087aed786dfefa59600b411dbca83bfee109ff843ee78bf0f2f76dbbd8e",
+  "bytes": 3187267,
+  "source": "https://arxiv.org/pdf/2401.09603",
+  "key": "t30__rethinking_fid_towards_a_better_evaluation_metric_for_image_"
+ },
+ "2310.11513.pdf": {
+  "sha256": "5a68412ac03351585ad0595fd3151d55dbf903813d8a7dd85f10df8d9de1383e",
+  "bytes": 3863771,
+  "source": "https://arxiv.org/pdf/2310.11513",
+  "key": "t30__geneval_an_object_focused_framework_for_evaluating_text_to_i"
+ },
+ "2306.09341.pdf": {
+  "sha256": "9a6dde7ca3b910ee656367372f34c966d67cfbe0c692bbf2c845752682a989fb",
+  "bytes": 4388078,
+  "source": "https://arxiv.org/pdf/2306.09341",
+  "key": "t30__2306.09341"
+ },
+ "2209.11215.pdf": {
+  "sha256": "03f7c302ef183407843dee3bbe90b7f10afcb3b7cde8c6ac8171caa6e9784111",
+  "bytes": 445635,
+  "source": "https://arxiv.org/pdf/2209.11215",
+  "key": "t06__sampling_is_as_easy_as_learning_the_score"
+ },
+ "2309.06380.pdf": {
+  "sha256": "a3dcea6ded67aac088bdbf1d80c84ba4f388825f1fb7ba69bedefdcb460b41ca",
+  "bytes": 50270246,
+  "source": "https://arxiv.org/pdf/2309.06380",
+  "key": "t09__instaflow_one_step_is_enough_for_high_quality_diffusion_base"
+ },
+ "2203.08382.pdf": {
+  "sha256": "b5527d151cbc05665d7d4903dcf6cfbb4689edfa51d7655de5cd6d7f324b8056",
+  "bytes": 7528681,
+  "source": "https://arxiv.org/pdf/2203.08382",
+  "key": "t14__dual_diffusion_implicit_bridges"
+ },
+ "2309.16948.pdf": {
+  "sha256": "95094f29a79b01977ad3c232e46016cd89e0eb8754ce5b36cb53e60e7798aefa",
+  "bytes": 31644905,
+  "source": "https://arxiv.org/pdf/2309.16948",
+  "key": "t14__denoising_diffusion_bridge_models"
+ },
+ "2503.07535.pdf": {
+  "sha256": "0d4e883f6e7440a8562d4525e928ce73e3cb7e595e4c9e5e69866cca1db7a17a",
+  "bytes": 15080620,
+  "source": "https://arxiv.org/pdf/2503.07535",
+  "key": "t14__lbm_latent_bridge_matching"
+ },
+ "2503.22168.pdf": {
+  "sha256": "91af6a5b8ed80d226a2b73b6179a12ae7d50559ae738066fd0bda589475e7e81",
+  "bytes": 7663962,
+  "source": "https://arxiv.org/pdf/2503.22168",
+  "key": "t16__storm_spatial_transport_optimization_by_repositioning_attent"
+ },
+ "2302.03660.pdf": {
+  "sha256": "5860a6f32978550acdbca99d82a1e4af6020ae76220e62951d92f8b43ac880ab",
+  "bytes": 11382050,
+  "source": "https://arxiv.org/pdf/2302.03660",
+  "key": "t28__flow_matching_on_general_geometries_chen_lipman"
+ },
+ "2202.02763.pdf": {
+  "sha256": "059cdfa319a90a127ff3e1e094c7d941a629860f9ebeb24b05418110130c229a",
+  "bytes": 6362863,
+  "source": "https://arxiv.org/pdf/2202.02763",
+  "key": "t28__riemannian_score_based_generative_modelling_de_bortoli_et_al"
+ },
+ "2510.20871.pdf": {
+  "sha256": "ecdf0c7c3e3f904c00290a7abb39754f1b965ce8d9bad3d6ba6938a7105c23a2",
+  "bytes": 618215,
+  "source": "https://arxiv.org/pdf/2510.20871",
+  "key": "t03__exponential_convergence_guarantees_for_imf_gentiloni_silveri"
+ },
+ "2310.02279.pdf": {
+  "sha256": "f67917181b9258e17fce9bc8ba3cfa8baaed2238ceec2ed3bfcd8f699326a2ee",
+  "bytes": 2643817,
+  "source": "https://arxiv.org/pdf/2310.02279",
+  "key": "t10__consistency_trajectory_models"
+ },
+ "2312.00739.pdf": {
+  "sha256": "bc6e0363aa192be32d49b645015c255891487ebdf01eb0cf14ff1cc1de288ca2",
+  "bytes": 35574376,
+  "source": "https://arxiv.org/pdf/2312.00739",
+  "key": "t10__adversarial_score_distillation"
+ },
+ "2205.07680.pdf": {
+  "sha256": "0fc26fa07609808e356914e523e58796efe8659df4ec7d5be43ee16bfa62f211",
+  "bytes": 23294703,
+  "source": "https://arxiv.org/pdf/2205.07680",
+  "key": "t14__bbdm_brownian_bridge_diffusion_models"
+ },
+ "2505.21528.pdf": {
+  "sha256": "af6ee3d1e762b2592482887569831e1630bcc9f498ba70a41aaecf4f33efa532",
+  "bytes": 2941441,
+  "source": "https://arxiv.org/pdf/2505.21528",
+  "key": "t14__unidb_unified_diffusion_bridge_via_soc"
+ },
+ "2405.16381.pdf": {
+  "sha256": "31d2633cf6e6da4bae5dc930250c711a96b80ecc2ebdb23feab8b694b6017e5d",
+  "bytes": 8326596,
+  "source": "https://arxiv.org/pdf/2405.16381",
+  "key": "t28__trivialized_momentum_diffusion_zhu_et_al"
+ },
+ "2505.18193.pdf": {
+  "sha256": "e968a3f80b09cb17fa7b5ae19479fc74feee54463c6ee668cc2088dee22b5000",
+  "bytes": 10985472,
+  "source": "https://arxiv.org/pdf/2505.18193",
+  "key": "t28__diffeocfm_rfm_for_brain_connectivity_via_pullback_geometry_c"
+ },
+ "2405.17873.pdf": {
+  "sha256": "8750beace17dd874ee391b1cc21c092da8d355bf6538e268a43596cbaa7378f7",
+  "bytes": 16880329,
+  "source": "https://arxiv.org/pdf/2405.17873",
+  "key": "t30__mixdq_memory_efficient_few_step_text_to_image_diffusion_mode"
+ }
+}

@@ -1,0 +1,353 @@
+{
+ "topic": "t30",
+ "topic_name": "端侧部署、benchmark 与顶会趋势（博客落地场景：端侧图像生成）",
+ "section": "F",
+ "section_name": "Systems, Benchmarks & Trends",
+ "kb_note": "source/kb/t30_edge_benchmark_trends.md",
+ "papers": [
+  {
+   "key": "t30__svdquant_absorbing_outliers_by_low_rank_component_for_4_bit_",
+   "report_id": "2411.05007",
+   "title": "SVDQuant: Absorbing Outliers by Low-Rank Components for 4-Bit Diffusion Models",
+   "authors": [
+    "Muyang Li",
+    "Yujun Lin",
+    "Zhekai Zhang",
+    "Tianle Cai",
+    "Xiuyu Li",
+    "Junxian Guo",
+    "Enze Xie",
+    "Chenlin Meng",
+    "Jun-Yan Zhu",
+    "Song Han"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2411.05007",
+   "published": "2024-11-07",
+   "abstract": "Diffusion models can effectively generate high-quality images. However, as they scale, rising memory demands and higher latency pose substantial deployment challenges. In this work, we aim to accelerate diffusion models by quantizing their weights and activations to 4 bits. At such an aggressive level, both weights and activations are highly sensitive, where existing post-training quantization methods like smoothing become insufficient. To overcome this limitation, we propose SVDQuant, a new 4-bit quantization paradigm. Different from smoothing, which redistributes outliers between weights and activations, our approach absorbs these outliers using a low-rank branch. We first consolidate the outliers by shifting them from activations to weights. Then, we use a high-precision, low-rank branch to take in the weight outliers with Singular Value Decomposition (SVD), while a low-bit quantized branch handles the residuals. This process eases the quantization on both sides. However, naively running the low-rank branch independently incurs significant overhead due to extra data movement of activations, negating the quantization speedup. To address this, we co-design an inference engine Nunchaku that fuses the kernels of the low-rank branch into those of the low-bit branch to cut off redundant memory access. It can also seamlessly support off-the-shelf low-rank adapters (LoRAs) without re-quantization. Extensive experiments on SDXL, PixArt-$Σ$, and FLUX.1 validate the effectiveness of SVDQuant in preserving image quality. We reduce the memory usage for the 12B FLUX.1 models by 3.5$\\times$, achieving 3.0$\\times$ speedup over the 4-bit weight-only quantization (W4A16) baseline on the 16GB laptop 4090 GPU with INT4 precision. On the latest RTX 5090 desktop with Blackwell architecture, we achieve a 3.1$\\times$ speedup compared to the W4A16 model using NVFP4 precision.",
+   "contribution_zh": "W4A4 量化范式：smoothing 把激活离群值移到权重，SVD 低秩分支吸收权重离群值；与 Nunchaku 引擎 kernel 融合 co-design，12B FLUX 跑进 16GB 笔记本 4090（3×提速）且免重量化支持 LoRA",
+   "links": {
+    "ICLR proc.": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/f34f0630c33be15b8c89426bb8056798-Abstract-Conference.html"
+   },
+   "pdf": "papers/2411.05007.pdf",
+   "text": "data/text/2411.05007.txt",
+   "text_chars": 81987,
+   "pages": 28
+  },
+  {
+   "key": "t30__snapgen_taming_high_resolution_text_to_image_models_for_mobi",
+   "report_id": "SnapGen_Taming_High_Resolution_Text_to_Image_Model",
+   "title": "SnapGen: Taming High-Resolution Text-to-Image Models for Mobile Devices...",
+   "authors": "Chen et al.",
+   "year": 2025,
+   "venue": "CVPR Highlight",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "端侧模型**从头训练**新范式：379M UNet 宏/微架构搜索 + 跨架构多级蒸馏（教师 SD3.5-Large）+ 对抗步蒸馏，iPhone 16 Pro-Max 1024² ~1.4s，GenEval 0.66 超 SDXL（7×大）",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_SnapGen_Taming_High-Resolution_Text-to-Image_Models_for_Mobile_Devices_with_Efficient_CVPR_2025_paper.pdf"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t30__mobilediffusion_instant_text_to_image_generation_on_mobile_d",
+   "report_id": "2311.16567",
+   "title": "MobileDiffusion: Instant Text-to-Image Generation on Mobile Devices",
+   "authors": [
+    "Yang Zhao",
+    "Yanwu Xu",
+    "Zhisheng Xiao",
+    "Haolin Jia",
+    "Tingbo Hou"
+   ],
+   "year": 2024,
+   "venue": "ECCV",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2311.16567",
+   "published": "2023-11-28",
+   "abstract": "The deployment of large-scale text-to-image diffusion models on mobile devices is impeded by their substantial model size and slow inference speed. In this paper, we propose \\textbf{MobileDiffusion}, a highly efficient text-to-image diffusion model obtained through extensive optimizations in both architecture and sampling techniques. We conduct a comprehensive examination of model architecture design to reduce redundancy, enhance computational efficiency, and minimize model's parameter count, while preserving image generation quality. Additionally, we employ distillation and diffusion-GAN finetuning techniques on MobileDiffusion to achieve 8-step and 1-step inference respectively. Empirical studies, conducted both quantitatively and qualitatively, demonstrate the effectiveness of our proposed techniques. MobileDiffusion achieves a remarkable \\textbf{sub-second} inference speed for generating a $512\\times512$ image on mobile devices, establishing a new state of the art.",
+   "contribution_zh": "首个系统性的移动端扩散**架构设计空间研究**（<400M UNet）+ diffusion-GAN 一步采样兼容下游任务，iPhone 15 Pro 0.2s/512²",
+   "links": {
+    "ECVA": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/07923.pdf"
+   },
+   "pdf": "papers/2311.16567.pdf",
+   "text": "data/text/2311.16567.txt",
+   "text_chars": 56290,
+   "pages": 23
+  },
+  {
+   "key": "t30__snapfusion_text_to_image_diffusion_model_on_mobile_devices_w",
+   "report_id": "2306.00980",
+   "title": "SnapFusion: Text-to-Image Diffusion Model on Mobile Devices within Two Seconds",
+   "authors": [
+    "Yanyu Li",
+    "Huan Wang",
+    "Qing Jin",
+    "Ju Hu",
+    "Pavlo Chemerys",
+    "Yun Fu",
+    "Yanzhi Wang",
+    "Sergey Tulyakov",
+    "Jian Ren"
+   ],
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2306.00980",
+   "published": "2023-06-01",
+   "abstract": "Text-to-image diffusion models can create stunning images from natural language descriptions that rival the work of professional artists and photographers. However, these models are large, with complex network architectures and tens of denoising iterations, making them computationally expensive and slow to run. As a result, high-end GPUs and cloud-based inference are required to run diffusion models at scale. This is costly and has privacy implications, especially when user data is sent to a third party. To overcome these challenges, we present a generic approach that, for the first time, unlocks running text-to-image diffusion models on mobile devices in less than $2$ seconds. We achieve so by introducing efficient network architecture and improving step distillation. Specifically, we propose an efficient UNet by identifying the redundancy of the original model and reducing the computation of the image decoder via data distillation. Further, we enhance the step distillation by exploring training strategies and introducing regularization from classifier-free guidance. Our extensive experiments on MS-COCO show that our model with $8$ denoising steps achieves better FID and CLIP scores than Stable Diffusion v$1.5$ with $50$ steps. Our work democratizes content creation by bringing powerful text-to-image diffusion models to the hands of users.",
+   "contribution_zh": "端侧 T2I 开山：高效 UNet（冗余块识别+数据蒸馏压 VAE decoder）+ CFG 正则化步蒸馏，iPhone 14 Pro 上 8 步 <2s，FID/CLIP 超 SD1.5-50 步",
+   "links": {
+    "NeurIPS": "https://papers.neurips.cc/paper_files/paper/2023/hash/41bcc9d3bddd9c90e1f44b29e26d97ff-Abstract-Conference.html"
+   },
+   "pdf": "papers/2306.00980.pdf",
+   "text": "data/text/2306.00980.txt",
+   "text_chars": 63908,
+   "pages": 17
+  },
+  {
+   "key": "t30__exposing_flaws_of_generative_model_evaluation_metrics_and_th",
+   "report_id": "Exposing_flaws_of_generative_model_evaluation_metr",
+   "title": "Exposing flaws of generative model evaluation metrics and their unfair treatment of diffusion models",
+   "authors": "Stein et al.",
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "最大规模人评心理物理实验：**没有任何现有指标与人评强相关**；Inception-V3 特征系统性压低扩散模型排名；建议全面换用 DINOv2-ViT-L/14 特征算 FD",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/0bc795afae289ed465a65a3b4b1f4eb7-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t30__sana_efficient_high_resolution_text_to_image_synthesis_with_",
+   "report_id": "SANA_Efficient_High_Resolution_Text_to_Image_Synth",
+   "title": "SANA: Efficient High-Resolution Text-to-Image Synthesis with Linear Diffusion Transformers",
+   "authors": "Xie et al.",
+   "year": 2025,
+   "venue": "ICLR Oral",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "可部署 DiT 路线：32× 深压缩 AE + linear attention DiT + 小 LLM 文本编码器 + FM 训练/Flow-DPM-Solver，0.6B 模型笔记本 GPU <1s/1024²，配 SVDQuant 4-bit 跑进 8GB",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=N8Oj1XhtYZ"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t30__2404.11925",
+   "report_id": "2404.11925",
+   "title": "EdgeFusion: On-Device Text-to-Image Generation",
+   "authors": [
+    "Thibault Castells",
+    "Hyoung-Kyu Song",
+    "Tairen Piao",
+    "Shinkook Choi",
+    "Bo-Kyeong Kim",
+    "Hanyoung Yim",
+    "Changgwun Lee",
+    "Jae Gon Kim",
+    "Tae-Ho Kim"
+   ],
+   "year": 2024,
+   "venue": "arXiv（CVPR-W 系）",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2404.11925",
+   "published": "2024-04-18",
+   "abstract": "The intensive computational burden of Stable Diffusion (SD) for text-to-image generation poses a significant hurdle for its practical application. To tackle this challenge, recent research focuses on methods to reduce sampling steps, such as Latent Consistency Model (LCM), and on employing architectural optimizations, including pruning and knowledge distillation. Diverging from existing approaches, we uniquely start with a compact SD variant, BK-SDM. We observe that directly applying LCM to BK-SDM with commonly used crawled datasets yields unsatisfactory results. It leads us to develop two strategies: (1) leveraging high-quality image-text pairs from leading generative models and (2) designing an advanced distillation process tailored for LCM. Through our thorough exploration of quantization, profiling, and on-device deployment, we achieve rapid generation of photo-realistic, text-aligned images in just two steps, with latency under one second on resource-limited edge devices.",
+   "contribution_zh": "NPU 全栈工程样本：BK-SDM-Tiny + 改进 LCM 蒸馏 + 合成数据，W8/A16(UNet INT8 权重+INT16 激活)混合精度 + model-level tiling + kernel fusion，三星 Exynos 2400 NPU 2 步 <1s",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2404.11925"
+   },
+   "pdf": "papers/2404.11925.pdf",
+   "text": "data/text/2404.11925.txt",
+   "text_chars": 32981,
+   "pages": 12
+  },
+  {
+   "key": "t30__2403.16627",
+   "report_id": "2403.16627",
+   "title": "SDXS: Real-Time One-Step Latent Diffusion Models with Image Conditions",
+   "authors": [
+    "Yuda Song",
+    "Zehao Sun",
+    "Xuanwu Yin"
+   ],
+   "year": 2024,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2403.16627",
+   "published": "2024-03-25",
+   "abstract": "Recent advancements in diffusion models have positioned them at the forefront of image generation. Despite their superior performance, diffusion models are not without drawbacks; they are characterized by complex architectures and substantial computational demands, resulting in significant latency due to their iterative sampling process. To mitigate these limitations, we introduce a dual approach involving model miniaturization and a reduction in sampling steps, aimed at significantly decreasing model latency. Our methodology leverages knowledge distillation to streamline the U-Net and image decoder architectures, and introduces an innovative one-step DM training technique that utilizes feature matching and score distillation. We present two models, SDXS-512 and SDXS-1024, achieving inference speeds of approximately 100 FPS (30x faster than SD v1.5) and 30 FPS (60x faster than SDXL) on a single GPU, respectively. Moreover, our training approach offers promising applications in image-conditioned control, facilitating efficient image-to-image translation.",
+   "contribution_zh": "UNet+VAE 双小型化 + 特征匹配/分数蒸馏的一步训练（显式做轨迹拉直 straightening），512² 达 100 FPS；ControlNet 蒸馏支持实时 image-to-image",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2403.16627"
+   },
+   "pdf": "papers/2403.16627.pdf",
+   "text": "data/text/2403.16627.txt",
+   "text_chars": 43877,
+   "pages": 13
+  },
+  {
+   "key": "t30__mixdq_memory_efficient_few_step_text_to_image_diffusion_mode",
+   "report_id": "MixDQ_Memory_Efficient_Few_Step_Text_to_Image_Diff",
+   "title": "MixDQ: Memory-Efficient Few-Step Text-to-Image Diffusion Models with Metric-Decoupled Mixed Precision Quantization",
+   "authors": "Zhao et al.",
+   "year": 2024,
+   "venue": "ECCV",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "**少步模型专用 PTQ**：发现 1 步 SDXL-Turbo 量化瓶颈在文本嵌入 BOS 离群值；BOS-aware 量化 + 指标解耦敏感度分析 + 整数规划配比特，W4A8 仅 +0.5 FID（基线全崩）",
+   "links": {
+    "ECVA": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/02212.pdf"
+   },
+   "pdf": "papers/t30_2024_Zhao_MixDQ_fewstep_mixed_precision_quant.pdf",
+   "text": "data/text/t30_2024_Zhao_MixDQ_fewstep_mixed_precision_quant.txt",
+   "text_chars": 67221,
+   "pages": 29
+  },
+  {
+   "key": "t30__bitsfusion_1_99_bits_weight_quantization_of_diffusion_model",
+   "report_id": "2406.04333",
+   "title": "BitsFusion: 1.99 bits Weight Quantization of Diffusion Model",
+   "authors": [
+    "Yang Sui",
+    "Yanyu Li",
+    "Anil Kag",
+    "Yerlan Idelbayev",
+    "Junli Cao",
+    "Ju Hu",
+    "Dhritiman Sagar",
+    "Bo Yuan",
+    "Sergey Tulyakov",
+    "Jian Ren"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2406.04333",
+   "published": "2024-06-06",
+   "abstract": "Diffusion-based image generation models have achieved great success in recent years by showing the capability of synthesizing high-quality content. However, these models contain a huge number of parameters, resulting in a significantly large model size. Saving and transferring them is a major bottleneck for various applications, especially those running on resource-constrained devices. In this work, we develop a novel weight quantization method that quantizes the UNet from Stable Diffusion v1.5 to 1.99 bits, achieving a model with 7.9X smaller size while exhibiting even better generation quality than the original one. Our approach includes several novel techniques, such as assigning optimal bits to each layer, initializing the quantized model for better performance, and improving the training strategy to dramatically reduce quantization error. Furthermore, we extensively evaluate our quantized model across various benchmark datasets and through human evaluation to demonstrate its superior generation quality.",
+   "contribution_zh": "QAT 极限压缩：逐层最优比特分配 + 量化初始化 + 两阶段蒸馏训练，SD1.5 UNet 1.72GB→219MB（1.99 bit）且 TIFA/GenEval/人评反超全精度",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/8c64bc3f7796d31caa7c3e6b969bf7da-Abstract-Conference.html"
+   },
+   "pdf": "papers/2406.04333.pdf",
+   "text": "data/text/2406.04333.txt",
+   "text_chars": 90000,
+   "pages": 37
+  },
+  {
+   "key": "t30__rethinking_fid_towards_a_better_evaluation_metric_for_image_",
+   "report_id": "2401.09603",
+   "title": "Rethinking FID: Towards a Better Evaluation Metric for Image Generation",
+   "authors": [
+    "Sadeep Jayasumana",
+    "Srikumar Ramalingam",
+    "Andreas Veit",
+    "Daniel Glasner",
+    "Ayan Chakrabarti",
+    "Sanjiv Kumar"
+   ],
+   "year": 2024,
+   "venue": "CVPR Highlight",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2401.09603",
+   "published": "2023-11-30",
+   "abstract": "As with many machine learning problems, the progress of image generation methods hinges on good evaluation metrics. One of the most popular is the Frechet Inception Distance (FID). FID estimates the distance between a distribution of Inception-v3 features of real images, and those of images generated by the algorithm. We highlight important drawbacks of FID: Inception's poor representation of the rich and varied content generated by modern text-to-image models, incorrect normality assumptions, and poor sample complexity. We call for a reevaluation of FID's use as the primary quality metric for generated images. We empirically demonstrate that FID contradicts human raters, it does not reflect gradual improvement of iterative text-to-image models, it does not capture distortion levels, and that it produces inconsistent results when varying the sample size. We also propose an alternative new metric, CMMD, based on richer CLIP embeddings and the maximum mean discrepancy distance with the Gaussian RBF kernel. It is an unbiased estimator that does not make any assumptions on the probability distribution of the embeddings and is sample efficient. Through extensive experiments and analysis, we demonstrate that FID-based evaluations of text-to-image models may be unreliable, and that CMMD offers a more robust and reliable assessment of image quality.",
+   "contribution_zh": "指出 FID 三宗罪：正态假设不成立、样本复杂度差、与人评矛盾（无法反映 T2I 迭代改进）；提出 CMMD = CLIP 嵌入 + Gaussian RBF 核 MMD（无分布假设、无偏、样本高效）",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2024/papers/Jayasumana_Rethinking_FID_Towards_a_Better_Evaluation_Metric_for_Image_Generation_CVPR_2024_paper.pdf"
+   },
+   "pdf": "papers/2401.09603.pdf",
+   "text": "data/text/2401.09603.txt",
+   "text_chars": 43962,
+   "pages": 10
+  },
+  {
+   "key": "t30__geneval_an_object_focused_framework_for_evaluating_text_to_i",
+   "report_id": "2310.11513",
+   "title": "GenEval: An Object-Focused Framework for Evaluating Text-to-Image Alignment",
+   "authors": [
+    "Dhruba Ghosh",
+    "Hanna Hajishirzi",
+    "Ludwig Schmidt"
+   ],
+   "year": 2023,
+   "venue": "NeurIPS D&B",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2310.11513",
+   "published": "2023-10-17",
+   "abstract": "Recent breakthroughs in diffusion models, multimodal pretraining, and efficient finetuning have led to an explosion of text-to-image generative models. Given human evaluation is expensive and difficult to scale, automated methods are critical for evaluating the increasingly large number of new models. However, most current automated evaluation metrics like FID or CLIPScore only offer a holistic measure of image quality or image-text alignment, and are unsuited for fine-grained or instance-level analysis. In this paper, we introduce GenEval, an object-focused framework to evaluate compositional image properties such as object co-occurrence, position, count, and color. We show that current object detection models can be leveraged to evaluate text-to-image models on a variety of generation tasks with strong human agreement, and that other discriminative vision models can be linked to this pipeline to further verify properties like object color. We then evaluate several open-source text-to-image models and analyze their relative generative capabilities on our benchmark. We find that recent models demonstrate significant improvement on these tasks, though they are still lacking in complex capabilities such as spatial relations and attribute binding. Finally, we demonstrate how GenEval might be used to help discover existing failure modes, in order to inform development of the next generation of text-to-image models. Our code to run the GenEval framework is publicly available at https://github.com/djghosh13/geneval.",
+   "contribution_zh": "用目标检测器做组合能力评测（共现/计数/颜色/位置），实例级可解释、与人评强一致；已成端侧论文标配指标（SnapGen/SANA 均报告）",
+   "links": {
+    "NeurIPS": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/a3bf71c7c63f0c3bcb7ff67c67b1e7b1-Abstract-Datasets_and_Benchmarks.html"
+   },
+   "pdf": "papers/2310.11513.pdf",
+   "text": "data/text/2310.11513.txt",
+   "text_chars": 64792,
+   "pages": 21
+  },
+  {
+   "key": "t30__2306.09341",
+   "report_id": "2306.09341",
+   "title": "Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis",
+   "authors": [
+    "Xiaoshi Wu",
+    "Yiming Hao",
+    "Keqiang Sun",
+    "Yixiong Chen",
+    "Feng Zhu",
+    "Rui Zhao",
+    "Hongsheng Li"
+   ],
+   "year": 2023,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2306.09341",
+   "published": "2023-06-15",
+   "abstract": "Recent text-to-image generative models can generate high-fidelity images from text inputs, but the quality of these generated images cannot be accurately evaluated by existing evaluation metrics. To address this issue, we introduce Human Preference Dataset v2 (HPD v2), a large-scale dataset that captures human preferences on images from a wide range of sources. HPD v2 comprises 798,090 human preference choices on 433,760 pairs of images, making it the largest dataset of its kind. The text prompts and images are deliberately collected to eliminate potential bias, which is a common issue in previous datasets. By fine-tuning CLIP on HPD v2, we obtain Human Preference Score v2 (HPS v2), a scoring model that can more accurately predict human preferences on generated images. Our experiments demonstrate that HPS v2 generalizes better than previous metrics across various image distributions and is responsive to algorithmic improvements of text-to-image generative models, making it a preferable evaluation metric for these models. We also investigate the design of the evaluation prompts for text-to-image generative models, to make the evaluation stable, fair and easy-to-use. Finally, we establish a benchmark for text-to-image generative models using HPS v2, which includes a set of recent text-to-image models from the academic, community and industry. The code and dataset is available at https://github.com/tgxs002/HPSv2 .",
+   "contribution_zh": "79.8 万人类偏好对训练的偏好模型 + HPD v2 基准，作为可扩展的\"人评代理\"；MobileDiffusion 等端侧工作用其验证主观质量",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2306.09341"
+   },
+   "pdf": "papers/2306.09341.pdf",
+   "text": "data/text/2306.09341.txt",
+   "text_chars": 66177,
+   "pages": 24
+  }
+ ]
+}

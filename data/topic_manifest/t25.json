@@ -1,0 +1,305 @@
+{
+ "topic": "t25",
+ "topic_name": "非平衡/部分 OT 在生成建模中的应用",
+ "section": "E",
+ "section_name": "OT Variants Frontier",
+ "kb_note": "source/kb/t25_unbalanced_partial_ot_gen.md",
+ "papers": [
+  {
+   "key": "t25__wfr_fm_simulation_free_dynamic_unbalanced_optimal_transport",
+   "report_id": "2601.06810",
+   "title": "WFR-FM: Simulation-Free Dynamic Unbalanced Optimal Transport",
+   "authors": [
+    "Qiangwei Peng",
+    "Zihan Wang",
+    "Junda Ying",
+    "Yuhao Sun",
+    "Qing Nie",
+    "Lei Zhang",
+    "Tiejun Li",
+    "Peijie Zhou"
+   ],
+   "year": 2026,
+   "venue": "ICLR",
+   "evidence": "A",
+   "star": true,
+   "arxiv_id": "2601.06810",
+   "published": "2026-01-11",
+   "abstract": "The Wasserstein-Fisher-Rao (WFR) metric extends dynamic optimal transport (OT) by coupling displacement with change of mass, providing a principled geometry for modeling unbalanced snapshot dynamics. Existing WFR solvers, however, are often unstable, computationally expensive, and difficult to scale. Here we introduce WFR Flow Matching (WFR-FM), a simulation-free training algorithm that unifies flow matching with dynamic unbalanced OT. Unlike classical flow matching which regresses only a transport vector field, WFR-FM simultaneously regresses a vector field for displacement and a scalar growth rate function for birth-death dynamics, yielding continuous flows under the WFR geometry. Theoretically, we show that minimizing the WFR-FM loss exactly recovers WFR geodesics. Empirically, WFR-FM yields more accurate and robust trajectory inference in single-cell biology, reconstructing consistent dynamics with proliferation and apoptosis, estimating time-varying growth fields, and applying to generative dynamics under imbalanced data. It outperforms state-of-the-art baselines in efficiency, stability, and reconstruction accuracy. Overall, WFR-FM establishes a unified and efficient paradigm for learning dynamical systems from unbalanced snapshots, where not only states but also mass evolve over time. The Python code is available at https://github.com/QiangweiPeng/WFR-FM.",
+   "contribution_zh": "flow matching 同时回归速度场+标量增长率，证明最小化损失恰好回收 WFR 测地线；非平衡快照动态的统一范式",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=1nqu7bK1mm"
+   },
+   "pdf": "papers/2601.06810.pdf",
+   "text": "data/text/2601.06810.txt",
+   "text_chars": 90000,
+   "pages": 34
+  },
+  {
+   "key": "t25__learning_stochastic_dynamics_from_snapshots_through_regulari",
+   "report_id": "2410.00844",
+   "title": "Learning stochastic dynamics from snapshots through regularized unbalanced optimal transport",
+   "authors": [
+    "Zhenyi Zhang",
+    "Tiejun Li",
+    "Peijie Zhou"
+   ],
+   "year": 2025,
+   "venue": "ICLR oral",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2410.00844",
+   "published": "2024-10-01",
+   "abstract": "Reconstructing dynamics using samples from sparsely time-resolved snapshots is an important problem in both natural sciences and machine learning. Here, we introduce a new deep learning approach for solving regularized unbalanced optimal transport (RUOT) and inferring continuous unbalanced stochastic dynamics from observed snapshots. Based on the RUOT form, our method models these dynamics without requiring prior knowledge of growth and death processes or additional information, allowing them to be learned directly from data. Theoretically, we explore the connections between the RUOT and Schrödinger bridge problem and discuss the key challenges and potential solutions. The effectiveness of our method is demonstrated with a synthetic gene regulatory network, high-dimensional Gaussian Mixture Model, and single-cell RNA-seq data from blood development. Compared with other methods, our approach accurately identifies growth and transition patterns, eliminates false transitions, and constructs the Waddington developmental landscape. Our code is available at: https://github.com/zhenyiizhang/DeepRUOT.",
+   "contribution_zh": "RUOT 神经求解器：无先验联合学 growth/death 与漂移，Fisher 正则打通 RUOT↔SB",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=gQlxd3Mtru"
+   },
+   "pdf": "papers/2410.00844.pdf",
+   "text": "data/text/2410.00844.txt",
+   "text_chars": 90000,
+   "pages": 32
+  },
+  {
+   "key": "t25__variational_regularized_unbalanced_optimal_transport_single_",
+   "report_id": "2505.11823",
+   "title": "Variational Regularized Unbalanced Optimal Transport: Single Network, Least Action",
+   "authors": [
+    "Yuhao Sun",
+    "Zhenyi Zhang",
+    "Zihan Wang",
+    "Tiejun Li",
+    "Peijie Zhou"
+   ],
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2505.11823",
+   "published": "2025-05-17",
+   "abstract": "Recovering the dynamics from a few snapshots of a high-dimensional system is a challenging task in statistical physics and machine learning, with important applications in computational biology. Many algorithms have been developed to tackle this problem, based on frameworks such as optimal transport and the Schrödinger bridge. A notable recent framework is Regularized Unbalanced Optimal Transport (RUOT), which integrates both stochastic dynamics and unnormalized distributions. However, since many existing methods do not explicitly enforce optimality conditions, their solutions often struggle to satisfy the principle of least action and meet challenges to converge in a stable and reliable way. To address these issues, we propose Variational RUOT (Var-RUOT), a new framework to solve the RUOT problem. By incorporating the optimal necessary conditions for the RUOT problem into both the parameterization of the search space and the loss function design, Var-RUOT only needs to learn a scalar field to solve the RUOT problem and can search for solutions with lower action. We also examined the challenge of selecting a growth penalty function in the widely used Wasserstein-Fisher-Rao metric and proposed a solution that better aligns with biological priors in Var-RUOT. We validated the effectiveness of Var-RUOT on both simulated data and real single-cell datasets. Compared with existing algorithms, Var-RUOT can find solutions with lower action while exhibiting faster convergence and improved training stability. Our code is available at https://github.com/ZerooVector/VarRUOT.",
+   "contribution_zh": "把 RUOT 一阶最优性条件写进参数化与损失，单个标量场解 RUOT、作用量更小、训练更稳；讨论 WFR 增长罚函数选择",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/18aee41e1bb41bbb8fee53cfff8138b7-Abstract-Conference.html"
+   },
+   "pdf": "papers/2505.11823.pdf",
+   "text": "data/text/2505.11823.txt",
+   "text_chars": 90000,
+   "pages": 35
+  },
+  {
+   "key": "t25__joint_velocity_growth_flow_matching",
+   "report_id": "Joint_Velocity_Growth_Flow_Matching",
+   "title": "Joint Velocity-Growth Flow Matching",
+   "authors": "VGFM; Wang et al.",
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "给静态 semi-relaxed OT 一个\"先长质量后运输\"的两段式动态解释，联合速度+增长的 simulation-free FM",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/eb1bad7a84ef68a64f1afd6577725d45-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t25__2506.09007",
+   "report_id": "2506.09007",
+   "title": "Branched Schrödinger Bridge Matching",
+   "authors": [
+    "Sophia Tang",
+    "Yinuo Zhang",
+    "Alexander Tong",
+    "Pranam Chatterjee"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2506.09007",
+   "published": "2025-06-10",
+   "abstract": "Predicting the intermediate trajectories between an initial and target distribution is a central problem in generative modeling. Existing approaches, such as flow matching and Schrödinger bridge matching, effectively learn mappings between two distributions by modeling a single stochastic path. However, these methods are inherently limited to unimodal transitions and cannot capture branched or divergent evolution from a common origin to multiple distinct modes. To address this, we introduce Branched Schrödinger Bridge Matching (BranchSBM), a novel framework that learns branched Schrödinger bridges. BranchSBM parameterizes multiple time-dependent velocity fields and growth processes, enabling the representation of population-level divergence into multiple terminal distributions. We show that BranchSBM is not only more expressive but also essential for tasks involving multi-path surface navigation, modeling cell fate bifurcations from homogeneous progenitor states, and simulating diverging cellular responses to perturbations.",
+   "contribution_zh": "分支 GSB：每支一个速度场+增长网络，把\"一源多汇\"的质量再分配化为可分解的 Unbalanced CondSOC",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2506.09007"
+   },
+   "pdf": "papers/2506.09007.pdf",
+   "text": "data/text/2506.09007.txt",
+   "text_chars": 90000,
+   "pages": 44
+  },
+  {
+   "key": "t25__efficient_algorithms_for_robust_and_partial_semi_discrete_ot",
+   "report_id": "Efficient_Algorithms_for_Robust_and_Partial_Semi_D",
+   "title": "Efficient Algorithms for Robust and Partial Semi-Discrete OT",
+   "authors": "Agarwal, Raghvendra, Shirzadian, Yao",
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "α-partial 与 λ-TV-robust 半离散 OT 的 restricted Laguerre 刻画、两问题互相归约与精确/近似算法",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/3e8f3ca5a82f5511370af7ed0efcad0f-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t25__taming_flow_matching_with_unbalanced_ot_into_fast_pansharpen",
+   "report_id": "2503.14975",
+   "title": "Taming Flow Matching with Unbalanced Optimal Transport into Fast Pansharpening",
+   "authors": [
+    "Zihan Cao",
+    "Yu Zhong",
+    "Liang-Jian Deng"
+   ],
+   "year": 2025,
+   "venue": "ICCV",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2503.14975",
+   "published": "2025-03-19",
+   "abstract": "Pansharpening, a pivotal task in remote sensing for fusing high-resolution panchromatic and multispectral imagery, has garnered significant research interest. Recent advancements employing diffusion models based on stochastic differential equations (SDEs) have demonstrated state-of-the-art performance. However, the inherent multi-step sampling process of SDEs imposes substantial computational overhead, hindering practical deployment. While existing methods adopt efficient samplers, knowledge distillation, or retraining to reduce sampling steps (e.g., from 1,000 to fewer steps), such approaches often compromise fusion quality. In this work, we propose the Optimal Transport Flow Matching (OTFM) framework, which integrates the dual formulation of unbalanced optimal transport (UOT) to achieve one-step, high-quality pansharpening. Unlike conventional OT formulations that enforce rigid distribution alignment, UOT relaxes marginal constraints to enhance modeling flexibility, accommodating the intrinsic spectral and spatial disparities in remote sensing data. Furthermore, we incorporate task-specific regularization into the UOT objective, enhancing the robustness of the flow model. The OTFM framework enables simulation-free training and single-step inference while maintaining strict adherence to pansharpening constraints. Experimental evaluations across multiple datasets demonstrate that OTFM matches or exceeds the performance of previous regression-based models and leading diffusion-based methods while only needing one sampling step. Codes are available at https://github.com/294coder/PAN-OTFM.",
+   "contribution_zh": "UOT 对偶 + 任务正则构造一步跨模态融合流，UOT 松弛吸收遥感光谱/空间失配",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/ICCV2025/html/Cao_Taming_Flow_Matching_with_Unbalanced_Optimal_Transport_into_Fast_Pansharpening_ICCV_2025_paper.html"
+   },
+   "pdf": "papers/2503.14975.pdf",
+   "text": "data/text/2503.14975.txt",
+   "text_chars": 48671,
+   "pages": 11
+  },
+  {
+   "key": "t25__scalable_wasserstein_gradient_flow_via_unbalanced_ot",
+   "report_id": "Scalable_Wasserstein_Gradient_Flow_via_Unbalanced",
+   "title": "Scalable Wasserstein Gradient Flow via Unbalanced OT",
+   "authors": "S-JKO; Choi, Choi, Kang",
+   "year": 2024,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "发现 JKO 步 ≡ UOT 问题，半对偶化把 WGF 生成训练复杂度 O(K²)→O(K)",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/choi24a.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t25__light_unbalanced_optimal_transport",
+   "report_id": "2303.07988",
+   "title": "Light Unbalanced Optimal Transport",
+   "authors": [
+    "Milena Gazdieva",
+    "Arip Asadulaev",
+    "Alexander Korotin",
+    "Evgeny Burnaev"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2303.07988",
+   "published": "2023-03-14",
+   "abstract": "While the continuous Entropic Optimal Transport (EOT) field has been actively developing in recent years, it became evident that the classic EOT problem is prone to different issues like the sensitivity to outliers and imbalance of classes in the source and target measures. This fact inspired the development of solvers that deal with the unbalanced EOT (UEOT) problem $-$ the generalization of EOT allowing for mitigating the mentioned issues by relaxing the marginal constraints. Surprisingly, it turns out that the existing solvers are either based on heuristic principles or heavy-weighted with complex optimization objectives involving several neural networks. We address this challenge and propose a novel theoretically-justified, lightweight, unbalanced EOT solver. Our advancement consists of developing a novel view on the optimization of the UEOT problem yielding tractable and a non-minimax optimization objective. We show that combined with a light parametrization recently proposed in the field our objective leads to a fast, simple, and effective solver which allows solving the continuous UEOT problem in minutes on CPU. We prove that our solver provides a universal approximation of UEOT solutions and obtain its generalization bounds. We give illustrative examples of the solver's performance. The code is publicly available at https://github.com/milenagazdieva/LightUnbalancedOptimalTransport.",
+   "contribution_zh": "非 minimax、Gaussian-mixture 参数化的轻量 UEOT solver，附普适逼近与泛化界",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/aa93a55655e49cc8bf8e6e9295d9b295-Abstract-Conference.html"
+   },
+   "pdf": "papers/2303.07988.pdf",
+   "text": "data/text/2303.07988.txt",
+   "text_chars": 90000,
+   "pages": 30
+  },
+  {
+   "key": "t25__2306.09099",
+   "report_id": "2306.09099",
+   "title": "Unbalanced Diffusion Schrödinger Bridge",
+   "authors": [
+    "Matteo Pariset",
+    "Ya-Ping Hsieh",
+    "Charlotte Bunne",
+    "Andreas Krause",
+    "Valentin De Bortoli"
+   ],
+   "year": 2023,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2306.09099",
+   "published": "2023-06-15",
+   "abstract": "Schrödinger bridges (SBs) provide an elegant framework for modeling the temporal evolution of populations in physical, chemical, or biological systems. Such natural processes are commonly subject to changes in population size over time due to the emergence of new species or birth and death events. However, existing neural parameterizations of SBs such as diffusion Schrödinger bridges (DSBs) are restricted to settings in which the endpoints of the stochastic process are both probability measures and assume conservation of mass constraints. To address this limitation, we introduce unbalanced DSBs which model the temporal evolution of marginals with arbitrary finite mass. This is achieved by deriving the time reversal of stochastic differential equations with killing and birth terms. We present two novel algorithmic schemes that comprise a scalable objective function for training unbalanced DSBs and provide a theoretical analysis alongside challenging applications on predicting heterogeneous molecular single-cell responses to various cancer drugs and simulating the emergence and spread of new viral variants.",
+   "contribution_zh": "推导带 killing/birth 项 SDE 的时间反演，把 DSB 推广到任意有限质量边缘（药物响应、病毒变体）",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2306.09099"
+   },
+   "pdf": "papers/2306.09099.pdf",
+   "text": "data/text/2306.09099.txt",
+   "text_chars": 90000,
+   "pages": 36
+  },
+  {
+   "key": "t25__optimal_entropy_transport_problems_and_a_new_hellinger_kanto",
+   "report_id": "Optimal_Entropy_Transport_Problems_and_a_New_Helli",
+   "title": "Optimal Entropy-Transport Problems and a New Hellinger–Kantorovich Distance",
+   "authors": "Liero, Mielke, Savaré",
+   "year": 2018,
+   "venue": "Invent. Math.",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "奠基：熵-运输问题（KL 松弛边缘）、conic 提升与 HK 距离，UOT 的静态理论骨架",
+   "links": {
+    "DOI": "https://doi.org/10.1007/s00222-017-0759-8"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t25__unbalanced_optimal_transport_dynamic_and_kantorovich_formula",
+   "report_id": "1508.05216",
+   "title": "Unbalanced Optimal Transport: Dynamic and Kantorovich Formulation",
+   "authors": [
+    "Lenaic Chizat",
+    "Gabriel Peyré",
+    "Bernhard Schmitzer",
+    "François-Xavier Vialard"
+   ],
+   "year": 2018,
+   "venue": "J. Funct. Anal.",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1508.05216",
+   "published": "2015-08-21",
+   "abstract": "This article presents a new class of distances between arbitrary nonnegative Radon measures inspired by optimal transport. These distances are defined by two equivalent alternative formulations: (i) a dynamic formulation defining the distance as a geodesic distance over the space of measures (ii) a static \"Kantorovich\" formulation where the distance is the minimum of an optimization problem over pairs of couplings describing the transfer (transport, creation and destruction) of mass between two measures. Both formulations are convex optimization problems, and the ability to switch from one to the other depending on the targeted application is a crucial property of our models. Of particular interest is the Wasserstein-Fisher-Rao metric recently introduced independently by Chizat et al. and Kondratyev et al. Defined initially through a dynamic formulation, it belongs to this class of metrics and hence automatically benefits from a static Kantorovich formulation.",
+   "contribution_zh": "奠基：WFR 动态形式 ≡ 静态 conic 形式，配套 generalized Sinkhorn（Math. Comp. 2018）",
+   "links": {
+    "DOI": "https://doi.org/10.1016/j.jfa.2018.03.008"
+   },
+   "pdf": "papers/1508.05216.pdf",
+   "text": "data/text/1508.05216.txt",
+   "text_chars": 68096,
+   "pages": 37
+  }
+ ]
+}

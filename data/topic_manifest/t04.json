@@ -1,0 +1,397 @@
+{
+ "topic": "t04",
+ "topic_name": "熵正则 OT 与 Sinkhorn 在生成建模中的角色",
+ "section": "A",
+ "section_name": "Theory Foundations",
+ "kb_note": "source/kb/t04_entropic_sinkhorn_gen.md",
+ "papers": [
+  {
+   "key": "t04__progressive_entropic_optimal_transport_solvers",
+   "report_id": "2406.05061",
+   "title": "Progressive Entropic Optimal Transport Solvers",
+   "authors": [
+    "Parnian Kassraie",
+    "Aram-Alexandre Pooladian",
+    "Michal Klein",
+    "James Thornton",
+    "Jonathan Niles-Weed",
+    "Marco Cuturi"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2406.05061",
+   "published": "2024-06-07",
+   "abstract": "Optimal transport (OT) has profoundly impacted machine learning by providing theoretical and computational tools to realign datasets. In this context, given two large point clouds of sizes $n$ and $m$ in $\\mathbb{R}^d$, entropic OT (EOT) solvers have emerged as the most reliable tool to either solve the Kantorovich problem and output a $n\\times m$ coupling matrix, or to solve the Monge problem and learn a vector-valued push-forward map. While the robustness of EOT couplings/maps makes them a go-to choice in practical applications, EOT solvers remain difficult to tune because of a small but influential set of hyperparameters, notably the omnipresent entropic regularization strength $\\varepsilon$. Setting $\\varepsilon$ can be difficult, as it simultaneously impacts various performance metrics, such as compute speed, statistical performance, generalization, and bias. In this work, we propose a new class of EOT solvers (ProgOT), that can estimate both plans and transport maps. We take advantage of several opportunities to optimize the computation of EOT solutions by dividing mass displacement using a time discretization, borrowing inspiration from dynamic OT formulations, and conquering each of these steps using EOT with properly scheduled parameters. We provide experimental evidence demonstrating that ProgOT is a faster and more robust alternative to standard solvers when computing couplings at large scales, even outperforming neural network-based approaches. We also prove statistical consistency of our approach for estimating optimal transport maps.",
+   "contribution_zh": "把 ε 调度嵌入分步(时间离散化)求解：逐段解 EOT 并收缩正则，估计耦合与 map 更稳、可证一致性，是\"ε 不再是单一超参\"的代表",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/22b6bc18be9c2bfaa48adc1122f0a971-Abstract-Conference.html"
+   },
+   "pdf": "papers/2406.05061.pdf",
+   "text": "data/text/2406.05061.txt",
+   "text_chars": 77652,
+   "pages": 23
+  },
+  {
+   "key": "t04__2109.12004",
+   "report_id": "2109.12004",
+   "title": "Entropic estimation of optimal transport maps",
+   "authors": [
+    "Aram-Alexandre Pooladian",
+    "Jonathan Niles-Weed"
+   ],
+   "year": 2021,
+   "venue": "arXiv:2109.12004",
+   "evidence": "R",
+   "star": true,
+   "arxiv_id": "2109.12004",
+   "published": "2021-09-24",
+   "abstract": "We develop a computationally tractable method for estimating the optimal map between two distributions over $\\mathbb{R}^d$ with rigorous finite-sample guarantees. Leveraging an entropic version of Brenier's theorem, we show that our estimator -- the \\emph{barycentric projection} of the optimal entropic plan -- is easy to compute using Sinkhorn's algorithm. As a result, unlike current approaches for map estimation, which are slow to evaluate when the dimension or number of samples is large, our approach is parallelizable and extremely efficient even for massive data sets. Under smoothness assumptions on the optimal map, we show that our estimator enjoys comparable statistical performance to other estimators in the literature, but with much lower computational cost. We showcase the efficacy of our proposed estimator through numerical examples, even ones not explicitly covered by our assumptions. By virtue of Lepski's method, we propose a modified version of our estimator that is adaptive to the smoothness of the underlying optimal transport map. Our proofs are based on a modified duality principle for entropic optimal transport and on a method for approximating optimal entropic plans due to Pal (2019).",
+   "contribution_zh": "entropic map = 熵耦合的 barycentric projection = 熵对偶势的梯度（熵版 Brenier 定理），O(n²) 可算且带有限样本率",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2109.12004"
+   },
+   "pdf": "papers/2109.12004.pdf",
+   "text": "data/text/2109.12004.txt",
+   "text_chars": 86424,
+   "pages": 37
+  },
+  {
+   "key": "t04__interpolating_between_optimal_transport_and_mmd_using_sinkho",
+   "report_id": "1810.08278",
+   "title": "Interpolating between Optimal Transport and MMD using Sinkhorn Divergences",
+   "authors": [
+    "Jean Feydy",
+    "Thibault Séjourné",
+    "François-Xavier Vialard",
+    "Shun-ichi Amari",
+    "Alain Trouvé",
+    "Gabriel Peyré"
+   ],
+   "year": 2019,
+   "venue": "AISTATS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "1810.08278",
+   "published": "2018-10-18",
+   "abstract": "Comparing probability distributions is a fundamental problem in data sciences. Simple norms and divergences such as the total variation and the relative entropy only compare densities in a point-wise manner and fail to capture the geometric nature of the problem. In sharp contrast, Maximum Mean Discrepancies (MMD) and Optimal Transport distances (OT) are two classes of distances between measures that take into account the geometry of the underlying space and metrize the convergence in law. This paper studies the Sinkhorn divergences, a family of geometric divergences that interpolates between MMD and OT. Relying on a new notion of geometric entropy, we provide theoretical guarantees for these divergences: positivity, convexity and metrization of the convergence in law. On the practical side, we detail a numerical scheme that enables the large scale application of these divergences for machine learning: on the GPU, gradients of the Sinkhorn loss can be computed for batches of a million samples.",
+   "contribution_zh": "给出 debiased Sinkhorn divergence 的标准定义并证正定性、凸性、度量化极限（ε→0 得 OT，ε→∞ 得 MMD）",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v89/feydy19a.html"
+   },
+   "pdf": "papers/1810.08278.pdf",
+   "text": "data/text/1810.08278.txt",
+   "text_chars": 53741,
+   "pages": 15
+  },
+  {
+   "key": "t04__learning_generative_models_with_sinkhorn_divergences",
+   "report_id": "1706.00292",
+   "title": "Learning Generative Models with Sinkhorn Divergences",
+   "authors": [
+    "Aude Genevay",
+    "Gabriel Peyré",
+    "Marco Cuturi"
+   ],
+   "year": 2018,
+   "venue": "AISTATS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "1706.00292",
+   "published": "2017-06-01",
+   "abstract": "The ability to compare two degenerate probability distributions (i.e. two probability distributions supported on two distinct low-dimensional manifolds living in a much higher-dimensional space) is a crucial problem arising in the estimation of generative models for high-dimensional observations such as those arising in computer vision or natural language. It is known that optimal transport metrics can represent a cure for this problem, since they were specifically designed as an alternative to information divergences to handle such problematic scenarios. Unfortunately, training generative machines using OT raises formidable computational and statistical challenges, because of (i) the computational burden of evaluating OT losses, (ii) the instability and lack of smoothness of these losses, (iii) the difficulty to estimate robustly these losses and their gradients in high dimension. This paper presents the first tractable computational method to train large scale generative models using an optimal transport loss, and tackles these three issues by relying on two key ideas: (a) entropic smoothing, which turns the original OT loss into one that can be computed using Sinkhorn fixed point iterations; (b) algorithmic (automatic) differentiation of these iterations. These two approximations result in a robust and differentiable approximation of the OT loss with streamlined GPU execution. Entropic smoothing generates a family of losses interpolating between Wasserstein (OT) and Maximum Mean Discrepancy (MMD), thus allowing to find a sweet spot leveraging the geometry of OT and the favorable high-dimensional sample complexity of MMD which comes with unbiased gradient estimates. The resulting computational architecture complements nicely standard deep network generative models by a stack of extra layers implementing the loss function.",
+   "contribution_zh": "首个用 Sinkhorn loss（unrolled 自动微分 + entropic 平滑）大规模训练生成模型的可行方案",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v84/genevay18a.html"
+   },
+   "pdf": "papers/1706.00292.pdf",
+   "text": "data/text/1706.00292.txt",
+   "text_chars": 45147,
+   "pages": 12
+  },
+  {
+   "key": "t04__sinkhorn_distances_lightspeed_computation_of_optimal_transpo",
+   "report_id": "1306.0895",
+   "title": "Sinkhorn Distances: Lightspeed Computation of Optimal Transportation Distances",
+   "authors": [
+    "Marco Cuturi"
+   ],
+   "year": 2013,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "1306.0895",
+   "published": "2013-06-04",
+   "abstract": "Optimal transportation distances are a fundamental family of parameterized distances for histograms. Despite their appealing theoretical properties, excellent performance in retrieval tasks and intuitive formulation, their computation involves the resolution of a linear program whose cost is prohibitive whenever the histograms' dimension exceeds a few hundreds. We propose in this work a new family of optimal transportation distances that look at transportation problems from a maximum-entropy perspective. We smooth the classical optimal transportation problem with an entropic regularization term, and show that the resulting optimum is also a distance which can be computed through Sinkhorn-Knopp's matrix scaling algorithm at a speed that is several orders of magnitude faster than that of transportation solvers. We also report improved performance over classical optimal transportation distances on the MNIST benchmark problem.",
+   "contribution_zh": "把熵正则+Sinkhorn 矩阵缩放引入 ML，开创可扩展正则化 OT 这一领域",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper/2013/hash/af21d0c97db2e27e13572cbf59eb343d-Abstract.html"
+   },
+   "pdf": "papers/1306.0895.pdf",
+   "text": "data/text/1306.0895.txt",
+   "text_chars": 31752,
+   "pages": 13
+  },
+  {
+   "key": "t04__2605.11755",
+   "report_id": "2605.11755",
+   "title": "One-Step Generative Modeling via Wasserstein Gradient Flows",
+   "authors": [
+    "Jiaqi Han",
+    "Puheng Li",
+    "Qiushan Guo",
+    "Renyuan Xu",
+    "Stefano Ermon",
+    "Emmanuel J. Candès"
+   ],
+   "year": 2026,
+   "venue": "arXiv:2605.11755",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2605.11755",
+   "published": "2026-05-12",
+   "abstract": "Diffusion models and flow-based methods have shown impressive generative capability, especially for images, but their sampling is expensive because it requires many iterative updates. We introduce W-Flow, a framework for training a generator that transforms samples from a simple reference distribution into samples from a target data distribution in a single step. This is achieved in two steps: we first define an evolution from the reference distribution to the target distribution through a Wasserstein gradient flow that minimizes an energy functional; second, we train a static neural generator to compress this evolution into one-step generation. We instantiate the energy functional with the Sinkhorn divergence, which yields an efficient optimal-transport-based update rule that captures global distributional discrepancy and improves coverage of the target distribution. We further prove that the finite-sample training dynamics converge to the continuous-time distributional dynamics under suitable assumptions. Empirically, W-Flow sets a new state of the art for one-step ImageNet 256$\\times$256 generation, achieving 1.29 FID, with improved mode coverage and domain transfer. Compared to multi-step diffusion models with similar FID scores, our method yields approximately 100$\\times$ faster sampling. These results show that Wasserstein gradient flows provide a principled and effective foundation for fast and high-fidelity generative modeling.",
+   "contribution_zh": "用 debiased Sinkhorn divergence 作为 WGF 能量泛函，把多步分布演化压缩进一步生成器；ImageNet-256 一步 FID 1.29",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2605.11755"
+   },
+   "pdf": "papers/2605.11755.pdf",
+   "text": "data/text/2605.11755.txt",
+   "text_chars": 90000,
+   "pages": 40
+  },
+  {
+   "key": "t04__sinkhorn_flow_as_mirror_flow_a_continuous_time_framework_for",
+   "report_id": "Sinkhorn_Flow_as_Mirror_Flow_A_Continuous_Time_Fra",
+   "title": "Sinkhorn Flow as Mirror Flow: A Continuous-Time Framework for Generalizing the Sinkhorn Algorithm",
+   "authors": "",
+   "year": 2024,
+   "venue": "AISTATS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "Sinkhorn 的连续时间极限是测度空间 mirror flow，导出对噪声/偏差鲁棒的新变体，统一 Wasserstein mirror flow 等动力学",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v238/reza-karimi24a.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t04__expectile_regularization_for_fast_and_accurate_training_of_n",
+   "report_id": "2403.03777",
+   "title": "ENOT: Expectile Regularization for Fast and Accurate Training of Neural Optimal Transport",
+   "authors": [
+    "Nazar Buzun",
+    "Maksim Bobrin",
+    "Dmitry V. Dylov"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS spotlight",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2403.03777",
+   "published": "2024-03-06",
+   "abstract": "We present a new approach for Neural Optimal Transport (NOT) training procedure, capable of accurately and efficiently estimating optimal transportation plan via specific regularization on dual Kantorovich potentials. The main bottleneck of existing NOT solvers is associated with the procedure of finding a near-exact approximation of the conjugate operator (i.e., the c-transform), which is done either by optimizing over non-convex max-min objectives or by the computationally intensive fine-tuning of the initial approximated prediction. We resolve both issues by proposing a new, theoretically justified loss in the form of expectile regularisation which enforces binding conditions on the learning process of dual potentials. Such a regularization provides the upper bound estimation over the distribution of possible conjugate potentials and makes the learning stable, completely eliminating the need for additional extensive fine-tuning. Proposed method, called Expectile-Regularised Neural Optimal Transport (ENOT), outperforms previous state-of-the-art approaches on the established Wasserstein-2 benchmark tasks by a large margin (up to a 3-fold improvement in quality and up to a 10-fold improvement in runtime). Moreover, we showcase performance of ENOT for varying cost functions on different tasks such as image generation, showing robustness of proposed algorithm. OTT-JAX library includes our implementation of ENOT algorithm https://ott-jax.readthedocs.io/en/latest/tutorials/ENOT.html",
+   "contribution_zh": "用 expectile 回归正则约束对偶 Kantorovich 势，替代昂贵的 c-transform 内层优化，W₂ benchmark 上质量 3×、速度 10×",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/d885c74aa0e00cc07a35346aa7988e34-Abstract-Conference.html"
+   },
+   "pdf": "papers/2403.03777.pdf",
+   "text": "data/text/2403.03777.txt",
+   "text_chars": 57790,
+   "pages": 20
+  },
+  {
+   "key": "t04__energy_guided_entropic_neural_optimal_transport",
+   "report_id": "2304.06094",
+   "title": "Energy-guided Entropic Neural Optimal Transport",
+   "authors": [
+    "Petr Mokrov",
+    "Alexander Korotin",
+    "Alexander Kolesov",
+    "Nikita Gushchin",
+    "Evgeny Burnaev"
+   ],
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2304.06094",
+   "published": "2023-04-12",
+   "abstract": "Energy-based models (EBMs) are known in the Machine Learning community for decades. Since the seminal works devoted to EBMs dating back to the noughties, there have been a lot of efficient methods which solve the generative modelling problem by means of energy potentials (unnormalized likelihood functions). In contrast, the realm of Optimal Transport (OT) and, in particular, neural OT solvers is much less explored and limited by few recent works (excluding WGAN-based approaches which utilize OT as a loss function and do not model OT maps themselves). In our work, we bridge the gap between EBMs and Entropy-regularized OT. We present a novel methodology which allows utilizing the recent developments and technical improvements of the former in order to enrich the latter. From the theoretical perspective, we prove generalization bounds for our technique. In practice, we validate its applicability in toy 2D and image domains. To showcase the scalability, we empower our method with a pre-trained StyleGAN and apply it to high-res AFHQ $512\\times 512$ unpaired I2I translation. For simplicity, we choose simple short- and long-run EBMs as a backbone of our Energy-guided Entropic OT approach, leaving the application of more sophisticated EBMs for future research. Our code is available at: https://github.com/PetrMokrov/Energy-guided-Entropic-OT",
+   "contribution_zh": "把 EBM 与 EOT 对偶结合：能量函数参数化熵对偶势，学到的随机 plan 直接用于 unpaired 图像域迁移",
+   "links": {
+    "proceedings": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/517eb19e99947f60afff0cf93e451825-Abstract-Conference.html"
+   },
+   "pdf": "papers/2304.06094.pdf",
+   "text": "data/text/2304.06094.txt",
+   "text_chars": 84800,
+   "pages": 26
+  },
+  {
+   "key": "t04__debiaser_beware_pitfalls_of_centering_regularized_transport_",
+   "report_id": "2202.08919",
+   "title": "Debiaser Beware: Pitfalls of Centering Regularized Transport Maps",
+   "authors": [
+    "Aram-Alexandre Pooladian",
+    "Marco Cuturi",
+    "Jonathan Niles-Weed"
+   ],
+   "year": 2022,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2202.08919",
+   "published": "2022-02-17",
+   "abstract": "Estimating optimal transport (OT) maps (a.k.a. Monge maps) between two measures $P$ and $Q$ is a problem fraught with computational and statistical challenges. A promising approach lies in using the dual potential functions obtained when solving an entropy-regularized OT problem between samples $P_n$ and $Q_n$, which can be used to recover an approximately optimal map. The negentropy penalization in that scheme introduces, however, an estimation bias that grows with the regularization strength. A well-known remedy to debias such estimates, which has gained wide popularity among practitioners of regularized OT, is to center them, by subtracting auxiliary problems involving $P_n$ and itself, as well as $Q_n$ and itself. We do prove that, under favorable conditions on $P$ and $Q$, debiasing can yield better approximations to the Monge map. However, and perhaps surprisingly, we present a few cases in which debiasing is provably detrimental in a statistical sense, notably when the regularization strength is large or the number of samples is small. These claims are validated experimentally on synthetic and real datasets, and should reopen the debate on whether debiasing is needed when using entropic optimal transport.",
+   "contribution_zh": "证明对 map 估计 debiasing 并非总有益：ε 大或样本少时反而更差，动摇\"一律 debias\"的信条",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v162/pooladian22a.html"
+   },
+   "pdf": "papers/2202.08919.pdf",
+   "text": "data/text/2202.08919.txt",
+   "text_chars": 49568,
+   "pages": 23
+  },
+  {
+   "key": "t04__a_unified_framework_for_implicit_sinkhorn_differentiation",
+   "report_id": "2205.06688",
+   "title": "A Unified Framework for Implicit Sinkhorn Differentiation",
+   "authors": [
+    "Marvin Eisenberger",
+    "Aysim Toker",
+    "Laura Leal-Taixé",
+    "Florian Bernard",
+    "Daniel Cremers"
+   ],
+   "year": 2022,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2205.06688",
+   "published": "2022-05-13",
+   "abstract": "The Sinkhorn operator has recently experienced a surge of popularity in computer vision and related fields. One major reason is its ease of integration into deep learning frameworks. To allow for an efficient training of respective neural networks, we propose an algorithm that obtains analytical gradients of a Sinkhorn layer via implicit differentiation. In comparison to prior work, our framework is based on the most general formulation of the Sinkhorn operator. It allows for any type of loss function, while both the target capacities and cost matrices are differentiated jointly. We further construct error bounds of the resulting algorithm for approximate inputs. Finally, we demonstrate that for a number of applications, simply replacing automatic differentiation with our algorithm directly improves the stability and accuracy of the obtained gradients. Moreover, we show that it is computationally more efficient, particularly when resources like GPU memory are scarce.",
+   "contribution_zh": "用隐式函数定理统一各种 Sinkhorn 层梯度（学习 cost 与 marginal 皆可），比 unrolling 更省内存更稳",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2022/html/Eisenberger_A_Unified_Framework_for_Implicit_Sinkhorn_Differentiation_CVPR_2022_paper.html"
+   },
+   "pdf": "papers/2205.06688.pdf",
+   "text": "data/text/2205.06688.txt",
+   "text_chars": 68503,
+   "pages": 19
+  },
+  {
+   "key": "t04__faster_wasserstein_distance_estimation_with_the_sinkhorn_div",
+   "report_id": "2006.08172",
+   "title": "Faster Wasserstein Distance Estimation with the Sinkhorn Divergence",
+   "authors": [
+    "Lenaic Chizat",
+    "Pierre Roussillon",
+    "Flavien Léger",
+    "François-Xavier Vialard",
+    "Gabriel Peyré"
+   ],
+   "year": 2020,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2006.08172",
+   "published": "2020-06-15",
+   "abstract": "The squared Wasserstein distance is a natural quantity to compare probability distributions in a non-parametric setting. This quantity is usually estimated with the plug-in estimator, defined via a discrete optimal transport problem which can be solved to $ε$-accuracy by adding an entropic regularization of order $ε$ and using for instance Sinkhorn's algorithm. In this work, we propose instead to estimate it with the Sinkhorn divergence, which is also built on entropic regularization but includes debiasing terms. We show that, for smooth densities, this estimator has a comparable sample complexity but allows higher regularization levels, of order $ε^{1/2}$, which leads to improved computational complexity bounds and a strong speedup in practice. Our theoretical analysis covers the case of both randomly sampled densities and deterministic discretizations on uniform grids. We also propose and analyze an estimator based on Richardson extrapolation of the Sinkhorn divergence which enjoys improved statistical and computational efficiency guarantees, under a condition on the regularity of the approximation error, which is in particular satisfied for Gaussian densities. We finally demonstrate the efficiency of the proposed estimators with numerical experiments.",
+   "contribution_zh": "证明 debiased Sinkhorn divergence 估计平方 W₂ 距离在更大 ε 下仍达到近最优误差，计算-统计两头受益",
+   "links": {
+    "proceedings": "https://papers.nips.cc/paper_files/paper/2020/hash/17f98ddf040204eda0af36a108cbdea4-Abstract.html"
+   },
+   "pdf": "papers/2006.08172.pdf",
+   "text": "data/text/2006.08172.txt",
+   "text_chars": 90000,
+   "pages": 29
+  },
+  {
+   "key": "t04__statistical_bounds_for_entropic_optimal_transport_sample_com",
+   "report_id": "1905.11882",
+   "title": "Statistical bounds for entropic optimal transport: sample complexity and the central limit theorem",
+   "authors": [
+    "Gonzalo Mena",
+    "Jonathan Weed"
+   ],
+   "year": 2019,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1905.11882",
+   "published": "2019-05-28",
+   "abstract": "We prove several fundamental statistical bounds for entropic OT with the squared Euclidean cost between subgaussian probability measures in arbitrary dimension. First, through a new sample complexity result we establish the rate of convergence of entropic OT for empirical measures. Our analysis improves exponentially on the bound of Genevay et al. (2019) and extends their work to unbounded measures. Second, we establish a central limit theorem for entropic OT, based on techniques developed by Del Barrio and Loubes (2019). Previously, such a result was only known for finite metric spaces. As an application of our results, we develop and analyze a new technique for estimating the entropy of a random variable corrupted by gaussian noise.",
+   "contribution_zh": "EOT 经验估计的 O(1/√n) 样本复杂度与 CLT，是\"熵正则修复维数灾难\"的理论支柱",
+   "links": {
+    "proceedings": "https://papers.nips.cc/paper_files/paper/2019/hash/5acdc9ca5d99ae66afdfe1eea0e3b26b-Abstract.html"
+   },
+   "pdf": "papers/1905.11882.pdf",
+   "text": "data/text/1905.11882.txt",
+   "text_chars": 47837,
+   "pages": 23
+  },
+  {
+   "key": "t04__sinkhorn_autoencoders",
+   "report_id": "1810.01118",
+   "title": "Sinkhorn AutoEncoders",
+   "authors": [
+    "Giorgio Patrini",
+    "Rianne van den Berg",
+    "Patrick Forré",
+    "Marcello Carioni",
+    "Samarth Bhargav",
+    "Max Welling",
+    "Tim Genewein",
+    "Frank Nielsen"
+   ],
+   "year": 2019,
+   "venue": "UAI (PMLR v115)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1810.01118",
+   "published": "2018-10-02",
+   "abstract": "Optimal transport offers an alternative to maximum likelihood for learning generative autoencoding models. We show that minimizing the p-Wasserstein distance between the generator and the true data distribution is equivalent to the unconstrained min-min optimization of the p-Wasserstein distance between the encoder aggregated posterior and the prior in latent space, plus a reconstruction error. We also identify the role of its trade-off hyperparameter as the capacity of the generator: its Lipschitz constant. Moreover, we prove that optimizing the encoder over any class of universal approximators, such as deterministic neural networks, is enough to come arbitrarily close to the optimum. We therefore advertise this framework, which holds for any metric space and prior, as a sweet-spot of current generative autoencoding objectives. We then introduce the Sinkhorn auto-encoder (SAE), which approximates and minimizes the p-Wasserstein distance in latent space via backprogation through the Sinkhorn algorithm. SAE directly works on samples, i.e. it models the aggregated posterior as an implicit distribution, with no need for a reparameterization trick for gradients estimations. SAE is thus able to work with different metric spaces and priors with minimal adaptations. We demonstrate the flexibility of SAE on latent spaces with different geometries and priors and compare with other methods on benchmark data sets.",
+   "contribution_zh": "在 WAE 框架内用 Sinkhorn 距离对齐 latent aggregated posterior 与先验，确定性编解码器即可生成",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v115/patrini20a.html"
+   },
+   "pdf": "papers/1810.01118.pdf",
+   "text": "data/text/1810.01118.txt",
+   "text_chars": 55946,
+   "pages": 16
+  },
+  {
+   "key": "t04__improving_gans_using_optimal_transport",
+   "report_id": "1803.05573",
+   "title": "Improving GANs Using Optimal Transport",
+   "authors": [
+    "Tim Salimans",
+    "Han Zhang",
+    "Alec Radford",
+    "Dimitris Metaxas"
+   ],
+   "year": 2018,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1803.05573",
+   "published": "2018-03-15",
+   "abstract": "We present Optimal Transport GAN (OT-GAN), a variant of generative adversarial nets minimizing a new metric measuring the distance between the generator distribution and the data distribution. This metric, which we call mini-batch energy distance, combines optimal transport in primal form with an energy distance defined in an adversarially learned feature space, resulting in a highly discriminative distance function with unbiased mini-batch gradients. Experimentally we show OT-GAN to be highly stable when trained with large mini-batches, and we present state-of-the-art results on several popular benchmark problems for image generation.",
+   "contribution_zh": "minibatch energy distance：primal OT 与对抗特征空间 energy distance 结合，梯度无偏、大 batch 下训练稳定",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=rkQkBnJAb"
+   },
+   "pdf": "papers/1803.05573.pdf",
+   "text": "data/text/1803.05573.txt",
+   "text_chars": 37512,
+   "pages": 13
+  }
+ ]
+}

@@ -1,0 +1,392 @@
+{
+ "topic": "t19",
+ "topic_name": "视频生成与时序一致性中的 OT/流",
+ "section": "D",
+ "section_name": "Modalities",
+ "kb_note": "source/kb/t19_video_generation.md",
+ "papers": [
+  {
+   "key": "t19__from_slow_bidirectional_to_fast_autoregressive_video_diffusi",
+   "report_id": "2412.07772",
+   "title": "From Slow Bidirectional to Fast Autoregressive Video Diffusion Models",
+   "authors": [
+    "Tianwei Yin",
+    "Qiang Zhang",
+    "Richard Zhang",
+    "William T. Freeman",
+    "Fredo Durand",
+    "Eli Shechtman",
+    "Xun Huang"
+   ],
+   "year": 2025,
+   "venue": "CVPR (pp. 22963-22974)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2412.07772",
+   "published": "2024-12-10",
+   "abstract": "Current video diffusion models achieve impressive generation quality but struggle in interactive applications due to bidirectional attention dependencies. The generation of a single frame requires the model to process the entire sequence, including the future. We address this limitation by adapting a pretrained bidirectional diffusion transformer to an autoregressive transformer that generates frames on-the-fly. To further reduce latency, we extend distribution matching distillation (DMD) to videos, distilling 50-step diffusion model into a 4-step generator. To enable stable and high-quality distillation, we introduce a student initialization scheme based on teacher's ODE trajectories, as well as an asymmetric distillation strategy that supervises a causal student model with a bidirectional teacher. This approach effectively mitigates error accumulation in autoregressive generation, allowing long-duration video synthesis despite training on short clips. Our model achieves a total score of 84.27 on the VBench-Long benchmark, surpassing all previous video generation models. It enables fast streaming generation of high-quality videos at 9.4 FPS on a single GPU thanks to KV caching. Our approach also enables streaming video-to-video translation, image-to-video, and dynamic prompting in a zero-shot manner.",
+   "contribution_zh": "把 DMD 扩到视频：双向教师**非对称蒸馏**因果自回归学生 + 教师 ODE 轨迹初始化，4 步、KV cache 流式 9.4 FPS，VBench-Long 84.27，零样本流式 V2V/I2V",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2025/html/Yin_From_Slow_Bidirectional_to_Fast_Autoregressive_Video_Diffusion_Models_CVPR_2025_paper.html"
+   },
+   "pdf": "papers/2412.07772.pdf",
+   "text": "data/text/2412.07772.txt",
+   "text_chars": 64993,
+   "pages": 18
+  },
+  {
+   "key": "t19__self_forcing_bridging_the_train_test_gap_in_autoregressive_v",
+   "report_id": "2506.08009",
+   "title": "Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion",
+   "authors": [
+    "Xun Huang",
+    "Zhengqi Li",
+    "Guande He",
+    "Mingyuan Zhou",
+    "Eli Shechtman"
+   ],
+   "year": 2025,
+   "venue": "NeurIPS Spotlight",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2506.08009",
+   "published": "2025-06-09",
+   "abstract": "We introduce Self Forcing, a novel training paradigm for autoregressive video diffusion models. It addresses the longstanding issue of exposure bias, where models trained on ground-truth context must generate sequences conditioned on their own imperfect outputs during inference. Unlike prior methods that denoise future frames based on ground-truth context frames, Self Forcing conditions each frame's generation on previously self-generated outputs by performing autoregressive rollout with key-value (KV) caching during training. This strategy enables supervision through a holistic loss at the video level that directly evaluates the quality of the entire generated sequence, rather than relying solely on traditional frame-wise objectives. To ensure training efficiency, we employ a few-step diffusion model along with a stochastic gradient truncation strategy, effectively balancing computational cost and performance. We further introduce a rolling KV cache mechanism that enables efficient autoregressive video extrapolation. Extensive experiments demonstrate that our approach achieves real-time streaming video generation with sub-second latency on a single GPU, while matching or even surpassing the generation quality of significantly slower and non-causal diffusion models. Project website: http://self-forcing.github.io/",
+   "contribution_zh": "训练时自回归 self-rollout（KV 缓存）+ 视频级整体分布匹配损失，消除曝光偏差；随机梯度截断与滚动 KV cache，单 H100 17 FPS 亚秒延迟实时流式生成",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=mSiN7i0BYH"
+   },
+   "pdf": "papers/2506.08009.pdf",
+   "text": "data/text/2506.08009.txt",
+   "text_chars": 68010,
+   "pages": 19
+  },
+  {
+   "key": "t19__pyramidal_flow_matching_for_efficient_video_generative_model",
+   "report_id": "2410.05954",
+   "title": "Pyramidal Flow Matching for Efficient Video Generative Modeling",
+   "authors": [
+    "Yang Jin",
+    "Zhicheng Sun",
+    "Ningyuan Li",
+    "Kun Xu",
+    "Kun Xu",
+    "Hao Jiang",
+    "Nan Zhuang",
+    "Quzhe Huang",
+    "Yang Song",
+    "Yadong Mu",
+    "Zhouchen Lin"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2410.05954",
+   "published": "2024-10-08",
+   "abstract": "Video generation requires modeling a vast spatiotemporal space, which demands significant computational resources and data usage. To reduce the complexity, the prevailing approaches employ a cascaded architecture to avoid direct training with full resolution latent. Despite reducing computational demands, the separate optimization of each sub-stage hinders knowledge sharing and sacrifices flexibility. This work introduces a unified pyramidal flow matching algorithm. It reinterprets the original denoising trajectory as a series of pyramid stages, where only the final stage operates at the full resolution, thereby enabling more efficient video generative modeling. Through our sophisticated design, the flows of different pyramid stages can be interlinked to maintain continuity. Moreover, we craft autoregressive video generation with a temporal pyramid to compress the full-resolution history. The entire framework can be optimized in an end-to-end manner and with a single unified Diffusion Transformer (DiT). Extensive experiments demonstrate that our method supports generating high-quality 5-second (up to 10-second) videos at 768p resolution and 24 FPS within 20.7k A100 GPU training hours. All code and models are open-sourced at https://pyramid-flow.github.io.",
+   "contribution_zh": "视频原生流匹配设计：把去噪轨迹重写为空间金字塔分段流（仅末段全分辨率）+ 时间金字塔压缩历史，单一 DiT 端到端；20.7k A100 时训出 768p·24fps·10s",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=66NzcRQuOq"
+   },
+   "pdf": "papers/2410.05954.pdf",
+   "text": "data/text/2410.05954.txt",
+   "text_chars": 79753,
+   "pages": 25
+  },
+  {
+   "key": "t19__2504.03072",
+   "report_id": "2504.03072",
+   "title": "How I Warped Your Noise: a Temporally-Correlated Noise Prior for Diffusion Models",
+   "authors": [
+    "Pascal Chang",
+    "Jingwei Tang",
+    "Markus Gross",
+    "Vinicius C. Azevedo"
+   ],
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2504.03072",
+   "published": "2025-04-03",
+   "abstract": "Video editing and generation methods often rely on pre-trained image-based diffusion models. During the diffusion process, however, the reliance on rudimentary noise sampling techniques that do not preserve correlations present in subsequent frames of a video is detrimental to the quality of the results. This either produces high-frequency flickering, or texture-sticking artifacts that are not amenable to post-processing. With this in mind, we propose a novel method for preserving temporal correlations in a sequence of noise samples. This approach is materialized by a novel noise representation, dubbed $\\int$-noise (integral noise), that reinterprets individual noise samples as a continuously integrated noise field: pixel values do not represent discrete values, but are rather the integral of an underlying infinite-resolution noise over the pixel area. Additionally, we propose a carefully tailored transport method that uses $\\int$-noise to accurately advect noise samples over a sequence of frames, maximizing the correlation between different frames while also preserving the noise properties. Our results demonstrate that the proposed $\\int$-noise can be used for a variety of tasks, such as video restoration, surrogate rendering, and conditional video generation. See https://warpyournoise.github.io/ for video results.",
+   "contribution_zh": "帧间噪声耦合奠基作：把离散噪声重释为连续积分噪声场（∫-noise），推导**噪声传输方程**做分布保持的跨帧噪声平流，免训练消除闪烁/纹理粘连",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2504.03072"
+   },
+   "pdf": "papers/2504.03072.pdf",
+   "text": "data/text/2504.03072.txt",
+   "text_chars": 90000,
+   "pages": 32
+  },
+  {
+   "key": "t19__flowception_temporally_expansive_flow_matching_for_video_gen",
+   "report_id": "2512.11438",
+   "title": "Flowception: Temporally Expansive Flow Matching for Video Generation",
+   "authors": [
+    "Tariq Berrada Ifriqi",
+    "John Nguyen",
+    "Karteek Alahari",
+    "Jakob Verbeek",
+    "Ricky T. Q. Chen"
+   ],
+   "year": 2026,
+   "venue": "CVPR (pp. 16185-16195)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2512.11438",
+   "published": "2025-12-12",
+   "abstract": "We present Flowception, a novel non-autoregressive and variable-length video generation framework. Flowception learns a probability path that interleaves discrete frame insertions with continuous frame denoising. Compared to autoregressive methods, Flowception alleviates error accumulation/drift as the frame insertion mechanism during sampling serves as an efficient compression mechanism to handle long-term context. Compared to full-sequence flows, our method reduces FLOPs for training three-fold, while also being more amenable to local attention variants, and allowing to learn the length of videos jointly with their content. Quantitative experimental results show improved FVD and VBench metrics over autoregressive and full-sequence baselines, which is further validated with qualitative results. Finally, by learning to insert and denoise frames in a sequence, Flowception seamlessly integrates different tasks such as image-to-video generation and video interpolation.",
+   "contribution_zh": "概率路径中交错\"离散帧插入 + 连续帧去噪\"：非自回归、变长视频生成，训练 FLOPs 降 3 倍，缓解 AR 误差累积，统一 I2V 与插帧",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2026/html/Ifriqi_Flowception_Temporally_Expansive_Flow_Matching_for_Video_Generation_CVPR_2026_paper.html"
+   },
+   "pdf": "papers/2512.11438.pdf",
+   "text": "data/text/2512.11438.txt",
+   "text_chars": 90000,
+   "pages": 28
+  },
+  {
+   "key": "t19__streamdit_real_time_streaming_text_to_video_generation",
+   "report_id": "2507.03745",
+   "title": "StreamDiT: Real-Time Streaming Text-to-Video Generation",
+   "authors": [
+    "Akio Kodaira",
+    "Tingbo Hou",
+    "Ji Hou",
+    "Markos Georgopoulos",
+    "Felix Juefei-Xu",
+    "Masayoshi Tomizuka",
+    "Yue Zhao"
+   ],
+   "year": 2026,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2507.03745",
+   "published": "2025-07-04",
+   "abstract": "Recently, great progress has been achieved in text-to-video (T2V) generation by scaling transformer-based diffusion models to billions of parameters, which can generate high-quality videos. However, existing models typically produce only short clips offline, restricting their use cases in interactive and real-time applications. This paper addresses these challenges by proposing StreamDiT, a streaming video generation model. StreamDiT training is based on flow matching by adding a moving buffer. We design mixed training with different partitioning schemes of buffered frames to boost both content consistency and visual quality. StreamDiT modeling is based on adaLN DiT with varying time embedding and window attention. To practice the proposed method, we train a StreamDiT model with 4B parameters. In addition, we propose a multistep distillation method tailored for StreamDiT. Sampling distillation is performed in each segment of a chosen partitioning scheme. After distillation, the total number of function evaluations (NFEs) is reduced to the number of chunks in a buffer. Finally, our distilled model reaches real-time performance at 16 FPS on one GPU, which can generate video streams at 512p resolution. We evaluate our method through both quantitative metrics and human evaluation. Our model enables real-time applications, e.g. streaming generation, interactive generation, and video-to-video. We provide video results and more examples in our project website: https://cumulo-autumn.github.io/StreamDiT/",
+   "contribution_zh": "基于流匹配的**移动缓冲**训练（缓冲内帧带时变噪声水平），混合分区方案+少步蒸馏，4B 模型单 GPU 16 FPS 流式 512p 生成",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2026/html/Kodaira_StreamDiT_Real-Time_Streaming_Text-to-Video_Generation_CVPR_2026_paper.html"
+   },
+   "pdf": "papers/2507.03745.pdf",
+   "text": "data/text/2507.03745.txt",
+   "text_chars": 60694,
+   "pages": 16
+  },
+  {
+   "key": "t19__framebridge_improving_image_to_video_generation_with_bridge_",
+   "report_id": "2410.15371",
+   "title": "FrameBridge: Improving Image-to-Video Generation with Bridge Models",
+   "authors": [
+    "Yuji Wang",
+    "Zehua Chen",
+    "Xiaoyu Chen",
+    "Yixiang Wei",
+    "Jun Zhu",
+    "Jianfei Chen"
+   ],
+   "year": 2025,
+   "venue": "ICML, PMLR 267",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2410.15371",
+   "published": "2024-10-20",
+   "abstract": "Diffusion models have achieved remarkable progress on image-to-video (I2V) generation, while their noise-to-data generation process is inherently mismatched with this task, which may lead to suboptimal synthesis quality. In this work, we present FrameBridge. By modeling the frame-to-frames generation process with a bridge model based data-to-data generative process, we are able to fully exploit the information contained in the given image and improve the consistency between the generation process and I2V task. Moreover, we propose two novel techniques toward the two popular settings of training I2V models, respectively. Firstly, we propose SNR-Aligned Fine-tuning (SAF), making the first attempt to fine-tune a diffusion model to a bridge model and, therefore, allowing us to utilize the pre-trained diffusion-based text-to-video (T2V) models. Secondly, we propose neural prior, further improving the synthesis quality of FrameBridge when training from scratch. Experiments conducted on WebVid-2M and UCF-101 demonstrate the superior quality of FrameBridge in comparison with the diffusion counterpart (zero-shot FVD 95 vs. 192 on MSR-VTT and non-zero-shot FVD 122 vs. 171 on UCF-101), and the advantages of our proposed SAF and neural prior for bridge-based I2V models. The project page: https://framebridge-icml.github.io/.",
+   "contribution_zh": "把 I2V 从 noise-to-data 改写为 data-to-data **桥过程**（图像为先验），提出 SNR 对齐微调（扩散→桥模型迁移）与 neural prior；MSR-VTT 零样本 FVD 95 vs 扩散基线 192",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v267/wang25q.html"
+   },
+   "pdf": "papers/2410.15371.pdf",
+   "text": "data/text/2410.15371.txt",
+   "text_chars": 86371,
+   "pages": 31
+  },
+  {
+   "key": "t19__2501.08316",
+   "report_id": "2501.08316",
+   "title": "Diffusion Adversarial Post-Training for One-Step Video Generation",
+   "authors": [
+    "Shanchuan Lin",
+    "Xin Xia",
+    "Yuxi Ren",
+    "Ceyuan Yang",
+    "Xuefeng Xiao",
+    "Lu Jiang"
+   ],
+   "year": 2025,
+   "venue": "ICML, PMLR 267",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2501.08316",
+   "published": "2025-01-14",
+   "abstract": "The diffusion models are widely used for image and video generation, but their iterative generation process is slow and expansive. While existing distillation approaches have demonstrated the potential for one-step generation in the image domain, they still suffer from significant quality degradation. In this work, we propose Adversarial Post-Training (APT) against real data following diffusion pre-training for one-step video generation. To improve the training stability and quality, we introduce several improvements to the model architecture and training procedures, along with an approximated R1 regularization objective. Empirically, our experiments show that our adversarial post-trained model, Seaweed-APT, can generate 2-second, 1280x720, 24fps videos in real time using a single forward evaluation step. Additionally, our model is capable of generating 1024px images in a single step, achieving quality comparable to state-of-the-art methods.",
+   "contribution_zh": "扩散预训练后对**真实数据**对抗后训练（近似 R1 正则稳定训练），单次前向实时生成 2s·1280×720·24fps 视频——工业级一步视频的首个公开配方",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2501.08316"
+   },
+   "pdf": "papers/2501.08316.pdf",
+   "text": "data/text/2501.08316.txt",
+   "text_chars": 66261,
+   "pages": 16
+  },
+  {
+   "key": "t19__2506.09350",
+   "report_id": "2506.09350",
+   "title": "Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation",
+   "authors": [
+    "Shanchuan Lin",
+    "Ceyuan Yang",
+    "Hao He",
+    "Jianwen Jiang",
+    "Yuxi Ren",
+    "Xin Xia",
+    "Yang Zhao",
+    "Xuefeng Xiao",
+    "Lu Jiang"
+   ],
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2506.09350",
+   "published": "2025-06-11",
+   "abstract": "Existing large-scale video generation models are computationally intensive, preventing adoption in real-time and interactive applications. In this work, we propose autoregressive adversarial post-training (AAPT) to transform a pre-trained latent video diffusion model into a real-time, interactive video generator. Our model autoregressively generates a latent frame at a time using a single neural function evaluation (1NFE). The model can stream the result to the user in real time and receive interactive responses as controls to generate the next latent frame. Unlike existing approaches, our method explores adversarial training as an effective paradigm for autoregressive generation. This not only allows us to design an architecture that is more efficient for one-step generation while fully utilizing the KV cache, but also enables training the model in a student-forcing manner that proves to be effective in reducing error accumulation during long video generation. Our experiments demonstrate that our 8B model achieves real-time, 24fps, streaming video generation at 736x416 resolution on a single H100, or 1280x720 on 8xH100 up to a minute long (1440 frames). Visit our research website at https://seaweed-apt.com/2",
+   "contribution_zh": "把预训练视频扩散改造成 1NFE/帧的自回归实时交互生成器（单 H100 24fps 736×416、8×H100 720p），流式接收用户控制、可至分钟级",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2506.09350"
+   },
+   "pdf": "papers/2506.09350.pdf",
+   "text": "data/text/2506.09350.txt",
+   "text_chars": 76746,
+   "pages": 20
+  },
+  {
+   "key": "t19__2503.06674",
+   "report_id": "2503.06674",
+   "title": "Learning Few-Step Diffusion Models by Trajectory Distribution Matching",
+   "authors": [
+    "Yihong Luo",
+    "Tianyang Hu",
+    "Jiacheng Sun",
+    "Yujun Cai",
+    "Jing Tang"
+   ],
+   "year": 2025,
+   "venue": "ICCV",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2503.06674",
+   "published": "2025-03-09",
+   "abstract": "Accelerating diffusion model sampling is crucial for efficient AIGC deployment. While diffusion distillation methods -- based on distribution matching and trajectory matching -- reduce sampling to as few as one step, they fall short on complex tasks like text-to-image generation. Few-step generation offers a better balance between speed and quality, but existing approaches face a persistent trade-off: distribution matching lacks flexibility for multi-step sampling, while trajectory matching often yields suboptimal image quality. To bridge this gap, we propose learning few-step diffusion models by Trajectory Distribution Matching (TDM), a unified distillation paradigm that combines the strengths of distribution and trajectory matching. Our method introduces a data-free score distillation objective, aligning the student's trajectory with the teacher's at the distribution level. Further, we develop a sampling-steps-aware objective that decouples learning targets across different steps, enabling more adjustable sampling. This approach supports both deterministic sampling for superior image quality and flexible multi-step adaptation, achieving state-of-the-art performance with remarkable efficiency. Our model, TDM, outperforms existing methods on various backbones, such as SDXL and PixArt-$α$, delivering superior quality and significantly reduced training costs. In particular, our method distills PixArt-$α$ into a 4-step generator that outperforms its teacher on real user preference at 1024 resolution. This is accomplished with 500 iterations and 2 A800 hours -- a mere 0.01% of the teacher's training cost. In addition, our proposed TDM can be extended to accelerate text-to-video diffusion. Notably, TDM can outperform its teacher model (CogVideoX-2B) by using only 4 NFE on VBench, improving the total score from 80.91 to 81.65. Project page: https://tdm-t2x.github.io/",
+   "contribution_zh": "统一分布匹配与轨迹匹配的**数据自由**少步蒸馏（沿教师 ODE 轨迹逐段分布对齐），图像与视频通吃：CogVideoX-2B 蒸到 4 步且 VBench 超教师",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2503.06674"
+   },
+   "pdf": "papers/2503.06674.pdf",
+   "text": "data/text/2503.06674.txt",
+   "text_chars": 60618,
+   "pages": 17
+  },
+  {
+   "key": "t19__2411.04746",
+   "report_id": "2411.04746",
+   "title": "Taming Rectified Flow for Inversion and Editing",
+   "authors": [
+    "Jiangshan Wang",
+    "Junfu Pu",
+    "Zhongang Qi",
+    "Jiayi Guo",
+    "Yue Ma",
+    "Nisha Huang",
+    "Yuxin Chen",
+    "Xiu Li",
+    "Ying Shan"
+   ],
+   "year": 2025,
+   "venue": "ICML, PMLR 267",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2411.04746",
+   "published": "2024-11-07",
+   "abstract": "Rectified-flow-based diffusion transformers like FLUX and OpenSora have demonstrated outstanding performance in the field of image and video generation. Despite their robust generative capabilities, these models often struggle with inversion inaccuracies, which could further limit their effectiveness in downstream tasks such as image and video editing. To address this issue, we propose RF-Solver, a novel training-free sampler that effectively enhances inversion precision by mitigating the errors in the ODE-solving process of rectified flow. Specifically, we derive the exact formulation of the rectified flow ODE and apply the high-order Taylor expansion to estimate its nonlinear components, significantly enhancing the precision of ODE solutions at each timestep. Building upon RF-Solver, we further propose RF-Edit, a general feature-sharing-based framework for image and video editing. By incorporating self-attention features from the inversion process into the editing process, RF-Edit effectively preserves the structural information of the source image or video while achieving high-quality editing results. Our approach is compatible with any pre-trained rectified-flow-based models for image and video tasks, requiring no additional training or optimization. Extensive experiments across generation, inversion, and editing tasks in both image and video modalities demonstrate the superiority and versatility of our method. The source code is available at https://github.com/wangjiangshan0725/RF-Solver-Edit.",
+   "contribution_zh": "免训练高阶求解器降低 rectified flow ODE 反演误差（精确解+泰勒展开），在 FLUX 与 **OpenSora 视频**上改进反演重建与编辑——视频流模型编辑的求解器基础",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2411.04746"
+   },
+   "pdf": "papers/2411.04746.pdf",
+   "text": "data/text/2411.04746.txt",
+   "text_chars": 59100,
+   "pages": 15
+  },
+  {
+   "key": "t19__2405.18750",
+   "report_id": "2405.18750",
+   "title": "T2V-Turbo: Breaking the Quality Bottleneck of Video Consistency Model with Mixed Reward Feedback",
+   "authors": [
+    "Jiachen Li",
+    "Weixi Feng",
+    "Tsu-Jui Fu",
+    "Xinyi Wang",
+    "Sugato Basu",
+    "Wenhu Chen",
+    "William Yang Wang"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2405.18750",
+   "published": "2024-05-29",
+   "abstract": "Diffusion-based text-to-video (T2V) models have achieved significant success but continue to be hampered by the slow sampling speed of their iterative sampling processes. To address the challenge, consistency models have been proposed to facilitate fast inference, albeit at the cost of sample quality. In this work, we aim to break the quality bottleneck of a video consistency model (VCM) to achieve $\\textbf{both fast and high-quality video generation}$. We introduce T2V-Turbo, which integrates feedback from a mixture of differentiable reward models into the consistency distillation (CD) process of a pre-trained T2V model. Notably, we directly optimize rewards associated with single-step generations that arise naturally from computing the CD loss, effectively bypassing the memory constraints imposed by backpropagating gradients through an iterative sampling process. Remarkably, the 4-step generations from our T2V-Turbo achieve the highest total score on VBench, even surpassing Gen-2 and Pika. We further conduct human evaluations to corroborate the results, validating that the 4-step generations from our T2V-Turbo are preferred over the 50-step DDIM samples from their teacher models, representing more than a tenfold acceleration while improving video generation quality.",
+   "contribution_zh": "视频一致性蒸馏 + 图文/视频文本奖励模型混合反馈，突破 VCM 质量瓶颈，4–8 步 VBench 超当时闭源模型（Gen-2/Pika）",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2405.18750"
+   },
+   "pdf": "papers/2405.18750.pdf",
+   "text": "data/text/2405.18750.txt",
+   "text_chars": 90000,
+   "pages": 35
+  },
+  {
+   "key": "t19__2501.00103",
+   "report_id": "2501.00103",
+   "title": "LTX-Video: Realtime Video Latent Diffusion",
+   "authors": [
+    "Yoav HaCohen",
+    "Nisan Chiprut",
+    "Benny Brazowski",
+    "Daniel Shalem",
+    "Dudu Moshe",
+    "Eitan Richardson",
+    "Eran Levin",
+    "Guy Shiran",
+    "Nir Zabari",
+    "Ori Gordon",
+    "Poriya Panet",
+    "Sapir Weissbuch",
+    "Victor Kulikov",
+    "Yaki Bitterman",
+    "Zeev Melumian",
+    "Ofir Bibi"
+   ],
+   "year": 2024,
+   "venue": "2024–25 · arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2501.00103",
+   "published": "2024-12-30",
+   "abstract": "We introduce LTX-Video, a transformer-based latent diffusion model that adopts a holistic approach to video generation by seamlessly integrating the responsibilities of the Video-VAE and the denoising transformer. Unlike existing methods, which treat these components as independent, LTX-Video aims to optimize their interaction for improved efficiency and quality. At its core is a carefully designed Video-VAE that achieves a high compression ratio of 1:192, with spatiotemporal downscaling of 32 x 32 x 8 pixels per token, enabled by relocating the patchifying operation from the transformer's input to the VAE's input. Operating in this highly compressed latent space enables the transformer to efficiently perform full spatiotemporal self-attention, which is essential for generating high-resolution videos with temporal consistency. However, the high compression inherently limits the representation of fine details. To address this, our VAE decoder is tasked with both latent-to-pixel conversion and the final denoising step, producing the clean result directly in pixel space. This approach preserves the ability to generate fine details without incurring the runtime cost of a separate upsampling module. Our model supports diverse use cases, including text-to-video and image-to-video generation, with both capabilities trained simultaneously. It achieves faster-than-real-time generation, producing 5 seconds of 24 fps video at 768x512 resolution in just 2 seconds on an Nvidia H100 GPU, outperforming all existing models of similar scale. The source code and pre-trained models are publicly available, setting a new benchmark for accessible and scalable video generation.",
+   "contribution_zh": "实时渲染标杆：1:192 高压缩 Video-VAE（32×32×8/token）与去噪 DiT 整体协同设计 + rectified flow，H100 上 2 秒生成 5 秒 768×512·24fps 视频（快于播放速度）",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2501.00103"
+   },
+   "pdf": "papers/2501.00103.pdf",
+   "text": "data/text/2501.00103.txt",
+   "text_chars": 56121,
+   "pages": 21
+  }
+ ]
+}

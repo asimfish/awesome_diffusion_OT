@@ -1,0 +1,287 @@
+{
+ "topic": "t29",
+ "topic_name": "高性能 OT 求解器与训练基础设施",
+ "section": "F",
+ "section_name": "Systems, Benchmarks & Trends",
+ "kb_note": "source/kb/t29_ot_solvers_infra.md",
+ "papers": [
+  {
+   "key": "t29__2602.03067",
+   "report_id": "2602.03067",
+   "title": "FlashSinkhorn: IO-Aware Entropic Optimal Transport on GPU",
+   "authors": [
+    "Felix X. -F. Ye",
+    "Xingjie Li",
+    "An Yu",
+    "Ming-Ching Chang",
+    "Linsong Chu",
+    "Davis Wertheimer"
+   ],
+   "year": 2026,
+   "venue": "ICML Oral",
+   "evidence": "A",
+   "star": true,
+   "arxiv_id": "2602.03067",
+   "published": "2026-02-03",
+   "abstract": "Entropic optimal transport (EOT) via Sinkhorn iterations is widely used in modern machine learning, yet GPU solvers remain inefficient at scale. Tensorized implementations suffer quadratic HBM traffic from dense $n\\times m$ interactions, while existing online backends avoid storing dense matrices but still rely on generic tiled map-reduce reduction kernels with limited fusion. We present \\textbf{FlashSinkhorn}, an IO-aware EOT solver for squared Euclidean cost that rewrites stabilized log-domain Sinkhorn updates as row-wise LogSumExp reductions of biased dot-product scores, the same normalization as transformer attention. This enables FlashAttention-style fusion and tiling: fused Triton kernels stream tiles through on-chip SRAM and update dual potentials in a single pass, substantially reducing HBM IO per iteration while retaining linear-memory operations. We further provide streaming kernels for transport application, enabling scalable first- and second-order optimization. On A100 GPUs, FlashSinkhorn achieves up to $32\\times$ forward-pass and $161\\times$ end-to-end speedups over state-of-the-art online baselines on point-cloud OT, improves scalability on OT-based downstream tasks. For reproducibility, we release an open-source implementation at https://github.com/ot-triton-lab/flash-sinkhorn .",
+   "contribution_zh": "把 log-domain Sinkhorn 更新重写为 attention 同构的 online-LSE，Triton 融合 kernel 流式过 SRAM，O(nd) 显存 + 解析梯度/HVP/半对偶 c-transform；A100 上比 KeOps 前向快 9–32×、端到端最高 161×",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2602.03067"
+   },
+   "pdf": "papers/2602.03067.pdf",
+   "text": "data/text/2602.03067.txt",
+   "text_chars": 90000,
+   "pages": 36
+  },
+  {
+   "key": "t29__a_memory_efficient_hierarchical_algorithm_for_large_scale_ot",
+   "report_id": "A_Memory_Efficient_Hierarchical_Algorithm_for_Larg",
+   "title": "A Memory-Efficient Hierarchical Algorithm for Large-scale OT (HALO)",
+   "authors": "",
+   "year": 2026,
+   "venue": "ICLR Poster",
+   "evidence": "A",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "层次多尺度 warm-start + active support 剪枝 + 因子化-free 一阶 LP 求解器（默认 cuPDLPx），O(n) 内存；1024² 像素图像 8.9× 加速、省 70.5% 显存",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=CkOBcyntGd"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t29__2503.03025",
+   "report_id": "2503.03025",
+   "title": "Hierarchical Refinement: Optimal Transport to Infinity and Beyond",
+   "authors": [
+    "Peter Halmos",
+    "Julian Gold",
+    "Xinhao Liu",
+    "Benjamin J. Raphael"
+   ],
+   "year": 2025,
+   "venue": "ICML Oral",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2503.03025",
+   "published": "2025-03-04",
+   "abstract": "Optimal transport (OT) has enjoyed great success in machine learning as a principled way to align datasets via a least-cost correspondence, driven in large part by the runtime efficiency of the Sinkhorn algorithm (Cuturi, 2013). However, Sinkhorn has quadratic space and time complexity in the number of points, limiting scalability to larger datasets. Low-rank OT achieves linear complexity, but by definition, cannot compute a one-to-one correspondence between points. When the optimal transport problem is an assignment problem between datasets then an optimal mapping, known as the Monge map, is guaranteed to be a bijection. In this setting, we show that the factors of an optimal low-rank coupling co-cluster each point with its image under the Monge map. We leverage this invariant to derive an algorithm, Hierarchical Refinement (HiRef), that dynamically constructs a multiscale partition of each dataset using low-rank OT subproblems, culminating in the bijective Monge map. Hierarchical Refinement runs in log-linear time and linear space, retaining the advantages of low-rank OT while overcoming its limited resolution. We demonstrate the advantages of Hierarchical Refinement on several datasets, including ones containing over a million points, scaling full-rank OT to problems previously beyond Sinkhorn's reach.",
+   "contribution_zh": "证明低秩耦合因子与 Monge map 共聚类，用低秩 OT 递归构造多尺度划分、log-linear 时间/线性空间恢复**全秩双射**，百万点规模超出 Sinkhorn 可及范围",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=EBNgREMoVD",
+    "arXiv": "https://arxiv.org/abs/2503.03025"
+   },
+   "pdf": "papers/2503.03025.pdf",
+   "text": "data/text/2503.03025.txt",
+   "text_chars": 90000,
+   "pages": 33
+  },
+  {
+   "key": "t29__2605.08793",
+   "report_id": "2605.08793",
+   "title": "cuRegOT: A GPU-Accelerated Solver for Entropic-Regularized Optimal Transport",
+   "authors": [
+    "Yixuan Qiu"
+   ],
+   "year": 2026,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2605.08793",
+   "published": "2026-05-09",
+   "abstract": "Optimal transport (OT) has emerged as a fundamental tool in modern machine learning, yet its computational cost remains a significant bottleneck for large-scale applications. While harnessing the massive parallelism of modern GPU hardware is critical for efficiency, the de facto standard Sinkhorn algorithm, despite its ease of parallelization, often suffers from slow convergence in challenging problems. More recently, the sparse-plus-low-rank quasi-Newton method offers a balance between convergence rate and per-iteration complexity; however, its efficiency on GPUs is severely hindered by the serial nature of sparse matrix symbolic analysis and irregular memory access patterns. To bridge this gap, we present cuRegOT, a high-performance GPU solver tailored for entropic-regularized OT. We introduce a suite of algorithmic and architectural optimizations, including an amortized symbolic analysis strategy to mitigate CPU bottlenecks, an asynchronous Sinkhorn iterates generation mechanism, and a fused kernel for bandwidth-efficient gradient evaluation. These strategies are backed by rigorous theoretical guarantees ensuring algorithmic convergence. Extensive numerical experiments demonstrate that cuRegOT achieves significant speedups over state-of-the-art GPU-based solvers across a variety of benchmark tasks.",
+   "contribution_zh": "把 sparse-plus-low-rank 拟牛顿法 GPU 化：摊销稀疏符号分析、CPU/GPU 异步流水、融合梯度 kernel；在难例（小 η=0.001）上显著快于 POT/OTT-JAX/AccSinkhorn",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2605.08793"
+   },
+   "pdf": "papers/2605.08793.pdf",
+   "text": "data/text/2605.08793.txt",
+   "text_chars": 65522,
+   "pages": 32
+  },
+  {
+   "key": "t29__2605.00837",
+   "report_id": "2605.00837",
+   "title": "Fast Log-Domain Sinkhorn Optimal Transport with Warp-Level GPU Reductions",
+   "authors": [
+    "Hao Xiao"
+   ],
+   "year": 2026,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2605.00837",
+   "published": "2026-04-04",
+   "abstract": "Entropic regularized optimal transport (OT) via the Sinkhorn algorithm has become a fundamental tool in machine learning, yet existing implementations either suffer from numerical instability for small regularization parameters or incur significant overhead from deep learning frameworks. We present FastSinkhorn, a lightweight, native CUDA implementation of the log-domain Sinkhorn algorithm that combines warp-level shuffle reductions with shared-memory tiling to achieve high GPU utilization without sacrificing numerical stability. Our solver operates entirely in the log-domain, enabling robust computation for regularization parameters as small as epsilon = 10^{-4} where standard-domain methods fail. On dense OT problems with n = m = 8192, our implementation achieves 12x speedup over the widely-used POT library and 5.9x speedup over GPU-accelerated PyTorch baselines, while consuming only 256 MB of GPU memory. We validate our solver on image color transfer, 3D point cloud matching, and convergence analysis, demonstrating that native CUDA kernels with careful numerical treatment provide a practical and efficient foundation for large-scale optimal transport computation.",
+   "contribution_zh": "原生 CUDA warp-level shuffle 归约 + shared-memory tiling 的 log-domain Sinkhorn；ε 低至 1e-4 仍稳定，n=8192 时比 POT 快 12×、仅 256MB 显存",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2605.00837"
+   },
+   "pdf": "papers/2605.00837.pdf",
+   "text": "data/text/2605.00837.txt",
+   "text_chars": 32127,
+   "pages": 14
+  },
+  {
+   "key": "t29__accelerating_sinkhorn_algorithm_with_sparse_newton_iteration",
+   "report_id": "2401.12253",
+   "title": "Accelerating Sinkhorn Algorithm with Sparse Newton Iterations",
+   "authors": [
+    "Xun Tang",
+    "Michael Shavlovsky",
+    "Holakou Rahmanian",
+    "Elisa Tardini",
+    "Kiran Koshy Thekumparampil",
+    "Tesi Xiao",
+    "Lexing Ying"
+   ],
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2401.12253",
+   "published": "2024-01-20",
+   "abstract": "Computing the optimal transport distance between statistical distributions is a fundamental task in machine learning. One remarkable recent advancement is entropic regularization and the Sinkhorn algorithm, which utilizes only matrix scaling and guarantees an approximated solution with near-linear runtime. Despite the success of the Sinkhorn algorithm, its runtime may still be slow due to the potentially large number of iterations needed for convergence. To achieve possibly super-exponential convergence, we present Sinkhorn-Newton-Sparse (SNS), an extension to the Sinkhorn algorithm, by introducing early stopping for the matrix scaling steps and a second stage featuring a Newton-type subroutine. Adopting the variational viewpoint that the Sinkhorn algorithm maximizes a concave Lyapunov potential, we offer the insight that the Hessian matrix of the potential function is approximately sparse. Sparsification of the Hessian results in a fast $O(n^2)$ per-iteration complexity, the same as the Sinkhorn algorithm. In terms of total iteration count, we observe that the SNS algorithm converges orders of magnitude faster across a wide range of practical cases, including optimal transportation between empirical distributions and calculating the Wasserstein $W_1, W_2$ distance of discretized densities. The empirical performance is corroborated by a rigorous bound on the approximate sparsity of the Hessian matrix.",
+   "contribution_zh": "Sinkhorn 一阶缩放后接 Hessian 稀疏化的 Newton 迭代，超线性收敛；与硬件加速正交、可叠加",
+   "links": {
+    "ICLR 官方页": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/3a819a53408e20b75d1954bf617ccc0a-Abstract-Conference.html"
+   },
+   "pdf": "papers/2401.12253.pdf",
+   "text": "data/text/2401.12253.txt",
+   "text_chars": 59194,
+   "pages": 20
+  },
+  {
+   "key": "t29__2407.19689",
+   "report_id": "2407.19689",
+   "title": "PDOT: a Practical Primal-Dual Algorithm and a GPU-Based Solver for Optimal Transport",
+   "authors": [
+    "Haihao Lu",
+    "Jinwen Yang"
+   ],
+   "year": 2024,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2407.19689",
+   "published": "2024-07-29",
+   "abstract": "In this paper, we propose a practical primal-dual algorithm with theoretical guarantees and develop a GPU-based solver, which we dub PDOT, for solving large-scale optimal transport problems. Compared to Sinkhorn algorithm or classic LP algorithms, PDOT can achieve high-accuracy solution while efficiently taking advantage of modern computing architecture, i.e., GPUs. On the theoretical side, we show that PDOT has a data-independent $\\widetilde O(mn(m+n)^{1.5}\\log(\\frac{1}ε))$ local flop complexity where $ε$ is the desired accuracy, and $m$ and $n$ are the dimension of the original and target distribution, respectively. We further present a data-dependent $\\widetilde O(mn(m+n)^{3.5}Δ+ mn(m+n)^{1.5}\\log(\\frac{1}ε))$ global flop complexity of PDOT, where $Δ$ is the precision of the data. On the numerical side, we present PDOT, an open-source GPU solver based on the proposed algorithm. Our extensive numerical experiments consistently demonstrate the well balance of PDOT in computing efficiency and accuracy of the solution, compared to Gurobi and Sinkhorn algorithms.",
+   "contribution_zh": "用 restarted PDHG（cuPDLP 血统）做 matrix-free 高精度 OT：数据无关 O(1/ε) 复杂度，GPU 上高精度区间胜过 Sinkhorn 与商用 LP",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2407.19689"
+   },
+   "pdf": "papers/2407.19689.pdf",
+   "text": "data/text/2407.19689.txt",
+   "text_chars": 66015,
+   "pages": 27
+  },
+  {
+   "key": "t29__low_rank_optimal_transport_through_factor_relaxation_with_la",
+   "report_id": "2411.10555",
+   "title": "Low-Rank Optimal Transport through Factor Relaxation with Latent Coupling",
+   "authors": [
+    "Peter Halmos",
+    "Xinhao Liu",
+    "Julian Gold",
+    "Benjamin J Raphael"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2411.10555",
+   "published": "2024-11-15",
+   "abstract": "Optimal transport (OT) is a general framework for finding a minimum-cost transport plan, or coupling, between probability distributions, and has many applications in machine learning. A key challenge in applying OT to massive datasets is the quadratic scaling of the coupling matrix with the size of the dataset. [Forrow et al. 2019] introduced a factored coupling for the k-Wasserstein barycenter problem, which [Scetbon et al. 2021] adapted to solve the primal low-rank OT problem. We derive an alternative parameterization of the low-rank problem based on the $\\textit{latent coupling}$ (LC) factorization previously introduced by [Lin et al. 2021] generalizing [Forrow et al. 2019]. The LC factorization has multiple advantages for low-rank OT including decoupling the problem into three OT problems and greater flexibility and interpretability. We leverage these advantages to derive a new algorithm $\\textit{Factor Relaxation with Latent Coupling}$ (FRLC), which uses $\\textit{coordinate}$ mirror descent to compute the LC factorization. FRLC handles multiple OT objectives (Wasserstein, Gromov-Wasserstein, Fused Gromov-Wasserstein), and marginal constraints (balanced, unbalanced, and semi-relaxed) with linear space complexity. We provide theoretical results on FRLC, and demonstrate superior performance on diverse applications -- including graph clustering and spatial transcriptomics -- while demonstrating its interpretability.",
+   "contribution_zh": "latent coupling 因子化把低秩 OT 解耦成三个子 OT 问题，坐标镜像下降求解；统一 W/GW/FGW × 均衡/非均衡/半松弛，线性空间",
+   "links": {
+    "NeurIPS 官方页": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/cfc1924c62e72e2cb0e0feeecb963241-Abstract.html"
+   },
+   "pdf": "papers/2411.10555.pdf",
+   "text": "data/text/2411.10555.txt",
+   "text_chars": 90000,
+   "pages": 53
+  },
+  {
+   "key": "t29__quasi_monte_carlo_for_3d_sliced_wasserstein",
+   "report_id": "2309.11713",
+   "title": "Quasi-Monte Carlo for 3D Sliced Wasserstein",
+   "authors": [
+    "Khai Nguyen",
+    "Nicola Bariletto",
+    "Nhat Ho"
+   ],
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2309.11713",
+   "published": "2023-09-21",
+   "abstract": "Monte Carlo (MC) integration has been employed as the standard approximation method for the Sliced Wasserstein (SW) distance, whose analytical expression involves an intractable expectation. However, MC integration is not optimal in terms of absolute approximation error. To provide a better class of empirical SW, we propose quasi-sliced Wasserstein (QSW) approximations that rely on Quasi-Monte Carlo (QMC) methods. For a comprehensive investigation of QMC for SW, we focus on the 3D setting, specifically computing the SW between probability measures in three dimensions. In greater detail, we empirically evaluate various methods to construct QMC point sets on the 3D unit-hypersphere, including the Gaussian-based and equal area mappings, generalized spiral points, and optimizing discrepancy energies. Furthermore, to obtain an unbiased estimator for stochastic optimization, we extend QSW to Randomized Quasi-Sliced Wasserstein (RQSW) by introducing randomness in the discussed point sets. Theoretically, we prove the asymptotic convergence of QSW and the unbiasedness of RQSW. Finally, we conduct experiments on various 3D tasks, such as point-cloud comparison, point-cloud interpolation, image style transfer, and training deep point-cloud autoencoders, to demonstrate the favorable performance of the proposed QSW and RQSW variants.",
+   "contribution_zh": "用球面低差异点集替代 MC 投影方向，系统评测多种 QMC 构造；RQSW 随机化后保无偏可做 SGD——sliced 系的数值工程标杆",
+   "links": {
+    "ICLR 官方页": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/4b6898c70d5b328deaf2216aefd8f77a-Abstract-Conference.html"
+   },
+   "pdf": "papers/2309.11713.pdf",
+   "text": "data/text/2309.11713.txt",
+   "text_chars": 75533,
+   "pages": 25
+  },
+  {
+   "key": "t29__2103.04737",
+   "report_id": "2103.04737",
+   "title": "Low-Rank Sinkhorn Factorization",
+   "authors": [
+    "Meyer Scetbon",
+    "Marco Cuturi",
+    "Gabriel Peyré"
+   ],
+   "year": 2021,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2103.04737",
+   "published": "2021-03-08",
+   "abstract": "Several recent applications of optimal transport (OT) theory to machine learning have relied on regularization, notably entropy and the Sinkhorn algorithm. Because matrix-vector products are pervasive in the Sinkhorn algorithm, several works have proposed to \\textit{approximate} kernel matrices appearing in its iterations using low-rank factors. Another route lies instead in imposing low-rank constraints on the feasible set of couplings considered in OT problems, with no approximations on cost nor kernel matrices. This route was first explored by Forrow et al., 2018, who proposed an algorithm tailored for the squared Euclidean ground cost, using a proxy objective that can be solved through the machinery of regularized 2-Wasserstein barycenters. Building on this, we introduce in this work a generic approach that aims at solving, in full generality, the OT problem under low-rank constraints with arbitrary costs. Our algorithm relies on an explicit factorization of low rank couplings as a product of \\textit{sub-coupling} factors linked by a common marginal; similar to an NMF approach, we alternatively updates these factors. We prove the non-asymptotic stationary convergence of this algorithm and illustrate its efficiency on benchmark experiments.",
+   "contribution_zh": "不近似核而直接约束耦合的非负秩，任意 cost 通用；\"低秩耦合\"路线的源头，OTT-JAX 内置实现",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2103.04737",
+    "ICML 页": "https://icml.cc/virtual/2021/poster/8545"
+   },
+   "pdf": "papers/2103.04737.pdf",
+   "text": "data/text/2103.04737.txt",
+   "text_chars": 64663,
+   "pages": 21
+  },
+  {
+   "key": "t29__1812.05189",
+   "report_id": "1812.05189",
+   "title": "Massively scalable Sinkhorn distances via the Nyström method",
+   "authors": [
+    "Jason Altschuler",
+    "Francis Bach",
+    "Alessandro Rudi",
+    "Jonathan Niles-Weed"
+   ],
+   "year": 2019,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1812.05189",
+   "published": "2018-12-12",
+   "abstract": "The Sinkhorn \"distance\", a variant of the Wasserstein distance with entropic regularization, is an increasingly popular tool in machine learning and statistical inference. However, the time and memory requirements of standard algorithms for computing this distance grow quadratically with the size of the data, making them prohibitively expensive on massive data sets. In this work, we show that this challenge is surprisingly easy to circumvent: combining two simple techniques---the Nyström method and Sinkhorn scaling---provably yields an accurate approximation of the Sinkhorn distance with significantly lower time and memory requirements than other approaches. We prove our results via new, explicit analyses of the Nyström method and of the stability properties of Sinkhorn scaling. We validate our claims experimentally by showing that our approach easily computes Sinkhorn distances on data sets hundreds of times larger than can be handled by other techniques.",
+   "contribution_zh": "Nyström 低秩核近似 + Sinkhorn 缩放的稳定性分析，近线性时间/内存；\"核近似\"路线的源头",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/1812.05189"
+   },
+   "pdf": "papers/1812.05189.pdf",
+   "text": "data/text/1812.05189.txt",
+   "text_chars": 76334,
+   "pages": 37
+  }
+ ]
+}

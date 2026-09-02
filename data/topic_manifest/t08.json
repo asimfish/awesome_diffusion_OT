@@ -1,0 +1,409 @@
+{
+ "topic": "t08",
+ "topic_name": "OT-CFM 与 minibatch OT 耦合",
+ "section": "B",
+ "section_name": "Flow Matching & Trajectory Straightening",
+ "kb_note": "source/kb/t08_ot_cfm_minibatch.md",
+ "papers": [
+  {
+   "key": "t08__faster_inference_of_flow_based_generative_models_via_improve",
+   "report_id": "2603.15279",
+   "title": "Faster Inference of Flow-Based Generative Models via Improved Data-Noise Coupling",
+   "authors": [
+    "Aram Davtyan",
+    "Leello Tadesse Dadi",
+    "Volkan Cevher",
+    "Paolo Favaro"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2603.15279",
+   "published": "2026-03-16",
+   "abstract": "Conditional Flow Matching (CFM), a simulation-free method for training continuous normalizing flows, provides an efficient alternative to diffusion models for key tasks like image and video generation. The performance of CFM in solving these tasks depends on the way data is coupled with noise. A recent approach uses minibatch optimal transport (OT) to reassign noise-data pairs in each training step to streamline sampling trajectories and thus accelerate inference. However, its optimization is restricted to individual minibatches, limiting its effectiveness on large datasets. To address this shortcoming, we introduce LOOM-CFM (Looking Out Of Minibatch-CFM), a novel method to extend the scope of minibatch OT by preserving and optimizing these assignments across minibatches over training time. Our approach demonstrates consistent improvements in the sampling speed-quality trade-off across multiple datasets. LOOM-CFM also enhances distillation initialization and supports high-resolution synthesis in latent space training.",
+   "contribution_zh": "跨 minibatch 存储并交换局部最优配对、多噪声缓存防过拟合，以近零开销逼近全局 OT plan",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=rsGPrJDIhh"
+   },
+   "pdf": "papers/2603.15279.pdf",
+   "text": "data/text/2603.15279.txt",
+   "text_chars": 64288,
+   "pages": 26
+  },
+  {
+   "key": "t08__the_curse_of_conditions_analyzing_and_improving_optimal_tran",
+   "report_id": "2503.10636",
+   "title": "The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation",
+   "authors": [
+    "Ho Kei Cheng",
+    "Alexander Schwing"
+   ],
+   "year": 2025,
+   "venue": "ICCV",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2503.10636",
+   "published": "2025-03-13",
+   "abstract": "Minibatch optimal transport coupling straightens paths in unconditional flow matching. This leads to computationally less demanding inference as fewer integration steps and less complex numerical solvers can be employed when numerically solving an ordinary differential equation at test time. However, in the conditional setting, minibatch optimal transport falls short. This is because the default optimal transport mapping disregards conditions, resulting in a conditionally skewed prior distribution during training. In contrast, at test time, we have no access to the skewed prior, and instead sample from the full, unbiased prior distribution. This gap between training and testing leads to a subpar performance. To bridge this gap, we propose conditional optimal transport C^2OT that adds a conditional weighting term in the cost matrix when computing the optimal transport assignment. Experiments demonstrate that this simple fix works with both discrete and continuous conditions in 8gaussians-to-moons, CIFAR-10, ImageNet-32x32, and ImageNet-256x256. Our method performs better overall compared to the existing baselines across different function evaluation budgets. Code is available at https://hkchengrex.github.io/C2OT",
+   "contribution_zh": "揭示无条件 OT 耦合在条件生成中反而有害（条件偏斜先验造成 train-test gap），在成本矩阵加条件加权项修复",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/ICCV2025/html/Cheng_The_Curse_of_Conditions_Analyzing_and_Improving_Optimal_Transport_for_ICCV_2025_paper.html"
+   },
+   "pdf": "papers/2503.10636.pdf",
+   "text": "data/text/2503.10636.txt",
+   "text_chars": 65264,
+   "pages": 22
+  },
+  {
+   "key": "t08__2506.05526",
+   "report_id": "2506.05526",
+   "title": "On Fitting Flow Models with Large Sinkhorn Couplings",
+   "authors": [
+    "Stephen Zhang",
+    "Alireza Mousavi-Hosseini",
+    "Michal Klein",
+    "Marco Cuturi"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": true,
+   "arxiv_id": "2506.05526",
+   "published": "2025-06-05",
+   "abstract": "Flow models transform data gradually from one modality (e.g. noise) onto another (e.g. images). Such models are parameterized by a time-dependent velocity field, trained to fit segments connecting pairs of source and target points. When the pairing between source and target points is given, training flow models boils down to a supervised regression problem. When no such pairing exists, as is the case when generating data from noise, training flows is much harder. A popular approach lies in picking source and target points independently. This can, however, lead to velocity fields that are slow to train, but also costly to integrate at inference time. In theory, one would greatly benefit from training flow models by sampling pairs from an optimal transport (OT) measure coupling source and target, since this would lead to a highly efficient flow solving the Benamou and Brenier dynamical OT problem. In practice, recent works have proposed to sample mini-batches of $n$ source and $n$ target points and reorder them using an OT solver to form better pairs. These works have advocated using batches of size $n\\approx 256$, and considered OT solvers that return couplings that are either sharp (using e.g. the Hungarian algorithm) or blurred (using e.g. entropic regularization, a.k.a. Sinkhorn). We follow in the footsteps of these works by exploring the benefits of increasing $n$ by three to four orders of magnitude, and look more carefully on the effect of the entropic regularization $\\varepsilon$ used in the Sinkhorn algorithm. Our analysis is facilitated by new scale invariant quantities to report the sharpness of a coupling, while our sharded computations across multiple GPU or GPU nodes allow scaling up $n$. We show that in both synthetic and image generation tasks, flow models greatly benefit when fitted with large Sinkhorn couplings, with a low entropic regularization $\\varepsilon$.",
+   "contribution_zh": "把 Sinkhorn 耦合分片扩到 n≈10⁶ 并系统消融 ε：n≈256 的 OT-FM 增益微弱是小样本诅咒，大 n+低 ε 才显著收益",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2506.05526"
+   },
+   "pdf": "papers/2506.05526.pdf",
+   "text": "data/text/2506.05526.txt",
+   "text_chars": 63510,
+   "pages": 23
+  },
+  {
+   "key": "t08__2302.00482",
+   "report_id": "2302.00482",
+   "title": "Improving and generalizing flow-based generative models with minibatch optimal transport",
+   "authors": [
+    "Alexander Tong",
+    "Kilian Fatras",
+    "Nikolay Malkin",
+    "Guillaume Huguet",
+    "Yanlei Zhang",
+    "Jarrid Rector-Brooks",
+    "Guy Wolf",
+    "Yoshua Bengio"
+   ],
+   "year": 2024,
+   "venue": "TMLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2302.00482",
+   "published": "2023-02-01",
+   "abstract": "Continuous normalizing flows (CNFs) are an attractive generative modeling technique, but they have been held back by limitations in their simulation-based maximum likelihood training. We introduce the generalized conditional flow matching (CFM) technique, a family of simulation-free training objectives for CNFs. CFM features a stable regression objective like that used to train the stochastic flow in diffusion models but enjoys the efficient inference of deterministic flow models. In contrast to both diffusion models and prior CNF training algorithms, CFM does not require the source distribution to be Gaussian or require evaluation of its density. A variant of our objective is optimal transport CFM (OT-CFM), which creates simpler flows that are more stable to train and lead to faster inference, as evaluated in our experiments. Furthermore, we show that when the true OT plan is available, our OT-CFM method approximates dynamic OT. Training CNFs with CFM improves results on a variety of conditional and unconditional generation tasks, such as inferring single cell dynamics, unsupervised image translation, and Schrödinger bridge inference.",
+   "contribution_zh": "提出 CFM 统一框架与 OT-CFM：batch 内 OT 重配对得到更直、更稳、可近似动态 OT 的流，且 source 不必是高斯",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=HgDwiZrpVq",
+    "arXiv": "https://arxiv.org/abs/2302.00482"
+   },
+   "pdf": "papers/2302.00482.pdf",
+   "text": "data/text/2302.00482.txt",
+   "text_chars": 90000,
+   "pages": 34
+  },
+  {
+   "key": "t08__multisample_flow_matching_straightening_flows_with_minibatch",
+   "report_id": "2304.14772",
+   "title": "Multisample Flow Matching: Straightening Flows with Minibatch Couplings",
+   "authors": [
+    "Aram-Alexandre Pooladian",
+    "Heli Ben-Hamu",
+    "Carles Domingo-Enrich",
+    "Brandon Amos",
+    "Yaron Lipman",
+    "Ricky T. Q. Chen"
+   ],
+   "year": 2023,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2304.14772",
+   "published": "2023-04-28",
+   "abstract": "Simulation-free methods for training continuous-time generative models construct probability paths that go between noise distributions and individual data samples. Recent works, such as Flow Matching, derived paths that are optimal for each data sample. However, these algorithms rely on independent data and noise samples, and do not exploit underlying structure in the data distribution for constructing probability paths. We propose Multisample Flow Matching, a more general framework that uses non-trivial couplings between data and noise samples while satisfying the correct marginal constraints. At very small overhead costs, this generalization allows us to (i) reduce gradient variance during training, (ii) obtain straighter flows for the learned vector field, which allows us to generate high-quality samples using fewer function evaluations, and (iii) obtain transport maps with lower cost in high dimensions, which has applications beyond generative modeling. Importantly, we do so in a completely simulation-free manner with a simple minimization objective. We show that our proposed methods improve sample consistency on downsampled ImageNet data sets, and lead to better low-cost sample generation.",
+   "contribution_zh": "形式化 batch 耦合族（BatchOT/BatchEOT/StableCoupling），证明 k→∞ 路径直线化、梯度方差降低，ImageNet 上省 30–60% NFE",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v202/pooladian23a.html"
+   },
+   "pdf": "papers/2304.14772.pdf",
+   "text": "data/text/2304.14772.txt",
+   "text_chars": 88562,
+   "pages": 29
+  },
+  {
+   "key": "t08__2605.12174",
+   "report_id": "2605.12174",
+   "title": "Expected Batch Optimal Transport Plans and Consequences for Flow Matching",
+   "authors": [
+    "Samuel Boïté",
+    "Julie Delon",
+    "Kimia Nadjahi"
+   ],
+   "year": 2026,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2605.12174",
+   "published": "2026-05-12",
+   "abstract": "Solving optimal transport (OT) on random minibatches is a common surrogate for exact OT in large-scale learning. In flow matching (FM), this surrogate is used to obtain OT-like couplings that can straighten probability paths and reduce numerical integration cost. Yet, the population-level coupling induced by repeated minibatch OT remains only partially understood. We formalize this coupling as the expected batch OT plan $\\overlineπ_{k}$, obtained by averaging empirical OT plans over independent minibatches of size $k$. We then establish its large-batch consistency and, in the semidiscrete case relevant to generative modeling, derive rates for both the transport-cost bias and the convergence of $\\overlineπ_{k}$ to the OT plan. For FM, this yields a population coupling whose induced velocity field is regular enough to define a unique flow from the source to the discrete target. We finally quantify how OT batch size interacts with numerical integration in a tractable two-atom model and in synthetic and image experiments.",
+   "contribution_zh": "首个系统理论：期望 batch 耦合 π_k 的大 batch 一致性、半离散情形成本偏差与 plan 收敛速率、FM 流的良定性",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2605.12174"
+   },
+   "pdf": "papers/2605.12174.pdf",
+   "text": "data/text/2605.12174.txt",
+   "text_chars": 90000,
+   "pages": 57
+  },
+  {
+   "key": "t08__minibatch_optimal_transport_and_perplexity_in_discrete_flow_",
+   "report_id": "2411.00759",
+   "title": "Minibatch Optimal Transport and Perplexity Bound Estimation in Discrete Flow Matching",
+   "authors": [
+    "Etrit Haxholli",
+    "Yeti Z. Gurbuz",
+    "Ogul Can",
+    "Eli Waxman"
+   ],
+   "year": 2026,
+   "venue": "ICML",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": "2411.00759",
+   "published": "2024-11-01",
+   "abstract": "Discrete flow matching, a recent framework for modeling categorical data, has shown competitive performance with autoregressive models. However, unlike continuous flow matching, the rectification strategy cannot be applied due to the stochasticity of discrete paths, necessitating alternative methods to minimize state transitions. We propose a dynamic-optimal-transport-like minimization objective and derive its Kantorovich formulation for discrete flows with convex interpolants, where transport cost depends solely on inter-state dissimilarity and can be optimized via minibatch strategies. We show that such methods can reduce the number of transitions up to 32 times (1024 to 32) to reach the same generative perplexity without compromising diversity. Additionally, path nondeterminism in discrete flows precludes an instantaneous change-of-variables analogue, preventing precise probability estimation available to continuous flows. We therefore propose two upper bounds on perplexity, enabling principled training, evaluation and model comparison. Finally, we introduce Multimask Flows which outperform masked flows in generative perplexity without compromising diversity, particularly when utilizing minibatch Optimal Transport.",
+   "contribution_zh": "把 minibatch OT 耦合引入离散 flow matching，分析耦合对离散路径与 perplexity 的影响",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=A8rmJlSET9"
+   },
+   "pdf": "papers/2411.00759.pdf",
+   "text": "data/text/2411.00759.txt",
+   "text_chars": 90000,
+   "pages": 48
+  },
+  {
+   "key": "t08__2509.25519",
+   "report_id": "2509.25519",
+   "title": "Flow Matching with Semidiscrete Couplings",
+   "authors": [
+    "Alireza Mousavi-Hosseini",
+    "Stephen Y. Zhang",
+    "Michal Klein",
+    "Marco Cuturi"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2509.25519",
+   "published": "2025-09-29",
+   "abstract": "Flow models parameterized as time-dependent velocity fields can generate data from noise by integrating an ODE. These models are often trained using flow matching, i.e. by sampling random pairs of noise and target points $(\\mathbf{x}_0,\\mathbf{x}_1)$ and ensuring that the velocity field is aligned, on average, with $\\mathbf{x}_1-\\mathbf{x}_0$ when evaluated along a segment linking $\\mathbf{x}_0$ to $\\mathbf{x}_1$. While these pairs are sampled independently by default, they can also be selected more carefully by matching batches of $n$ noise to $n$ target points using an optimal transport (OT) solver. Although promising in theory, the OT flow matching (OT-FM) approach is not widely used in practice. Zhang et al. (2025) pointed out recently that OT-FM truly starts paying off when the batch size $n$ grows significantly, which only a multi-GPU implementation of the Sinkhorn algorithm can handle. Unfortunately, the costs of running Sinkhorn can quickly balloon, requiring $O(n^2/\\varepsilon^2)$ operations for every $n$ pairs used to fit the velocity field, where $\\varepsilon$ is a regularization parameter that should be typically small to yield better results. To fulfill the theoretical promises of OT-FM, we propose to move away from batch-OT and rely instead on a semidiscrete formulation that leverages the fact that the target dataset distribution is usually of finite size $N$. The SD-OT problem is solved by estimating a dual potential vector using SGD; using that vector, freshly sampled noise vectors at train time can then be matched with data points at the cost of a maximum inner product search (MIPS). Semidiscrete FM (SD-FM) removes the quadratic dependency on $n/\\varepsilon$ that bottlenecks OT-FM. SD-FM beats both FM and OT-FM on all training metrics and inference budget constraints, across multiple datasets, on unconditional/conditional generation, or when using mean-flow models.",
+   "contribution_zh": "绕开 minibatch：对整个（离散）数据集预计算半离散 OT 对偶势，训练时按势函数配对，含条件三角映射扩展",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2509.25519"
+   },
+   "pdf": "papers/2509.25519.pdf",
+   "text": "data/text/2509.25519.txt",
+   "text_chars": 82162,
+   "pages": 38
+  },
+  {
+   "key": "t08__simulation_free_schro_dinger_bridges_via_score_and_flow_matc",
+   "report_id": "Simulation_Free_Schr_dinger_Bridges_via_Score_and",
+   "title": "Simulation-Free Schrödinger Bridges via Score and Flow Matching",
+   "authors": "[SF]²M, Tong et al.",
+   "year": 2024,
+   "venue": "AISTATS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "用静态熵正则 OT / minibatch Sinkhorn 耦合 + score+flow 双回归，simulation-free 求解 Schrödinger bridge",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v238/tong24a.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t08__2310.03725",
+   "report_id": "2310.03725",
+   "title": "Stochastic interpolants with data-dependent couplings",
+   "authors": [
+    "Michael S. Albergo",
+    "Mark Goldstein",
+    "Nicholas M. Boffi",
+    "Rajesh Ranganath",
+    "Eric Vanden-Eijnden"
+   ],
+   "year": 2024,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2310.03725",
+   "published": "2023-10-05",
+   "abstract": "Generative models inspired by dynamical transport of measure -- such as flows and diffusions -- construct a continuous-time map between two probability densities. Conventionally, one of these is the target density, only accessible through samples, while the other is taken as a simple base density that is data-agnostic. In this work, using the framework of stochastic interpolants, we formalize how to \\textit{couple} the base and the target densities, whereby samples from the base are computed conditionally given samples from the target in a way that is different from (but does preclude) incorporating information about class labels or continuous embeddings. This enables us to construct dynamical transport maps that serve as conditional generative models. We show that these transport maps can be learned by solving a simple square loss regression problem analogous to the standard independent setting. We demonstrate the usefulness of constructing dependent couplings in practice through experiments in super-resolution and in-painting.",
+   "contribution_zh": "把「耦合的选择」形式化为随机插值框架中的建模自由度，给出依赖数据/条件的耦合构造与理论",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2310.03725"
+   },
+   "pdf": "papers/2310.03725.pdf",
+   "text": "data/text/2310.03725.txt",
+   "text_chars": 53355,
+   "pages": 18
+  },
+  {
+   "key": "t08__metric_flow_matching_for_smooth_interpolations_on_the_data_m",
+   "report_id": "2405.14780",
+   "title": "Metric Flow Matching for Smooth Interpolations on the Data Manifold",
+   "authors": [
+    "Kacper Kapuśniak",
+    "Peter Potaptchik",
+    "Teodora Reu",
+    "Leo Zhang",
+    "Alexander Tong",
+    "Michael Bronstein",
+    "Avishek Joey Bose",
+    "Francesco Di Giovanni"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2405.14780",
+   "published": "2024-05-23",
+   "abstract": "Matching objectives underpin the success of modern generative models and rely on constructing conditional paths that transform a source distribution into a target distribution. Despite being a fundamental building block, conditional paths have been designed principally under the assumption of Euclidean geometry, resulting in straight interpolations. However, this can be particularly restrictive for tasks such as trajectory inference, where straight paths might lie outside the data manifold, thus failing to capture the underlying dynamics giving rise to the observed marginals. In this paper, we propose Metric Flow Matching (MFM), a novel simulation-free framework for conditional flow matching where interpolants are approximate geodesics learned by minimizing the kinetic energy of a data-induced Riemannian metric. This way, the generative model matches vector fields on the data manifold, which corresponds to lower uncertainty and more meaningful interpolations. We prescribe general metrics to instantiate MFM, independent of the task, and test it on a suite of challenging problems including LiDAR navigation, unpaired image translation, and modeling cellular dynamics. We observe that MFM outperforms the Euclidean baselines, particularly achieving SOTA on single-cell trajectory prediction.",
+   "contribution_zh": "非欧成本：插值改为数据依赖黎曼度量下的近似测地线（OT-MFM），路径贴合数据流形，单细胞轨迹 SOTA",
+   "links": {
+    "Proceedings": "https://proceedings.neurips.cc/paper_files/paper/2024/file/f381114cf5aba4e45552869863deaaa7-Paper-Conference.pdf"
+   },
+   "pdf": "papers/2405.14780.pdf",
+   "text": "data/text/2405.14780.txt",
+   "text_chars": 86641,
+   "pages": 25
+  },
+  {
+   "key": "t08__immiscible_diffusion_accelerating_diffusion_training_with_no",
+   "report_id": "2406.12303",
+   "title": "Immiscible Diffusion: Accelerating Diffusion Training with Noise Assignment",
+   "authors": [
+    "Yiheng Li",
+    "Heyang Jiang",
+    "Akio Kodaira",
+    "Masayoshi Tomizuka",
+    "Kurt Keutzer",
+    "Chenfeng Xu"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2406.12303",
+   "published": "2024-06-18",
+   "abstract": "In this paper, we point out that suboptimal noise-data mapping leads to slow training of diffusion models. During diffusion training, current methods diffuse each image across the entire noise space, resulting in a mixture of all images at every point in the noise layer. We emphasize that this random mixture of noise-data mapping complicates the optimization of the denoising function in diffusion models. Drawing inspiration from the immiscibility phenomenon in physics, we propose Immiscible Diffusion, a simple and effective method to improve the random mixture of noise-data mapping. In physics, miscibility can vary according to various intermolecular forces. Thus, immiscibility means that the mixing of molecular sources is distinguishable. Inspired by this concept, we propose an assignment-then-diffusion training strategy to achieve Immiscible Diffusion. As one example, prior to diffusing the image data into noise, we assign diffusion target noise for the image data by minimizing the total image-noise pair distance in a mini-batch. The assignment functions analogously to external forces to expel the diffuse-able areas of images, thus mitigating the inherent difficulties in diffusion training. Our approach is remarkably simple, requiring only one line of code to restrict the diffuse-able area for each image while preserving the Gaussian distribution of noise. In this way, each image is preferably projected to nearby noise. Experiments demonstrate that our method can achieve up to 3x faster training for unconditional Consistency Models on the CIFAR dataset, as well as for DDIM and Stable Diffusion on CelebA and ImageNet dataset, and in class-conditional training and fine-tuning. In addition, we conducted a thorough analysis that sheds light on how it improves diffusion training speed while improving fidelity. The code is available at https://yhli123.github.io/immiscible-diffusion",
+   "contribution_zh": "扩散侧的 batch 内就近噪声分配（量化线性分配，1024 batch 仅 22.8ms），训练加速最高 3×",
+   "links": {
+    "Proceedings": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/a422a2f016c14406a01ddba731c0969a-Abstract.html"
+   },
+   "pdf": "papers/2406.12303.pdf",
+   "text": "data/text/2406.12303.txt",
+   "text_chars": 53126,
+   "pages": 22
+  },
+  {
+   "key": "t08__equivariant_flow_matching",
+   "report_id": "2306.15030",
+   "title": "Equivariant flow matching",
+   "authors": [
+    "Leon Klein",
+    "Andreas Krämer",
+    "Frank Noé"
+   ],
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2306.15030",
+   "published": "2023-06-26",
+   "abstract": "Normalizing flows are a class of deep generative models that are especially interesting for modeling probability distributions in physics, where the exact likelihood of flows allows reweighting to known target energy functions and computing unbiased observables. For instance, Boltzmann generators tackle the long-standing sampling problem in statistical physics by training flows to produce equilibrium samples of many-body systems such as small molecules and proteins. To build effective models for such systems, it is crucial to incorporate the symmetries of the target energy into the model, which can be achieved by equivariant continuous normalizing flows (CNFs). However, CNFs can be computationally expensive to train and generate samples from, which has hampered their scalability and practical application. In this paper, we introduce equivariant flow matching, a new training objective for equivariant CNFs that is based on the recently proposed optimal transport flow matching. Equivariant flow matching exploits the physical symmetries of the target energy for efficient, simulation-free training of equivariant CNFs. We demonstrate the effectiveness of flow matching on rotation and permutation invariant many-particle systems and a small molecule, alanine dipeptide, where for the first time we obtain a Boltzmann generator with significant sampling efficiency without relying on tailored internal coordinate featurization. Our results show that the equivariant flow matching objective yields flows with shorter integration paths, improved sampling efficiency, and higher scalability compared to existing methods.",
+   "contribution_zh": "成本设计开端:对多体系统用旋转（Kabsch）+置换（Hungarian）对齐后的不变成本做 batch OT，得到近似 OT 的等变流",
+   "links": {
+    "Proceedings": "https://proceedings.neurips.cc/paper_files/paper/2023/file/bc827452450356f9f558f4e4568d553b-Paper-Conference.pdf"
+   },
+   "pdf": "papers/2306.15030.pdf",
+   "text": "data/text/2306.15030.txt",
+   "text_chars": 78148,
+   "pages": 25
+  },
+  {
+   "key": "t08__on_transportation_of_mini_batches_a_hierarchical_approach",
+   "report_id": "2102.05912",
+   "title": "On Transportation of Mini-batches: A Hierarchical Approach",
+   "authors": [
+    "Khai Nguyen",
+    "Dang Nguyen",
+    "Quoc Nguyen",
+    "Tung Pham",
+    "Hung Bui",
+    "Dinh Phung",
+    "Trung Le",
+    "Nhat Ho"
+   ],
+   "year": 2022,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2102.05912",
+   "published": "2021-02-11",
+   "abstract": "Mini-batch optimal transport (m-OT) has been successfully used in practical applications that involve probability measures with a very high number of supports. The m-OT solves several smaller optimal transport problems and then returns the average of their costs and transportation plans. Despite its scalability advantage, the m-OT does not consider the relationship between mini-batches which leads to undesirable estimation. Moreover, the m-OT does not approximate a proper metric between probability measures since the identity property is not satisfied. To address these problems, we propose a novel mini-batch scheme for optimal transport, named Batch of Mini-batches Optimal Transport (BoMb-OT), that finds the optimal coupling between mini-batches and it can be seen as an approximation to a well-defined distance on the space of probability measures. Furthermore, we show that the m-OT is a limit of the entropic regularized version of the BoMb-OT when the regularized parameter goes to infinity. Finally, we carry out experiments on various applications including deep generative models, deep domain adaptation, approximate Bayesian computation, color transfer, and gradient flow to show that the BoMb-OT can be widely applied and performs well in various applications.",
+   "contribution_zh": "BoMb-OT 在「batch 之间」再解一层 OT 以修正朴素平均的失真，m-OT 是其熵正则极限",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v162/nguyen22d.html"
+   },
+   "pdf": "papers/2102.05912.pdf",
+   "text": "data/text/2102.05912.txt",
+   "text_chars": 90000,
+   "pages": 34
+  },
+  {
+   "key": "t08__learning_with_minibatch_wasserstein_asymptotic_and_gradient_",
+   "report_id": "1910.04091",
+   "title": "Learning with minibatch Wasserstein : asymptotic and gradient properties",
+   "authors": [
+    "Kilian Fatras",
+    "Younes Zine",
+    "Rémi Flamary",
+    "Rémi Gribonval",
+    "Nicolas Courty"
+   ],
+   "year": 2020,
+   "venue": "AISTATS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1910.04091",
+   "published": "2019-10-09",
+   "abstract": "Optimal transport distances are powerful tools to compare probability distributions and have found many applications in machine learning. Yet their algorithmic complexity prevents their direct use on large scale datasets. To overcome this challenge, practitioners compute these distances on minibatches {\\em i.e.} they average the outcome of several smaller optimal transport problems. We propose in this paper an analysis of this practice, which effects are not well understood so far. We notably argue that it is equivalent to an implicit regularization of the original problem, with appealing properties such as unbiased estimators, gradients and a concentration bound around the expectation, but also with defects such as loss of distance property. Along with this theoretical analysis, we also conduct empirical experiments on gradient flows, GANs or color transfer that highlight the practical interest of this strategy.",
+   "contribution_zh": "minibatch OT 的奠基分析：无偏梯度、维度无关集中界，但等价于隐式正则化、失去距离公理且产生错配",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v108/fatras20a.html"
+   },
+   "pdf": "papers/1910.04091.pdf",
+   "text": "data/text/1910.04091.txt",
+   "text_chars": 70773,
+   "pages": 21
+  }
+ ]
+}

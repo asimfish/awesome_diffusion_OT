@@ -1,0 +1,397 @@
+{
+ "topic": "t15",
+ "topic_name": "医学影像模态转换与 OT/SB/扩散",
+ "section": "C",
+ "section_name": "Cross-Domain Generation & Translation",
+ "kb_note": "source/kb/t15_medical_modality_transfer.md",
+ "papers": [
+  {
+   "key": "t15__harmonizing_optical_coherence_tomography_across_devices_with",
+   "report_id": "Harmonizing_Optical_Coherence_Tomography_Across_De",
+   "title": "Harmonizing OCT Across Devices with Latent-Metric Schrödinger Bridges (NeurIPS 2025)",
+   "authors": "LMSB, Wei et al., JHU",
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "指出 SB 的欧氏传输成本是医学解剖漂移根源，用可逆网络学 pullback 潜空间度量再训 SB，跨设备 OCT 协调保解剖 SOTA",
+   "links": {
+    "Proceedings": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/08b60b4af0b8163b18553b15f5ce25d2-Abstract-Conference.html",
+    "OpenReview": "https://openreview.net/forum?id=QU1SArYwKB"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t15__anatomy_conserving_unpaired_cbct_to_ct_translation_via_schro",
+   "report_id": "Anatomy_Conserving_Unpaired_CBCT_to_CT_Translation",
+   "title": "Anatomy-Conserving Unpaired CBCT-to-CT Translation via Schrödinger Bridge (MICCAI 2025)",
+   "authors": "ACSB, Shi et al.",
+   "year": 2025,
+   "venue": "MICCAI",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "熵正则 OT 解耦「模态伪影 vs 解剖」，AC-ViT 多尺度解剖先验 + 频率感知优化，无配对 CBCT→CT 跨部位泛化",
+   "links": {
+    "MICCAI OA": "https://papers.miccai.org/miccai-2025/paper/5303_paper.pdf",
+    "DOI": "https://doi.org/10.1007/978-3-032-04965-0_5"
+   },
+   "pdf": "papers/t15_2025_Shi_ACSB_CBCT_to_CT.pdf",
+   "text": "data/text/t15_2025_Shi_ACSB_CBCT_to_CT.txt",
+   "text_chars": 24234,
+   "pages": 10
+  },
+  {
+   "key": "t15__2405.06789",
+   "report_id": "2405.06789",
+   "title": "Self-Consistent Recursive Diffusion Bridge for Medical Image Translation",
+   "authors": [
+    "Fuat Arslan",
+    "Bilal Kabas",
+    "Onat Dalmaz",
+    "Muzaffer Ozbey",
+    "Tolga Çukur"
+   ],
+   "year": 2025,
+   "venue": "Medical Image Analysis",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2405.06789",
+   "published": "2024-05-10",
+   "abstract": "Denoising diffusion models (DDM) have gained recent traction in medical image translation given improved training stability over adversarial models. DDMs learn a multi-step denoising transformation to progressively map random Gaussian-noise images onto target-modality images, while receiving stationary guidance from source-modality images. As this denoising transformation diverges significantly from the task-relevant source-to-target transformation, DDMs can suffer from weak source-modality guidance. Here, we propose a novel self-consistent recursive diffusion bridge (SelfRDB) for improved performance in medical image translation. Unlike DDMs, SelfRDB employs a novel forward process with start- and end-points defined based on target and source images, respectively. Intermediate image samples across the process are expressed via a normal distribution with mean taken as a convex combination of start-end points, and variance from additive noise. Unlike regular diffusion bridges that prescribe zero variance at start-end points and high variance at mid-point of the process, we propose a novel noise scheduling with monotonically increasing variance towards the end-point in order to boost generalization performance and facilitate information transfer between the two modalities. To further enhance sampling accuracy in each reverse step, we propose a novel sampling procedure where the network recursively generates a transient-estimate of the target image until convergence onto a self-consistent solution. Comprehensive analyses in multi-contrast MRI and MRI-CT translation indicate that SelfRDB offers superior performance against competing methods.",
+   "contribution_zh": "医学定制扩散桥：端点方差单调递增的噪声调度（软先验、抗测量噪声）+ 自洽递归采样，多对比 MRI 与 MRI↔CT SOTA",
+   "links": {
+    "DOI": "https://doi.org/10.1016/j.media.2025.103747",
+    "arXiv": "https://arxiv.org/abs/2405.06789"
+   },
+   "pdf": "papers/2405.06789.pdf",
+   "text": "data/text/2405.06789.txt",
+   "text_chars": 56908,
+   "pages": 11
+  },
+  {
+   "key": "t15__2404.11741",
+   "report_id": "2404.11741",
+   "title": "Diffusion Schrödinger Bridge Models for High-Quality MR-to-CT Synthesis for Head and Neck Proton Treatment Planning",
+   "authors": [
+    "Muheng Li",
+    "Xia Li",
+    "Sairos Safai",
+    "Damien Weber",
+    "Antony Lomax",
+    "Ye Zhang"
+   ],
+   "year": 2025,
+   "venue": "Medical Physics（arXiv 2024）",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2404.11741",
+   "published": "2024-04-17",
+   "abstract": "In recent advancements in proton therapy, MR-based treatment planning is gaining momentum to minimize additional radiation exposure compared to traditional CT-based methods. This transition highlights the critical need for accurate MR-to-CT image synthesis, which is essential for precise proton dose calculations. Our research introduces the Diffusion Schrödinger Bridge Models (DSBM), an innovative approach for high-quality MR-to-CT synthesis. DSBM learns the nonlinear diffusion processes between MR and CT data distributions. This method improves upon traditional diffusion models by initiating synthesis from the prior distribution rather than the Gaussian distribution, enhancing both generation quality and efficiency. We validated the effectiveness of DSBM on a head and neck cancer dataset, demonstrating its superiority over traditional image synthesis methods through both image-level and dosimetric-level evaluations. The effectiveness of DSBM in MR-based proton treatment planning highlights its potential as a valuable tool in various clinical scenarios.",
+   "contribution_zh": "首个用 DSBM 做质子放疗 sCT 并做剂量学级验证：46/77 对小数据训练，MAE 与骨 Dice 全面优于条件扩散，1%/1mm gamma 95.9–97.9%，NFE 大幅减少",
+   "links": {
+    "DOI": "https://doi.org/10.1002/mp.17898",
+    "arXiv": "https://arxiv.org/abs/2404.11741"
+   },
+   "pdf": "papers/2404.11741.pdf",
+   "text": "data/text/2404.11741.txt",
+   "text_chars": 17480,
+   "pages": 4
+  },
+  {
+   "key": "t15__ot_stainnet_optimal_transport_driven_semantic_matching_for_w",
+   "report_id": "OT_StainNet_Optimal_Transport_Driven_Semantic_Matc",
+   "title": "OT-StainNet: Optimal Transport Driven Semantic Matching for Weakly Paired H&E-to-IHC Stain Transfer",
+   "authors": "Guan et al.",
+   "year": 2025,
+   "venue": "AAAI",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "用 OT 在特征空间为弱配对（相邻切片错位）的 H&E–IHC 建立语义对应，把 OT 匹配变成监督信号驱动预训练扩散 LoRA 微调",
+   "links": {
+    "AAAI OJS": "https://ojs.aaai.org/index.php/AAAI/article/view/32329"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t15__2607.07401",
+   "report_id": "2607.07401",
+   "title": "Heterogeneity-Adaptive Diffusion Schrodinger Bridge for PET-Guided Whole-Body MRI Translation",
+   "authors": [
+    "Chengbo Wang",
+    "Jiacheng Yu",
+    "Linjie Bian",
+    "Ming Qi",
+    "Xiaosheng Liu",
+    "Tongtong Che",
+    "Jichang Zhang",
+    "Shuyu Li",
+    "Shaoli Song",
+    "Xiuying Wang"
+   ],
+   "year": 2026,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2607.07401",
+   "published": "2026-07-08",
+   "abstract": "While whole-body multimodal medical imaging scanners have been increasingly recognized for more effective medical applications, the excessive long acquisition time in PET-MR scanning is a major obstacle in more efficient clinical practice. Deep learning-based MRI translation provides a potential solution to reduce scan duration. However, current models often focus on specific anatomical regions and face challenges for whole-body scans that consists of highly heterogeneous feature distributions mainly due to (1) different anatomical regions across whole-body, and (2) lesions or pathological tissues. This paper tackles the challenges through a novel Heterogeneity-Adaptive Diffusion Schrodinger Bridge (HA-DSB) framework. By explicitly modeling translation as stochastic transport between source and target distributions, HA-DSB incorporates region context embeddings derived from a vision-language model (VLM) to enable region-specific modeling. To enhance fidelity of the pathological tissue, lesion-aware metabolic prior from PET is integrated directly into the bridge dynamics through a dual-stage guidance mechanism. Specifically, a PET-guided noise modulation module adaptively scales spatial diffusion perturbations during the forward process, while PET features are leveraged during the reverse process to selectively amplify lesion-relevant structures via an attention mechanism. Experiments demonstrate the superiority of our method across different body regions in whole-body MRI translation and show improved translation quality in lesion areas under PET guidance. Our code is available at Github.",
+   "contribution_zh": "全身 MR 序列转换：VLM 区域上下文嵌入应对全身异质性，PET 代谢先验双阶段（前向噪声调制 + 反向注意力放大）保病灶保真",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2607.07401"
+   },
+   "pdf": "papers/2607.07401.pdf",
+   "text": "data/text/2607.07401.txt",
+   "text_chars": 24757,
+   "pages": 10
+  },
+  {
+   "key": "t15__topology_aware_diffusion_schro_dinger_bridge_for_unpaired_h_",
+   "report_id": "Topology_aware_Diffusion_Schr_dinger_Bridge_for_Un",
+   "title": "Topology-aware Diffusion Schrödinger Bridge for Unpaired H&E-to-IHC Stain Translation",
+   "authors": "TDSB",
+   "year": 2026,
+   "venue": "IEEE JBHI",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "把 UNSB 引入组织病理并修其二病：拓扑引导模块保腺体/细胞拓扑，双域自适应 patch-NCE 学 IHC 染色表征；7 个转换任务 SOTA + 病理医生评估",
+   "links": {
+    "DOI": "https://doi.org/10.1109/JBHI.2026.3668658"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t15__pasb_pathology_aware_schro_dinger_bridge_for_virtual_immunoh",
+   "report_id": "PASB_Pathology_aware_Schr_dinger_Bridge_for_Virtua",
+   "title": "PASB: Pathology-aware Schrödinger Bridge for Virtual Immunohistochemical Staining",
+   "authors": "Qiu et al.",
+   "year": 2026,
+   "venue": "Medical Image Analysis",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "StainSB 升级：约束驱动对齐学习（高层病理语义监督）+ 相似度动态路径修正，下游诊断任务上接近真实 IHC",
+   "links": {
+    "DOI": "https://doi.org/10.1016/j.media.2025.103869"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t15__2501.14171",
+   "report_id": "2501.14171",
+   "title": "Fully Guided Neural Schrödinger bridge for Brain MR image synthesis",
+   "authors": [
+    "Hanyeol Yang",
+    "Sunggyu Kim",
+    "Mi Kyung Kim",
+    "Yongseon Yoo",
+    "Yu-Mi Kim",
+    "Min-Ho Shin",
+    "Insung Chung",
+    "Sang Baek Koh",
+    "Hyeon Chang Kim",
+    "Jong-Min Lee"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2501.14171",
+   "published": "2025-01-24",
+   "abstract": "Multi-modal brain MRI provides essential complementary information for clinical diagnosis. However, acquiring all modalities in practice is often constrained by time and cost. To address this, various methods have been proposed to generate missing modalities from available ones. Existing approaches can be broadly categorized into two types: paired and unpaired methods. While paired methods achieve high synthesis accuracy, obtaining large-scale paired datasets is typically impractical. In contrast, unpaired methods, though more scalable, often fail to preserve critical anatomical features, such as lesions. In this paper, we propose Fully Guided Schrödinger Bridge (FGSB), a novel framework designed to overcome these limitations by enabling high-fidelity generation with extremely limited paired data. When lesion-specific information, such as expert annotations or segmentation masks, is available, FGSB preserves clinically relevant lesions during missing modality synthesis. Our model comprises two stages: (1) a generation stage that iteratively refines synthetic images using paired source images and Gaussian noise, and (2) a training stage that learns optimal transformation pathways by modeling intermediate states to ensure consistent, high-fidelity synthesis. Experimental results across multiple datasets demonstrate that FGSB achieves reliable synthesis performance across diverse imaging resolutions and data acquisition environments. In addition, incorporating lesion-specific priors further enhances the preservation of clinically relevant features.",
+   "contribution_zh": "极少配对数据（2 个受试者）下的多序列 MRI 合成：两阶段生成-训练迭代 + 互信息一致性；可注入病灶 mask 先验保病灶",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2501.14171"
+   },
+   "pdf": "papers/2501.14171.pdf",
+   "text": "data/text/2501.14171.txt",
+   "text_chars": 61778,
+   "pages": 33
+  },
+  {
+   "key": "t15__2503.00266",
+   "report_id": "2503.00266",
+   "title": "Flow Matching for Medical Image Synthesis: Bridging the Gap Between Speed and Quality",
+   "authors": [
+    "Milad Yazdani",
+    "Yasamin Medghalchi",
+    "Pooria Ashrafian",
+    "Ilker Hacihaliloglu",
+    "Dena Shahriari"
+   ],
+   "year": 2025,
+   "venue": "MICCAI",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2503.00266",
+   "published": "2025-03-01",
+   "abstract": "Deep learning models have emerged as a powerful tool for various medical applications. However, their success depends on large, high-quality datasets that are challenging to obtain due to privacy concerns and costly annotation. Generative models, such as diffusion models, offer a potential solution by synthesizing medical images, but their practical adoption is hindered by long inference times. In this paper, we propose the use of an optimal transport flow matching approach to accelerate image generation. By introducing a straighter mapping between the source and target distribution, our method significantly reduces inference time while preserving and further enhancing the quality of the outputs. Furthermore, this approach is highly adaptable, supporting various medical imaging modalities, conditioning mechanisms (such as class labels and masks), and different spatial dimensions, including 2D and 3D. Beyond image generation, it can also be applied to related tasks such as image enhancement. Our results demonstrate the efficiency and versatility of this framework, making it a promising advancement for medical imaging applications. Code with checkpoints and a synthetic dataset (beneficial for classification and segmentation) is now available on: https://github.com/milad1378yz/MOTFM.",
+   "contribution_zh": "OT flow matching 进医学：直线路径少步采样，2D 超声/3D MRI、类别/掩码条件通吃，10 步优于 50 步 DDPM",
+   "links": {
+    "MICCAI OA": "https://papers.miccai.org/miccai-2025/0343-Paper1056.html",
+    "arXiv": "https://arxiv.org/abs/2503.00266"
+   },
+   "pdf": "papers/2503.00266.pdf",
+   "text": "data/text/2503.00266.txt",
+   "text_chars": 28316,
+   "pages": 11
+  },
+  {
+   "key": "t15__path_and_bone_contour_regularized_unpaired_mri_to_ct_transla",
+   "report_id": "2505.03114",
+   "title": "Path and Bone-Contour Regularized Unpaired MRI-to-CT Translation",
+   "authors": [
+    "Teng Zhou",
+    "Jax Luo",
+    "Yuping Sun",
+    "Yiheng Tan",
+    "Shun Yao",
+    "Nazim Haouchine",
+    "Scott Raymond"
+   ],
+   "year": 2025,
+   "venue": "Computerized Medical Imaging and Graphics",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2505.03114",
+   "published": "2025-05-06",
+   "abstract": "Accurate MRI-to-CT translation promises the integration of complementary imaging information without the need for additional imaging sessions. Given the practical challenges associated with acquiring paired MRI and CT scans, the development of robust methods capable of leveraging unpaired datasets is essential for advancing the MRI-to-CT translation. Current unpaired MRI-to-CT translation methods, which predominantly rely on cycle consistency and contrastive learning frameworks, frequently encounter challenges in accurately translating anatomical features that are highly discernible on CT but less distinguishable on MRI, such as bone structures. This limitation renders these approaches less suitable for applications in radiation therapy, where precise bone representation is essential for accurate treatment planning. To address this challenge, we propose a path- and bone-contour regularized approach for unpaired MRI-to-CT translation. In our method, MRI and CT images are projected to a shared latent space, where the MRI-to-CT mapping is modeled as a continuous flow governed by neural ordinary differential equations. The optimal mapping is obtained by minimizing the transition path length of the flow. To enhance the accuracy of translated bone structures, we introduce a trainable neural network to generate bone contours from MRI and implement mechanisms to directly and indirectly encourage the model to focus on bone contours and their adjacent regions. Evaluations conducted on three datasets demonstrate that our method outperforms existing unpaired MRI-to-CT translation approaches, achieving lower overall error rates. Moreover, in a downstream bone segmentation task, our approach exhibits superior performance in preserving the fidelity of bone structures. Our code is available at: https://github.com/kennysyp/PaBoT.",
+   "contribution_zh": "无配对 MRI→CT：潜空间 neural-ODE 流 + 最短传输路径正则（OT 味的路径长度最小化）+ 骨轮廓引导，下游骨分割保真最好",
+   "links": {
+    "DOI": "https://doi.org/10.1016/j.compmedimag.2025.102656"
+   },
+   "pdf": "papers/2505.03114.pdf",
+   "text": "data/text/2505.03114.txt",
+   "text_chars": 50554,
+   "pages": 14
+  },
+  {
+   "key": "t15__2403.06069",
+   "report_id": "2403.06069",
+   "title": "Implicit Image-to-Image Schrodinger Bridge for Image Restoration",
+   "authors": [
+    "Yuang Wang",
+    "Siyeop Yoon",
+    "Pengfei Jin",
+    "Matthew Tivnan",
+    "Sifan Song",
+    "Zhennong Chen",
+    "Rui Hu",
+    "Li Zhang",
+    "Quanzheng Li",
+    "Zhiqiang Chen",
+    "Dufan Wu"
+   ],
+   "year": 2024,
+   "venue": "2024–2025·arXiv（v3 标注刊于 Pattern Recognition，DOI 未核验）",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2403.06069",
+   "published": "2024-03-10",
+   "abstract": "Diffusion-based models have demonstrated remarkable effectiveness in image restoration tasks; however, their iterative denoising process, which starts from Gaussian noise, often leads to slow inference speeds. The Image-to-Image Schrödinger Bridge (I$^2$SB) offers a promising alternative by initializing the generative process from corrupted images while leveraging training techniques from score-based diffusion models. In this paper, we introduce the Implicit Image-to-Image Schrödinger Bridge (I$^3$SB) to further accelerate the generative process of I$^2$SB. I$^3$SB restructures the generative process into a non-Markovian framework by incorporating the initial corrupted image at each generative step, effectively preserving and utilizing its information. To enable direct use of pretrained I$^2$SB models without additional training, we ensure consistency in marginal distributions. Extensive experiments across many image corruptions, including noise, low resolution, JPEG compression, and sparse sampling, and multiple image modalities, such as natural, human face, and medical images, demonstrate the acceleration benefits of I$^3$SB. Compared to I$^2$SB, I$^3$SB achieves the same perceptual quality with fewer generative steps, while maintaining or improving fidelity to the ground truth.",
+   "contribution_zh": "把 I2SB 采样改成非马尔可夫（每步注入初始退化图），免重训复用预训练 I2SB，1/4 剂量腹部 CT 去噪与 4× 胸部 CT 超分少步数纹理更优",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2403.06069"
+   },
+   "pdf": "papers/2403.06069.pdf",
+   "text": "data/text/2403.06069.txt",
+   "text_chars": 56449,
+   "pages": 27
+  },
+  {
+   "key": "t15__pet_image_denoising_based_on_diffusion_schro_dinger_bridge_m",
+   "report_id": "PET_Image_Denoising_based_on_Diffusion_Schr_dinger",
+   "title": "PET Image Denoising based on Diffusion Schrödinger Bridge Model",
+   "authors": "",
+   "year": 2024,
+   "venue": "IEEE NSS/MIC/RTSD",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "低剂量 PET 去噪：从低剂量 PET（而非高斯）起步的 DSBM + 解剖 MR 先验，避免条件扩散的过度增强 SNR，对未见数据稳健",
+   "links": {
+    "DOI": "https://doi.org/10.1109/NSS/MIC/RTSD57108.2024.10657633"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t15__weakly_supervised_virtual_immunohistochemistry_staining_via_",
+   "report_id": "Weakly_Supervised_Virtual_Immunohistochemistry_Sta",
+   "title": "Weakly Supervised Virtual Immunohistochemistry Staining via Schrödinger Bridge",
+   "authors": "StainSB, Qiu et al.",
+   "year": 2024,
+   "venue": "IEEE BIBM",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "首批 SB 虚拟染色：区域颜色状态损失把病理相似性注入 H&E→IHC 生成，聚合策略平衡质量与病理一致性",
+   "links": {
+    "DOI": "https://doi.org/10.1109/BIBM62325.2024.10822509"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t15__1909.12116",
+   "report_id": "1909.12116",
+   "title": "Optimal Transport driven CycleGAN for Unsupervised Learning in Inverse Problems",
+   "authors": [
+    "Byeongsu Sim",
+    "Gyutaek Oh",
+    "Jeongsol Kim",
+    "Chanyong Jung",
+    "Jong Chul Ye"
+   ],
+   "year": 2020,
+   "venue": "SIAM J. Imaging Sciences",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "1909.12116",
+   "published": "2019-09-25",
+   "abstract": "To improve the performance of classical generative adversarial network (GAN), Wasserstein generative adversarial networks (W-GAN) was developed as a Kantorovich dual formulation of the optimal transport (OT) problem using Wasserstein-1 distance. However, it was not clear how cycleGAN-type generative models can be derived from the optimal transport theory. Here we show that a novel cycleGAN architecture can be derived as a Kantorovich dual OT formulation if a penalized least square (PLS) cost with deep learning-based inverse path penalty is used as a transportation cost. One of the most important advantages of this formulation is that depending on the knowledge of the forward problem, distinct variations of cycleGAN architecture can be derived: for example, one with two pairs of generators and discriminators, and the other with only a single pair of generator and discriminator. Even for the two generator cases, we show that the structural knowledge of the forward operator can lead to a simpler generator architecture which significantly simplifies the neural network training. The new cycleGAN formulation, what we call the OT-cycleGAN, have been applied for various biomedical imaging problems, such as accelerated magnetic resonance imaging (MRI), super-resolution microscopy, and low-dose x-ray computed tomography (CT). Experimental results confirm the efficacy and flexibility of the theory.",
+   "contribution_zh": "奠基旧文：从 Kantorovich 对偶 + PLS 传输成本严格推导 cycleGAN 家族，前向算子知识可化简架构；统一无监督加速 MRI、低剂量 CT、显微镜超分",
+   "links": {
+    "DOI": "https://doi.org/10.1137/20M1317992",
+    "arXiv": "https://arxiv.org/abs/1909.12116"
+   },
+   "pdf": "papers/1909.12116.pdf",
+   "text": "data/text/1909.12116.txt",
+   "text_chars": 60989,
+   "pages": 25
+  }
+ ]
+}

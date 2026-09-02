@@ -1,0 +1,563 @@
+{
+ "topic": "t03",
+ "topic_name": "Schrödinger Bridge 与扩散生成",
+ "section": "A",
+ "section_name": "Theory Foundations",
+ "kb_note": "source/kb/t03_schrodinger_bridge.md",
+ "papers": [
+  {
+   "key": "t03__light_and_optimal_sb_matching_gushchin_et_al",
+   "report_id": "Light_and_Optimal_SB_Matching_LightSB_M_Gushchin_e",
+   "title": "Light and Optimal Schrödinger Bridge Matching",
+   "authors": "",
+   "year": 2024,
+   "venue": "ICML (PMLR v235)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "「最优 SB matching」：任意输入耦合、单次 matching 即可证明恢复 SB（免迭代误差累积），并统一 matching 与 EBM 目标",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/gushchin24a.html"
+   },
+   "pdf": "papers/t03_2024_Gushchin_Light_and_Optimal_SB_Matching.pdf",
+   "text": "data/text/t03_2024_Gushchin_Light_and_Optimal_SB_Matching.txt",
+   "text_chars": 75583,
+   "pages": 23
+  },
+  {
+   "key": "t03__schro_dinger_bridge_flow_de_bortoli_et_al",
+   "report_id": "Schr_dinger_Bridge_Flow_IMF_DSBM_De_Bortoli_et_al",
+   "title": "Schrödinger Bridge Flow for Unpaired Data Translation (α-DSBM)",
+   "authors": "",
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "定义路径测度流「SB Flow」，离散化得 α-IMF（α=1 退化为 IMF）；α<1 时在线更新单一网络，免多轮重训，∀α∈(0,1] 收敛到 SB",
+   "links": {
+    "proceedings": "https://papers.nips.cc/paper_files/paper/2024/hash/bb3cfcb0284642a973dd631ec9184f2f-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__diffusion_schro_dinger_bridge_matching_shi_et_al",
+   "report_id": "Diffusion_Schr_dinger_Bridge_Matching_DSBM_Shi_et",
+   "title": "Diffusion Schrödinger Bridge Matching",
+   "authors": "",
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "提出 IMF：交替 Markov 投影与 reciprocal 投影，配 bridge-matching 回归实现；解决 DSB 的误差累积与\"遗忘\"问题",
+   "links": {
+    "proceedings": "https://papers.nips.cc/paper_files/paper/2023/hash/c428adf74782c2092d254329b6b02482-Abstract-Conference.html"
+   },
+   "pdf": "papers/t03_2023_Shi_Diffusion_Schrodinger_Bridge_Matching.pdf",
+   "text": "data/text/t03_2023_Shi_Diffusion_Schrodinger_Bridge_Matching.txt",
+   "text_chars": 90000,
+   "pages": 41
+  },
+  {
+   "key": "t03__likelihood_training_of_sb_using_fbsdes_chen_liu_theodorou",
+   "report_id": "Likelihood_Training_of_SB_using_FBSDEs_SB_FBSDE_Ch",
+   "title": "Likelihood Training of Schrödinger Bridge using FBSDEs Theory",
+   "authors": "",
+   "year": 2022,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "用前向-后向 SDE 理论把 SB 最优性条件变为可训练的对数似然目标，严格泛化 SGM 的训练目标",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=nioAdKCEdXB"
+   },
+   "pdf": "papers/t03_2022_Chen_Likelihood_Training_SB_FBSDE.pdf",
+   "text": "data/text/t03_2022_Chen_Likelihood_Training_SB_FBSDE.txt",
+   "text_chars": 76217,
+   "pages": 27
+  },
+  {
+   "key": "t03__diffusion_schro_dinger_bridge_de_bortoli_et_al",
+   "report_id": "Diffusion_Schr_dinger_Bridge_DSB_De_Bortoli_et_al",
+   "title": "Diffusion Schrödinger Bridge (DSB), De Bortoli et al.",
+   "authors": "",
+   "year": 2021,
+   "venue": "NeurIPS (Spotlight)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "深度网络实现 IPF 迭代求解 SB：有限时间生成、连续状态空间的 Sinkhorn 类比，SGM 恰为第一次 IPF 迭代",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/940392f5f32a7ade1cc201767cf83e31-Abstract.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__diffusion_adversarial_sb_via_ipmf_kholkin_et_al",
+   "report_id": "Diffusion_Adversarial_SB_via_IPMF_Kholkin_et_al",
+   "title": "Diffusion & Adversarial SB via IPMF, Kholkin et al.",
+   "authors": "",
+   "year": 2026,
+   "venue": "ICLR (Poster)",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "证明实践中\"双向交替 IMF\"启发式 = IMF+IPF 的组合（IPMF），多设定下收敛，并给出相似度-质量 trade-off 旋钮",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=38fGCBhFF5"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__2607.03626",
+   "report_id": "2607.03626",
+   "title": "Reflected Schrödinger Bridge Matching",
+   "authors": [
+    "Marcus Häggbom",
+    "Viktor Nilsson",
+    "Pierre Nyquist",
+    "Joakim andén"
+   ],
+   "year": 2026,
+   "venue": "arXiv 2607.03626",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2607.03626",
+   "published": "2026-07-03",
+   "abstract": "Recent advances in generative modeling have enabled the efficient computation of Schrödinger bridges (SB) in high-dimensional settings by leveraging partially simulation-free training methods inspired by flow matching. However, these have not covered SBs with reflecting dynamics, a useful model choice with built-in guarantees that generated samples stay in the data domain. Existing alternatives for reflected SBs instead rely on more complex training based on forward--backward SDE theory, requiring expensive higher-order derivatives and sampling entire paths during training. In this article, we introduce a partially simulation-free framework that allows reflected SBs to be trained similarly to flow matching, using a new sampling method and regression target. We demonstrate our results by coupling pairs of well-known high-dimensional image datasets. Using reflected dynamics incurs negligible additional wall-clock time during both training and inference while maintaining or slightly improving generative performance.",
+   "contribution_zh": "把 IMF/α-DSBM 推广到反射 SDE（有界域约束生成），保持收敛论证",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2607.03626"
+   },
+   "pdf": "papers/2607.03626.pdf",
+   "text": "data/text/2607.03626.txt",
+   "text_chars": 53493,
+   "pages": 20
+  },
+  {
+   "key": "t03__2605.11429",
+   "report_id": "2605.11429",
+   "title": "From Schrodinger Bridge to Optimal Transport over Sub-Riemannian Manifolds",
+   "authors": [
+    "Daniel Owusu Adu",
+    "Karthik Elamvazhuthi",
+    "Bahman Gharesifard"
+   ],
+   "year": 2026,
+   "venue": "arXiv 2605.11429",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2605.11429",
+   "published": "2026-05-12",
+   "abstract": "We study the least-energy way to reshape a probability distribution when motion is constrained to a horizontal bundle, that is, optimal transport and distribution steering in sub-Riemannian geometry, motivated by density control over underactuated systems. To obtain a continuous and numerically tractable formulation, we introduce an entropic regularization by adding small noise aligned with the control directions and study the associated Schrodinger bridge problem. The resulting reference process is a degenerate diffusion on the sub-Riemannian manifold. Under bracket-generating hypotheses we obtain smooth, strictly positive transition densities and a forward--backward characterization of the optimal bridge. This leads to a practical Sinkhorn-type algorithm for the Schrodinger potentials and, as the noise level vanishes, a recovery of the deterministic sub-Riemannian optimal transport problem. We demonstrate with a numerical example.",
+   "contribution_zh": "非完整约束几何（sub-Riemannian）上的 SB 与 OT 理论",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2605.11429"
+   },
+   "pdf": "papers/2605.11429.pdf",
+   "text": "data/text/2605.11429.txt",
+   "text_chars": 51139,
+   "pages": 21
+  },
+  {
+   "key": "t03__2603.18992",
+   "report_id": "2603.18992",
+   "title": "Foundations of Schrödinger Bridges for Generative Modeling",
+   "authors": [
+    "Sophia Tang"
+   ],
+   "year": 2026,
+   "venue": "arXiv 2603.18992",
+   "evidence": "B",
+   "star": false,
+   "arxiv_id": "2603.18992",
+   "published": "2026-03-19",
+   "abstract": "At the core of modern generative modeling frameworks, including diffusion models, score-based models, and flow matching, is the task of transforming a simple prior distribution into a complex target distribution through stochastic paths in probability space. Schrödinger bridges provide a unifying principle underlying these approaches, framing the problem as determining an optimal stochastic bridge between marginal distribution constraints with minimal-entropy deviations from a pre-defined reference process. This guide develops the mathematical foundations of the Schrödinger bridge problem, drawing on optimal transport, stochastic control, and path-space optimization, and focuses on its dynamic formulation with direct connections to modern generative modeling. We build a comprehensive toolkit for constructing Schrödinger bridges from first principles, and show how these constructions give rise to generalized and task-specific computational methods.",
+   "contribution_zh": "220 页专著式教程：从 EOT/路径空间优化/随机控制第一性原理统一 diffusion、score、flow matching 与 SB",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2603.18992"
+   },
+   "pdf": "papers/2603.18992.pdf",
+   "text": "data/text/2603.18992.txt",
+   "text_chars": 90000,
+   "pages": 220
+  },
+  {
+   "key": "t03__feedback_sb_matching_theodoropoulos_et_al",
+   "report_id": "Feedback_SB_Matching_FSBM_Theodoropoulos_et_al",
+   "title": "Feedback SB Matching (FSBM), Theodoropoulos et al.",
+   "authors": "",
+   "year": 2025,
+   "venue": "ICLR (Oral)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "半监督 SB：<8% 预配对样本作为 state feedback 嵌入广义 EOT→动态匹配，显著加速训练并提升泛化",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=k3tbMMW8rH"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__categorical_sb_matching_ksenofontov_korotin",
+   "report_id": "Categorical_SB_Matching_CSBM_Ksenofontov_Korotin",
+   "title": "Categorical SB Matching (CSBM), Ksenofontov & Korotin",
+   "authors": "",
+   "year": 2025,
+   "venue": "ICML (PMLR v267)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "证明离散(有限)状态空间上 D-IMF 收敛到 SB，把 SB matching 推广到 VQ token/文本/分子等离散数据",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v267/ksenofontov25a.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__momentum_multi_marginal_sb_matching_theodoropoulos_et_al",
+   "report_id": "Momentum_Multi_Marginal_SB_Matching_3MSBM_Theodoro",
+   "title": "Momentum Multi-Marginal Schrödinger Bridge Matching (3MSBM)",
+   "authors": "",
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "相空间提升 + 多点条件随机桥：多边缘条件最优控制的 matching 解法，训练中保持全部中间边缘，捕捉长程时间依赖",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/7c3875b86bd2b0639ab1e858c678af40-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__exponential_convergence_guarantees_for_imf_gentiloni_silveri",
+   "report_id": "2510.20871",
+   "title": "Exponential Convergence Guarantees for Iterative Markovian Fitting",
+   "authors": [
+    "Marta Gentiloni Silveri",
+    "Giovanni Conforti",
+    "Alain Durmus"
+   ],
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2510.20871",
+   "published": "2025-10-23",
+   "abstract": "The Schrödinger Bridge (SB) problem has become a fundamental tool in computational optimal transport and generative modeling. To address this problem, ideal methods such as Iterative Proportional Fitting and Iterative Markovian Fitting (IMF) have been proposed-alongside practical approximations like Diffusion Schrödinger Bridge and its Matching (DSBM) variant. While previous work have established asymptotic convergence guarantees for IMF, a quantitative, non-asymptotic understanding remains unknown. In this paper, we provide the first non-asymptotic exponential convergence guarantees for IMF under mild structural assumptions on the reference measure and marginal distributions, assuming a sufficiently large time horizon. Our results encompass two key regimes: one where the marginals are log-concave, and another where they are weakly log-concave. The analysis relies on new contraction results for the Markovian projection operator and paves the way to theoretical guarantees for DSBM.",
+   "contribution_zh": "首个 IMF 非渐近指数收敛率（KL）：基于 Markovian 投影的新收缩估计，覆盖(强/弱)对数凹两个 regime，为 DSBM 铺路",
+   "links": {
+    "proceedings": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/a9531a3e64e6167c7e1e671157082682-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__2510.22560",
+   "report_id": "2510.22560",
+   "title": "Statistical Analysis of the Sinkhorn Iterations for Two-Sample Schrödinger Bridge Estimation",
+   "authors": [
+    "Ibuki Maeda",
+    "Rentian Yao",
+    "Atsushi Nitanda"
+   ],
+   "year": 2025,
+   "venue": "arXiv 2510.22560",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2510.22560",
+   "published": "2025-10-26",
+   "abstract": "The Schrödinger bridge problem seeks the optimal stochastic process that connects two given probability distributions with minimal energy modification. While the Sinkhorn algorithm is widely used to solve the static optimal transport problem, a recent work (Pooladian and Niles-Weed, 2024) proposed the Sinkhorn bridge, which estimates Schrödinger bridges by plugging optimal transport into the time-dependent drifts of SDEs, with statistical guarantees in the one-sample estimation setting where the true source distribution is fully accessible. In this work, to further justify this method, we study the statistical performance of intermediate Sinkhorn iterations in the two-sample estimation setting, where only finite samples from both source and target distributions are available. Specifically, we establish a statistical bound on the squared total variation error of Sinkhorn bridge iterations: $O(1/m+1/n + r^{4k})~(r \\in (0,1))$, where $m$ and $n$ are the sample sizes from the source and target distributions, respectively, and $k$ is the number of Sinkhorn iterations. This result provides a theoretical guarantee for the finite-sample performance of the Schrödinger bridge estimator and offers practical guidance for selecting sample sizes and the number of Sinkhorn iterations. Notably, our theoretical results apply to several representative methods such as [SF]$^2$M, DSBM-IMF, BM2, and LightSB(-M) under specific settings, through the previously unnoticed connection between these estimators.",
+   "contribution_zh": "「Sinkhorn bridge」统计分析：证明 [SF]²M/DSBM-IMF/BM²/LightSB(-M) 的最优估计量一致，泛化误差分析对全家族生效",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2510.22560"
+   },
+   "pdf": "papers/2510.22560.pdf",
+   "text": "data/text/2510.22560.txt",
+   "text_chars": 70373,
+   "pages": 30
+  },
+  {
+   "key": "t03__2510.01894",
+   "report_id": "2510.01894",
+   "title": "Multi-marginal temporal Schrödinger Bridge Matching from unpaired data",
+   "authors": [
+    "Thomas Gravier",
+    "Thomas Boyer",
+    "Auguste Genovesio"
+   ],
+   "year": 2025,
+   "venue": "arXiv 2510.01894",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2510.01894",
+   "published": "2025-10-02",
+   "abstract": "Many natural dynamic processes -- such as in vivo cellular differentiation or disease progression -- can only be observed through the lens of static sample snapshots. While challenging, reconstructing their temporal evolution to decipher underlying dynamic properties is of major interest to scientific research. Existing approaches enable data transport along a temporal axis but are poorly scalable in high dimension and require restrictive assumptions to be met. To address these issues, we propose Multi-Marginal temporal Schrödinger Bridge Matching (MMtSBM) from unpaired data, extending the theoretical guarantees and empirical efficiency of Diffusion Schrödinger Bridge Matching (arXiv:2303.16852) by deriving the Iterative Markovian Fitting algorithm to multiple marginals in a novel factorized fashion. Experiments show that MMtSBM retains theoretical properties on toy examples, achieves state-of-the-art performance on real-world datasets such as transcriptomic trajectory inference in 100 dimensions, and, for the first time, recovers couplings and dynamics in very high-dimensional image settings. Our work establishes multi-marginal Schrödinger bridges as a practical and principled approach for recovering hidden dynamics from static data.",
+   "contribution_zh": "非配对多时刻快照的多边缘 SB matching，factorized 拟合支撑高维视频/生物动力学",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2510.01894"
+   },
+   "pdf": "papers/2510.01894.pdf",
+   "text": "data/text/2510.01894.txt",
+   "text_chars": 72291,
+   "pages": 23
+  },
+  {
+   "key": "t03__simulation_free_score_flow_matching_tong_et_al",
+   "report_id": "Simulation_free_Score_Flow_Matching_SF_M_Tong_et_a",
+   "title": "Simulation-free Score & Flow Matching ([SF]²M), Tong et al.",
+   "authors": "",
+   "year": 2024,
+   "venue": "AISTATS (PMLR v238)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "用静态 (minibatch) Sinkhorn 耦合 + score/flow matching 免仿真近似 SB；首个高维单细胞动力学建模",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v238/tong24a.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__light_schro_dinger_bridge_korotin_et_al",
+   "report_id": "Light_Schr_dinger_Bridge_LightSB_Korotin_et_al",
+   "title": "Light Schrödinger Bridge (LightSB), Korotin et al.",
+   "authors": "",
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "Schrödinger 势的高斯混合参数化：归一化常数闭式、免仿真、CPU 分钟级求解，并证 SB 万能逼近性",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=WhZoCLRWYJ"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__generalized_sb_matching_liu_et_al",
+   "report_id": "Generalized_SB_Matching_GSBM_Liu_et_al",
+   "title": "Generalized SB Matching (GSBM), Liu et al.",
+   "authors": "",
+   "year": 2024,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "把任务特定 state cost 纳入匹配框架 = 条件随机最优控制求解广义 SB，训练全程保持可行 transport",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=SoismgeX7z"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__variational_schro_dinger_diffusion_models_deng_et_al",
+   "report_id": "Variational_Schr_dinger_Diffusion_Models_VSDM_Deng",
+   "title": "Variational Schrödinger Diffusion Models (VSDM), Deng et al.",
+   "authors": "",
+   "year": 2024,
+   "venue": "ICML (PMLR v235)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "变分推断线性化 SB 前向 score，恢复后向 score 的免仿真训练；随机逼近证明收敛、无需 warm-up",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/deng24c.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__adversarial_sb_matching_gushchin_et_al",
+   "report_id": "Adversarial_SB_Matching_ASBM_Gushchin_et_al",
+   "title": "Adversarial SB Matching (ASBM), Gushchin et al.",
+   "authors": "",
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "离散时间 IMF（D-IMF）理论 + DD-GAN 实现：只学几个离散转移核，推断从数百步降到几步",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=L3Knnigicu"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__2409.09376",
+   "report_id": "2409.09376",
+   "title": "BM$^2$: Coupled Schrödinger Bridge Matching",
+   "authors": [
+    "Stefano Peluchetti"
+   ],
+   "year": 2024,
+   "venue": "arXiv 2409.09376",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2409.09376",
+   "published": "2024-09-14",
+   "abstract": "A Schrödinger bridge establishes a dynamic transport map between two target distributions via a reference process, simultaneously solving an associated entropic optimal transport problem. We consider the setting where samples from the target distributions are available, and the reference diffusion process admits tractable dynamics. We thus introduce Coupled Bridge Matching (BM$^2$), a simple non-iterative approach for learning Schrödinger bridges with neural networks. A preliminary theoretical analysis of the convergence properties of BM$^2$ is carried out, supported by numerical experiments that demonstrate the effectiveness of our proposal.",
+   "contribution_zh": "耦合双向 bridge matching，无需交替优化的 SB 逼近",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2409.09376"
+   },
+   "pdf": "papers/2409.09376.pdf",
+   "text": "data/text/2409.09376.txt",
+   "text_chars": 67163,
+   "pages": 20
+  },
+  {
+   "key": "t03__diffusion_bridge_mixture_transports_peluchetti",
+   "report_id": "Diffusion_Bridge_Mixture_Transports_IDBM_Peluchett",
+   "title": "Diffusion Bridge Mixture Transports (IDBM), Peluchetti",
+   "authors": "",
+   "year": 2023,
+   "venue": "JMLR 24(374)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "迭代扩散桥混合（IMF 思想的独立源头）：每次迭代都保持两端边缘的合法 transport，并给出收敛性初步分析",
+   "links": {
+    "JMLR": "https://www.jmlr.org/papers/v24/23-0527.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__deep_momentum_multi_marginal_sb_chen_et_al",
+   "report_id": "Deep_Momentum_Multi_Marginal_SB_DMSB_Chen_et_al",
+   "title": "Deep Momentum Multi-Marginal SB (DMSB), Chen et al.",
+   "authors": "",
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "相空间 Bregman-IPF 解多边缘 SB，从位置快照重建速度分布（3MSBM 的前身）",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=ykvvv0gc4R"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t03__2005.10963",
+   "report_id": "2005.10963",
+   "title": "Stochastic control liaisons: Richard Sinkhorn meets Gaspard Monge on a Schroedinger bridge",
+   "authors": [
+    "Yongxin Chen",
+    "Tryphon T. Georgiou",
+    "Michele Pavon"
+   ],
+   "year": 2021,
+   "venue": "SIAM Review",
+   "evidence": "B",
+   "star": false,
+   "arxiv_id": "2005.10963",
+   "published": "2020-05-22",
+   "abstract": "In 1931/32, Schroedinger studied a hot gas Gedankenexperiment, an instance of large deviations of the empirical distribution and an early example of the so-called maximum entropy inference method. This so-called Schroedinger bridge problem (SBP) was recently recognized as a regularization of the Monge-Kantorovich Optimal Mass Transport (OMT), leading to effective computation of the latter. Specifically, OMT with quadratic cost may be viewed as a zero-temperature limit of SBP, which amounts to minimization of the Helmholtz's free energy over probability distributions constrained to possess given marginals. The problem features a delicate compromise, mediated by a temperature parameter, between minimizing the internal energy and maximizing the entropy. These concepts are central to a rapidly expanding area of modern science dealing with the so-called {\\em Sinkhorn algorithm} which appears as a special case of an algorithm first studied by the French analyst Robert Fortet in 1938/40 specifically for Schroedinger bridges. Due to the constraint on end-point distributions, dynamic programming is not a suitable tool to attack these problems. Instead, Fortet's iterative algorithm and its discrete counterpart, the Sinkhorn iteration, permit computation by iteratively solving the so-called {\\em Schroedinger system}. In both the continuous as well as the discrete-time and space settings, {\\em stochastic control} provides a reformulation and dynamic versions of these problems. The formalism behind these control problems have attracted attention as they lead to a variety of new applications in spacecraft guidance, control of robot or biological swarms, sensing, active cooling, network routing as well as in computer and data science. This multifacet and versatile framework, intertwining SBP and OMT, provides the substrate for a historical and technical overview of the field taken up in this paper.",
+   "contribution_zh": "从随机控制视角统一 Sinkhorn/IPF 与 SB，扩散生成前的经典理论坐标系",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2005.10963"
+   },
+   "pdf": "papers/2005.10963.pdf",
+   "text": "data/text/2005.10963.txt",
+   "text_chars": 90000,
+   "pages": 67
+  },
+  {
+   "key": "t03__le_onard_a_survey_of_the_schro_dinger_problem",
+   "report_id": "L_onard_A_Survey_of_the_Schr_dinger_Problem",
+   "title": "Léonard, A Survey of the Schrödinger Problem",
+   "authors": "",
+   "year": 2014,
+   "venue": "DCDS",
+   "evidence": "B",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "SB 问题标准综述：静态/动态等价、与熵正则 OT 的关系、large deviation 极限",
+   "links": {
+    "DOI": "https://doi.org/10.3934/dcds.2014.34.1533"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  }
+ ]
+}

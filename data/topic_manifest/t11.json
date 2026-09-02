@@ -1,0 +1,535 @@
+{
+ "topic": "t11",
+ "topic_name": "免训练采样器与 ODE 求解器",
+ "section": "B",
+ "section_name": "Flow Matching & Trajectory Straightening",
+ "kb_note": "source/kb/t11_fast_ode_solvers.md",
+ "papers": [
+  {
+   "key": "t11__2312.00094",
+   "report_id": "2312.00094",
+   "title": "Fast ODE-based Sampling for Diffusion Models in Around 5 Steps",
+   "authors": [
+    "Zhenyu Zhou",
+    "Defang Chen",
+    "Can Wang",
+    "Chun Chen"
+   ],
+   "year": 2024,
+   "venue": "CVPR (Highlight)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2312.00094",
+   "published": "2023-11-30",
+   "abstract": "Sampling from diffusion models can be treated as solving the corresponding ordinary differential equations (ODEs), with the aim of obtaining an accurate solution with as few number of function evaluations (NFE) as possible. Recently, various fast samplers utilizing higher-order ODE solvers have emerged and achieved better performance than the initial first-order one. However, these numerical methods inherently result in certain approximation errors, which significantly degrades sample quality with extremely small NFE (e.g., around 5). In contrast, based on the geometric observation that each sampling trajectory almost lies in a two-dimensional subspace embedded in the ambient space, we propose Approximate MEan-Direction Solver (AMED-Solver) that eliminates truncation errors by directly learning the mean direction for fast diffusion sampling. Besides, our method can be easily used as a plugin to further improve existing ODE-based samplers. Extensive experiments on image synthesis with the resolution ranging from 32 to 512 demonstrate the effectiveness of our method. With only 5 NFE, we achieve 6.61 FID on CIFAR-10, 10.74 FID on ImageNet 64$\\times$64, and 13.20 FID on LSUN Bedroom. Our code is available at https://github.com/zju-pi/diff-sampler.",
+   "contribution_zh": "观察到采样轨迹几乎躺在 2D 子空间 → 由中值定理学习「平均方向」消截断误差，~5 NFE 采样；AMED-Plugin 可插任意求解器（轻量训练，solver 蒸馏边界情形）",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhou_Fast_ODE-based_Sampling_for_Diffusion_Models_in_Around_5_Steps_CVPR_2024_paper.html",
+    "arXiv": "https://arxiv.org/abs/2312.00094"
+   },
+   "pdf": "papers/2312.00094.pdf",
+   "text": "data/text/2312.00094.txt",
+   "text_chars": 64493,
+   "pages": 18
+  },
+  {
+   "key": "t11__2404.14507",
+   "report_id": "2404.14507",
+   "title": "Align Your Steps: Optimizing Sampling Schedules in Diffusion Models",
+   "authors": [
+    "Amirmojtaba Sabour",
+    "Sanja Fidler",
+    "Karsten Kreis"
+   ],
+   "year": 2024,
+   "venue": "ICML (PMLR 235:42947-42975)",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2404.14507",
+   "published": "2024-04-22",
+   "abstract": "Diffusion models (DMs) have established themselves as the state-of-the-art generative modeling approach in the visual domain and beyond. A crucial drawback of DMs is their slow sampling speed, relying on many sequential function evaluations through large neural networks. Sampling from DMs can be seen as solving a differential equation through a discretized set of noise levels known as the sampling schedule. While past works primarily focused on deriving efficient solvers, little attention has been given to finding optimal sampling schedules, and the entire literature relies on hand-crafted heuristics. In this work, for the first time, we propose a general and principled approach to optimizing the sampling schedules of DMs for high-quality outputs, called $\\textit{Align Your Steps}$. We leverage methods from stochastic calculus and find optimal schedules specific to different solvers, trained DMs and datasets. We evaluate our novel approach on several image, video as well as 2D toy data synthesis benchmarks, using a variety of different samplers, and observe that our optimized schedules outperform previous hand-crafted schedules in almost all experiments. Our method demonstrates the untapped potential of sampling schedule optimization, especially in the few-step synthesis regime.",
+   "contribution_zh": "首个原理化调度优化框架：用 Girsanov 定理导出真实与线性化生成 SDE 间 KL 上界（KLUB），求 model×solver×dataset 专属最优调度，few-step 域普适增益",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/sabour24a.html",
+    "arXiv": "https://arxiv.org/abs/2404.14507"
+   },
+   "pdf": "papers/2404.14507.pdf",
+   "text": "data/text/2404.14507.txt",
+   "text_chars": 89947,
+   "pages": 29
+  },
+  {
+   "key": "t11__2206.00364",
+   "report_id": "2206.00364",
+   "title": "Elucidating the Design Space of Diffusion-Based Generative Models",
+   "authors": [
+    "Tero Karras",
+    "Miika Aittala",
+    "Timo Aila",
+    "Samuli Laine"
+   ],
+   "year": 2022,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2206.00364",
+   "published": "2022-06-01",
+   "abstract": "We argue that the theory and practice of diffusion-based generative models are currently unnecessarily convoluted and seek to remedy the situation by presenting a design space that clearly separates the concrete design choices. This lets us identify several changes to both the sampling and training processes, as well as preconditioning of the score networks. Together, our improvements yield new state-of-the-art FID of 1.79 for CIFAR-10 in a class-conditional setting and 1.97 in an unconditional setting, with much faster sampling (35 network evaluations per image) than prior designs. To further demonstrate their modular nature, we show that our design changes dramatically improve both the efficiency and quality obtainable with pre-trained score networks from previous work, including improving the FID of a previously trained ImageNet-64 model from 2.07 to near-SOTA 1.55, and after re-training with our proposed improvements to a new SOTA of 1.36.",
+   "contribution_zh": "用 σ 参数化统一各家训练/采样设计空间：ρ=7 时间调度、Heun 二阶格式、churn 随机性，至今仍是 few-NFE 采样的默认骨架与基准",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2206.00364"
+   },
+   "pdf": "papers/2206.00364.pdf",
+   "text": "data/text/2206.00364.txt",
+   "text_chars": 90000,
+   "pages": 47
+  },
+  {
+   "key": "t11__2206.00927",
+   "report_id": "2206.00927",
+   "title": "DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps",
+   "authors": [
+    "Cheng Lu",
+    "Yuhao Zhou",
+    "Fan Bao",
+    "Jianfei Chen",
+    "Chongxuan Li",
+    "Jun Zhu"
+   ],
+   "year": 2022,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2206.00927",
+   "published": "2022-06-02",
+   "abstract": "Diffusion probabilistic models (DPMs) are emerging powerful generative models. Despite their high-quality generation performance, DPMs still suffer from their slow sampling as they generally need hundreds or thousands of sequential function evaluations (steps) of large neural networks to draw a sample. Sampling from DPMs can be viewed alternatively as solving the corresponding diffusion ordinary differential equations (ODEs). In this work, we propose an exact formulation of the solution of diffusion ODEs. The formulation analytically computes the linear part of the solution, rather than leaving all terms to black-box ODE solvers as adopted in previous works. By applying change-of-variable, the solution can be equivalently simplified to an exponentially weighted integral of the neural network. Based on our formulation, we propose DPM-Solver, a fast dedicated high-order solver for diffusion ODEs with the convergence order guarantee. DPM-Solver is suitable for both discrete-time and continuous-time DPMs without any further training. Experimental results show that DPM-Solver can generate high-quality samples in only 10 to 20 function evaluations on various datasets. We achieve 4.70 FID in 10 function evaluations and 2.87 FID in 20 function evaluations on the CIFAR10 dataset, and a $4\\sim 16\\times$ speedup compared with previous state-of-the-art training-free samplers on various datasets.",
+   "contribution_zh": "利用扩散 ODE 半线性结构的定制指数积分器 + log-SNR 换元，线性项解析解出、只近似神经网络项，10–20 NFE 高质量采样并有收敛阶证明",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2206.00927"
+   },
+   "pdf": "papers/2206.00927.pdf",
+   "text": "data/text/2206.00927.txt",
+   "text_chars": 90000,
+   "pages": 31
+  },
+  {
+   "key": "t11__2603.00763",
+   "report_id": "2603.00763",
+   "title": "Analyzing and Improving Fast Sampling of Text-to-Image Diffusion Models",
+   "authors": [
+    "Zhenyu Zhou",
+    "Defang Chen",
+    "Siwei Lyu",
+    "Chun Chen",
+    "Can Wang"
+   ],
+   "year": 2026,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2603.00763",
+   "published": "2026-02-28",
+   "abstract": "Text-to-image diffusion models have achieved unprecedented success but still struggle to produce high-quality results under limited sampling budgets. Existing training-free sampling acceleration methods are typically developed independently, leaving the overall performance and compatibility among these methods unexplored. In this paper, we bridge this gap by systematically elucidating the design space, and our comprehensive experiments identify the sampling time schedule as the most pivotal factor. Inspired by the geometric properties of diffusion models revealed through the Frenet-Serret formulas, we propose constant total rotation schedule (TORS), a scheduling strategy that ensures uniform geometric variation along the sampling trajectory. TORS outperforms previous training-free acceleration methods and produces high-quality images with 10 sampling steps on Flux.1-Dev and Stable Diffusion 3.5. Extensive experiments underscore the adaptability of our method to unseen models, hyperparameters, and downstream applications. Code is available at https://github.com/zju-pi/TORS.",
+   "contribution_zh": "系统消融 T2I 免训练设计空间，发现**时间调度是最关键因子**；由 Frenet-Serret 公式导出「恒定总旋转」调度，Flux.1/SD3.5 十步高质量",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2603.00763"
+   },
+   "pdf": "papers/2603.00763.pdf",
+   "text": "data/text/2603.00763.txt",
+   "text_chars": 66903,
+   "pages": 27
+  },
+  {
+   "key": "t11__tjs_x_prediction_is_all_you_need",
+   "report_id": "TJS_x_Prediction_Is_All_You_Need",
+   "title": "TJS: x-Prediction Is All You Need（端点可解码性）",
+   "authors": "",
+   "year": 2026,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "形式化「端点可解码性」：中间态+路径速度即 E[x₀\\",
+   "links": {},
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t11__2405.15506",
+   "report_id": "2405.15506",
+   "title": "Learning to Discretize Denoising Diffusion ODEs",
+   "authors": [
+    "Vinh Tong",
+    "Hoang Trung-Dung",
+    "Anji Liu",
+    "Guy Van den Broeck",
+    "Mathias Niepert"
+   ],
+   "year": 2025,
+   "venue": "ICLR (Oral)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2405.15506",
+   "published": "2024-05-24",
+   "abstract": "Diffusion Probabilistic Models (DPMs) are generative models showing competitive performance in various domains, including image synthesis and 3D point cloud generation. Sampling from pre-trained DPMs involves multiple neural function evaluations (NFEs) to transform Gaussian noise samples into images, resulting in higher computational costs compared to single-step generative models such as GANs or VAEs. Therefore, reducing the number of NFEs while preserving generation quality is crucial. To address this, we propose LD3, a lightweight framework designed to learn the optimal time discretization for sampling. LD3 can be combined with various samplers and consistently improves generation quality without having to retrain resource-intensive neural networks. We demonstrate analytically and empirically that LD3 improves sampling efficiency with much less computational overhead. We evaluate our method with extensive experiments on 7 pre-trained models, covering unconditional and conditional sampling in both pixel-space and latent-space DPMs. We achieve FIDs of 2.38 (10 NFE), and 2.27 (10 NFE) on unconditional CIFAR10 and AFHQv2 in 5-10 minutes of training. LD3 offers an efficient approach to sampling from pre-trained diffusion models. Code is available at https://github.com/vinhsuhi/LD3.",
+   "contribution_zh": "通过学生求解器可微反传端点对齐误差来**学习**离散化，单 GPU 5–10 分钟训练；10 NFE 达 FID 2.38（CIFAR-10），4 NFE 从 35.04 → 9.31",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=xDrFWUmCne",
+    "arXiv": "https://arxiv.org/abs/2405.15506"
+   },
+   "pdf": "papers/2405.15506.pdf",
+   "text": "data/text/2405.15506.txt",
+   "text_chars": 90000,
+   "pages": 39
+  },
+  {
+   "key": "t11__2408.08822",
+   "report_id": "2408.08822",
+   "title": "PFDiff: Training-Free Acceleration of Diffusion Models Combining Past and Future Scores",
+   "authors": [
+    "Guangyi Wang",
+    "Yuren Cai",
+    "Lijiang Li",
+    "Wei Peng",
+    "Songzhi Su"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2408.08822",
+   "published": "2024-08-16",
+   "abstract": "Diffusion Probabilistic Models (DPMs) have shown remarkable potential in image generation, but their sampling efficiency is hindered by the need for numerous denoising steps. Most existing solutions accelerate the sampling process by proposing fast ODE solvers. However, the inevitable discretization errors of the ODE solvers are significantly magnified when the number of function evaluations (NFE) is fewer. In this work, we propose PFDiff, a novel training-free and orthogonal timestep-skipping strategy, which enables existing fast ODE solvers to operate with fewer NFE. Specifically, PFDiff initially utilizes score replacement from past time steps to predict a ``springboard\". Subsequently, it employs this ``springboard\" along with foresight updates inspired by Nesterov momentum to rapidly update current intermediate states. This approach effectively reduces unnecessary NFE while correcting for discretization errors inherent in first-order ODE solvers. Experimental results demonstrate that PFDiff exhibits flexible applicability across various pre-trained DPMs, particularly excelling in conditional DPMs and surpassing previous state-of-the-art training-free methods. For instance, using DDIM as a baseline, we achieved 16.46 FID (4 NFE) compared to 138.81 FID with DDIM on ImageNet 64x64 with classifier guidance, and 13.06 FID (10 NFE) on Stable Diffusion with 7.5 guidance scale. Code is available at \\url{https://github.com/onefly123/PFDiff}.",
+   "contribution_zh": "完全免训练的跳步策略：复用过去 score 预测「跳板」+ Nesterov 式前瞻更新校正一阶离散误差，正交叠加于现有求解器；DDIM 基线 4 NFE 由 138.81 → 16.46 FID",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=wmmDvZGFK7",
+    "arXiv": "https://arxiv.org/abs/2408.08822"
+   },
+   "pdf": "papers/2408.08822.pdf",
+   "text": "data/text/2408.08822.txt",
+   "text_chars": 90000,
+   "pages": 33
+  },
+  {
+   "key": "t11__s4s_solving_for_a_fast_diffusion_model_solver",
+   "report_id": "S4S_Solving_for_a_Fast_Diffusion_Model_Solver",
+   "title": "S4S: Solving for a Fast Diffusion Model Solver",
+   "authors": "",
+   "year": 2025,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "论证低 NFE 下逐点跟踪真 ODE 轨迹在原理上不可行 → 黑盒学习求解器系数（S4S）与离散化（S4S-Alt）以对齐教师端点；5 NFE 达 CIFAR-10 FID 3.73",
+   "links": {
+    "ICML": "https://icml.cc/virtual/2025/poster/46229"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t11__2503.21774",
+   "report_id": "2503.21774",
+   "title": "Optimal Stepsize for Diffusion Sampling",
+   "authors": [
+    "Jianning Pei",
+    "Han Hu",
+    "Shuyang Gu"
+   ],
+   "year": 2025,
+   "venue": "arXiv（ICLR 2026 在审）",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2503.21774",
+   "published": "2025-03-27",
+   "abstract": "Diffusion models achieve remarkable generation quality but suffer from computational intensive sampling due to suboptimal step discretization. While existing works focus on optimizing denoising directions, we address the principled design of stepsize schedules. This paper proposes Optimal Stepsize Distillation, a dynamic programming framework that extracts theoretically optimal schedules by distilling knowledge from reference trajectories. By reformulating stepsize optimization as recursive error minimization, our method guarantees global discretization bounds through optimal substructure exploitation. Crucially, the distilled schedules demonstrate strong robustness across architectures, ODE solvers, and noise schedules. Experiments show 10x accelerated text-to-image generation while preserving 99.4% performance on GenEval. Our code is available at https://github.com/bebebe666/OptimalSteps.",
+   "contribution_zh": "步长调度 = 递归误差最小化的最优子结构 → DP 提取全局最优调度，跨架构/求解器/噪声调度鲁棒；T2I 10× 加速保留 99.4% GenEval",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2503.21774"
+   },
+   "pdf": "papers/2503.21774.pdf",
+   "text": "data/text/2503.21774.txt",
+   "text_chars": 46987,
+   "pages": 16
+  },
+  {
+   "key": "t11__2512.22796",
+   "report_id": "2512.22796",
+   "title": "Parallel Diffusion Solver via Residual Dirichlet Policy Optimization",
+   "authors": [
+    "Ruoyu Wang",
+    "Ziyu Li",
+    "Beier Zhu",
+    "Liangyu Yuan",
+    "Hanwang Zhang",
+    "Xun Yang",
+    "Xiaojun Chang",
+    "Chi Zhang"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2512.22796",
+   "published": "2025-12-28",
+   "abstract": "Diffusion models (DMs) have achieved state-of-the-art generative performance but suffer from high sampling latency due to their sequential denoising nature. Existing solver-based acceleration methods often face significant image quality degradation under a low-latency budget, primarily due to accumulated truncation errors arising from the inability to capture high-curvature trajectory segments. In this paper, we propose the Ensemble Parallel Direction solver (dubbed as EPD-Solver), a novel ODE solver that mitigates these errors by incorporating multiple parallel gradient evaluations in each step. Motivated by the geometric insight that sampling trajectories are largely confined to a low-dimensional manifold, EPD-Solver leverages the Mean Value Theorem for vector-valued functions to approximate the integral solution more accurately. Importantly, since the additional gradient computations are independent, they can be fully parallelized, preserving low-latency sampling nature. We introduce a two-stage optimization framework. Initially, EPD-Solver optimizes a small set of learnable parameters via a distillation-based approach. We further propose a parameter-efficient Reinforcement Learning (RL) fine-tuning scheme that reformulates the solver as a stochastic Dirichlet policy. Unlike traditional methods that fine-tune the massive backbone, our RL approach operates strictly within the low-dimensional solver space, effectively mitigating reward hacking while enhancing performance in complex text-to-image (T2I) generation tasks. In addition, our method is flexible and can serve as a plugin (EPD-Plugin) to improve existing ODE samplers.",
+   "contribution_zh": "每步引入多条**并行**梯度方向的加权集成（向量值中值定理），蒸馏 + Dirichlet 策略 RL 学权重，以并行换低延迟压制高曲率截断误差",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2512.22796"
+   },
+   "pdf": "papers/2512.22796.pdf",
+   "text": "data/text/2512.22796.txt",
+   "text_chars": 90000,
+   "pages": 28
+  },
+  {
+   "key": "t11__2506.10177",
+   "report_id": "2506.10177",
+   "title": "Geometric Regularity in Deterministic Sampling Dynamics of Diffusion-based Generative Models",
+   "authors": [
+    "Defang Chen",
+    "Zhenyu Zhou",
+    "Can Wang",
+    "Siwei Lyu"
+   ],
+   "year": 2025,
+   "venue": "arXiv（作者称已被 J. Stat. Mech. 接收）",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2506.10177",
+   "published": "2025-06-11",
+   "abstract": "Diffusion-based generative models employ stochastic differential equations (SDEs) and their equivalent probability flow ordinary differential equations (ODEs) to establish a smooth transformation between complex high-dimensional data distributions and tractable prior distributions. In this paper, we reveal a striking geometric regularity in the deterministic sampling dynamics of diffusion generative models: each simulated sampling trajectory along the gradient field lies within an extremely low-dimensional subspace, and all trajectories exhibit an almost identical boomerang shape, regardless of the model architecture, applied conditions, or generated content. We characterize several intriguing properties of these trajectories, particularly under closed-form solutions based on kernel-estimated data modeling. We also demonstrate a practical application of the discovered trajectory regularity by proposing a dynamic programming-based scheme to better align the sampling time schedule with the underlying trajectory structure. This simple strategy requires minimal modification to existing deterministic numerical solvers, incurs negligible computational overhead, and achieves superior image generation performance, especially in regions with only 5 - 10 function evaluations.",
+   "contribution_zh": "KDE 视角给出去噪轨迹闭式解（= 时变带宽 mean-shift），解释逐步旋转、似然单调上升与「线性–非线性–线性」全局模式",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2506.10177"
+   },
+   "pdf": "papers/2506.10177.pdf",
+   "text": "data/text/2506.10177.txt",
+   "text_chars": 90000,
+   "pages": 57
+  },
+  {
+   "key": "t11__2510.02390",
+   "report_id": "2510.02390",
+   "title": "F-scheduler: illuminating the free-lunch design space for fast sampling of diffusion models",
+   "authors": [
+    "Zilai Li",
+    "Lujia Bai"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2510.02390",
+   "published": "2025-09-30",
+   "abstract": "Diffusion models are the state-of-the-art generative models for high-resolution images, but sampling from pretrained models is computationally expensive, motivating interest in fast sampling. Although Free-U Net is a training-free enhancement for improving image quality, we find it ineffective under few-step ($<10$) sampling. We analyze the discrete diffusion ODE and propose F-scheduler, a scheduler designed for ODE solvers with Free-U Net. Our proposed scheduler consists of a special time schedule that does not fully denoise the feature to enable the use of the KL-term in the $β$-VAE decoder, and the schedule of a proper inference stage for modifying the U-Net skip-connection via Free-U Net. Via information theory, we provide insights into how the better scheduled ODE solvers for the diffusion model can outperform the training-based diffusion distillation model. The newly proposed scheduler is compatible with most of the few-step ODE solvers and can sample a 1024 x 1024-resolution image in 6 steps and a 512 x 512-resolution image in 5 steps when it applies to DPM++ 2m and UniPC, with an FID result that outperforms the SOTA distillation models and the 20-step DPM++ 2m solver, respectively. Codebase: https://github.com/TheLovesOfLadyPurple/F-scheduler",
+   "contribution_zh": "免训练插件宣称 6 步采 1024² 图超过蒸馏 SOTA；从信息论角度分析免训练求解器 vs 蒸馏模型的能力边界",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2510.02390"
+   },
+   "pdf": "papers/2510.02390.pdf",
+   "text": "data/text/2510.02390.txt",
+   "text_chars": 44673,
+   "pages": 12
+  },
+  {
+   "key": "t11__2402.17376",
+   "report_id": "2402.17376",
+   "title": "Accelerating Diffusion Sampling with Optimized Time Steps",
+   "authors": [
+    "Shuchen Xue",
+    "Zhaoqiang Liu",
+    "Fei Chen",
+    "Shifeng Zhang",
+    "Tianyang Hu",
+    "Enze Xie",
+    "Zhenguo Li"
+   ],
+   "year": 2024,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2402.17376",
+   "published": "2024-02-27",
+   "abstract": "Diffusion probabilistic models (DPMs) have shown remarkable performance in high-resolution image synthesis, but their sampling efficiency is still to be desired due to the typically large number of sampling steps. Recent advancements in high-order numerical ODE solvers for DPMs have enabled the generation of high-quality images with much fewer sampling steps. While this is a significant development, most sampling methods still employ uniform time steps, which is not optimal when using a small number of steps. To address this issue, we propose a general framework for designing an optimization problem that seeks more appropriate time steps for a specific numerical ODE solver for DPMs. This optimization problem aims to minimize the distance between the ground-truth solution to the ODE and an approximate solution corresponding to the numerical solver. It can be efficiently solved using the constrained trust region method, taking less than $15$ seconds. Our extensive experiments on both unconditional and conditional sampling using pixel- and latent-space DPMs demonstrate that, when combined with the state-of-the-art sampling method UniPC, our optimized time steps significantly improve image generation performance in terms of FID scores for datasets such as CIFAR-10 and ImageNet, compared to using uniform time steps.",
+   "contribution_zh": "把调度选取写成最小化全局离散误差的约束优化（信赖域法，<15 秒求解），与 UniPC/DPM-Solver++ 即插即用",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2024/papers/Xue_Accelerating_Diffusion_Sampling_with_Optimized_Time_Steps_CVPR_2024_paper.pdf",
+    "arXiv": "https://arxiv.org/abs/2402.17376"
+   },
+   "pdf": "papers/2402.17376.pdf",
+   "text": "data/text/2402.17376.txt",
+   "text_chars": 59248,
+   "pages": 18
+  },
+  {
+   "key": "t11__2403.01329",
+   "report_id": "2403.01329",
+   "title": "Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models",
+   "authors": [
+    "Neta Shaul",
+    "Uriel Singer",
+    "Ricky T. Q. Chen",
+    "Matthew Le",
+    "Ali Thabet",
+    "Albert Pumarola",
+    "Yaron Lipman"
+   ],
+   "year": 2024,
+   "venue": "ICLR spotlight / 2024·ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2403.01329",
+   "published": "2024-03-02",
+   "abstract": "This paper introduces Bespoke Non-Stationary (BNS) Solvers, a solver distillation approach to improve sample efficiency of Diffusion and Flow models. BNS solvers are based on a family of non-stationary solvers that provably subsumes existing numerical ODE solvers and consequently demonstrate considerable improvement in sample approximation (PSNR) over these baselines. Compared to model distillation, BNS solvers benefit from a tiny parameter space ($<$200 parameters), fast optimization (two orders of magnitude faster), maintain diversity of samples, and in contrast to previous solver distillation approaches nearly close the gap from standard distillation methods such as Progressive Distillation in the low-medium NFE regime. For example, BNS solver achieves 45 PSNR / 1.76 FID using 16 NFE in class-conditional ImageNet-64. We experimented with BNS solvers for conditional image generation, text-to-image generation, and text-2-audio generation showing significant improvement in sample approximation (PSNR) in all.",
+   "contribution_zh": "solver 蒸馏路线的奠基：为给定预训练流/扩散模型定制仅 80–200 参数的（非平稳）求解器，证明 NS 族涵盖既有数值格式；16 NFE 达 PSNR 45/FID 1.76（ImageNet-64）",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=1PXEY7ofFX",
+    "arXiv-BNS": "https://arxiv.org/abs/2403.01329"
+   },
+   "pdf": "papers/2403.01329.pdf",
+   "text": "data/text/2403.01329.txt",
+   "text_chars": 63173,
+   "pages": 23
+  },
+  {
+   "key": "t11__2204.13902",
+   "report_id": "2204.13902",
+   "title": "Fast Sampling of Diffusion Models with Exponential Integrator",
+   "authors": [
+    "Qinsheng Zhang",
+    "Yongxin Chen"
+   ],
+   "year": 2023,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2204.13902",
+   "published": "2022-04-29",
+   "abstract": "The past few years have witnessed the great success of Diffusion models~(DMs) in generating high-fidelity samples in generative modeling tasks. A major limitation of the DM is its notoriously slow sampling procedure which normally requires hundreds to thousands of time discretization steps of the learned diffusion process to reach the desired accuracy. Our goal is to develop a fast sampling method for DMs with a much less number of steps while retaining high sample quality. To this end, we systematically analyze the sampling procedure in DMs and identify key factors that affect the sample quality, among which the method of discretization is most crucial. By carefully examining the learned diffusion process, we propose Diffusion Exponential Integrator Sampler~(DEIS). It is based on the Exponential Integrator designed for discretizing ordinary differential equations (ODEs) and leverages a semilinear structure of the learned diffusion process to reduce the discretization error. The proposed method can be applied to any DMs and can generate high-fidelity samples in as few as 10 steps. In our experiments, it takes about 3 minutes on one A6000 GPU to generate $50k$ images from CIFAR10. Moreover, by directly using pre-trained DMs, we achieve the state-of-art sampling performance when the number of score function evaluation~(NFE) is limited, e.g., 4.17 FID with 10 NFEs, 3.37 FID, and 9.74 IS with only 15 NFEs on CIFAR10. Code is available at https://github.com/qsh-zh/deis",
+   "contribution_zh": "与 DPM-Solver 同期独立提出指数积分器，配 Adams-Bashforth 型多项式外推；其 iPNDM 变体至今仍是低 NFE 强基线",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2204.13902"
+   },
+   "pdf": "papers/2204.13902.pdf",
+   "text": "data/text/2204.13902.txt",
+   "text_chars": 79960,
+   "pages": 33
+  },
+  {
+   "key": "t11__2302.04867",
+   "report_id": "2302.04867",
+   "title": "UniPC: A Unified Predictor-Corrector Framework for Fast Sampling of Diffusion Models",
+   "authors": [
+    "Wenliang Zhao",
+    "Lujia Bai",
+    "Yongming Rao",
+    "Jie Zhou",
+    "Jiwen Lu"
+   ],
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2302.04867",
+   "published": "2023-02-09",
+   "abstract": "Diffusion probabilistic models (DPMs) have demonstrated a very promising ability in high-resolution image synthesis. However, sampling from a pre-trained DPM is time-consuming due to the multiple evaluations of the denoising network, making it more and more important to accelerate the sampling of DPMs. Despite recent progress in designing fast samplers, existing methods still cannot generate satisfying images in many applications where fewer steps (e.g., $<$10) are favored. In this paper, we develop a unified corrector (UniC) that can be applied after any existing DPM sampler to increase the order of accuracy without extra model evaluations, and derive a unified predictor (UniP) that supports arbitrary order as a byproduct. Combining UniP and UniC, we propose a unified predictor-corrector framework called UniPC for the fast sampling of DPMs, which has a unified analytical form for any order and can significantly improve the sampling quality over previous methods, especially in extremely few steps. We evaluate our methods through extensive experiments including both unconditional and conditional sampling using pixel-space and latent-space DPMs. Our UniPC can achieve 3.87 FID on CIFAR10 (unconditional) and 7.51 FID on ImageNet 256$\\times$256 (conditional) with only 10 function evaluations. Code is available at https://github.com/wl-zhao/UniPC.",
+   "contribution_zh": "统一任意阶预测-校正框架（UniP+UniC），校正器无额外 NFE 即提升低步数精度，diffusers 生态默认求解器之一",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2302.04867"
+   },
+   "pdf": "papers/2302.04867.pdf",
+   "text": "data/text/2302.04867.txt",
+   "text_chars": 75535,
+   "pages": 28
+  },
+  {
+   "key": "t11__2310.13268",
+   "report_id": "2310.13268",
+   "title": "DPM-Solver-v3: Improved Diffusion ODE Solver with Empirical Model Statistics",
+   "authors": [
+    "Kaiwen Zheng",
+    "Cheng Lu",
+    "Jianfei Chen",
+    "Jun Zhu"
+   ],
+   "year": 2023,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2310.13268",
+   "published": "2023-10-20",
+   "abstract": "Diffusion probabilistic models (DPMs) have exhibited excellent performance for high-fidelity image generation while suffering from inefficient sampling. Recent works accelerate the sampling procedure by proposing fast ODE solvers that leverage the specific ODE form of DPMs. However, they highly rely on specific parameterization during inference (such as noise/data prediction), which might not be the optimal choice. In this work, we propose a novel formulation towards the optimal parameterization during sampling that minimizes the first-order discretization error of the ODE solution. Based on such formulation, we propose DPM-Solver-v3, a new fast ODE solver for DPMs by introducing several coefficients efficiently computed on the pretrained model, which we call empirical model statistics. We further incorporate multistep methods and a predictor-corrector framework, and propose some techniques for improving sample quality at small numbers of function evaluations (NFE) or large guidance scales. Experiments show that DPM-Solver-v3 achieves consistently better or comparable performance in both unconditional and conditional sampling with both pixel-space and latent-space DPMs, especially in 5$\\sim$10 NFEs. We achieve FIDs of 12.21 (5 NFE), 2.51 (10 NFE) on unconditional CIFAR10, and MSE of 0.55 (5 NFE, 7.5 guidance scale) on Stable Diffusion, bringing a speed-up of 15%$\\sim$30% compared to previous state-of-the-art training-free methods. Code is available at https://github.com/thu-ml/DPM-Solver-v3.",
+   "contribution_zh": "引入经验模型统计量（EMS）在线选择最优参数化系数，最小化一阶离散误差，5–10 NFE 进一步提升",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2310.13268"
+   },
+   "pdf": "papers/2310.13268.pdf",
+   "text": "data/text/2310.13268.txt",
+   "text_chars": 90000,
+   "pages": 41
+  },
+  {
+   "key": "t11__2211.01095",
+   "report_id": "2211.01095",
+   "title": "DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models",
+   "authors": [
+    "Cheng Lu",
+    "Yuhao Zhou",
+    "Fan Bao",
+    "Jianfei Chen",
+    "Chongxuan Li",
+    "Jun Zhu"
+   ],
+   "year": 2022,
+   "venue": "arXiv → 2025·Mach. Intell. Res. 22(4):730-751",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2211.01095",
+   "published": "2022-11-02",
+   "abstract": "Diffusion probabilistic models (DPMs) have achieved impressive success in high-resolution image synthesis, especially in recent large-scale text-to-image generation applications. An essential technique for improving the sample quality of DPMs is guided sampling, which usually needs a large guidance scale to obtain the best sample quality. The commonly-used fast sampler for guided sampling is DDIM, a first-order diffusion ODE solver that generally needs 100 to 250 steps for high-quality samples. Although recent works propose dedicated high-order solvers and achieve a further speedup for sampling without guidance, their effectiveness for guided sampling has not been well-tested before. In this work, we demonstrate that previous high-order fast samplers suffer from instability issues, and they even become slower than DDIM when the guidance scale grows large. To further speed up guided sampling, we propose DPM-Solver++, a high-order solver for the guided sampling of DPMs. DPM-Solver++ solves the diffusion ODE with the data prediction model and adopts thresholding methods to keep the solution matches training data distribution. We further propose a multistep variant of DPM-Solver++ to address the instability issue by reducing the effective step size. Experiments show that DPM-Solver++ can generate high-quality samples within only 15 to 20 steps for guided sampling by pixel-space and latent-space DPMs.",
+   "contribution_zh": "改用 data-prediction 参数化 + 多步格式 + thresholding，解决大 guidance 尺度下高阶求解器的失稳，成为文生图部署标准",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2211.01095",
+    "期刊页": "https://link.springer.com/article/10.1007/s11633-025-1562-4"
+   },
+   "pdf": "papers/2211.01095.pdf",
+   "text": "data/text/2211.01095.txt",
+   "text_chars": 67225,
+   "pages": 24
+  },
+  {
+   "key": "t11__2010.02502",
+   "report_id": "2010.02502",
+   "title": "Denoising Diffusion Implicit Models",
+   "authors": [
+    "Jiaming Song",
+    "Chenlin Meng",
+    "Stefano Ermon"
+   ],
+   "year": 2021,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2010.02502",
+   "published": "2020-10-06",
+   "abstract": "Denoising diffusion probabilistic models (DDPMs) have achieved high quality image generation without adversarial training, yet they require simulating a Markov chain for many steps to produce a sample. To accelerate sampling, we present denoising diffusion implicit models (DDIMs), a more efficient class of iterative implicit probabilistic models with the same training procedure as DDPMs. In DDPMs, the generative process is defined as the reverse of a Markovian diffusion process. We construct a class of non-Markovian diffusion processes that lead to the same training objective, but whose reverse process can be much faster to sample from. We empirically demonstrate that DDIMs can produce high quality samples $10 \\times$ to $50 \\times$ faster in terms of wall-clock time compared to DDPMs, allow us to trade off computation for sample quality, and can perform semantically meaningful image interpolation directly in the latent space.",
+   "contribution_zh": "把 DDPM 采样确定化为非马尔可夫隐式过程（PF-ODE 的一阶指数式离散），首个 10–50 步实用采样器，并给出确定性 encode–decode 映射",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2010.02502"
+   },
+   "pdf": "papers/2010.02502.pdf",
+   "text": "data/text/2010.02502.txt",
+   "text_chars": 54666,
+   "pages": 22
+  }
+ ]
+}

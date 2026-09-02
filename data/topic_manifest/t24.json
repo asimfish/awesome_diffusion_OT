@@ -1,0 +1,298 @@
+{
+ "topic": "t24",
+ "topic_name": "单细胞与生物轨迹推断中的 OT×流",
+ "section": "D",
+ "section_name": "Modalities",
+ "kb_note": "source/kb/t24_singlecell_trajectory.md",
+ "papers": [
+  {
+   "key": "t24__mapping_cells_through_time_and_space_with_moscot",
+   "report_id": "Mapping_Cells_Through_Time_and_Space_with_moscot",
+   "title": "Mapping Cells Through Time and Space with moscot",
+   "authors": "Klein, Palla, Lange et al.",
+   "year": 2025,
+   "venue": "Nature",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "工程集大成：低秩熵 OT/GW/FGW 统一时序、空间、时空、谱系全部单细胞 OT 应用，多模态、170 万细胞×20 时间点 atlas 规模，实验验证 NEUROD2",
+   "links": {
+    "Nature": "https://www.nature.com/articles/s41586-024-08453-2"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t24__genot_entropic_wasserstein_flow_matching_with_applications_t",
+   "report_id": "2310.09254",
+   "title": "GENOT: Entropic (Gromov) Wasserstein Flow Matching with Applications to Single-Cell Genomics",
+   "authors": [
+    "Dominik Klein",
+    "Théo Uscidda",
+    "Fabian Theis",
+    "Marco Cuturi"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2310.09254",
+   "published": "2023-10-13",
+   "abstract": "Single-cell genomics has significantly advanced our understanding of cellular behavior, catalyzing innovations in treatments and precision medicine. However, single-cell sequencing technologies are inherently destructive and can only measure a limited array of data modalities simultaneously. This limitation underscores the need for new methods capable of realigning cells. Optimal transport (OT) has emerged as a potent solution, but traditional discrete solvers are hampered by scalability, privacy, and out-of-sample estimation issues. These challenges have spurred the development of neural network-based solvers, known as neural OT solvers, that parameterize OT maps. Yet, these models often lack the flexibility needed for broader life science applications. To address these deficiencies, our approach learns stochastic maps (i.e. transport plans), allows for any cost function, relaxes mass conservation constraints and integrates quadratic solvers to tackle the complex challenges posed by the (Fused) Gromov-Wasserstein problem. Utilizing flow matching as a backbone, our method offers a flexible and effective framework. We demonstrate its versatility and robustness through applications in cell development studies, cellular drug response modeling, and cross-modality cell translation, illustrating significant potential for enhancing therapeutic strategies.",
+   "contribution_zh": "范式切换：用条件 FM 直接建模熵 OT 耦合的条件分布 π_ε(y\\",
+   "links": {},
+   "pdf": "papers/2310.09254.pdf",
+   "text": "data/text/2310.09254.txt",
+   "text_chars": 90000,
+   "pages": 41
+  },
+  {
+   "key": "t24__learning_single_cell_perturbation_responses_using_neural_opt",
+   "report_id": "Learning_Single_Cell_Perturbation_Responses_using",
+   "title": "Learning Single-Cell Perturbation Responses using Neural Optimal Transport",
+   "authors": "CellOT, Bunne et al.",
+   "year": 2023,
+   "venue": "Nature Methods",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "扰动线奠基：ICNN 对偶势学 control→perturbed 的 Monge map，预测未见病人药物响应（4i+scRNA）",
+   "links": {
+    "Nat Methods": "https://doi.org/10.1038/s41592-023-01969-x"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t24__optimal_transport_analysis_of_single_cell_gene_expression_id",
+   "report_id": "Optimal_Transport_Analysis_of_Single_Cell_Gene_Exp",
+   "title": "Optimal-Transport Analysis of Single-Cell Gene Expression Identifies Developmental Trajectories in Reprogramming",
+   "authors": "Waddington-OT, Schiebinger et al.",
+   "year": 2019,
+   "venue": "Cell",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "奠基：把发育建模为测度演化，相邻时间点间解带增殖率的熵正则 unbalanced OT，31.5 万细胞重编程谱系与祖先/命运分析",
+   "links": {
+    "Cell": "https://doi.org/10.1016/j.cell.2019.01.006"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t24__branched_schro_dinger_bridge_matching",
+   "report_id": "Branched_Schr_dinger_Bridge_Matching",
+   "title": "Branched Schrödinger Bridge Matching",
+   "authors": "BranchSBM, Tang et al.",
+   "year": 2026,
+   "venue": "ICLR",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "分支 SB：把广义 SB 分解为多条带权 unbalanced 随机最优控制分支（每支独立速度+增长网络），建模命运分叉与扰动分歧",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=ctq8BfUXWz"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t24__deepruot_learning_stochastic_dynamics_from_snapshots_through",
+   "report_id": "2410.00844",
+   "title": "Learning stochastic dynamics from snapshots through regularized unbalanced optimal transport",
+   "authors": [
+    "Zhenyi Zhang",
+    "Tiejun Li",
+    "Peijie Zhou"
+   ],
+   "year": 2025,
+   "venue": "ICLR (Oral)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2410.00844",
+   "published": "2024-10-01",
+   "abstract": "Reconstructing dynamics using samples from sparsely time-resolved snapshots is an important problem in both natural sciences and machine learning. Here, we introduce a new deep learning approach for solving regularized unbalanced optimal transport (RUOT) and inferring continuous unbalanced stochastic dynamics from observed snapshots. Based on the RUOT form, our method models these dynamics without requiring prior knowledge of growth and death processes or additional information, allowing them to be learned directly from data. Theoretically, we explore the connections between the RUOT and Schrödinger bridge problem and discuss the key challenges and potential solutions. The effectiveness of our method is demonstrated with a synthetic gene regulatory network, high-dimensional Gaussian Mixture Model, and single-cell RNA-seq data from blood development. Compared with other methods, our approach accurately identifies growth and transition patterns, eliminates false transitions, and constructs the Waddington developmental landscape. Our code is available at: https://github.com/zhenyiizhang/DeepRUOT.",
+   "contribution_zh": "正则化 unbalanced OT（≈unbalanced SB）的深度求解器：Fisher 正则把 SDE 问题化成 ODE 约束，无先验地同时学增殖与转移、重建 Waddington 景观",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=gQlxd3Mtru"
+   },
+   "pdf": "papers/2410.00844.pdf",
+   "text": "data/text/2410.00844.txt",
+   "text_chars": 90000,
+   "pages": 32
+  },
+  {
+   "key": "t24__meta_flow_matching_integrating_vector_fields_on_the_wasserst",
+   "report_id": "2408.14608",
+   "title": "Meta Flow Matching: Integrating Vector Fields on the Wasserstein Manifold",
+   "authors": [
+    "Lazar Atanackovic",
+    "Xi Zhang",
+    "Brandon Amos",
+    "Mathieu Blanchette",
+    "Leo J. Lee",
+    "Yoshua Bengio",
+    "Alexander Tong",
+    "Kirill Neklyudov"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2408.14608",
+   "published": "2024-08-26",
+   "abstract": "Numerous biological and physical processes can be modeled as systems of interacting entities evolving continuously over time, e.g. the dynamics of communicating cells or physical particles. Learning the dynamics of such systems is essential for predicting the temporal evolution of populations across novel samples and unseen environments. Flow-based models allow for learning these dynamics at the population level - they model the evolution of the entire distribution of samples. However, current flow-based models are limited to a single initial population and a set of predefined conditions which describe different dynamics. We argue that multiple processes in natural sciences have to be represented as vector fields on the Wasserstein manifold of probability densities. That is, the change of the population at any moment in time depends on the population itself due to the interactions between samples. In particular, this is crucial for personalized medicine where the development of diseases and their respective treatment response depend on the microenvironment of cells specific to each patient. We propose Meta Flow Matching (MFM), a practical approach to integrate along these vector fields on the Wasserstein manifold by amortizing the flow model over the initial populations. Namely, we embed the population of samples using a Graph Neural Network (GNN) and use these embeddings to train a Flow Matching model. This gives MFM the ability to generalize over the initial distributions, unlike previously proposed methods. We demonstrate the ability of MFM to improve the prediction of individual treatment responses on a large-scale multi-patient single-cell drug screen dataset.",
+   "contribution_zh": "把「初始群体」用 GNN 嵌入后 amortize 速度场——Wasserstein 流形上的向量场积分，泛化到未见病人的治疗响应",
+   "links": {
+    "Proceedings": "https://proceedings.iclr.cc/paper_files/paper/2025/file/ebdb990471f653dffb425eff03c7c980-Paper-Conference.pdf"
+   },
+   "pdf": "papers/2408.14608.pdf",
+   "text": "data/text/2408.14608.txt",
+   "text_chars": 90000,
+   "pages": 25
+  },
+  {
+   "key": "t24__modeling_complex_system_dynamics_with_flow_matching_across_t",
+   "report_id": "Modeling_Complex_System_Dynamics_with_Flow_Matchin",
+   "title": "Modeling Complex System Dynamics with Flow Matching Across Time and Conditions",
+   "authors": "MMFM, Rohbeck et al.",
+   "year": 2025,
+   "venue": "ICLR (Spotlight)",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "多边缘 FM：样条插值构造跨时间点平滑条件路径 + classifier-free guidance 跨条件共享动力学，补全缺失(时间点×扰动)组合",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=hwnObmOTrV"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t24__modeling_cell_dynamics_and_interactions_with_unbalanced_mean",
+   "report_id": "Modeling_Cell_Dynamics_and_Interactions_with_Unbal",
+   "title": "Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge",
+   "authors": "CytoBridge, Zhang et al.",
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "UMFSB：unbalanced SB 加 mean-field 交互项，四网络（速度/增长/对数密度/交互势）从快照学细胞间相互作用",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=Z6DJJIN8IJ"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t24__dest_ot_alignment_of_spatiotemporal_transcriptomics_data",
+   "report_id": "DeST_OT_Alignment_of_Spatiotemporal_Transcriptomic",
+   "title": "DeST-OT: Alignment of Spatiotemporal Transcriptomics Data",
+   "authors": "Halmos et al.",
+   "year": 2025,
+   "venue": "Cell Systems",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "空间时序配准：semi-relaxed FGW 建模发育组织切片间的生长/凋亡/分化，提出 growth-distortion 与 migration 度量",
+   "links": {
+    "Cell Systems": "https://doi.org/10.1016/j.cels.2024.12.001"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t24__tigon",
+   "report_id": "TIGON",
+   "title": "TIGON",
+   "authors": "Sha, Qiu, Zhou & Nie",
+   "year": 2024,
+   "venue": "Nat. Mach. Intell.",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "Wasserstein–Fisher–Rao 动态 unbalanced OT 的 neural ODE 求解：同时重建轨迹、增殖率与时序基因调控网络",
+   "links": {
+    "NMI": "https://www.nature.com/articles/s42256-023-00763-w"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t24__mioflow",
+   "report_id": "MIOFlow",
+   "title": "MIOFlow",
+   "authors": "Huguet et al.",
+   "year": 2022,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "测地自编码器潜空间中训练 neural ODE、以流形 ground distance 的 OT 罚项插值快照，处理分叉/汇合",
+   "links": {
+    "Proceedings": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/bfc03f077688d8885c0a9389d77616d0-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t24__trajectorynet",
+   "report_id": "TrajectoryNet",
+   "title": "TrajectoryNet",
+   "authors": "Tong et al.",
+   "year": 2020,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "首个连续化：CNF + 动态 OT 能量惩罚做快照间连续插值，可加密度/velocity 正则",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v119/tong20a.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  }
+ ]
+}

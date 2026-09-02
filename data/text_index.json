@@ -1,0 +1,1762 @@
+{
+ "1306.0895": {
+  "pages": 13,
+  "chars": 31752,
+  "truncated": false
+ },
+ "1508.05216": {
+  "pages": 37,
+  "chars": 68096,
+  "truncated": false
+ },
+ "1603.05579": {
+  "pages": 45,
+  "chars": 90000,
+  "truncated": true
+ },
+ "1706.00292": {
+  "pages": 12,
+  "chars": 45147,
+  "truncated": false
+ },
+ "1709.06464": {
+  "pages": 5,
+  "chars": 11393,
+  "truncated": false
+ },
+ "1803.00567": {
+  "pages": 209,
+  "chars": 90000,
+  "truncated": true
+ },
+ "1803.05573": {
+  "pages": 13,
+  "chars": 37512,
+  "truncated": false
+ },
+ "1805.09114": {
+  "pages": 16,
+  "chars": 58705,
+  "truncated": false
+ },
+ "1809.00013": {
+  "pages": 10,
+  "chars": 41278,
+  "truncated": false
+ },
+ "1810.01118": {
+  "pages": 16,
+  "chars": 55946,
+  "truncated": false
+ },
+ "1810.08278": {
+  "pages": 15,
+  "chars": 53741,
+  "truncated": false
+ },
+ "1812.05189": {
+  "pages": 37,
+  "chars": 76334,
+  "truncated": false
+ },
+ "1904.12785": {
+  "pages": 12,
+  "chars": 34964,
+  "truncated": false
+ },
+ "1905.05828": {
+  "pages": 53,
+  "chars": 90000,
+  "truncated": true
+ },
+ "1905.11882": {
+  "pages": 23,
+  "chars": 47837,
+  "truncated": false
+ },
+ "1909.12116": {
+  "pages": 25,
+  "chars": 60989,
+  "truncated": false
+ },
+ "1910.04091": {
+  "pages": 21,
+  "chars": 70773,
+  "truncated": false
+ },
+ "1910.05653": {
+  "pages": 36,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2003.00855": {
+  "pages": 68,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2005.10963": {
+  "pages": 67,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2006.07229": {
+  "pages": 9,
+  "chars": 34251,
+  "truncated": false
+ },
+ "2006.08172": {
+  "pages": 29,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2010.02502": {
+  "pages": 22,
+  "chars": 54666,
+  "truncated": false
+ },
+ "2102.05912": {
+  "pages": 34,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2103.04737": {
+  "pages": 21,
+  "chars": 64663,
+  "truncated": false
+ },
+ "2106.00736": {
+  "pages": 18,
+  "chars": 56723,
+  "truncated": false
+ },
+ "2106.01128": {
+  "pages": 19,
+  "chars": 62853,
+  "truncated": false
+ },
+ "2106.01954": {
+  "pages": 17,
+  "chars": 52973,
+  "truncated": false
+ },
+ "2106.01963": {
+  "pages": 15,
+  "chars": 51047,
+  "truncated": false
+ },
+ "2106.03812": {
+  "pages": 25,
+  "chars": 75842,
+  "truncated": false
+ },
+ "2106.06345": {
+  "pages": 18,
+  "chars": 64792,
+  "truncated": false
+ },
+ "2106.10482": {
+  "pages": 11,
+  "chars": 49268,
+  "truncated": false
+ },
+ "2107.03006": {
+  "pages": 33,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2107.12364": {
+  "pages": 99,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2109.12004": {
+  "pages": 37,
+  "chars": 86424,
+  "truncated": false
+ },
+ "2110.02999": {
+  "pages": 22,
+  "chars": 61132,
+  "truncated": false
+ },
+ "2110.11773": {
+  "pages": 16,
+  "chars": 58024,
+  "truncated": false
+ },
+ "2111.11521": {
+  "pages": 49,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2112.02424": {
+  "pages": 44,
+  "chars": 89406,
+  "truncated": false
+ },
+ "2201.12220": {
+  "pages": 34,
+  "chars": 64586,
+  "truncated": false
+ },
+ "2202.07477": {
+  "pages": 15,
+  "chars": 46665,
+  "truncated": false
+ },
+ "2202.08919": {
+  "pages": 23,
+  "chars": 49568,
+  "truncated": false
+ },
+ "2204.08472": {
+  "pages": 9,
+  "chars": 34465,
+  "truncated": false
+ },
+ "2204.13902": {
+  "pages": 33,
+  "chars": 79960,
+  "truncated": false
+ },
+ "2205.06688": {
+  "pages": 19,
+  "chars": 68503,
+  "truncated": false
+ },
+ "2205.15269": {
+  "pages": 36,
+  "chars": 76555,
+  "truncated": false
+ },
+ "2205.15403": {
+  "pages": 32,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2205.15902": {
+  "pages": 52,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2206.00364": {
+  "pages": 47,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2206.00927": {
+  "pages": 31,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2207.03024": {
+  "pages": 5,
+  "chars": 17515,
+  "truncated": false
+ },
+ "2209.03003": {
+  "pages": 41,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2209.07007": {
+  "pages": 38,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2209.14577": {
+  "pages": 24,
+  "chars": 58839,
+  "truncated": false
+ },
+ "2209.15571": {
+  "pages": 29,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2210.01253": {
+  "pages": 21,
+  "chars": 69488,
+  "truncated": false
+ },
+ "2210.02747": {
+  "pages": 28,
+  "chars": 62941,
+  "truncated": false
+ },
+ "2210.06662": {
+  "pages": 32,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2211.01095": {
+  "pages": 24,
+  "chars": 67225,
+  "truncated": false
+ },
+ "2211.01364": {
+  "pages": 42,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2212.01747": {
+  "pages": 14,
+  "chars": 45477,
+  "truncated": false
+ },
+ "2212.03722": {
+  "pages": 68,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2212.06359": {
+  "pages": 21,
+  "chars": 52936,
+  "truncated": false
+ },
+ "2212.12848": {
+  "pages": 47,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2212.14424": {
+  "pages": 30,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2301.12874": {
+  "pages": 33,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2302.00482": {
+  "pages": 34,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2302.04867": {
+  "pages": 28,
+  "chars": 75535,
+  "truncated": false
+ },
+ "2302.04953": {
+  "pages": 16,
+  "chars": 58356,
+  "truncated": false
+ },
+ "2303.00848": {
+  "pages": 33,
+  "chars": 76967,
+  "truncated": false
+ },
+ "2303.01469": {
+  "pages": 42,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2303.07988": {
+  "pages": 30,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2303.08797": {
+  "pages": 80,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2304.06094": {
+  "pages": 26,
+  "chars": 84800,
+  "truncated": false
+ },
+ "2304.12824": {
+  "pages": 31,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2304.14772": {
+  "pages": 29,
+  "chars": 88562,
+  "truncated": false
+ },
+ "2305.14777": {
+  "pages": 23,
+  "chars": 66353,
+  "truncated": false
+ },
+ "2305.16860": {
+  "pages": 17,
+  "chars": 53692,
+  "truncated": false
+ },
+ "2306.00980": {
+  "pages": 17,
+  "chars": 63908,
+  "truncated": false
+ },
+ "2306.06626": {
+  "pages": 25,
+  "chars": 59462,
+  "truncated": false
+ },
+ "2306.09099": {
+  "pages": 36,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2306.09341": {
+  "pages": 24,
+  "chars": 66177,
+  "truncated": false
+ },
+ "2306.15030": {
+  "pages": 25,
+  "chars": 78148,
+  "truncated": false
+ },
+ "2306.15687": {
+  "pages": 36,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2306.16156": {
+  "pages": 20,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2308.03686": {
+  "pages": 21,
+  "chars": 63798,
+  "truncated": false
+ },
+ "2309.03199": {
+  "pages": 5,
+  "chars": 31453,
+  "truncated": false
+ },
+ "2309.11713": {
+  "pages": 25,
+  "chars": 75533,
+  "truncated": false
+ },
+ "2310.01105": {
+  "pages": 34,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2310.02391": {
+  "pages": 32,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2310.02611": {
+  "pages": 27,
+  "chars": 68477,
+  "truncated": false
+ },
+ "2310.03725": {
+  "pages": 18,
+  "chars": 53355,
+  "truncated": false
+ },
+ "2310.09254": {
+  "pages": 41,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2310.11513": {
+  "pages": 21,
+  "chars": 64792,
+  "truncated": false
+ },
+ "2310.13268": {
+  "pages": 41,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2310.14189": {
+  "pages": 20,
+  "chars": 55992,
+  "truncated": false
+ },
+ "2310.16338": {
+  "pages": 20,
+  "chars": 70769,
+  "truncated": false
+ },
+ "2310.16834": {
+  "pages": 30,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2310.16975": {
+  "pages": 26,
+  "chars": 85008,
+  "truncated": false
+ },
+ "2310.19075": {
+  "pages": 31,
+  "chars": 65383,
+  "truncated": false
+ },
+ "2311.01226": {
+  "pages": 33,
+  "chars": 79629,
+  "truncated": false
+ },
+ "2311.03886": {
+  "pages": 31,
+  "chars": 84346,
+  "truncated": false
+ },
+ "2311.05672": {
+  "pages": 33,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2311.15100": {
+  "pages": 28,
+  "chars": 87303,
+  "truncated": false
+ },
+ "2311.16567": {
+  "pages": 23,
+  "chars": 56290,
+  "truncated": false
+ },
+ "2311.17042": {
+  "pages": 16,
+  "chars": 51689,
+  "truncated": false
+ },
+ "2311.18828": {
+  "pages": 22,
+  "chars": 68275,
+  "truncated": false
+ },
+ "2312.00094": {
+  "pages": 18,
+  "chars": 64493,
+  "truncated": false
+ },
+ "2312.02027": {
+  "pages": 42,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2312.03491": {
+  "pages": 30,
+  "chars": 78779,
+  "truncated": false
+ },
+ "2312.07311": {
+  "pages": 9,
+  "chars": 42711,
+  "truncated": false
+ },
+ "2312.14572": {
+  "pages": 26,
+  "chars": 73962,
+  "truncated": false
+ },
+ "2312.16414": {
+  "pages": 21,
+  "chars": 49328,
+  "truncated": false
+ },
+ "2401.04082": {
+  "pages": 22,
+  "chars": 65252,
+  "truncated": false
+ },
+ "2401.08740": {
+  "pages": 35,
+  "chars": 73563,
+  "truncated": false
+ },
+ "2401.09603": {
+  "pages": 10,
+  "chars": 43962,
+  "truncated": false
+ },
+ "2401.12253": {
+  "pages": 20,
+  "chars": 59194,
+  "truncated": false
+ },
+ "2402.03828": {
+  "pages": 26,
+  "chars": 85963,
+  "truncated": false
+ },
+ "2402.04997": {
+  "pages": 60,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2402.05443": {
+  "pages": 22,
+  "chars": 64777,
+  "truncated": false
+ },
+ "2402.06162": {
+  "pages": 21,
+  "chars": 71424,
+  "truncated": false
+ },
+ "2402.07747": {
+  "pages": 32,
+  "chars": 74675,
+  "truncated": false
+ },
+ "2402.07802": {
+  "pages": 30,
+  "chars": 71997,
+  "truncated": false
+ },
+ "2402.08095": {
+  "pages": 19,
+  "chars": 46380,
+  "truncated": false
+ },
+ "2402.12030": {
+  "pages": 30,
+  "chars": 89275,
+  "truncated": false
+ },
+ "2402.15602": {
+  "pages": 45,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2402.17110": {
+  "pages": 13,
+  "chars": 52837,
+  "truncated": false
+ },
+ "2402.17376": {
+  "pages": 18,
+  "chars": 59248,
+  "truncated": false
+ },
+ "2403.01329": {
+  "pages": 23,
+  "chars": 63173,
+  "truncated": false
+ },
+ "2403.01639": {
+  "pages": 41,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2403.01781": {
+  "pages": 17,
+  "chars": 55368,
+  "truncated": false
+ },
+ "2403.03206": {
+  "pages": 28,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2403.03777": {
+  "pages": 20,
+  "chars": 57790,
+  "truncated": false
+ },
+ "2403.05069": {
+  "pages": 14,
+  "chars": 44932,
+  "truncated": false
+ },
+ "2403.06069": {
+  "pages": 27,
+  "chars": 56449,
+  "truncated": false
+ },
+ "2403.11262": {
+  "pages": 27,
+  "chars": 79357,
+  "truncated": false
+ },
+ "2403.14183": {
+  "pages": 23,
+  "chars": 52411,
+  "truncated": false
+ },
+ "2403.16627": {
+  "pages": 13,
+  "chars": 43877,
+  "truncated": false
+ },
+ "2403.18705": {
+  "pages": 47,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2403.19655": {
+  "pages": 24,
+  "chars": 64345,
+  "truncated": false
+ },
+ "2404.04240": {
+  "pages": 34,
+  "chars": 89144,
+  "truncated": false
+ },
+ "2404.04650": {
+  "pages": 10,
+  "chars": 42419,
+  "truncated": false
+ },
+ "2404.11741": {
+  "pages": 4,
+  "chars": 17480,
+  "truncated": false
+ },
+ "2404.11925": {
+  "pages": 12,
+  "chars": 32981,
+  "truncated": false
+ },
+ "2404.14507": {
+  "pages": 29,
+  "chars": 89947,
+  "truncated": false
+ },
+ "2405.06789": {
+  "pages": 11,
+  "chars": 56908,
+  "truncated": false
+ },
+ "2405.07510": {
+  "pages": 16,
+  "chars": 40787,
+  "truncated": false
+ },
+ "2405.11326": {
+  "pages": 30,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2405.14250": {
+  "pages": 27,
+  "chars": 72171,
+  "truncated": false
+ },
+ "2405.14664": {
+  "pages": 32,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2405.14780": {
+  "pages": 25,
+  "chars": 86641,
+  "truncated": false
+ },
+ "2405.15506": {
+  "pages": 39,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2405.15885": {
+  "pages": 28,
+  "chars": 79732,
+  "truncated": false
+ },
+ "2405.18750": {
+  "pages": 35,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2405.20313": {
+  "pages": 28,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2405.20320": {
+  "pages": 28,
+  "chars": 65343,
+  "truncated": false
+ },
+ "2405.20879": {
+  "pages": 45,
+  "chars": 83019,
+  "truncated": false
+ },
+ "2406.03736": {
+  "pages": 38,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2406.04312": {
+  "pages": 26,
+  "chars": 83656,
+  "truncated": false
+ },
+ "2406.04329": {
+  "pages": 32,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2406.04333": {
+  "pages": 37,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2406.04713": {
+  "pages": 23,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2406.05061": {
+  "pages": 23,
+  "chars": 77652,
+  "truncated": false
+ },
+ "2406.07524": {
+  "pages": 49,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2406.08938": {
+  "pages": 57,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2406.09570": {
+  "pages": 25,
+  "chars": 76378,
+  "truncated": false
+ },
+ "2406.12303": {
+  "pages": 22,
+  "chars": 53126,
+  "truncated": false
+ },
+ "2406.12616": {
+  "pages": 28,
+  "chars": 80707,
+  "truncated": false
+ },
+ "2406.14426": {
+  "pages": 27,
+  "chars": 75820,
+  "truncated": false
+ },
+ "2406.18009": {
+  "pages": 8,
+  "chars": 40425,
+  "truncated": false
+ },
+ "2407.10181": {
+  "pages": 18,
+  "chars": 44431,
+  "truncated": false
+ },
+ "2407.12718": {
+  "pages": 24,
+  "chars": 54325,
+  "truncated": false
+ },
+ "2407.15595": {
+  "pages": 38,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2407.18163": {
+  "pages": 290,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2407.19689": {
+  "pages": 27,
+  "chars": 66015,
+  "truncated": false
+ },
+ "2407.20444": {
+  "pages": 37,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2408.08822": {
+  "pages": 33,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2408.09000": {
+  "pages": 21,
+  "chars": 47562,
+  "truncated": false
+ },
+ "2408.14608": {
+  "pages": 25,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2409.08861": {
+  "pages": 55,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2409.09376": {
+  "pages": 20,
+  "chars": 67163,
+  "truncated": false
+ },
+ "2409.13074": {
+  "pages": 40,
+  "chars": 84269,
+  "truncated": false
+ },
+ "2409.17917": {
+  "pages": 18,
+  "chars": 43943,
+  "truncated": false
+ },
+ "2409.18959": {
+  "pages": 42,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2410.00844": {
+  "pages": 32,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2410.02490": {
+  "pages": 25,
+  "chars": 68492,
+  "truncated": false
+ },
+ "2410.02671": {
+  "pages": 22,
+  "chars": 57379,
+  "truncated": false
+ },
+ "2410.03783": {
+  "pages": 25,
+  "chars": 63091,
+  "truncated": false
+ },
+ "2410.05954": {
+  "pages": 25,
+  "chars": 79753,
+  "truncated": false
+ },
+ "2410.07761": {
+  "pages": 23,
+  "chars": 73068,
+  "truncated": false
+ },
+ "2410.08709": {
+  "pages": 39,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2410.09046": {
+  "pages": 15,
+  "chars": 38393,
+  "truncated": false
+ },
+ "2410.12557": {
+  "pages": 17,
+  "chars": 51643,
+  "truncated": false
+ },
+ "2410.13431": {
+  "pages": 13,
+  "chars": 61158,
+  "truncated": false
+ },
+ "2410.14949": {
+  "pages": 37,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2410.15371": {
+  "pages": 31,
+  "chars": 86371,
+  "truncated": false
+ },
+ "2410.20478": {
+  "pages": 12,
+  "chars": 49840,
+  "truncated": false
+ },
+ "2410.20587": {
+  "pages": 67,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2410.21035": {
+  "pages": 39,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2410.22388": {
+  "pages": 21,
+  "chars": 60648,
+  "truncated": false
+ },
+ "2410.22637": {
+  "pages": 27,
+  "chars": 72607,
+  "truncated": false
+ },
+ "2410.23405": {
+  "pages": 16,
+  "chars": 52596,
+  "truncated": false
+ },
+ "2411.00322": {
+  "pages": 25,
+  "chars": 61339,
+  "truncated": false
+ },
+ "2411.00698": {
+  "pages": 21,
+  "chars": 79441,
+  "truncated": false
+ },
+ "2411.00759": {
+  "pages": 48,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2411.04746": {
+  "pages": 15,
+  "chars": 59100,
+  "truncated": false
+ },
+ "2411.05007": {
+  "pages": 28,
+  "chars": 81987,
+  "truncated": false
+ },
+ "2411.09502": {
+  "pages": 34,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2411.10555": {
+  "pages": 53,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2411.16443": {
+  "pages": 22,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2412.02214": {
+  "pages": 10,
+  "chars": 51517,
+  "truncated": false
+ },
+ "2412.03895": {
+  "pages": 31,
+  "chars": 85915,
+  "truncated": false
+ },
+ "2412.04724": {
+  "pages": 9,
+  "chars": 46118,
+  "truncated": false
+ },
+ "2412.05101": {
+  "pages": 16,
+  "chars": 61139,
+  "truncated": false
+ },
+ "2412.06264": {
+  "pages": 83,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2412.07772": {
+  "pages": 18,
+  "chars": 64993,
+  "truncated": false
+ },
+ "2412.10117": {
+  "pages": 19,
+  "chars": 63567,
+  "truncated": false
+ },
+ "2412.10966": {
+  "pages": 15,
+  "chars": 48202,
+  "truncated": false
+ },
+ "2412.14528": {
+  "pages": 9,
+  "chars": 43685,
+  "truncated": false
+ },
+ "2501.00103": {
+  "pages": 21,
+  "chars": 56121,
+  "truncated": false
+ },
+ "2501.08316": {
+  "pages": 16,
+  "chars": 66261,
+  "truncated": false
+ },
+ "2501.08331": {
+  "pages": 22,
+  "chars": 77019,
+  "truncated": false
+ },
+ "2501.11311": {
+  "pages": 27,
+  "chars": 79897,
+  "truncated": false
+ },
+ "2501.14171": {
+  "pages": 33,
+  "chars": 61778,
+  "truncated": false
+ },
+ "2502.02150": {
+  "pages": 37,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2502.02582": {
+  "pages": 31,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2502.06061": {
+  "pages": 61,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2502.06608": {
+  "pages": 22,
+  "chars": 86577,
+  "truncated": false
+ },
+ "2502.09992": {
+  "pages": 33,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2502.11778": {
+  "pages": 24,
+  "chars": 63499,
+  "truncated": false
+ },
+ "2502.12456": {
+  "pages": 24,
+  "chars": 68305,
+  "truncated": false
+ },
+ "2502.17436": {
+  "pages": 22,
+  "chars": 73280,
+  "truncated": false
+ },
+ "2503.00266": {
+  "pages": 11,
+  "chars": 28316,
+  "truncated": false
+ },
+ "2503.00710": {
+  "pages": 49,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2503.02819": {
+  "pages": 44,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2503.03025": {
+  "pages": 33,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2503.06674": {
+  "pages": 17,
+  "chars": 60618,
+  "truncated": false
+ },
+ "2503.09573": {
+  "pages": 28,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2503.09583": {
+  "pages": 51,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2503.10636": {
+  "pages": 22,
+  "chars": 65264,
+  "truncated": false
+ },
+ "2503.14975": {
+  "pages": 11,
+  "chars": 48671,
+  "truncated": false
+ },
+ "2503.19034": {
+  "pages": 30,
+  "chars": 66512,
+  "truncated": false
+ },
+ "2503.19062": {
+  "pages": 9,
+  "chars": 34158,
+  "truncated": false
+ },
+ "2503.21774": {
+  "pages": 16,
+  "chars": 46987,
+  "truncated": false
+ },
+ "2503.22984": {
+  "pages": 15,
+  "chars": 72606,
+  "truncated": false
+ },
+ "2503.24129": {
+  "pages": 22,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2504.03072": {
+  "pages": 32,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2504.03188": {
+  "pages": 32,
+  "chars": 84683,
+  "truncated": false
+ },
+ "2505.03114": {
+  "pages": 14,
+  "chars": 50554,
+  "truncated": false
+ },
+ "2505.06589": {
+  "pages": 480,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2505.11823": {
+  "pages": 35,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2505.13447": {
+  "pages": 16,
+  "chars": 53951,
+  "truncated": false
+ },
+ "2505.13660": {
+  "pages": 22,
+  "chars": 59699,
+  "truncated": false
+ },
+ "2505.18521": {
+  "pages": 21,
+  "chars": 51353,
+  "truncated": false
+ },
+ "2505.18720": {
+  "pages": 24,
+  "chars": 89094,
+  "truncated": false
+ },
+ "2505.19476": {
+  "pages": 5,
+  "chars": 30139,
+  "truncated": false
+ },
+ "2505.19712": {
+  "pages": 26,
+  "chars": 74934,
+  "truncated": false
+ },
+ "2506.05526": {
+  "pages": 23,
+  "chars": 63510,
+  "truncated": false
+ },
+ "2506.07534": {
+  "pages": 57,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2506.08009": {
+  "pages": 19,
+  "chars": 68010,
+  "truncated": false
+ },
+ "2506.09007": {
+  "pages": 44,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2506.09018": {
+  "pages": 28,
+  "chars": 87723,
+  "truncated": false
+ },
+ "2506.09350": {
+  "pages": 20,
+  "chars": 76746,
+  "truncated": false
+ },
+ "2506.09534": {
+  "pages": 26,
+  "chars": 82419,
+  "truncated": false
+ },
+ "2506.10177": {
+  "pages": 57,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2506.10892": {
+  "pages": 40,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2506.13579": {
+  "pages": 16,
+  "chars": 51423,
+  "truncated": false
+ },
+ "2506.15742": {
+  "pages": 19,
+  "chars": 48248,
+  "truncated": false
+ },
+ "2507.03745": {
+  "pages": 16,
+  "chars": 60694,
+  "truncated": false
+ },
+ "2507.10218": {
+  "pages": 10,
+  "chars": 43057,
+  "truncated": false
+ },
+ "2507.11925": {
+  "pages": 6,
+  "chars": 30752,
+  "truncated": false
+ },
+ "2508.02363": {
+  "pages": 27,
+  "chars": 74994,
+  "truncated": false
+ },
+ "2508.15487": {
+  "pages": 17,
+  "chars": 62918,
+  "truncated": false
+ },
+ "2508.16306": {
+  "pages": 30,
+  "chars": 73340,
+  "truncated": false
+ },
+ "2509.16974": {
+  "pages": 45,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2509.22494": {
+  "pages": 30,
+  "chars": 78809,
+  "truncated": false
+ },
+ "2509.25519": {
+  "pages": 38,
+  "chars": 82162,
+  "truncated": false
+ },
+ "2510.00983": {
+  "pages": 24,
+  "chars": 72972,
+  "truncated": false
+ },
+ "2510.01894": {
+  "pages": 23,
+  "chars": 72291,
+  "truncated": false
+ },
+ "2510.02390": {
+  "pages": 12,
+  "chars": 44673,
+  "truncated": false
+ },
+ "2510.04602": {
+  "pages": 34,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2510.22560": {
+  "pages": 30,
+  "chars": 70373,
+  "truncated": false
+ },
+ "2511.07499": {
+  "pages": 17,
+  "chars": 43121,
+  "truncated": false
+ },
+ "2511.11162": {
+  "pages": 19,
+  "chars": 72473,
+  "truncated": false
+ },
+ "2511.18679": {
+  "pages": 12,
+  "chars": 43890,
+  "truncated": false
+ },
+ "2511.22425": {
+  "pages": 22,
+  "chars": 60024,
+  "truncated": false
+ },
+ "2512.06797": {
+  "pages": 25,
+  "chars": 73704,
+  "truncated": false
+ },
+ "2512.06802": {
+  "pages": 18,
+  "chars": 62999,
+  "truncated": false
+ },
+ "2512.11438": {
+  "pages": 28,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2512.22796": {
+  "pages": 28,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2601.06810": {
+  "pages": 34,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2601.07568": {
+  "pages": 21,
+  "chars": 89173,
+  "truncated": false
+ },
+ "2601.08011": {
+  "pages": 31,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2602.01179": {
+  "pages": 45,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2602.03067": {
+  "pages": 36,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2602.03105": {
+  "pages": 18,
+  "chars": 42318,
+  "truncated": false
+ },
+ "2602.03566": {
+  "pages": 58,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2602.06658": {
+  "pages": 37,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2602.15008": {
+  "pages": 59,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2603.00763": {
+  "pages": 27,
+  "chars": 66903,
+  "truncated": false
+ },
+ "2603.06972": {
+  "pages": 15,
+  "chars": 69757,
+  "truncated": false
+ },
+ "2603.11618": {
+  "pages": 18,
+  "chars": 74418,
+  "truncated": false
+ },
+ "2603.15279": {
+  "pages": 26,
+  "chars": 64288,
+  "truncated": false
+ },
+ "2603.18992": {
+  "pages": 220,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2603.25182": {
+  "pages": 35,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2605.00161": {
+  "pages": 24,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2605.00837": {
+  "pages": 14,
+  "chars": 32127,
+  "truncated": false
+ },
+ "2605.08793": {
+  "pages": 32,
+  "chars": 65522,
+  "truncated": false
+ },
+ "2605.11429": {
+  "pages": 21,
+  "chars": 51139,
+  "truncated": false
+ },
+ "2605.11755": {
+  "pages": 40,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2605.12174": {
+  "pages": 57,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2605.17232": {
+  "pages": 47,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2606.05327": {
+  "pages": 41,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2606.11221": {
+  "pages": 21,
+  "chars": 78244,
+  "truncated": false
+ },
+ "2606.29462": {
+  "pages": 18,
+  "chars": 50934,
+  "truncated": false
+ },
+ "2607.03626": {
+  "pages": 20,
+  "chars": 53493,
+  "truncated": false
+ },
+ "2607.07401": {
+  "pages": 10,
+  "chars": 24757,
+  "truncated": false
+ },
+ "t01_2009_Villani_OT_Old_and_New_preprint": {
+  "pages": 547,
+  "chars": 90000,
+  "truncated": true
+ },
+ "t02_2022_Lavenant_flow_map_fokker_planck_not_ot": {
+  "pages": 6,
+  "chars": 18785,
+  "truncated": false
+ },
+ "t03_2022_Chen_Likelihood_Training_SB_FBSDE": {
+  "pages": 27,
+  "chars": 76217,
+  "truncated": false
+ },
+ "t03_2023_Shi_Diffusion_Schrodinger_Bridge_Matching": {
+  "pages": 41,
+  "chars": 90000,
+  "truncated": true
+ },
+ "t03_2024_Gushchin_Light_and_Optimal_SB_Matching": {
+  "pages": 23,
+  "chars": 75583,
+  "truncated": false
+ },
+ "t06_2023_Chen_sampling_easy_as_learning_score": {
+  "pages": 29,
+  "chars": 77969,
+  "truncated": false
+ },
+ "t06_2023_Oko_diffusion_minimax_optimal_estimators": {
+  "pages": 65,
+  "chars": 90000,
+  "truncated": true
+ },
+ "t09_2023_Liu_InstaFlow_One_Step_T2I": {
+  "pages": 30,
+  "chars": 78184,
+  "truncated": false
+ },
+ "t10_2024_Dou_Theory_Consistency_Diffusion_Models": {
+  "pages": 21,
+  "chars": 72839,
+  "truncated": false
+ },
+ "t14_2023_Li_bbdm_brownian_bridge_diffusion": {
+  "pages": 18,
+  "chars": 47764,
+  "truncated": false
+ },
+ "t14_2023_Liu_i2sb_image_to_image_schrodinger_bridge": {
+  "pages": 21,
+  "chars": 67367,
+  "truncated": false
+ },
+ "t14_2024_Zhou_ddbm_denoising_diffusion_bridge_models": {
+  "pages": 26,
+  "chars": 65435,
+  "truncated": false
+ },
+ "t15_2025_Shi_ACSB_CBCT_to_CT": {
+  "pages": 10,
+  "chars": 24234,
+  "truncated": false
+ },
+ "t23_2024_Jukic_SB_Speech_Enhancement": {
+  "pages": 5,
+  "chars": 30665,
+  "truncated": false
+ },
+ "t23_2025_Chen_F5_TTS": {
+  "pages": 17,
+  "chars": 67046,
+  "truncated": false
+ },
+ "t27_2025_Theodoropoulos_3MSBM_momentum_mmsb_matching": {
+  "pages": 31,
+  "chars": 90000,
+  "truncated": true
+ },
+ "t28_2024_Chen_riemannian_flow_matching": {
+  "pages": 24,
+  "chars": 76384,
+  "truncated": false
+ },
+ "t28_2024_Kapusniak_metric_flow_matching": {
+  "pages": 25,
+  "chars": 86641,
+  "truncated": false
+ },
+ "t30_2024_Zhao_MixDQ_fewstep_mixed_precision_quant": {
+  "pages": 29,
+  "chars": 67221,
+  "truncated": false
+ },
+ "2202.02763": {
+  "pages": 50,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2203.08382": {
+  "pages": 18,
+  "chars": 49999,
+  "truncated": false
+ },
+ "2205.07680": {
+  "pages": 18,
+  "chars": 47764,
+  "truncated": false
+ },
+ "2209.11215": {
+  "pages": 29,
+  "chars": 77969,
+  "truncated": false
+ },
+ "2302.03660": {
+  "pages": 24,
+  "chars": 76384,
+  "truncated": false
+ },
+ "2309.06380": {
+  "pages": 30,
+  "chars": 78184,
+  "truncated": false
+ },
+ "2309.16948": {
+  "pages": 26,
+  "chars": 65435,
+  "truncated": false
+ },
+ "2310.02279": {
+  "pages": 33,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2312.00739": {
+  "pages": 15,
+  "chars": 51133,
+  "truncated": false
+ },
+ "2405.16381": {
+  "pages": 30,
+  "chars": 86914,
+  "truncated": false
+ },
+ "2405.17873": {
+  "pages": 29,
+  "chars": 67221,
+  "truncated": false
+ },
+ "2503.07535": {
+  "pages": 25,
+  "chars": 77297,
+  "truncated": false
+ },
+ "2503.22168": {
+  "pages": 28,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2505.18193": {
+  "pages": 51,
+  "chars": 90000,
+  "truncated": true
+ },
+ "2505.21528": {
+  "pages": 14,
+  "chars": 65636,
+  "truncated": false
+ },
+ "2510.20871": {
+  "pages": 32,
+  "chars": 90000,
+  "truncated": true
+ }
+}

@@ -1,0 +1,342 @@
+{
+ "topic": "t12",
+ "topic_name": "推理阶段的 OT 对齐与噪声-样本耦合",
+ "section": "B",
+ "section_name": "Flow Matching & Trajectory Straightening",
+ "kb_note": "source/kb/t12_inference_time_ot_alignment.md",
+ "papers": [
+  {
+   "key": "t12__golden_noise_for_diffusion_models_a_learning_framework",
+   "report_id": "2411.09502",
+   "title": "Golden Noise for Diffusion Models: A Learning Framework",
+   "authors": [
+    "Zikai Zhou",
+    "Shitong Shao",
+    "Lichen Bai",
+    "Shufei Zhang",
+    "Zhiqiang Xu",
+    "Bo Han",
+    "Zeke Xie"
+   ],
+   "year": 2025,
+   "venue": "ICCV",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": "2411.09502",
+   "published": "2024-11-14",
+   "abstract": "Text-to-image diffusion model is a popular paradigm that synthesizes personalized images by providing a text prompt and a random Gaussian noise. While people observe that some noises are ``golden noises'' that can achieve better text-image alignment and higher human preference than others, we still lack a machine learning framework to obtain those golden noises. To learn golden noises for diffusion sampling, we mainly make three contributions in this paper. First, we identify a new concept termed the \\textit{noise prompt}, which aims at turning a random Gaussian noise into a golden noise by adding a small desirable perturbation derived from the text prompt. Following the concept, we first formulate the \\textit{noise prompt learning} framework that systematically learns ``prompted'' golden noise associated with a text prompt for diffusion models. Second, we design a noise prompt data collection pipeline and collect a large-scale \\textit{noise prompt dataset}~(NPD) that contains 100k pairs of random noises and golden noises with the associated text prompts. With the prepared NPD as the training dataset, we trained a small \\textit{noise prompt network}~(NPNet) that can directly learn to transform a random noise into a golden noise. The learned golden noise perturbation can be considered as a kind of prompt for noise, as it is rich in semantic information and tailored to the given text prompt. Third, our extensive experiments demonstrate the impressive effectiveness and generalization of NPNet on improving the quality of synthesized images across various diffusion models, including SDXL, DreamShaper-xl-v2-turbo, and Hunyuan-DiT. Moreover, NPNet is a small and efficient controller that acts as a plug-and-play module with very limited additional inference and computational costs, as it just provides a golden noise instead of a random noise without accessing the original pipeline.",
+   "contribution_zh": "学一个噪声→\"黄金噪声\"的传输网络：re-denoise 采样+偏好模型筛选构建 10 万对噪声数据集，SVD 结构先验的小网络即插即用（+3% 开销），跨模型/采样器泛化",
+   "links": {
+    "CVF PDF": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhou_Golden_Noise_for_Diffusion_Models_A_Learning_Framework_ICCV_2025_paper.pdf"
+   },
+   "pdf": "papers/2411.09502.pdf",
+   "text": "data/text/2411.09502.txt",
+   "text_chars": 90000,
+   "pages": 34
+  },
+  {
+   "key": "t12__scaling_inference_time_compute_for_diffusion_models",
+   "report_id": "Scaling_Inference_Time_Compute_for_Diffusion_Model",
+   "title": "Scaling Inference Time Compute for Diffusion Models (Inference-Time Scaling beyond Denoising Steps)",
+   "authors": "Ma et al.",
+   "year": 2025,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "把\"找好噪声\"形式化为验证器×搜索算法的设计空间（random / zero-order / search-over-paths），确立噪声搜索作为扩散 test-time scaling 的第二轴",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2025/html/Ma_Scaling_Inference_Time_Compute_for_Diffusion_Models_CVPR_2025_paper.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t12__2410.13431",
+   "report_id": "2410.13431",
+   "title": "Solving Prior Distribution Mismatch in Diffusion Models via Optimal Transport",
+   "authors": [
+    "Zhanpeng Wang",
+    "Shenghao Li",
+    "Jiameng Che",
+    "Chen Wang",
+    "Shangling Jui",
+    "Na Lei",
+    "Zhongxuan Luo"
+   ],
+   "year": 2024,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": true,
+   "arxiv_id": "2410.13431",
+   "published": "2024-10-17",
+   "abstract": "Diffusion Models (DMs) have achieved remarkable progress in generative modeling. However, the mismatch between the forward terminal distribution and reverse initial distribution introduces prior error, leading to deviations of sampling trajectories from the true distribution and severely limiting model performance. This issue further triggers cascading problems, including non-zero Signal-to-Noise Ratio, accumulated denoising errors, degraded generation quality, and constrained sampling efficiency. To address this issue, this paper proposes a prior error elimination framework based on Optimal Transport (OT). Specifically, an OT map from the reverse initial distribution to the forward terminal distribution is constructed to achieve precise matching of the two distributions. Meanwhile, the upper bound of the prior error is quantified using the Wasserstein distance, proving that the prior error can be effectively eliminated via the OT map. Additionally, by deriving the asymptotic consistency between dynamic OT and probability flow, this method is revealed to be highly compatible with the intrinsic mechanism of the diffusion process. Experimental results demonstrate that the proposed method completely eliminates the prior error both theoretically and practically, providing a universal and rigorous solution for optimizing the performance of DMs.",
+   "contribution_zh": "证明扩散两阶段本质是计算时变 OT、概率流指数收敛到 Monge–Ampère 解的梯度；据此用**半离散静态 OT（Brenier 势的几何变分解）**桥接 \\(p_\\infty\\to p_{T'}\\) 消除 prior error，实现\"一步 OT + 短程扩散\"加速采样",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2410.13431"
+   },
+   "pdf": "papers/2410.13431.pdf",
+   "text": "data/text/2410.13431.txt",
+   "text_chars": 61158,
+   "pages": 13
+  },
+  {
+   "key": "t12__2412.03895",
+   "report_id": "2412.03895",
+   "title": "A Noise is Worth Diffusion Guidance",
+   "authors": [
+    "Donghoon Ahn",
+    "Jiwon Kang",
+    "Sanghyun Lee",
+    "Jaewon Min",
+    "Minjae Kim",
+    "Wooseok Jang",
+    "Hyoungwon Cho",
+    "Sayak Paul",
+    "SeonHwa Kim",
+    "Eunju Cha",
+    "Kyong Hwan Jin",
+    "Seungryong Kim"
+   ],
+   "year": 2026,
+   "venue": "ICLR",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": "2412.03895",
+   "published": "2024-12-05",
+   "abstract": "Diffusion models excel in generating high-quality images. However, current diffusion models struggle to produce reliable images without guidance methods, such as classifier-free guidance (CFG). Are guidance methods truly necessary? Observing that noise obtained via diffusion inversion can reconstruct high-quality images without guidance, we focus on the initial noise of the denoising pipeline. By mapping Gaussian noise to `guidance-free noise', we uncover that small low-magnitude low-frequency components significantly enhance the denoising process, removing the need for guidance and thus improving both inference throughput and memory. Expanding on this, we propose \\ours, a novel method that replaces guidance methods with a single refinement of the initial noise. This refined noise enables high-quality image generation without guidance, within the same diffusion pipeline. Our noise-refining model leverages efficient noise-space learning, achieving rapid convergence and strong performance with just 50K text-image pairs. We validate its effectiveness across diverse metrics and analyze how refined noise can eliminate the need for guidance. See our project page: https://cvlab-kaist.github.io/NoiseRefine/.",
+   "contribution_zh": "把 CFG 折叠进初值：学噪声→\"guidance-free 噪声\"的一次映射，低频小幅分量替代引导，同管线免 CFG 高质量生成、吞吐/显存双省",
+   "links": {
+    "ICLR 页": "https://iclr.cc/virtual/2026/poster/10006657",
+    "arXiv": "https://arxiv.org/abs/2412.03895"
+   },
+   "pdf": "papers/2412.03895.pdf",
+   "text": "data/text/2412.03895.txt",
+   "text_chars": 85915,
+   "pages": 31
+  },
+  {
+   "key": "t12__2505.18521",
+   "report_id": "2505.18521",
+   "title": "Improved Immiscible Diffusion: Accelerate Diffusion Training by Reducing Its Miscibility",
+   "authors": [
+    "Yiheng Li",
+    "Feng Liang",
+    "Dan Kondratyuk",
+    "Masayoshi Tomizuka",
+    "Kurt Keutzer",
+    "Chenfeng Xu"
+   ],
+   "year": 2025,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2505.18521",
+   "published": "2025-05-24",
+   "abstract": "The substantial training cost of diffusion models hinders their deployment. Immiscible Diffusion recently showed that reducing diffusion trajectory mixing in the noise space via linear assignment accelerates training by simplifying denoising. To extend immiscible diffusion beyond the inefficient linear assignment under high batch sizes and high dimensions, we refine this concept to a broader miscibility reduction at any layer and by any implementation. Specifically, we empirically demonstrate the bijective nature of the denoising process with respect to immiscible diffusion, ensuring its preservation of generative diversity. Moreover, we provide thorough analysis and show step-by-step how immiscibility eases denoising and improves efficiency. Extending beyond linear assignment, we propose a family of implementations including K-nearest neighbor (KNN) noise selection and image scaling to reduce miscibility, achieving up to >4x faster training across diverse models and tasks including unconditional/conditional generation, image editing, and robotics planning. Furthermore, our analysis of immiscibility offers a novel perspective on how optimal transport (OT) enhances diffusion training. By identifying trajectory miscibility as a fundamental bottleneck, we believe this work establishes a potentially new direction for future research into high-efficiency diffusion training. The code is available at https://github.com/yhli123/Immiscible-Diffusion.",
+   "contribution_zh": "把概念推广为\"任意层的可混性降低\"：KNN 噪声选择（O(n)、0.2ms/256batch）、image scaling 等实现族，>4× 加速；证明去噪双射性故不损多样性，给出 OT 助益扩散的新解释",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2505.18521"
+   },
+   "pdf": "papers/2505.18521.pdf",
+   "text": "data/text/2505.18521.txt",
+   "text_chars": 51353,
+   "pages": 21
+  },
+  {
+   "key": "t12__the_silent_assistant_noisequery_as_implicit_guidance_for_goa",
+   "report_id": "2412.05101",
+   "title": "The Silent Assistant: NoiseQuery as Implicit Guidance for Goal-Driven Image Generation",
+   "authors": [
+    "Ruoyu Wang",
+    "Huayang Huang",
+    "Ye Zhu",
+    "Olga Russakovsky",
+    "Yu Wu"
+   ],
+   "year": 2025,
+   "venue": "ICCV Highlight",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2412.05101",
+   "published": "2024-12-06",
+   "abstract": "In this work, we introduce NoiseQuery as a novel method for enhanced noise initialization in versatile goal-driven text-to-image (T2I) generation. Specifically, we propose to leverage an aligned Gaussian noise as implicit guidance to complement explicit user-defined inputs, such as text prompts, for better generation quality and controllability. Unlike existing noise optimization methods designed for specific models, our approach is grounded in a fundamental examination of the generic finite-step noise scheduler design in diffusion formulation, allowing better generalization across different diffusion-based architectures in a tuning-free manner. This model-agnostic nature allows us to construct a reusable noise library compatible with multiple T2I models and enhancement techniques, serving as a foundational layer for more effective generation. Extensive experiments demonstrate that NoiseQuery enables fine-grained control and yields significant performance boosts not only over high-level semantics but also over low-level visual attributes, which are typically difficult to specify through text alone, with seamless integration into current workflows with minimal computational overhead.",
+   "contribution_zh": "免优化检索式耦合：离线构建 10 万噪声库（键=无条件生成后验的语义/低层特征），推理 0.2ms 查库选起点，跨 T2I 模型零样本迁移",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/ICCV2025/html/Wang_The_Silent_Assistant_NoiseQuery_as_Implicit_Guidance_for_Goal-Driven_Image_ICCV_2025_paper.html"
+   },
+   "pdf": "papers/2412.05101.pdf",
+   "text": "data/text/2412.05101.txt",
+   "text_chars": 61139,
+   "pages": 16
+  },
+  {
+   "key": "t12__go_with_the_flow_motion_controllable_video_diffusion_models_",
+   "report_id": "2501.08331",
+   "title": "Go-with-the-Flow: Motion-Controllable Video Diffusion Models Using Real-Time Warped Noise",
+   "authors": [
+    "Ryan Burgert",
+    "Yuancheng Xu",
+    "Wenqi Xian",
+    "Oliver Pilarski",
+    "Pascal Clausen",
+    "Mingming He",
+    "Li Ma",
+    "Yitong Deng",
+    "Lingxiao Li",
+    "Mohsen Mousavi",
+    "Michael Ryoo",
+    "Paul Debevec",
+    "Ning Yu"
+   ],
+   "year": 2025,
+   "venue": "CVPR Oral",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2501.08331",
+   "published": "2025-01-14",
+   "abstract": "Generative modeling aims to transform random noise into structured outputs. In this work, we enhance video diffusion models by allowing motion control via structured latent noise sampling. This is achieved by just a change in data: we pre-process training videos to yield structured noise. Consequently, our method is agnostic to diffusion model design, requiring no changes to model architectures or training pipelines. Specifically, we propose a novel noise warping algorithm, fast enough to run in real time, that replaces random temporal Gaussianity with correlated warped noise derived from optical flow fields, while preserving the spatial Gaussianity. The efficiency of our algorithm enables us to fine-tune modern video diffusion base models using warped noise with minimal overhead, and provide a one-stop solution for a wide range of user-friendly motion control: local object motion control, global camera movement control, and motion transfer. The harmonization between temporal coherence and spatial Gaussianity in our warped noise leads to effective motion control while maintaining per-frame pixel quality. Extensive experiments and user studies demonstrate the advantages of our method, making it a robust and scalable approach for controlling motion in video diffusion models. Video results are available on our webpage: https://eyeline-labs.github.io/Go-with-the-Flow. Source code and model checkpoints are available on GitHub: https://github.com/Eyeline-Labs/Go-with-the-Flow.",
+   "contribution_zh": "实时噪声 warp 算法（逐帧迭代传输、保空间高斯性），把运动控制变成\"换结构化初值\"，模型结构与训练管线零改动",
+   "links": {
+    "CVF": "https://openaccess.thecvf.com/content/CVPR2025/html/Burgert_Go-with-the-Flow_Motion-Controllable_Video_Diffusion_Models_Using_Real-Time_Warped_Noise_CVPR_2025_paper.html"
+   },
+   "pdf": "papers/2501.08331.pdf",
+   "text": "data/text/2501.08331.txt",
+   "text_chars": 77019,
+   "pages": 22
+  },
+  {
+   "key": "t12__the_emergence_of_reproducibility_and_consistency_in_diffusio",
+   "report_id": "The_Emergence_of_Reproducibility_and_Consistency_i",
+   "title": "The Emergence of Reproducibility and Consistency in Diffusion Models",
+   "authors": "Zhang et al.",
+   "year": 2024,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "同一初始噪声+确定性采样器下，不同框架/架构/训练的模型输出几乎相同——噪声↔样本耦合是数据内在的、可跨模型复用的对象",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/zhang24cn.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t12__2403.05069",
+   "report_id": "2403.05069",
+   "title": "Improving Diffusion-Based Generative Models via Approximated Optimal Transport",
+   "authors": [
+    "Daegyu Kim",
+    "Jooyoung Choi",
+    "Chaehun Shin",
+    "Uiwon Hwang",
+    "Sungroh Yoon"
+   ],
+   "year": 2024,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2403.05069",
+   "published": "2024-03-08",
+   "abstract": "We introduce the Approximated Optimal Transport (AOT) technique, a novel training scheme for diffusion-based generative models. Our approach aims to approximate and integrate optimal transport into the training process, significantly enhancing the ability of diffusion models to estimate the denoiser outputs accurately. This improvement leads to ODE trajectories of diffusion models with lower curvature and reduced truncation errors during sampling. We achieve superior image quality and reduced sampling steps by employing AOT in training. Specifically, we achieve FID scores of 1.88 with just 27 NFEs and 1.73 with 29 NFEs in unconditional and conditional generations, respectively. Furthermore, when applying AOT to train the discriminator for guidance, we establish new state-of-the-art FID scores of 1.68 and 1.58 for unconditional and conditional generations, respectively, each with 29 NFEs. This outcome demonstrates the effectiveness of AOT in enhancing the performance of diffusion models.",
+   "contribution_zh": "EDM 侧等价做法：训练时用近似 OT 为每张图选噪声，ODE 轨迹曲率降低，CIFAR-10 达 FID 1.68/1.58@29NFE（自称 IJCAI 2024，官方 proceedings 未核验）",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2403.05069"
+   },
+   "pdf": "papers/2403.05069.pdf",
+   "text": "data/text/2403.05069.txt",
+   "text_chars": 44932,
+   "pages": 14
+  },
+  {
+   "key": "t12__2404.04650",
+   "report_id": "2404.04650",
+   "title": "InitNO: Boosting Text-to-Image Diffusion Models via Initial Noise Optimization",
+   "authors": [
+    "Xiefan Guo",
+    "Jinlin Liu",
+    "Miaomiao Cui",
+    "Jiankai Li",
+    "Hongyu Yang",
+    "Di Huang"
+   ],
+   "year": 2024,
+   "venue": "CVPR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2404.04650",
+   "published": "2024-04-06",
+   "abstract": "Recent strides in the development of diffusion models, exemplified by advancements such as Stable Diffusion, have underscored their remarkable prowess in generating visually compelling images. However, the imperative of achieving a seamless alignment between the generated image and the provided prompt persists as a formidable challenge. This paper traces the root of these difficulties to invalid initial noise, and proposes a solution in the form of Initial Noise Optimization (InitNO), a paradigm that refines this noise. Considering text prompts, not all random noises are effective in synthesizing semantically-faithful images. We design the cross-attention response score and the self-attention conflict score to evaluate the initial noise, bifurcating the initial latent space into valid and invalid sectors. A strategically crafted noise optimization pipeline is developed to guide the initial noise towards valid regions. Our method, validated through rigorous experimentation, shows a commendable proficiency in generating images in strict accordance with text prompts. Our code is available at https://github.com/xiefan-guo/initno.",
+   "contribution_zh": "起点优化开山：以交叉/自注意力目标在\"有效区域\"内梯度优化初始噪声（含高斯性约束），治 subject mixing/neglect",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2404.04650"
+   },
+   "pdf": "papers/2404.04650.pdf",
+   "text": "data/text/2404.04650.txt",
+   "text_chars": 42419,
+   "pages": 10
+  },
+  {
+   "key": "t12__reno_enhancing_one_step_text_to_image_models_through_reward_",
+   "report_id": "2406.04312",
+   "title": "ReNO: Enhancing One-step Text-to-Image Models through Reward-based Noise Optimization",
+   "authors": [
+    "Luca Eyring",
+    "Shyamgopal Karthik",
+    "Karsten Roth",
+    "Alexey Dosovitskiy",
+    "Zeynep Akata"
+   ],
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2406.04312",
+   "published": "2024-06-06",
+   "abstract": "Text-to-Image (T2I) models have made significant advancements in recent years, but they still struggle to accurately capture intricate details specified in complex compositional prompts. While fine-tuning T2I models with reward objectives has shown promise, it suffers from \"reward hacking\" and may not generalize well to unseen prompt distributions. In this work, we propose Reward-based Noise Optimization (ReNO), a novel approach that enhances T2I models at inference by optimizing the initial noise based on the signal from one or multiple human preference reward models. Remarkably, solving this optimization problem with gradient ascent for 50 iterations yields impressive results on four different one-step models across two competitive benchmarks, T2I-CompBench and GenEval. Within a computational budget of 20-50 seconds, ReNO-enhanced one-step models consistently surpass the performance of all current open-source Text-to-Image models. Extensive user studies demonstrate that our model is preferred nearly twice as often compared to the popular SDXL model and is on par with the proprietary Stable Diffusion 3 with 8B parameters. Moreover, given the same computational resources, a ReNO-optimized one-step model outperforms widely-used open-source models such as SDXL and PixArt-$α$, highlighting the efficiency and effectiveness of ReNO in enhancing T2I model performance at inference time. Code is available at https://github.com/ExplainableML/ReNO.",
+   "contribution_zh": "对一步模型以人类偏好 reward 梯度上升优化初始噪声（50 步、20–50s），一步模型反超 SDXL、比肩 SD3",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=MXY0qsGgeO"
+   },
+   "pdf": "papers/2406.04312.pdf",
+   "text": "data/text/2406.04312.txt",
+   "text_chars": 83656,
+   "pages": 26
+  },
+  {
+   "key": "t12__how_i_warped_your_noise_a_temporally_correlated_noise_prior_",
+   "report_id": "2504.03072",
+   "title": "How I Warped Your Noise: a Temporally-Correlated Noise Prior for Diffusion Models",
+   "authors": [
+    "Pascal Chang",
+    "Jingwei Tang",
+    "Markus Gross",
+    "Vinicius C. Azevedo"
+   ],
+   "year": 2024,
+   "venue": "ICLR Oral",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2504.03072",
+   "published": "2025-04-03",
+   "abstract": "Video editing and generation methods often rely on pre-trained image-based diffusion models. During the diffusion process, however, the reliance on rudimentary noise sampling techniques that do not preserve correlations present in subsequent frames of a video is detrimental to the quality of the results. This either produces high-frequency flickering, or texture-sticking artifacts that are not amenable to post-processing. With this in mind, we propose a novel method for preserving temporal correlations in a sequence of noise samples. This approach is materialized by a novel noise representation, dubbed $\\int$-noise (integral noise), that reinterprets individual noise samples as a continuously integrated noise field: pixel values do not represent discrete values, but are rather the integral of an underlying infinite-resolution noise over the pixel area. Additionally, we propose a carefully tailored transport method that uses $\\int$-noise to accurately advect noise samples over a sequence of frames, maximizing the correlation between different frames while also preserving the noise properties. Our results demonstrate that the proposed $\\int$-noise can be used for a variety of tasks, such as video restoration, surrogate rendering, and conditional video generation. See https://warpyournoise.github.io/ for video results.",
+   "contribution_zh": "噪声-噪声耦合的理论工具：∫-noise 积分噪声表示+噪声传输方程，沿光流保分布地 warp 高斯噪声，免训练提升视频时间一致性",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=pzElnMrgSD"
+   },
+   "pdf": "papers/2504.03072.pdf",
+   "text": "data/text/2504.03072.txt",
+   "text_chars": 90000,
+   "pages": 32
+  }
+ ]
+}

@@ -1,0 +1,328 @@
+{
+ "topic": "t28",
+ "topic_name": "黎曼流形上的流匹配与 OT",
+ "section": "E",
+ "section_name": "OT Variants Frontier",
+ "kb_note": "source/kb/t28_riemannian_manifold_fm.md",
+ "papers": [
+  {
+   "key": "t28__2602.03566",
+   "report_id": "2602.03566",
+   "title": "Riemannian Neural Optimal Transport",
+   "authors": [
+    "Alessandro Micheli",
+    "Yueqi Cao",
+    "Anthea Monod",
+    "Samir Bhatt"
+   ],
+   "year": 2026,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": true,
+   "arxiv_id": "2602.03566",
+   "published": "2026-02-03",
+   "abstract": "Computational optimal transport (OT) offers a principled framework for generative modeling. Neural OT methods, which use neural networks to learn an OT map (or potential) from data in an amortized way, can be evaluated out of sample after training, but existing approaches are tailored to Euclidean geometry. Extending neural OT to high-dimensional Riemannian manifolds remains an open challenge. In this paper, we prove that any method for OT on manifolds that produces discrete approximations of transport maps necessarily suffers from the curse of dimensionality: achieving a fixed accuracy requires a number of parameters that grows exponentially with the manifold dimension. Motivated by this limitation, we introduce Riemannian Neural OT (RNOT) maps, which are continuous neural-network parameterizations of OT maps on manifolds that avoid discretization and incorporate geometric structure by construction. Under mild regularity assumptions, we prove that RNOT maps approximate Riemannian OT maps with sub-exponential complexity in the dimension. Experiments on synthetic and real datasets demonstrate improved scalability and competitive performance relative to discretization-based baselines.",
+   "contribution_zh": "证明离散化流形 OT 必有维数灾难；用 c-凹神经势 \\(T=\\exp_x(-\\nabla\\phi)\\) 学连续流形 OT map，次指数复杂度保证",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2602.03566"
+   },
+   "pdf": "papers/2602.03566.pdf",
+   "text": "data/text/2602.03566.txt",
+   "text_chars": 90000,
+   "pages": 58
+  },
+  {
+   "key": "t28__wasserstein_flow_matching_haviv_et_al",
+   "report_id": "Wasserstein_Flow_Matching_WFM_BW_FM_Haviv_et_al",
+   "title": "Wasserstein Flow Matching: Generative Modeling Over Families of Distributions",
+   "authors": "",
+   "year": 2025,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "把 FM 提升到\"分布的分布\"：证明 Wasserstein 测地是合法条件流，高斯族用闭式 Bures-Wasserstein 路径、点云用熵 OT 估计",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v267/haviv25a.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t28__flow_matching_on_general_geometries_chen_lipman",
+   "report_id": "Flow_Matching_on_General_Geometries_RFM_Chen_Lipma",
+   "title": "Flow Matching on General Geometries",
+   "authors": "",
+   "year": 2024,
+   "venue": "ICLR Oral",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "用 premetric（测地/谱距离）闭式构造流形条件向量场，简单几何上完全 simulation-free，奠定黎曼 FM 范式",
+   "links": {
+    "proceedings": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/d1f9936d3be6997ffffab692977eebe6-Abstract-Conference.html"
+   },
+   "pdf": "papers/t28_2024_Chen_riemannian_flow_matching.pdf",
+   "text": "data/text/t28_2024_Chen_riemannian_flow_matching.txt",
+   "text_chars": 76384,
+   "pages": 24
+  },
+  {
+   "key": "t28__metric_flow_matching_kapusniak_et_al",
+   "report_id": "Metric_Flow_Matching_MFM_Kapusniak_et_al",
+   "title": "Metric Flow Matching for Smooth Interpolations on the Data Manifold",
+   "authors": "",
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "在数据诱导度量下学最小动能插值（近似测地线）替代直线插值，OT-MFM 在单细胞轨迹上 SOTA；\"数据流形\"版黎曼 FM",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=fE3RqiF4Nx"
+   },
+   "pdf": "papers/t28_2024_Kapusniak_metric_flow_matching.pdf",
+   "text": "data/text/t28_2024_Kapusniak_metric_flow_matching.txt",
+   "text_chars": 86641,
+   "pages": 25
+  },
+  {
+   "key": "t28__riemannian_score_based_generative_modelling_de_bortoli_et_al",
+   "report_id": "Riemannian_Score_Based_Generative_Modelling_RSGM_D",
+   "title": "Riemannian Score-Based Generative Modelling",
+   "authors": "",
+   "year": 2022,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": true,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "把 SGM 的前向/反向 SDE 定义到紧流形（测地随机游走+热核），开创流形扩散并给出地球科学球面基准",
+   "links": {
+    "proceedings": "https://papers.nips.cc/paper_files/paper/2022/hash/105112d52254f86d5854f3da734a52b4-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t28__trivialized_momentum_diffusion_zhu_et_al",
+   "report_id": "Trivialized_Momentum_Diffusion_TDM_Zhu_et_al",
+   "title": "Trivialized Momentum Facilitates Diffusion Generative Modeling on Lie Groups",
+   "authors": "",
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "李群上引入平凡化动量：score 在固定李代数（平坦空间）学习，无投影/切空间近似，首次做高维 SO(n)/U(n) 生成",
+   "links": {
+    "proceedings": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/b3cff9947cde08b4fa70652cb8ac9209-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t28__stochastic_variance_reduced_vi_on_the_bures_wasserstein_mani",
+   "report_id": "2410.02490",
+   "title": "Stochastic variance-reduced Gaussian variational inference on the Bures-Wasserstein manifold",
+   "authors": [
+    "Hoang Phuc Hau Luu",
+    "Hanlin Yu",
+    "Bernardo Williams",
+    "Marcelo Hartmann",
+    "Arto Klami"
+   ],
+   "year": 2025,
+   "venue": "ICLR",
+   "evidence": "A",
+   "star": false,
+   "arxiv_id": "2410.02490",
+   "published": "2024-10-03",
+   "abstract": "Optimization in the Bures-Wasserstein space has been gaining popularity in the machine learning community since it draws connections between variational inference and Wasserstein gradient flows. The variational inference objective function of Kullback-Leibler divergence can be written as the sum of the negative entropy and the potential energy, making forward-backward Euler the method of choice. Notably, the backward step admits a closed-form solution in this case, facilitating the practicality of the scheme. However, the forward step is not exact since the Bures-Wasserstein gradient of the potential energy involves \"intractable\" expectations. Recent approaches propose using the Monte Carlo method -- in practice a single-sample estimator -- to approximate these terms, resulting in high variance and poor performance. We propose a novel variance-reduced estimator based on the principle of control variates. We theoretically show that this estimator has a smaller variance than the Monte-Carlo estimator in scenarios of interest. We also prove that variance reduction helps improve the optimization bounds of the current analysis. We demonstrate that the proposed estimator gains order-of-magnitude improvements over the previous Bures-Wasserstein methods.",
+   "contribution_zh": "BW 流形（高斯族 Wasserstein 几何）上的方差缩减变分推断，完善 BW 空间一阶优化工具箱",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=iMJpmcYucq"
+   },
+   "pdf": "papers/2410.02490.pdf",
+   "text": "data/text/2410.02490.txt",
+   "text_chars": 68492,
+   "pages": 25
+  },
+  {
+   "key": "t28__riemannian_proximal_sampler_guan_balasubramanian_ma",
+   "report_id": "Riemannian_Proximal_Sampler_Guan_Balasubramanian_M",
+   "title": "Riemannian Proximal Sampler, Guan, Balasubramanian & Ma",
+   "authors": "",
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "MBI+热核双 oracle 的流形高精度采样，\\(O(\\log(1/\\varepsilon))\\) 迭代；可解释为 Wasserstein 空间上熵正则黎曼 proximal point 的离散化",
+   "links": {
+    "proceedings": "https://papers.nips.cc/paper_files/paper/2025/hash/8e185f16e458ef5e666901260079cd42-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t28__diffeocfm_rfm_for_brain_connectivity_via_pullback_geometry_c",
+   "report_id": "DiffeoCFM_RFM_for_Brain_Connectivity_via_Pullback",
+   "title": "Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry",
+   "authors": "",
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "全局微分同胚 pullback 度量下的黎曼 CFM 等价于\"变换后做欧氏 CFM\"：SPD 用矩阵对数、相关矩阵用归一化 Cholesky，fMRI/EEG 大规模验证",
+   "links": {
+    "proceedings": "https://papers.nips.cc/paper_files/paper/2025/hash/5616112a0120c15bf7d47a6bccc21bc3-Abstract-Conference.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t28__riemannian_consistency_model_cheng_et_al",
+   "report_id": "2510.00983",
+   "title": "Riemannian Consistency Model",
+   "authors": [
+    "Chaoran Cheng",
+    "Yusong Wang",
+    "Yuxin Chen",
+    "Xiangxin Zhou",
+    "Nanning Zheng",
+    "Ge Liu"
+   ],
+   "year": 2025,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": "2510.00983",
+   "published": "2025-10-01",
+   "abstract": "Consistency models are a class of generative models that enable few-step generation for diffusion and flow matching models. While consistency models have achieved promising results on Euclidean domains like images, their applications to Riemannian manifolds remain challenging due to the curved geometry. In this work, we propose the Riemannian Consistency Model (RCM), which, for the first time, enables few-step consistency modeling while respecting the intrinsic manifold constraint imposed by the Riemannian geometry. Leveraging the covariant derivative and exponential-map-based parameterization, we derive the closed-form solutions for both discrete- and continuous-time training objectives for RCM. We then demonstrate theoretical equivalence between the two variants of RCM: Riemannian consistency distillation (RCD) that relies on a teacher model to approximate the marginal vector field, and Riemannian consistency training (RCT) that utilizes the conditional vector field for training. We further propose a simplified training objective that eliminates the need for the complicated differential calculation. Finally, we provide a unique kinematics perspective for interpreting the RCM objective, offering new theoretical angles. Through extensive experiments, we manifest the superior generative quality of RCM in few-step generation on various non-Euclidean manifolds, including flat-tori, spheres, and the 3D rotation group SO(3).",
+   "contribution_zh": "用协变导数+指数映射参数化把一致性模型推广到流形，蒸馏(RCD)与从头训练(RCT)理论等价，球面/环面/SO(3) 少步生成",
+   "links": {
+    "NeurIPS 页": "https://neurips.cc/virtual/2025/poster/117955"
+   },
+   "pdf": "papers/2510.00983.pdf",
+   "text": "data/text/2510.00983.txt",
+   "text_chars": 72972,
+   "pages": 24
+  },
+  {
+   "key": "t28__riemannian_diffusion_mixture_jo_hwang",
+   "report_id": "Riemannian_Diffusion_Mixture_Jo_Hwang",
+   "title": "Riemannian Diffusion Mixture, Jo & Hwang",
+   "authors": "",
+   "year": 2024,
+   "venue": "ICML",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "用桥过程混合直接构造生成扩散（漂移=数据方向切向量加权平均），绕开热核估计与散度计算，一般流形可扩展",
+   "links": {
+    "PMLR": "https://proceedings.mlr.press/v235/jo24a.html"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t28__statistical_categorical_flow_matching_cheng_et_al",
+   "report_id": "Statistical_Categorical_Flow_Matching_SFM_Cheng_et",
+   "title": "Statistical/Categorical Flow Matching (SFM), Cheng et al.",
+   "authors": "",
+   "year": 2024,
+   "venue": "NeurIPS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "统计流形（Fisher 信息度量）上的 FM：测地最短路+自然梯度解释+精确似然，训练中可加 OT",
+   "links": {
+    "OpenReview": "https://openreview.net/forum?id=5fybcQZ0g4"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t28__riemannian_flow_matching_policy_braun_et_al",
+   "report_id": "Riemannian_Flow_Matching_Policy_RFMP_Braun_et_al",
+   "title": "Riemannian Flow Matching Policy (RFMP), Braun et al.",
+   "authors": "",
+   "year": 2024,
+   "venue": "IROS",
+   "evidence": "P",
+   "star": false,
+   "arxiv_id": null,
+   "published": null,
+   "abstract": "",
+   "contribution_zh": "把黎曼 FM 用于机器人视觉运动策略（状态含姿态流形），比 Diffusion Policy 更平滑、推理更快",
+   "links": {
+    "IEEE": "https://doi.org/10.1109/iros58592.2024.10801521"
+   },
+   "pdf": null,
+   "text": null,
+   "text_chars": null,
+   "pages": null
+  },
+  {
+   "key": "t28__2207.03024",
+   "report_id": "2207.03024",
+   "title": "Riemannian Diffusion Schrödinger Bridge",
+   "authors": [
+    "James Thornton",
+    "Michael Hutchinson",
+    "Emile Mathieu",
+    "Valentin De Bortoli",
+    "Yee Whye Teh",
+    "Arnaud Doucet"
+   ],
+   "year": 2022,
+   "venue": "arXiv",
+   "evidence": "R",
+   "star": false,
+   "arxiv_id": "2207.03024",
+   "published": "2022-07-07",
+   "abstract": "Score-based generative models exhibit state of the art performance on density estimation and generative modeling tasks. These models typically assume that the data geometry is flat, yet recent extensions have been developed to synthesize data living on Riemannian manifolds. Existing methods to accelerate sampling of diffusion models are typically not applicable in the Riemannian setting and Riemannian score-based methods have not yet been adapted to the important task of interpolation of datasets. To overcome these issues, we introduce \\emph{Riemannian Diffusion Schrödinger Bridge}. Our proposed method generalizes Diffusion Schrödinger Bridge introduced in \\cite{debortoli2021neurips} to the non-Euclidean setting and extends Riemannian score-based models beyond the first time reversal. We validate our proposed method on synthetic data and real Earth and climate data.",
+   "contribution_zh": "把 DSB/IPF 推广到紧流形，做流形上两分布间 SB 插值（地球气候数据），是流形熵 OT 动态解法源头",
+   "links": {
+    "arXiv": "https://arxiv.org/abs/2207.03024"
+   },
+   "pdf": "papers/2207.03024.pdf",
+   "text": "data/text/2207.03024.txt",
+   "text_chars": 17515,
+   "pages": 5
+  }
+ ]
+}
