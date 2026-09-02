@@ -3121,7 +3121,7 @@ Scanned 2026-09-01; full analysis in [`trends/TRENDS_2026Q3.md`](trends/TRENDS_2
 - `reports/`: 438 per-paper deep dives (file name = arXiv id); `data/meta/`: TL;DR / key numbers / relation cards.
 - `papers/`: 363 originals; `papers_zh/`: 89 layout-preserving Chinese translations with `*.inspect.json` QA. Missing translations are being filled (`scripts/translate_batch.sh`).
 - `report/`: synthesis report (`AWESOME_DIFFUSION_OT_REPORT_zh.md` / `_en.md` and PDFs).
-- `slides/`: [HTML deck](slides/awesome_diffusion_OT_deck.html) (open in a browser, arrow keys) and [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf); report PDFs: [中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf).
+- `slides/`: [HTML deck](slides/awesome_diffusion_OT_deck.html) (open in a browser, arrow keys), [editable PPTX](slides/awesome_diffusion_OT_deck.pptx) and [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf); report PDFs: [中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf).
 - Reproduce the pipeline: `scripts/build_corpus.py → resolve_arxiv.py → fetch_papers.py → extract_text.py → translate_batch.sh → src/generator.py`.
 
 <a id="contributing"></a>

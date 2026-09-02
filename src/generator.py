@@ -197,13 +197,13 @@ def render(lang):
         L += [f"- `reports/`：{n_reports} 份逐篇深读（文件名 = arXiv id）；`data/meta/`：每篇的 TL;DR / 关键数字 / 关系卡。",
               f"- `papers/`：{n_pdf} 份原文；`papers_zh/`：{n_zh} 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。",
               "- `report/`：综合分析报告（`AWESOME_DIFFUSION_OT_REPORT_zh.md` / `_en.md` 及 PDF）。",
-              "- `slides/`：[HTML PPT](slides/awesome_diffusion_OT_deck.html)（浏览器打开，方向键翻页）与 [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf)；报告 PDF：[中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf)。",
+              "- `slides/`：[HTML PPT](slides/awesome_diffusion_OT_deck.html)（浏览器打开，方向键翻页）、[可编辑 PPTX](slides/awesome_diffusion_OT_deck.pptx) 与 [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf)；报告 PDF：[中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf)。",
               "- 复现整条流水线：`scripts/build_corpus.py → resolve_arxiv.py → fetch_papers.py → extract_text.py → translate_batch.sh → src/generator.py`。", ""]
     else:
         L += [f"- `reports/`: {n_reports} per-paper deep dives (file name = arXiv id); `data/meta/`: TL;DR / key numbers / relation cards.",
               f"- `papers/`: {n_pdf} originals; `papers_zh/`: {n_zh} layout-preserving Chinese translations with `*.inspect.json` QA. Missing translations are being filled (`scripts/translate_batch.sh`).",
               "- `report/`: synthesis report (`AWESOME_DIFFUSION_OT_REPORT_zh.md` / `_en.md` and PDFs).",
-              "- `slides/`: [HTML deck](slides/awesome_diffusion_OT_deck.html) (open in a browser, arrow keys) and [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf); report PDFs: [中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf).",
+              "- `slides/`: [HTML deck](slides/awesome_diffusion_OT_deck.html) (open in a browser, arrow keys), [editable PPTX](slides/awesome_diffusion_OT_deck.pptx) and [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf); report PDFs: [中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf).",
               "- Reproduce the pipeline: `scripts/build_corpus.py → resolve_arxiv.py → fetch_papers.py → extract_text.py → translate_batch.sh → src/generator.py`.", ""]
     L += ['<a id="contributing"></a>', f"## I. {'贡献与引用' if zh else 'Contributing and Citation'}", ""]
     if zh:

@@ -1,0 +1,107 @@
+{
+  "issue_count": 17,
+  "issues": [
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.83pt but the original at this position is 9.92pt (ratio 0.79 vs page median 0.92) at x=334.2, y=667.2: g^{∗} _{m,n} 为最优薛定谔势。Sinkhorn算法是一种迭代"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (4 words, 0 CJK chars) at x=56.7, y=305.8: Here, λ(K) < 1 is defined as λ(K) :="
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (2 words, 0 CJK chars) at x=230.2, y=305.8: γ(K)+1 where γ(K) := maxi,j,k,l"
+    },
+    {
+      "page": 13,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 13: block set at 7.57pt but the original at this position is 9.96pt (ratio 0.76 vs page median 0.91) at x=107.1, y=314.8: _{m,n} 定义为以下随机微分方程的路径测度："
+    },
+    {
+      "page": 16,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 16: displayed equation at y=223 shifted horizontally by 17pt vs original"
+    },
+    {
+      "page": 18,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 18: displayed equation at y=217 shifted horizontally by 17pt vs original"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (24 words, 0 CJK chars) at x=56.7, y=77.8: Let S(µ) denote the set of Schrödinger bridges whose sou"
+    },
+    {
+      "page": 19,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 19: block set at 7.12pt but the original at this position is 10.03pt (ratio 0.71 vs page median 0.92) at x=57.5, y=355.8: 命题2 的证明。我们首先介绍迭代比例拟合（IPF）方法（Fortet，1940；Kullback"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (4 words, 0 CJK chars) at x=173.3, y=149.8: b denote the limits of v(k)"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (10 words, 0 CJK chars) at x=56.7, y=329.1: Chen et al. (2023, Theorem 3.7 and Theorem 4.1) with φ(x"
+    },
+    {
+      "page": 23,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 23: displayed equation at y=172 shifted horizontally by 15pt vs original"
+    },
+    {
+      "page": 24,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 24: displayed equation at y=439 shifted horizontally by 15pt vs original"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (3 words, 0 CJK chars) at x=55.1, y=543.7: Then for any 1 ≤p, q ≤∞,"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (3 words, 0 CJK chars) at x=56.7, y=680.3: hence, for any 1 ≤p, q ≤∞,"
+    },
+    {
+      "page": 26,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 26: paragraph still in English (4 words, 0 CJK chars) at x=56.3, y=107.5: Thus for any u ∈Rd,"
+    },
+    {
+      "page": 28,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 28: block set at 6.42pt but the original at this position is 9.96pt (ratio 0.64 vs page median 0.79) at x=59.5, y=702.2: _{m} +^{A}^{+}^{B} 。等价地，除非样本量为足够大以至于分子为负——大约"
+    },
+    {
+      "page": 28,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 28: block set at 6.42pt but the original at this position is 9.86pt (ratio 0.65 vs page median 0.79) at x=265.0, y=702.2: (m∧n)≈(A∨B)——迭代所能实现的缩减小于估计误差，导致计算资源的浪费。"
+    }
+  ]
+}
