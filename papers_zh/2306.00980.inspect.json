@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 10,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 10: paragraph still in English (12 words, 0 CJK chars) at x=121.6, y=150.9: (a) Lori in Eq. (11).(b) γ in Eq. (11).(c) Number of tea"
+    }
+  ]
+}

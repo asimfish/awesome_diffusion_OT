@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (12 words, 0 CJK chars) at x=317.2, y=617.2: where the superscipt (prev) denotes the value before exe"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (49 words, 0 CJK chars) at x=317.2, y=642.0: In Line 11 and Line 12 of Algorithm 1, the values fromth"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (16 words, 0 CJK chars) at x=58.5, y=496.8: N 1 =1N 1 = q. The other direc-tion can be derived in a "
+    }
+  ]
+}

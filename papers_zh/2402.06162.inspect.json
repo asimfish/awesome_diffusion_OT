@@ -1,0 +1,53 @@
+{
+  "issue_count": 8,
+  "issues": [
+    {
+      "page": 4,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 4: text in the box at x=166-392, y=140-167 runs 5.2pt past its bottom edge: '∫ℝd Gβ2/2,T−t(x, x′￼)π(x′￼)dx'"
+    },
+    {
+      "page": 4,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 4: text in the box at x=166-433, y=306-335 runs 4.4pt past its bottom edge: 'i=1 Gβ2/2,T−t(x, Zi)'"
+    },
+    {
+      "page": 4,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 4: text in the box at x=166-313, y=306-335 runs 4.4pt past its bottom edge: 'i=1 Gβ2/2,T−t(x, Zi)'"
+    },
+    {
+      "page": 11,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 11: block set at 7.87pt but the original at this position is 9.96pt (ratio 0.79 vs page median 0.92) at x=130.4, y=372.2: t,的对称矩阵值函数的行列式求导，我们使用了以下事实："
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 9.17pt but the original at this position is 9.96pt (ratio 0.92 vs page median 1.10) at x=72.8, y=256.8: 图5：我们使用椭圆表示从WPO 信息核模型获得的局部协方差矩阵，这表明我们训练的模型揭示了底层数"
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 9.17pt but the original at this position is 9.96pt (ratio 0.92 vs page median 1.10) at x=282.0, y=280.0: i= 1,...,25 来获取学习到的协方差矩阵。每个椭圆以"
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 9.17pt but the original at this position is 9.96pt (ratio 0.92 vs page median 1.10) at x=72.8, y=280.0: Z_{i} 为中心，其方向和轴由相应协方差矩阵的特征向量和特征值决定。右侧展示了左图的放大图。"
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 9.17pt but the original at this position is 9.96pt (ratio 0.92 vs page median 1.10) at x=72.8, y=362.0: 数据流形[26]。此外，当数据分布真正变为低维时，即两个月牙变成简单的两条线，那么每个椭圆短轴的"
+    }
+  ]
+}

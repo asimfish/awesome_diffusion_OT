@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 10,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 10: displayed equation at y=604 shifted horizontally by 26pt vs original"
+    },
+    {
+      "page": 10,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 10: paragraph still in English (29 words, 0 CJK chars) at x=58.5, y=117.1: • Detailed description of the evaluation metrics and imp"
+    },
+    {
+      "page": 11,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 11: paragraph still in English (6 words, 0 CJK chars) at x=54.0, y=194.4: where we set ui = eαi−1 and vj = eβj."
+    }
+  ]
+}

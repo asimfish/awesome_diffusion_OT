@@ -1,6 +1,6 @@
 # Awesome Diffusion × Optimal Transport
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-40-red.svg)](#reports)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-91-red.svg)](#reports)
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -11,7 +11,7 @@
 - **原文 PDF**（`papers/`）与 [SuperTranslate](https://github.com/asimfish/super_translate) **保版式中文译文**（`papers_zh/`，附对象级 QA `*.inspect.json`）；
 - 机器可读元数据（`data/`），本 README 由 `src/generator.py` 生成。
 
-总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 40。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
+总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 91。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
 
 综合分析见 [`report/`](report/)（问题→理论→经典→前沿→我们能做什么，中英 PDF）与 [`slides/`](slides/)（HTML PPT + Beamer PDF）；2026 Q3 增量趋势见 [`trends/`](trends/)。
 
@@ -143,7 +143,7 @@ I. [贡献与引用](#contributing)
 
     半离散 OT 最佳系统讲义：Laguerre cell、damped Newton、离散化误差分析
 
-14. **Convergence of a Newton algorithm for semi-discrete optimal transport.** J. Eur. Math. Soc. 21(9), 2019. [P] [paper](https://arxiv.org/abs/1603.05579) [report](reports/1603.05579.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/1603.05579.pdf)
+14. **Convergence of a Newton algorithm for semi-discrete optimal transport.** J. Eur. Math. Soc. 21(9), 2019. [P] [paper](https://arxiv.org/abs/1603.05579) [report](reports/1603.05579.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/1603.05579.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/1603.05579.zh.pdf)
 
     *Jun Kitagawa, Quentin Mérigot, Boris Thibert*
 
@@ -190,55 +190,55 @@ I. [贡献与引用](#contributing)
 
     反例证伪上述猜想：流映射一般不是凸函数梯度，障碍是一个 Hessian 非交换项；同时指出数值上"近乎最优"、量化次优度是开放问题
 
-6. **Learning Monge maps with constrained drifting models.** arXiv 2603.25182, 2026. [R] [paper](https://arxiv.org/abs/2603.25182) [report](reports/2603.25182.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2603.25182.pdf)
+6. **Learning Monge maps with constrained drifting models.** arXiv 2603.25182, 2026. [R] [paper](https://arxiv.org/abs/2603.25182) [report](reports/2603.25182.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2603.25182.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2603.25182.zh.pdf)
 
     *Théo Dumont, Théo Lacombe, François-Xavier Vialard*
 
     辩论线最新延续：在"传输映射空间"内做约束梯度流（约束到 OT 映射凸集），证明长时存在性并收敛到 Monge map——把 drift 型生成动力学"修正"为真 OT
 
-7. **Adjoint Matching: Fine-tuning Flow and Diffusion Generative Models with Memoryless Stochastic Optimal Control.** ICLR (Spotlight), 2025. [P] [paper](https://arxiv.org/abs/2409.08861) [report](reports/2409.08861.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2409.08861.pdf)
+7. **Adjoint Matching: Fine-tuning Flow and Diffusion Generative Models with Memoryless Stochastic Optimal Control.** ICLR (Spotlight), 2025. [P] [paper](https://arxiv.org/abs/2409.08861) [report](reports/2409.08861.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2409.08861.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2409.08861.zh.pdf)
 
     *Carles Domingo-Enrich, Michal Drozdzal, Brian Karrer, Ricky T. Q. Chen*
 
     把 reward 微调严格表述为 SOC 问题；证明必须用 memoryless 噪声调度 σ(t)=√(2η_t) 消除初值-value-function 偏差；lean adjoint 回归算法
 
-8. **Stochastic Optimal Control Matching.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2312.02027) [report](reports/2312.02027.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2312.02027.pdf)
+8. **Stochastic Optimal Control Matching.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2312.02027) [report](reports/2312.02027.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2312.02027.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2312.02027.zh.pdf)
 
     *Carles Domingo-Enrich, Jiequn Han, Brandon Amos, Joan Bruna, Ricky T. Q. Chen*
 
     把 SOC 求解转化为最小二乘回归（借鉴条件 score matching 哲学），path-wise reparameterization trick 降方差
 
-9. **The Brownian transport map.** Probab. Theory Relat. Fields, 2024. [P] [paper](https://arxiv.org/abs/2111.11521) [report](reports/2111.11521.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2111.11521.pdf)
+9. **The Brownian transport map.** Probab. Theory Relat. Fields, 2024. [P] [paper](https://arxiv.org/abs/2111.11521) [report](reports/2111.11521.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2111.11521.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2111.11521.zh.pdf)
 
     *Dan Mikulincer, Yair Shenfeld*
 
     用 Föllmer 过程（即扩散去噪漂移 ∇log P_{1−t}f）构造 Wiener 测度→目标测度的传输映射，在 OT 尚属开放的情形证明 Lipschitz 收缩，导出新泛函不等式
 
-10. **Understanding Diffusion Models by Feynman's Path Integral.** ICML, 2024. [P] [paper](https://arxiv.org/abs/2403.11262) [report](reports/2403.11262.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2403.11262.pdf)
+10. **Understanding Diffusion Models by Feynman's Path Integral.** ICML, 2024. [P] [paper](https://arxiv.org/abs/2403.11262) [report](reports/2403.11262.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2403.11262.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2403.11262.zh.pdf)
 
     *Yuji Hirono, Akinori Tanaka, Kenji Fukushima*
 
     路径积分（Onsager–Machlup 作用量）表述扩散模型；ODE↔SDE 插值参数 h 类比普朗克常数，用 WKB 展开计算 NLL 并以 W2 度量评估随机性收益
 
-11. **Wasserstein proximal operators describe score-based generative models and resolve memorization.** arXiv 2402.06162, 2024. [R] [paper](https://arxiv.org/abs/2402.06162) [report](reports/2402.06162.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2402.06162.pdf)
+11. **Wasserstein proximal operators describe score-based generative models and resolve memorization.** arXiv 2402.06162, 2024. [R] [paper](https://arxiv.org/abs/2402.06162) [report](reports/2402.06162.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2402.06162.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2402.06162.zh.pdf)
 
     *Benjamin J. Zhang, Siting Liu, Wuchen Li, Markos A. Katsoulakis, Stanley J. Osher*
 
     SGM = 交叉熵的（正则化）Wasserstein proximal 算子；MFG 最优性条件 = 前向受控 FP + 后向 HJB；核公式解释流形学习与记忆化
 
-12. **Formulating Discrete Probability Flow Through Optimal Transport.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2311.03886) [report](reports/2311.03886.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2311.03886.pdf)
+12. **Formulating Discrete Probability Flow Through Optimal Transport.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2311.03886) [report](reports/2311.03886.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2311.03886.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2311.03886.zh.pdf)
 
     *Pengze Zhang, Hubery Yin, Chen Li, Xiaohua Xie*
 
     给出连续 PF 在特定条件下于任意有限时间区间上是 Monge OT map 的证明，并据此定义离散扩散的 probability flow，提升采样确定性
 
-13. **Score-based Generative Modeling Secretly Minimizes the Wasserstein Distance.** NeurIPS, 2022. [P] [paper](https://arxiv.org/abs/2212.06359) [report](reports/2212.06359.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2212.06359.pdf)
+13. **Score-based Generative Modeling Secretly Minimizes the Wasserstein Distance.** NeurIPS, 2022. [P] [paper](https://arxiv.org/abs/2212.06359) [report](reports/2212.06359.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2212.06359.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2212.06359.zh.pdf)
 
     *Dohyun Kwon, Ying Fan, Kangwook Lee*
 
     分布层结论：W2(数据,生成) ≤ √(score matching 损失)×常数+偏移，证明用连续性方程估计 W2 的时间导数
 
-14. **Comparison of transport map generated by heat flow interpolation and the optimal transport Brenier map.** Comm. Contemp. Math. 23(6), 2021. [P] [paper](https://arxiv.org/abs/1709.06464) [report](reports/1709.06464.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/1709.06464.pdf)
+14. **Comparison of transport map generated by heat flow interpolation and the optimal transport Brenier map.** Comm. Contemp. Math. 23(6), 2021. [P] [paper](https://arxiv.org/abs/1709.06464) [report](reports/1709.06464.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/1709.06464.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/1709.06464.zh.pdf)
 
     *Anastasiya Tanana*
 
@@ -779,7 +779,7 @@ I. [贡献与引用](#contributing)
 
     首个系统理论：期望 batch 耦合 π_k 的大 batch 一致性、半离散情形成本偏差与 plan 收敛速率、FM 流的良定性
 
-7. **Minibatch Optimal Transport and Perplexity Bound Estimation in Discrete Flow Matching.** ICML, 2026. [A] [paper](https://arxiv.org/abs/2411.00759) [report](reports/2411.00759.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2411.00759.pdf)
+7. **Minibatch Optimal Transport and Perplexity Bound Estimation in Discrete Flow Matching.** ICML, 2026. [A] [paper](https://arxiv.org/abs/2411.00759) [report](reports/2411.00759.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2411.00759.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2411.00759.zh.pdf)
 
     *Etrit Haxholli, Yeti Z. Gurbuz, Ogul Can, Eli Waxman*
 
@@ -1235,7 +1235,7 @@ I. [贡献与引用](#contributing)
 
     用 expectile 回归正则近似共轭（c-transform）算子，替代昂贵不稳的内环优化，W2 基准上速度/精度大幅提升
 
-2. ⭐ **Generative Modeling through the Semi-dual Formulation of Unbalanced Optimal Transport.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2305.14777) [report](reports/2305.14777.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2305.14777.pdf)
+2. ⭐ **Generative Modeling through the Semi-dual Formulation of Unbalanced Optimal Transport.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2305.14777) [report](reports/2305.14777.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2305.14777.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2305.14777.zh.pdf)
 
     *Jaemoo Choi, Jaewoong Choi, Myungjoo Kang*
 
@@ -1348,7 +1348,7 @@ I. [贡献与引用](#contributing)
 
     利用 SB 自相似性将其分解为对抗学习序列（时间条件判别器+正则化），首次在高分辨率非配对 I2I（horse2zebra 等）上成功
 
-5. ⭐ **Dual Diffusion Implicit Bridges for Image-to-Image Translation.** ICLR, 2023. [P] [paper](https://arxiv.org/abs/2203.08382) [report](reports/2203.08382.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2203.08382.pdf)
+5. ⭐ **Dual Diffusion Implicit Bridges for Image-to-Image Translation.** ICLR, 2023. [P] [paper](https://arxiv.org/abs/2203.08382) [report](reports/2203.08382.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2203.08382.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2203.08382.zh.pdf)
 
     *Xuan Su, Jiaming Song, Chenlin Meng, Stefano Ermon*
 
@@ -1417,7 +1417,7 @@ I. [贡献与引用](#contributing)
 
     熵正则 OT 解耦「模态伪影 vs 解剖」，AC-ViT 多尺度解剖先验 + 频率感知优化，无配对 CBCT→CT 跨部位泛化
 
-2. ⭐ **Diffusion Schrödinger Bridge Models for High-Quality MR-to-CT Synthesis for Head and Neck Proton Treatment Planning.** Medical Physics（arXiv 2024）, 2025. [P] [paper](https://arxiv.org/abs/2404.11741) [report](reports/2404.11741.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2404.11741.pdf)
+2. ⭐ **Diffusion Schrödinger Bridge Models for High-Quality MR-to-CT Synthesis for Head and Neck Proton Treatment Planning.** Medical Physics（arXiv 2024）, 2025. [P] [paper](https://arxiv.org/abs/2404.11741) [report](reports/2404.11741.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2404.11741.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2404.11741.zh.pdf)
 
     *Muheng Li, Xia Li, Sairos Safai, Damien Weber, Antony Lomax, Ye Zhang*
 
@@ -1504,13 +1504,13 @@ I. [贡献与引用](#contributing)
 
 课题综合：[`topics/t16.md`](topics/t16.md)（跨论文观察 / 开放问题 / 阅读顺序）· 课题笔记：[`source/kb/t16_ot_guided_semantic_correspondence.md`](source/kb/t16_ot_guided_semantic_correspondence.md)
 
-1. ⭐ **Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance.** AAAI, 2026. [P] [paper](https://arxiv.org/abs/2511.07499) [report](reports/2511.07499.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2511.07499.pdf)
+1. ⭐ **Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance.** AAAI, 2026. [P] [paper](https://arxiv.org/abs/2511.07499) [report](reports/2511.07499.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2511.07499.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2511.07499.zh.pdf)
 
     *Kwanyoung Kim*
 
     把 self-attention 重释为 OT，用 Sinkhorn 注入对抗代价构造"劣化分支"做 guidance，即插即用提升 T2I/IP-Adapter/ControlNet 保真度
 
-2. ⭐ **Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild.** CVPR, 2026. [P] [paper](https://arxiv.org/abs/2603.11618) [report](reports/2603.11618.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2603.11618.pdf)
+2. ⭐ **Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild.** CVPR, 2026. [P] [paper](https://arxiv.org/abs/2603.11618) [report](reports/2603.11618.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2603.11618.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2603.11618.zh.pdf)
 
     *Jiin Im, Sisung Liu, Je Hyeong Hong*
 
@@ -1522,7 +1522,7 @@ I. [贡献与引用](#contributing)
 
     training-free：定制空间传输代价的 OT 在早期去噪阶段重定位物体 cross-attention map，同时缓解物体错位/缺失/属性错配
 
-4. ⭐ **OTSeg: Multi-prompt Sinkhorn Attention for Zero-Shot Semantic Segmentation.** ECCV, 2024. [P] [paper](https://arxiv.org/abs/2403.14183) [report](reports/2403.14183.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2403.14183.pdf)
+4. ⭐ **OTSeg: Multi-prompt Sinkhorn Attention for Zero-Shot Semantic Segmentation.** ECCV, 2024. [P] [paper](https://arxiv.org/abs/2403.14183) [report](reports/2403.14183.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2403.14183.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2403.14183.zh.pdf)
 
     *Kwanyoung Kim, Yujin Oh, Jong Chul Ye*
 
@@ -1595,7 +1595,7 @@ I. [贡献与引用](#contributing)
 
 课题综合：[`topics/t17.md`](topics/t17.md)（跨论文观察 / 开放问题 / 阅读顺序）· 课题笔记：[`source/kb/t17_style_domain_adaptation.md`](source/kb/t17_style_domain_adaptation.md)
 
-1. ⭐ **OT-ALD: Aligning Latent Distributions with Optimal Transport for Accelerated Image-to-Image Translation.** AAAI, 2026. [P] [paper](https://arxiv.org/abs/2511.11162) [report](reports/2511.11162.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2511.11162.pdf)
+1. ⭐ **OT-ALD: Aligning Latent Distributions with Optimal Transport for Accelerated Image-to-Image Translation.** AAAI, 2026. [P] [paper](https://arxiv.org/abs/2511.11162) [report](reports/2511.11162.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2511.11162.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2511.11162.zh.pdf)
 
     *Zhanpeng Wang, Shuting Cao, Yuhang Lu, Yuhan Li, Na Lei, Zhongxuan Luo*
 
@@ -1619,7 +1619,7 @@ I. [贡献与引用](#contributing)
 
     把艺术风格的历史演化建模为风格空间中的 OT 分布匹配，用 stochastic interpolants+DDIB 无配对对齐跨世纪艺术分布，并发布 65 万艺术品数据集
 
-5. ⭐ **Multiscale Sliced Wasserstein Distances as Perceptual Color Difference Measures.** ECCV, 2024. [P] [paper](https://arxiv.org/abs/2407.10181) [report](reports/2407.10181.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2407.10181.pdf)
+5. ⭐ **Multiscale Sliced Wasserstein Distances as Perceptual Color Difference Measures.** ECCV, 2024. [P] [paper](https://arxiv.org/abs/2407.10181) [report](reports/2407.10181.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2407.10181.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2407.10181.zh.pdf)
 
     *Jiaqi He, Zhihua Wang, Leon Wang, Tsein-I Liu, Yuming Fang, Qilin Sun et al.*
 
@@ -1688,19 +1688,19 @@ I. [贡献与引用](#contributing)
 
 课题综合：[`topics/t18.md`](topics/t18.md)（跨论文观察 / 开放问题 / 阅读顺序）· 课题笔记：[`source/kb/t18_conditional_ot_guidance.md`](source/kb/t18_conditional_ot_guidance.md)
 
-1. ⭐ **Adjoint Matching: Fine-tuning Flow and Diffusion Generative Models with Memoryless Stochastic Optimal Control.** ICLR, 2025. [P] [paper](https://arxiv.org/abs/2409.08861) [report](reports/2409.08861.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2409.08861.pdf)
+1. ⭐ **Adjoint Matching: Fine-tuning Flow and Diffusion Generative Models with Memoryless Stochastic Optimal Control.** ICLR, 2025. [P] [paper](https://arxiv.org/abs/2409.08861) [report](reports/2409.08861.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2409.08861.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2409.08861.zh.pdf)
 
     *Carles Domingo-Enrich, Michal Drozdzal, Brian Karrer, Ricky T. Q. Chen*
 
     把 reward fine-tune 严格写成 SOC；证明必须用 memoryless 噪声调度才收敛到 KL-tilted 分布；SOC 化为回归（adjoint matching）
 
-2. ⭐ **Conditional Wasserstein Distances with Applications in Bayesian OT Flow Matching.** JMLR 26(141), 2025. [P] [paper](https://arxiv.org/abs/2403.18705) [report](reports/2403.18705.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2403.18705.pdf)
+2. ⭐ **Conditional Wasserstein Distances with Applications in Bayesian OT Flow Matching.** JMLR 26(141), 2025. [P] [paper](https://arxiv.org/abs/2403.18705) [report](reports/2403.18705.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2403.18705.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2403.18705.zh.pdf)
 
     *Jannis Chemseddine, Paul Hagemann, Gabriele Steidl, Christian Wald*
 
     用受限耦合定义条件 Wasserstein 距离 = posterior W2 的期望；刻画测地线/速度场（Y 分量为零）并给出 Bayesian OT-FM
 
-3. ⭐ **Feynman-Kac Correctors in Diffusion: Annealing, Guidance, and Product of Experts.** ICML, 2025. [P] [paper](https://arxiv.org/abs/2503.02819) [report](reports/2503.02819.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2503.02819.pdf)
+3. ⭐ **Feynman-Kac Correctors in Diffusion: Annealing, Guidance, and Product of Experts.** ICML, 2025. [P] [paper](https://arxiv.org/abs/2503.02819) [report](reports/2503.02819.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2503.02819.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2503.02819.zh.pdf)
 
     *Marta Skreta, Tara Akhound-Sadegh, Viktor Ohanesian, Roberto Bondesan, Alán Aspuru-Guzik, Arnaud Doucet et al.*
 
@@ -1712,7 +1712,7 @@ I. [贡献与引用](#contributing)
 
     揭示无条件 minibatch OT 在条件 FM 中造成"条件偏斜先验"的 train-test gap，在 OT 代价矩阵加条件加权项修复
 
-5. ⭐ **Dynamic Conditional Optimal Transport through Simulation-Free Flows.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2404.04240) [report](reports/2404.04240.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2404.04240.pdf)
+5. ⭐ **Dynamic Conditional Optimal Transport through Simulation-Free Flows.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2404.04240) [report](reports/2404.04240.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2404.04240.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2404.04240.zh.pdf)
 
     *Gavin Kerrigan, Giosue Migliorini, Padhraic Smyth*
 
@@ -1780,19 +1780,19 @@ I. [贡献与引用](#contributing)
 
 课题综合：[`topics/t19.md`](topics/t19.md)（跨论文观察 / 开放问题 / 阅读顺序）· 课题笔记：[`source/kb/t19_video_generation.md`](source/kb/t19_video_generation.md)
 
-1. ⭐ **From Slow Bidirectional to Fast Autoregressive Video Diffusion Models.** CVPR (pp. 22963-22974), 2025. [P] [paper](https://arxiv.org/abs/2412.07772) [report](reports/2412.07772.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2412.07772.pdf)
+1. ⭐ **From Slow Bidirectional to Fast Autoregressive Video Diffusion Models.** CVPR (pp. 22963-22974), 2025. [P] [paper](https://arxiv.org/abs/2412.07772) [report](reports/2412.07772.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2412.07772.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2412.07772.zh.pdf)
 
     *Tianwei Yin, Qiang Zhang, Richard Zhang, William T. Freeman, Fredo Durand, Eli Shechtman et al.*
 
     把 DMD 扩到视频：双向教师**非对称蒸馏**因果自回归学生 + 教师 ODE 轨迹初始化，4 步、KV cache 流式 9.4 FPS，VBench-Long 84.27，零样本流式 V2V/I2V
 
-2. ⭐ **Pyramidal Flow Matching for Efficient Video Generative Modeling.** ICLR, 2025. [P] [paper](https://arxiv.org/abs/2410.05954) [report](reports/2410.05954.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.05954.pdf)
+2. ⭐ **Pyramidal Flow Matching for Efficient Video Generative Modeling.** ICLR, 2025. [P] [paper](https://arxiv.org/abs/2410.05954) [report](reports/2410.05954.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.05954.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2410.05954.zh.pdf)
 
     *Yang Jin, Zhicheng Sun, Ningyuan Li, Kun Xu, Kun Xu, Hao Jiang et al.*
 
     视频原生流匹配设计：把去噪轨迹重写为空间金字塔分段流（仅末段全分辨率）+ 时间金字塔压缩历史，单一 DiT 端到端；20.7k A100 时训出 768p·24fps·10s
 
-3. ⭐ **Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion.** NeurIPS Spotlight, 2025. [P] [paper](https://arxiv.org/abs/2506.08009) [report](reports/2506.08009.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2506.08009.pdf)
+3. ⭐ **Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion.** NeurIPS Spotlight, 2025. [P] [paper](https://arxiv.org/abs/2506.08009) [report](reports/2506.08009.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2506.08009.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2506.08009.zh.pdf)
 
     *Xun Huang, Zhengqi Li, Guande He, Mingyuan Zhou, Eli Shechtman*
 
@@ -1877,13 +1877,13 @@ I. [贡献与引用](#contributing)
 
     多视角 rectified flow 在 latent 空间联合生成图像/深度/相机位姿，经前馈 GSDecoder 输出 3DGS；training-free 反演/补绘统一生成与编辑
 
-3. ⭐ **Unsupervised Point Cloud Completion through Unbalanced Optimal Transport.** ICML, 2025. [P] [paper](https://arxiv.org/abs/2410.02671) [report](reports/2410.02671.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.02671.pdf)
+3. ⭐ **Unsupervised Point Cloud Completion through Unbalanced Optimal Transport.** ICML, 2025. [P] [paper](https://arxiv.org/abs/2410.02671) [report](reports/2410.02671.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.02671.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2410.02671.zh.pdf)
 
     *Taekyung Lee, Jaemoo Choi, Jaewoong Choi, Myungjoo Kang*
 
     把无配对补全形式化为 UOT map 学习，marginal 松弛天然吸收类别不平衡；系统分析 cost 选择并论证 InfoCD 最适配
 
-4. ⭐ **Wasserstein Flow Matching: Generative modeling over families of distributions.** ICML, 2025. [P] [paper](https://arxiv.org/abs/2411.00698) [report](reports/2411.00698.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2411.00698.pdf)
+4. ⭐ **Wasserstein Flow Matching: Generative modeling over families of distributions.** ICML, 2025. [P] [paper](https://arxiv.org/abs/2411.00698) [report](reports/2411.00698.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2411.00698.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2411.00698.zh.pdf)
 
     *Doron Haviv, Aram-Alexandre Pooladian, Dana Pe'er, Brandon Amos*
 
@@ -1960,19 +1960,19 @@ I. [贡献与引用](#contributing)
 
     提出 **Unbalanced Flow Matching**（松弛边缘约束→更易学耦合），链式 apo→holo 流形对接 + 全原子松弛，PoseBusters 合格率 30%→73%
 
-2. ⭐ **Proteina: Scaling Flow-based Protein Structure Generative Models.** ICLR (Oral), 2025. [P] [paper](https://arxiv.org/abs/2503.00710) [report](reports/2503.00710.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2503.00710.pdf)
+2. ⭐ **Proteina: Scaling Flow-based Protein Structure Generative Models.** ICLR (Oral), 2025. [P] [paper](https://arxiv.org/abs/2503.00710) [report](reports/2503.00710.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2503.00710.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2503.00710.zh.pdf)
 
     *Tomas Geffner, Kieran Didi, Zuobai Zhang, Danny Reidenbach, Zhonglin Cao, Jason Yim et al.*
 
     把蛋白骨架 FM 规模化：非等变大 transformer（~400M）+ 层级 fold 条件 + autoguidance，800 残基仍可设计，并引入分布相似度指标
 
-3. ⭐ **ET-Flow: Equivariant Flow-Matching for Molecular Conformer Generation.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2410.22388) [report](reports/2410.22388.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.22388.pdf)
+3. ⭐ **ET-Flow: Equivariant Flow-Matching for Molecular Conformer Generation.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2410.22388) [report](reports/2410.22388.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.22388.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2410.22388.zh.pdf)
 
     *Majdi Hassan, Nikhil Shenoy, Jungyoon Lee, Hannes Stark, Stephan Thaler, Dominique Beaini*
 
     等变 FM + harmonic prior + Kabsch 对齐直接在全原子坐标上做构象生成，轻量、少 NFE，GEOM 上刷新精度/物理有效性
 
-4. ⭐ **FlowMM: Generating Materials with Riemannian Flow Matching.** ICML, 2024. [P] [paper](https://arxiv.org/abs/2406.04713) [report](reports/2406.04713.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2406.04713.pdf)
+4. ⭐ **FlowMM: Generating Materials with Riemannian Flow Matching.** ICML, 2024. [P] [paper](https://arxiv.org/abs/2406.04713) [report](reports/2406.04713.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2406.04713.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2406.04713.zh.pdf)
 
     *Benjamin Kurt Miller, Ricky T. Q. Chen, Anuroop Sriram, Brandon M Wood*
 
@@ -2033,31 +2033,31 @@ I. [贡献与引用](#contributing)
 
 课题综合：[`topics/t22.md`](topics/t22.md)（跨论文观察 / 开放问题 / 阅读顺序）· 课题笔记：[`source/kb/t22_discrete_text.md`](source/kb/t22_discrete_text.md)
 
-1. ⭐ **Minibatch Optimal Transport and Perplexity Bound Estimation in Discrete Flow Matching.** ICML, 2026. [A] [paper](https://arxiv.org/abs/2411.00759) [report](reports/2411.00759.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2411.00759.pdf)
+1. ⭐ **Minibatch Optimal Transport and Perplexity Bound Estimation in Discrete Flow Matching.** ICML, 2026. [A] [paper](https://arxiv.org/abs/2411.00759) [report](reports/2411.00759.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2411.00759.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2411.00759.zh.pdf)
 
     *Etrit Haxholli, Yeti Z. Gurbuz, Ogul Can, Eli Waxman*
 
     首个离散流的动态 OT 式目标及其 Kantorovich 形式（成本=状态间相异度），minibatch-OT 耦合把达到同等生成困惑度的转移次数降至 1/32；另给出离散流困惑度上界
 
-2. ⭐ **Flexible-length Text Infilling for Discrete Diffusion Models.** EMNLP main, 2025. [P] [paper](https://arxiv.org/abs/2506.13579) [report](reports/2506.13579.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2506.13579.pdf)
+2. ⭐ **Flexible-length Text Infilling for Discrete Diffusion Models.** EMNLP main, 2025. [P] [paper](https://arxiv.org/abs/2506.13579) [report](reports/2506.13579.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2506.13579.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2506.13579.zh.pdf)
 
     *Andrew Zhang, Anushka Sivakumar, Chiawei Tang, Chris Thomas*
 
     首个灵活长度/位置文本填充的离散扩散：联合去噪 token 值与位置，用 sample-level OT 耦合保持相对语序、动态调整填充段位置与长度
 
-3. ⭐ **Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution.** ICML (Best Paper), 2024. [P] [paper](https://arxiv.org/abs/2310.16834) [report](reports/2310.16834.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2310.16834.pdf)
+3. ⭐ **Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution.** ICML (Best Paper), 2024. [P] [paper](https://arxiv.org/abs/2310.16834) [report](reports/2310.16834.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2310.16834.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2310.16834.zh.pdf)
 
     *Aaron Lou, Chenlin Meng, Stefano Ermon*
 
     提出 score entropy 把 score matching 推广到离散空间（学概率比值），扩散 LM 首次在困惑度上压过 GPT-2，并可 32× 减少 NFE
 
-4. ⭐ **Discrete Flow Matching.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2407.15595) [report](reports/2407.15595.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2407.15595.pdf)
+4. ⭐ **Discrete Flow Matching.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2407.15595) [report](reports/2407.15595.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2407.15595.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2407.15595.zh.pdf)
 
     *Itai Gat, Tal Remez, Neta Shaul, Felix Kreuk, Ricky T. Q. Chen, Gabriel Synnaeve et al.*
 
     通用离散概率路径族 + 后验参数化的生成速度公式 + corrector 采样，1.7B 模型显著缩小与 AR 的代码/文本生成差距
 
-5. ⭐ **Fisher Flow Matching for Generative Modeling over Discrete Data.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2405.14664) [report](reports/2405.14664.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2405.14664.pdf)
+5. ⭐ **Fisher Flow Matching for Generative Modeling over Discrete Data.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2405.14664) [report](reports/2405.14664.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2405.14664.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2405.14664.zh.pdf)
 
     *Oscar Davis, Samuel Kessler, Mircea Petrache, İsmail İlkan Ceylan, Michael Bronstein, Avishek Joey Bose*
 
@@ -2206,7 +2206,7 @@ I. [贡献与引用](#contributing)
 
     E2 配方的可训练化：ConvNeXt 精炼文本表示 + 推理期 Sway Sampling（免重训的流步重分配，可移植到任意 FM 模型），RTF 0.15，10 万小时全开源
 
-2. ⭐ **Matcha-TTS: A fast TTS architecture with conditional flow matching.** ICASSP, 2024. [P] [paper](https://arxiv.org/abs/2309.03199) [report](reports/2309.03199.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2309.03199.pdf)
+2. ⭐ **Matcha-TTS: A fast TTS architecture with conditional flow matching.** ICASSP, 2024. [P] [paper](https://arxiv.org/abs/2309.03199) [report](reports/2309.03199.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2309.03199.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2309.03199.zh.pdf)
 
     *Shivam Mehta, Ruibo Tu, Jonas Beskow, Éva Székely, Gustav Eje Henter*
 
@@ -2218,13 +2218,13 @@ I. [贡献与引用](#contributing)
 
     SB 增强开山：clean-noisy 配对 SB + 数据预测损失 + 时域辅助损失，去噪/去混响相对 WER 降 20%/6%，已入 NeMo
 
-4. ⭐ **Schrodinger Bridges Beat Diffusion Models on Text-to-Speech Synthesis.** arXiv 2312.03491（ICLR 2024 撤稿）, 2023. [R] [paper](https://arxiv.org/abs/2312.03491) [report](reports/2312.03491.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2312.03491.pdf)
+4. ⭐ **Schrodinger Bridges Beat Diffusion Models on Text-to-Speech Synthesis.** arXiv 2312.03491（ICLR 2024 撤稿）, 2023. [R] [paper](https://arxiv.org/abs/2312.03491) [report](reports/2312.03491.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2312.03491.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2312.03491.zh.pdf)
 
     *Zehua Chen, Guande He, Kaiwen Zheng, Xu Tan, Jun Zhu*
 
     用文本潜变量替换高斯先验：配对数据间完全可解 SB + bridge SDE/ODE 采样器与指数积分器，2-4 步即超 Grad-TTS 与快速 TTS 基线
 
-5. ⭐ **Voicebox: Text-Guided Multilingual Universal Speech Generation at Scale.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2306.15687) [report](reports/2306.15687.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2306.15687.pdf)
+5. ⭐ **Voicebox: Text-Guided Multilingual Universal Speech Generation at Scale.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2306.15687) [report](reports/2306.15687.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2306.15687.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2306.15687.zh.pdf)
 
     *Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz et al.*
 
@@ -2331,7 +2331,7 @@ I. [贡献与引用](#contributing)
 
     空间时序配准：semi-relaxed FGW 建模发育组织切片间的生长/凋亡/分化，提出 growth-distortion 与 migration 度量
 
-7. **Learning stochastic dynamics from snapshots through regularized unbalanced optimal transport.** ICLR (Oral), 2025. [P] [paper](https://arxiv.org/abs/2410.00844) [report](reports/2410.00844.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.00844.pdf)
+7. **Learning stochastic dynamics from snapshots through regularized unbalanced optimal transport.** ICLR (Oral), 2025. [P] [paper](https://arxiv.org/abs/2410.00844) [report](reports/2410.00844.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.00844.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2410.00844.zh.pdf)
 
     *Zhenyi Zhang, Tiejun Li, Peijie Zhou*
 
@@ -2383,19 +2383,19 @@ I. [贡献与引用](#contributing)
 
 课题综合：[`topics/t25.md`](topics/t25.md)（跨论文观察 / 开放问题 / 阅读顺序）· 课题笔记：[`source/kb/t25_unbalanced_partial_ot_gen.md`](source/kb/t25_unbalanced_partial_ot_gen.md)
 
-1. ⭐ **WFR-FM: Simulation-Free Dynamic Unbalanced Optimal Transport.** ICLR, 2026. [A] [paper](https://arxiv.org/abs/2601.06810) [report](reports/2601.06810.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2601.06810.pdf)
+1. ⭐ **WFR-FM: Simulation-Free Dynamic Unbalanced Optimal Transport.** ICLR, 2026. [A] [paper](https://arxiv.org/abs/2601.06810) [report](reports/2601.06810.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2601.06810.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2601.06810.zh.pdf)
 
     *Qiangwei Peng, Zihan Wang, Junda Ying, Yuhao Sun, Qing Nie, Lei Zhang et al.*
 
     flow matching 同时回归速度场+标量增长率，证明最小化损失恰好回收 WFR 测地线；非平衡快照动态的统一范式
 
-2. ⭐ **Learning stochastic dynamics from snapshots through regularized unbalanced optimal transport.** ICLR oral, 2025. [P] [paper](https://arxiv.org/abs/2410.00844) [report](reports/2410.00844.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.00844.pdf)
+2. ⭐ **Learning stochastic dynamics from snapshots through regularized unbalanced optimal transport.** ICLR oral, 2025. [P] [paper](https://arxiv.org/abs/2410.00844) [report](reports/2410.00844.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.00844.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2410.00844.zh.pdf)
 
     *Zhenyi Zhang, Tiejun Li, Peijie Zhou*
 
     RUOT 神经求解器：无先验联合学 growth/death 与漂移，Fisher 正则打通 RUOT↔SB
 
-3. ⭐ **Variational Regularized Unbalanced Optimal Transport: Single Network, Least Action.** NeurIPS, 2025. [P] [paper](https://arxiv.org/abs/2505.11823) [report](reports/2505.11823.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2505.11823.pdf)
+3. ⭐ **Variational Regularized Unbalanced Optimal Transport: Single Network, Least Action.** NeurIPS, 2025. [P] [paper](https://arxiv.org/abs/2505.11823) [report](reports/2505.11823.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2505.11823.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2505.11823.zh.pdf)
 
     *Yuhao Sun, Zhenyi Zhang, Zihan Wang, Tiejun Li, Peijie Zhou*
 
@@ -2462,25 +2462,25 @@ I. [贡献与引用](#contributing)
 
 课题综合：[`topics/t26.md`](topics/t26.md)（跨论文观察 / 开放问题 / 阅读顺序）· 课题笔记：[`source/kb/t26_gromov_wasserstein_gen.md`](source/kb/t26_gromov_wasserstein_gen.md)
 
-1. ⭐ **Gromov-Wasserstein at Scale, Beyond Squared Norms.** ICML（种子库 [A]）, 2026. [A] [paper](https://arxiv.org/abs/2602.06658) [report](reports/2602.06658.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2602.06658.pdf)
+1. ⭐ **Gromov-Wasserstein at Scale, Beyond Squared Norms.** ICML（种子库 [A]）, 2026. [A] [paper](https://arxiv.org/abs/2602.06658) [report](reports/2602.06658.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2602.06658.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2602.06658.zh.pdf)
 
     *Guillaume Houry, Jean Feydy, François-Xavier Vialard*
 
     识别出条件负定型（CNT）畸变代价大类，使 GW 化为 lifted 特征空间线性对齐 + 标准平方欧氏 OT：线性内存、二次（而非三次）时间、可微、可探索能量景观的 EGW solver，数十万点分钟级
 
-2. ⭐ **LAST: Bridging Vision-Language and Action Manifolds via Gromov-Wasserstein Alignment.** ICML, 2026. [A] [paper](https://arxiv.org/abs/2606.11221) [report](reports/2606.11221.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2606.11221.pdf)
+2. ⭐ **LAST: Bridging Vision-Language and Action Manifolds via Gromov-Wasserstein Alignment.** ICML, 2026. [A] [paper](https://arxiv.org/abs/2606.11221) [report](reports/2606.11221.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2606.11221.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2606.11221.zh.pdf)
 
     *Huaihai Lyu, Chaofan Chen, Yuheng Ji, Xiansheng Chen, Pengwei Wang, Shanghang Zhang et al.*
 
     把 VLA 学习表述为 GW 对齐问题：Lie 代数 tokenizer 全局线性化动作流形 + 白化局部度量离散化，使动作空间的关系几何与 VL 语义嵌入统计兼容
 
-3. ⭐ **It's a (Blind) Match! Towards Vision-Language Correspondence without Parallel Data.** CVPR, 2025. [P] [paper](https://arxiv.org/abs/2503.24129) [report](reports/2503.24129.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2503.24129.pdf)
+3. ⭐ **It's a (Blind) Match! Towards Vision-Language Correspondence without Parallel Data.** CVPR, 2025. [P] [paper](https://arxiv.org/abs/2503.24129) [report](reports/2503.24129.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2503.24129.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2503.24129.zh.pdf)
 
     *Dominik Schnaus, Nikita Araslanov, Daniel Cremers*
 
     把「无任何平行数据的视觉-语言匹配」形式化为 GW 型 QAP，改进 Hahn-Grant 对偶求解器，实证 platonic representation hypothesis 下基础模型嵌入可被无监督结构对齐
 
-4. ⭐ **Gromov-Wasserstein Distances: Entropic Regularization, Duality, and Sample Complexity.** Annals of Statistics 52(4), 2024. [P] [paper](https://arxiv.org/abs/2212.12848) [report](reports/2212.12848.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2212.12848.pdf)
+4. ⭐ **Gromov-Wasserstein Distances: Entropic Regularization, Duality, and Sample Complexity.** Annals of Statistics 52(4), 2024. [P] [paper](https://arxiv.org/abs/2212.12848) [report](reports/2212.12848.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2212.12848.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2212.12848.zh.pdf)
 
     *Zhengxin Zhang, Ziv Goldfeld, Youssef Mroueh, Bharath K. Sriperumbudur*
 
@@ -2498,7 +2498,7 @@ I. [贡献与引用](#contributing)
 
     顶点级 ε-DP 属性图生成器，并用 FGW 距离给出生成分布与真实分布的精度理论保证——FGW 作为图生成「度量+证明工具」
 
-7. **Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild.** CVPR, 2026. [P] [paper](https://arxiv.org/abs/2603.11618) [report](reports/2603.11618.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2603.11618.pdf)
+7. **Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild.** CVPR, 2026. [P] [paper](https://arxiv.org/abs/2603.11618) [report](reports/2603.11618.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2603.11618.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2603.11618.zh.pdf)
 
     *Jiin Im, Sisung Liu, Je Hyeong Hong*
 
@@ -2553,7 +2553,7 @@ I. [贡献与引用](#contributing)
 
     把逐段 CFM 重写为带硬约束的动态 OT，再把中间边缘约束松弛为动态 OT 作用量中的**势能项**，得到 simulation-free 的多边缘 FM，并给出势强度—Wasserstein 偏差界；单细胞/海洋/气象 SOTA
 
-2. ⭐ **Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis.** ICLR, 2026. [A] [paper](https://arxiv.org/abs/2505.13660) [report](reports/2505.13660.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2505.13660.pdf)
+2. ⭐ **Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis.** ICLR, 2026. [A] [paper](https://arxiv.org/abs/2505.13660) [report](reports/2505.13660.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2505.13660.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2505.13660.zh.pdf)
 
     *Kaheon Kim, Bohan Zhou, Changbo Zhu, Xiaohui Chen*
 
@@ -2565,7 +2565,7 @@ I. [贡献与引用](#contributing)
 
     相空间提升+多点条件化随机桥，学习满足多个位置约束的测度值样条；matching 迭代中保持中间边缘不变，解决两两插值丢失长程时序依赖的问题
 
-4. ⭐ **Estimating Barycenters of Distributions with Neural Optimal Transport.** ICML, 2024. [P] [paper](https://arxiv.org/abs/2402.03828) [report](reports/2402.03828.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2402.03828.pdf)
+4. ⭐ **Estimating Barycenters of Distributions with Neural Optimal Transport.** ICML, 2024. [P] [paper](https://arxiv.org/abs/2402.03828) [report](reports/2402.03828.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2402.03828.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2402.03828.zh.pdf)
 
     *Alexander Kolesov, Petr Mokrov, Igor Udovichenko, Milena Gazdieva, Gudmund Pammer, Evgeny Burnaev et al.*
 
@@ -2626,13 +2626,13 @@ I. [贡献与引用](#contributing)
 
 课题综合：[`topics/t28.md`](topics/t28.md)（跨论文观察 / 开放问题 / 阅读顺序）· 课题笔记：[`source/kb/t28_riemannian_manifold_fm.md`](source/kb/t28_riemannian_manifold_fm.md)
 
-1. ⭐ **Riemannian Neural Optimal Transport.** arXiv, 2026. [R] [paper](https://arxiv.org/abs/2602.03566) [report](reports/2602.03566.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2602.03566.pdf)
+1. ⭐ **Riemannian Neural Optimal Transport.** arXiv, 2026. [R] [paper](https://arxiv.org/abs/2602.03566) [report](reports/2602.03566.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2602.03566.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2602.03566.zh.pdf)
 
     *Alessandro Micheli, Yueqi Cao, Anthea Monod, Samir Bhatt*
 
     证明离散化流形 OT 必有维数灾难；用 c-凹神经势 \(T=\exp_x(-\nabla\phi)\) 学连续流形 OT map，次指数复杂度保证
 
-2. ⭐ **Wasserstein Flow Matching: Generative modeling over families of distributions.** ICML, 2025. [P] [paper](https://arxiv.org/abs/2411.00698) [report](reports/2411.00698.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2411.00698.pdf)
+2. ⭐ **Wasserstein Flow Matching: Generative modeling over families of distributions.** ICML, 2025. [P] [paper](https://arxiv.org/abs/2411.00698) [report](reports/2411.00698.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2411.00698.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2411.00698.zh.pdf)
 
     *Doron Haviv, Aram-Alexandre Pooladian, Dana Pe'er, Brandon Amos*
 
@@ -2716,13 +2716,13 @@ I. [贡献与引用](#contributing)
 
     层次多尺度 warm-start + active support 剪枝 + 因子化-free 一阶 LP 求解器（默认 cuPDLPx），O(n) 内存；1024² 像素图像 8.9× 加速、省 70.5% 显存
 
-2. ⭐ **FlashSinkhorn: IO-Aware Entropic Optimal Transport on GPU.** ICML Oral, 2026. [A] [paper](https://arxiv.org/abs/2602.03067) [report](reports/2602.03067.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2602.03067.pdf)
+2. ⭐ **FlashSinkhorn: IO-Aware Entropic Optimal Transport on GPU.** ICML Oral, 2026. [A] [paper](https://arxiv.org/abs/2602.03067) [report](reports/2602.03067.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2602.03067.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2602.03067.zh.pdf)
 
     *Felix X. -F. Ye, Xingjie Li, An Yu, Ming-Ching Chang, Linsong Chu, Davis Wertheimer*
 
     把 log-domain Sinkhorn 更新重写为 attention 同构的 online-LSE，Triton 融合 kernel 流式过 SRAM，O(nd) 显存 + 解析梯度/HVP/半对偶 c-transform；A100 上比 KeOps 前向快 9–32×、端到端最高 161×
 
-3. ⭐ **Hierarchical Refinement: Optimal Transport to Infinity and Beyond.** ICML Oral, 2025. [P] [paper](https://arxiv.org/abs/2503.03025) [report](reports/2503.03025.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2503.03025.pdf)
+3. ⭐ **Hierarchical Refinement: Optimal Transport to Infinity and Beyond.** ICML Oral, 2025. [P] [paper](https://arxiv.org/abs/2503.03025) [report](reports/2503.03025.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2503.03025.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2503.03025.zh.pdf)
 
     *Peter Halmos, Julian Gold, Xinhao Liu, Benjamin J. Raphael*
 
@@ -2795,7 +2795,7 @@ I. [贡献与引用](#contributing)
 
     端侧模型**从头训练**新范式：379M UNet 宏/微架构搜索 + 跨架构多级蒸馏（教师 SD3.5-Large）+ 对抗步蒸馏，iPhone 16 Pro-Max 1024² ~1.4s，GenEval 0.66 超 SDXL（7×大）
 
-3. ⭐ **MobileDiffusion: Instant Text-to-Image Generation on Mobile Devices.** ECCV, 2024. [P] [paper](https://arxiv.org/abs/2311.16567) [report](reports/2311.16567.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2311.16567.pdf)
+3. ⭐ **MobileDiffusion: Instant Text-to-Image Generation on Mobile Devices.** ECCV, 2024. [P] [paper](https://arxiv.org/abs/2311.16567) [report](reports/2311.16567.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2311.16567.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2311.16567.zh.pdf)
 
     *Yang Zhao, Yanwu Xu, Zhisheng Xiao, Haolin Jia, Tingbo Hou*
 
@@ -2807,7 +2807,7 @@ I. [贡献与引用](#contributing)
 
     最大规模人评心理物理实验：**没有任何现有指标与人评强相关**；Inception-V3 特征系统性压低扩散模型排名；建议全面换用 DINOv2-ViT-L/14 特征算 FD
 
-5. ⭐ **SnapFusion: Text-to-Image Diffusion Model on Mobile Devices within Two Seconds.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2306.00980) [report](reports/2306.00980.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2306.00980.pdf)
+5. ⭐ **SnapFusion: Text-to-Image Diffusion Model on Mobile Devices within Two Seconds.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2306.00980) [report](reports/2306.00980.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2306.00980.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2306.00980.zh.pdf)
 
     *Yanyu Li, Huan Wang, Qing Jin, Ju Hu, Pavlo Chemerys, Yun Fu et al.*
 
@@ -3118,7 +3118,7 @@ I. [贡献与引用](#contributing)
 ## H. 深读报告、译文与综合报告
 
 - `reports/`：438 份逐篇深读（文件名 = arXiv id）；`data/meta/`：每篇的 TL;DR / 关键数字 / 关系卡。
-- `papers/`：363 份原文；`papers_zh/`：40 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
+- `papers/`：363 份原文；`papers_zh/`：91 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
 - `report/`：综合分析报告（`AWESOME_DIFFUSION_OT_REPORT_zh.md` / `_en.md` 及 PDF）。
 - `slides/`：[HTML PPT](slides/awesome_diffusion_OT_deck.html)（浏览器打开，方向键翻页）与 [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf)；报告 PDF：[中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf)。
 - 复现整条流水线：`scripts/build_corpus.py → resolve_arxiv.py → fetch_papers.py → extract_text.py → translate_batch.sh → src/generator.py`。

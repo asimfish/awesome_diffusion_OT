@@ -1,0 +1,65 @@
+{
+  "issue_count": 10,
+  "issues": [
+    {
+      "page": 9,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 9: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=85.8, y=395.2: 定义2.2（的切锥）在某个处的切锥定义为"
+    },
+    {
+      "page": 13,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 13: displayed equation at y=390 shifted horizontally by 18pt vs original"
+    },
+    {
+      "page": 19,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 19: text in the box at x=62-368, y=302-525 runs 122.3pt past its right edge: '图1. 欧几里得（eucl.gf）与自然（nat.gf）梯度结构背后几何的简化视'"
+    },
+    {
+      "page": 19,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 19: text in the box at x=301-603, y=365-585 runs 179.6pt past its left edge: '图1. 欧几里得（eucl.gf）与自然（nat.gf）梯度结构背后几何的简化视'"
+    },
+    {
+      "page": 21,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 21: block set at 7.17pt but the original at this position is 9.96pt (ratio 0.72 vs page median 0.92) at x=98.0, y=88.0: • 算法2，显式格式。为实现（gd, expl.），我们使用其经验对应物"
+    },
+    {
+      "page": 22,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 22: text in the box at x=328-522, y=105-154 runs 2.2pt past its bottom edge: '0'"
+    },
+    {
+      "page": 22,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 22: text in the box at x=328-401, y=105-154 runs 2.2pt past its bottom edge: '0'"
+    },
+    {
+      "page": 22,
+      "code": "text_outside_frame",
+      "severity": "error",
+      "message": "Page 22: text in the box at x=328-371, y=105-154 runs 2.2pt past its bottom edge: '0'"
+    },
+    {
+      "page": 32,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 32: block set at 6.28pt but the original at this position is 9.96pt (ratio 0.63 vs page median 0.92) at x=236.4, y=223.7: 对于所有（使得对于所有存在对于所有"
+    },
+    {
+      "page": 34,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 34: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=85.8, y=465.6: 引理B.3（提升泛函的最小化元）。考虑上述定义的"
+    }
+  ]
+}

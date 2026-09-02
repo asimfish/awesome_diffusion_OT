@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (4 words, 0 CJK chars) at x=108.0, y=695.6: of ρ are denoted by ∇ρ ="
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (5 words, 0 CJK chars) at x=107.7, y=235.1: (A7) p0, qT ∈C2(Rd)g ∈C2([0, T]). fsθ are C2x ∈Rdt ∈[0, "
+    },
+    {
+      "page": 15,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 15: displayed equation at y=629 shifted horizontally by 32pt vs original"
+    },
+    {
+      "page": 18,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 18: block set at 5.07pt but the original at this position is 9.96pt (ratio 0.51 vs page median 0.71) at x=108.4, y=567.4: 这可以从以下事实推出：因此我们可以证明"
+    },
+    {
+      "page": 18,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 18: block set at 5.07pt but the original at this position is 9.96pt (ratio 0.51 vs page median 0.71) at x=352.6, y=585.4: x(t)-√ ̄α_{t}x(0) 的线性函数。利用高斯密度函数，我们有："
+    }
+  ]
+}

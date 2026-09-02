@@ -1,0 +1,41 @@
+{
+  "issue_count": 6,
+  "issues": [
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 6.89pt but the original at this position is 9.86pt (ratio 0.70 vs page median 0.92) at x=111.0, y=155.2: σ(x, t)∈R^{d}^{×}^{d} 为给定扩散矩阵，且参考过程定义为d"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 6.89pt but the original at this position is 9.86pt (ratio 0.70 vs page median 0.92) at x=108.8, y=155.2: Y_{t}=σ(Y_{t}, t) dW_{t}, ，则薛定谔桥问题等价于如下随机最优控制问题（"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.26pt but the original at this position is 10.06pt (ratio 0.82 vs page median 0.92) at x=172.3, y=189.3: g 满足的必要条件代入福克-普朗克方程，概率密度"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.46pt but the original at this position is 10.06pt (ratio 0.84 vs page median 0.92) at x=298.1, y=154.8: N 维标准布朗运动，各坐标分量相互独立。初始条件和"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (2 words, 0 CJK chars) at x=402.1, y=685.0: dxdt where ˆρ(x, t)="
+    },
+    {
+      "page": 20,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 20: displayed equation at y=466 shifted horizontally by 23pt vs original"
+    }
+  ]
+}

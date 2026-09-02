@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (3 words, 0 CJK chars) at x=265.0, y=437.4: U is shown similarly."
+    }
+  ]
+}

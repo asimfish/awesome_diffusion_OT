@@ -1,0 +1,209 @@
+{
+  "issue_count": 34,
+  "issues": [
+    {
+      "page": 2,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 2: block set at 8.56pt but the original at this position is 10.06pt (ratio 0.85 vs page median 0.92) at x=58.7, y=565.0: φ:M →R∪{-∞}的集合，对于这些函数存在一个函数"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 8.07pt but the original at this position is 9.97pt (ratio 0.81 vs page median 0.92) at x=55.9, y=519.6: 定理3.1（离散输出映射的维度灾难障碍）。假设"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.42pt but the original at this position is 10.02pt (ratio 0.84 vs page median 0.92) at x=310.9, y=381.3: ε^{-}^{1} -复杂度。本文的第一个结果建立了在"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.42pt but the original at this position is 10.03pt (ratio 0.84 vs page median 0.92) at x=307.9, y=656.8: 定理5.1 加强了Kratsios 与Papon（2022）的逼近保证：他们在给定的有限数据集"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.42pt but the original at this position is 10.03pt (ratio 0.84 vs page median 0.92) at x=307.9, y=679.9: 上一致控制误差，而我们（在所述光滑性假设下）在整个流形上得到一致逼近界。"
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (3 words, 0 CJK chars) at x=227.7, y=186.1: Uα = M,ϕα : Uα →ϕα(Uα) ⊂Rp are homeomorphisms."
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (9 words, 0 CJK chars) at x=55.4, y=237.1: Given x ∈M and v ∈TxM, there exists a unique geodesic γx"
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (14 words, 0 CJK chars) at x=55.1, y=354.6: The inverse map on U is the logarithm map logx : U →TxM,"
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (5 words, 0 CJK chars) at x=225.4, y=400.8: r > 0 : expx is a diffeomorphism on BTxM(0, r)"
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=478.3, y=326.8: and"
+    },
+    {
+      "page": 15,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 15: block set at 7.96pt but the original at this position is 10.06pt (ratio 0.79 vs page median 0.92) at x=252.0, y=241.8: μ, ν)表示耦合（或传输计划）的集合，即边缘分布为"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (10 words, 0 CJK chars) at x=55.4, y=228.1: Definition B.2 (c-subdifferential). Let φ : M →R ∪{−∞} a"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=528.6, y=234.1: is"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (2 words, 0 CJK chars) at x=55.1, y=97.7: where Rn"
+    },
+    {
+      "page": 27,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 27: displayed equation at y=553 shifted horizontally by 61pt vs original"
+    },
+    {
+      "page": 31,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=160.3, y=579.1: to"
+    },
+    {
+      "page": 32,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=532.7, y=636.7: and"
+    },
+    {
+      "page": 35,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 35: block set at 8.06pt but the original at this position is 10.06pt (ratio 0.80 vs page median 0.92) at x=229.6, y=309.6: M是紧致的，因此它是完备的，并且根据霍普夫–里诺定理（Hopf–Rinow Theorem）"
+    },
+    {
+      "page": 35,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 35: block set at 8.06pt but the original at this position is 10.06pt (ratio 0.80 vs page median 0.92) at x=256.3, y=324.4: TxM上有定义，并且作为切向量的函数是光滑的，因此是连续的。因此，从"
+    },
+    {
+      "page": 36,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 36: paragraph still in English (22 words, 0 CJK chars) at x=75.4, y=130.9: so that In(v) may include units from any preceding layer"
+    },
+    {
+      "page": 42,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 42: paragraph still in English (15 words, 0 CJK chars) at x=55.4, y=575.8: By the implicit function theorem applied to the equation"
+    },
+    {
+      "page": 43,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 43: block set at 7.27pt but the original at this position is 9.96pt (ratio 0.73 vs page median 0.92) at x=56.2, y=294.4: ψ^{-}^{1}(y^{′}, y_{2}_{p}) = (y^{′}, y_{2}_{p}+"
+    },
+    {
+      "page": 43,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 43: paragraph still in English (14 words, 0 CJK chars) at x=55.4, y=504.7: Lemma H.13 (Extension from K′ to the cube with controlle"
+    },
+    {
+      "page": 43,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 43: paragraph still in English (12 words, 0 CJK chars) at x=55.4, y=516.7: submanifold and let h ∈Ck,1(K′). Then there exists H ∈Ck"
+    },
+    {
+      "page": 43,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=451.5, y=526.2: and"
+    },
+    {
+      "page": 47,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 47: paragraph still in English (5 words, 0 CJK chars) at x=55.4, y=705.9: Since ϕ⋆is c-concave, we have ϕ = ϕ⋆."
+    },
+    {
+      "page": 50,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 50: paragraph still in English (24 words, 0 CJK chars) at x=55.4, y=245.8: 2d(x, y)2 −ψ(y) admits a (Aleksandrov–Bangert) Hessian a"
+    },
+    {
+      "page": 50,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 50: paragraph still in English (4 words, 0 CJK chars) at x=55.4, y=578.7: Choose rx > 0 such that"
+    },
+    {
+      "page": 52,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 52: block set at 7.57pt but the original at this position is 9.96pt (ratio 0.76 vs page median 0.92) at x=56.2, y=604.1: 步骤3：可积性对于任意我们有因此"
+    },
+    {
+      "page": 52,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 52: displayed equation at y=385 shifted horizontally by 22pt vs original"
+    },
+    {
+      "page": 52,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 52: paragraph still in English (13 words, 0 CJK chars) at x=55.4, y=189.2: is continuous on TM. Combining this with the continuity "
+    },
+    {
+      "page": 53,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 53: block set at 8.46pt but the original at this position is 10.06pt (ratio 0.84 vs page median 0.92) at x=266.2, y=160.7: M是完备可分度量空间，我们可以对"
+    },
+    {
+      "page": 53,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 53: paragraph still in English (15 words, 0 CJK chars) at x=55.1, y=275.1: Since M is compact, the function (y, z) 7→d(y, z)2 is bo"
+    },
+    {
+      "page": 56,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 56: paragraph still in English (6 words, 0 CJK chars) at x=55.4, y=521.7: Let N2 := k1 + 1. Again, there exists k2 ≥N2 such that"
+    }
+  ]
+}

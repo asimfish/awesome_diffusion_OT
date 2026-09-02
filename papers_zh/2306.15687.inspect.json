@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=108.8, y=397.6: 表8：不同目标在训练效率上的比较。推理时使用32 次函数评估。每个模型在单语零样本文本到语音任务"
+    },
+    {
+      "page": 28,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 28: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=177.2, y=77.4: 表B4：流匹配（FM）结合最优传输（OT）与流匹配结合扩散模型及分数匹配（SM）的比较。"
+    }
+  ]
+}

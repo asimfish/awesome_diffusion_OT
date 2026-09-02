@@ -1,0 +1,29 @@
+{
+  "issue_count": 4,
+  "issues": [
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 8.52pt but the original at this position is 10.03pt (ratio 0.85 vs page median 0.92) at x=354.4, y=358.6: 边作为原子间的位移。旋转不变性"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 8.52pt but the original at this position is 10.03pt (ratio 0.85 vs page median 0.92) at x=317.4, y=371.4: 强制执行。在我们的网络中强制执行这些对称性后，我们知道"
+    },
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 8.52pt but the original at this position is 10.03pt (ratio 0.85 vs page median 0.92) at x=371.3, y=384.2: _{t}(c) 具有设计所期望的不变性。更多细节见"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 21: paragraph still in English (3 words, 0 CJK chars) at x=239.0, y=605.6: with ˆa1 := (1 −t) ˙at + at,(42)"
+    }
+  ]
+}

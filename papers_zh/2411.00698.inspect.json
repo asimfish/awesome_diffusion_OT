@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (7 words, 0 CJK chars) at x=55.1, y=253.0: where, for example, xt = expx((1 −t) logx(y)) ∈M, and"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=55.7, y=168.5: v_{t} ，得到我们的沃瑟斯坦流匹配（WFM）目标："
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (14 words, 0 CJK chars) at x=75.4, y=464.2: exists an optimal transport map between µ and ν mak-ing "
+    }
+  ]
+}

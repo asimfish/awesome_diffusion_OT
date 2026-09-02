@@ -1,0 +1,65 @@
+{
+  "issue_count": 10,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (4 words, 0 CJK chars) at x=197.6, y=717.3: Tν→µ = T ˜f c and Tµ→ν = T ˜f, where Th := id −∇h.(3)"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (2 words, 0 CJK chars) at x=108.0, y=313.9: where M = maxT"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (7 words, 0 CJK chars) at x=108.0, y=349.1: SGA with the parallel scheme. Using (f (best)"
+    },
+    {
+      "page": 14,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 14: displayed equation at y=258 shifted horizontally by 40pt vs original"
+    },
+    {
+      "page": 15,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 15: block set at 8.34pt but the original at this position is 9.93pt (ratio 0.84 vs page median 0.92) at x=108.8, y=270.1: 引理12（莫雷不等式）。考虑一个有界开子集Ω，假设(Ω)。"
+    },
+    {
+      "page": 15,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 15: block set at 7.27pt but the original at this position is 9.96pt (ratio 0.73 vs page median 0.92) at x=161.6, y=426.2: ⊂R^{d} 为一个有界开子集。为确保上述引理中使用的"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (4 words, 0 CJK chars) at x=108.0, y=332.7: denotes ceiling integer of d"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (2 words, 0 CJK chars) at x=107.6, y=423.2: where M = maxT"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (20 words, 0 CJK chars) at x=106.8, y=423.2: ˙H−1)1/2. If we fix the totalnumber of iterations T a pr"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (5 words, 0 CJK chars) at x=107.6, y=555.6: where we used inequlities PT"
+    }
+  ]
+}

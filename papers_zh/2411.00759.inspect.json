@@ -1,0 +1,107 @@
+{
+  "issue_count": 17,
+  "issues": [
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (5 words, 0 CJK chars) at x=363.0, y=183.3: δyi(xi), where δyi(xi) ="
+    },
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (14 words, 0 CJK chars) at x=307.4, y=248.0: In discrete flow matching (Gat et al., 2024), the goal i"
+    },
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (3 words, 0 CJK chars) at x=307.1, y=315.9: t : [0, 1]×[V ]L →RV ,where ui"
+    },
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.46pt but the original at this position is 10.06pt (ratio 0.74 vs page median 0.92) at x=56.2, y=196.8: 个定义满足条件及。此外，Gat 等人（2024）证明，与方程（3）和（4）所定义的流相对应的条件"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.02pt but the original at this position is 9.92pt (ratio 0.71 vs page median 0.92) at x=368.3, y=215.8: 。在此设定下，方程（11）中给出的动态形式等于康托罗维奇形式："
+    },
+    {
+      "page": 13,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 13: displayed equation at y=125 shifted horizontally by 15pt vs original"
+    },
+    {
+      "page": 17,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 17: displayed equation at y=588 shifted horizontally by 33pt vs original"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (3 words, 0 CJK chars) at x=55.4, y=259.8: (70)followed by z = xτ, where r¯pτ = r¯pτ (x, z) = ¯pτ ("
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (8 words, 0 CJK chars) at x=55.1, y=599.9: (86)where r¯qt = r¯qt(x, xt) =¯qt(x)¯qt(xt). Expression"
+    },
+    {
+      "page": 24,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 24: block set at 7.65pt but the original at this position is 9.97pt (ratio 0.77 vs page median 0.92) at x=255.0, y=545.8: p_{t} 为按方程（2，3）定义的一个流，该流将。在此设定下，学习分布与真实分布之间的交叉熵"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (3 words, 0 CJK chars) at x=55.1, y=494.1: where αt =kt1−kt ."
+    },
+    {
+      "page": 30,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 30: paragraph still in English (8 words, 0 CJK chars) at x=55.1, y=322.9: (167)where by changing the order of the sums,Z 1"
+    },
+    {
+      "page": 41,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 41: paragraph still in English (6 words, 0 CJK chars) at x=119.7, y=437.1: st = (1 −ϵ)st−ϵ + ϵPst−ϵ = (I + ϵ(P −I)) st−ϵ = (I + ϵQ)"
+    },
+    {
+      "page": 44,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 44: block set at 7.55pt but the original at this position is 8.97pt (ratio 0.84 vs page median 0.92) at x=90.5, y=98.1: 放电现象肯定会被克服，深度方面”，本费尔特说，他是医学统计学专业的半年制本科生，在2005 年学"
+    },
+    {
+      "page": 45,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 45: paragraph still in English (17 words, 0 CJK chars) at x=64.7, y=70.1: Listing 4. Generated text from the DFM-B model with BoW "
+    },
+    {
+      "page": 47,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 47: block set at 7.15pt but the original at this position is 8.97pt (ratio 0.80 vs page median 0.92) at x=85.1, y=419.7: 虚假的公共AR-15 限制，他们过去并未意识到国家安全局（NSA）的活动。相反，他们招募了像Sh"
+    },
+    {
+      "page": 47,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 47: block set at 7.25pt but the original at this position is 8.97pt (ratio 0.81 vs page median 0.92) at x=85.1, y=563.5: 他的实验中，美国创立了Jo Kutus，一位位于乌利什（Ulisz）西南部的微通道工程师兼骨科外"
+    }
+  ]
+}

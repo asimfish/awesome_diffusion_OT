@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=108.8, y=587.9: 定义2. 带约束的优化问题正式定义如下："
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 22: paragraph still in English (11 words, 0 CJK chars) at x=108.0, y=697.7: 0,...,0∈N0. N0 represents theset of all non-negative int"
+    }
+  ]
+}

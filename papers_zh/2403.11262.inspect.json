@@ -1,0 +1,71 @@
+{
+  "issue_count": 11,
+  "issues": [
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.46pt but the original at this position is 10.06pt (ratio 0.74 vs page median 0.92) at x=55.9, y=648.1: L( ̇x_{t},x_{t}) 被称为昂萨格– 马赫卢普函数（Onsager –Machlup"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (2 words, 0 CJK chars) at x=55.4, y=69.3: with eA :="
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (6 words, 0 CJK chars) at x=103.1, y=69.5: 0 eL( ˙xt, xt)dt + eJ, where"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (2 words, 0 CJK chars) at x=307.1, y=568.2: with eAh"
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (2 words, 0 CJK chars) at x=55.1, y=640.0: where eA :="
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (5 words, 0 CJK chars) at x=110.0, y=640.2: 0 eL( ˙xt, xt)dt with"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (2 words, 0 CJK chars) at x=55.1, y=304.7: where eA(x′"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (2 words, 0 CJK chars) at x=181.1, y=306.0: 0) dt with"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (4 words, 0 CJK chars) at x=55.1, y=163.2: with θ(0) given by Eq. (85)."
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (5 words, 0 CJK chars) at x=55.1, y=556.8: with vt given by Eq. (93)."
+    },
+    {
+      "page": 20,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 20: block set at 7.87pt but the original at this position is 9.96pt (ratio 0.79 vs page median 0.92) at x=55.9, y=292.4: 作为另一测度，我们可以计算2-沃瑟斯坦距离（2-Wasserstein Distance），"
+    }
+  ]
+}

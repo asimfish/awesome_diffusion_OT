@@ -1,0 +1,65 @@
+{
+  "issue_count": 10,
+  "issues": [
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (7 words, 0 CJK chars) at x=226.4, y=431.3: w−→π as k →∞along a subsequence, and π is optimal for Sε"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=95.7, y=426.1: with"
+    },
+    {
+      "page": 11,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 11: paragraph still in English (16 words, 0 CJK chars) at x=98.4, y=566.2: Furthermore, the above rates are sharp in the sense that"
+    },
+    {
+      "page": 20,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 20: block set at 8.24pt but the original at this position is 10.91pt (ratio 0.76 vs page median 0.92) at x=87.2, y=451.0: 定理1（源自文献[GS12]）给出了有界、凸、利普希茨函数的度量熵界，其中若"
+    },
+    {
+      "page": 29,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 29: paragraph still in English (6 words, 0 CJK chars) at x=86.4, y=649.7: Lemma 9. For any m ∈N, µ ∈P(Rd), and partition {Qℓ"
+    },
+    {
+      "page": 39,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 39: paragraph still in English (5 words, 0 CJK chars) at x=86.4, y=86.1: where p(βj, r′) is a set of tuples (k′"
+    },
+    {
+      "page": 40,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 40: block set at 10.04pt but the original at this position is 10.91pt (ratio 0.92 vs page median 1.00) at x=87.2, y=188.2: 这由柯西-施瓦茨不等式得出，并且由于"
+    },
+    {
+      "page": 40,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 40: block set at 10.04pt but the original at this position is 10.91pt (ratio 0.92 vs page median 1.00) at x=264.2, y=188.2: ν 是4-次威布尔分布。综合各部分，我们得到"
+    },
+    {
+      "page": 40,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 40: block set at 10.04pt but the original at this position is 10.91pt (ratio 0.92 vs page median 1.00) at x=120.9, y=684.2: cA 在两个参数上都是凹的，我们看到"
+    },
+    {
+      "page": 43,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 43: block set at 9.14pt but the original at this position is 10.91pt (ratio 0.84 vs page median 0.92) at x=147.2, y=578.6: c 是一个通用常数；参见[NWR22] 中的引理4。证明完毕。"
+    }
+  ]
+}

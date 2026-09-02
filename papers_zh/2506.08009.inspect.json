@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (13 words, 0 CJK chars) at x=132.2, y=191.1: distillation: Exponentially fast distillation of pretrai"
+    }
+  ]
+}

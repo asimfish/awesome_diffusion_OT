@@ -1,0 +1,59 @@
+{
+  "issue_count": 9,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (3 words, 0 CJK chars) at x=92.0, y=635.5: GW(α, β) :=minπ∈M(α,β) L(π) ,where(2)"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (40 words, 0 CJK chars) at x=55.4, y=197.8: penalizes distortions between corresponding pairs of poi"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (8 words, 0 CJK chars) at x=307.4, y=239.5: linear map Γ : HY −→HX with a D × E matrix and write:"
+    },
+    {
+      "page": 12,
+      "code": "reference_content_changed",
+      "severity": "error",
+      "message": "Page 12: protected references gained 199 translated CJK characters"
+    },
+    {
+      "page": 13,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 13: block set at 7.63pt but the original at this position is 10.03pt (ratio 0.76 vs page median 0.92) at x=56.2, y=458.4: 维尔塔宁（Virtanen, P. ），戈默斯（Gommers, R. ），奥利芬特（Oliph"
+    },
+    {
+      "page": 13,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 13: block set at 7.63pt but the original at this position is 10.06pt (ratio 0.76 vs page median 0.92) at x=56.2, y=526.4: ̇I., ），冯（Feng, Y.），穆尔（Moore, E. W.），范德普拉斯（Vander"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (2 words, 0 CJK chars) at x=226.3, y=205.1: j = ∇yjGWε(α, β)where α ="
+    },
+    {
+      "page": 22,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 22: block set at 7.46pt but the original at this position is 10.06pt (ratio 0.74 vs page median 0.92) at x=174.4, y=169.0: ∈H 为希尔伯特-施密特算子。其希尔伯特-施密特范数等于"
+    },
+    {
+      "page": 28,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 28: displayed equation at y=247 shifted horizontally by 28pt vs original"
+    }
+  ]
+}

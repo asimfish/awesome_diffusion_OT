@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 36,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 36: displayed equation at y=292 shifted horizontally by 23pt vs original"
+    }
+  ]
+}

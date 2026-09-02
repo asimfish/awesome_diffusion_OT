@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (43 words, 0 CJK chars) at x=75.4, y=112.1: is highly controllable. In particular, one can promptSED"
+    },
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (12 words, 0 CJK chars) at x=307.4, y=448.5: Definition 3.5. For our time dependent score networksθ(·"
+    },
+    {
+      "page": 7,
+      "code": "table_structure_mismatch",
+      "severity": "error",
+      "message": "Page 7: table rule at y=67.3 is partially erased in the translation (ink coverage 1.00 -> 0.55)"
+    },
+    {
+      "page": 8,
+      "code": "table_structure_mismatch",
+      "severity": "error",
+      "message": "Page 8: table rule at y=67.3 is partially erased in the translation (ink coverage 1.00 -> 0.50)"
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (5 words, 0 CJK chars) at x=55.1, y=267.4: where LDWDSE is given by"
+    }
+  ]
+}

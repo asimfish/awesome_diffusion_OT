@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (15 words, 0 CJK chars) at x=74.3, y=156.1: and G. E. Henter, “Diff-TTSG: Denoising probabilistic in"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (18 words, 0 CJK chars) at x=315.2, y=443.1: scription for multiple languages in Python,” J. Open Sou"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (36 words, 0 CJK chars) at x=315.2, y=476.7: versarial networks for efficient and high fidelity speec"
+    }
+  ]
+}

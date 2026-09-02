@@ -1,0 +1,101 @@
+{
+  "issue_count": 16,
+  "issues": [
+    {
+      "page": 1,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 1: block set at 5.19pt but the original at this position is 9.06pt (ratio 0.57 vs page median 0.92) at x=307.7, y=395.7: 图1. 费曼-卡茨校正器用于退火和乘积的推理"
+    },
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 8.15pt but the original at this position is 10.05pt (ratio 0.81 vs page median 0.92) at x=308.2, y=364.6: 在本节中，我们提出新的采样工具，用于在推理时利用第2.2 节中的费曼-卡茨偏微分方程（Feynm"
+    },
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (3 words, 0 CJK chars) at x=93.7, y=116.5: where¯gt(x) = gt(x) −"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.78pt but the original at this position is 9.87pt (ratio 0.79 vs page median 0.92) at x=116.0, y=249.3: 展开并利用我们的福克-普朗克表达式利用方程（equation）"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.78pt but the original at this position is 9.87pt (ratio 0.79 vs page median 0.92) at x=56.2, y=272.2: 移项的随机微分方程（SDE）仿真相对应的项。将偏微分方程（PDE）（17）的所有剩余项归入权重"
+    },
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 7.78pt but the original at this position is 9.87pt (ratio 0.79 vs page median 0.92) at x=56.2, y=306.5: ̄g_{t}(x_{t}) ，我们得到如下费曼-卡茨偏微分方程（Feynman-Kac PDE）"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (4 words, 0 CJK chars) at x=312.3, y=676.8: with the coefficients (for (β + (1 −β)2a)/β ≥0)"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (4 words, 0 CJK chars) at x=312.3, y=599.9: with the coefficients (for (β + (1 −β)2a)/β ≥0)"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (12 words, 0 CJK chars) at x=312.3, y=372.2: For a given gt in Eq. (6), define the jumpprocess rate a"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (5 words, 0 CJK chars) at x=311.7, y=452.1: where (u)−:= max(0, −u) and (u)+ := max(0, u).Then,"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=175.5, y=503.7: _{T}(x, t) 必须满足的偏微分方程。注意，为了将Φ"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=264.0, y=518.4: e R^{τ} _{t}^{g}s^{(}^{x}s^{)}^{ds}。因此，我们应用伊藤乘积法"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 7.97pt but the original at this position is 9.96pt (ratio 0.80 vs page median 0.92) at x=115.1, y=571.6: e R^{τ} _{t}^{g}s^{(}^{x}s^{)}^{ds}是非随机的，并且假设其具有"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 7.97pt but the original at this position is 9.96pt (ratio 0.80 vs page median 0.92) at x=56.0, y=585.3: 消失。我们可以使用伊藤引理展开"
+    },
+    {
+      "page": 15,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 15: block set at 5.87pt but the original at this position is 9.96pt (ratio 0.59 vs page median 0.92) at x=56.2, y=627.7: 注意到，我们可以将其移入微分算子内，得到"
+    },
+    {
+      "page": 30,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 30: paragraph still in English (3 words, 0 CJK chars) at x=60.3, y=212.9: where we denote v1,2"
+    }
+  ]
+}

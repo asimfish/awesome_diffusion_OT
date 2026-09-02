@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (3 words, 0 CJK chars) at x=58.5, y=335.8: where CE(τS, πsoft):=−P"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (5 words, 0 CJK chars) at x=207.5, y=336.9: ij log pij, with Zi ="
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (103 words, 0 CJK chars) at x=317.2, y=236.6: establish adapter baselines trained with standard Neares"
+    }
+  ]
+}

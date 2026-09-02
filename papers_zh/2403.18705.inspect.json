@@ -1,0 +1,59 @@
+{
+  "issue_count": 9,
+  "issues": [
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (5 words, 0 CJK chars) at x=100.7, y=215.0: Wp(PX|Y =y, PZ|Y =y) such that"
+    },
+    {
+      "page": 7,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 7: paragraph still in English (6 words, 0 CJK chars) at x=72.5, y=588.1: Y (PY,X, PY,Z) is a bijection and forevery α ∈Γ4"
+    },
+    {
+      "page": 11,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 11: displayed equation at y=406 shifted horizontally by 46pt vs original"
+    },
+    {
+      "page": 14,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 14: displayed equation at y=537 shifted horizontally by 16pt vs original"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (20 words, 0 CJK chars) at x=110.2, y=533.4: for an appropriate distance D, seee.g. (Altekrüger et al"
+    },
+    {
+      "page": 31,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 31: displayed equation at y=449 shifted horizontally by 21pt vs original"
+    },
+    {
+      "page": 32,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 32: block set at 9.24pt but the original at this position is 11.02pt (ratio 0.84 vs page median 0.92) at x=111.0, y=252.2: 是具有相同点数的经验测度，且是与相关最优计划Γ() 对应的最优映射，或"
+    },
+    {
+      "page": 34,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=340.6, y=445.8: with"
+    },
+    {
+      "page": 35,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 35: paragraph still in English (6 words, 0 CJK chars) at x=150.7, y=637.9: 1 ×y PY satisfy Assumption 3 with density py"
+    }
+  ]
+}

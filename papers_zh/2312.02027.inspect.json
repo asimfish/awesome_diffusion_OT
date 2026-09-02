@@ -1,0 +1,53 @@
+{
+  "issue_count": 8,
+  "issues": [
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (13 words, 0 CJK chars) at x=69.7, y=173.8: . Also, a straight-forward application of the Girsanov t"
+    },
+    {
+      "page": 8,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 8: preserved region at x=70, y=216 (270x13pt) renders with ink coverage 0.85 vs original"
+    },
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (4 words, 0 CJK chars) at x=83.3, y=425.5: t )t∈[0,T ] is of the form M ∗"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (2 words, 0 CJK chars) at x=70.5, y=637.9: where Su"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (7 words, 0 CJK chars) at x=70.9, y=313.2: then X(x+z) = ˜X(x)+ψ(z, ·) is a solution of (104). This"
+    },
+    {
+      "page": 29,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 29: paragraph still in English (10 words, 0 CJK chars) at x=146.3, y=477.6: δλσ−1(kδ)(ˆxk+1−ˆxk−δb(ˆxk, kδ)), and then, we are able "
+    },
+    {
+      "page": 35,
+      "code": "table_cells_reflowed",
+      "severity": "error",
+      "message": "Page 35: table at y=443-463: translated cell text runs 32.1pt past the table rules"
+    },
+    {
+      "page": 35,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 35: paragraph still in English (2 words, 0 CJK chars) at x=436.5, y=208.5: t . That is,"
+    }
+  ]
+}

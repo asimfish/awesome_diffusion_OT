@@ -1,0 +1,47 @@
+{
+  "issue_count": 7,
+  "issues": [
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (23 words, 0 CJK chars) at x=307.0, y=235.9: Weak OT is a generalization of classical OT (2), where w"
+    },
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (4 words, 0 CJK chars) at x=69.6, y=523.3: ℓ(µ, µ0).(8)Distribution µ0 is a given prior; γ > 0."
+    },
+    {
+      "page": 12,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 12: paragraph still in English (14 words, 0 CJK chars) at x=55.1, y=276.9: where the second equality is justified by the following "
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=485.7, y=588.0: and"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=254.0, y=600.9: and"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (7 words, 0 CJK chars) at x=238.6, y=586.5: k (xk) is the minimizer of y 7→gk(xk, y))."
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (25 words, 0 CJK chars) at x=55.1, y=597.0: The expression under curly brackets in (32) appeared in "
+    }
+  ]
+}

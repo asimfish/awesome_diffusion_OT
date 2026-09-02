@@ -1,0 +1,53 @@
+{
+  "issue_count": 8,
+  "issues": [
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.96pt but the original at this position is 10.06pt (ratio 0.79 vs page median 0.92) at x=108.6, y=405.6: 命题1 （定理2.4 [巴普蒂斯塔等人，2020年]，命题2.3 [侯赛尼等人，2023年]）假"
+    },
+    {
+      "page": 6,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 6: displayed equation at y=246 shifted horizontally by 32pt vs original"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (7 words, 0 CJK chars) at x=237.5, y=503.2: Lp(µt) | (vt, γt) solve (7), γ0 = η, γ1 = ν, and vt is t"
+    },
+    {
+      "page": 15,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 15: block set at 7.97pt but the original at this position is 9.88pt (ratio 0.81 vs page median 0.92) at x=108.5, y=302.3: 本节包含关于静态条件最优传输问题的额外讨论，作为第3.1 节的补充。我们参考Hosseini 等"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (5 words, 0 CJK chars) at x=108.0, y=600.5: For any φ ∈Cyl(Y × U), we have"
+    },
+    {
+      "page": 22,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 22: displayed equation at y=276 shifted horizontally by 32pt vs original"
+    },
+    {
+      "page": 24,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 24: displayed equation at y=572 shifted horizontally by 21pt vs original"
+    },
+    {
+      "page": 25,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 25: paragraph still in English (7 words, 0 CJK chars) at x=237.5, y=277.5: Lp(µt) | (vt, γt) solve (7), γ0 = η, γ1 = ν, and vt is t"
+    }
+  ]
+}

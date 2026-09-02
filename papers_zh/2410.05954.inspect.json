@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 9,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 9: paragraph still in English (13 words, 0 CJK chars) at x=149.7, y=312.6: (c) A side profile shot of a woman with fireworks explod"
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 7.27pt but the original at this position is 9.96pt (ratio 0.73 vs page median 0.92) at x=154.7, y=150.9: e_{k}_{+1}> s_{k} ，表明在每个跳变点添加校正噪声时，时间步会略微回退。进一步可"
+    },
+    {
+      "page": 24,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 24: paragraph still in English (13 words, 0 CJK chars) at x=149.7, y=659.2: (c) A side profile shot of a woman with fireworks explod"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 13,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 13: block set at 6.97pt but the original at this position is 9.97pt (ratio 0.70 vs page median 0.92) at x=55.9, y=141.3: 这一点可逐点推广到轨迹。设轨迹由相对变换"
+    }
+  ]
+}

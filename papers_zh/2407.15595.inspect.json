@@ -1,0 +1,83 @@
+{
+  "issue_count": 13,
+  "issues": [
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (5 words, 0 CJK chars) at x=247.5, y=514.6: δyi(xi), where δyi(xi) ="
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (2 words, 0 CJK chars) at x=70.2, y=383.9: with ai,j"
+    },
+    {
+      "page": 18,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 18: displayed equation at y=534 shifted horizontally by 19pt vs original"
+    },
+    {
+      "page": 19,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 19: displayed equation at y=549 shifted horizontally by 24pt vs original"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (2 words, 0 CJK chars) at x=70.5, y=287.6: with ai,j"
+    },
+    {
+      "page": 24,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 24: paragraph still in English (24 words, 0 CJK chars) at x=70.9, y=84.3: For completeness we provide the formulas for denoiser (x"
+    },
+    {
+      "page": 29,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 29: paragraph still in English (38 words, 0 CJK chars) at x=85.1, y=463.1: \"\"\"The FibFib number sequence is a sequence similar toth"
+    },
+    {
+      "page": 36,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 36: paragraph still in English (30 words, 0 CJK chars) at x=73.6, y=170.1: The United States on Wednesday asked the UN Security Cou"
+    },
+    {
+      "page": 36,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 36: paragraph still in English (401 words, 0 CJK chars) at x=73.5, y=193.6: response to the revelations it had restarted its nuclear"
+    },
+    {
+      "page": 36,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 36: paragraph still in English (29 words, 0 CJK chars) at x=73.6, y=402.7: The defender is available for the Maribor first leg but "
+    },
+    {
+      "page": 36,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 36: paragraph still in English (164 words, 0 CJK chars) at x=73.5, y=424.8: in the midfield in the Maribor department and has given "
+    },
+    {
+      "page": 38,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 38: paragraph still in English (524 words, 0 CJK chars) at x=73.4, y=92.6: Here’s how that strategy works for your job:1) You now p"
+    },
+    {
+      "page": 38,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 38: paragraph still in English (301 words, 0 CJK chars) at x=73.4, y=389.0: Watch the humour but also the humanity behind the work w"
+    }
+  ]
+}

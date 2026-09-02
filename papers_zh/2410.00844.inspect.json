@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=108.8, y=83.2: 定义4.1（正则化非平衡最优传输）。考虑"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 7.87pt but the original at this position is 9.96pt (ratio 0.79 vs page median 0.92) at x=108.8, y=523.9: 得注意的是，当考虑增长/死亡因子时，方程（7）不仅包含费舍尔-拉奥度量，还包含一个额外的交叉项"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (7 words, 0 CJK chars) at x=108.0, y=362.5: ∂tp = −∇x · (pv(x, t)) + g(x, t)p(8)with vanishing bound"
+    },
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (15 words, 0 CJK chars) at x=108.0, y=373.0: 0 gθ(x(t),s)ds and x(t) satisfy dx/dt = v(x, t)dt. We co"
+    },
+    {
+      "page": 29,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 29: paragraph still in English (8 words, 0 CJK chars) at x=108.0, y=626.2: ∂tp = −∇x · (pv(x, t)) + g(x, t)p.(24)coupled with vanis"
+    }
+  ]
+}

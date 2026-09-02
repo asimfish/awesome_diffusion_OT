@@ -1,0 +1,29 @@
+{
+  "issue_count": 4,
+  "issues": [
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.87pt but the original at this position is 9.96pt (ratio 0.79 vs page median 0.92) at x=108.8, y=678.4: 问题1（薛定谔桥问题）。给定指定分布"
+    },
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.87pt but the original at this position is 9.96pt (ratio 0.79 vs page median 0.92) at x=331.6, y=678.4: D(p_{0}, p_{1}) 中寻找一个最小化其KL 散度的分布"
+    },
+    {
+      "page": 5,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 5: block set at 8.41pt but the original at this position is 10.01pt (ratio 0.84 vs page median 0.92) at x=108.8, y=192.4: 命题3.1（DDIB 强制精确循环一致性）。给定源域中的一个样本"
+    },
+    {
+      "page": 14,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 14: paragraph still in English (3 words, 0 CJK chars) at x=209.0, y=189.4: pθ(x0:T ) dx1:T , where pθ(x0:T ) = pθ(xT )"
+    }
+  ]
+}

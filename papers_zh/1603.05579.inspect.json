@@ -1,0 +1,53 @@
+{
+  "issue_count": 8,
+  "issues": [
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.74pt but the original at this position is 11.02pt (ratio 0.79 vs page median 0.92) at x=210.4, y=210.5: P^{ac}(X)∩C^{0}^{,α}(X) 。则康托罗维奇泛函在该集合上属于"
+    },
+    {
+      "page": 10,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 10: block set at 8.39pt but the original at this position is 10.96pt (ratio 0.77 vs page median 0.92) at x=119.1, y=502.8: 2.1. 定理1.1 的证明。我们同时证明该泛函是凹的并计算其梯度。对于"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 9.04pt but the original at this position is 11.02pt (ratio 0.82 vs page median 0.91) at x=260.4, y=708.2: (0,1]中。则康托罗维奇泛函Φ 在集合上一致"
+    },
+    {
+      "page": 18,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 18: displayed equation at y=359 shifted horizontally by 47pt vs original"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=126.1, y=446.8: and"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=235.7, y=446.8: and"
+    },
+    {
+      "page": 26,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 26: block set at 9.14pt but the original at this position is 10.91pt (ratio 0.84 vs page median 0.92) at x=118.7, y=187.7: fy_{j},y_{i}的连续性）必定存在一个a 使得将其转换回("
+    },
+    {
+      "page": 27,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 27: block set at 8.64pt but the original at this position is 10.80pt (ratio 0.80 vs page median 0.92) at x=117.4, y=190.5: X上满足（PW ）的连续概率密度。则存在正常数"
+    }
+  ]
+}

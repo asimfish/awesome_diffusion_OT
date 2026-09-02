@@ -1,0 +1,83 @@
+{
+  "issue_count": 13,
+  "issues": [
+    {
+      "page": 3,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 3: block set at 7.94pt but the original at this position is 10.91pt (ratio 0.73 vs page median 0.92) at x=180.8, y=73.1: p 之间的布朗传输映射是几乎必然压缩"
+    },
+    {
+      "page": 7,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 7: displayed equation at y=466 shifted horizontally by 15pt vs original"
+    },
+    {
+      "page": 10,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 10: block set at 8.94pt but the original at this position is 10.91pt (ratio 0.82 vs page median 0.92) at x=72.8, y=501.3: Ω中一个重要的希尔伯特子空间是卡梅伦-马丁空间（Cameron-Martin"
+    },
+    {
+      "page": 10,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 10: block set at 8.94pt but the original at this position is 10.91pt (ratio 0.82 vs page median 0.92) at x=102.8, y=570.6: 〈h, g〉_{H}1:= 。卡梅伦-马丁空间的重要性在于，过程"
+    },
+    {
+      "page": 10,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 10: block set at 8.94pt but the original at this position is 10.91pt (ratio 0.82 vs page median 0.92) at x=72.8, y=583.3: _{,}1] 是适应的且足够正则；这是吉尔萨诺夫定理（Girsanov’s theorem）的推"
+    },
+    {
+      "page": 10,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 10: block set at 8.94pt but the original at this position is 10.91pt (ratio 0.82 vs page median 0.92) at x=72.8, y=595.8: W( ̇h):= 其中积分为随机伊藤积分（Itˆointegral）；在此记号下，"
+    },
+    {
+      "page": 21,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 21: displayed equation at y=345 shifted horizontally by 17pt vs original"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=254.8, y=234.2: with"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=502.2, y=233.3: is"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=235.7, y=246.3: is"
+    },
+    {
+      "page": 21,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=266.3, y=259.2: for"
+    },
+    {
+      "page": 31,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 31: block set at 8.04pt but the original at this position is 10.91pt (ratio 0.74 vs page median 0.92) at x=351.7, y=293.6: η:R^{d} →I为任意连续可微的利普希茨函数，使得"
+    },
+    {
+      "page": 37,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 37: block set at 9.24pt but the original at this position is 10.91pt (ratio 0.85 vs page median 0.92) at x=186.7, y=137.9: →Ω被称为卡梅伦-马丁传输映射，如果"
+    }
+  ]
+}

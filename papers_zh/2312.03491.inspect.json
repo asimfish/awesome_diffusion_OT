@@ -1,0 +1,29 @@
+{
+  "issue_count": 4,
+  "issues": [
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (18 words, 0 CJK chars) at x=72.0, y=525.2: σ1ϵ, ϵ ∼N(0, I) by the SB (Eqn. (12)). x1 is also fed in"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (79 words, 0 CJK chars) at x=71.6, y=551.5: Analogous to the different parameterizations in diffusio"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (23 words, 0 CJK chars) at x=72.0, y=623.3: enc = E(x0,y)∼pdata∥E(y) −x0∥2. And we use the same dura"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (30 words, 0 CJK chars) at x=71.8, y=683.0: t have closed-form expressions. Such designs are new in "
+    }
+  ]
+}
