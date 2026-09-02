@@ -1,0 +1,149 @@
+{
+  "issue_count": 24,
+  "issues": [
+    {
+      "page": 4,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 4: displayed equation at y=446 shifted horizontally by 22pt vs original"
+    },
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (8 words, 0 CJK chars) at x=59.5, y=517.8: 3. If µ ∈Pq(Rd), q > 4 and ν uniform with finite support"
+    },
+    {
+      "page": 18,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 18: displayed equation at y=681 shifted horizontally by 27pt vs original"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (21 words, 0 CJK chars) at x=59.5, y=322.0: Since µ, ν ∈Pq(Rd), by Fournier and Guillin (2015, Theor"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (14 words, 0 CJK chars) at x=59.5, y=510.5: i=1 δYi. If Yi = vJi, then the indicesJ1, . . . , Jk are"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=407.3, y=503.9: and"
+    },
+    {
+      "page": 23,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 23: paragraph still in English (3 words, 0 CJK chars) at x=59.1, y=185.4: where we used P"
+    },
+    {
+      "page": 24,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 24: displayed equation at y=203 shifted horizontally by 15pt vs original"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (3 words, 0 CJK chars) at x=59.5, y=507.4: Since π⋆is optimal,\u0012Z"
+    },
+    {
+      "page": 28,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 28: paragraph still in English (6 words, 0 CJK chars) at x=313.0, y=297.7: ∥nH∥2 nH, hence the distance is |h(x)|"
+    },
+    {
+      "page": 30,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=139.7, y=704.8: and"
+    },
+    {
+      "page": 30,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=128.2, y=731.9: to"
+    },
+    {
+      "page": 31,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 31: paragraph still in English (2 words, 0 CJK chars) at x=59.1, y=619.2: Thus Ψ is"
+    },
+    {
+      "page": 31,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 31: paragraph still in English (11 words, 0 CJK chars) at x=59.1, y=682.2: Let (X, Y ) ∼πε.Then Y1 = sign(X2), hence Ψ(X, Y ) = X2 "
+    },
+    {
+      "page": 31,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 31: paragraph still in English (9 words, 0 CJK chars) at x=59.5, y=695.8: ε. Then Y1 = sign(X1)is independent of X2 ∼Unif[−1, 1], "
+    },
+    {
+      "page": 32,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 32: paragraph still in English (9 words, 0 CJK chars) at x=59.1, y=140.8: This constructs a family of instances (µε, ν) with uniqu"
+    },
+    {
+      "page": 32,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 32: paragraph still in English (5 words, 0 CJK chars) at x=58.3, y=449.6: ν (U(I)).Since I is independent, U(I) ∼Unif([0, 1]).Ther"
+    },
+    {
+      "page": 32,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 32: paragraph still in English (8 words, 0 CJK chars) at x=119.1, y=463.2: ν (U(I))) has law π⋆. Thus ((X, Y ), (X, Y ⋆)) is a coup"
+    },
+    {
+      "page": 32,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 32: paragraph still in English (3 words, 0 CJK chars) at x=94.9, y=510.5: ν is L-Lipschitz, |Y −Y ⋆| ⩽L |V(I) −U(I)|, and W 2"
+    },
+    {
+      "page": 33,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=223.2, y=561.6: and"
+    },
+    {
+      "page": 33,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=289.8, y=576.0: and"
+    },
+    {
+      "page": 40,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 40: block set at 7.64pt but the original at this position is 11.02pt (ratio 0.69 vs page median 0.92) at x=60.3, y=684.5: 并用Φ 表示标准高斯分布的累积分布函数，我们得到"
+    },
+    {
+      "page": 41,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 41: displayed equation at y=379 shifted horizontally by 19pt vs original"
+    },
+    {
+      "page": 44,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 44: displayed equation at y=722 shifted horizontally by 26pt vs original"
+    }
+  ]
+}

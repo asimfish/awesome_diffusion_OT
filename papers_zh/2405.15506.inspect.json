@@ -1,0 +1,29 @@
+{
+  "issue_count": 4,
+  "issues": [
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (3 words, 0 CJK chars) at x=123.6, y=212.1: where C(Ψξ∗(x)) = log | det JΨξ∗(Ψ−1"
+    },
+    {
+      "page": 16,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 16: block set at 5.87pt but the original at this position is 9.96pt (ratio 0.59 vs page median 0.92) at x=193.2, y=315.7: 利用正态分布的密度函数，我们现在可以写出"
+    },
+    {
+      "page": 16,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 16: displayed equation at y=321 shifted horizontally by 16pt vs original"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (3 words, 0 CJK chars) at x=123.6, y=214.9: where C(Ψξ∗(x)) = log | det JΨξ∗(Ψ−1"
+    }
+  ]
+}

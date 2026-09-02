@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 4,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 4: paragraph still in English (9 words, 0 CJK chars) at x=107.7, y=570.6: Let ϕp(h) = (ϕ1(h), · · · , ϕp(h))⊤with ϕn(h) = hnn!φn+1"
+    },
+    {
+      "page": 21,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 21: block set at 7.37pt but the original at this position is 9.86pt (ratio 0.75 vs page median 0.92) at x=232.1, y=193.9: |x_{t}_{i}- ̄x_{t}_{i}| 给出。进一步，与定义E.1 类似，我们将证明"
+    }
+  ]
+}

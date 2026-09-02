@@ -1,0 +1,113 @@
+{
+  "issue_count": 18,
+  "issues": [
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 6.27pt but the original at this position is 9.96pt (ratio 0.63 vs page median 0.71) at x=72.8, y=356.5: 则本文断言（10）中的概率流常微分方程满足Φ"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 6.27pt but the original at this position is 9.96pt (ratio 0.63 vs page median 0.71) at x=205.8, y=356.5: ^{t}_{Ñ}^{k}pX^{t}q ^{d}“X_{k}. 。为证明该关系，只需利用（10）"
+    },
+    {
+      "page": 9,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 9: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=151.6, y=411.0: X_{t} 取一个“典型”值，那么在其条件下，向量"
+    },
+    {
+      "page": 10,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 10: displayed equation at y=188 shifted horizontally by 33pt vs original"
+    },
+    {
+      "page": 11,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 11: displayed equation at y=330 shifted horizontally by 19pt vs original"
+    },
+    {
+      "page": 13,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 13: displayed equation at y=589 shifted horizontally by 17pt vs original"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (7 words, 0 CJK chars) at x=97.0, y=383.8: which is contradicted with the assumption }gtpxt,"
+    },
+    {
+      "page": 19,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 19: displayed equation at y=328 shifted horizontally by 18pt vs original"
+    },
+    {
+      "page": 19,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 19: displayed equation at y=328 shifted horizontally by 18pt vs original"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (20 words, 0 CJK chars) at x=72.0, y=212.5: The details for deriving expression (63) are included in"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (28 words, 0 CJK chars) at x=72.0, y=216.4: Bx`ΦtÑkpXtq˘, in-equality (63) suggests to study the Lip"
+    },
+    {
+      "page": 21,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 21: displayed equation at y=394 shifted horizontally by 29pt vs original"
+    },
+    {
+      "page": 22,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 22: block set at 7.87pt but the original at this position is 9.96pt (ratio 0.79 vs page median 0.92) at x=165.5, y=507.1: a 替换为李等人（2023）中的。这是有效的，因为对于"
+    },
+    {
+      "page": 22,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 22: displayed equation at y=208 shifted horizontally by 30pt vs original"
+    },
+    {
+      "page": 23,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 23: block set at 7.57pt but the original at this position is 9.96pt (ratio 0.76 vs page median 0.92) at x=72.8, y=410.4: 现在分别对上述每一项应用不等式（81）、引理1 和（56），我们得到"
+    },
+    {
+      "page": 23,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 23: block set at 6.37pt but the original at this position is 9.96pt (ratio 0.64 vs page median 0.92) at x=72.8, y=666.9: 控制第二项。利用表达式（82），我们可以进一步控制量"
+    },
+    {
+      "page": 24,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 24: paragraph still in English (9 words, 0 CJK chars) at x=87.0, y=412.9: Now consider the partial derivative of gtpx, pαq at pα w"
+    },
+    {
+      "page": 24,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=323.6, y=418.1: where"
+    }
+  ]
+}

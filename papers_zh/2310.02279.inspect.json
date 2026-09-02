@@ -1,0 +1,59 @@
+{
+  "issue_count": 9,
+  "issues": [
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (5 words, 0 CJK chars) at x=271.7, y=169.1: CTM(θN; ϕ) = 0, then for any n ∈[[1, N]] and m ∈[[1, n]]"
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=496.5, y=583.8: and"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (2 words, 0 CJK chars) at x=246.9, y=169.2: 1 −γ2t1) + γZ0,where Zn"
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 22: paragraph still in English (4 words, 0 CJK chars) at x=107.6, y=290.7: where h is defined as"
+    },
+    {
+      "page": 30,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 30: block set at 6.07pt but the original at this position is 9.96pt (ratio 0.61 vs page median 0.92) at x=265.0, y=542.2: θ_{N}. 中是一致有界的。因此，谢弗定理的逆命题（Boos, 1985; Sweeting,"
+    },
+    {
+      "page": 30,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 30: block set at 6.07pt but the original at this position is 9.96pt (ratio 0.61 vs page median 0.92) at x=216.8, y=554.2: →趋于0。类似的论证可以适用于证明当"
+    },
+    {
+      "page": 30,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 30: paragraph still in English (11 words, 0 CJK chars) at x=127.3, y=643.8: (a) f(·, t) is Lipschitz for any t ∈[0, T]: there is a f"
+    },
+    {
+      "page": 31,
+      "code": "preserved_ink_mismatch",
+      "severity": "error",
+      "message": "Page 31: preserved region at x=108, y=353 (267x17pt) renders with ink coverage 0.86 vs original"
+    },
+    {
+      "page": 33,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 33: block set at 6.79pt but the original at this position is 9.88pt (ratio 0.69 vs page median 0.92) at x=317.3, y=416.2: t 中受可和函数的上界约束，向量场满足"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Awesome Diffusion × Optimal Transport
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-126-red.svg)](#reports)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-148-red.svg)](#reports)
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -11,7 +11,7 @@
 - **原文 PDF**（`papers/`）与 [SuperTranslate](https://github.com/asimfish/super_translate) **保版式中文译文**（`papers_zh/`，附对象级 QA `*.inspect.json`）；
 - 机器可读元数据（`data/`），本 README 由 `src/generator.py` 生成。
 
-总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 126。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
+总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 148。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
 
 综合分析见 [`report/`](report/)（问题→理论→经典→前沿→我们能做什么，中英 PDF）与 [`slides/`](slides/)（HTML PPT + Beamer PDF）；2026 Q3 增量趋势见 [`trends/`](trends/)。
 
@@ -773,7 +773,7 @@ I. [贡献与引用](#contributing)
 
     形式化 batch 耦合族（BatchOT/BatchEOT/StableCoupling），证明 k→∞ 路径直线化、梯度方差降低，ImageNet 上省 30–60% NFE
 
-6. **Expected Batch Optimal Transport Plans and Consequences for Flow Matching.** arXiv, 2026. [R] [paper](https://arxiv.org/abs/2605.12174) [report](reports/2605.12174.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2605.12174.pdf)
+6. **Expected Batch Optimal Transport Plans and Consequences for Flow Matching.** arXiv, 2026. [R] [paper](https://arxiv.org/abs/2605.12174) [report](reports/2605.12174.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2605.12174.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2605.12174.zh.pdf)
 
     *Samuel Boïté, Julie Delon, Kimia Nadjahi*
 
@@ -868,7 +868,7 @@ I. [贡献与引用](#contributing)
 
     奠基作：线性插值+因果化定义 RF，reflow 迭代拉直；证明凸代价单调不增、直线度以 O(1/K) 速率下降
 
-6. **FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space.** arXiv, 2025. [R] [paper](https://arxiv.org/abs/2506.15742) [report](reports/2506.15742.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2506.15742.pdf)
+6. **FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space.** arXiv, 2025. [R] [paper](https://arxiv.org/abs/2506.15742) [report](reports/2506.15742.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2506.15742.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2506.15742.zh.pdf)
 
     *Black Forest Labs, Stephen Batifol, Andreas Blattmann, Frederic Boesel, Saksham Consul, Cyril Diagne et al.*
 
@@ -880,43 +880,43 @@ I. [贡献与引用](#contributing)
 
     论证 rectification 的本质是"预训练模型配对+重训"而非直线度/流匹配形式/v-预测；推广为一般扩散的一阶 ODE 目标
 
-8. **Straighten Viscous Rectified Flow via Noise Optimization.** ICCV, 2025. [P] [paper](https://arxiv.org/abs/2507.10218) [report](reports/2507.10218.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2507.10218.pdf)
+8. **Straighten Viscous Rectified Flow via Noise Optimization.** ICCV, 2025. [P] [paper](https://arxiv.org/abs/2507.10218) [report](reports/2507.10218.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2507.10218.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2507.10218.zh.pdf)
 
     *Jimin Dai, Jiexi Yan, Jian Yang, Lei Luo*
 
     指出 reflow 合成耦合与真实图像存在分布差距；历史速度项+噪声再参数化优化，直接与**真实图像**构造耦合来拉直
 
-9. **Towards Hierarchical Rectified Flow.** ICLR, 2025. [P] [paper](https://arxiv.org/abs/2502.17436) [report](reports/2502.17436.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2502.17436.pdf)
+9. **Towards Hierarchical Rectified Flow.** ICLR, 2025. [P] [paper](https://arxiv.org/abs/2502.17436) [report](reports/2502.17436.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2502.17436.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2502.17436.zh.pdf)
 
     *Yichi Zhang, Yici Yan, Alex Schwing, Zhizhen Zhao*
 
     层级耦合位置/速度/加速度多条 ODE，建模多模态随机速度场，允许积分路径相交从而更直、更少 NFE
 
-10. **Bellman Optimal Stepsize Straightening of Flow-Matching Models.** ICLR, 2024. [P] [paper](https://arxiv.org/abs/2312.16414) [report](reports/2312.16414.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2312.16414.pdf)
+10. **Bellman Optimal Stepsize Straightening of Flow-Matching Models.** ICLR, 2024. [P] [paper](https://arxiv.org/abs/2312.16414) [report](reports/2312.16414.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2312.16414.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2312.16414.zh.pdf)
 
     *Bao Nguyen, Binh Nguyen, Viet Anh Nguyen*
 
     BOSS：动态规划求最优步长序列再按其重训速度场，低资源（可仅 LoRA 2% 参数）下优于标准 reflow
 
-11. **Constant Acceleration Flow.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2411.00322) [report](reports/2411.00322.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2411.00322.pdf)
+11. **Constant Acceleration Flow.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2411.00322) [report](reports/2411.00322.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2411.00322.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2411.00322.zh.pdf)
 
     *Dogyun Park, Sojin Lee, Sihyeon Kim, Taehoon Lee, Youngjoon Hong, Hyunwoo J. Kim*
 
     放弃常速假设改学常加速度方程（初速度条件化+初速度 reflow），一步生成与耦合保持/反演精度双改进
 
-12. **On the Convergence and Straightness of Rectified Flow.** 2024–26 · arXiv, 2024. [R] [paper](https://arxiv.org/abs/2410.14949) [report](reports/2410.14949.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.14949.pdf)
+12. **On the Convergence and Straightness of Rectified Flow.** 2024–26 · arXiv, 2024. [R] [paper](https://arxiv.org/abs/2410.14949) [report](reports/2410.14949.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.14949.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2410.14949.zh.pdf)
 
     *Vansh Bansal, Saptarshi Roy, Alessandro Rinaldo, Purnamrita Sarkar*
 
     正面理论：W2² 误差界由（分段）直线度参数+离散步数刻画，给出 1-RF 唯一且直的充分条件；1D 高斯出发时 RF 即 Monge 映射
 
-13. **PeRFlow: Piecewise Rectified Flow as Universal Plug-and-Play Accelerator.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2405.07510) [report](reports/2405.07510.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2405.07510.pdf)
+13. **PeRFlow: Piecewise Rectified Flow as Universal Plug-and-Play Accelerator.** NeurIPS, 2024. [P] [paper](https://arxiv.org/abs/2405.07510) [report](reports/2405.07510.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2405.07510.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2405.07510.zh.pdf)
 
     *Hanshu Yan, Xingchao Liu, Jiachun Pan, Jun Hao Liew, Qiang Liu, Jiashi Feng*
 
     分时间窗做分段 reflow，免去整条 ODE 轨迹仿真、可在线训练；ΔW 即插即用加速整个 SD 生态
 
-14. **SlimFlow: Training Smaller One-Step Diffusion Models with Rectified Flow.** ECCV, 2024. [P] [paper](https://arxiv.org/abs/2407.12718) [report](reports/2407.12718.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2407.12718.pdf)
+14. **SlimFlow: Training Smaller One-Step Diffusion Models with Rectified Flow.** ECCV, 2024. [P] [paper](https://arxiv.org/abs/2407.12718) [report](reports/2407.12718.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2407.12718.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2407.12718.zh.pdf)
 
     *Yuanzhi Zhu, Xingchao Liu, Qiang Liu*
 
@@ -963,7 +963,7 @@ I. [贡献与引用](#contributing)
 
     奠基：学习 PF-ODE 的自一致映射（任意轨迹点→端点），CD 蒸馏 CIFAR-10 一步 FID 3.55、两步 2.93
 
-6. **One Step Diffusion via Shortcut Models.** ICLR, 2025. [P] [paper](https://arxiv.org/abs/2410.12557) [report](reports/2410.12557.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.12557.pdf)
+6. **One Step Diffusion via Shortcut Models.** ICLR, 2025. [P] [paper](https://arxiv.org/abs/2410.12557) [report](reports/2410.12557.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2410.12557.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2410.12557.zh.pdf)
 
     *Kevin Frans, Danijar Hafner, Sergey Levine, Pieter Abbeel*
 
@@ -973,13 +973,13 @@ I. [贡献与引用](#contributing)
 
     TrigFlow 统一参数化 + 连续时间训练稳定化，1.5B 参数两步 FID：CIFAR-10 2.06 / ImageNet-64 1.48 / ImageNet-512 1.88
 
-8. **Towards a mathematical theory for consistency training in diffusion models.** AISTATS, 2025. [P] [paper](https://arxiv.org/abs/2402.07802) [report](reports/2402.07802.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2402.07802.pdf)
+8. **Towards a mathematical theory for consistency training in diffusion models.** AISTATS, 2025. [P] [paper](https://arxiv.org/abs/2402.07802) [report](reports/2402.07802.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2402.07802.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2402.07802.zh.pdf)
 
     *Gen Li, Zhihan Huang, Yuting Wei*
 
     证明一致性训练步数超过 O(d^{5/2}/ε) 即可生成 Wasserstein 意义下 ε-接近目标的样本，给出离散化-精度定量关系
 
-9. **Adversarial Diffusion Distillation.** ECCV (Oral), 2024. [P] [paper](https://arxiv.org/abs/2311.17042) [report](reports/2311.17042.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2311.17042.pdf)
+9. **Adversarial Diffusion Distillation.** ECCV (Oral), 2024. [P] [paper](https://arxiv.org/abs/2311.17042) [report](reports/2311.17042.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2311.17042.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2311.17042.zh.pdf)
 
     *Axel Sauer, Dominik Lorenz, Andreas Blattmann, Robin Rombach*
 
@@ -991,7 +991,7 @@ I. [贡献与引用](#contributing)
 
     用 WGAN 范式重推 SDS/VSD：SDS=固定次优判别器、VSD=不完整判别器优化；补全 W1 对偶判别器训练解决 CFG 尺度敏感
 
-11. **Consistency Trajectory Models: Learning Probability Flow ODE Trajectory of Diffusion.** ICLR, 2024. [P] [paper](https://arxiv.org/abs/2310.02279) [report](reports/2310.02279.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2310.02279.pdf)
+11. **Consistency Trajectory Models: Learning Probability Flow ODE Trajectory of Diffusion.** ICLR, 2024. [P] [paper](https://arxiv.org/abs/2310.02279) [report](reports/2310.02279.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2310.02279.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2310.02279.zh.pdf)
 
     *Dongjun Kim, Chieh-Hsin Lai, Wei-Hsiang Liao, Naoki Murata, Yuhta Takida, Toshimitsu Uesaka et al.*
 
@@ -1001,7 +1001,7 @@ I. [贡献与引用](#contributing)
 
     去掉 ODE 对回归，TTUR + GAN（真数据）稳定纯分布匹配；一步 ImageNet-64 FID 1.28 超越教师
 
-13. **Improved Techniques for Training Consistency Models.** ICLR, 2024. [P] [paper](https://arxiv.org/abs/2310.14189) [report](reports/2310.14189.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2310.14189.pdf)
+13. **Improved Techniques for Training Consistency Models.** ICLR, 2024. [P] [paper](https://arxiv.org/abs/2310.14189) [report](reports/2310.14189.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2310.14189.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2310.14189.zh.pdf)
 
     *Yang Song, Prafulla Dhariwal*
 
@@ -1076,7 +1076,7 @@ I. [贡献与引用](#contributing)
 
     KDE 视角给出去噪轨迹闭式解（= 时变带宽 mean-shift），解释逐步旋转、似然单调上升与「线性–非线性–线性」全局模式
 
-10. **Learning to Discretize Denoising Diffusion ODEs.** ICLR (Oral), 2025. [P] [paper](https://arxiv.org/abs/2405.15506) [report](reports/2405.15506.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2405.15506.pdf)
+10. **Learning to Discretize Denoising Diffusion ODEs.** ICLR (Oral), 2025. [P] [paper](https://arxiv.org/abs/2405.15506) [report](reports/2405.15506.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2405.15506.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2405.15506.zh.pdf)
 
     *Vinh Tong, Hoang Trung-Dung, Anji Liu, Guy Van den Broeck, Mathias Niepert*
 
@@ -1098,43 +1098,43 @@ I. [贡献与引用](#contributing)
 
     论证低 NFE 下逐点跟踪真 ODE 轨迹在原理上不可行 → 黑盒学习求解器系数（S4S）与离散化（S4S-Alt）以对齐教师端点；5 NFE 达 CIFAR-10 FID 3.73
 
-14. **Accelerating Diffusion Sampling with Optimized Time Steps.** CVPR, 2024. [P] [paper](https://arxiv.org/abs/2402.17376) [report](reports/2402.17376.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2402.17376.pdf)
+14. **Accelerating Diffusion Sampling with Optimized Time Steps.** CVPR, 2024. [P] [paper](https://arxiv.org/abs/2402.17376) [report](reports/2402.17376.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2402.17376.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2402.17376.zh.pdf)
 
     *Shuchen Xue, Zhaoqiang Liu, Fei Chen, Shifeng Zhang, Tianyang Hu, Enze Xie et al.*
 
     把调度选取写成最小化全局离散误差的约束优化（信赖域法，<15 秒求解），与 UniPC/DPM-Solver++ 即插即用
 
-15. **Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models.** ICLR spotlight / 2024·ICML, 2024. [P] [paper](https://arxiv.org/abs/2403.01329) [report](reports/2403.01329.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2403.01329.pdf)
+15. **Bespoke Non-Stationary Solvers for Fast Sampling of Diffusion and Flow Models.** ICLR spotlight / 2024·ICML, 2024. [P] [paper](https://arxiv.org/abs/2403.01329) [report](reports/2403.01329.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2403.01329.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2403.01329.zh.pdf)
 
     *Neta Shaul, Uriel Singer, Ricky T. Q. Chen, Matthew Le, Ali Thabet, Albert Pumarola et al.*
 
     solver 蒸馏路线的奠基：为给定预训练流/扩散模型定制仅 80–200 参数的（非平稳）求解器，证明 NS 族涵盖既有数值格式；16 NFE 达 PSNR 45/FID 1.76（ImageNet-64）
 
-16. **Fast Sampling of Diffusion Models with Exponential Integrator.** ICLR, 2023. [P] [paper](https://arxiv.org/abs/2204.13902) [report](reports/2204.13902.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2204.13902.pdf)
+16. **Fast Sampling of Diffusion Models with Exponential Integrator.** ICLR, 2023. [P] [paper](https://arxiv.org/abs/2204.13902) [report](reports/2204.13902.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2204.13902.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2204.13902.zh.pdf)
 
     *Qinsheng Zhang, Yongxin Chen*
 
     与 DPM-Solver 同期独立提出指数积分器，配 Adams-Bashforth 型多项式外推；其 iPNDM 变体至今仍是低 NFE 强基线
 
-17. **DPM-Solver-v3: Improved Diffusion ODE Solver with Empirical Model Statistics.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2310.13268) [report](reports/2310.13268.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2310.13268.pdf)
+17. **DPM-Solver-v3: Improved Diffusion ODE Solver with Empirical Model Statistics.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2310.13268) [report](reports/2310.13268.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2310.13268.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2310.13268.zh.pdf)
 
     *Kaiwen Zheng, Cheng Lu, Jianfei Chen, Jun Zhu*
 
     引入经验模型统计量（EMS）在线选择最优参数化系数，最小化一阶离散误差，5–10 NFE 进一步提升
 
-18. **UniPC: A Unified Predictor-Corrector Framework for Fast Sampling of Diffusion Models.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2302.04867) [report](reports/2302.04867.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2302.04867.pdf)
+18. **UniPC: A Unified Predictor-Corrector Framework for Fast Sampling of Diffusion Models.** NeurIPS, 2023. [P] [paper](https://arxiv.org/abs/2302.04867) [report](reports/2302.04867.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2302.04867.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2302.04867.zh.pdf)
 
     *Wenliang Zhao, Lujia Bai, Yongming Rao, Jie Zhou, Jiwen Lu*
 
     统一任意阶预测-校正框架（UniP+UniC），校正器无额外 NFE 即提升低步数精度，diffusers 生态默认求解器之一
 
-19. **DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models.** arXiv → 2025·Mach. Intell. Res. 22(4):730-751, 2022. [P] [paper](https://arxiv.org/abs/2211.01095) [report](reports/2211.01095.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2211.01095.pdf)
+19. **DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models.** arXiv → 2025·Mach. Intell. Res. 22(4):730-751, 2022. [P] [paper](https://arxiv.org/abs/2211.01095) [report](reports/2211.01095.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2211.01095.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2211.01095.zh.pdf)
 
     *Cheng Lu, Yuhao Zhou, Fan Bao, Jianfei Chen, Chongxuan Li, Jun Zhu*
 
     改用 data-prediction 参数化 + 多步格式 + thresholding，解决大 guidance 尺度下高阶求解器的失稳，成为文生图部署标准
 
-20. **Denoising Diffusion Implicit Models.** ICLR, 2021. [P] [paper](https://arxiv.org/abs/2010.02502) [report](reports/2010.02502.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2010.02502.pdf)
+20. **Denoising Diffusion Implicit Models.** ICLR, 2021. [P] [paper](https://arxiv.org/abs/2010.02502) [report](reports/2010.02502.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2010.02502.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2010.02502.zh.pdf)
 
     *Jiaming Song, Chenlin Meng, Stefano Ermon*
 
@@ -3118,7 +3118,7 @@ I. [贡献与引用](#contributing)
 ## H. 深读报告、译文与综合报告
 
 - `reports/`：438 份逐篇深读（文件名 = arXiv id）；`data/meta/`：每篇的 TL;DR / 关键数字 / 关系卡。
-- `papers/`：363 份原文；`papers_zh/`：126 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
+- `papers/`：363 份原文；`papers_zh/`：148 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
 - `report/`：综合分析报告（`AWESOME_DIFFUSION_OT_REPORT_zh.md` / `_en.md` 及 PDF）。
 - `slides/`：[HTML PPT](slides/awesome_diffusion_OT_deck.html)（浏览器打开，方向键翻页）、[可编辑 PPTX](slides/awesome_diffusion_OT_deck.pptx) 与 [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf)；报告 PDF：[中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf)。
 - 复现整条流水线：`scripts/build_corpus.py → resolve_arxiv.py → fetch_papers.py → extract_text.py → translate_batch.sh → src/generator.py`。

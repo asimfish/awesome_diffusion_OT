@@ -1,0 +1,29 @@
+{
+  "issue_count": 4,
+  "issues": [
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (5 words, 0 CJK chars) at x=196.5, y=598.2: q(xt|xt−1), where q(xt|xt−1) := N"
+    },
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 8.27pt but the original at this position is 9.96pt (ratio 0.83 vs page median 0.92) at x=205.5, y=186.0: σ(0) = 0递增。方程（13）可视为对如下常微分方程采用欧拉方法所得："
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (10 words, 0 CJK chars) at x=237.5, y=222.5: Cat(xt)with probability σtCat(x0)with probability (αt−1 "
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=160.0, y=544.3: For"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 6,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 6: block set at 7.97pt but the original at this position is 9.96pt (ratio 0.80 vs page median 0.92) at x=108.8, y=223.9: 我们采用这种参数化，并将方程(5) 重写为"
+    },
+    {
+      "page": 8,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 8: paragraph still in English (5 words, 0 CJK chars) at x=118.0, y=167.3: ˆxti−1 ←Eq. (14) with Ψ, C, ϵ-bufferend for"
+    },
+    {
+      "page": 15,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 15: block set at 8.07pt but the original at this position is 9.96pt (ratio 0.81 vs page median 0.92) at x=142.5, y=447.0: κ 阶DPM-Solver，在所述某些假设下，它具有收敛阶"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (5 words, 0 CJK chars) at x=108.0, y=722.3: which is exactly Eq. (4) if η = λ."
+    },
+    {
+      "page": 28,
+      "code": "table_cells_reflowed",
+      "severity": "error",
+      "message": "Page 28: table at y=492-547 has 5 source rows with up to 2 cells, but the translation sets them as 1 multi-cell rows (up to 6 cells): cells re-flowed as prose"
+    }
+  ]
+}

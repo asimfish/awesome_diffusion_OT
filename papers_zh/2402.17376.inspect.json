@@ -1,0 +1,17 @@
+{
+  "issue_count": 2,
+  "issues": [
+    {
+      "page": 4,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 4: block set at 8.37pt but the original at this position is 9.96pt (ratio 0.84 vs page median 0.92) at x=50.9, y=301.1: λ_{n}_{-}_{k}_{n}, λ_{n}_{-}_{k}_{n}_{+1},..., λ"
+    },
+    {
+      "page": 4,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 4: displayed equation at y=98 shifted horizontally by 37pt vs original"
+    }
+  ]
+}

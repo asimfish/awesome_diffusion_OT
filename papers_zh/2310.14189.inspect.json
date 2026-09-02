@@ -1,0 +1,11 @@
+{
+  "issue_count": 1,
+  "issues": [
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 5.87pt but the original at this position is 9.96pt (ratio 0.59 vs page median 0.92) at x=275.4, y=436.8: 现在，让我们聚焦于一致性模型目标"
+    }
+  ]
+}

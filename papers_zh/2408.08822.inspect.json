@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 6,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 6: paragraph still in English (3 words, 0 CJK chars) at x=332.5, y=515.8: ,where ε ∈(ti−1, ti), n ≥2.(16)"
+    },
+    {
+      "page": 14,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 14: block set at 8.17pt but the original at this position is 9.96pt (ratio 0.82 vs page median 0.92) at x=108.8, y=689.7: 假设B.2. 当时间步长∆不过大时，基于阶常微分方程求解器在不同时间步长下的噪声网"
+    },
+    {
+      "page": 15,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 15: paragraph still in English (5 words, 0 CJK chars) at x=108.0, y=363.5: When n is even (n ≥2):We derive:"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (24 words, 0 CJK chars) at x=108.0, y=340.4: choices with the parameter h. This strategy of multi-ste"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (5 words, 0 CJK chars) at x=108.0, y=384.9: and Eq. (11) is updated to Q"
+    }
+  ]
+}

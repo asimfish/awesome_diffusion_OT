@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 7,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 7: displayed equation at y=223 shifted horizontally by 37pt vs original"
+    },
+    {
+      "page": 18,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 18: paragraph still in English (7 words, 0 CJK chars) at x=107.6, y=616.3: where ˆg· = gθ(ˆxλ·, λ·). Under Assumption B.4, we know "
+    },
+    {
+      "page": 19,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 19: paragraph still in English (3 words, 0 CJK chars) at x=108.0, y=593.5: Denote fm := max0≤i≤m |∆i|"
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (2 words, 0 CJK chars) at x=108.0, y=75.6: Denote Am−1 :="
+    },
+    {
+      "page": 20,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 20: paragraph still in English (7 words, 0 CJK chars) at x=219.1, y=265.7: αti−1C4αtiA(λti−1,λti). Then denote β := maxn+1≤i≤M"
+    }
+  ]
+}

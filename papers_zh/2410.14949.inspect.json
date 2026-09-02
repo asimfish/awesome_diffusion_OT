@@ -1,0 +1,59 @@
+{
+  "issue_count": 9,
+  "issues": [
+    {
+      "page": 3,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 3: paragraph still in English (7 words, 0 CJK chars) at x=317.2, y=716.4: (b) There exists bL > 0 such that ∥bvt(x) −bvt(y)∥2 ≤"
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 13: paragraph still in English (43 words, 0 CJK chars) at x=63.0, y=371.1: Definition 2. For a positive integer k, a function f : R"
+    },
+    {
+      "page": 13,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=246.8, y=403.7: and"
+    },
+    {
+      "page": 21,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 21: displayed equation at y=672 shifted horizontally by 31pt vs original"
+    },
+    {
+      "page": 22,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 22: block set at 7.47pt but the original at this position is 9.96pt (ratio 0.75 vs page median 0.92) at x=63.8, y=687.4: T 个离散化步骤的常微分方程流（4）以及引理11中给出的真实射频漂移场。则，利普希茨"
+    },
+    {
+      "page": 22,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 22: paragraph still in English (6 words, 0 CJK chars) at x=63.0, y=710.7: constant of the RF drift is(1+σ2)2"
+    },
+    {
+      "page": 23,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 23: displayed equation at y=697 shifted horizontally by 27pt vs original"
+    },
+    {
+      "page": 24,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Source prose remained verbatim at x=173.5, y=462.4: for"
+    },
+    {
+      "page": 35,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 35: displayed equation at y=456 shifted horizontally by 15pt vs original"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "issue_count": 6,
+  "issues": [
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (4 words, 0 CJK chars) at x=218.2, y=618.0: dzt = v(zt, t)dt, with z0 ∼ρ0,t ∈[0, 1].(1)"
+    },
+    {
+      "page": 2,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 2: paragraph still in English (3 words, 0 CJK chars) at x=205.6, y=721.9: xt = (1 −t)x0 + tx1,where x0 ∼ρ0, x1 ∼D.(2)"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (4 words, 0 CJK chars) at x=210.8, y=307.1: duτ(xt, t) = a(xt, t, uτ, τ)dτ,with u0 ∼π0.(7)"
+    },
+    {
+      "page": 5,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 5: paragraph still in English (6 words, 0 CJK chars) at x=185.6, y=604.6: dzt = g(zt, t, u0(zt, t))dt,where u0(zt, t) ∼π0, z0 ∼ρ0,"
+    },
+    {
+      "page": 13,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 13: block set at 6.67pt but the original at this position is 9.96pt (ratio 0.67 vs page median 0.92) at x=108.8, y=249.9: 定理1 的证明：。最后一个等式成立是因为"
+    },
+    {
+      "page": 17,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 17: block set at 6.97pt but the original at this position is 9.96pt (ratio 0.70 vs page median 0.92) at x=318.0, y=588.2: v_{τ} 的计算相同。结合所有这些结果，同时将函数从"
+    }
+  ]
+}
