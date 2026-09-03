@@ -1,0 +1,35 @@
+{
+  "issue_count": 5,
+  "issues": [
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (10 words, 0 CJK chars) at x=49.0, y=158.1: n ∈[0, 1] is obtained by applying asigmoid to a learnabl"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (12 words, 0 CJK chars) at x=49.0, y=208.8: n): These non-negative weights form aconvex combination "
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (39 words, 0 CJK chars) at x=49.0, y=232.6: n = 1. They are obtained by applying a softmax overK lea"
+    },
+    {
+      "page": 16,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 16: paragraph still in English (12 words, 0 CJK chars) at x=49.0, y=352.8: n is an unconstrained learnable parameter. The finalscal"
+    },
+    {
+      "page": 27,
+      "code": "untranslated_block",
+      "severity": "error",
+      "message": "Page 27: paragraph still in English (17 words, 0 CJK chars) at x=86.3, y=650.9: (e) A ceramic coffee mug sits immediately to the right o"
+    }
+  ]
+}

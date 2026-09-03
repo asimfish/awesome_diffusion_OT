@@ -1,0 +1,23 @@
+{
+  "issue_count": 3,
+  "issues": [
+    {
+      "page": 7,
+      "code": "font_size_drift",
+      "severity": "error",
+      "message": "Page 7: block set at 7.06pt but the original at this position is 10.06pt (ratio 0.70 vs page median 0.92) at x=81.7, y=332.0: N= 8作为离散设置。对于6 步推理，离散设置为"
+    },
+    {
+      "page": 11,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 11: displayed equation at y=337 shifted horizontally by 15pt vs original"
+    },
+    {
+      "page": 11,
+      "code": "display_formula_misaligned",
+      "severity": "warning",
+      "message": "Page 11: displayed equation at y=473 shifted horizontally by 16pt vs original"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Awesome Diffusion × Optimal Transport
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-148-red.svg)](#reports)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Papers](https://img.shields.io/badge/papers-446-orange.svg)](#content) [![Reports](https://img.shields.io/badge/deep--dive%20reports-438-green.svg)](#reports) [![zh-PDF](https://img.shields.io/badge/translated%20PDFs-152-red.svg)](#reports)
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -11,7 +11,7 @@
 - **原文 PDF**（`papers/`）与 [SuperTranslate](https://github.com/asimfish/super_translate) **保版式中文译文**（`papers_zh/`，附对象级 QA `*.inspect.json`）；
 - 机器可读元数据（`data/`），本 README 由 `src/generator.py` 生成。
 
-总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 148。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
+总量：446 篇（⭐ 核心 139）| 深读报告 438 | 原文 PDF 363 | 中文译文 152。证据级：[P] 论文集 / [A] 官方已接收 / [R] 预印本 / [B] 教材综述——主会、期刊、workshop、预印本永远分开标。
 
 综合分析见 [`report/`](report/)（问题→理论→经典→前沿→我们能做什么，中英 PDF）与 [`slides/`](slides/)（HTML PPT + Beamer PDF）；2026 Q3 增量趋势见 [`trends/`](trends/)。
 
@@ -1052,19 +1052,19 @@ I. [贡献与引用](#contributing)
 
     形式化「端点可解码性」：中间态+路径速度即 E[x₀\
 
-6. **Analyzing and Improving Fast Sampling of Text-to-Image Diffusion Models.** arXiv, 2026. [R] [paper](https://arxiv.org/abs/2603.00763) [report](reports/2603.00763.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2603.00763.pdf)
+6. **Analyzing and Improving Fast Sampling of Text-to-Image Diffusion Models.** arXiv, 2026. [R] [paper](https://arxiv.org/abs/2603.00763) [report](reports/2603.00763.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2603.00763.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2603.00763.zh.pdf)
 
     *Zhenyu Zhou, Defang Chen, Siwei Lyu, Chun Chen, Can Wang*
 
     系统消融 T2I 免训练设计空间，发现**时间调度是最关键因子**；由 Frenet-Serret 公式导出「恒定总旋转」调度，Flux.1/SD3.5 十步高质量
 
-7. **Parallel Diffusion Solver via Residual Dirichlet Policy Optimization.** arXiv, 2025. [R] [paper](https://arxiv.org/abs/2512.22796) [report](reports/2512.22796.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2512.22796.pdf)
+7. **Parallel Diffusion Solver via Residual Dirichlet Policy Optimization.** arXiv, 2025. [R] [paper](https://arxiv.org/abs/2512.22796) [report](reports/2512.22796.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2512.22796.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2512.22796.zh.pdf)
 
     *Ruoyu Wang, Ziyu Li, Beier Zhu, Liangyu Yuan, Hanwang Zhang, Xun Yang et al.*
 
     每步引入多条**并行**梯度方向的加权集成（向量值中值定理），蒸馏 + Dirichlet 策略 RL 学权重，以并行换低延迟压制高曲率截断误差
 
-8. **F-scheduler: illuminating the free-lunch design space for fast sampling of diffusion models.** arXiv, 2025. [R] [paper](https://arxiv.org/abs/2510.02390) [report](reports/2510.02390.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2510.02390.pdf)
+8. **F-scheduler: illuminating the free-lunch design space for fast sampling of diffusion models.** arXiv, 2025. [R] [paper](https://arxiv.org/abs/2510.02390) [report](reports/2510.02390.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2510.02390.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2510.02390.zh.pdf)
 
     *Zilai Li, Lujia Bai*
 
@@ -1088,7 +1088,7 @@ I. [贡献与引用](#contributing)
 
     步长调度 = 递归误差最小化的最优子结构 → DP 提取全局最优调度，跨架构/求解器/噪声调度鲁棒；T2I 10× 加速保留 99.4% GenEval
 
-12. **PFDiff: Training-Free Acceleration of Diffusion Models Combining Past and Future Scores.** ICLR, 2025. [P] [paper](https://arxiv.org/abs/2408.08822) [report](reports/2408.08822.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2408.08822.pdf)
+12. **PFDiff: Training-Free Acceleration of Diffusion Models Combining Past and Future Scores.** ICLR, 2025. [P] [paper](https://arxiv.org/abs/2408.08822) [report](reports/2408.08822.md) [PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-en-v1/2408.08822.pdf) [zh-PDF](https://github.com/asimfish/awesome_diffusion_OT/releases/download/pdf-zh-v1/2408.08822.zh.pdf)
 
     *Guangyi Wang, Yuren Cai, Lijiang Li, Wei Peng, Songzhi Su*
 
@@ -3118,7 +3118,7 @@ I. [贡献与引用](#contributing)
 ## H. 深读报告、译文与综合报告
 
 - `reports/`：438 份逐篇深读（文件名 = arXiv id）；`data/meta/`：每篇的 TL;DR / 关键数字 / 关系卡。
-- `papers/`：363 份原文；`papers_zh/`：148 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
+- `papers/`：363 份原文；`papers_zh/`：152 份保版式中文译文 + `*.inspect.json` QA 报告。缺失的译文在持续补齐（`scripts/translate_batch.sh`）。
 - `report/`：综合分析报告（`AWESOME_DIFFUSION_OT_REPORT_zh.md` / `_en.md` 及 PDF）。
 - `slides/`：[HTML PPT](slides/awesome_diffusion_OT_deck.html)（浏览器打开，方向键翻页）、[可编辑 PPTX](slides/awesome_diffusion_OT_deck.pptx) 与 [Beamer PDF](slides/beamer/awesome_diffusion_OT_slides.pdf)；报告 PDF：[中文](report/pdf/awesome_diffusion_ot_report_zh.pdf) / [English](report/pdf/awesome_diffusion_ot_report_en.pdf)。
 - 复现整条流水线：`scripts/build_corpus.py → resolve_arxiv.py → fetch_papers.py → extract_text.py → translate_batch.sh → src/generator.py`。
